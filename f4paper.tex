@@ -1,0 +1,111 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amscd}
+\usepackage{alltt}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+
+\newcommand{\rar}{\rightarrow}
+\newcommand{\lar}{\leftarrow}
+
+\DeclareMathOperator\mat{M}
+\DeclareMathOperator\elin{E}
+\DeclareMathOperator\stlin{St}
+\DeclareMathOperator\gstlin{GSt}
+\DeclareMathOperator\klin{K}
+\DeclareMathOperator\stmap{st}
+\DeclareMathOperator\glin{GL}
+\DeclareMathOperator\diag{D}
+\DeclareMathOperator\Jac{J}
+\newcommand{\leqt}{\trianglelefteq}
+\DeclareMathOperator{\Ad}{Ad}
+
+\newcommand{\sub}[2]{{_{#1\!}{#2}}}
+\newcommand{\up}[2]{{^{#1}\!{#2}}}
+
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Group}{\mathbf{Grp}}
+\DeclareMathOperator{\Pro}{Pro}
+
+\begin{document}
+
+
+
+\section{Pro-objects}Recall a construction of the pro-completion of a given category \(\mathcal C\) from \cite{CategoryTextbook}, section 6.1. A small category \(\mathcal I\) is called filtered if it is non-empty, for any two objects \(i, j\) there is a diagram \(i \rar j \lar k\) in \(\mathcal I\), and every pair of parallel morphisms \(i \rightrightarrows j\) is equalized by some morphism \(j \rar k\) in \(\mathcal I\). A pro-object in \(\mathcal C\) is a contravariant functor \(X^{(\infty)}\) from a filtered category \(\mathcal I_X\) to \(\mathcal C\). Objects of \(\mathcal I_X\) are called indices of \(X^{(\infty)}\). We write \(X^{(i)}\) for the values of \(X^{(\infty)}\) on indices \(i\) and omit the values of \(X^{(\infty)}\) on morphisms \(i \rar j\) in our formulas if the morphism \(i \rar j\) is clear from the context (for example, if \(j\) is a sufficiently large index). So a pro-object \(X^{(\infty)}\) is the formal projective limit of \(X^{(i)}\). We use the notation with upper indices since our pro-objects consist of homotopes of various algebraic objects.
+
+The category of pro-objects is denoted by \(\Pro(\mathcal C)\). By definition,
+\[
+\Pro(\mathcal C)(X^{(\infty)}, Y^{(\infty)}) = \varprojlim_{j \in \mathcal I_Y} \varinjlim_{i \in \mathcal I_X} \mathcal C(X^{(i)}, Y^{(j)}).
+\]
+There is a more explicit description of morphisms in \(\Pro(\mathcal C)\). We say that a pre-morphism \(f \colon X^{(\infty)} \rar Y^{(\infty)}\) consists of a function \(f^*\) from the set of indices of \(Y\) to the set of indices of \(X\), and of morphisms \(f^{(i)} \colon X^{(f^*(i))} \rar Y^{(i)}\) for all \(i \in \mathcal I_Y\) such that for any morphism \(i \rar j\) in \(\mathcal I_Y\) there exists a sufficiently large index \(k \in \mathcal I_X\) making the composition \(X^{(k)} \rar X^{(f^*(i))} \rar Y^{(i)}\) equal to \(X^{(k)} \rar X^{(f^*(j))} \rar Y^{(j)} \rar Y^{(i)}\) (here \(f^*\) is not a functor between index categories). A composition of pre-morphisms \(f \colon X^{(\infty)} \rar Y^{(\infty)}\) and \(g \colon Y^{(\infty)} \rar Z^{(\infty)}\) is the pre-morphism \(g \circ f\), where \((g \circ f)^*(i) = f^*(g^*(i))\) and \((g \circ f)^{(i)} = g^{(i)} \circ f^{(g^*(i))}\). Two parallel pre-morphisms \(f, g \colon X^{(\infty)} \rar Y^{(\infty)}\) are called equivalent if for every \(i \in \mathcal I_Y\) there exists a sufficiently large index \(j \in \mathcal I_X\) making the composition \(X^{(j)} \rar X^{(f^*(i))} \rar Y^{(i)}\) equal to \(X^{(j)} \rar X^{(g^*(i))} \rar Y^{(i)}\). Finally, a morphism \(X^{(\infty)} \rar Y^{(\infty)}\) is an equivalence class of pre-morphisms. Note that equivalence is preserved under composition.
+
+The category \(\mathcal C\) embeds into \(\Pro(\mathcal C)\) (i.e. there is a fully faithful functor between them), because we may consider every object from \(\mathcal C\) as a pro-object with a single index and a single morphism between indices. So \(\Pro(\mathcal C)(X, Y) \cong \mathcal C(X, Y)\), \(\Pro(\mathcal C)(X^{(\infty)}, Y) \cong \varinjlim_{i \in \mathcal I_X} \mathcal C(X^{(i)}, Y)\), and \(\Pro(\mathcal C)(X, Y^{(\infty)}) \cong \varprojlim_{i \in \mathcal I_Y} \mathcal C(X, Y^{(i)})\). Also \(X^{(\infty)}\) is the projective limit of \(X^{(i)}\) in the category \(\Pro(\mathcal C)\).
+
+The category of pro-sets \(\Pro(\Set)\) has all finite limits by \cite{CategoryTextbook}, proposition 6.1.18. If \(X^{(\infty)}\) and \(Y^{(\infty)}\) are pro-sets with the same index category \(\mathcal I\), then we may construct their product \(Z^{(\infty)}\) as follows. The index category of \(Z^{(\infty)}\) is \(\mathcal I\), \(Z^{(i)} = X^{(i)} \times Y^{(i)}\), the projection \(Z^{(\infty)} \rar X^{(\infty)}\) is given by the pre-morphism \(\pi_X^*(i) = i\), \(\pi_X^{(i)}(x^{(i)}, y^{(i)}) = x^{(i)}\) for \(x^{(i)} \in X^{(i)}\) and \(y^{(i)} \in Y^{(i)}\), and similarly for the projection \(Z^{(\infty)} \rar Y^{(\infty)}\). Also the diagonal morphism \(X^{(\infty)} \rar X^{(\infty)} \times X^{(\infty)}\) is given by the pre-morphism \(\Delta^*(i) = i\), \(\Delta^{(i)}(x^{(i)}) = (x^{(i)}, x^{(i)})\) for \(x^{(i)} \in X^{(i)}\).
+
+Hence we may consider algebraic objects in \(\Pro(\Set)\) such as rings and groups. Any algebraic formula (say, the commutator or a polynomial with integer coefficients) defines a morphism in \(\Pro(\Set)\) from a product of algebraic objects to an algebraic object. If \(a^{(\infty)}\) is a variable in such a formula, then \(a^{(\infty)} \in X^{(\infty)}\) means that \(X^{(\infty)}\) is the domain of \(a^{(\infty)}\).
+
+The category of pro-groups \(\Pro(\Group)\) embeds into \(\Pro(\Set)\). Every pro-group is a group object in \(\Pro(\Set)\). It is easy to see that a morphism \(f \in \Pro(\Set)(G^{(\infty)}, H^{(\infty)})\) between pro-groups comes from \(\Pro(\Group)\) if and only if it is a morphism of group objects.
+
+Now let us return to the Steinberg groups. From now on suppose that \(R\) is a \(K\)-algebra for some commutative unital ring \(K\) and fix a multiplicative subset \(S \subseteq K\). Then there is the localization map \(\Psi \colon R \rar S^{-1} R\), where \(S^{-1} R\) is an \(S^{-1} K\)-algebra with a complete family of full orthogonal idempotents. We construct a filtered category \(\mathcal S\). Its objects are the elements of \(S\), its morphisms \(s \rar s'\) are all \(s'' \in S\) such that \(ss'' = s'\), composition and the identity morphisms are obvious. By default, our pro-sets have \(\mathcal S\) as the category of indices.
+
+Recall the definition of homotopes from non-associative algebra. The \(s\)-homotope of \(R\) is the non-unital ring \(R^{(s)} = \{a^{(s)} \mid s \in R\}\) with the addition \(a^{(s)} + b^{(s)} = (a + b)^{(s)}\) and the multiplication \(a^{(s)} b^{(s)} = (asb)^{(s)}\) for \(a, b \in R\). We need only the case \(s \in S\), so \(s\) commutes with \(R\). Then \(R^{(s)}\) is even a \(K\)-algebra with \(ka^{(s)} = (ka)^{(s)}\) for \(k \in K\) and \(a \in R\). If \(s, s' \in S\), then there is a homomorphism of \(K\)-algebras \(R^{(ss')} \rar R^{(s')}, a^{(ss')} \mapsto (as)^{(s')}\). There is a canonical decomposition \(R^{(s)} = \bigoplus_{i, j = 1}^n R^{(s)}_{ij}\), where \(R^{(s)}_{ij} = \{a^{(s)} \mid a \in R_{ij}\}\).
+
+Let \(R^{(\infty)}\) be the formal projective limit of \(R^{(s)}\) for \(s \in \mathcal S\), it is a non-unital ring object in \(\Pro(\Set)\). Clearly, \(R^{(\infty)} = \bigoplus_{i, j = 1}^n R^{(\infty)}_{ij}\), where \(R^{(\infty)}_{ij}\) is the formal projective limit of \(R^{(s)}_{ij}\). It is convenient to sometimes write the elements of \(R_{ij}^{(s)} \times R_{jk}^{(s)}\) as \(a^{(s)} \otimes b^{(s)}\) and the variables with the domain \(R_{ij}^{(\infty)} \times R_{jk}^{(\infty)}\) as \(a^{(\infty)} \otimes b^{(\infty)}\), so the multiplication morphisms are \(R_{ij}^{(\infty)} \times R_{jk}^{(\infty)} \rar R_{ik}^{(\infty)}, a^{(\infty)} \otimes b^{(\infty)} \mapsto a^{(\infty)} b^{(\infty)}\) (this is actually a notation of the morphism, not the definition).
+
+Note that if \(e_1, \ldots, e_{n - 2}, e_\infty = e_{n - 1} + e_n\) is another family of idempotents, then \(R_{i\infty}^{(\infty)} \cong R_{i, n - 1}^{(\infty)} \oplus R_{in}^{(\infty)}\) for \(i < n - 1\), \(R_{\infty j}^{(\infty)} \cong R_{n - 1, j}^{(\infty)} \oplus R_{nj}^{(\infty)}\) for \(j < n - 1\), and \(R_{\infty\infty}^{(\infty)} \cong R_{n - 1, n - 1}^{(\infty)} \oplus R_{n - 1, n}^{(\infty)} \oplus R_{n, n - 1}^{(\infty)} \oplus R_{nn}^{(\infty)}\).
+
+Recall that a morphism \(f \in \mathcal C(X, Y)\) is a split epimorphism if it admits a section. Split epimorphisms are preserved under pullbacks. The following lemmas essentially say that \(R_{ik}^{(\infty)} \cong R_{ij}^{(\infty)} \otimes_{R_{jj}^{(\infty)}} R_{jk}^{(\infty)}\) as pro-groups, though we do not define tensor products of abelian pro-groups.
+
+\begin{lemma}\label{RingGeneration}
+Let \(i, j, k \in \{1, \ldots, n\}\) be indices. Then there is a positive integer \(N\) such that the morphism 
+\[m_N \colon \prod_{p = 1}^N \bigl(R_{ij}^{(\infty)} \times R_{jk}^{(\infty)}\bigr) \rar R_{ik}^{(\infty)}, \enskip \bigl(a_p^{(\infty)} \otimes b_p^{(\infty)}\bigr)_{p = 1}^N \mapsto \sum_{p = 1}^N a_p^{(\infty)} b_p^{(\infty)}\]
+is a split epimorphism of pro-sets.
+\end{lemma}
+\begin{proof}
+Let \(1 = \sum_{p = 1}^N x_p e_j y_p\) for some \(x_p, y_p \in R\), such a decomposition exists since \(e_j\) is full. Consider a pre-morphism of pro-sets
+\[u \colon R^{(\infty)}_{ik} \rar \prod_{p = 1}^N \bigl(R^{(\infty)}_{ij} \times R^{(\infty)}_{jk}\bigr), \enskip u^*(s) = s^2, \enskip u^{(s)} \colon c^{(s^2)} \mapsto \bigl((e_i x_p)^{(s)} \otimes (y_p c)^{(s)}\bigr)_{p = 1}^N.\]
+Clearly, this is indeed a pre-morphism. Moreover,
+\[
+m_N^{(s)}\bigl(u^{(s)}\bigl(c^{(s^2)}\bigr)\bigr) = \sum_{p = 1}^N (e_i x_p)^{(s)} (y_p c)^{(s)} = (sc)^{(s)}.\qedhere
+\]
+\end{proof}
+
+\begin{lemma}\label{RingPresentation}
+Let \(i, j, k \in \{1, \ldots, n\}\) be indices, \(G^{(\infty)}\) be a pro-group, and \(g \colon R_{ij}^{(\infty)} \times R_{jk}^{(\infty)} \rar G^{(\infty)}\) be a morphism of pro-sets. Then there is a morphism \(f \colon R_{ik}^{(\infty)} \rar G^{(\infty)}\) of pro-groups such that
+\[g\bigl(a^{(\infty)} \otimes b^{(\infty)}\bigr) = f\bigl(a^{(\infty)} b^{(\infty)}\bigr)\]
+if and only if \(g\) satisfies the identities
+\begin{itemize}
+\item \(\bigl[g\bigl(a_1^{(\infty)} \otimes b_1^{(\infty)}\bigr), g\bigl(a_2^{(\infty)} \otimes b_2^{(\infty)}\bigr)\bigr] = 1\);
+\item \(g\bigl(\bigl(a_1^{(\infty)} + a_2^{(\infty)}\bigr) \otimes b^{(\infty)}\bigr) = g\bigl(a_1^{(\infty)} \otimes b^{(\infty)}\bigr)\, g\bigl(a_2^{(\infty)} \otimes b^{(\infty)}\bigr)\);
+\item \(g\bigl(a^{(\infty)} \otimes \bigl(b_1^{(\infty)} + b_2^{(\infty)}\bigr)\bigr) = g\bigl(a^{(\infty)} \otimes b_1^{(\infty)}\bigr)\, g\bigl(a^{(\infty)} \otimes b_2^{(\infty)}\bigr)\);
+\item \(g\bigl(a^{(\infty)} b^{(\infty)} \otimes c^{(\infty)}\bigr) = g\bigl(a^{(\infty)} \otimes b^{(\infty)} c^{(\infty)}\bigr)\) for \(a^{(\infty)} \in R_{ij}^{(\infty)}\), \(b^{(\infty)} \in R_{jj}^{(\infty)}\), \(c^{(\infty)} \in R_{jk}^{(\infty)}\).
+\end{itemize}
+\end{lemma}
+\begin{proof}
+The necessity of the identities is clear. Since such \(f\) is unique by lemma \ref{RingGeneration}, it suffices to consider a group \(G\) instead of a pro-group. Let \(1 = \sum_{p = 1}^N x_p e_j y_p\) for some \(x_p, y_p \in R\). Take a morphism \(g\) satisfying the identities. The morphism \(g\) is given by a map \(g' \colon R_{ij}^{(s)} \times R_{jk}^{(s)} \rar G\) for sufficiently large \(s \in S\) satisfying the first three identities and the identity 
+\[g'\bigl((asb)^{(s)} \otimes c^{(s)}\bigr) = g'\bigl(a^{(s)} \otimes (bsc)^{(s)}\bigr)\]
+for all \(a \in R_{ij}\), \(b \in R_{jj}\), \(c \in R_{jk}\). Consider the map \(f' \colon R_{ik}^{(s^2)} \rar G\) given by
+\[f'\bigl(c^{(s^2)}\bigr) = \prod_p g'\bigl((e_i x_p)^{(s)} \otimes (y_p c)^{(s)}\bigr),\]
+it is a homomorphism by the first and the third identites. For all \(a \in R_{ij}\) and \(b \in R_{jk}\) we have
+\begin{align*}
+f'\bigl(a^{(s^2)} b^{(s^2)})
+&= \prod_p g' \bigl( (e_ix)^{(s)}_p \otimes (s^2 y_p ab)^{(s)} \bigr) =\\
+&\quad \prod_p g' \bigl( (e_i x_p s y_p a)^{(s)} \otimes (sb)^{(s)} \bigr) =\\
+&\quad g'\bigl(a^{(s^2)} \otimes b^{(s^2)}\bigr)
+\end{align*}
+by the second and the last identities. It is clear that \(f'\) gives the required morphism \(f\) of pro-groups.
+\end{proof}
+
+
+
+\end{document}

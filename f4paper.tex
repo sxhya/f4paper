@@ -8,6 +8,15 @@
 \usepackage{amsthm}
 \usepackage{amscd}
 \usepackage{alltt}
+\usepackage{xcolor}
+
+\usepackage[backend=biber, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
+\addbibresource{f4paper.bib}
+\renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
+\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+\newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{https://dx.doi.org/\thefield{doi}}{#1}}}
+\DeclareFieldFormat[article, inproceedings, inbook, book, online]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+\renewcommand*{\bibfont}{\footnotesize}
 
 \newtheorem{lemma}{Lemma}
 \newtheorem{prop}{Proposition}
@@ -34,6 +43,8 @@
 
 \newcommand{\Set}{\mathbf{Set}}
 \newcommand{\Group}{\mathbf{Grp}}
+\newcommand{\Fun}{\mathbf{Fun}}
+\newcommand{\op}{\mathrm{op}}
 \DeclareMathOperator{\Pro}{Pro}
 
 \begin{document}
@@ -41,20 +52,49 @@
 
 
 \section{Pro-objects}
+Let \(\mathcal C\) be an arbitrary category.
+In this section we recall the construction of the pro-completion of \(\mathcal C\) (cf. \cite[Section~6.1]{SK06}).
 
-Recall a construction of the pro-completion of a given category \(\mathcal C\) from \cite{}, section 6.1. A small category \(\mathcal I\) is called filtered if it is non-empty, for any two objects \(i, j\) there is a diagram \(i \rar j \lar k\) in \(\mathcal I\), and every pair of parallel morphisms \(i \rightrightarrows j\) is equalized by some morphism \(j \rar k\) in \(\mathcal I\). A pro-object in \(\mathcal C\) is a contravariant functor \(X^{(\infty)}\) from a filtered category \(\mathcal I_X\) to \(\mathcal C\). Objects of \(\mathcal I_X\) are called indices of \(X^{(\infty)}\). We write \(X^{(i)}\) for the values of \(X^{(\infty)}\) on indices \(i\) and omit the values of \(X^{(\infty)}\) on morphisms \(i \rar j\) in our formulas if the morphism \(i \rar j\) is clear from the context (for example, if \(j\) is a sufficiently large index). So a pro-object \(X^{(\infty)}\) is the formal projective limit of \(X^{(i)}\). We use the notation with upper indices since our pro-objects consist of homotopes of various algebraic objects.
+Recall that a nonempty small category \(\mathcal I\) is called {\it filtered} if
+\begin{itemize}
+ \item for any two objects \(i, k \in Ob(\mathcal{I})\) there is a diagram \(i \rar j \lar k\) in \(\mathcal I\);
+ \item every two parallel morphisms \(i \rightrightarrows j\) are equalized by some morphism \(j \rar k\) in \(\mathcal I\).
+\end{itemize}
+A {\it pro-object} in \(\mathcal C\) is, by definition, a functor $X^{(\infty)}\colon \mathcal{I}_X^{\op} \to \mathcal{C}$, i.\,e. a contravariant functor from a filtered category \(\mathcal I_X\), called {\it the category of indices of $X^{(\infty)}$}, to the category \(\mathcal C\). %The objects of \(\mathcal I_X\) are called {\it the indices of \(X^{(\infty)}\)}.
 
-The category of pro-objects is denoted by \(\Pro(\mathcal C)\). By definition,
-\[
-\Pro(\mathcal C)(X^{(\infty)}, Y^{(\infty)}) = \varprojlim_{j \in \mathcal I_Y} \varinjlim_{i \in \mathcal I_X} \mathcal C(X^{(i)}, Y^{(j)}).
-\]
-There is a more explicit description of morphisms in \(\Pro(\mathcal C)\). We say that a pre-morphism \(f \colon X^{(\infty)} \rar Y^{(\infty)}\) consists of a function \(f^*\) from the set of indices of \(Y\) to the set of indices of \(X\), and of morphisms \(f^{(i)} \colon X^{(f^*(i))} \rar Y^{(i)}\) for all \(i \in \mathcal I_Y\) such that for any morphism \(i \rar j\) in \(\mathcal I_Y\) there exists a sufficiently large index \(k \in \mathcal I_X\) making the composition \(X^{(k)} \rar X^{(f^*(i))} \rar Y^{(i)}\) equal to \(X^{(k)} \rar X^{(f^*(j))} \rar Y^{(j)} \rar Y^{(i)}\) (here \(f^*\) is not a functor between index categories). A composition of pre-morphisms \(f \colon X^{(\infty)} \rar Y^{(\infty)}\) and \(g \colon Y^{(\infty)} \rar Z^{(\infty)}\) is the pre-morphism \(g \circ f\), where \((g \circ f)^*(i) = f^*(g^*(i))\) and \((g \circ f)^{(i)} = g^{(i)} \circ f^{(g^*(i))}\). Two parallel pre-morphisms \(f, g \colon X^{(\infty)} \rar Y^{(\infty)}\) are called equivalent if for every \(i \in \mathcal I_Y\) there exists a sufficiently large index \(j \in \mathcal I_X\) making the composition \(X^{(j)} \rar X^{(f^*(i))} \rar Y^{(i)}\) equal to \(X^{(j)} \rar X^{(g^*(i))} \rar Y^{(i)}\). Finally, a morphism \(X^{(\infty)} \rar Y^{(\infty)}\) is an equivalence class of pre-morphisms. Note that equivalence is preserved under composition.
+We denote by \(X^{(i)}\) the value of \(X^{(\infty)}\) on an index \(i\) and suppress the notation for the value of \(X^{(\infty)}\) on a morphism \(i \rar j\) if it is clear from the context.
+%(for example, if \(j\) is a sufficiently large index). 
+%Thus, a pro-object \(X^{(\infty)}\) is the formal projective limit of \(X^{(i)}\). 
+%We use the notation with upper indices since our pro-objects consist of homotopes of various algebraic objects.
 
-The category \(\mathcal C\) embeds into \(\Pro(\mathcal C)\) (i.e. there is a fully faithful functor between them), because we may consider every object from \(\mathcal C\) as a pro-object with a single index and a single morphism between indices. So \(\Pro(\mathcal C)(X, Y) \cong \mathcal C(X, Y)\), \(\Pro(\mathcal C)(X^{(\infty)}, Y) \cong \varinjlim_{i \in \mathcal I_X} \mathcal C(X^{(i)}, Y)\), and \(\Pro(\mathcal C)(X, Y^{(\infty)}) \cong \varprojlim_{i \in \mathcal I_Y} \mathcal C(X, Y^{(i)})\). Also \(X^{(\infty)}\) is the projective limit of \(X^{(i)}\) in the category \(\Pro(\mathcal C)\).
+The category of pro-objects is denoted by \(\Pro(\mathcal C)\). The hom-sets in this category are given by the formula
+\begin{equation} \label{eq:pro-c-hom} \Pro(\mathcal C)(X^{(\infty)}, Y^{(\infty)}) = \varprojlim_{j \in \mathcal I_Y} \varinjlim_{i \in \mathcal I_X} \mathcal C(X^{(i)}, Y^{(j)}). \end{equation}
+Let us recall a more explicit description of morphisms in \(\Pro(\mathcal C)\). 
+By definition, a {\it pre-morphism} \(f \colon X^{(\infty)} \rar Y^{(\infty)}\) consists of the following data:
+\begin{itemize}
+\item a set-theoretic function \(f^* \colon Ob(\mathcal{I_Y}) \to Ob(\mathcal{I_X})\);
+\item a collection of morphisms \(f^{(i)} \colon X^{(f^*(i))} \rar Y^{(i)}\) in $\mathcal{C}$ parametrized by $i \in Ob(\mathcal{I_Y})$. These morphisms are required to satisfy the following additional assumption: for every morphism \(i \rar j\) in \(\mathcal I_Y\) there exists a sufficiently large index \(k \in Ob(\mathcal{I_X})\) such that the composite morphisms \(X^{(k)} \rar X^{(f^*(i))} \rar Y^{(i)}\) and \(X^{(k)} \rar X^{(f^*(j))} \rar Y^{(j)} \rar Y^{(i)}\) are equal. \end{itemize}
+The composition of two pre-morphisms \(f \colon X^{(\infty)} \rar Y^{(\infty)}\) and \(g \colon Y^{(\infty)} \rar Z^{(\infty)}\) is defined as the pre-morphism \(g \circ f\), where \((g \circ f)^*(i) = f^*(g^*(i))\) and \((g \circ f)^{(i)} = g^{(i)} \circ f^{(g^*(i))}\).
 
-The category of pro-sets \(\Pro(\Set)\) has all finite limits by \cite{}, proposition 6.1.18. If \(X^{(\infty)}\) and \(Y^{(\infty)}\) are pro-sets with the same index category \(\mathcal I\), then we may construct their product \(Z^{(\infty)}\) as follows. The index category of \(Z^{(\infty)}\) is \(\mathcal I\), \(Z^{(i)} = X^{(i)} \times Y^{(i)}\), the projection \(Z^{(\infty)} \rar X^{(\infty)}\) is given by the pre-morphism \(\pi_X^*(i) = i\), \(\pi_X^{(i)}(x^{(i)}, y^{(i)}) = x^{(i)}\) for \(x^{(i)} \in X^{(i)}\) and \(y^{(i)} \in Y^{(i)}\), and similarly for the projection \(Z^{(\infty)} \rar Y^{(\infty)}\). Also the diagonal morphism \(X^{(\infty)} \rar X^{(\infty)} \times X^{(\infty)}\) is given by the pre-morphism \(\Delta^*(i) = i\), \(\Delta^{(i)}(x^{(i)}) = (x^{(i)}, x^{(i)})\) for \(x^{(i)} \in X^{(i)}\).
+Two parallel pre-morphisms \(f, g \colon X^{(\infty)} \rar Y^{(\infty)}\) are called equivalent if for every \(i \in Ob(\mathcal I_Y)\) there exists a sufficiently large index \(j \in Ob(\mathcal I_X)\) such that the composite morphisms \(X^{(j)} \rar X^{(f^*(i))} \rar Y^{(i)}\) and \(X^{(j)} \rar X^{(g^*(i))} \rar Y^{(i)}\) are equal. Finally, a {\it morphism} \(X^{(\infty)} \rar Y^{(\infty)}\) is an equivalence class of pre-morphisms. Note that the equivalence relation is preserved by the composition operation.
 
-Hence we may consider algebraic objects in \(\Pro(\Set)\) such as rings and groups. Any algebraic formula (say, the commutator or a polynomial with integer coefficients) defines a morphism in \(\Pro(\Set)\) from a product of algebraic objects to an algebraic object. If \(a^{(\infty)}\) is a variable in such a formula, then \(a^{(\infty)} \in X^{(\infty)}\) means that \(X^{(\infty)}\) is the domain of \(a^{(\infty)}\).
+There is a fully faithful functor $\mathcal{C} \to \Pro(\mathcal{C})$ sending \(X \in Ob(\mathcal C)\) to the pro-object $X \colon \mathbf{1}^\op \to \mathcal{C}$. It is clear from~\eqref{eq:pro-c-hom}  that
+\begin{align}
+ \Pro(\mathcal C)(X, Y) &\cong \mathcal C(X, Y);\\
+ \Pro(\mathcal C)(X^{(\infty)}, Y) &\cong \varinjlim_{i \in \mathcal I_X} \mathcal C(X^{(i)}, Y); \label{eq:pro-c-hom-2}\\
+ \Pro(\mathcal C)(X, Y^{(\infty)}) &\cong \varprojlim_{i \in \mathcal I_Y} \mathcal C(X, Y^{(i)}).
+\end{align}
+It is also clear from~\eqref{eq:pro-c-hom} and~\eqref{eq:pro-c-hom-2} that \(X^{(\infty)}\) is the projective limit of \(X^{(i)}\) in the category \(\Pro(\mathcal C)\).
+
+The category of pro-sets \(\Pro(\Set)\) has all finite limits by \cite[Prop.~6.1.18]{SK06}. Let us describe an explicit construction of limits in one important special case. Let $X^{(\infty)}, Y^{(\infty)} \colon \mathcal{I}^\op \to \Set\) be a pair of pro-sets with the same index category. Recall that the pointwise product of functors $X^{(\infty)} \times Y^{(\infty)} \colon \mathcal{I}^\op \to \Set$ is given by $(X^{(\infty)} \times Y^{(\infty)})^{(i)} = X^{(i)} \times Y^{(i)}$. Clearly, $X^\infty \times Y^\infty$ is a product of $X^{(\infty)}$ and $Y^{(\infty)}$  in the category $\Fun(\mathcal{I}^\op, \Set)$. 
+
+There is an obvious identity-on-objects functor $\Fun(\mathcal{I}^\op, \Set) \to \Pro(\Set)$ sending a natural transformation $\varphi \colon X^{(\infty)} \to Y^{(\infty)}$ to the morphism of pro-sets given by the pre-morphism $\varphi^* = \mathrm{id}_{Ob(\mathcal{I})}$, $\varphi^{(i)} = \varphi_i$. The diagonal morphism $\Delta \colon X^{(\infty)} \to X^{(\infty)} \times X^{(\infty)}$ and the canonical projection morphisms \(\pi_X\colon X^{(\infty)} \times Y^{(\infty)} \to X^{(\infty)}, \pi_Y\colon X^{(\infty)} \times Y^{(\infty)} \to Y^{(\infty)}\) can be defined in the category $\Pro(\Set)$ as the images of the corresponding natural transformations in $\Fun(\mathcal{I}^\op, \Set)$ under this functor.
+
+We claim that the point-wise product $X^{(\infty)} \times Y^{(\infty)}$ satisfies the universal property of products in the category $\Pro(\Set)$. Indeed, this follows from~\eqref{eq:pro-c-hom} and the fact that filtered colimits commute with finite limits. This argument also shows that arbitrary finite limits of pro-sets with the same index category can be computed pointwise.
+
+Since the category $\Pro(\Set)$ admits finite products, we may speak of algebraic objects in \(\Pro(\Set)\) (e.\,g. group and ring objects).
+Any algebraic formula (say, a commutator or a polynomial with integer coefficients) defines a morphism in \(\Pro(\Set)\) from a product of copies of an algebraic object to this algebraic object. 
+If \(a^{(\infty)}\) is a variable in such a formula, then the notation \(a^{(\infty)} \in X^{(\infty)}\) means that \(X^{(\infty)}\) is the domain of \(a^{(\infty)}\).
 
 The category of pro-groups \(\Pro(\Group)\) embeds into \(\Pro(\Set)\). Every pro-group is a group object in \(\Pro(\Set)\). It is easy to see that a morphism \(f \in \Pro(\Set)(G^{(\infty)}, H^{(\infty)})\) between pro-groups comes from \(\Pro(\Group)\) if and only if it is a morphism of group objects.
 
@@ -106,6 +146,5 @@ f'\bigl(a^{(s^2)} b^{(s^2)})
 by the second and the last identities. It is clear that \(f'\) gives the required morphism \(f\) of pro-groups.
 \end{proof}
 
-
-
+\printbibliography
 \end{document}

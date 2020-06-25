@@ -43,6 +43,7 @@
 
 \newcommand{\Set}{\mathbf{Set}}
 \newcommand{\Group}{\mathbf{Grp}}
+\newcommand{\Rng}{\mathbf{Rng}}
 \newcommand{\Fun}{\mathbf{Fun}}
 \newcommand{\op}{\mathrm{op}}
 \DeclareMathOperator{\Pro}{Pro}
@@ -51,7 +52,8 @@
 
 
 
-\section{Pro-objects}
+\section{Preliminaries}
+\subsection{Generalities on pro-objects}
 Let \(\mathcal C\) be an arbitrary category.
 In this section we recall the construction of the pro-completion of \(\mathcal C\) (cf. \cite[Section~6.1]{SK06}).
 
@@ -96,24 +98,28 @@ Since the category $\Pro(\Set)$ admits finite products, we may speak of algebrai
 Any algebraic formula (say, a commutator or a polynomial with integer coefficients) defines a morphism in \(\Pro(\Set)\) from a product of copies of an algebraic object to this algebraic object. 
 If \(a^{(\infty)}\) is a variable in such a formula, then the notation \(a^{(\infty)} \in X^{(\infty)}\) means that \(X^{(\infty)}\) is the domain of \(a^{(\infty)}\).
 
-The category of pro-groups \(\Pro(\Group)\) embeds into \(\Pro(\Set)\). Every pro-group is a group object in \(\Pro(\Set)\). It is easy to see that a morphism \(f \in \Pro(\Set)(G^{(\infty)}, H^{(\infty)})\) between pro-groups comes from \(\Pro(\Group)\) if and only if it is a morphism of group objects.
+The category of pro-groups \(\Pro(\Group)\) embeds into \(\Pro(\Set)\). Every pro-group is a group object in \(\Pro(\Set)\). It is easy to see that a morphism \(f \in \Pro(\Set)(G^{(\infty)}, H^{(\infty)})\) between pro-groups comes from \(\Pro(\Group)\) if and only if it is a morphism of group objects. Thus, $\Pro(\Group)$ is a full subcategory of the category of group objects in $\Pro(\Set)$.
 
-Now let us return to the Steinberg groups. From now on fix a multiplicative subset \(S \subseteq K\). We construct a filtered category \(\mathcal S\). Its objects are the elements of \(S\), its morphisms \(s \rar s'\) are all \(s'' \in S\) such that \(ss'' = s'\), composition and the identity morphisms are obvious. By default, our pro-sets have \(\mathcal S\) as the category of indices.
+\subsection{Ring homotopes and pro-rings}
+Let $R$ be an arbitrary unital ring and let \(S\) be some fixed multiplicative subset of $R$ containing a unit. Denote by $\mathcal{S}$ the category, whose objects are the elements of \(S\) and whose morphisms \(s \rar s'\) are all \(s'' \in S\) such that \(ss'' = s'\). The composition and the identity morphisms are induced by the ring structure on $R$. It is clear that $\mathcal{S}$ is a filtered category. In the sequel, unless stated otherwise we consider pro-sets with \(\mathcal S\) as their category of indices.
 
-Recall the definition of homotopes from non-associative algebra. The \(s\)-homotope of \(K\) is the non-unital ring \(K^{(s)} = \{a^{(s)} \mid a \in K\}\) with the addition \(a^{(s)} + b^{(s)} = (a + b)^{(s)}\) and the multiplication \(a^{(s)} b^{(s)} = (asb)^{(s)}\) for \(a, b \in K\). It is even a \(K\)-algebra with \(ab^{(s)} = (ab)^{(s)}\) for \(a, b \in K\). If \(s, s' \in S\), then there is a homomorphism of \(K\)-algebras \(K^{(ss')} \rar K^{(s')}, a^{(ss')} \mapsto (as)^{(s')}\).
+We introduce the notion of a {\it homotope} of a ring inspired by a similar notion from nonassociative algebra (cf. McCrimmon?). Let $s$ be an element of $R$.  By definition, the {\it \(s\)-homotope} of \(R\) is the non-unital ring (also called rng) \(R^{(s)} = \{a^{(s)} \mid a \in R\}\) with the operations of addition and multiplication given by
+\[ a^{(s)} + b^{(s)} = (a + b)^{(s)},\ \ a^{(s)} b^{(s)} = (asb)^{(s)},\ a, b\in R.\]
+Clearly, $R^{(s)}$ has the structure of an \(R\)-algebra given by the formula \[a \cdot b^{(s)} = (ab)^{(s)},\ a, b \in R.\] For \(s, s' \in S\) there is a homomorphism of \(R\)-algebras \[R^{(ss')} \rar R^{(s')}, a^{(ss')} \mapsto (as)^{(s')}.\]
+Denote by \(R^{(\infty)}\) the formal projective limit of \(R^{(s)}\) for \(s \in Ob(\mathcal S)\). Thus, $R^{(\infty)}$ is an object of the category $\Pro(\Rng)$. It can also be considered as an rng object in \(\Pro(\Set)\). 
 
-Let \(K^{(\infty)}\) be the formal projective limit of \(K^{(s)}\) for \(s \in \mathcal S\), it is a non-unital ring object in \(\Pro(\Set)\). It is convenient to sometimes write the elements of \(K^{(s)} \times K^{(s)}\) as \(a^{(s)} \otimes b^{(s)}\) and the variables with the domain \(K^{(\infty)} \times K^{(\infty)}\) as \(a^{(\infty)} \otimes b^{(\infty)}\), so the multiplication morphism is \(K^{(\infty)} \times K^{(\infty)} \rar K^{(\infty)}, a^{(\infty)} \otimes b^{(\infty)} \mapsto a^{(\infty)} b^{(\infty)}\) (this is actually a notation of the morphism, not the definition).
+It will be convenient for us to use the notation \(a^{(s)} \otimes b^{(s)}\) for the elements of \(R^{(s)} \times R^{(s)}\) and the notation \(a^{(\infty)} \otimes b^{(\infty)}\) for the elements of \(R^{(\infty)} \times R^{(\infty)}\). We denote by $a^{(\infty)} b^{(\infty)}$ the image of \(a^{(\infty)} \otimes b^{(\infty)}\) under the rng multiplication morphism  \(R^{(\infty)} \times R^{(\infty)} \rar R^{(\infty)}\).
 
 Recall that a morphism \(f \in \mathcal C(X, Y)\) is a split epimorphism if it admits a section. Split epimorphisms are preserved under pullbacks.
 
 \begin{lemma}\label{RingGeneration}
-The multiplication morphism
-\[m \colon K^{(\infty)} \times K^{(\infty)} \rar K^{(\infty)}, \enskip a^{(\infty)} \otimes b^{(\infty)} \mapsto a^{(\infty)} b^{(\infty)}\]
+The rng multiplication morphism
+\[m \colon R^{(\infty)} \times R^{(\infty)} \rar R^{(\infty)}, \enskip a^{(\infty)} \otimes b^{(\infty)} \mapsto a^{(\infty)} b^{(\infty)}\]
 is a split epimorphism of pro-sets.
 \end{lemma}
 \begin{proof}
-Consider a pre-morphism of pro-sets
-\[u \colon K^{(\infty)} \rar K^{(\infty)} \times K^{(\infty)}, \enskip u^*(s) = s^2, \enskip u^{(s)} \colon c^{(s^2)} \mapsto 1^{(s)} \otimes c^{(s)}.\]
+Consider the following pre-morphism of pro-sets:
+\[u \colon R^{(\infty)} \rar R^{(\infty)} \times R^{(\infty)}, \enskip u^*(s) = s^2, \enskip u^{(s)} \colon c^{(s^2)} \mapsto 1^{(s)} \otimes c^{(s)}.\]
 Clearly, this is indeed a pre-morphism and
 \[
 m^{(s)}\bigl(u^{(s)}\bigl(c^{(s^2)}\bigr)\bigr) = 1^{(s)} c^{(s)} = (sc)^{(s)}.\qedhere

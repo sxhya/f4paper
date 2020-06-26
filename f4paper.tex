@@ -121,13 +121,12 @@ is a split epimorphism of pro-sets.
 Consider the following pre-morphism of pro-sets:
 \[u \colon R^{(\infty)} \rar R^{(\infty)} \times R^{(\infty)}, \enskip u^*(s) = s^2, \enskip u^{(s)} \colon c^{(s^2)} \mapsto 1^{(s)} \otimes c^{(s)}.\]
 Clearly, this is indeed a pre-morphism and
-\[
-m^{(s)}\bigl(u^{(s)}\bigl(c^{(s^2)}\bigr)\bigr) = 1^{(s)} c^{(s)} = (sc)^{(s)}.\qedhere
-\]
+\[m^{(s)}\bigl(u^{(s)}\bigl(c^{(s^2)}\bigr)\bigr) = 1^{(s)} c^{(s)} = (sc)^{(s)},\]
+which shows that $mu = \mathrm{id}_{R^{(\infty)}}$.
 \end{proof}
 
 \begin{lemma}\label{RingPresentation}
-Let \(G^{(\infty)}\) be a pro-group, \(g \colon K^{(\infty)} \times K^{(\infty)} \rar G^{(\infty)}\) be a morphism of pro-sets. There is a morphism \(f \colon K^{(\infty)} \rar G^{(\infty)}\) of pro-groups such that
+Let \(G^{(\infty)}\) be a pro-group, \(g \colon R^{(\infty)} \times R^{(\infty)} \rar G^{(\infty)}\) be a morphism of pro-sets. There is a morphism \(f \colon R^{(\infty)} \rar G^{(\infty)}\) of pro-groups such that
 \[g\bigl(a^{(\infty)} \otimes b^{(\infty)}\bigr) = f\bigl(a^{(\infty)} b^{(\infty)}\bigr)\]
 if and only if \(g\) satisfies the identities
 \begin{itemize}
@@ -138,18 +137,23 @@ if and only if \(g\) satisfies the identities
 \end{itemize}
 \end{lemma}
 \begin{proof}
-The necessity of the identities is clear. Since such \(f\) is unique by lemma \ref{RingGeneration}, it suffices to consider a group \(G\) instead of a pro-group. Take a morphism \(g\) satisfying the identities. It is given by a map \(g' \colon K^{(s)} \times K^{(s)} \rar G\) for sufficiently large \(s \in S\) satisfying the first three identities and the identity 
+The necessity of the identities is clear.
+By Lemma~\ref{RingGeneration} the morphism \(f\) is unique, so it suffices to show that it exists.
+It suffices to consider the case when \(G\) is a group. 
+Let \(g\) be a morphism satisfying the above identities.
+By definition, there exists $s\in S$ such that $g$ is given by a map \(g' \colon R^{(s)} \times R^{(s)} \rar G\) satisfying the first three identities and the identity 
 \[g'\bigl((asb)^{(s)} \otimes c^{(s)}\bigr) = g'\bigl(a^{(s)} \otimes (bsc)^{(s)}\bigr).\]
-Consider the map \(f' \colon K^{(s^2)} \rar G\) given by
+Consider the map \(f' \colon R^{(s^2)} \rar G\) given by
 \[f'\bigl(c^{(s^2)}\bigr) = g'\bigl(1^{(s)} \otimes c^{(s)}\bigr),\]
-it is a homomorphism by the first and the third identites. For all \(a, b \in K\) we have
+it is a homomorphism by the first and the third identities.
+From the last two identities we conclude that for all \(a, b \in R\) one has
 \begin{align*}
 f'\bigl(a^{(s^2)} b^{(s^2)})
 &= g' \bigl( 1^{(s)}_p \otimes (s^2 ab)^{(s)} \bigr) =\\
-&\quad g' \bigl( (sa)^{(s)} \otimes (sb)^{(s)} \bigr) =\\
-&\quad g' \bigl(a^{(s^2)} \otimes b^{(s^2)}\bigr)
+&= g' \bigl( (sa)^{(s)} \otimes (sb)^{(s)} \bigr) =\\
+&= g' \bigl(a^{(s^2)} \otimes b^{(s^2)}\bigr).
 \end{align*}
-by the second and the last identities. It is clear that \(f'\) gives the required morphism \(f\) of pro-groups.
+It is clear that \(f'\) gives the required morphism \(f\) of pro-groups.
 \end{proof}
 
 \printbibliography

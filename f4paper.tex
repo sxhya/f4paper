@@ -1,14 +1,9 @@
 \documentclass{article}
 
+\usepackage{amsmath, amssymb, amsthm, amscd, alltt, graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{amscd}
-\usepackage{alltt}
-\usepackage{xcolor}
+\usepackage[capitalise]{cleveref}
 
 \usepackage[backend=biber, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
 \addbibresource{f4paper.bib}
@@ -18,13 +13,17 @@
 \DeclareFieldFormat[article, inproceedings, inbook, book, online]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
 \renewcommand*{\bibfont}{\footnotesize}
 
-\newtheorem{lemma}{Lemma}
-\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma} \numberwithin{lemma}{section}
+\newtheorem{prop}{Proposition} \numberwithin{prop}{section}
 \newtheorem{theorem}{Theorem}
 \newtheorem*{theorem*}{Theorem}
 
-\newcommand{\rar}{\rightarrow}
-\newcommand{\lar}{\leftarrow}
+\theoremstyle{definition} 
+\newtheorem{df}[lemma]{Definition} \Crefname{df}{Definition}{Definitions}
+
+\theoremstyle{remark} 
+\newtheorem{rem}[lemma]{Remark}
+
 
 \DeclareMathOperator\mat{M}
 \DeclareMathOperator\elin{E}
@@ -35,6 +34,8 @@
 \DeclareMathOperator\glin{GL}
 \DeclareMathOperator\diag{D}
 \DeclareMathOperator\Jac{J}
+
+\newcommand{\lar}{\leftarrow}
 \newcommand{\leqt}{\trianglelefteq}
 \DeclareMathOperator{\Ad}{Ad}
 
@@ -50,8 +51,6 @@
 
 \begin{document}
 
-
-
 \section{Preliminaries}
 \subsection{Generalities on pro-objects}
 Let \(\mathcal C\) be an arbitrary category.
@@ -59,12 +58,12 @@ In this section we recall the construction of the pro-completion of \(\mathcal C
 
 Recall that a nonempty small category \(\mathcal I\) is called {\it filtered} if
 \begin{itemize}
- \item for any two objects \(i, k \in Ob(\mathcal{I})\) there is a diagram \(i \rar j \lar k\) in \(\mathcal I\);
- \item every two parallel morphisms \(i \rightrightarrows j\) are equalized by some morphism \(j \rar k\) in \(\mathcal I\).
+ \item for any two objects \(i, k \in Ob(\mathcal{I})\) there is a diagram \(i \to j \lar k\) in \(\mathcal I\);
+ \item every two parallel morphisms \(i \rightrightarrows j\) are equalized by some morphism \(j \to k\) in \(\mathcal I\).
 \end{itemize}
 A {\it pro-object} in \(\mathcal C\) is, by definition, a functor $X^{(\infty)}\colon \mathcal{I}_X^{\op} \to \mathcal{C}$, i.\,e. a contravariant functor from a filtered category \(\mathcal I_X\), called {\it the category of indices of $X^{(\infty)}$}, to the category \(\mathcal C\). %The objects of \(\mathcal I_X\) are called {\it the indices of \(X^{(\infty)}\)}.
 
-We denote by \(X^{(i)}\) the value of \(X^{(\infty)}\) on an index \(i\) and suppress the notation for the value of \(X^{(\infty)}\) on a morphism \(i \rar j\) if it is clear from the context.
+We denote by \(X^{(i)}\) the value of \(X^{(\infty)}\) on an index \(i\) and suppress the notation for the value of \(X^{(\infty)}\) on a morphism \(i \to j\) if it is clear from the context.
 %(for example, if \(j\) is a sufficiently large index). 
 %Thus, a pro-object \(X^{(\infty)}\) is the formal projective limit of \(X^{(i)}\). 
 %We use the notation with upper indices since our pro-objects consist of homotopes of various algebraic objects.
@@ -72,13 +71,13 @@ We denote by \(X^{(i)}\) the value of \(X^{(\infty)}\) on an index \(i\) and sup
 The category of pro-objects is denoted by \(\Pro(\mathcal C)\). The hom-sets in this category are given by the formula
 \begin{equation} \label{eq:pro-c-hom} \Pro(\mathcal C)(X^{(\infty)}, Y^{(\infty)}) = \varprojlim_{j \in \mathcal I_Y} \varinjlim_{i \in \mathcal I_X} \mathcal C(X^{(i)}, Y^{(j)}). \end{equation}
 Let us recall a more explicit description of morphisms in \(\Pro(\mathcal C)\). 
-By definition, a {\it pre-morphism} \(f \colon X^{(\infty)} \rar Y^{(\infty)}\) consists of the following data:
+By definition, a {\it pre-morphism} \(f \colon X^{(\infty)} \to Y^{(\infty)}\) consists of the following data:
 \begin{itemize}
 \item a set-theoretic function \(f^* \colon Ob(\mathcal{I_Y}) \to Ob(\mathcal{I_X})\);
-\item a collection of morphisms \(f^{(i)} \colon X^{(f^*(i))} \rar Y^{(i)}\) in $\mathcal{C}$ parametrized by $i \in Ob(\mathcal{I_Y})$. These morphisms are required to satisfy the following additional assumption: for every morphism \(i \rar j\) in \(\mathcal I_Y\) there exists a sufficiently large index \(k \in Ob(\mathcal{I_X})\) such that the composite morphisms \(X^{(k)} \rar X^{(f^*(i))} \rar Y^{(i)}\) and \(X^{(k)} \rar X^{(f^*(j))} \rar Y^{(j)} \rar Y^{(i)}\) are equal. \end{itemize}
-The composition of two pre-morphisms \(f \colon X^{(\infty)} \rar Y^{(\infty)}\) and \(g \colon Y^{(\infty)} \rar Z^{(\infty)}\) is defined as the pre-morphism \(g \circ f\), where \((g \circ f)^*(i) = f^*(g^*(i))\) and \((g \circ f)^{(i)} = g^{(i)} \circ f^{(g^*(i))}\).
+\item a collection of morphisms \(f^{(i)} \colon X^{(f^*(i))} \to Y^{(i)}\) in $\mathcal{C}$ parametrized by $i \in Ob(\mathcal{I_Y})$. These morphisms are required to satisfy the following additional assumption: for every morphism \(i \to j\) in \(\mathcal I_Y\) there exists a sufficiently large index \(k \in Ob(\mathcal{I_X})\) such that the composite morphisms \(X^{(k)} \to X^{(f^*(i))} \to Y^{(i)}\) and \(X^{(k)} \to X^{(f^*(j))} \to Y^{(j)} \to Y^{(i)}\) are equal. \end{itemize}
+The composition of two pre-morphisms \(f \colon X^{(\infty)} \to Y^{(\infty)}\) and \(g \colon Y^{(\infty)} \to Z^{(\infty)}\) is defined as the pre-morphism \(g \circ f\), where \((g \circ f)^*(i) = f^*(g^*(i))\) and \((g \circ f)^{(i)} = g^{(i)} \circ f^{(g^*(i))}\).
 
-Two parallel pre-morphisms \(f, g \colon X^{(\infty)} \rar Y^{(\infty)}\) are called equivalent if for every \(i \in Ob(\mathcal I_Y)\) there exists a sufficiently large index \(j \in Ob(\mathcal I_X)\) such that the composite morphisms \(X^{(j)} \rar X^{(f^*(i))} \rar Y^{(i)}\) and \(X^{(j)} \rar X^{(g^*(i))} \rar Y^{(i)}\) are equal. Finally, a {\it morphism} \(X^{(\infty)} \rar Y^{(\infty)}\) is an equivalence class of pre-morphisms. Note that the equivalence relation is preserved by the composition operation.
+Two parallel pre-morphisms \(f, g \colon X^{(\infty)} \to Y^{(\infty)}\) are called equivalent if for every \(i \in Ob(\mathcal I_Y)\) there exists a sufficiently large index \(j \in Ob(\mathcal I_X)\) such that the composite morphisms \(X^{(j)} \to X^{(f^*(i))} \to Y^{(i)}\) and \(X^{(j)} \to X^{(g^*(i))} \to Y^{(i)}\) are equal. Finally, a {\it morphism} \(X^{(\infty)} \to Y^{(\infty)}\) is an equivalence class of pre-morphisms. Note that the equivalence relation is preserved by the composition operation.
 
 There is a fully faithful functor $\mathcal{C} \to \Pro(\mathcal{C})$ sending \(X \in Ob(\mathcal C)\) to the pro-object $X \colon \mathbf{1}^\op \to \mathcal{C}$. It is clear from~\eqref{eq:pro-c-hom}  that
 \begin{align}
@@ -95,38 +94,58 @@ There is an obvious identity-on-objects functor $\Fun(\mathcal{I}^\op, \Set) \to
 We claim that the point-wise product $X^{(\infty)} \times Y^{(\infty)}$ satisfies the universal property of products in the category $\Pro(\Set)$. Indeed, this follows from~\eqref{eq:pro-c-hom} and the fact that filtered colimits commute with finite limits. This argument also shows that arbitrary finite limits of pro-sets with the same index category can be computed pointwise.
 
 Since the category $\Pro(\Set)$ admits finite products, we may speak of algebraic objects in \(\Pro(\Set)\) (e.\,g. group and ring objects).
-Any algebraic formula (say, a commutator or a polynomial with integer coefficients) defines a morphism in \(\Pro(\Set)\) from a product of copies of an algebraic object to this algebraic object. 
-If \(a^{(\infty)}\) is a variable in such a formula, then the notation \(a^{(\infty)} \in X^{(\infty)}\) means that \(X^{(\infty)}\) is the domain of \(a^{(\infty)}\).
-
+%Any algebraic formula (say, a commutator or a polynomial with integer coefficients) defines a morphism in \(\Pro(\Set)\) from a product of copies of an algebraic object to this algebraic object. If \(a^{(\infty)}\) is a variable in such a formula, then the notation \(a^{(\infty)} \in X^{(\infty)}\) means that \(X^{(\infty)}\) is the domain of \(a^{(\infty)}\).
 The category of pro-groups \(\Pro(\Group)\) embeds into \(\Pro(\Set)\). Every pro-group is a group object in \(\Pro(\Set)\). It is easy to see that a morphism \(f \in \Pro(\Set)(G^{(\infty)}, H^{(\infty)})\) between pro-groups comes from \(\Pro(\Group)\) if and only if it is a morphism of group objects. Thus, $\Pro(\Group)$ is a full subcategory of the category of group objects in $\Pro(\Set)$.
 
-\subsection{Ring homotopes and pro-rings}
-Let $R$ be an arbitrary unital ring and let \(S\) be some fixed multiplicative subset of $R$ containing a unit. Denote by $\mathcal{S}$ the category, whose objects are the elements of \(S\) and whose morphisms \(s \rar s'\) are all \(s'' \in S\) such that \(ss'' = s'\). The composition and the identity morphisms are induced by the ring structure on $R$. It is clear that $\mathcal{S}$ is a filtered category. In the sequel, unless stated otherwise we consider pro-sets with \(\mathcal S\) as their category of indices.
+\subsection{Homotopes of rings and pro-rings}
+In this paper we consider only commutative rings.
+To distinguish between unital and non-unital rings we reserve the word ``ring'' only for unital rings and refer to non-unital rings as {\it rngs}.
+We denote the category of rings (resp. rngs) as $\textbf{Ring}$ (resp. $\textbf{Rng}$).
 
-We introduce the notion of a {\it homotope} of a ring inspired by a similar notion from nonassociative algebra (cf. McCrimmon?). Let $s$ be an element of $R$.  By definition, the {\it \(s\)-homotope} of \(R\) is the non-unital ring (also called rng) \(R^{(s)} = \{a^{(s)} \mid a \in R\}\) with the operations of addition and multiplication given by
-\[ a^{(s)} + b^{(s)} = (a + b)^{(s)},\ \ a^{(s)} b^{(s)} = (asb)^{(s)},\ a, b\in R.\]
-Clearly, $R^{(s)}$ has the structure of an \(R\)-algebra given by the formula \[a \cdot b^{(s)} = (ab)^{(s)},\ a, b \in R.\] For \(s, s' \in S\) there is a homomorphism of \(R\)-algebras \[R^{(ss')} \rar R^{(s')}, a^{(ss')} \mapsto (as)^{(s')}.\]
-Denote by \(R^{(\infty)}\) the formal projective limit of \(R^{(s)}\) for \(s \in Ob(\mathcal S)\). Thus, $R^{(\infty)}$ is an object of the category $\Pro(\Rng)$. It can also be considered as an rng object in \(\Pro(\Set)\). 
+Let $R$ be an arbitrary ring and let \(S\) be some fixed multiplicative subset of $R$ containing a unit. Denote by $\mathcal{S}$ the category, whose objects are the elements of \(S\) and whose morphisms \(\mathcal{S}(s, s')\) are all \(s'' \in S\) such that \(ss'' = s'\). The composition and the identity morphisms are induced by the ring structure on $R$. It is clear that $\mathcal{S}$ is a filtered category. Unless stated otherwise, all the pro-sets that we encounter in the sequel have \(\mathcal S\) as their category of indices.
 
-It will be convenient for us to use the notation \(a^{(s)} \otimes b^{(s)}\) for the elements of \(R^{(s)} \times R^{(s)}\) and the notation \(a^{(\infty)} \otimes b^{(\infty)}\) for the elements of \(R^{(\infty)} \times R^{(\infty)}\). We denote by $a^{(\infty)} b^{(\infty)}$ the image of \(a^{(\infty)} \otimes b^{(\infty)}\) under the rng multiplication morphism  \(R^{(\infty)} \times R^{(\infty)} \rar R^{(\infty)}\).
+We introduce the notion of a {\it homotope} of a ring inspired by a similar notion from nonassociative algebra (cf. McCrimmon?). 
+\begin{df}
+ Let $s$ be an element of $R$.  
+ By definition, the {\it \(s\)-homotope} of \(R\) is the rng \(R^{(s)} = \{a^{(s)} \mid a \in R\}\) with the operations of addition and multiplication given by
+ \[ a^{(s)} + b^{(s)} = (a + b)^{(s)},\ \ a^{(s)} b^{(s)} = (asb)^{(s)},\ a, b\in R.\]
+ Clearly, $R^{(s)}$ has the structure of an \(R\)-algebra given by the formula \[a \cdot b^{(s)} = (ab)^{(s)},\ a, b \in R.\] For \(s, s' \in S\) there is a homomorphism of \(R\)-algebras \[R^{(ss')} \to R^{(s')}, a^{(ss')} \mapsto (as)^{(s')}.\]
+ Denote by \(R^{(\infty)}\) the formal projective limit of the projective system \(R^{(s)}\), where \(s \in Ob(\mathcal S)\).
+ Thus, $R^{(\infty)}$ is an object of the category $\Pro(\Rng)$. 
+ It can also be considered as an rng object in \(\Pro(\Set)\).  
+\end{df}
+
+\begin{rem}
+ Denote by $sR$ the principal ideal of $R$ generated by $s$. 
+ There is always a homomorphism $R^{(s)} \to sR$ given by $r^{(s)}\mapsto sr$.
+ In the case when $R$ is an integral domain this homomorphism is easily seen to be an rng isomorphism.
+ 
+ The reason why homotopes rather than principal ideals were used in the definition of $R^{(\infty)}$ is that
+ there is always a ``division by $s$'' homomorphism of $R$-algebras $R^{(ss')} \to R^{(s')}$ given by $r^{(ss')} \mapsto r^{(s')},$
+ while a similar map $ss'R \to s'R$ may fail to exist if $R$ does not happen to be a domain.
+ 
+ Notice also that the projective limit of $R^{(s)}$ is often trivial in $\Rng$.
+ Indeed, if $R$ is a domain, then the limit of $R^{(s)}$ in $\Rng$ computes the intersection of the principal ideals $\bigcap_{s\in S} sR$, which often coincides with the zero ring. 
+ This also shows that the global elements of $R^{(\infty)}$ (in $\Fun(\mathcal{S}^{\op}, \Set)$ or $\Pro(\Set)$) are usually of little interest.
+\end{rem}
+
+It will be convenient for us to use the notation \(a^{(s)} \otimes b^{(s)}\) for the elements of \(R^{(s)} \times R^{(s)}\) and the notation \(a^{(\infty)} \otimes b^{(\infty)}\) for the elements of \(R^{(\infty)} \times R^{(\infty)}\). We denote by $a^{(\infty)} b^{(\infty)}$ the image of \(a^{(\infty)} \otimes b^{(\infty)}\) under the rng multiplication morphism  \(R^{(\infty)} \times R^{(\infty)} \to R^{(\infty)}\).
 
 Recall that a morphism \(f \in \mathcal C(X, Y)\) is a split epimorphism if it admits a section. Split epimorphisms are preserved under pullbacks.
 
 \begin{lemma}\label{RingGeneration}
-The rng multiplication morphism
-\[m \colon R^{(\infty)} \times R^{(\infty)} \rar R^{(\infty)}, \enskip a^{(\infty)} \otimes b^{(\infty)} \mapsto a^{(\infty)} b^{(\infty)}\]
-is a split epimorphism of pro-sets.
+The rng multiplication morphism $m \colon R^{(\infty)} \times R^{(\infty)} \to R^{(\infty)}$ is a split epimorphism of pro-sets.
 \end{lemma}
 \begin{proof}
 Consider the following pre-morphism of pro-sets:
-\[u \colon R^{(\infty)} \rar R^{(\infty)} \times R^{(\infty)}, \enskip u^*(s) = s^2, \enskip u^{(s)} \colon c^{(s^2)} \mapsto 1^{(s)} \otimes c^{(s)}.\]
+\[u \colon R^{(\infty)} \to R^{(\infty)} \times R^{(\infty)}, \enskip u^*(s) = s^2, \enskip u^{(s)} \colon c^{(s^2)} \mapsto 1^{(s)} \otimes c^{(s)}.\]
 Clearly, this is indeed a pre-morphism and
 \[m^{(s)}\bigl(u^{(s)}\bigl(c^{(s^2)}\bigr)\bigr) = 1^{(s)} c^{(s)} = (sc)^{(s)},\]
 which shows that $mu = \mathrm{id}_{R^{(\infty)}}$.
 \end{proof}
 
 \begin{lemma}\label{RingPresentation}
-Let \(G^{(\infty)}\) be a pro-group, \(g \colon R^{(\infty)} \times R^{(\infty)} \rar G^{(\infty)}\) be a morphism of pro-sets. There is a morphism \(f \colon R^{(\infty)} \rar G^{(\infty)}\) of pro-groups such that
+Let \(G^{(\infty)}\) be a pro-group, \(g \colon R^{(\infty)} \times R^{(\infty)} \to G^{(\infty)}\) be a morphism of pro-sets. There is a morphism \(f \colon R^{(\infty)} \to G^{(\infty)}\) of pro-groups such that
 \[g\bigl(a^{(\infty)} \otimes b^{(\infty)}\bigr) = f\bigl(a^{(\infty)} b^{(\infty)}\bigr)\]
 if and only if \(g\) satisfies the identities
 \begin{itemize}
@@ -138,12 +157,12 @@ if and only if \(g\) satisfies the identities
 \end{lemma}
 \begin{proof}
 The necessity of the identities is clear.
-By Lemma~\ref{RingGeneration} the morphism \(f\) is unique, so it suffices to show that it exists.
+By~\cref{RingGeneration} the morphism \(f\) is unique, so it suffices to show that it exists.
 It suffices to consider the case when \(G\) is a group. 
 Let \(g\) be a morphism satisfying the above identities.
-By definition, there exists $s\in S$ such that $g$ is given by a map \(g' \colon R^{(s)} \times R^{(s)} \rar G\) satisfying the first three identities and the identity 
+By definition, there exists $s\in S$ such that $g$ is given by a map \(g' \colon R^{(s)} \times R^{(s)} \to G\) satisfying the first three identities and the identity 
 \[g'\bigl((asb)^{(s)} \otimes c^{(s)}\bigr) = g'\bigl(a^{(s)} \otimes (bsc)^{(s)}\bigr).\]
-Consider the map \(f' \colon R^{(s^2)} \rar G\) given by
+Consider the map \(f' \colon R^{(s^2)} \to G\) given by
 \[f'\bigl(c^{(s^2)}\bigr) = g'\bigl(1^{(s)} \otimes c^{(s)}\bigr),\]
 it is a homomorphism by the first and the third identities.
 From the last two identities we conclude that for all \(a, b \in R\) one has
@@ -166,10 +185,10 @@ In this section we construct a certain pro-group \(\stlin(R)^{(\infty)}\) and pr
 \item \([x_{ij}^{(s)}(a), x_{kl}^{(s)}(b)] = 1\) for \(j \neq k\) and \(i \neq l\);
 \item \([x_{ij}^{(s)}(a), x_{jk}^{(s)}(b)] = x_{ik}^{(s)}(asb)\) for \(i \neq k\).
 \end{enumerate}
-The structure homomorphisms are given by \(x^{(ss')}(a) \mapsto x^{(s)}(s'a)\), and a pro-group \(\stlin(R)^{(\infty)}\) is the formal projective limit of \(\stlin(R)^{(s)}\) for \(s \in \mathcal S\). There are pre-morphisms \(x_{ij} \colon R_{ij}^{(\infty)} \rar \stlin(R)^{(\infty)}\) of pro-groups with \(x_{ij}^*(s) = s\) and \(x_{ij}^{(s)}\bigl(a^{(s)}\bigr) = x_{ij}^{(s)}(a)\). There is also a pre-morphism \(\mathrm{st} \colon \stlin(R)^{(\infty)} \rar \glin(R)^{(\infty)}\) of pro-groups, where \(\glin(R)^{(s)} = \bigl(R^{(s)}\bigr)^\circ\) (so \(\glin(R)^{(1)}\) is only isomorphic to \(\glin(R)\)), \(\stmap^*(s) = s\), \(\stmap^{(s)}\bigl(x_{ij}^{(s)}(a)\bigr) = a^{(s)}\). It follows that all maps \(x_{ij}^{(s)} \colon R_{ij} \rar \stlin(R)^{(s)}\) are injective.
+The structure homomorphisms are given by \(x^{(ss')}(a) \mapsto x^{(s)}(s'a)\), and a pro-group \(\stlin(R)^{(\infty)}\) is the formal projective limit of \(\stlin(R)^{(s)}\) for \(s \in \mathcal S\). There are pre-morphisms \(x_{ij} \colon R_{ij}^{(\infty)} \to \stlin(R)^{(\infty)}\) of pro-groups with \(x_{ij}^*(s) = s\) and \(x_{ij}^{(s)}\bigl(a^{(s)}\bigr) = x_{ij}^{(s)}(a)\). There is also a pre-morphism \(\mathrm{st} \colon \stlin(R)^{(\infty)} \to \glin(R)^{(\infty)}\) of pro-groups, where \(\glin(R)^{(s)} = \bigl(R^{(s)}\bigr)^\circ\) (so \(\glin(R)^{(1)}\) is only isomorphic to \(\glin(R)\)), \(\stmap^*(s) = s\), \(\stmap^{(s)}\bigl(x_{ij}^{(s)}(a)\bigr) = a^{(s)}\). It follows that all maps \(x_{ij}^{(s)} \colon R_{ij} \to \stlin(R)^{(s)}\) are injective.
 
 \begin{lemma}\label{SteinbergPresentation}
-Let \(G^{(\infty)}\) be a pro-group. Then every morphism \(f \colon \stlin(R)^{(\infty)} \rar G^{(\infty)}\) of pro-groups is uniquely determined by its compositions with all \(x_{ij} \colon R_{ij}^{(\infty)} \rar \stlin(R)^{(\infty)}\). Morphisms \(g_{ij} \colon R_{ij}^{(\infty)} \rar G^{(\infty)}\) of pro-groups for \(i \neq j\) are obtained in this way if and only if they satisfy (St1)--(St3) in \(\Pro(\Set)\).
+Let \(G^{(\infty)}\) be a pro-group. Then every morphism \(f \colon \stlin(R)^{(\infty)} \to G^{(\infty)}\) of pro-groups is uniquely determined by its compositions with all \(x_{ij} \colon R_{ij}^{(\infty)} \to \stlin(R)^{(\infty)}\). Morphisms \(g_{ij} \colon R_{ij}^{(\infty)} \to G^{(\infty)}\) of pro-groups for \(i \neq j\) are obtained in this way if and only if they satisfy (St1)--(St3) in \(\Pro(\Set)\).
 \end{lemma}
 \begin{proof}
 This follows directly from the definitions. Here we need that \(G^{(\infty)}\) is actually a pro-group, not just a group object in \(\Pro(\Set)\), and there is only a finite number of ``generators'' \(x_{ij}\).

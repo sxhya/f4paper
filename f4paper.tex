@@ -50,6 +50,7 @@
 \newcommand{\Group}{\mathbf{Grp}}
 \newcommand{\Rng}{\mathbf{Rng}}
 \newcommand{\Fun}{\mathbf{Fun}}
+\newcommand{\Mod}{\mathbf{Mod}}
 \newcommand{\op}{\mathrm{op}}
 
 \begin{document}
@@ -90,7 +91,7 @@ There is a fully faithful functor $\mathcal{C} \to \Pro(\mathcal{C})$ sending \(
 \end{align}
 It is also clear from~\eqref{eq:pro-c-hom} and~\eqref{eq:pro-c-hom-2} that \(X^{(\infty)}\) is the projective limit of \(X^{(i)}\) in the category \(\Pro(\mathcal C)\).
 
-The category of pro-sets \(\Pro(\Set)\) has all finite limits by \cite[Prop.~6.1.18]{SK06} and therefore is a symmetric monoidal category.
+The category of pro-sets \(\Pro(\Set)\) has all finite limits by \cite[Prop.~6.1.18]{SK06} and therefore is a cartesian monoidal category.
 
 Let us describe an explicit construction of limits in one important special case. Let $X^{(\infty)}, Y^{(\infty)} \colon \mathcal{I}^\op \to \Set\) be a pair of pro-sets with the same index category. Recall that the pointwise product of functors $X^{(\infty)} \times Y^{(\infty)} \colon \mathcal{I}^\op \to \Set$ is given by $(X^{(\infty)} \times Y^{(\infty)})^{(i)} = X^{(i)} \times Y^{(i)}$. Clearly, $X^\infty \times Y^\infty$ is a product of $X^{(\infty)}$ and $Y^{(\infty)}$  in the category $\Fun(\mathcal{I}^\op, \Set)$. 
 
@@ -98,14 +99,43 @@ There is an obvious identity-on-objects functor $\Fun(\mathcal{I}^\op, \Set) \to
 
 We claim that the point-wise product $X^{(\infty)} \times Y^{(\infty)}$ satisfies the universal property of products in the category $\Pro(\Set)$. Indeed, this follows from~\eqref{eq:pro-c-hom} and the fact that filtered colimits commute with finite limits. This argument also shows that arbitrary finite limits of pro-sets with the same index category can be computed pointwise.
 
-Since the category $\Pro(\Set)$ admits finite products, we may speak of algebraic objects in \(\Pro(\Set)\) (e.\,g. group and ring objects).
-The category of pro-groups \(\Pro(\Group)\) embeds into \(\Pro(\Set)\). Every pro-group is a group object in \(\Pro(\Set)\). It is easy to see that a morphism \(f \in \Pro(\Set)(G^{(\infty)}, H^{(\infty)})\) between pro-groups comes from \(\Pro(\Group)\) if and only if it is a morphism of group objects. Thus, $\Pro(\Group)$ is a full subcategory of the category of group objects in $\Pro(\Set)$.
-
-\subsection{Homotopes of rings and pro-rings}
+\subsection{Group and ring objects in pro-sets}
 In this paper we consider only commutative rings.
 To distinguish between unital and non-unital rings we reserve the word ``ring'' only for unital rings and refer to non-unital rings as {\it rngs}.
 We denote the category of rings (resp. rngs) as $\textbf{Ring}$ (resp. $\textbf{Rng}$).
 
+Let $T$ be an algebraic theory. Throughtout this paper we will be mostly interested in the case when $T$ is the theory of groups or the theory of rngs.
+
+Since the category $\Pro(\Set)$ is cartesian monoidal, we may speak of the category $\Mod(T, \Pro(\Set))$ of models of $T$ in \(\Pro(\Set)\).
+In the special case when $T$ is the theory of groups (resp. rngs) this category is precisely the category of group (resp. rng) objects in $\Pro(\Set)$.
+
+The category of pro-groups \(\Pro(\Group)\) embeds into \(\Pro(\Set)\). Every pro-group is a group object in \(\Pro(\Set)\). It is easy to see that a morphism \(f \in \Pro(\Set)(G^{(\infty)}, H^{(\infty)})\) between pro-groups comes from \(\Pro(\Group)\) if and only if it is a morphism of group objects. Thus, $\Pro(\Group)$ is a full subcategory of the category of group objects in $\Pro(\Set)$.
+
+\begin{df} \label{df-pro-set-morphisms} 
+ Let $n$ be a natural number and $F_{n, T}$ be the free algebra on $n$ generators in the theory $T$.
+ If $T$ is the theory of groups, then $F_n$ is the free group $F(t_1,\ldots, t_n)$.
+ Similarly, if $T$ is the theory of rngs, $F_{n, T}$ is the sub-rng of the ring $\mathbb{Z}[t_1,\ldots, t_n]$ consisting of polynomials over $\mathbb{Z}$ without free terms.
+ 
+ Given a word $w \in F_{n, T}$ and a $T$-model $X^{(\infty)}$, one can construct the ``evaluation'' morphism in $\Pro(\Set)$
+ \[ w^{(\infty)} \colon \underbrace{X^{(\infty)} \times \ldots \times X^{(\infty)}}_{n\text{ times}} \to X^{(\infty)}\]
+ as an appropriate composition of diagonal morphisms $\Delta_{X^{(\infty)}}$, projections $\pi_i$ 
+ (which are part of the structure of a cartesian monoidal category on $\Pro(\Set)$) 
+ and the morphisms defining the structure of a $T$-model on $X^{(\infty)}$.
+ 
+ In order to shorten the notation, to denote the evaluation morphism $w^{(\infty)}$ we often use the original term for $w$,
+  in which every symbol of a free variable $t_i$ is replaced by the symbol $t_i^{(\infty)}$.
+\end{df}
+
+\begin{example}\label{example-commutator}
+Consider the case when $T$ is the theory of groups.
+Let $G^{(\infty)}$ be a group object in $\Pro(\Set)$ and $w = [t_1, t_2] = t_1 t_2 t_1^{-1} t_2^{-1} \in F(t_1, t_2)$ be the word representing the generic commutator.
+In this case the evaluation morphism $w^{(\infty)}$ (also denoted $[t_1^{(\infty)}, t_2^{(\infty)}]$) can be defined as the composition
+ \[ \xymatrix{G^{(\infty)} \times G^{(\infty)} \ar[r]^(.35){\Delta \times \Delta} & G^{(\infty)} \times G^{(\infty)} \times G^{(\infty)} \times G^{(\infty)} \ar[d]_{\pi_1 \times \pi_3 \times (i\pi_2) \times (i\pi_4)} & \\
+    & G^{(\infty)} \times G^{(\infty)} \times G^{(\infty)} \times G^{(\infty)} \ar[r]^(.76){m(m\times m)} & G^{(\infty)},} \]
+where the structure of a group object on $X^{(\infty)}$ is given by the triple $(m, i, e)$.
+\end{example}
+
+\subsection{Homotopes of rings and pro-rings}
 Let $R$ be an arbitrary ring and let \(S\) be some fixed multiplicative subset of $R$ containing a unit. Denote by $\mathcal{S}$ the category, whose objects are the elements of \(S\) and whose morphisms \(\mathcal{S}(s, s')\) are all \(s'' \in S\) such that \(ss'' = s'\). The composition and the identity morphisms are induced by the ring structure on $R$. It is clear that $\mathcal{S}$ is a filtered category. Unless stated otherwise, all the pro-sets that we encounter in the sequel have \(\mathcal S\) as their category of indices.
 
 We introduce the notion of a {\it homotope} of a ring inspired by a similar notion from nonassociative algebra (cf. McCrimmon?). 
@@ -148,29 +178,12 @@ Clearly, this is indeed a pre-morphism and
 which shows that $mu = \mathrm{id}_{R^{(\infty)}}$.
 \end{proof}
 
-\begin{df} \label{df-pro-set-morphisms}
- Let $R^{(\infty)}$ be an rng object in $\Pro(\Set)$ (e.\,g. a pro-rng) and $p \in \mathbb{Z}[t_1,\ldots t_n]$ be polynomial with integer coefficients.
- We denote by $p^{(\infty)}$ the morphism $(R^{(\infty)})^{n} \to R^{(\infty)}$ ``modeling'' $p$ in the category of pro-sets.
- This morphism can be obtained as an appropriate composition of the following morphisms:
+Before we proceed further let us introduce the following conventions, 
+ which will help us to keep our notations short:
  \begin{itemize}
-  \item diagonal morphisms $\Delta_{R^{(\infty)}}$ and projections $\pi_i$ (which are part of the structure of a symmetric monoidal category on $\Pro(\Set)$);
-  \item the addition and multiplication morphisms $+_{R^{(\infty)}}, m_{R^{(\infty)}}$ defining the structure of an rng-object on $R^{(\infty)}$.
- \end{itemize}
- 
- Now if $G^{(\infty)}$ is a group object in $\Pro(\Set)$ (e.\,g. a pro-group) and $w$ a word of the free group $F(t_1, \ldots, t_n)$ we denote by $w^{(\infty)}$ the pro-set morphism $(G^{(\infty)})^{n} \to G^{(\infty)}$ modeling $w$ in the category of pro-sets. As before, this morphism can be defined as an appropriate composition of morphisms $m_{G^{(\infty)}}$, $i_{G^{(\infty)}}$, $e_{G^{(\infty)}}$ defining the structure of a group object on $G^{(\infty)}$ and the morphisms defining the structure of a symmetric monoidal category on $\Pro(\Set)$.
-\end{df}
-
-\begin{example}\label{example-commutator}
- In the case $w = [t_1, t_2] = t_1 t_2 t_1^{-1} t_2^{-1} \in F[t_1, t_2]$ the associated morphism $w^{(\infty)}$ can be defined as the composition
- \[ \xymatrix{G^{(\infty)} \times G^{(\infty)} \ar[r]^(.35){\Delta \times \Delta} & G^{(\infty)} \times G^{(\infty)} \times G^{(\infty)} \times G^{(\infty)} \ar[d]_{\begin{psmallmatrix} \id & 0 & 0 & 0 \\ 0 & 0 & \id & 0 \\ 0 & i & 0 & 0 \\ 0 & 0 & 0 & i \end{psmallmatrix}} & \\
-    & G^{(\infty)} \times G^{(\infty)} \times G^{(\infty)} \times G^{(\infty)} \ar[r]^(.76){m(m\times m)} & G^{(\infty)}.} \]
-\end{example}
-In order simplify our notation even further we employ the following conventions:
- \begin{itemize}
-  \item any algebraic expression containing the symbol $(\infty)$ in the upper index of a variable (e.\,g. $a^{(\infty)}$, $b^{(\infty)}$ etc.)  denotes a certain morphism of pro-sets, whose domain is a certain product of pro-sets (often a power of a single pro-set);
+  \item any algebraic expression containing the symbol $(\infty)$ in the upper index of a variable (e.\,g. $a^{(\infty)}$, $b^{(\infty)}$ etc.) denotes a certain morphism of pro-sets, whose domain is a certain product of pro-sets (often a power of a single pro-set), such morphisms are typically obtained from~\cref{df-pro-set-morphisms};
   \item the number of factors in this product coincides with the number of different variables occuring in the expression;
-  \item in order to specify the domain of a variable $a^{(\infty)}$ occuring in the expression, we use the notation $a^{(\infty)} \in X^{(\infty)}$ (this notation is not confusing since we never refer to the actual elements of pro-sets, see~\cref{rem:prorings-comment});
-  \item to denote the pro-set morphism corresponding to a word of a free group or a polynomial with integer coefficients (see~\cref{df-pro-set-morphisms}) we use the same word (resp. polynomial) but add $(\infty)$ symbol to the upper indices of all occurrences of variables (e.\,g. with these notations the morphism $w^{(\infty)}$ from~\cref{example-commutator} is denoted $[t_1^{(\infty)}, t_2^{(\infty)}]$);
+  \item in order to specify the domain of a variable $a^{(\infty)}$ occuring in the expression, we use the notation $a^{(\infty)} \in X^{(\infty)}$ (this notation is not confusing since we never refer to the actual elements of pro-sets, recall that the elements of our pro-sets are usually uninteresting, cf.~\cref{rem:prorings-comment});
   \item the notation for the multiplication operation is always suppressed, i.\,e. we write $a^{(\infty)} b^{(\infty)}$ instead of $m(a^{(\infty)}, b^{(\infty)})$ or $a^{(\infty)} \cdot b^{(\infty)}$;
   \item the syntax of tuples is used to denote the product of morphisms (e.\,g. if $f,g \colon X^{(\infty)} \to Y^{(\infty)}$ are morphisms of pro-sets, then we use the notation $(f(x_1^{(\infty)}), g(x_2^{(\infty)}))$ instead of $f\times g$);
   \item if $g$ is a morphism of pro-sets with $X^{(\infty)} \times Y^{\infty}$ as its domain, then we always write $g(a^{(\infty)}, b^{(\infty)})$ instead of $g((a^{(\infty)}, b^{(\infty)}))$;

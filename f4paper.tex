@@ -26,6 +26,7 @@
 
 \theoremstyle{remark} 
 \newtheorem{rem}[lemma]{Remark}
+\newtheorem{conv}[lemma]{Convention} \Crefname{conv}{Convention}{Conventions}
 
 \newenvironment{psmallmatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
 
@@ -180,7 +181,7 @@ Clearly, this is indeed a pre-morphism and
 which shows that $mu = \mathrm{id}_{R^{(\infty)}}$.
 \end{proof}
 
-\begin{rem} \label{rem:notation}
+\begin{conv} \label{conv:notation}
 Before we proceed further let us introduce the following conventions, 
  which will help us to keep our notations short:
  \begin{itemize}
@@ -194,7 +195,7 @@ Before we proceed further let us introduce the following conventions,
   \item notice that the trivial group $1$ is a zero object in the category $\Pro(\Group)$, therefore for any pro-groups $G^{(\infty)}, H^{(\infty)}$
    there is only one morphism $G^{(\infty)} \to H^{(\infty)}$ passing through $1$, this morphism will also be denoted by $1$.
  \end{itemize}
-\end{rem} 
+\end{conv} 
 Now we are ready to formulate our next result.
 \begin{lemma}\label{RingPresentation}
 Let \(G^{(\infty)}\) be a pro-group, $R^{(\infty)}$ be a pro-rng and \(g \colon R^{(\infty)} \times R^{(\infty)} \to G^{(\infty)}\) be a morphism of pro-sets. There is a morphism \(f \colon R^{(\infty)} \to G^{(\infty)}\) of pro-groups such that
@@ -233,12 +234,12 @@ Let $R$ be a ring.
 \begin{df} \label{def:Steinberg}
 Recall the {\it Steinberg group $\St(\Phi, R)$} is given by generators $x_\alpha(a)$, where $\alpha \in \Phi$ and $a \in R$ and the following list of defining relations:
 \begin{align}
- x_\alpha(a) \cdot x_\alpha(b)    &= x_\alpha(a+b); \tag{R1} \\
- [x_\alpha(a),\ x_\beta(b)] &= 1, \tag{R2} \\ 
+ x_\alpha(a) \cdot x_\alpha(b)    &= x_\alpha(a+b); \tag{R1} \label{R1} \\
+ [x_\alpha(a),\ x_\beta(b)] &= 1, \tag{R2} \label{R2} \\ 
  \multispan2{\hfil if $\alpha + \beta \not\in\Phi \cup \{0\};$} \nonumber \\
- [x_\alpha(a),\ x_\beta(b)] &= x_{\alpha + \beta}(N_{\alpha,\beta} \cdot ab), \tag{R3} \\
+ [x_\alpha(a),\ x_\beta(b)] &= x_{\alpha + \beta}(N_{\alpha,\beta} \cdot ab), \tag{R3} \label{R3} \\
  \multispan2{\hfill if $\alpha+\beta\in\Phi$ but $\alpha+2\beta,\ 2\alpha+\beta\not\in\Phi;$} \nonumber \\
- [x_\alpha(a),\ x_\beta(b)] &= x_{\alpha + \beta}(N_{\alpha,\beta} \cdot ab) \cdot x_{2\alpha+\beta}(N_{\alpha,\beta} \cdot \widehat{N}_{\alpha, \alpha+\beta}\cdot a^2b), \tag{R4} \\ \multispan2{ \hfill if $\alpha+\beta,2\alpha+\beta\in\Phi$.} \nonumber  \end{align}
+ [x_\alpha(a),\ x_\beta(b)] &= x_{\alpha + \beta}(N_{\alpha,\beta} \cdot ab) \cdot x_{2\alpha+\beta}(N_{\alpha,\beta} \cdot \widehat{N}_{\alpha, \alpha+\beta}\cdot a^2b), \tag{R4} \label{R4} \\ \multispan2{ \hfill if $\alpha+\beta,2\alpha+\beta\in\Phi$.} \nonumber  \end{align}
 The constants $N_{\alpha,\beta}$ appearing in the above relations are called the {\it structure constants} of the Chevalley group of type $\Phi$.
 Since we excluded the case $\Phi=\mathsf{G}_2$ the only possibilities for $N_{\alpha, \beta}$ are $\pm 1$ or $\pm 2$.
 Notice that $|N_{\alpha,\beta}| = 2$ provided $\alpha$ and $\beta$ are short, in which case we set $\widehat{N}_{\alpha, \beta} = \frac{1}{2} N_{\alpha, \beta}$.
@@ -281,10 +282,10 @@ The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\i
 %It follows that all maps \(x_{ij}^{(s)} \colon R_{ij} \to \stlin(R)^{(s)}\) are injective.
 
 \begin{lemma}\label{SteinbergPresentation}
-Let \(G^{(\infty)}\) be a pro-group. The morphisms $x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ generate $\St^{(\infty)}(\Phi, R)$ in the categorical sense, i.\,e. to ensure that the morphisms $f_1,f_2\colon\St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to verify the equalities $f_1 x_{\alpha} = f_2 x_\alpha$ for all $\alpha\in\Phi$.
+Let \(G^{(\infty)}\) be a pro-group. The morphisms \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)\] generate $\St^{(\infty)}(\Phi, R)$ in the categorical sense, i.\,e. to ensure that the morphisms $f_1,f_2\colon\St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to verify the equalities $f_1 x_{\alpha} = f_2 x_\alpha$ for all $\alpha\in\Phi$.
 
-Conversely, in order to obtain a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ it suffices to ???
-%construct a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\), $\alpha \in \Phi$ satisfying the identities~\eqref{S1}--\eqref{S4}  (in which $f_{\alpha}$'s are substituted in place of $x_\alpha$'s, $\infty$ is substituted in place of $s$, the sign $(\infty)$ is added to the upper index of variables $a, b$ and all equalities are understood as equalities of morphisms in \(\Pro(\Set)\), see~\cref{rem:notation}).
+Conversely, in order to obtain a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ it suffices to
+construct a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\), $\alpha \in \Phi$ satisfying the identities~\eqref{R1}--\eqref{R4}  (in which $f_{\alpha}$'s are substituted in place of $x_\alpha$'s, the sign $(\infty)$ is added to the upper index of variables $a, b$ and the resulting equalities are understood as equalities of morphisms in \(\Pro(\Set)\) according to~\cref{conv:notation}).
 \end{lemma}
 \begin{proof}
 This follows directly from the definitions. Here we need that \(G^{(\infty)}\) is actually a pro-group, not just a group object in \(\Pro(\Set)\), and there is only a finite number of ``generators'' \(x_{ij}\).

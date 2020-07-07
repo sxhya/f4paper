@@ -92,7 +92,11 @@ There is a fully faithful functor $\mathcal{C} \to \Pro(\mathcal{C})$ sending \(
  \Pro(\mathcal C)(X^{(\infty)}, Y) &\cong \varinjlim_{i \in \mathcal I_X} \mathcal C(X^{(i)}, Y); \label{eq:pro-c-hom-2}\\
  \Pro(\mathcal C)(X, Y^{(\infty)}) &\cong \varprojlim_{i \in \mathcal I_Y} \mathcal C(X, Y^{(i)}).
 \end{align}
-It is also clear from~\eqref{eq:pro-c-hom} and~\eqref{eq:pro-c-hom-2} that \(X^{(\infty)}\) is the projective limit of \(X^{(i)}\) in the category \(\Pro(\mathcal C)\).
+
+Moreover, it is also clear from~\eqref{eq:pro-c-hom} and~\eqref{eq:pro-c-hom-2} that the following assertion holds.
+\begin{lemma} \label{lem:proobj-is-a-limit}
+  \(X^{(\infty)}\) is the projective limit of \(X^{(i)}\) in the category \(\Pro(\mathcal C).\)
+\end{lemma}
 
 The category of pro-sets \(\Pro(\Set)\) has all finite limits by \cite[Prop.~6.1.18]{SK06} and therefore is a cartesian monoidal category.
 
@@ -211,7 +215,7 @@ if and only if \(g\) satisfies the following identities in $\Pro(\Set)$:
 \begin{proof}
 The necessity of the identities is clear.
 By~\cref{RingGeneration} the morphism \(f\) is unique, so it suffices to show that it exists.
-It suffices to consider the case when \(G\) is a group. 
+By~\cref{lem:proobj-is-a-limit} it suffices to consider the case when \(G\) is a group. 
 Let \(g\) be a morphism satisfying the above identities.
 By definition, there exists $s\in S$ such that $g$ is given by a map \(g' \colon R^{(s)} \times R^{(s)} \to G\) satisfying the first three identities and the identity 
 \[g'\bigl((asb)^{(s)}, c^{(s)}\bigr) = g'\bigl(a^{(s)}, (bsc)^{(s)}\bigr).\]
@@ -272,8 +276,7 @@ For every root $\alpha \in \Phi$ there is a ``root subgroup'' morphism $x_{\alph
 \begin{df}
  Let $R$ be a ring with a multiplicative system $S$.
  Consider the projective system of relative Chevalley groups (also called congruence subgroups) 
- $\GG(\Phi, R, sR) = \Ker\left(\GG_{sc}(\Phi, R) \to \GG_{sc}(\Phi, R/sR)\right)$ with the structure morphisms given by the usual inclusions between congruence subgroups.
- Define the simply-connected Chevalley pro-group $\GG^{(\infty)}(\Phi, R)$ as the formal projective limit of this system.
+ $\GG(\Phi, R, sR) = \Ker\left(\GG_{sc}(\Phi, R) \to \GG_{sc}(\Phi, R/sR)\right)$ with the structure morphisms given by the usual inclusions of congruence subgroups. Define the {\it simply-connected Chevalley pro-group} $\GG^{(\infty)}(\Phi, R)$ as the formal projective limit of this system.
 \end{df}
 
 Recall that there is well-defined homomorphism $\mathrm{st}\colon \St(\Phi, R) \to \GG_{sc}(\Phi, R)$ sending each generator $x_\alpha(a)$ to the root unipotent $t_\alpha(a)$. 
@@ -284,12 +287,22 @@ The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\i
 \begin{lemma}\label{SteinbergPresentation}
 Let \(G^{(\infty)}\) be a pro-group. The morphisms \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)\] generate $\St^{(\infty)}(\Phi, R)$ in the categorical sense, i.\,e. to ensure that the morphisms $f_1,f_2\colon\St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to verify the equalities $f_1 x_{\alpha} = f_2 x_\alpha$ for all $\alpha\in\Phi$.
 
-Conversely, in order to obtain a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ it suffices to
-construct a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\), $\alpha \in \Phi$ satisfying the identities~\eqref{R1}--\eqref{R4}  (in which $f_{\alpha}$'s are substituted in place of $x_\alpha$'s, the sign $(\infty)$ is added to the upper index of variables $a, b$ and the resulting equalities are understood as equalities of morphisms in \(\Pro(\Set)\) according to~\cref{conv:notation}).
+Conversely, a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ can be obtained from a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\), $\alpha \in \Phi$ satisfying the identities~\eqref{R1}--\eqref{R4} (in which $f_{\alpha}$'s are substituted in place of $x_\alpha$'s, the sign $(\infty)$ is added to the upper index of the variables $a, b$ and the resulting equalities are understood as equalities of morphisms in \(\Pro(\Set)\) according to~\cref{conv:notation}).
 \end{lemma}
 \begin{proof}
-This follows directly from the definitions. Here we need that \(G^{(\infty)}\) is actually a pro-group, not just a group object in \(\Pro(\Set)\), and there is only a finite number of ``generators'' \(x_{ij}\).
+Notice that by~\cref{lem:proobj-is-a-limit} both of the assertions can be verified in the special case when $G^{(\infty)} = G$ is a group.
+
+Let us verify the first assertion. Since there is only a finite number of roots in $\Phi$ one can find a sufficiently large index $s \in S$ such that the homomorphisms $f_1^{(s)}, f_2^{(s)}\colon \St^{(s)}(\Phi, R) \to G$ become equal after precomposition with $x_\alpha$ for all $\alpha \in \Phi$.
+Since the root elements $x_\alpha^{(s)}(a)$ generate $\St^{(s)}(\Phi, R)$ we obtain that the morphisms $f_1$ and $f_2$ are equal.
+
+Let us verify the second assertion. 
+Notice that~\eqref{R1}--\eqref{R4} specify only a {\it finite} collection of identities in $\Pro(\Set)$ to which $f_\alpha$'s must satisfy.
+Unwinding the definitions, we find a sufficiently large index $s \in S$ such that group homomorphisms 
+ $f_\alpha^{(s)}\colon R^{(s)} \to G$ satisfy the same identities (with $f_\alpha$'s replaced by $f_\alpha^{(s)}$'s).
+Thus, we obtain a group homomorphism $\St^{(s)}(\Phi, R) \to G$, which is then easily seen to determine a morphism $\St^{(\infty)}(\Phi, R) \to G$.
 \end{proof}
+Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a group object in $\Pro(\Set)$ is essential in the proof of the above lemma.
+
 
 \printbibliography
 \end{document}

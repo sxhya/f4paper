@@ -30,26 +30,11 @@
 
 \newenvironment{psmallmatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
 
-\DeclareMathOperator\mat{M}
-\DeclareMathOperator\elin{E}
-\DeclareMathOperator\stlin{St}
 \DeclareMathOperator\St{St}
 \DeclareMathOperator\Ker{Ker}
 \DeclareMathOperator\GG{G}
-\DeclareMathOperator\gstlin{GSt}
-\DeclareMathOperator\klin{K}
-\DeclareMathOperator\stmap{st}
-\DeclareMathOperator\glin{GL}
-\DeclareMathOperator\diag{D}
-\DeclareMathOperator\Jac{J}
-\DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Pro}{Pro}
-\DeclareMathOperator{\Ad}{Ad}
 
-\newcommand{\lar}{\leftarrow}
-\newcommand{\leqt}{\trianglelefteq}
-\newcommand{\sub}[2]{{_{#1\!}{#2}}}
-\newcommand{\up}[2]{{^{#1}\!{#2}}}
 
 \newcommand{\Set}{\mathbf{Set}}
 \newcommand{\Group}{\mathbf{Grp}}
@@ -67,7 +52,7 @@ In this section we recall the construction of the pro-completion of \(\mathcal C
 
 Recall that a nonempty small category \(\mathcal I\) is called {\it filtered} if
 \begin{itemize}
- \item for any two objects \(i, k \in Ob(\mathcal{I})\) there is a diagram \(i \to j \lar k\) in \(\mathcal I\);
+ \item for any two objects \(i, k \in Ob(\mathcal{I})\) there is a diagram \(i \to j \leftarrow k\) in \(\mathcal I\);
  \item every two parallel morphisms \(i \rightrightarrows j\) are equalized by some morphism \(j \to k\) in \(\mathcal I\).
 \end{itemize}
 A {\it pro-object} in \(\mathcal C\) is, by definition, a functor $X^{(\infty)}\colon \mathcal{I}_X^{\op} \to \mathcal{C}$, i.\,e. a contravariant functor from a filtered category \(\mathcal I_X\), called {\it the category of indices of $X^{(\infty)}$}, to the category \(\mathcal C\). 
@@ -100,7 +85,7 @@ Moreover, it is also clear from~\eqref{eq:pro-c-hom} and~\eqref{eq:pro-c-hom-2} 
 
 The category of pro-sets \(\Pro(\Set)\) has all finite limits by \cite[Prop.~6.1.18]{SK06} and therefore is a cartesian monoidal category.
 
-Let us describe an explicit construction of limits in one important special case. Let $X^{(\infty)}, Y^{(\infty)} \colon \mathcal{I}^\op \to \Set\) be a pair of pro-sets with the same index category. Recall that the pointwise product of functors $X^{(\infty)} \times Y^{(\infty)} \colon \mathcal{I}^\op \to \Set$ is given by $(X^{(\infty)} \times Y^{(\infty)})^{(i)} = X^{(i)} \times Y^{(i)}$. Clearly, $X^\infty \times Y^\infty$ is a product of $X^{(\infty)}$ and $Y^{(\infty)}$  in the category $\Fun(\mathcal{I}^\op, \Set)$. 
+Let us describe an explicit construction of limits in one important special case. Let $X^{(\infty)}, Y^{(\infty)} \colon \mathcal{I}^\op \to \Set\) be a pair of pro-sets with the same index category. Recall that the pointwise product of functors $X^{(\infty)} \times Y^{(\infty)} \colon \mathcal{I}^\op \to \Set$ is given by $(X^{(\infty)} \times Y^{(\infty)})^{(i)} = X^{(i)} \times Y^{(i)}$. Clearly, $X^{(\infty)} \times Y^{(\infty)}$ is a product of $X^{(\infty)}$ and $Y^{(\infty)}$  in the category $\Fun(\mathcal{I}^\op, \Set)$. 
 
 There is an obvious identity-on-objects functor $\Fun(\mathcal{I}^\op, \Set) \to \Pro(\Set)$ sending a natural transformation $\varphi \colon X^{(\infty)} \to Y^{(\infty)}$ to the morphism of pro-sets given by the pre-morphism $\varphi^* = \mathrm{id}_{Ob(\mathcal{I})}$, $\varphi^{(i)} = \varphi_i$. The diagonal morphism $\Delta \colon X^{(\infty)} \to X^{(\infty)} \times X^{(\infty)}$ and the canonical projection morphisms \(\pi_X\colon X^{(\infty)} \times Y^{(\infty)} \to X^{(\infty)}, \pi_Y\colon X^{(\infty)} \times Y^{(\infty)} \to Y^{(\infty)}\) can be defined in the category $\Pro(\Set)$ as the images of the corresponding natural transformations in $\Fun(\mathcal{I}^\op, \Set)$ under this functor.
 
@@ -162,7 +147,7 @@ We introduce the notion of a {\it homotope} of a ring inspired by a similar noti
  In the case when $R$ is an integral domain this homomorphism is easily seen to be an rng isomorphism.
  
  The reason why we use homotopes rather than principal ideals in the definition of $R^{(\infty)}$ is that
- there is always a ``division by $s$'' homomorphism of $R$-algebras $R^{(ss')} \to R^{(s')}$ given by $r^{(ss')} \mapsto r^{(s')},$
+ there is always a ``division by $s$'' homomorphism of $R$-modules $R^{(ss')} \to R^{(s')}$ given by $r^{(ss')} \mapsto r^{(s')},$
  while the similar map $ss'R \to s'R$ may not exist if $R$ does not happen to be a domain.
  The existence of this division homomorphism will be important in the sequel.
  
@@ -172,7 +157,7 @@ We introduce the notion of a {\it homotope} of a ring inspired by a similar noti
 \end{rem}
 
 Recall that a morphism \(f \in \mathcal C(X, Y)\) is called a split epimorphism (or a retraction) if it admits a section,
- i.\,e. there exists $g \in \mathcal{C}(Y, X)$ such that $fg = \id_{Y}$. Retractions are preserved under pullbacks.
+ i.\,e. there exists $g \in \mathcal{C}(Y, X)$ such that $fg = \mathrm{id}_{Y}$. Retractions are preserved under pullbacks.
 
 \begin{lemma}\label{RingGeneration}
 The rng multiplication morphism $m \colon R^{(\infty)} \times R^{(\infty)} \to R^{(\infty)}$ is a split epimorphism of pro-sets.
@@ -207,8 +192,8 @@ Let \(G^{(\infty)}\) be a pro-group, $R^{(\infty)}$ be a pro-rng and \(g \colon 
 if and only if \(g\) satisfies the following identities in $\Pro(\Set)$:
 \begin{itemize}
 \item \(\bigl[g\bigl(a_1^{(\infty)}, b_1^{(\infty)}\bigr), g\bigl(a_2^{(\infty)}, b_2^{(\infty)}\bigr)\bigr] = 1\);
-\item \(g\bigl(\bigl(a_1^{(\infty)} + a_2^{(\infty)}\bigr), b^{(\infty)}\bigr) = g\bigl(a_1^{(\infty)}, b^{(\infty)}\bigr)\, g\bigl(a_2^{(\infty)}, b^{(\infty)}\bigr)\);
-\item \(g\bigl(a^{(\infty)}, \bigl(b_1^{(\infty)} + b_2^{(\infty)}\bigr)\bigr) = g\bigl(a^{(\infty)}, b_1^{(\infty)}\bigr)\, g\bigl(a^{(\infty)}, b_2^{(\infty)}\bigr)\);
+\item \(g\bigl(a_1^{(\infty)} + a_2^{(\infty)}, b^{(\infty)}\bigr) = g\bigl(a_1^{(\infty)}, b^{(\infty)}\bigr)\, g\bigl(a_2^{(\infty)}, b^{(\infty)}\bigr)\);
+\item \(g\bigl(a^{(\infty)}, b_1^{(\infty)} + b_2^{(\infty)}\bigr) = g\bigl(a^{(\infty)}, b_1^{(\infty)}\bigr)\, g\bigl(a^{(\infty)}, b_2^{(\infty)}\bigr)\);
 \item \(g\bigl(a^{(\infty)} b^{(\infty)}, c^{(\infty)}\bigr) = g\bigl(a^{(\infty)}, b^{(\infty)} c^{(\infty)}\bigr)\).
 \end{itemize}
 \end{lemma}
@@ -271,7 +256,7 @@ This also allows one to ``deform'' the above definition and, by analogy with the
 There is a group homomorphism $\St^{(s)}(\Phi, R) \to \St(\Phi, sR)$ given by $x_\alpha^{(s)}(a)\mapsto x_\alpha(sa)$, which is easily seen to be an isomorphism in the case when $R$ is an integral domain (cf.~\cref{rem:prorings-comment}). Similarly to pro-rngs, Steinberg pro-groups often do not have global elements.
 \end{rem}
  
-For every root $\alpha \in \Phi$ there is a ``root subgroup'' morphism $x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ in $\Pro(\Group)$ given by the premorphism $x_\alpha^* = id_S$, $x_\alpha^{(s)}(a^{(s)}) = x_\alpha^{(s)}(a)$.
+For every root $\alpha \in \Phi$ there is a ``root subgroup'' morphism $x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ in $\Pro(\Group)$ given by the premorphism $x_\alpha^* = \mathrm{id}_S$, $x_\alpha^{(s)}(a^{(s)}) = x_\alpha^{(s)}(a)$.
 
 \begin{df}
  Let $R$ be a ring with a multiplicative system $S$.
@@ -281,7 +266,7 @@ For every root $\alpha \in \Phi$ there is a ``root subgroup'' morphism $x_{\alph
 
 Recall that there is well-defined homomorphism $\mathrm{st}\colon \St(\Phi, R) \to \GG_{sc}(\Phi, R)$ sending each generator $x_\alpha(a)$ to the root unipotent $t_\alpha(a)$. 
 
-The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) of the above homomorphism is given by the pre-morphism \(\mathrm{st}^* = id_S\), \(\mathrm{st}^{(s)}\bigl(x_{\alpha}^{(s)}(a)\bigr) = t_\alpha(sa)\). 
+The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) of the above homomorphism is given by the pre-morphism \(\mathrm{st}^* = \mathrm{id}_S\), \(\mathrm{st}^{(s)}\bigl(x_{\alpha}^{(s)}(a)\bigr) = t_\alpha(sa)\). 
 %It follows that all maps \(x_{ij}^{(s)} \colon R_{ij} \to \stlin(R)^{(s)}\) are injective.
 
 \begin{lemma}\label{SteinbergPresentation}

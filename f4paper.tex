@@ -289,5 +289,42 @@ Thus, we obtain a group homomorphism $\St^{(s)}(\Phi, R) \to G$, which is then e
 Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a group object in $\Pro(\Set)$ is essential in the proof of the above lemma.
 
 
+\section{Main result}
+
+\subsection{Elimination of roots}
+
+\begin{theorem}\label{SingleRootElimination}
+ Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, \(\Phi\) be a root system of rank \(\geq 3\) different from \(B_l\) and \(C_l\), \(\alpha \in \Phi\) be a root. Then \(\St^{(\infty)}(\Phi / \alpha, R) \to \St^{(\infty)}(\Phi, R)\) is an isomorphism of pro-groups.
+\end{theorem}
+\begin{proof}
+ We construct a morphism \(G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi / \alpha, R)\) of pro-groups such that \(G_\alpha \circ x_\beta = x_\beta\) for all \(\beta \nparallel \alpha\). For any pair of roots \((\beta, \gamma)\) such that \(|\beta| = |\gamma| = |\alpha|\) and \(\alpha = \beta + \gamma\) let
+ \begin{align*}
+  x_{\beta, \gamma} \colon R^{(\infty)} \times R^{(\infty)} &\to \St^{(\infty)}(\Phi / \alpha, R),\\
+  (b^{(\infty)}, c^{(\infty)}) &\mapsto [x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})].
+ \end{align*}
+
+ If \(\delta \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\), then
+ \begin{align*}
+  [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\delta(d^{(\infty)})] &= [x_\beta(b^{(\infty)}) x_\gamma(c^{(\infty)}) x_\beta(-b^{(\infty)}) x_\gamma(-c^{(\infty)}), x_\delta(d^{(\infty)})]\\
+  &\in \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ k > 0}} x_{i\beta + j\gamma + k\delta}(\ldots),
+ \end{align*}
+ hence we have almost all Steinberg relations with \(\alpha\) and \(\delta\) in the left.
+
+ Note that there are roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\) such that \(|\beta_1| = |\beta_2| = |\beta|\) and \(\beta = \beta_1 + \beta_2\). Then \(\beta_i\), \(\alpha\), \(\beta\), \(\gamma\) lie in a root subsystem of type \(A_3\) (see the Dynkin diagram), so wlog \(\beta_2 \perp \alpha\) and \(\beta_1 \not \perp \alpha\). It follows that \(\alpha + \beta_i \notin \Phi\), \(\alpha - \beta_2 \notin \Phi\), \(\alpha - \beta_1 \in \Phi\), and
+ \begin{align*}
+  x_\beta(\pm b_1^{(\infty)} b_2^{(\infty)})^{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})} &= [x_{\beta_1}(b_1^{(\infty)})^{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}, x_{\beta_2}(b_2^{(\infty)})^{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}] =\\
+  & [x_{\beta_1}(b_1^{(\infty)}), x_{\beta_2}(b_2^{(\infty)})] = x_\beta(\pm b_1^{(\infty)} b_2^{(\infty)}).
+ \end{align*}
+
+ Similarly,
+ \begin{align*}
+  x_{-\beta}(\pm b_1^{(\infty)} b_2^{(\infty)})^{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})} &= [x_{-\beta_1}(b_1^{(\infty)})^{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}, x_{-\beta_2}(b_2^{(\infty)})^{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}] =\\
+  &= [x_{-\beta_1}(b_1^{(\infty)}) x_{\alpha - \beta_1}(\ldots), x_{-\beta_2}(b_2^{(\infty)})] = x_{-\beta}(\pm b_1^{(\infty)} b_2^{(\infty)}) x_\gamma(\ldots).
+ \end{align*}
+
+ Hence we have all cases of (\ref{S3}) with \(\alpha\) in the left. It follows that the morphism \(x_{\beta, \gamma}\) of pro-sets satisfy the first three conditions of lemma \ref{RingPresentation}.
+\end{proof}
+
+
 \printbibliography
 \end{document}

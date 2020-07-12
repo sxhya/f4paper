@@ -293,6 +293,13 @@ Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a g
 
 \subsection{Elimination of roots}
 
+\begin{lemma}\label{ThreeRoots}
+Let \(\Phi\) be a root system of rank \(\geq 3\) different from \(B_l\) and \(C_l\). Suppose that \(\alpha = \beta + \gamma, \beta, \gamma \in \Phi\) and \(|\alpha| = |\beta| = |\gamma|\). Then there are roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R\beta + \mathbb R\gamma)\) such that \(\beta_1 + \beta_2 = \beta\) and \(|\beta| = |\beta_1| = |\beta_2|\). For any such roots the smallest root subsystem \(\Phi_0 \subseteq \Phi\) closed under addition and containing all of them is isomorphic to \(A_3\) or \(C_3\). There is an embedding \(\Phi_0 \subseteq \mathbb R^3\) such that \(\beta = \mathrm e_1 - \mathrm e_2\), \(\gamma = \mathrm e_2 - \mathrm e_3\), \(\{\beta_1, \beta_2\} = \{\mathrm e_1 - \mathrm e_4, \mathrm e_4 - \mathrm e_2\}\) in the case of \(A_3\), and \(\{\beta_1, \beta_2\} = \{\mathrm e_1 + \mathrm e_3, -\mathrm e_2 - \mathrm e_3\}\) in the case of \(C_3\).
+\end{lemma}
+\begin{proof}
+Note that the set of roots of \(\Phi\) of given length is an irreducible root system \(\Phi'\). In \(\Phi'\) the first claim follows from the fact that the Dynkin diagram is connected and had at least \(3\) vertices. For the second claim, \(\Phi_0\) is irreducible of rank \(3\), so it is either \(A_3\) or \(C_3\) and the roots are short.
+\end{proof}
+
 \begin{theorem}\label{SingleRootElimination}
  Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, \(\Phi\) be a root system of rank \(\geq 3\) different from \(B_l\) and \(C_l\), \(\alpha \in \Phi\) be a root. Then \(\St^{(\infty)}(\Phi / \alpha, R) \to \St^{(\infty)}(\Phi, R)\) is an isomorphism of pro-groups.
 \end{theorem}
@@ -310,20 +317,38 @@ Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a g
  \end{align*}
  hence we have almost all Steinberg relations with \(\alpha\) and \(\delta\) in the left.
 
- Note that there are roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\) such that \(|\beta_1| = |\beta_2| = |\beta|\) and \(\beta = \beta_1 + \beta_2\). Then \(\beta_i\), \(\alpha\), \(\beta\), \(\gamma\) lie in a root subsystem of type \(A_3\) (see the Dynkin diagram), so wlog \(\beta_2 \perp \alpha\) and \(\beta_1 \not \perp \alpha\). It follows that \(\alpha + \beta_i \notin \Phi\), \(\alpha - \beta_2 \notin \Phi\), \(\alpha - \beta_1 \in \Phi\), and
+By lemma \ref{ThreeRoots} there are roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\) such that \(|\beta_1| = |\beta_2| = |\beta|\) and \(\beta = \beta_1 + \beta_2\). Moreover, we know all possible arrangements of these roots in a root subsystem of type \(A_3\) or \(C_3\). Then
  \begin{align*}
   x_\beta(\pm b_1^{(\infty)} b_2^{(\infty)})^{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})} &= [x_{\beta_1}(b_1^{(\infty)})^{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}, x_{\beta_2}(b_2^{(\infty)})^{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}] =\\
-  & [x_{\beta_1}(b_1^{(\infty)}), x_{\beta_2}(b_2^{(\infty)})] = x_\beta(\pm b_1^{(\infty)} b_2^{(\infty)}).
+  & [x_{\beta_1}(b_1^{(\infty)}) x_{\alpha + \beta_1}(\ldots), x_{\beta_2}(b_2^{(\infty)}) x_{\alpha + \beta_2}(\ldots)] = x_\beta(\pm b_1^{(\infty)} b_2^{(\infty)}).
  \end{align*}
 
  Similarly,
  \begin{align*}
   x_{-\beta}(\pm b_1^{(\infty)} b_2^{(\infty)})^{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})} &= [x_{-\beta_1}(b_1^{(\infty)})^{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}, x_{-\beta_2}(b_2^{(\infty)})^{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}] =\\
-  &= [x_{-\beta_1}(b_1^{(\infty)}) x_{\alpha - \beta_1}(\ldots), x_{-\beta_2}(b_2^{(\infty)})] = x_{-\beta}(\pm b_1^{(\infty)} b_2^{(\infty)}) x_\gamma(\ldots).
+  &= [x_{-\beta_1}(b_1^{(\infty)}) x_{\alpha - \beta_1}(\ldots), x_{-\beta_2}(b_2^{(\infty)}) x_{\alpha - \beta_2}(\ldots)] = x_{-\beta}(\pm b_1^{(\infty)} b_2^{(\infty)}) x_\gamma(\ldots).
  \end{align*}
+ Hence we have all cases of (\ref{S3}) with \(\alpha\) in the left. It follows that the morphism \(x_{\beta, \gamma}\) of pro-sets satisfy the first three conditions of lemma \ref{RingPresentation}. Also \(x_{\gamma, \beta}(c^{(\infty)}, b^{(\infty)}) = x_{\beta, \gamma}(-b^{(\infty)}, c^{(\infty)})\).
 
- Hence we have all cases of (\ref{S3}) with \(\alpha\) in the left. It follows that the morphism \(x_{\beta, \gamma}\) of pro-sets satisfy the first three conditions of lemma \ref{RingPresentation}.
+ Now suppose that \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) are two decompositions into a sum of roots with the same length and \(\alpha\), \(\beta_1\), \(\beta_2\) are linearly independent. By lemma \ref{ThreeRoots}, all these roots lie in a common root subsystem of type \(A_3\) or \(C_3\). In the case of \(A_3\) we may assume that \(\alpha = \mathrm e_1 - \mathrm e_4\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 - \mathrm e_4\), \(\beta_2 = \mathrm e_1 - \mathrm e_3\), \(\gamma_2 = \mathrm e_3 - \mathrm e_4\). Let \(\delta = \mathrm e_2 - \mathrm e_3\). We have
+ \begin{align*}
+ x_{\beta_1, \gamma_1}(b^{(\infty)}, N_{\delta, \gamma_2} c^{(\infty)} d^{(\infty)}) &= [x_{\beta_1}(b^{(\infty)}), [x_\delta(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] =\\
+ &= [[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], x_{\gamma_2}(d^{(\infty)})] =\\
+ &= x_{\beta_2, \gamma_2}(N_{\beta_1, \delta} b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
+ \end{align*}
+ In the case of \(C_3\) we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\). Let \(\delta = 2 \mathrm e_2\), then
+ \begin{align*}
+ x_{\beta_1, \gamma_1}(b^{(\infty)}, N_{\delta, \gamma_2} c^{(\infty)} d^{(\infty)}) &= [x_{\beta_1}(b^{(\infty)}), [x_{\delta}(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] =\\
+ &= [[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], x_{\gamma_2}(d^{(\infty)})] =\\
+ &= x_{\beta_2, \gamma_2}(N_{\beta_1, \delta} b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
+ \end{align*}
+ In both cases we get \(x_{\beta_1, \gamma_1}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)})\), hence by lemma \ref{RingPresentation} there is unique morphism \(\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi / \alpha, R)\) such that \(x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)} = \widetilde x_\alpha(N_{\alpha, \beta} b^{(\infty)} c^{(\infty)})\) for \((\beta, \gamma) = (\beta_1, \gamma_1)\) and hence for all other such decompositions. We have \ref{S1} for \(\widetilde x_\alpha\).
+
+ It remains to prove \ref{S3} and \ref{S4} with \(\alpha\) from the right. There are three cases (and all of them may arise only for \(F_4\)): \(\alpha = \beta + \gamma\) with \(\alpha\) long and \(\beta, \gamma\) short, \(\alpha = \beta + \gamma\) with \(\alpha, \beta\) short and \(\gamma\) long, \(\alpha = 2\beta + \gamma\) for \(\beta\) short and \(\alpha, \gamma\) long.
+
+ Now clearly \(G_\alpha\) is the inverse of \(F_\alpha\).
 \end{proof}
+
 
 
 \printbibliography

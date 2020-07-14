@@ -43,6 +43,13 @@
 \newcommand{\Mod}{\mathbf{Mod}}
 \newcommand{\op}{\mathrm{op}}
 
+\newcommand{\rA}{\mathsf{A}}
+\newcommand{\rB}{\mathsf{B}}
+\newcommand{\rC}{\mathsf{C}}
+\newcommand{\rD}{\mathsf{D}}
+\newcommand{\rE}{\mathsf{E}}
+\newcommand{\rF}{\mathsf{F}}
+\newcommand{\rG}{\mathsf{G}}
 \begin{document}
 
 \section{Preliminaries}
@@ -108,14 +115,13 @@ The category of pro-groups \(\Pro(\Group)\) embeds into \(\Pro(\Set)\). Every pr
  If $T$ is the theory of groups, then $F_n$ is the free group $F(t_1,\ldots, t_n)$.
  Similarly, if $T$ is the theory of rngs, $F_{n, T}$ is the sub-rng of the ring $\mathbb{Z}[t_1,\ldots, t_n]$ consisting of polynomials over $\mathbb{Z}$ without free terms.
  
- Given a word $w \in F_{n, T}$ and a $T$-model $X^{(\infty)}$ in $\Pro(\Set)$, one can construct the ``interpretation'' morphism in $\Pro(\Set)$
- \[ w^{(\infty)} \colon \underbrace{X^{(\infty)} \times \ldots \times X^{(\infty)}}_{n\text{ times}} \to X^{(\infty)}\]
- as an appropriate composition of diagonal morphisms $\Delta_{X^{(\infty)}}$, projections $\pi_i$ 
+ Given a word $w \in F_{n, T}$ and a $T$-model $X^{(\infty)}$ in $\Pro(\Set)$, one can construct the $\Pro(\Set)$-morphism
+ \[ w^{(\infty)} \colon \underbrace{X^{(\infty)} \times \ldots \times X^{(\infty)}}_{n\text{ times}} \to X^{(\infty)}, \]
+ which ``interprets'' the word $w$. This morphism can be obtained as an appropriate composition of diagonal morphisms $\Delta_{X^{(\infty)}}$, projections $\pi_i$ 
  (which are part of the structure of a cartesian monoidal category on $\Pro(\Set)$) 
  and the morphisms defining the structure of a $T$-model on $X^{(\infty)}$.
  
- In order to shorten the notation, to denote the interpretation morphism $w^{(\infty)}$ we often use the original term for $w$,
-  in which every symbol of a free variable $t_i$ is replaced by the symbol $t_i^{(\infty)}$.
+ In order to shorten the notation, to denote the interpretation morphism $w^{(\infty)}$ we often use the original term for $w$, in which every symbol of a free variable $t_i$ is replaced by the symbol $t_i^{(\infty)}$.
 \end{df}
 
 \begin{example}\label{example-commutator}
@@ -270,9 +276,9 @@ The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\i
 %It follows that all maps \(x_{ij}^{(s)} \colon R_{ij} \to \stlin(R)^{(s)}\) are injective.
 
 \begin{lemma}\label{SteinbergPresentation}
-Let \(G^{(\infty)}\) be a pro-group. The morphisms \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)\] generate $\St^{(\infty)}(\Phi, R)$ in the categorical sense, i.\,e. to ensure that the morphisms $f_1,f_2\colon\St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to verify the equalities $f_1 x_{\alpha} = f_2 x_\alpha$ for all $\alpha\in\Phi$.
+Let \(G^{(\infty)}\) be a pro-group. The morphisms \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R), \ \alpha\in \Phi\] generate $\St^{(\infty)}(\Phi, R)$ in the categorical sense, i.\,e. to ensure that the morphisms $f_1,f_2\colon\St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to verify the equalities $f_1 x_{\alpha} = f_2 x_\alpha$ for all $\alpha\in\Phi$.
 
-Conversely, a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ can be obtained from a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\), $\alpha \in \Phi$ satisfying the identities~\eqref{R1}--\eqref{R4} (in which $f_{\alpha}$'s are substituted in place of $x_\alpha$'s, the sign $(\infty)$ is added to the upper index of the variables $a, b$ and the resulting equalities are understood as equalities of morphisms in \(\Pro(\Set)\) according to~\cref{conv:notation}).
+Conversely, a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ can be obtained from a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\), provided they satisfy the identities~\eqref{R1}--\eqref{R4} in which $f_{\alpha}$'s are substituted in place of $x_\alpha$'s, the sign $(\infty)$ is added to the upper index of the variables $a, b$ and the resulting identities are understood as equalities of morphisms in \(\Pro(\Set)\) according to~\cref{conv:notation}.
 \end{lemma}
 \begin{proof}
 Notice that by~\cref{lem:proobj-is-a-limit} both of the assertions can be verified in the special case when $G^{(\infty)} = G$ is a group.
@@ -284,27 +290,50 @@ Let us verify the second assertion.
 Notice that~\eqref{R1}--\eqref{R4} specify only a {\it finite} collection of identities in $\Pro(\Set)$ to which $f_\alpha$'s must satisfy.
 Unwinding the definitions, we find a sufficiently large index $s \in S$ such that group homomorphisms 
  $f_\alpha^{(s)}\colon R^{(s)} \to G$ satisfy the same identities (with $f_\alpha$'s replaced by $f_\alpha^{(s)}$'s).
-Thus, we obtain a group homomorphism $\St^{(s)}(\Phi, R) \to G$, which is then easily seen to determine a morphism $\St^{(\infty)}(\Phi, R) \to G$.
+Thus, we obtain a group homomorphism $\St^{(s)}(\Phi, R) \to G$, which, in turn, determines a morphism $\St^{(\infty)}(\Phi, R) \to G$.
 \end{proof}
 Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a group object in $\Pro(\Set)$ is essential in the proof of the above lemma.
 
-
 \section{Main result}
-
 \subsection{Elimination of roots}
+Recall that a root subset $\Psi \subseteq \Phi$ is called {\it closed} if $\alpha, \beta \in \Psi$, $\alpha+\beta\in\Phi$ imply $\alpha+\beta\in \Psi$. A closed root subset $\Psi$ will be called a {\it subsystem} if $\Psi = -\Psi$.
 
 \begin{lemma}\label{ThreeRoots}
-Let \(\Phi\) be a root system of rank \(\geq 3\) different from \(B_l\) and \(C_l\). Suppose that \(\alpha = \beta + \gamma, \beta, \gamma \in \Phi\) and \(|\alpha| = |\beta| = |\gamma|\). Then there are roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R\beta + \mathbb R\gamma)\) such that \(\beta_1 + \beta_2 = \beta\) and \(|\beta| = |\beta_1| = |\beta_2|\). For any such roots the smallest root subsystem \(\Phi_0 \subseteq \Phi\) closed under addition and containing all of them is isomorphic to \(A_3\) or \(C_3\). There is an embedding \(\Phi_0 \subseteq \mathbb R^3\) such that \(\beta = \mathrm e_1 - \mathrm e_2\), \(\gamma = \mathrm e_2 - \mathrm e_3\), \(\{\beta_1, \beta_2\} = \{\mathrm e_1 - \mathrm e_4, \mathrm e_4 - \mathrm e_2\}\) in the case of \(A_3\), and \(\{\beta_1, \beta_2\} = \{\mathrm e_1 + \mathrm e_3, -\mathrm e_2 - \mathrm e_3\}\) in the case of \(C_3\).
+Let \(\Phi\) be a root system of rank \(\geq 3\) and not of type \(\rB_\ell\) or \(\rC_\ell\). Let \(\alpha, \beta, \gamma \in \Phi\) be a triple of roots having the same length such that $\alpha = \beta + \gamma$.  
+Then there exist roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R\beta + \mathbb R\gamma)\) having the same length as $\beta$ and, moreover, such that \(\beta_1 + \beta_2 = \beta\).
+
+The roots $\alpha, \gamma, \beta_1, \beta_2$ are contained in a root subsystem $\Phi_0 \subseteq \Phi$, of type either \(\rA_3\) or \(\rC_3\). There is an embedding \(\Phi_0 \hookrightarrow  \mathbb R^3\) such that \(\beta = \mathrm e_1 - \mathrm e_2\), \(\gamma = \mathrm e_2 - \mathrm e_3\) and 
+\begin{itemize}
+ \item \(\{\beta_1, \beta_2\} = \{\mathrm e_1 - \mathrm e_4, \mathrm e_4 - \mathrm e_2\}\) in the case \(\Phi_0\cong\rA_3\);
+ \item \(\{\beta_1, \beta_2\} = \{\mathrm e_1 + \mathrm e_3, -\mathrm e_2 - \mathrm e_3\}\) in the case \(\Phi_0\cong\rC_3\).
+\end{itemize}
 \end{lemma}
 \begin{proof}
-Note that the set of roots of \(\Phi\) of given length is an irreducible root system \(\Phi'\). In \(\Phi'\) the first claim follows from the fact that the Dynkin diagram is connected and had at least \(3\) vertices. For the second claim, \(\Phi_0\) is irreducible of rank \(3\), so it is either \(A_3\) or \(C_3\) and the roots are short.
-\end{proof}
+Denote by $\Phi'$ the subset of $\Phi$ consisting of roots having the same length as $\beta$.
+It follows from our assumptions that either $\Phi$ is simply-laced and $\Phi' = \Phi$ or $\Phi = \rF_4$, in which case $\Phi'$ is a root subset isomorphic to $\rD_4$ (notice that $\Phi'$ is closed only if $\beta$ is long). In either case the Dynkin diagram of $\Phi'$ is simply laced and has at least $3$ vertices, which implies the first assertion.
+
+Notice that the smallest root subsystem $\Phi_0$ containing $\alpha, \gamma, \beta_1, \beta_2$ is irreducible and has rank $3$, which implies that it is of type either $\rC_3$ (if $\Phi = \rF_4$ and $\beta$ is short) or $\rA_3$ (otherwise). \end{proof}
+
+\begin{df} Let $\alpha$ be a root of an irreducible root system $\Phi$ of rank $\geq 3$ and let $R$ be an rng. We denote by $\St(\Phi\setminus\{\pm \alpha\}, R)$ the group given by generators $x_\beta(a)$, $\beta \neq \pm \alpha$, $a\in R$ and the subset of the set of relations \eqref{R1}--\eqref{R4} consisting of those relations, expressions for which do not contain the generators $x_{\pm\alpha}(a)$.
+\end{df}
+
+By analogy with~\cref{def:Steinberg-homotope}, for every $s\in R$ one can define the $s$-homotope $\St^{(s)}(\Phi\setminus\{\alpha\}, R)$ of the above group $\St(\Phi\setminus\{\pm \alpha\}, R)$. 
+
+For the rest of this section $S$ denotes a multiplicative system of some ring $R$.
+As before, these $s$-homotopes form a projective system, whose formal projective limit will be denoted $\St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)$. There is a morphism of pro-groups
+\[ F_\alpha \colon \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R) \to \St^{(\infty)}(\Phi, R). \]
+given by the pre-morphism $F_\alpha^{*} = \mathrm{id}_S$ and the homomorphisms \[F_\alpha^{(s)} \colon \St^{(s)}(\Phi \setminus\{\pm\alpha\}, R) \to \St^{(s)}(\Phi, R),\] which are induced by the obvious embedding of generators.
+
+Notice that, in general, the individual homomorphisms $F_\alpha^{(s)}$ need not be group isomorphisms. On the other hand, as the following result shows, the morphism of pro-groups $F_\alpha$ is often an isomorphism.
 
 \begin{theorem}\label{SingleRootElimination}
- Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, \(\Phi\) be a root system of rank \(\geq 3\) different from \(B_l\) and \(C_l\), \(\alpha \in \Phi\) be a root. Then \(\St^{(\infty)}(\Phi / \alpha, R) \to \St^{(\infty)}(\Phi, R)\) is an isomorphism of pro-groups.
+ Let \(\Phi\) be a root system of rank \(\geq 3\) and not of type \(\rB_\ell\) or \(\rC_\ell\). Then for every root \(\alpha \in \Phi\) the morphism $F_\alpha$ is an isomorphism of pro-groups.
 \end{theorem}
 \begin{proof}
- We construct a morphism \(G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi / \alpha, R)\) of pro-groups such that \(G_\alpha \circ x_\beta = x_\beta\) for all \(\beta \nparallel \alpha\). It suffice to find morphisms \(\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi / \alpha, R)\) satisfying the Steinberg relations by lemma \ref{SteinbergPresentation}. Since no relation contains both \(\alpha\) and \(-\alpha\), we only have to deal with \(\alpha\). For any pair of roots \((\beta, \gamma)\) such that \(|\beta| = |\gamma| = |\alpha|\) and \(\alpha = \beta + \gamma\) let
+ We construct a morphism \(G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi / \alpha, R)\) of pro-groups such that \(G_\alpha \circ x_\beta = x_\beta\) for all \(\beta \neq \pm \alpha\). 
+ By~\cref{SteinbergPresentation} it suffices to find morphisms \(\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) satisfying the relations \eqref{R1}--\eqref{R4}.
+ 
+ Since no relation contains both \(\alpha\) and \(-\alpha\), we only have to deal with \(\alpha\). For any pair of roots \((\beta, \gamma)\) such that \(|\beta| = |\gamma| = |\alpha|\) and \(\alpha = \beta + \gamma\) let
  \begin{align*}
   x_{\beta, \gamma} \colon R^{(\infty)} \times R^{(\infty)} &\to \St^{(\infty)}(\Phi / \alpha, R),\\
   (b^{(\infty)}, c^{(\infty)}) &\mapsto [x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})].

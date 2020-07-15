@@ -262,7 +262,7 @@ This also allows one to ``deform'' the above definition and, by analogy with the
 There is a group homomorphism $\St^{(s)}(\Phi, R) \to \St(\Phi, sR)$ given by $x_\alpha^{(s)}(a)\mapsto x_\alpha(sa)$, which is easily seen to be an isomorphism in the case when $R$ is an integral domain (cf.~\cref{rem:prorings-comment}). Similarly to pro-rngs, Steinberg pro-groups often do not have global elements.
 \end{rem}
  
-For every root $\alpha \in \Phi$ there is a ``root subgroup'' morphism $x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ in $\Pro(\Group)$ given by the premorphism $x_\alpha^* = \mathrm{id}_S$, $x_\alpha^{(s)}(a^{(s)}) = x_\alpha^{(s)}(a)$.
+For every root $\alpha \in \Phi$ there is a ``root subgroup'' morphism $x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ in $\Pro(\Group)$ given by the pre-morphism $x_\alpha^* = \mathrm{id}_S$, $x_\alpha^{(s)}(a^{(s)}) = x_\alpha^{(s)}(a)$.
 
 \begin{df}
  Let $R$ be a ring with a multiplicative system $S$.
@@ -312,33 +312,62 @@ The roots $\alpha, \gamma, \beta_1, \beta_2$ are contained in a root subsystem $
 Denote by $\Phi'$ the subset of $\Phi$ consisting of roots having the same length as $\beta$.
 It follows from our assumptions that either $\Phi$ is simply-laced and $\Phi' = \Phi$ or $\Phi = \rF_4$, in which case $\Phi'$ is a root subset isomorphic to $\rD_4$ (notice that $\Phi'$ is closed only if $\beta$ is long). In either case the Dynkin diagram of $\Phi'$ is simply laced and has at least $3$ vertices, which implies the first assertion.
 
-Notice that the smallest root subsystem $\Phi_0$ containing $\alpha, \gamma, \beta_1, \beta_2$ is irreducible and has rank $3$, which implies that it is of type either $\rC_3$ (if $\Phi = \rF_4$ and $\beta$ is short) or $\rA_3$ (otherwise). \end{proof}
+Notice that the smallest root subsystem $\Phi_0$ containing $\alpha, \gamma, \beta_1, \beta_2$ is irreducible and has rank $3$, which implies that it is either of type  $\rC_3$ (if $\Phi = \rF_4$ and $\beta$ is short) or $\rA_3$ (otherwise). \end{proof}
 
 \begin{df} Let $\alpha$ be a root of an irreducible root system $\Phi$ of rank $\geq 3$ and let $R$ be an rng. We denote by $\St(\Phi\setminus\{\pm \alpha\}, R)$ the group given by generators $x_\beta(a)$, $\beta \neq \pm \alpha$, $a\in R$ and the subset of the set of relations \eqref{R1}--\eqref{R4} consisting of those relations, expressions for which do not contain the generators $x_{\pm\alpha}(a)$.
 \end{df}
 
-By analogy with~\cref{def:Steinberg-homotope}, for every $s\in R$ one can define the $s$-homotope $\St^{(s)}(\Phi\setminus\{\alpha\}, R)$ of the above group $\St(\Phi\setminus\{\pm \alpha\}, R)$. 
+By analogy with~\cref{def:Steinberg-homotope}, for every $s\in R$ one can define the $s$-homotope $\St^{(s)}(\Phi\setminus\{\pm \alpha\}, R)$ of the above group $\St(\Phi\setminus\{\pm \alpha\}, R)$. 
 
 For the rest of this section $S$ denotes a multiplicative system of some ring $R$.
-As before, these $s$-homotopes form a projective system, whose formal projective limit will be denoted $\St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)$. There is a morphism of pro-groups
+As before, these $s$-homotopes form a projective system, whose formal projective limit will be denoted $\St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)$. 
+For $\beta \neq \pm\alpha$ we use the same notation $x_\beta$ for the ``root subgroup'' morphisms $R^{(\infty)}\to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R)$.
+
+There is a morphism of pro-groups
 \[ F_\alpha \colon \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R) \to \St^{(\infty)}(\Phi, R). \]
 given by the pre-morphism $F_\alpha^{*} = \mathrm{id}_S$ and the homomorphisms \[F_\alpha^{(s)} \colon \St^{(s)}(\Phi \setminus\{\pm\alpha\}, R) \to \St^{(s)}(\Phi, R),\] which are induced by the obvious embedding of generators.
 
-Notice that, in general, the individual homomorphisms $F_\alpha^{(s)}$ need not be group isomorphisms. On the other hand, as the following result shows, the morphism of pro-groups $F_\alpha$ is often an isomorphism.
-
+Notice that, in general, the individual homomorphisms $F_\alpha^{(s)}$ need {\it not} be isomorphisms (at least if $s \neq 1$). On the other hand, as the following result shows, the morphism of pro-groups $F_\alpha$ is often an isomorphism. 
 \begin{theorem}\label{SingleRootElimination}
  Let \(\Phi\) be a root system of rank \(\geq 3\) and not of type \(\rB_\ell\) or \(\rC_\ell\). Then for every root \(\alpha \in \Phi\) the morphism $F_\alpha$ is an isomorphism of pro-groups.
 \end{theorem}
-\begin{proof}
- We construct a morphism \(G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi / \alpha, R)\) of pro-groups such that \(G_\alpha \circ x_\beta = x_\beta\) for all \(\beta \neq \pm \alpha\). 
- By~\cref{SteinbergPresentation} it suffices to find morphisms \(\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) satisfying the relations \eqref{R1}--\eqref{R4}.
- 
- Since no relation contains both \(\alpha\) and \(-\alpha\), we only have to deal with \(\alpha\). For any pair of roots \((\beta, \gamma)\) such that \(|\beta| = |\gamma| = |\alpha|\) and \(\alpha = \beta + \gamma\) let
- \begin{align*}
-  x_{\beta, \gamma} \colon R^{(\infty)} \times R^{(\infty)} &\to \St^{(\infty)}(\Phi / \alpha, R),\\
-  (b^{(\infty)}, c^{(\infty)}) &\mapsto [x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})].
- \end{align*}
+The proof of~\cref{SingleRootElimination} occupies the rest of this subsection.
 
+To verify the assertion of the theorem we need to construct a pro-group morphism \[G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi \setminus \{\pm\alpha\}, R)\] such that \(G_\alpha \circ x_\beta = x_\beta\) for all \(\beta \neq \pm \alpha\). By~\cref{SteinbergPresentation} it suffices to construct a pair of morphisms \(\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) which together with $\widetilde{x}_\beta$, $\beta\neq \pm\alpha$, satisfy the relations \eqref{R1}--\eqref{R4} missing from the presentation of $\St(\Phi\setminus\{\pm\alpha\}, R)$. As before, we understand Steinberg relations as equalities of morphisms in $\Pro(\Set)$ according to~\cref{conv:notation}.
+ 
+\begin{df}
+Let $\beta, \gamma \in \Phi$ be arbitrary roots such that $\alpha = \beta+\gamma$ and the length of $\beta$, $\gamma$ is the same as $\alpha$'s. 
+Denote by $x_{\beta,\gamma}$ the morphism
+ \[[x_\beta(b^{(\infty)}),\ x_\gamma(c^{(\infty)})]\colon R^{(\infty)} \times R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R).\]
+See~\cref{conv:notation} for the explanation of the notation used in the above formula.
+
+Of course, alternatively, $x_{\beta,\gamma}$ can be defined as the class of the pre-morphism $x_{\beta,\gamma}^* = \mathrm{id}_S$, $x_{\beta,\gamma}^{(s)} \colon R^{(s)}\times R^{(s)} \to \St^{(s)}(\Phi\setminus\{\pm\alpha\}, R)$, $x_{\beta,\gamma}^{(s)}(b^{(s)}, c^{(s)}) = [x_\beta^{(s)}(b), x_\gamma^{(s)}(c)].$
+\end{df}
+
+\begin{lemma} The morphism $x_{\beta, \gamma}$ satisfies the identities of~\cref{RingPresentation} and therefore gives rise to a morphism
+ $R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R),$ which we denote by $\widetilde{x}_\alpha$. The resulting morphism $\widetilde{x}_\alpha$ does not depend on the choice of $\beta$ and $\gamma$ and satisfies the relation~\eqref{R1}.
+\end{lemma}
+\begin{proof}
+ Suppose that \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) are two different decompositions for $\alpha$ such that $\alpha$, $\beta_i$ and $\gamma_i$ have the same length. We may assume that \(\beta_1\), \(\beta_2\) are linearly independent. By~\cref{ThreeRoots} the roots $\beta_i$, $\gamma_i$ lie in root subsystem $\Phi_0$ of type \(\rA_3\) or \(\rC_3\). 
+ 
+ In the case \(\Phi_0 = \rA_3\) we may assume that \(\alpha = \mathrm e_1 - \mathrm e_4\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 - \mathrm e_4\), \(\beta_2 = \mathrm e_1 - \mathrm e_3\), \(\gamma_2 = \mathrm e_3 - \mathrm e_4\). Set \(\delta = \mathrm e_2 - \mathrm e_3\). We have
+ \begin{align*}
+ x_{\beta_1, \gamma_1}(b^{(\infty)}, N_{\delta, \gamma_2} c^{(\infty)} d^{(\infty)}) &= [x_{\beta_1}(b^{(\infty)}), [x_\delta(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] =\\
+ &= [[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], x_{\gamma_2}(d^{(\infty)})] =\\
+ &= x_{\beta_2, \gamma_2}(N_{\beta_1, \delta} b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
+ \end{align*}
+ In the case of \(C_3\) we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\). Let \(\delta = 2 \mathrm e_2\), then
+ \begin{align*}
+ x_{\beta_1, \gamma_1}(b^{(\infty)}, N_{\delta, \gamma_2} c^{(\infty)} d^{(\infty)}) &= [x_{\beta_1}(b^{(\infty)}), [x_{\delta}(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] =\\
+ &= [[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], x_{\gamma_2}(d^{(\infty)})] =\\
+ &= x_{\beta_2, \gamma_2}(N_{\beta_1, \delta} b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
+ \end{align*}
+ In both cases we get \(x_{\beta_1, \gamma_1}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)})\), hence by lemma \ref{RingPresentation} there is unique morphism \(\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi / \alpha, R)\) such that \(x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)} = \widetilde x_\alpha(N_{\alpha, \beta} b^{(\infty)} c^{(\infty)})\) for \((\beta, \gamma) = (\beta_1, \gamma_1)\) and hence for all other such decompositions. We have (\ref{S1}) for \(\widetilde x_\alpha\).
+\end{proof}
+
+
+ 
+Since no Steinberg relation contains both \(\alpha\) and \(-\alpha\) simultaneously, we only have to deal with \(\alpha\).  
  If \(\delta \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\), then
  \begin{align*}
   [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\delta(d^{(\infty)})] &= [x_\beta(b^{(\infty)}) x_\gamma(c^{(\infty)}) x_\beta(-b^{(\infty)}) x_\gamma(-c^{(\infty)}), x_\delta(d^{(\infty)})]\\
@@ -363,20 +392,6 @@ By lemma \ref{ThreeRoots} there are roots \(\beta_1, \beta_2 \in \Phi \setminus 
   &= x_{-\beta}(N_{-\beta_1, -\beta_2}  b_1^{(\infty)} b_2^{(\infty)}) x_\gamma(\ldots).
  \end{align*}
  Hence we have all cases of (\ref{S3}) with \(\alpha\) in the left. It follows that the morphism \(x_{\beta, \gamma}\) of pro-sets satisfy the first three conditions of lemma \ref{RingPresentation}. Also \(x_{\gamma, \beta}(c^{(\infty)}, b^{(\infty)}) = x_{\beta, \gamma}(-b^{(\infty)}, c^{(\infty)})\).
-
- Now suppose that \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) are two decompositions into a sum of roots with the same length and \(\alpha\), \(\beta_1\), \(\beta_2\) are linearly independent. By lemma \ref{ThreeRoots}, all these roots lie in a common root subsystem of type \(A_3\) or \(C_3\). In the case of \(A_3\) we may assume that \(\alpha = \mathrm e_1 - \mathrm e_4\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 - \mathrm e_4\), \(\beta_2 = \mathrm e_1 - \mathrm e_3\), \(\gamma_2 = \mathrm e_3 - \mathrm e_4\). Let \(\delta = \mathrm e_2 - \mathrm e_3\). We have
- \begin{align*}
- x_{\beta_1, \gamma_1}(b^{(\infty)}, N_{\delta, \gamma_2} c^{(\infty)} d^{(\infty)}) &= [x_{\beta_1}(b^{(\infty)}), [x_\delta(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] =\\
- &= [[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], x_{\gamma_2}(d^{(\infty)})] =\\
- &= x_{\beta_2, \gamma_2}(N_{\beta_1, \delta} b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
- \end{align*}
- In the case of \(C_3\) we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\). Let \(\delta = 2 \mathrm e_2\), then
- \begin{align*}
- x_{\beta_1, \gamma_1}(b^{(\infty)}, N_{\delta, \gamma_2} c^{(\infty)} d^{(\infty)}) &= [x_{\beta_1}(b^{(\infty)}), [x_{\delta}(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] =\\
- &= [[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], x_{\gamma_2}(d^{(\infty)})] =\\
- &= x_{\beta_2, \gamma_2}(N_{\beta_1, \delta} b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
- \end{align*}
- In both cases we get \(x_{\beta_1, \gamma_1}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)})\), hence by lemma \ref{RingPresentation} there is unique morphism \(\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi / \alpha, R)\) such that \(x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)} = \widetilde x_\alpha(N_{\alpha, \beta} b^{(\infty)} c^{(\infty)})\) for \((\beta, \gamma) = (\beta_1, \gamma_1)\) and hence for all other such decompositions. We have (\ref{S1}) for \(\widetilde x_\alpha\).
 
  It remains to prove (\ref{S3}) and (\ref{S4}) with \(\alpha\) from the right. There are three cases (and all of them may arise only for \(F_4\)): \(\alpha = \beta + \gamma\) with \(\alpha\) long and \(\beta\), \(\gamma\) short, \(\alpha = \beta + \gamma\) with \(\alpha\), \(\beta\) short and \(\gamma\) long, \(\alpha = 2\beta + \gamma\) for \(\beta\) short and \(\alpha\), \(\gamma\) long.
 
@@ -403,7 +418,7 @@ By lemma \ref{ThreeRoots} there are roots \(\beta_1, \beta_2 \in \Phi \setminus 
  \end{enumerate}
 
  Now clearly \(G_\alpha\) is the inverse of \(F_\alpha\).
-\end{proof}
+
 
  \begin{theorem}\label{DoubleRootElimination}
   Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, \(\Phi\) be a root system of rank \(\geq 3\) different from \(B_l\) and \(C_l\), \(\alpha, \beta \in \Phi\) be linearly independent roots. Then \(\St^{(\infty)}(\Phi / \{\alpha, \beta\}, R) \to \St^{(\infty)}(\Phi, R)\) is an epimorphism of pro-groups.

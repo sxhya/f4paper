@@ -15,6 +15,8 @@
 \DeclareFieldFormat[article, inproceedings, inbook, book, online]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
 \renewcommand*{\bibfont}{\footnotesize}
 
+\numberwithin{equation}{section}
+
 \newtheorem{lemma}{Lemma} \numberwithin{lemma}{section}
 \newtheorem{prop}{Proposition} \numberwithin{prop}{section}
 \newtheorem{theorem}{Theorem}
@@ -172,24 +174,24 @@ The rng multiplication morphism $m \colon R^{(\infty)} \times R^{(\infty)} \to R
 \end{lemma}
 \begin{proof}
 Consider the following pre-morphism of pro-sets:
-\[u \colon R^{(\infty)} \to R^{(\infty)} \times R^{(\infty)}, \enskip u^*(s) = s^2, \enskip u^{(s)} \colon c^{(s^2)} \mapsto 1^{(s)} \otimes c^{(s)}.\]
+\[u \colon R^{(\infty)} \to R^{(\infty)} \times R^{(\infty)}, \enskip u^*(s) = s^2, \enskip u^{(s)} \colon c^{(s^2)} \mapsto (1^{(s)}, c^{(s)}).\]
 Clearly, this is indeed a pre-morphism and
 \[m^{(s)}\bigl(u^{(s)}\bigl(c^{(s^2)}\bigr)\bigr) = 1^{(s)} c^{(s)} = (sc)^{(s)},\]
 which shows that $mu = \mathrm{id}_{R^{(\infty)}}$.
 \end{proof}
 
 \begin{conv} \label{conv:notation}
-Before we proceed further let us introduce the following conventions, 
- which will help us to keep our notations short:
+Before we proceed further we need to introduce certain notational conventions 
+ which will help us to keep our notations short and avoid using bulky commutative diagrams.
  \begin{itemize}
-  \item any algebraic expression containing the symbol $(\infty)$ in the upper index of a variable (e.\,g. $a^{(\infty)}$, $b^{(\infty)}$ etc.) denotes a certain morphism of pro-sets, whose domain is a certain product of pro-sets (often a power of a single pro-set), such morphisms are typically obtained from~\cref{df-pro-set-morphisms};
-  \item the number of factors in this product coincides with the number of different variables occuring in the expression;
-  \item in order to specify the domain of a variable $a^{(\infty)}$ occuring in the expression, we use the notation $a^{(\infty)} \in X^{(\infty)}$ (this notation is not confusing since we never refer to the actual elements of pro-sets, recall that the elements of our pro-sets are usually uninteresting, cf.~\cref{rem:prorings-comment});
-  \item the notation for the multiplication operation is usually suppressed, i.\,e. we write $a^{(\infty)} b^{(\infty)}$ more often than $m(a^{(\infty)}, b^{(\infty)})$ or $a^{(\infty)} \cdot b^{(\infty)}$;
-  \item the syntax of tuples is used to denote the product of morphisms (e.\,g. if $f,g \colon X^{(\infty)} \to Y^{(\infty)}$ are morphisms of pro-sets, then we use the notation $(f(x_1^{(\infty)}), g(x_2^{(\infty)}))$ instead of $f\times g$);
-  \item if $g$ is a morphism of pro-sets with $X^{(\infty)} \times Y^{\infty}$ as its domain, then we write $g(a^{(\infty)}, b^{(\infty)})$ instead of $g((a^{(\infty)}, b^{(\infty)}))$;
-  \item to denote the operation of composition of morphisms we use the syntax of substituted expressions;
-  \item notice that the trivial group $1$ is a zero object in the category $\Pro(\Group)$, therefore for any pro-groups $G^{(\infty)}, H^{(\infty)}$
+  \item Any algebraic expression containing the symbol $(\infty)$ in the upper index of a variable (e.\,g. $a^{(\infty)}$, $b^{(\infty)}$ etc.) denotes a certain morphism of pro-sets, whose domain is a certain product of pro-sets (often a power of a single pro-set), such morphisms are typically obtained from~\cref{df-pro-set-morphisms};
+  \item The number of factors in this product coincides with the number of different variables occuring in the expression.
+  \item In order to specify the domain of a variable $a^{(\infty)}$ occuring in the expression, we use the notation $a^{(\infty)} \in X^{(\infty)}$ (this notation is not confusing since we never refer to the actual elements of pro-sets, recall that the elements of our pro-sets are usually uninteresting, cf.~\cref{rem:prorings-comment}).
+  \item The notation for the multiplication operation is usually suppressed, i.\,e. we write $a^{(\infty)} b^{(\infty)}$ more often than $m(a^{(\infty)}, b^{(\infty)})$ or $a^{(\infty)} \cdot b^{(\infty)}$.
+  \item The syntax of tuples is used to denote the product of morphisms (e.\,g. if $f,g \colon X^{(\infty)} \to Y^{(\infty)}$ are morphisms of pro-sets, then we use the notation $(f(x_1^{(\infty)}), g(x_2^{(\infty)}))$ instead of $f\times g$).
+  \item If $g$ is a morphism of pro-sets with $X^{(\infty)} \times Y^{\infty}$ as its domain, then we write $g(a^{(\infty)}, b^{(\infty)})$ instead of $g((a^{(\infty)}, b^{(\infty)}))$.
+  \item To denote the composition of morphisms we use the syntax of substituted expressions. Thus, for example, if $f, g \colon X^{(\infty)} \to Y^{(\infty)}$ are morphisms of pro-groups and $[t_1^{(\infty)}, t_2^{(\infty)}]$ is the generic commutator from~\cref{example-commutator}, then $[f(a^{(\infty)}), g(b^{(\infty)})]$ denotes the composition \[[t_1^{(\infty)}, t_2^{(\infty)}] \circ (f\times g) \colon X^{(\infty)} \times X^{(\infty)} \to Y^{(\infty)}\]
+  \item Notice that the trivial group $1$ is a zero object in the category $\Pro(\Group)$, therefore for any pro-groups $G^{(\infty)}, H^{(\infty)}$
    there is only one morphism $G^{(\infty)} \to H^{(\infty)}$ passing through $1$, this morphism will also be denoted by $1$.
  \end{itemize}
 \end{conv} 
@@ -237,12 +239,24 @@ Recall the {\it Steinberg group $\St(\Phi, R)$} is given by generators $x_\alpha
  [x_\alpha(a),\ x_\beta(b)] &= x_{\alpha + \beta}(N_{\alpha,\beta} \cdot ab), \tag{R3} \label{R3} \\
  \multispan2{\hfill if $\alpha+\beta\in\Phi$ but $\alpha+2\beta,\ 2\alpha+\beta\not\in\Phi;$} \nonumber \\
  [x_\alpha(a),\ x_\beta(b)] &= x_{\alpha + \beta}(N_{\alpha,\beta} \cdot ab) \cdot x_{2\alpha+\beta}(N_{\alpha,\beta} \cdot \widehat{N}_{\alpha, \alpha+\beta}\cdot a^2b), \tag{R4} \label{R4} \\ \multispan2{ \hfill if $\alpha+\beta,2\alpha+\beta\in\Phi$.} \nonumber  \end{align}
+\end{df}
 The constants $N_{\alpha,\beta}$ appearing in the above relations are called the {\it structure constants} of the Chevalley group of type $\Phi$.
-Since we excluded the case $\Phi=\mathsf{G}_2$ the only possibilities for $N_{\alpha, \beta}$ are $\pm 1$ or $\pm 2$.
-Notice that $|N_{\alpha,\beta}| = 2$ provided $\alpha$ and $\beta$ are short, in which case we set $\widehat{N}_{\alpha, \beta} = \frac{1}{2} N_{\alpha, \beta}$.
-In the other cases $|N_{\alpha, \beta}| = 1$. \end{df}
+Different methods of computing signs of these constants have been proposed in the literature, see e.\,g.~\cite{VP}.
+For the purposes of the present article, the standard properties of structure constants suffice. Let us briefly recall them.
 
-Notice that the multiplicative identity of $R$ is actually never used in the above definition, 
+First of all, notice that we excluded the case $\Phi=\mathsf{G}_2$ so the only possibilities for $N_{\alpha, \beta}$ appearing in the above relations are $\pm 1$ or $\pm 2$.
+Notice that $|N_{\alpha,\beta}| = 2$ only when $\alpha$ and $\beta$ are short but $\alpha+\beta$ is long, in which case we set $\widehat{N}_{\alpha, \beta} = \frac{1}{2} N_{\alpha, \beta}$.
+In the other cases $|N_{\alpha, \beta}| = 1$.
+
+Recall from~\cite[\S~14]{VP}) that
+\begin{equation} \label{eq:sc-ids-sl} N_{\alpha, \beta} = -N_{\beta,\alpha} = - N_{-\alpha, -\beta} = \tfrac{|\alpha+\beta|^2}{|\alpha|^2} N_{\beta, -\alpha-\beta} = \tfrac{|\alpha+\beta|^2}{|\beta|^2} N_{-\alpha-\beta, \alpha}. \end{equation}
+These identities will be used in the sequel without explicit reference. 
+Recall also that if $\alpha, \beta, \gamma, \delta$ are pairwise linearly independent roots such that $\alpha+\beta+\gamma+\delta = 0$ then the following identity holds:
+\begin{equation} \label{eq:cocycle} \tfrac{1}{|\alpha+\beta|^2} N_{\alpha,\beta} N_{\gamma,\delta} + \tfrac{1}{|\beta+\gamma|^2} N_{\beta,\gamma} N_{\alpha,\delta} + \tfrac{1}{|\gamma+\alpha|^2} N_{\gamma,\alpha} N_{\beta,\delta} = 0. \end{equation}
+Notice that in the above identitiy the symbol $N_{\alpha,\beta}$ is understood to be equal $0$, whenever $\alpha+\beta\not\in\Phi\setminus\{0\}$ 
+ (i.\,e. whenever $N_{\alpha, \beta}$ does not show up among the relations~\eqref{R3}--\eqref{R4}).
+
+Notice that the multiplicative identity of $R$ is actually never used in the definition of the Steinberg group, 
  which allows one to use it in the situation when $R$ is an rng.
 This also allows one to ``deform'' the above definition and, by analogy with the homotopes of rngs introduced in~\cref{ring-homotope}, come to the notion of a ``homotope'' of the Steinberg group.
 \begin{df}\label{def:Steinberg-homotope}
@@ -278,9 +292,9 @@ The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\i
 %It follows that all maps \(x_{ij}^{(s)} \colon R_{ij} \to \stlin(R)^{(s)}\) are injective.
 
 \begin{lemma}\label{SteinbergPresentation}
-Let \(G^{(\infty)}\) be a pro-group. The morphisms \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R), \ \alpha\in \Phi\] generate $\St^{(\infty)}(\Phi, R)$ in the categorical sense, i.\,e. to ensure that the morphisms $f_1,f_2\colon\St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to verify the equalities $f_1 x_{\alpha} = f_2 x_\alpha$ for all $\alpha\in\Phi$.
+Let \(G^{(\infty)}\) be a pro-group. The morphisms \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R), \ \alpha\in \Phi\] ``generate'' $\St^{(\infty)}(\Phi, R)$. In other words, to ensure that a pair of morphisms $f_1,f_2\colon\St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to verify the equalities $f_1 x_{\alpha} = f_2 x_\alpha$ for all $\alpha\in\Phi$.
 
-Conversely, a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ can be obtained from a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\), provided they satisfy the identities~\eqref{R1}--\eqref{R4} in which $f_{\alpha}$'s are substituted in place of $x_\alpha$'s, the sign $(\infty)$ is added to the upper index of the variables $a, b$ and the resulting identities are understood as equalities of morphisms in \(\Pro(\Set)\) according to~\cref{conv:notation}.
+To obtain a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ it suffices to construct a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\) satisfying the identities~\eqref{R1}--\eqref{R4} in which $f_{\alpha}$'s are substituted in place of $x_\alpha$'s, the sign $(\infty)$ is added to the upper index of the variables $a, b$ and the resulting identities are understood as equalities of morphisms in \(\Pro(\Set)\) according to~\cref{conv:notation}.
 \end{lemma}
 \begin{proof}
 Notice that by~\cref{lem:proobj-is-a-limit} both of the assertions can be verified in the special case when $G^{(\infty)} = G$ is a group.
@@ -288,7 +302,7 @@ Notice that by~\cref{lem:proobj-is-a-limit} both of the assertions can be verifi
 Let us verify the first assertion. Since there is only a finite number of roots in $\Phi$ one can find a sufficiently large index $s \in S$ such that the homomorphisms $f_1^{(s)}, f_2^{(s)}\colon \St^{(s)}(\Phi, R) \to G$ become equal after precomposition with $x_\alpha$ for all $\alpha \in \Phi$.
 Since the root elements $x_\alpha^{(s)}(a)$ generate $\St^{(s)}(\Phi, R)$ we obtain that the morphisms $f_1$ and $f_2$ are equal.
 
-Let us verify the second assertion. 
+Let us verify the second assertion. Recall that a morphism $f_\alpha \colon R^{(\infty)} \to G$ corresponds to a group homomorphism $f_\alpha$
 Notice that~\eqref{R1}--\eqref{R4} specify only a {\it finite} collection of identities in $\Pro(\Set)$ to which $f_\alpha$'s must satisfy.
 Unwinding the definitions, we find a sufficiently large index $s \in S$ such that group homomorphisms 
  $f_\alpha^{(s)}\colon R^{(s)} \to G$ satisfy the same identities (with $f_\alpha$'s replaced by $f_\alpha^{(s)}$'s).
@@ -297,6 +311,11 @@ Thus, we obtain a group homomorphism $\St^{(s)}(\Phi, R) \to G$, which, in turn,
 Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a group object in $\Pro(\Set)$ is essential in the proof of the above lemma.
 
 \section{Main result}
+Throughout this section we make use of the following commutator identities:
+\begin{align}
+\label{eq:comm-mult-rhs}[x, yz]& =   [x, y] \cdot {}^{y}\![x, z],
+\end{align}
+\begin{equation} \label{eq:HW-corr} [x,z] = 1 \text{ implies } [x, [y,z]] = [[x,y],{}^yz]. \end{equation} 
 \subsection{Elimination of roots}
 Recall that a root subset $\Psi \subseteq \Phi$ is called {\it closed} if $\alpha, \beta \in \Psi$, $\alpha+\beta\in\Phi$ imply $\alpha+\beta\in \Psi$. A closed root subset $\Psi$ will be called a {\it subsystem} if $\Psi = -\Psi$.
 
@@ -316,13 +335,14 @@ It follows from our assumptions that either $\Phi$ is simply-laced and $\Phi' = 
 
 Notice that the smallest root subsystem $\Phi_0$ containing $\alpha, \gamma, \beta_1, \beta_2$ is irreducible and has rank $3$, which implies that it is either of type  $\rC_3$ (if $\Phi = \rF_4$ and $\beta$ is short) or $\rA_3$ (otherwise). \end{proof}
 
-\begin{df} Let $\alpha$ be a root of an irreducible root system $\Phi$ of rank $\geq 3$ and let $R$ be an rng. We denote by $\St(\Phi\setminus\{\pm \alpha\}, R)$ the group given by generators $x_\beta(a)$, $\beta \neq \pm \alpha$, $a\in R$ and the subset of the set of relations \eqref{R1}--\eqref{R4} consisting of those relations, expressions for which do not contain the generators $x_{\pm\alpha}(a)$.
+\begin{df}
+Let $R$ be a ring, $S$ be its multiplicative system of and $\alpha$ be a root of an irreducible root system $\Phi$ of rank $\geq 3$. 
+
+We denote by $\St(\Phi\setminus\{\pm \alpha\}, R)$ the group given by generators $x_\beta(a)$, $\beta \neq \pm \alpha$, $a\in R$ and the subset of the set of relations \eqref{R1}--\eqref{R4} consisting of those relations, expressions for which do not contain $x_{\pm\alpha}(a)$.
+Similarly to~\cref{def:Steinberg-homotope} one can define the $s$-homotope $\St^{(s)}(\Phi\setminus\{\pm \alpha\}, R)$ of this group for every $s\in R$. 
+As before, these $s$-homotopes form a projective system, whose formal projective limit will be denoted $\St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)$. 
 \end{df}
 
-By analogy with~\cref{def:Steinberg-homotope}, for every $s\in R$ one can define the $s$-homotope $\St^{(s)}(\Phi\setminus\{\pm \alpha\}, R)$ of the above group $\St(\Phi\setminus\{\pm \alpha\}, R)$. 
-
-For the rest of this section $S$ denotes a multiplicative system of some ring $R$.
-As before, these $s$-homotopes form a projective system, whose formal projective limit will be denoted $\St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)$. 
 For $\beta \neq \pm\alpha$ we use the same notation $x_\beta$ for the ``root subgroup'' morphisms $R^{(\infty)}\to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R)$.
 
 There is a morphism of pro-groups
@@ -334,39 +354,60 @@ Notice that, in general, the individual homomorphisms $F_\alpha^{(s)}$ need {\it
  Let \(\Phi\) be a root system of rank \(\geq 3\) and not of type \(\rB_\ell\) or \(\rC_\ell\). Then for every root \(\alpha \in \Phi\) the morphism $F_\alpha$ is an isomorphism of pro-groups.
 \end{theorem}
 The proof of~\cref{SingleRootElimination} occupies the rest of this subsection.
-
-To verify the assertion of the theorem we need to construct a pro-group morphism \[G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi \setminus \{\pm\alpha\}, R)\] such that \(G_\alpha \circ x_\beta = x_\beta\) for all \(\beta \neq \pm \alpha\). By~\cref{SteinbergPresentation} it suffices to construct a pair of morphisms \(\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) which together with $\widetilde{x}_\beta$, $\beta\neq \pm\alpha$, satisfy the relations \eqref{R1}--\eqref{R4} missing from the presentation of $\St(\Phi\setminus\{\pm\alpha\}, R)$. As before, we understand Steinberg relations as equalities of morphisms in $\Pro(\Set)$ according to~\cref{conv:notation}.
+Our immediate goal is to construct the root subgroup morphisms
+\[\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R) \] ``missing'' from the presentation of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$. The construction of $\widetilde{x}_{-\alpha}$ is analogous to $\widetilde{x}_\alpha$, so it suffices to construct the latter.
  
+%To verify the assertion of the theorem we need to construct a pro-group morphism \[G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi \setminus \{\pm\alpha\}, R)\] such that \(G_\alpha \circ x_\beta = x_\beta\) for all \(\beta \neq \pm \alpha\). By~\cref{SteinbergPresentation} it suffices to construct a pair of morphisms \(\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) which together with $\widetilde{x}_\beta$, $\beta\neq \pm\alpha$, satisfy the relations \eqref{R1}--\eqref{R4} missing from the presentation of $\St(\Phi\setminus\{\pm\alpha\}, R)$. As before, we understand Steinberg relations as equalities of morphisms in $\Pro(\Set)$ according to~\cref{conv:notation}.
+
 \begin{df}
 Let $\beta, \gamma \in \Phi$ be arbitrary roots such that $\alpha = \beta+\gamma$ and the length of $\beta$, $\gamma$ is the same as $\alpha$'s. 
-Denote by $x_{\beta,\gamma}$ the morphism
- \[[x_\beta(b^{(\infty)}),\ x_\gamma(c^{(\infty)})]\colon R^{(\infty)} \times R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R).\]
+Denote by $x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)})$ the morphism
+ \[[x_\beta(N_{\beta,\gamma}b^{(\infty)}),\ x_\gamma(c^{(\infty)})]\colon R^{(\infty)} \times R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R).\]
 See~\cref{conv:notation} for the explanation of the notation used in the above formula.
 
-Of course, alternatively, $x_{\beta,\gamma}$ can be defined as the class of the pre-morphism $x_{\beta,\gamma}^* = \mathrm{id}_S$, $x_{\beta,\gamma}^{(s)} \colon R^{(s)}\times R^{(s)} \to \St^{(s)}(\Phi\setminus\{\pm\alpha\}, R)$, $x_{\beta,\gamma}^{(s)}(b^{(s)}, c^{(s)}) = [x_\beta^{(s)}(b), x_\gamma^{(s)}(c)].$
+%Of course, alternatively, $x_{\beta,\gamma}$ can be defined as the class of the pre-morphism $x_{\beta,\gamma}^* = \mathrm{id}_S$, $x_{\beta,\gamma}^{(s)} \colon R^{(s)}\times R^{(s)} \to \St^{(s)}(\Phi\setminus\{\pm\alpha\}, R)$, $x_{\beta,\gamma}^{(s)}(b^{(s)}, c^{(s)}) = [x_\beta^{(s)}(b), x_\gamma^{(s)}(c)].$
 \end{df}
 
 \begin{lemma} The morphism $x_{\beta, \gamma}$ satisfies the identities of~\cref{RingPresentation} and therefore gives rise to a morphism
  $R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R),$ which we denote by $\widetilde{x}_\alpha$. The resulting morphism $\widetilde{x}_\alpha$ does not depend on the choice of $\beta$ and $\gamma$ and satisfies the relation~\eqref{R1}.
 \end{lemma}
 \begin{proof}
- Suppose that \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) are two different decompositions for $\alpha$ such that $\alpha$, $\beta_i$ and $\gamma_i$ have the same length. We may assume that \(\beta_1\), \(\beta_2\) are linearly independent. By~\cref{ThreeRoots} the roots $\beta_i$, $\gamma_i$ lie in root subsystem $\Phi_0$ of type \(\rA_3\) or \(\rC_3\). 
+ Suppose that \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) are two different decompositions for $\alpha$ such that $\alpha$, $\beta_i$ and $\gamma_i$ have the same length.
+ By~\cref{ThreeRoots} the roots $\beta_i$, $\gamma_i$ span a root subsystem $\Phi_0$ of type \(\rA_3\) or \(\rC_3\). 
+ Replacing $\beta_2$ with $\gamma_2$ if necessary, we may assume that \(\beta_1\), \(\beta_2\) form a sharp angle.
+ Set $\delta = \gamma_1 - \gamma_2 = \beta_2 - \beta_1$ and
+ \[\varepsilon_1 = N_{\beta_1, \gamma_1},\ \varepsilon_2 = N_{\beta_2, \gamma_2},\ \varepsilon_3 = N_{\delta,\gamma_2},\ \varepsilon_4 = N_{\beta_1, \delta}.\] 
  
- In the case \(\Phi_0 = \rA_3\) we may assume that \(\alpha = \mathrm e_1 - \mathrm e_4\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 - \mathrm e_4\), \(\beta_2 = \mathrm e_1 - \mathrm e_3\), \(\gamma_2 = \mathrm e_3 - \mathrm e_4\). Set \(\delta = \mathrm e_2 - \mathrm e_3\). We have
+ Consider the case \(\Phi_0 \cong \rA_3\), in which $\delta$ is a root forming an obtuse angle with both $\beta_1$ and $\gamma_2$. 
+ From~\eqref{eq:cocycle} one obtains immediately that $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$, therefore
  \begin{align*}
- x_{\beta_1, \gamma_1}(b^{(\infty)}, N_{\delta, \gamma_2} c^{(\infty)} d^{(\infty)}) &= [x_{\beta_1}(b^{(\infty)}), [x_\delta(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] =\\
- &= [[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], x_{\gamma_2}(d^{(\infty)})] =\\
- &= x_{\beta_2, \gamma_2}(N_{\beta_1, \delta} b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
+ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)}d^{(\infty)})] \\ 
+ = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_\delta(\varepsilon_3 c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] & \text{ by~\eqref{R3}} \\
+ = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_\delta(\varepsilon_3c^{(\infty)})], {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
+ = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_\delta(\varepsilon_3c^{(\infty)})], x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{R3},\eqref{eq:comm-mult-rhs}}\\
+ = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})] \\
+ = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
  \end{align*}
- In the case of \(C_3\) we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\). Let \(\delta = 2 \mathrm e_2\), then
+ 
+ In the case \(\Phi_0 = \rC_3\) the root $\delta$ turns out to be long.
+% \[ \frac{N_{\beta_1,\gamma_1} N_{-\beta_2,-\gamma_2}}{(\beta_1+\gamma_1, \beta_1+\gamma_1)} + \frac{N_{\gamma_1,-\beta_2} N_{\beta_1,-\gamma_2}}{(\gamma_1-\beta_2, \gamma_1-\beta_2)} + \frac{N_{-\beta_2,\beta_1} N_{\gamma_1,-\gamma_2}}{(\beta_1-\beta_2, \beta_1-\beta_2)} = 0\]
+Substituting the quadruple $\beta_1, \gamma_1, -\beta_2, -\gamma_2$ into~\eqref{eq:cocycle} we obtain that
+ $-\varepsilon_1 \varepsilon_2 +  N_{\gamma_1,-\beta_2} N_{\beta_1,-\gamma_2} + 2 \varepsilon_3 \varepsilon_4 = 0$ from which it follows that 
+ $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.
+ %we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\). Let \(\delta = 2 \mathrm e_2\), then
  \begin{align*}
- x_{\beta_1, \gamma_1}(b^{(\infty)}, N_{\delta, \gamma_2} c^{(\infty)} d^{(\infty)}) &= [x_{\beta_1}(b^{(\infty)}), [x_{\delta}(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] =\\
- &= [[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], x_{\gamma_2}(d^{(\infty)})] =\\
- &= x_{\beta_2, \gamma_2}(N_{\beta_1, \delta} b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
+ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)})] & \\
+ = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_{\delta}(\varepsilon_3c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] &\text{ by~\eqref{R2},\eqref{R4},\eqref{eq:comm-mult-rhs}}\\
+ = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_\delta(\varepsilon_3c^{(\infty)})], {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
+ = [x_{\beta_2}(\varepsilon_2 b^{(\infty)} c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})x_{\gamma_1}(c^{(\infty)}d^{(\infty)}) ] &\text{ by~\eqref{R3}}\\
+ = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)})&\text{ by~\eqref{R2},\eqref{R3},\eqref{eq:comm-mult-rhs}}
  \end{align*}
- In both cases we get \(x_{\beta_1, \gamma_1}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)})\), hence by lemma \ref{RingPresentation} there is unique morphism \(\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi / \alpha, R)\) such that \(x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)} = \widetilde x_\alpha(N_{\alpha, \beta} b^{(\infty)} c^{(\infty)})\) for \((\beta, \gamma) = (\beta_1, \gamma_1)\) and hence for all other such decompositions. We have (\ref{S1}) for \(\widetilde x_\alpha\).
+ In both cases we obtain that \(x_{\beta_1, \gamma_1}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)})\),
+  therefore by~\cref{RingPresentation} there exists a unique morphism \[\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)\] such that
+  \(x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)} = \widetilde x_\alpha(N_{\alpha, \beta} b^{(\infty)} c^{(\infty)})\) for \((\beta, \gamma) = (\beta_1, \gamma_1)\) 
+  and hence for all other such decompositions. 
+  It is clear that \(\widetilde x_\alpha\) satisfies~\eqref{R1}.
 \end{proof}
-
 
  
 Since no Steinberg relation contains both \(\alpha\) and \(-\alpha\) simultaneously, we only have to deal with \(\alpha\).  

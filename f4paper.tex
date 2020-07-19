@@ -35,6 +35,7 @@
 \DeclareMathOperator\St{St}
 \DeclareMathOperator\Ker{Ker}
 \DeclareMathOperator\GG{G}
+\DeclareMathOperator\Torus{T}
 \DeclareMathOperator{\Pro}{Pro}
 
 
@@ -540,12 +541,100 @@ By lemma \ref{ThreeRoots} there are roots \(\beta_1, \beta_2 \in \Phi \setminus 
 
 
  \begin{theorem}\label{DoubleRootElimination}
-  Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, \(\Phi\) be a root system of rank \(\geq 3\) different from \(B_l\) and \(C_l\), \(\alpha, \beta \in \Phi\) be linearly independent roots. Then \(\St^{(\infty)}(\Phi / \{\alpha, \beta\}, R) \to \St^{(\infty)}(\Phi, R)\) is an epimorphism of pro-groups.
+  Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\), \(\alpha, \beta \in \Phi\) be linearly independent roots. Then \(\St^{(\infty)}(\Phi / \{\alpha, \beta\}, R) \to \St^{(\infty)}(\Phi, R)\) is an epimorphism of pro-groups.
  \end{theorem}
  \begin{proof}
   If \(\Phi_0\) is not of type \(A_2\), then every root from \(\Phi_0\) may be decomposed into a sum of two roots with the same length, these roots do not lie in \(\Phi_0\) and we are done by lemma \ref{SteinbergPresentation}. If \(\Phi_0\) is of type \(A_2\), apply lemma \ref{ThreeRoots}.
  \end{proof}
 
+
+\subsection{Localization}
+
+Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{(\infty)}\) is an \(S^{-1} R\)-algebra in the following sense: for every element \(\frac rs \in S^{-1} R\) there is a well-defined pro-group endomorphism \(m_{\frac rs} \colon R^{(\infty)} \to R^{(\infty)}\) given by \(m_{\frac rs}^*(s') = ss'\) and \(m_{\frac rs}^{(s')}(a^{(ss')}) = (ra)^{(s')}\) for some choice of \(r\) and \(s\). Moreover, \(m\) is actually a homomorphism of rings \(S^{-1} R \to \Pro(\Group)(R^{(\infty)})\) and \(m_{\frac rs}(a^{(\infty)} b^{(\infty)}) = m_{\frac rs}(a^{(\infty)}) b^{(\infty)} = a^{(\infty)} m_{\frac rs}(b^{(\infty)})\). We usually write \(\frac rs a^{(\infty)}\) instead of \(m_{\frac rs}(a^{(\infty)})\).
+
+\begin{df}\label{root-action}
+ Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, and \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). For every root \(\beta \in \Phi\) and every \(g\) in the standard torus \(\Torus(\Phi, S^{-1} R)\) of \(\GG(\Phi, S^{-1} R)\) let
+ \[\up g{x_\beta(b^{(\infty)})} = x_\beta(\beta(g) b^{(\infty)}).\]
+ For every linearly independent \(\alpha, \beta \in \Phi\) and \(u \in S^{-1} R\) let
+ \begin{align*}
+ \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
+ &= x_\beta(b^{(\infty)}), \\
+ \multispan2{\hfil if $\alpha + \beta \notin \Phi$;} \\
+ %
+ \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
+ &= x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)
+  x_\beta(b^{(\infty)}), \\
+ \multispan2{\hfill if $\alpha + \beta \in \Phi$ but $\alpha + 2\beta, 2\alpha + \beta \notin \Phi$;} \\
+ %
+ \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
+ &= x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)
+  x_{2\alpha + \beta}\bigl(N_{\alpha, \beta} \widehat N_{\alpha, \alpha + \beta} u^2 b^{(\infty)}\bigr)
+  x_\beta(b^{(\infty)}), \\
+ \multispan2{\hfill if $\alpha + \beta, 2\alpha + \beta \in \Phi$;} \\
+ %
+ \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
+ &= x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)
+  x_{\alpha + 2\beta}\bigl(N_{\alpha, \beta} \widehat N_{\beta, \alpha + \beta} u (b^{(\infty)})^2\bigr)
+  x_\beta(b^{(\infty)}), \\
+ \multispan2{\hfill if $\alpha + \beta, \alpha + 2\beta \in \Phi$.}
+ \end{align*} 
+\end{df}
+
+\begin{lemma}\label{SteinbergLocalAction}
+ Let \(R\) be a ring with a multiplicative subset \(S \subseteq R\), \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Then the group \(\St(\Phi, S^{-1} R) \rtimes \Torus(\Phi, S^{-1} R)\) acts on the pro-group \(\St^{(\infty)}(\Phi, R)\) (by pro-group automorphisms) as in the definition \ref{root-action}. This action also satisfies
+ \[\up{x_\alpha(u)}{x_\alpha(a^{(\infty)})} = x_\alpha(a^{(\infty)}).\]
+\end{lemma}
+\begin{proof}
+ In is clear from the definitions that \(\Torus(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi, R)\). For every root \(\alpha \in \Phi\) the root subgroup \(x_\alpha(S^{-1} R) \leq \St(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi \setminus \{\alpha, -\alpha\}, R)\), hence on \(\St^{(\infty)}(\Phi, R)\) by theorem \ref{SingleRootElimination}. Moreover, the actions of \(g x_\alpha(u) g^{-1}\) and \(x_\alpha(\alpha(g) u)\) coincide for all \(g \in \Torus(\Phi, S^{-1} R)\), \(u \in R\). We still have to check that the actions of \(x_\alpha(u)\) and \(x_\beta(v)\) satisfy the Steinberg relation on \(x_\alpha(u)\) and \(x_\beta(v)\) if \(\alpha \neq -\beta\). But this is obvious if we consider the action on \(\St^{(\infty)}(\Phi / \{\alpha, \beta\}, R)\), so the claim follows by theorem \ref{DoubleRootElimination}.
+ % !!!!!!!!!!!!!!! Here Phi / {alpha, beta} may be replaced by a better notation. !!!!!!!!!!!!!!!
+
+ If \(\alpha = \beta + \gamma\) for roots \(\beta, \gamma \in \Phi\) with \(|\alpha| = |\beta| = |\gamma|\), then
+ \begin{align*}
+  \up{x_\alpha(u)}{x_\alpha(N_{\beta, \gamma} b^{(\infty)} c^{(\infty)})} &= [\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}] =\\
+  &= [x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})] = x_\alpha(N_{\beta, \gamma} b^{(\infty)} c^{(\infty)}),
+ \end{align*}
+ hence the last claim follows.
+\end{proof}
+
+\begin{theorem}\label{ChevalleyLocalAction}
+ Let \(R\) be a ring, \(\mathfrak m \trianglelefteq R\) be a maximal ideal, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Consider a multiplicative subset \(S = R \setminus \mathfrak m\). Then the action from lemma \ref{SteinbergLocalAction} factors through an action of the group \(\GG(\Phi, R_{\mathfrak m})\) on \(\St^{(\infty)}(\Phi, R)\). The morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is \(\GG(\Phi, R_{\mathfrak m})\)-equivariant.
+\end{theorem}
+
+
+\subsection{Steinberg crossed module}
+
+Here we prove that the Steinberg group \(\St(\Phi, R)\) is a crossed module over \(\GG(\Phi, R)\).
+
+\begin{lemma}\label{CentralityK2}
+ Let \(R\) be a commutative ring, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Then \(\mathrm K_2(\Phi, R) = \Ker(\mathrm{st} \colon \St(\Phi, R) \to \GG(\Phi, R))\) is a central subgroup of \(\St(\Phi, R)\).
+\end{lemma}
+\begin{proof}
+ Let \(g \in \mathrm K_2(\Phi, R)\) and \(\alpha \in \Phi\) be a root. Consider the ideal
+ \[\mathfrak a = \{a \in R \mid \up g{x_\alpha(ra)} = x_\alpha(ra) \text{ for all } r \in R\}.\]
+ We have to show that \(\mathfrak a = R\). Take a maximal ideal \(\mathfrak m \trianglelefteq R\) and consider a multiplicative subset \(S = R \setminus \mathfrak m\). By theorem \ref{ChevalleyLocalAction}, \(g\) trivially acts on the pro-group \(\St^{(\infty)}(\Phi, R)\). This means that \(\mathfrak a \not \leq \mathfrak m\).
+\end{proof}
+
+The next result is actually well-known. % !!!!!!!!! Add references !!!!!!!!!!!
+
+\begin{lemma}\label{Normality}
+ Let \(R\) be a commutative ring, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Then \(\mathrm E(\Phi, R) = \mathrm{Im}(\mathrm{st} \colon \St(\Phi, R) \to \GG(\Phi, R))\) is a normal subgroup of \(\GG(\Phi, R)\).
+\end{lemma}
+\begin{proof}
+ Let \(g \in \GG(\Phi, R)\) and \(\alpha \in \Phi\) be a root. Consider the ideal
+ \[\mathfrak a = \{a \in R \mid \up g{x_\alpha(Ra)} \in \mathrm E(\Phi, R)\}.\]
+ Again, we have to show that \(\mathfrak a = R\). Take a maximal ideal \(\mathfrak a \trianglelefteq R\) and consider a multiplicative subset \(S = R \setminus \mathfrak m\). By theorem \ref{ChevalleyLocalAction}, \(g\) acts on the pro-group \(\St^{(\infty)}(\Phi, R)\) such that \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is equivariant. As above, this means that \(\mathfrak a \not \leq \mathfrak m\).
+\end{proof}
+
+\begin{theorem}\label{SteinbergCrossedModule}
+ Let \(R\) be a commutative ring, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Then \(\mathrm{st} \colon \St(\Phi, R) \to \GG(\Phi, R)\) is a crossed module in a unique way.
+\end{theorem}
+\begin{proof}
+ We already know that the Steinberg group \(\St(\Phi, R)\) is a central (see lemma \ref{CentralityK2}) perfect extension of the elementary group \(\mathrm E(\Phi, R)\). For any \(g \in \GG(\Phi, R)\) it remains to construct an endomorphism \(\up g{(-)} \colon \St(\Phi, R) \to \St(\Phi, R)\) such that \(\mathrm{st}\) is equivariant. Such an endomorphism is necessarily unique and multuplicative on \(g\). Fix an element \(g \in \GG(\Phi, R)\).
+
+ Take a root \(\alpha \in \Phi\). Since \(\mathrm E(\Phi, R) \trianglelefteq \GG(\Phi, R)\) by lemma \ref{Normality}, the set
+ \[Y_\alpha(a) = \mathrm{st}^{-1}\bigl(\up g{\mathrm{st}(x_\alpha(a))}\bigr)\]
+ is non-empty for all \(a \in R\). Moreover, it is a coset of \(\mathrm K_2(\Phi, R)\). It remains to find elements \(y_\alpha(a) \in Y_\alpha(a)\) for all \(\alpha\) and \(a\) satisfying the Steinberg relations. If \(\beta, \gamma \in \Phi\) are such that \(\alpha = \beta + \gamma\) and \(|\alpha| = |\beta| = |\gamma|\), then let \(y_{\beta, \gamma}(b, c)\) be the only element of \([Y_\beta(b), Y_\gamma(c)]\).
+\end{proof}
 
 
 \printbibliography

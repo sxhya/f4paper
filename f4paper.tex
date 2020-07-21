@@ -383,32 +383,33 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
  \[\varepsilon_1 = N_{\beta_1, \gamma_1},\ \varepsilon_2 = N_{\beta_2, \gamma_2},\ \varepsilon_3 = N_{\delta,\gamma_2},\ \varepsilon_4 = N_{\beta_1, \delta}.\] 
  
  Consider the case \(\Phi_0 \cong \rA_3\), in which $\delta$ is a root forming an obtuse angle with both $\beta_1$ and $\gamma_2$. 
- It is easy to see that $\beta_1\perp \gamma_2$.
+ Under our assumptions $\beta_1\perp \gamma_2$, $\gamma_1 \perp \beta_2$, therefore 
+ substituting the quadruple of roots $\beta_1, \gamma_1, -\beta_2, -\gamma_2$ into~\eqref{eq:cocycle} we obtain that
+ $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.
+ Notice that
+ \begin{align}
+ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_{\gamma_1}(c^{(\infty)}d^{(\infty)})] \label{eq:a3-start} \\ 
+ = [x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ [x_\delta(\varepsilon_3 c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})]] & \text{ by~\eqref{R3}.} \nonumber
+ \end{align}
  
- From~\eqref{eq:cocycle} one obtains immediately that $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$, therefore
+Now consider the case \(\Phi_0 = \rC_3\), in which the root $\delta$ is long.
+% \[ \frac{N_{\beta_1,\gamma_1} N_{-\beta_2,-\gamma_2}}{(\beta_1+\gamma_1, \beta_1+\gamma_1)} + \frac{N_{\gamma_1,-\beta_2} N_{\beta_1,-\gamma_2}}{(\gamma_1-\beta_2, \gamma_1-\beta_2)} + \frac{N_{-\beta_2,\beta_1} N_{\gamma_1,-\gamma_2}}{(\beta_1-\beta_2, \beta_1-\beta_2)} = 0\]
+Substituting the same quadruple of roots as above into~\eqref{eq:cocycle} we obtain that
+ \[-\varepsilon_1 \varepsilon_2 +  N_{\gamma_1,-\beta_2} N_{\beta_1,-\gamma_2} + 2 \varepsilon_3 \varepsilon_4 = 0\]
+from which, again, it follows that $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.
+By our assumptions, $\beta_1$ (resp. $\beta_2$) forms a sharp angle with $\gamma_2$ (resp. $\gamma_1$) and $\gamma_1 + \gamma_2$ is a root orthogonal to $\beta_1$. In this case we have that
+% we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\). Let \(\delta = 2 \mathrm e_2\), then
+ \begin{align}
+ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)})] & \nonumber \\
+ [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)}) x_{\gamma_1 + \gamma_2}(\widehat{N}_{\delta,\gamma_1}c^{(\infty)} d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \label{eq:c3-start}\\
+ = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_{\delta}(\varepsilon_3c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] &\text{ by~\eqref{R4}.} \nonumber
+ \end{align}
+Now both~\eqref{eq:a3-start} and~\eqref{eq:c3-start} can be finished by the following computation:
  \begin{align*}
- x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_{\gamma_1}(c^{(\infty)}d^{(\infty)})] \\ 
- = [x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ [x_\delta(\varepsilon_3 c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})]] & \text{ by~\eqref{R3}} \\
- = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_\delta(\varepsilon_3c^{(\infty)})],\ {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
+  \ldots = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_\delta(\varepsilon_3c^{(\infty)})],\ {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
  = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)}) x_{\gamma_1}(c^{(\infty)}d^{(\infty)}) ] & \text{ by~\eqref{R3}}\\
  = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \\
- = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
- \end{align*}
- 
- In the case \(\Phi_0 = \rC_3\) the root $\delta$ turns out to be long.
-% \[ \frac{N_{\beta_1,\gamma_1} N_{-\beta_2,-\gamma_2}}{(\beta_1+\gamma_1, \beta_1+\gamma_1)} + \frac{N_{\gamma_1,-\beta_2} N_{\beta_1,-\gamma_2}}{(\gamma_1-\beta_2, \gamma_1-\beta_2)} + \frac{N_{-\beta_2,\beta_1} N_{\gamma_1,-\gamma_2}}{(\beta_1-\beta_2, \beta_1-\beta_2)} = 0\]
-Substituting the quadruple $\beta_1, \gamma_1, -\beta_2, -\gamma_2$ into~\eqref{eq:cocycle} we obtain that
- $-\varepsilon_1 \varepsilon_2 +  N_{\gamma_1,-\beta_2} N_{\beta_1,-\gamma_2} + 2 \varepsilon_3 \varepsilon_4 = 0$ from which it follows that 
- $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.
- %we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\). Let \(\delta = 2 \mathrm e_2\), then
- \begin{align*}
- x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)})] & \\
- = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_{\delta}(\varepsilon_3c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] &\text{ by~\eqref{R2},\eqref{R4},\eqref{eq:comm-mult-rhs}}\\
- = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_\delta(\varepsilon_3c^{(\infty)})], {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
- = [x_{\beta_2}(\varepsilon_2 b^{(\infty)} c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})x_{\gamma_1}(c^{(\infty)}d^{(\infty)}) ] &\text{ by~\eqref{R3}}\\
- = [x_{\beta_2}(\varepsilon_2 b^{(\infty)} c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}}\\
- = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
- \end{align*}
+ = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}). \end{align*}
  In both cases we obtain that \(x_{\beta_1, \gamma_1}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)})\),
   therefore by~\cref{RingPresentation} there exists a unique morphism \[\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)\] such that
   \(x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)} = \widetilde x_\alpha(N_{\alpha, \beta} b^{(\infty)} c^{(\infty)})\) for \((\beta, \gamma) = (\beta_1, \gamma_1)\) 

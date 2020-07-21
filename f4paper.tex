@@ -229,10 +229,12 @@ It is clear that \(f'\) gives the required morphism \(f\) of pro-groups.
 \end{proof}
 \subsection{Steinberg groups and Steinberg pro-groups}
 Let $\Phi$ be an irreducible root system of rank $\geq 3$.
-We start with the classical definition of the Steinberg group of unital rings.
-Let $R$ be a ring.
+We assume that the root system is $\Phi$ contained in a Euclidean space $V = \mathbb{R}^\ell$ whose scalar product we denote by $(-, -)$.
+For a pair of roots $\alpha, \beta \in \Phi$ we denote by $\langle \alpha, \beta \rangle$ the integer $\tfrac{2(\alpha, \beta)}{|\beta|^2}$.
+
+We start by recalling the classical definition of the Steinberg group.
 \begin{df} \label{def:Steinberg}
-Recall the {\it Steinberg group $\St(\Phi, R)$} is given by generators $x_\alpha(a)$, where $\alpha \in \Phi$ and $a \in R$ and the following list of defining relations:
+Let $R$ be a ring. Recall the {\it Steinberg group $\St(\Phi, R)$} is given by generators $x_\alpha(a)$, where $\alpha \in \Phi$ and $a \in R$ and the following list of defining relations:
 \begin{align}
  x_\alpha(a) \cdot x_\alpha(b)    &= x_\alpha(a+b); \tag{R1} \label{R1} \\
  [x_\alpha(a),\ x_\beta(b)] &= 1, \tag{R2} \label{R2} \\ 
@@ -252,10 +254,11 @@ In the other cases $|N_{\alpha, \beta}| = 1$.
 Recall from~\cite[\S~14]{VP}) that
 \begin{equation} \label{eq:sc-ids-sl} N_{\alpha, \beta} = -N_{\beta,\alpha} = - N_{-\alpha, -\beta} = \tfrac{|\alpha+\beta|^2}{|\alpha|^2} N_{\beta, -\alpha-\beta} = \tfrac{|\alpha+\beta|^2}{|\beta|^2} N_{-\alpha-\beta, \alpha}. \end{equation}
 These identities will be used in the sequel without explicit reference. 
-Recall also that if $\alpha, \beta, \gamma, \delta$ are pairwise linearly independent roots such that $\alpha+\beta+\gamma+\delta = 0$ then the following identity holds:
+
+We also need yet another identity for structure constants.
+To formulate it succintly, we extend the domain of the structure constant function $N_{-,-}$ by setting $N_{\alpha, \beta} = 0$ whenever $\alpha+\beta\not\in\Phi\setminus\{0\}$.
+Now if $\alpha, \beta, \gamma, \delta$ are pairwise linearly independent roots such that $\alpha+\beta+\gamma+\delta = 0$ then the following identity holds:
 \begin{equation} \label{eq:cocycle} \tfrac{1}{|\alpha+\beta|^2} N_{\alpha,\beta} N_{\gamma,\delta} + \tfrac{1}{|\beta+\gamma|^2} N_{\beta,\gamma} N_{\alpha,\delta} + \tfrac{1}{|\gamma+\alpha|^2} N_{\gamma,\alpha} N_{\beta,\delta} = 0. \end{equation}
-Notice that in the above identitiy the symbol $N_{\alpha,\beta}$ is understood to be equal $0$, whenever $\alpha+\beta\not\in\Phi\setminus\{0\}$ 
- (i.\,e. whenever $N_{\alpha, \beta}$ does not show up among the relations~\eqref{R3}--\eqref{R4}).
 
 Notice that the multiplicative identity of $R$ is actually never used in the definition of the Steinberg group, 
  which allows one to use it in the situation when $R$ is an rng.
@@ -303,10 +306,10 @@ Notice that by~\cref{lem:proobj-is-a-limit} both of the assertions can be verifi
 Let us verify the first assertion. Since there is only a finite number of roots in $\Phi$ one can find a sufficiently large index $s \in S$ such that the homomorphisms $f_1^{(s)}, f_2^{(s)}\colon \St^{(s)}(\Phi, R) \to G$ become equal after precomposition with $x_\alpha$ for all $\alpha \in \Phi$.
 Since the root elements $x_\alpha^{(s)}(a)$ generate $\St^{(s)}(\Phi, R)$ we obtain that the morphisms $f_1$ and $f_2$ are equal.
 
-Let us verify the second assertion. Recall that a morphism $f_\alpha \colon R^{(\infty)} \to G$ corresponds to a group homomorphism $f_\alpha$
+Let us verify the second assertion. By definition, a morphism $f_\alpha \colon R^{(\infty)} \to G$ corresponds to a single group homomorphism 
+ $f_\alpha^{\circ} \colon R^{(s_\alpha)} \to G$ for some $s_\alpha \in S$.
 Notice that~\eqref{R1}--\eqref{R4} specify only a {\it finite} collection of identities in $\Pro(\Set)$ to which $f_\alpha$'s must satisfy.
-Unwinding the definitions, we find a sufficiently large index $s \in S$ such that group homomorphisms 
- $f_\alpha^{(s)}\colon R^{(s)} \to G$ satisfy the same identities (with $f_\alpha$'s replaced by $f_\alpha^{(s)}$'s).
+Unwinding the definitions, we find a sufficiently large index $s \in S$ such that composite homomorphisms $\widetilde{f}_\alpha$ defined as the composites of $f_\alpha^{(\circ)}\colon R^{(s_\alpha)} \to G$ with the structure morphisms $R^{(s)} \to R^{(s_\alpha)}$ satisfy the same identities (with $f_\alpha$'s replaced by $\widetilde{f}_\alpha$'s).
 Thus, we obtain a group homomorphism $\St^{(s)}(\Phi, R) \to G$, which, in turn, determines a morphism $\St^{(\infty)}(\Phi, R) \to G$.
 \end{proof}
 Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a group object in $\Pro(\Set)$ is essential in the proof of the above lemma.
@@ -380,13 +383,15 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
  \[\varepsilon_1 = N_{\beta_1, \gamma_1},\ \varepsilon_2 = N_{\beta_2, \gamma_2},\ \varepsilon_3 = N_{\delta,\gamma_2},\ \varepsilon_4 = N_{\beta_1, \delta}.\] 
  
  Consider the case \(\Phi_0 \cong \rA_3\), in which $\delta$ is a root forming an obtuse angle with both $\beta_1$ and $\gamma_2$. 
+ It is easy to see that $\beta_1\perp \gamma_2$.
+ 
  From~\eqref{eq:cocycle} one obtains immediately that $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$, therefore
  \begin{align*}
- x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)}d^{(\infty)})] \\ 
- = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_\delta(\varepsilon_3 c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] & \text{ by~\eqref{R3}} \\
- = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_\delta(\varepsilon_3c^{(\infty)})], {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
- = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_\delta(\varepsilon_3c^{(\infty)})], x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{R3},\eqref{eq:comm-mult-rhs}}\\
- = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})] \\
+ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_{\gamma_1}(c^{(\infty)}d^{(\infty)})] \\ 
+ = [x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ [x_\delta(\varepsilon_3 c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})]] & \text{ by~\eqref{R3}} \\
+ = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_\delta(\varepsilon_3c^{(\infty)})],\ {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
+ = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)}) x_{\gamma_1}(c^{(\infty)}d^{(\infty)}) ] & \text{ by~\eqref{R3}}\\
+ = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \\
  = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
  \end{align*}
  
@@ -401,7 +406,8 @@ Substituting the quadruple $\beta_1, \gamma_1, -\beta_2, -\gamma_2$ into~\eqref{
  = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_{\delta}(\varepsilon_3c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] &\text{ by~\eqref{R2},\eqref{R4},\eqref{eq:comm-mult-rhs}}\\
  = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_\delta(\varepsilon_3c^{(\infty)})], {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
  = [x_{\beta_2}(\varepsilon_2 b^{(\infty)} c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})x_{\gamma_1}(c^{(\infty)}d^{(\infty)}) ] &\text{ by~\eqref{R3}}\\
- = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)})&\text{ by~\eqref{R2},\eqref{R3},\eqref{eq:comm-mult-rhs}}
+ = [x_{\beta_2}(\varepsilon_2 b^{(\infty)} c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}}\\
+ = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
  \end{align*}
  In both cases we obtain that \(x_{\beta_1, \gamma_1}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)})\),
   therefore by~\cref{RingPresentation} there exists a unique morphism \[\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)\] such that

@@ -227,6 +227,7 @@ f'\bigl(a^{(s^2)} b^{(s^2)})
 \end{align*}
 It is clear that \(f'\) gives the required morphism \(f\) of pro-groups.
 \end{proof}
+
 \subsection{Steinberg groups and Steinberg pro-groups}
 Let $\Phi$ be an irreducible root system of rank $\geq 3$.
 We assume that the root system is $\Phi$ contained in a Euclidean space $V = \mathbb{R}^\ell$ whose scalar product we denote by $(-, -)$.
@@ -287,12 +288,14 @@ For every root $\alpha \in \Phi$ there is a ``root subgroup'' morphism $x_{\alph
 \begin{df}
  Let $R$ be a ring with a multiplicative system $S$.
  Consider the projective system of relative Chevalley groups (also called congruence subgroups) 
- $\GG(\Phi, R, sR) = \Ker\left(\GG_{sc}(\Phi, R) \to \GG_{sc}(\Phi, R/sR)\right)$ with the structure morphisms given by the usual inclusions of congruence subgroups. Define the {\it simply-connected Chevalley pro-group} $\GG^{(\infty)}(\Phi, R)$ as the formal projective limit of this system.
+ $\GG(\Phi, R^{(s)} \rtimes R, R^{(s)}) = \Ker\left(\GG_{sc}(\Phi, R^{(s)} \rtimes R) \to \GG_{sc}(\Phi, R)\right)$ with the structure morphisms given by the structure morphisms of \(R^{(s)}\). Define the {\it simply-connected Chevalley pro-group} $\GG^{(\infty)}(\Phi, R)$ as the formal projective limit of this system.
 \end{df}
+
+% If R is a domain, then this should be the projective limit of G(Phi, R, sR)...
 
 Recall that there is well-defined homomorphism $\mathrm{st}\colon \St(\Phi, R) \to \GG_{sc}(\Phi, R)$ sending each generator $x_\alpha(a)$ to the root unipotent $t_\alpha(a)$. 
 
-The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) of the above homomorphism is given by the pre-morphism \(\mathrm{st}^* = \mathrm{id}_S\), \(\mathrm{st}^{(s)}\bigl(x_{\alpha}^{(s)}(a)\bigr) = t_\alpha(sa)\). 
+The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) of the above homomorphism is given by the pre-morphism \(\mathrm{st}^* = \mathrm{id}_S\), \(\mathrm{st}^{(s)}\bigl(x_{\alpha}^{(s)}(a)\bigr) = t_\alpha(a^{(s)})\). 
 %It follows that all maps \(x_{ij}^{(s)} \colon R_{ij} \to \stlin(R)^{(s)}\) are injective.
 
 \begin{lemma}\label{SteinbergPresentation}
@@ -319,7 +322,9 @@ Throughout this section we make use of the following commutator identities:
 \begin{align}
 \label{eq:comm-mult-rhs}[x, yz]& =   [x, y] \cdot {}^{y}\![x, z],
 \end{align}
-\begin{equation} \label{eq:HW-corr} [x,z] = 1 \text{ implies } [x, [y,z]] = [[x,y],{}^yz]. \end{equation} 
+\begin{equation} \label{eq:HW-corr} [x,z] = 1 \text{ implies } [x, [y,z]] = [[x,y],{}^yz].
+\end{equation}
+
 \subsection{Elimination of roots}
 Recall that a root subset $\Psi \subseteq \Phi$ is called {\it closed} if $\alpha, \beta \in \Psi$, $\alpha+\beta\in\Phi$ imply $\alpha+\beta\in \Psi$. A closed root subset $\Psi$ will be called a {\it subsystem} if $\Psi = -\Psi$.
 
@@ -557,10 +562,10 @@ By lemma \ref{ThreeRoots} there are roots \(\beta_1, \beta_2 \in \Phi \setminus 
 
 \subsection{Localization}
 
-Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{(\infty)}\) is an \(S^{-1} R\)-algebra in the following sense: for every element \(\frac rs \in S^{-1} R\) there is a well-defined pro-group endomorphism \(m_{\frac rs} \colon R^{(\infty)} \to R^{(\infty)}\) given by \(m_{\frac rs}^*(s') = ss'\) and \(m_{\frac rs}^{(s')}(a^{(ss')}) = (ra)^{(s')}\) for some choice of \(r\) and \(s\). Moreover, \(m\) is actually a homomorphism of rings \(S^{-1} R \to \Pro(\Group)(R^{(\infty)})\) and \(m_{\frac rs}(a^{(\infty)} b^{(\infty)}) = m_{\frac rs}(a^{(\infty)}) b^{(\infty)} = a^{(\infty)} m_{\frac rs}(b^{(\infty)})\). We usually write \(\frac rs a^{(\infty)}\) instead of \(m_{\frac rs}(a^{(\infty)})\).
+Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{(\infty)}\) is an \(S^{-1} R\)-algebra in the following sense: for every element \(\frac rs \in S^{-1} R\) there is a well-defined pro-group endomorphism \(m_{\frac rs} \colon R^{(\infty)} \to R^{(\infty)}\) given by \(m_{\frac rs}^*(s') = ss'\) and \(m_{\frac rs}^{(s')}(a^{(ss')}) = (ra)^{(s')}\) for some choice of \(r\) and \(s\). Moreover, \(m\) is actually a homomorphism of rings \(S^{-1} R \to \Pro(\Group)(R^{(\infty)})\) and \(m_{\frac rs}(a^{(\infty)} b^{(\infty)}) = m_{\frac rs}(a^{(\infty)}) b^{(\infty)} = a^{(\infty)} m_{\frac rs}(b^{(\infty)})\). We usually write \(\frac rs a^{(\infty)}\) instead of \(m_{\frac rs}(a^{(\infty)})\). Similarly, \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) acts on the Chevalley pro-group \(\GG^{(\infty)}(\Phi, R)\) by automorphisms.
 
 \begin{df}\label{root-action}
- Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, and \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). For every root \(\beta \in \Phi\) and every \(g\) in the standard torus \(\Torus(\Phi, S^{-1} R)\) of \(\GG(\Phi, S^{-1} R)\) let
+ Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, and \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). For every root \(\beta \in \Phi\) and every \(g\) in the standard torus \(\Torus(\Phi, S^{-1} R)\) of \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) let
  \[\up g{x_\beta(b^{(\infty)})} = x_\beta(\beta(g) b^{(\infty)}).\]
  For every linearly independent \(\alpha, \beta \in \Phi\) and \(u \in S^{-1} R\) let
  \begin{align*}
@@ -588,14 +593,14 @@ Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{
 \end{df}
 
 \begin{lemma}\label{SteinbergLocalAction}
- Let \(R\) be a ring with a multiplicative subset \(S \subseteq R\), \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Then the group \(\St(\Phi, S^{-1} R) \rtimes \Torus(\Phi, S^{-1} R)\) acts on the pro-group \(\St^{(\infty)}(\Phi, R)\) (by pro-group automorphisms) as in the definition \ref{root-action}. This action also satisfies
+ Let \(R\) be a ring with a multiplicative subset \(S \subseteq R\), \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Then the group \(\St(\Phi, S^{-1} R) \rtimes \Torus(\Phi, S^{-1} R)\) acts on the pro-group \(\St^{(\infty)}(\Phi, R)\) (by pro-group automorphisms) as in the definition \ref{root-action}, the morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is equivariant with respect to this action. This action also satisfies
  \[\up{x_\alpha(u)}{x_\alpha(a^{(\infty)})} = x_\alpha(a^{(\infty)}).\]
 \end{lemma}
 \begin{proof}
  In is clear from the definitions that \(\Torus(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi, R)\). For every root \(\alpha \in \Phi\) the root subgroup \(x_\alpha(S^{-1} R) \leq \St(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi \setminus \{\alpha, -\alpha\}, R)\), hence on \(\St^{(\infty)}(\Phi, R)\) by theorem \ref{SingleRootElimination}. Moreover, the actions of \(g x_\alpha(u) g^{-1}\) and \(x_\alpha(\alpha(g) u)\) coincide for all \(g \in \Torus(\Phi, S^{-1} R)\), \(u \in R\). We still have to check that the actions of \(x_\alpha(u)\) and \(x_\beta(v)\) satisfy the Steinberg relation on \(x_\alpha(u)\) and \(x_\beta(v)\) if \(\alpha \neq -\beta\). But this is obvious if we consider the action on \(\St^{(\infty)}(\Phi / \{\alpha, \beta\}, R)\), so the claim follows by theorem \ref{DoubleRootElimination}.
  % !!!!!!!!!!!!!!! Here Phi / {alpha, beta} may be replaced by a better notation. !!!!!!!!!!!!!!!
 
- If \(\alpha = \beta + \gamma\) for roots \(\beta, \gamma \in \Phi\) with \(|\alpha| = |\beta| = |\gamma|\), then
+ Equivariance of the morphism \(\mathrm{st}\) is clear. If \(\alpha = \beta + \gamma\) for roots \(\beta, \gamma \in \Phi\) with \(|\alpha| = |\beta| = |\gamma|\), then
  \begin{align*}
   \up{x_\alpha(u)}{x_\alpha(N_{\beta, \gamma} b^{(\infty)} c^{(\infty)})} &= [\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}] =\\
   &= [x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})] = x_\alpha(N_{\beta, \gamma} b^{(\infty)} c^{(\infty)}),
@@ -604,13 +609,22 @@ Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{
 \end{proof}
 
 \begin{theorem}\label{ChevalleyLocalAction}
- Let \(R\) be a ring, \(\mathfrak m \trianglelefteq R\) be a maximal ideal, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Consider a multiplicative subset \(S = R \setminus \mathfrak m\). Then the action from lemma \ref{SteinbergLocalAction} factors through an action of the group \(\GG(\Phi, R_{\mathfrak m})\) on \(\St^{(\infty)}(\Phi, R)\). The morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is \(\GG(\Phi, R_{\mathfrak m})\)-equivariant.
+ Let \(R\) be a ring, \(\mathfrak m \trianglelefteq R\) be a maximal ideal, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Consider a multiplicative subset \(S = R \setminus \mathfrak m\). Then the action from lemma \ref{SteinbergLocalAction} factors through an action of the group \(\GG_{\mathrm{sc}}(\Phi, R_{\mathfrak m})\) on \(\St^{(\infty)}(\Phi, R)\). The morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is \(\GG_{\mathrm{sc}}(\Phi, R_{\mathfrak m})\)-equivariant.
 \end{theorem}
+\begin{proof}
+ For \(a \in R_{\mathfrak m}^*\) and \(\alpha \in \Phi\) let \(w_\alpha(a) = x_\alpha(a) x_{-\alpha}(-a^{-1}) x_\alpha(a)\) and \(h_\alpha(a) = w_\alpha(a) w_\alpha(1)^{-1}\). It is well-known that \(\GG_{\mathrm{sc}}(\Phi, R_{\mathfrak m})\) is the factor-group of \(\St(\Phi, R_{\mathfrak m}) \rtimes \Torus(\Phi, R_{\mathfrak m})\) by the relations
+ \[h_\alpha(a) = \alpha^\vee(a)\]
+ for all \(\alpha \in \Phi\) and \(a \in R_{\mathfrak m}^*\) (recall that \(R_{\mathfrak m}\) is a local ring). We only have to check that \(h_\alpha(a)\) and \(\alpha^\vee(a)\) acts in the same way on \(\St^{(\infty)}(\Phi, R)\). Indeed, if \(\beta \in \Phi\) is linearly independent with \(\alpha\), then
+ \[\up{h_\alpha(a)}{x_\beta(b^{(\infty)})} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(A_{i, j, \alpha, \beta} a^i (b^{(\infty)})^j)\]
+ for some universal \(A_{i, j, \alpha, \beta} \in \mathbb Z\). But then in the Steinberg group \(\St(\Phi, \mathbb Z[a, a^{-1}, b])\) we have the same equation
+ \[\up{h_\alpha(a)}{x_\beta(b)} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(A_{i, j, \alpha, \beta} a^i b^j).\]
+ Here the right hand side lies in the unipotent radical of this Steinberg group, this unipotent radical embeds into the Chevalley group \(\GG_{\mathrm{sc}}(\Phi, \mathbb Z[a, a^{-1}, b])\). The image of the left hand side is the same as the image of \(\up{\alpha^\vee(a)}{x_\beta(b)}\). Hence \(A_{i, j, \alpha, \beta} = 0\) with the only exception \(A_{(\beta, \alpha), 1, \alpha, \beta} = 1\), and we are done.
+\end{proof}
 
 
 \subsection{Steinberg crossed module}
 
-Here we prove that the Steinberg group \(\St(\Phi, R)\) is a crossed module over \(\GG(\Phi, R)\).
+Here we prove that the Steinberg group \(\St(\Phi, R)\) is a crossed module over \(\GG(\Phi, R)\). In the proofs we always take \(S = R \setminus \mathfrak m\) for a given maximal ideal \(\mathfrak m \trianglelefteq R\).
 
 \begin{lemma}\label{CentralityK2}
  Let \(R\) be a commutative ring, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Then \(\mathrm K_2(\Phi, R) = \Ker(\mathrm{st} \colon \St(\Phi, R) \to \GG(\Phi, R))\) is a central subgroup of \(\St(\Phi, R)\).
@@ -618,7 +632,7 @@ Here we prove that the Steinberg group \(\St(\Phi, R)\) is a crossed module over
 \begin{proof}
  Let \(g \in \mathrm K_2(\Phi, R)\) and \(\alpha \in \Phi\) be a root. Consider the ideal
  \[\mathfrak a = \{a \in R \mid \up g{x_\alpha(ra)} = x_\alpha(ra) \text{ for all } r \in R\}.\]
- We have to show that \(\mathfrak a = R\). Take a maximal ideal \(\mathfrak m \trianglelefteq R\) and consider a multiplicative subset \(S = R \setminus \mathfrak m\). By theorem \ref{ChevalleyLocalAction}, \(g\) trivially acts on the pro-group \(\St^{(\infty)}(\Phi, R)\). This means that \(\mathfrak a \not \leq \mathfrak m\).
+ We have to show that \(\mathfrak a = R\). Take a maximal ideal \(\mathfrak m \trianglelefteq R\), then by theorem \ref{ChevalleyLocalAction}, \(g\) trivially acts on the pro-group \(\St^{(\infty)}(\Phi, R)\). This means that \(\mathfrak a \not \leq \mathfrak m\).
 \end{proof}
 
 The next result is actually well-known. % !!!!!!!!! Add references !!!!!!!!!!!
@@ -629,8 +643,10 @@ The next result is actually well-known. % !!!!!!!!! Add references !!!!!!!!!!!
 \begin{proof}
  Let \(g \in \GG(\Phi, R)\) and \(\alpha \in \Phi\) be a root. Consider the ideal
  \[\mathfrak a = \{a \in R \mid \up g{x_\alpha(Ra)} \in \mathrm E(\Phi, R)\}.\]
- Again, we have to show that \(\mathfrak a = R\). Take a maximal ideal \(\mathfrak a \trianglelefteq R\) and consider a multiplicative subset \(S = R \setminus \mathfrak m\). By theorem \ref{ChevalleyLocalAction}, \(g\) acts on the pro-group \(\St^{(\infty)}(\Phi, R)\) such that \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is equivariant. As above, this means that \(\mathfrak a \not \leq \mathfrak m\).
+ Again, we have to show that \(\mathfrak a = R\). Take a maximal ideal \(\mathfrak m \trianglelefteq R\), then by theorem \ref{ChevalleyLocalAction}, \(g\) acts on the pro-group \(\St^{(\infty)}(\Phi, R)\) such that \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is equivariant. As above, this means that \(\mathfrak a \not \leq \mathfrak m\).
 \end{proof}
+
+For any ring \(R\) with a multiplicative subset \(S \subseteq R\) let \(\pi_R \colon R^{(\infty)} \to R\) and \(\pi_{\St} \colon \St^{(\infty)}(\Phi, R) \to R\) be the canonical morphisms.
 
 \begin{theorem}\label{SteinbergCrossedModule}
  Let \(R\) be a commutative ring, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Then \(\mathrm{st} \colon \St(\Phi, R) \to \GG(\Phi, R)\) is a crossed module in a unique way.
@@ -639,8 +655,51 @@ The next result is actually well-known. % !!!!!!!!! Add references !!!!!!!!!!!
  We already know that the Steinberg group \(\St(\Phi, R)\) is a central (see lemma \ref{CentralityK2}) perfect extension of the elementary group \(\mathrm E(\Phi, R)\). For any \(g \in \GG(\Phi, R)\) it remains to construct an endomorphism \(\up g{(-)} \colon \St(\Phi, R) \to \St(\Phi, R)\) such that \(\mathrm{st}\) is equivariant. Such an endomorphism is necessarily unique and multuplicative on \(g\). Fix an element \(g \in \GG(\Phi, R)\).
 
  Take a root \(\alpha \in \Phi\). Since \(\mathrm E(\Phi, R) \trianglelefteq \GG(\Phi, R)\) by lemma \ref{Normality}, the set
- \[Y_\alpha(a) = \mathrm{st}^{-1}\bigl(\up g{\mathrm{st}(x_\alpha(a))}\bigr)\]
- is non-empty for all \(a \in R\). Moreover, it is a coset of \(\mathrm K_2(\Phi, R)\). It remains to find elements \(y_\alpha(a) \in Y_\alpha(a)\) for all \(\alpha\) and \(a\) satisfying the Steinberg relations. If \(\beta, \gamma \in \Phi\) are such that \(\alpha = \beta + \gamma\) and \(|\alpha| = |\beta| = |\gamma|\), then let \(y_{\beta, \gamma}(b, c)\) be the only element of \([Y_\beta(b), Y_\gamma(c)]\).
+ \[Y_\alpha(a) = \mathrm{st}^{-1}\bigl(\up g{t_\alpha(a)}\bigr)\]
+ is non-empty for all \(a \in R\). Moreover, it is a coset of \(\mathrm K_2(\Phi, R)\) and \(Y_\alpha(a + a') = Y_\alpha(a) Y_\alpha(a')\).
+
+ First of all, we prove that \([Y_\alpha(a), Y_\beta(b)] = 1\) if \(\alpha + \beta \notin \Phi \cup \{0\}\). For any such \(\alpha, \beta\) and for any \(a \in R\) fix an element \(h \in Y_\alpha(a)\) and consider the ideal
+ \[\mathfrak b = \{b \in R \mid [h, Y_\beta(bR)] = 1\}.\]
+ If \(\mathfrak m \trianglelefteq R\) is a maximal ideal, then
+ \[[h, \pi_{\St}(\up g {x_\beta(b^{(\infty)})})] = \pi_{\St}(\up{g t_\alpha(a)} {x_\beta(-b^{(\infty)})}) \pi_{\St}(\up g {x_\beta(-b^{(\infty)})}) = 1.\]
+ In other words, \(\mathfrak b \not \leq \mathfrak m\), hence \(\mathfrak b = R\) and we are done.
+
+ Fix a root \(\alpha \in \Phi\). There are roots \(\beta, \gamma \in \Phi\) of the same length such that \(\alpha = \beta + \gamma\). Let \(y_\alpha(a)\) be the only element of \([Y_\beta(N_{\beta, \gamma}^{-1}), Y_\gamma(a)]\). Clearly, \(y_\alpha \colon R \to \St(\Phi, R)\) is a homomorphism. For any maximal ideal \(\mathfrak m \trianglelefteq R\) we have
+ \begin{align*}
+  y_\alpha(\pi_R(a^{(\infty)}))
+  &= [Y_\beta(N_{\beta, \gamma}^{-1}), \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})] =\\
+  %
+  &= \pi_{\St}\bigl(\up{g t_\beta(N_{\beta, \gamma}^{-1})}{x_\gamma(a^{(\infty)})}\, \up g{x_\gamma(-a^{(\infty)})}\bigr) = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})}).
+ \end{align*}
+
+ It remains to check that \(y_\alpha(a)\) satisfy the Steinberg relations \ref{R3} and \ref{R4}. Take roots \(\alpha, \beta \in \Phi\) such that \(\alpha + \beta \in \Phi\), but \(2\alpha + \beta\) and \(\alpha + 2\beta\) are not roots. Fix an element \(a \in R\) and consider the ideal
+ \[\mathfrak b_1 = \{b \in R \mid [y_\alpha(a), y_\beta(br)] = y_{\alpha + \beta}(N_{\alpha, \beta} abr) \text{ for all } r \in R\}.\]
+ For any maximal ideal \(\mathfrak m \trianglelefteq R\) we have
+ \begin{align*}
+ [y_\alpha(a), y_\beta(\pi_R(b^{(\infty)}))] &= [y_\alpha(a), \pi_{\St}(\up g{x_\beta(b^{(\infty)})})] =\\
+ %
+ &= \pi_{\St}\bigl(\up{g t_\alpha(a)}{x_\beta(b^{(\infty)})}\, \up g{x_\beta(-b^{(\infty)})}\bigr) =\\
+ %
+ &= \pi_{\St}(\up g{x_{\alpha + \beta}(N_{\alpha, \beta} a b^{(\infty)})}) = y_{\alpha + \beta}(N_{\alpha, \beta} a \pi_R(b^{(\infty)})).
+ \end{align*}
+ It follows that \(\mathfrak b_1 \not \leq \mathfrak m\), i.e. \(\mathfrak b_1 = R\) and we have \ref{R3}.
+
+ Similarly, take roots \(\alpha, \beta \in \Phi\) such that \(\alpha + \beta, 2\alpha + \beta \in \Phi\). Fix an element \(a \in R\) and consider the ideal
+ \begin{align*}
+ \mathfrak b_2 = \{b \in R \mid [y_\alpha(a), y_\beta(br)] &= y_{\alpha + \beta}(N_{\alpha, \beta} abr)\\
+ &\quad y_{2\alpha + \beta}(N_{\alpha, \beta} \widehat N_{\alpha, \alpha + \beta} a^2 br) \text{ for all } r \in R\}.
+ \end{align*}
+ For any maximal ideal \(\mathfrak m \trianglelefteq R\) we have
+ \begin{align*}
+ [y_\alpha(a), y_\beta(\pi_R(b^{(\infty)}))] &= [y_\alpha(a), \pi_{\St}(\up g{x_\beta(b^{(\infty)})})] =\\
+ %
+ &= \pi_{\St}\bigl(\up{g t_\alpha(a)}{x_\beta(b^{(\infty)})}\, \up g{x_\beta(-b^{(\infty)})}\bigr) =\\
+ %
+ &= \pi_{\St}\bigl(\up g{x_{\alpha + \beta}(N_{\alpha, \beta} a b^{(\infty)})}\, \up g{x_{2\alpha + \beta}(N_{\alpha, \beta} \widehat N_{\alpha, \alpha + \beta} a^2 b^{(\infty)})}\bigr) =\\
+ %
+ &= y_{\alpha + \beta}(N_{\alpha, \beta} a \pi_R(b^{(\infty)})) y_{2\alpha + \beta}(N_{\alpha, \beta} \widehat N_{\alpha, \alpha + \beta} a^2 \pi_R(b^{(\infty)})).
+ \end{align*}
+ It follows that \(\mathfrak b_2 \not \leq \mathfrak m\), i.e. \(\mathfrak b_2 = R\).
 \end{proof}
 
 

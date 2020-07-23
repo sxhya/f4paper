@@ -364,8 +364,8 @@ Notice that, in general, the individual homomorphisms $F_\alpha^{(s)}$ need {\it
 \end{theorem}
 The proof of~\cref{SingleRootElimination} occupies the rest of this subsection.
 Our immediate goal is to construct the root subgroup morphisms
-\[\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R) \] ``missing'' from the presentation of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$. The construction of $\widetilde{x}_{-\alpha}$ is analogous to $\widetilde{x}_\alpha$, so it suffices to construct the latter.
- 
+\[\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R) \] ``missing'' from the presentation of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$. The construction of $\widetilde{x}_{-\alpha}$ is analogous to $\widetilde{x}_\alpha$, so it suffices to construct only the latter.
+
 %To verify the assertion of the theorem we need to construct a pro-group morphism \[G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi \setminus \{\pm\alpha\}, R)\] such that \(G_\alpha \circ x_\beta = x_\beta\) for all \(\beta \neq \pm \alpha\). By~\cref{SteinbergPresentation} it suffices to construct a pair of morphisms \(\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) which together with $\widetilde{x}_\beta$, $\beta\neq \pm\alpha$, satisfy the relations \eqref{R1}--\eqref{R4} missing from the presentation of $\St(\Phi\setminus\{\pm\alpha\}, R)$. As before, we understand Steinberg relations as equalities of morphisms in $\Pro(\Set)$ according to~\cref{conv:notation}.
 
 \begin{df}
@@ -383,7 +383,7 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
 \begin{proof}
  Suppose that \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) are two different decompositions for $\alpha$ such that $\alpha$, $\beta_i$ and $\gamma_i$ have the same length.
  By~\cref{ThreeRoots} the roots $\beta_i$, $\gamma_i$ span a root subsystem $\Phi_0$ of type \(\rA_3\) or \(\rC_3\). 
- Replacing $\beta_2$ with $\gamma_2$ if necessary, we may assume that \(\beta_1\), \(\beta_2\) form a sharp angle.
+ Replacing $\beta_2$ with $\gamma_2$ if necessary, we may assume that \(\beta_1\), \(\beta_2\) form an acute angle.
  Set $\delta = \gamma_1 - \gamma_2 = \beta_2 - \beta_1$ and
  \[\varepsilon_1 = N_{\beta_1, \gamma_1},\ \varepsilon_2 = N_{\beta_2, \gamma_2},\ \varepsilon_3 = N_{\delta,\gamma_2},\ \varepsilon_4 = N_{\beta_1, \delta}.\] 
  
@@ -398,92 +398,38 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
  \end{align}
  
 Now consider the case \(\Phi_0 = \rC_3\), in which the root $\delta$ is long.
-% \[ \frac{N_{\beta_1,\gamma_1} N_{-\beta_2,-\gamma_2}}{(\beta_1+\gamma_1, \beta_1+\gamma_1)} + \frac{N_{\gamma_1,-\beta_2} N_{\beta_1,-\gamma_2}}{(\gamma_1-\beta_2, \gamma_1-\beta_2)} + \frac{N_{-\beta_2,\beta_1} N_{\gamma_1,-\gamma_2}}{(\beta_1-\beta_2, \beta_1-\beta_2)} = 0\]
+By our assumptions, $\beta_1$ (resp. $\beta_2$) forms an acute angle with $\gamma_2$ (resp. $\gamma_1$) and $\gamma_1 + \gamma_2$ is a root orthogonal to $\beta_1$.
 Substituting the same quadruple of roots as above into~\eqref{eq:cocycle} we obtain that
  \[-\varepsilon_1 \varepsilon_2 +  N_{\gamma_1,-\beta_2} N_{\beta_1,-\gamma_2} + 2 \varepsilon_3 \varepsilon_4 = 0\]
 from which, again, it follows that $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.
-By our assumptions, $\beta_1$ (resp. $\beta_2$) forms a sharp angle with $\gamma_2$ (resp. $\gamma_1$) and $\gamma_1 + \gamma_2$ is a root orthogonal to $\beta_1$. In this case we have that
+In this case we have that
 % we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\). Let \(\delta = 2 \mathrm e_2\), then
  \begin{align}
  x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)})] & \nonumber \\
  [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)}) x_{\gamma_1 + \gamma_2}(\widehat{N}_{\delta,\gamma_1}c^{(\infty)} d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \label{eq:c3-start}\\
  = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_{\delta}(\varepsilon_3c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] &\text{ by~\eqref{R4}.} \nonumber
  \end{align}
-Now both~\eqref{eq:a3-start} and~\eqref{eq:c3-start} can be finished by the following computation:
+Now both~\eqref{eq:a3-start} and~\eqref{eq:c3-start} can be continued as follows:
  \begin{align*}
   \ldots = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_\delta(\varepsilon_3c^{(\infty)})],\ {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
  = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)}) x_{\gamma_1}(c^{(\infty)}d^{(\infty)}) ] & \text{ by~\eqref{R3}}\\
  = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \\
  = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}). \end{align*}
- In both cases we obtain that \(x_{\beta_1, \gamma_1}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)})\),
-  therefore by~\cref{RingPresentation} there exists a unique morphism \[\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)\] such that
-  \(x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)} = \widetilde x_\alpha(N_{\alpha, \beta} b^{(\infty)} c^{(\infty)})\) for \((\beta, \gamma) = (\beta_1, \gamma_1)\) 
-  and hence for all other such decompositions. 
-  It is clear that \(\widetilde x_\alpha\) satisfies~\eqref{R1}.
+ In both cases we obtain that \(x_{\beta_1, \gamma_1}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)} d^{(\infty)})\),
+ from which and~\cref{RingPresentation} it follows that there exists a unique morphism \[\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)\] such that \(x_{\beta_1, \gamma_1}(N_{\beta_1, \gamma_1}b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}).\) It is clear that \(\widetilde x_\alpha\) satisfies~\eqref{R1}.
 \end{proof}
 
- 
-Since no Steinberg relation contains both \(\alpha\) and \(-\alpha\) simultaneously, we only have to deal with \(\alpha\).  
- If \(\delta \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\), then
- \begin{align*}
-  [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),
-  x_\delta(d^{(\infty)})]
-  &= [x_\beta(b^{(\infty)}) x_\gamma(c^{(\infty)})
-   x_\beta(-b^{(\infty)}) x_\gamma(-c^{(\infty)}),
-  x_\delta(d^{(\infty)})] =\\
-  %
-  &= \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ k > 0}}
-  x_{i\beta + j\gamma + k\delta}
-   (A_{\beta, \gamma, \delta, i, j, k}
-   (b^{(\infty)})^i (c^{(\infty)})^j (d^{(\infty)})^k)
- \end{align*}
- for some integers \(A_{\beta, \gamma, \delta, i, j, k}\),
- hence we have almost all Steinberg relations with \(\alpha\) and \(\delta\) in the left.
+The next step of the proof of~\cref{SingleRootElimination} is to verify the Steinberg relations, which are ``missing'' from the presentation of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$.
+This is accomplished in a series of lemmas below.
+Notice that none of these Steinberg relations simultaneously involves both \(\alpha\) and \(-\alpha\).
+Thus, by symmetry it suffices to verify only Steinberg relations which involve \(\alpha\).
 
-By lemma \ref{ThreeRoots} there are roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\) such that \(|\beta_1| = |\beta_2| = |\beta|\) and \(\beta = \beta_1 + \beta_2\). Moreover, we know all possible arrangements of these roots in a root subsystem of type \(A_3\) or \(C_3\). Then
- \begin{align*}
-  \up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
-  {x_\beta(N_{\beta_1, \beta_2}
-   b_1^{(\infty)} b_2^{(\infty)})}
-  &= [\up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
-   {x_{\beta_1}(b_1^{(\infty)})},
-  \up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
-   {x_{\beta_2}(b_2^{(\infty)})}] =\\
-  %
-  &= [x_{\beta_1}(b_1^{(\infty)})
-   x_{\alpha + \beta_1}(N_{\alpha, \beta_1} N_{\beta, \gamma}
-   b_1^{(\infty)} b^{(\infty)} c^{(\infty)}),\\
-  %
-  &\qquad x_{\beta_2}(b_2^{(\infty)})
-   x_{\alpha + \beta_2}(N_{\alpha, \beta_2} N_{\beta, \gamma}
-   b_2^{(\infty)} b^{(\infty)} c^{(\infty)})] =\\
-  %
-  &= x_\beta(N_{\beta_1, \beta_2} b_1^{(\infty)} b_2^{(\infty)}).
- \end{align*}
+%Although we have shown that $\widetilde{x}_{\alpha}$ 
 
- Similarly,
- \begin{align*}
-  \up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
-   {x_{-\beta}(N_{-\beta_1, -\beta_2} b_1^{(\infty)} b_2^{(\infty)})}
-  &= [\up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
-   {x_{-\beta_1}(b_1^{(\infty)})},
-  \up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
-   {x_{-\beta_2}(b_2^{(\infty)})}] =\\
-  %
-  &= [x_{-\beta_1}(b_1^{(\infty)})
-   x_{\alpha - \beta_1}(N_{\alpha, -\beta_1} N_{\beta, \gamma}
-   b_1^{(\infty)} b^{(\infty)} c^{(\infty)}),\\
-  %
-  &\qquad x_{-\beta_2}(b_2^{(\infty)})
-   x_{\alpha - \beta_2}(N_{\alpha, -\beta_2} N_{\beta, \gamma}
-   b_2^{(\infty)} b^{(\infty)} c^{(\infty)})] =\\
-  %
-  &= x_{-\beta}(N_{-\beta_1, -\beta_2}
-   b_1^{(\infty)} b_2^{(\infty)})
-   x_\gamma(\ldots).
- \end{align*}
- Hence we have all cases of (\ref{S3}) with \(\alpha\) in the left. It follows that the morphism \(x_{\beta, \gamma}\) of pro-sets satisfy the first three conditions of lemma \ref{RingPresentation}. Also \(x_{\gamma, \beta}(c^{(\infty)}, b^{(\infty)}) = x_{\beta, \gamma}(-b^{(\infty)}, c^{(\infty)})\).
-
+\begin{lemma}
+ The root subgroup morphism $\widetilde{x}_\alpha$ satisfies Steinberg relations~\eqref{R3}--\eqref{R4} in which it occurs on the right-hand side.
+\end{lemma}
+\begin{proof}
  It remains to prove (\ref{S3}) and (\ref{S4}) with \(\alpha\) from the right. There are three cases (and all of them may arise only for \(F_4\)): \(\alpha = \beta + \gamma\) with \(\alpha\) long and \(\beta\), \(\gamma\) short, \(\alpha = \beta + \gamma\) with \(\alpha\), \(\beta\) short and \(\gamma\) long, \(\alpha = 2\beta + \gamma\) for \(\beta\) short and \(\alpha\), \(\gamma\) long.
 
  \begin{enumerate}
@@ -548,7 +494,69 @@ By lemma \ref{ThreeRoots} there are roots \(\beta_1, \beta_2 \in \Phi \setminus 
    b^{(\infty)} c^{(\infty)} d^{(\infty)}).
  \end{align*}
  \end{enumerate}
+\end{proof}
+ 
+ If \(\delta \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\), then
+ \begin{align*}
+  [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),
+  x_\delta(d^{(\infty)})]
+  &= [x_\beta(b^{(\infty)}) x_\gamma(c^{(\infty)})
+   x_\beta(-b^{(\infty)}) x_\gamma(-c^{(\infty)}),
+  x_\delta(d^{(\infty)})] =\\
+  %
+  &= \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ k > 0}}
+  x_{i\beta + j\gamma + k\delta}
+   (A_{\beta, \gamma, \delta, i, j, k}
+   (b^{(\infty)})^i (c^{(\infty)})^j (d^{(\infty)})^k)
+ \end{align*}
+ for some integers \(A_{\beta, \gamma, \delta, i, j, k}\),
+ hence we have almost all Steinberg relations with \(\alpha\) and \(\delta\) in the left.
 
+By lemma \ref{ThreeRoots} there are roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\) such that \(|\beta_1| = |\beta_2| = |\beta|\) and \(\beta = \beta_1 + \beta_2\). Moreover, we know all possible arrangements of these roots in a root subsystem of type \(A_3\) or \(C_3\). Then
+ \begin{align*}
+  \up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
+  {x_\beta(N_{\beta_1, \beta_2}
+   b_1^{(\infty)} b_2^{(\infty)})}
+  &= [\up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
+   {x_{\beta_1}(b_1^{(\infty)})},
+  \up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
+   {x_{\beta_2}(b_2^{(\infty)})}] =\\
+  %
+  &= [x_{\beta_1}(b_1^{(\infty)})
+   x_{\alpha + \beta_1}(N_{\alpha, \beta_1} N_{\beta, \gamma}
+   b_1^{(\infty)} b^{(\infty)} c^{(\infty)}),\\
+  %
+  &\qquad x_{\beta_2}(b_2^{(\infty)})
+   x_{\alpha + \beta_2}(N_{\alpha, \beta_2} N_{\beta, \gamma}
+   b_2^{(\infty)} b^{(\infty)} c^{(\infty)})] =\\
+  %
+  &= x_\beta(N_{\beta_1, \beta_2} b_1^{(\infty)} b_2^{(\infty)}).
+ \end{align*}
+
+ Similarly,
+ \begin{align*}
+  \up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
+   {x_{-\beta}(N_{-\beta_1, -\beta_2} b_1^{(\infty)} b_2^{(\infty)})}
+  &= [\up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
+   {x_{-\beta_1}(b_1^{(\infty)})},
+  \up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
+   {x_{-\beta_2}(b_2^{(\infty)})}] =\\
+  %
+  &= [x_{-\beta_1}(b_1^{(\infty)})
+   x_{\alpha - \beta_1}(N_{\alpha, -\beta_1} N_{\beta, \gamma}
+   b_1^{(\infty)} b^{(\infty)} c^{(\infty)}),\\
+  %
+  &\qquad x_{-\beta_2}(b_2^{(\infty)})
+   x_{\alpha - \beta_2}(N_{\alpha, -\beta_2} N_{\beta, \gamma}
+   b_2^{(\infty)} b^{(\infty)} c^{(\infty)})] =\\
+  %
+  &= x_{-\beta}(N_{-\beta_1, -\beta_2}
+   b_1^{(\infty)} b_2^{(\infty)})
+   x_\gamma(\ldots).
+ \end{align*}
+ Hence we have all cases of (\ref{S3}) with \(\alpha\) in the left. It follows that the morphism \(x_{\beta, \gamma}\) of pro-sets satisfy the first three conditions of lemma \ref{RingPresentation}. Also \(x_{\gamma, \beta}(c^{(\infty)}, b^{(\infty)}) = x_{\beta, \gamma}(-b^{(\infty)}, c^{(\infty)})\).
+
+ 
  Now clearly \(G_\alpha\) is the inverse of \(F_\alpha\).
 
 

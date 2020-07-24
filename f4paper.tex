@@ -406,16 +406,16 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
   {x_\delta(d^{(\infty)})}\,
   x_\delta(-d^{(\infty)})\\
   %
-  &= \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ k > 0}}
+  &= \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ i, j \geq 0; k > 0}}
   x_{i\beta + j\gamma + k\delta} \bigl(A_{i, j, k} (b^{(\infty)})^i (c^{(\infty)})^j (d^{(\infty)})^k\bigr)
  \end{align*}
  for some integers \(A_{i, j, k}\) depending only on the roots \(\beta\), \(\gamma\), \(\delta\). The same integers arise in the decomposition
  \begin{align*}
-  [x_\alpha(bc), x_\delta(d)]
-  = \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ k > 0}}
-  x_{i\beta + j\gamma + k\delta}(A_{i, j, k} b^i c^j d^k)
+  [x_\alpha(1), x_\delta(1)]
+  = \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ i, j \geq 0; k > 0}}
+  x_{i\beta + j\gamma + k\delta}(A_{i, j, k})
  \end{align*}
- in the Steinberg group \(\St(\Phi, \mathbb Z[b, c, d])\). In this Steinberg group we already have the Steinberg relation for \([x_\alpha(bc), x_\delta(d)]\), and the integers \(A_{i, j, k}\) are uniquely determined by \eqref{eq:uni-rad}. It follows that \(A_{i, j, k}\) are precisely the same as in the Steinberg relation with \(\alpha\) and \(\delta\) on the left-hand side.
+ in the Steinberg group \(\St(\Phi, \mathbb Z)\). In this Steinberg group we already have the Steinberg relation for \([x_\alpha(1), x_\delta(1)]\), and the integers \(A_{i, j, k}\) are uniquely determined by \eqref{eq:uni-rad}. It follows that \(A_{i, j, k}\) are precisely the same as in the Steinberg relation with \(\alpha\) and \(\delta\) on the left-hand side.
 
  It remains to prove the Steinberg relations with all roots in \(\Phi \cap (\mathbb R \beta + \mathbb R \gamma)\). By lemma \ref{ThreeRoots} there are roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\) such that \(|\beta_1| = |\beta_2| = |\beta|\) and \(\beta = \beta_1 + \beta_2\). Moreover, we know all possible arrangements of these roots in a root subsystem of type \(\rA_3\) or \(\rC_3\). Using the already proved Steinberg relations for \(x_{\beta, \gamma}\), we get
  \begin{align*}
@@ -430,13 +430,13 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
   x_\beta(-N_{\beta_1, \beta_2}
    b_1^{(\infty)} b_2^{(\infty)})\\
   %
-  &= \prod_{\substack{i\alpha + j\beta_1 + k\beta_2 \in \Phi\\ j, k > 0}}
+  &= \prod_{\substack{i\alpha + j\beta_1 + k\beta_2 \in \Phi\\ i \geq 0; j, k > 0}}
   x_{i\alpha + j\beta_1 + k\beta_2}\bigl(B_{i, j, k} (b^{(\infty)} c^{(\infty)})^i (b_1^{(\infty)})^j (b_2^{(\infty)})^k\bigr)
  \end{align*}
  for some integers \(B_{i, j, k}\) depending on the roots \(\beta_1\), \(\beta_2\), \(\gamma\). These integers also arise in the decomposition
- \[[x_\alpha(bc), x_\beta(N_{\beta_1, \beta_2} b_1 b_2)] = \prod_{\substack{i\alpha + j\beta_1 + k\beta_2 \in \Phi\\ j, k > 0}}
-  x_{i\alpha + j\beta_1 + k\beta_2}(B_{i, j, k} (bc)^i b_1^j b_2^k)\]
- in the Steinberg group \(\St(\Phi, \mathbb Z[b, c, b_1, b_2])\). In this Steinberg group the commutant is trivial, hence by \eqref{eq:uni-rad} we have \(B_{i, j, k} = 0\) for all \(i, j, k\). Then
+ \[[x_\alpha(1), x_\beta(N_{\beta_1, \beta_2})] = \prod_{\substack{i\alpha + j\beta_1 + k\beta_2 \in \Phi\\ i \geq 0; j, k > 0}}
+  x_{i\alpha + j\beta_1 + k\beta_2}(B_{i, j, k})\]
+ in the Steinberg group \(\St(\Phi, \mathbb Z)\). In this Steinberg group the commutant is trivial, hence by \eqref{eq:uni-rad} we have \(B_{i, j, k} = 0\) for all \(i, j, k\). Then
  \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\beta(d^{(\infty)})] = 1\]
  by lemma \ref{RingGeneration}. The proof of
  \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\gamma(d^{(\infty)})] = 1\]
@@ -453,10 +453,10 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
    {x_{-\beta_2}(b_2^{(\infty)})}]\,
   x_{-\beta}(-N_{-\beta_1, -\beta_2} b_1^{(\infty)} b_2^{(\infty)})\\
   %
-  &= \prod_{\substack{i\alpha + j\beta_1 + k\beta_2 \in \Phi\\ i > 0 \text{ or } i = 0 > j, k}}
-  x_{i\alpha + j\beta_1 + k\beta_2}\bigl(C_{i, j, k} (b^{(\infty)} c^{(\infty)})^i (b_1^{(\infty)})^j (b_2^{(\infty)})^k\bigr),
+  &= \prod_{\substack{i\alpha - j\beta_1 - k\beta_2 \in \Phi\\ i, j, k \geq 0\\ (i, j, k) \neq (0, 0, 0)}}
+  x_{i\alpha - j\beta_1 - k\beta_2}\bigl(C_{i, j, k} (b^{(\infty)} c^{(\infty)})^i (b_1^{(\infty)})^j (b_2^{(\infty)})^k\bigr),
  \end{align*}
- and \(C_{i, j, k} = 0\) with the only exception \(C_{1, -1, -1} = N_{\alpha, -\beta}\). Hence
+ and \(C_{i, j, k} = 0\) with the only exception \(C_{1, 1, 1} = N_{\alpha, -\beta}\). Hence
  \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_{-\beta}(d^{(\infty)})] = x_\gamma(N_{\alpha, -\beta} b^{(\infty)} c^{(\infty)} d^{(\infty)})\]
  again by lemma \ref{RingGeneration}. The same argument gives
  \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_{-\gamma}(d^{(\infty)})] = x_\beta(N_{\alpha, -\gamma} b^{(\infty)} c^{(\infty)} d^{(\infty)}).\]
@@ -575,10 +575,10 @@ Suppose that the root \(\alpha\) occurs on the right-hand side of \eqref{R3} or 
  \[[x_{\mathrm e_1 - \mathrm e_2}(u^{(\infty)}), x_{\mathrm e_2 + \mathrm e_3}(v^{(\infty)})] = x_\alpha(\pm u^{(\infty)} v^{(\infty)}).\]
  Also,
  \begin{align*}
-  &[x_\gamma(c), x_\beta(N_{\beta_1, \beta_2} b_1 b_2)]\\
-  &= x_\alpha(A_1 c b_1 b_2)\, x_{\mathrm e_1 - \mathrm e_3}(A_2 b_1 b_2)\, x_{\mathrm e_1 + \mathrm e_2}(A_3 b_1 b_2^2 c)\, x_{2 \mathrm e_1}(A_4 b_1^2 b_2^2 c)
+  &[x_\gamma(1), x_\beta(N_{\beta_1, \beta_2})]\\
+  &= x_\alpha(A_1)\, x_{\mathrm e_1 - \mathrm e_3}(A_2)\, x_{\mathrm e_1 + \mathrm e_2}(A_3)\, x_{2 \mathrm e_1}(A_4)
  \end{align*}
- in the Steinberg group \(\St(\Phi, \mathbb Z[b_1, b_2, c])\). In this group the commutator equals to \(x_\alpha(N_{\gamma, \beta} c b_1 b_2)\), hence \(A_1 = N_{\gamma, \beta}\) and \(A_i = 0\) for \(i > 1\) by \eqref{eq:uni-rad}. From lemma \ref{RingGeneration} it follows that
+ in the Steinberg group \(\St(\Phi, \mathbb Z)\). In this group the commutator equals to \(x_\alpha(N_{\gamma, \beta})\), hence \(A_1 = N_{\gamma, \beta}\) and \(A_i = 0\) for \(i > 1\) by \eqref{eq:uni-rad}. From lemma \ref{RingGeneration} it follows that
  \[[x_\gamma(c^{(\infty)}), x_\beta(b^{(\infty)})] = 
  \widetilde x_\alpha(N_{\gamma, \beta} c^{(\infty)} b^{(\infty)}).\]
 
@@ -697,10 +697,10 @@ Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{
  For \(a \in R_{\mathfrak m}^*\) and \(\alpha \in \Phi\) let \(w_\alpha(a) = x_\alpha(a) x_{-\alpha}(-a^{-1}) x_\alpha(a)\) and \(h_\alpha(a) = w_\alpha(a) w_\alpha(1)^{-1}\). It is well-known that \(\GG_{\mathrm{sc}}(\Phi, R_{\mathfrak m})\) is the factor-group of \(\St(\Phi, R_{\mathfrak m}) \rtimes \Torus(\Phi, R_{\mathfrak m})\) by the relations
  \[h_\alpha(a) = \alpha^\vee(a)\]
  for all \(\alpha \in \Phi\) and \(a \in R_{\mathfrak m}^*\) (recall that \(R_{\mathfrak m}\) is a local ring). We only have to check that \(h_\alpha(a)\) and \(\alpha^\vee(a)\) acts in the same way on \(\St^{(\infty)}(\Phi, R)\). Indeed, if \(\beta \in \Phi\) is linearly independent with \(\alpha\), then
- \[\up{h_\alpha(a)}{x_\beta(b^{(\infty)})} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(A_{i, j} a^i (b^{(\infty)})^j)\]
- for some integers \(A_{i, j, \alpha, \beta} \in \mathbb Z\) depending only on \(\alpha\) and \(\beta\). But then in the Steinberg group \(\St(\Phi, \mathbb Z[a, a^{-1}, b])\) we have the same equation
- \[\up{h_\alpha(a)}{x_\beta(b)} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(A_{i, j} a^i b^j).\]
- From \eqref{eq:uni-rad} we have \(A_{i, j} = 0\) with the only exception \(A_{(\beta, \alpha), 1} = 1\).
+ \[\up{h_\alpha(a)}{x_\beta(b^{(\infty)})} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a) (b^{(\infty)})^j)\]
+ for some Loran polynomials \(P_{i, j}(a) \in \mathbb Z[a, a^{-1}]\) depending only on \(\alpha\) and \(\beta\). But then in the Steinberg group \(\St(\Phi, \mathbb Z[a, a^{-1}])\) we have the identity
+ \[\up{h_\alpha(a)}{x_\beta(1)} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a)).\]
+ From \eqref{eq:uni-rad} we have \(P_{i, j}(a) = 0\) with the only exception \(P_{0, 0}(a) = a^{(\beta, \alpha)}\).
 \end{proof}
 
 

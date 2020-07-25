@@ -478,51 +478,86 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
  &= \bigl[x_\beta(N_{\beta, \gamma} b_1^{(\infty)})
  x_\beta(N_{\beta, \gamma} b_2^{(\infty)}),
  x_\gamma(c^{(\infty)})\bigr]\\
- &= x_{\beta, \gamma}(b_1^{(\infty)}, c^{(\infty)})
+ &= x_{\beta, \gamma}(b_1^{(\infty)}, c^{(\infty)})\,
  x_{\beta, \gamma}(b_2^{(\infty)}, c^{(\infty)})
  \end{align*}
  and similarly
  \[x_{\beta, \gamma}\bigl(b^{(\infty)}, c_1^{(\infty)} + c_2^{(\infty)}\bigr)
- = x_{\beta, \gamma}(b^{(\infty)}, c_1^{(\infty)})
+ = x_{\beta, \gamma}(b^{(\infty)}, c_1^{(\infty)})\,
  x_{\beta, \gamma}(b^{(\infty)}, c_2^{(\infty)}).\]
- Hence the morphism \(x_{\beta, \gamma}\) of pro-sets satisfy the first three conditions of lemma \ref{RingPresentation}. Also note that \(x_{\gamma, \beta}(c^{(\infty)}, b^{(\infty)}) = x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})\).
+ Hence the morphism \(x_{\beta, \gamma}\) of pro-sets satisfy the first three conditions of lemma \ref{RingPresentation}. It follows that
+ \begin{align*}
+ x_{\gamma, \beta}(c^{(\infty)}, b^{(\infty)})
+ &= \up{x_\gamma(N_{\gamma, \beta} c^{(\infty)})}
+ {[x_\beta(b^{(\infty)}), x_\gamma(-N_{\gamma, \beta} c^{(\infty)})]}\\
+ &= x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}).
+ \end{align*}
 
  Suppose that \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) are two different decompositions for $\alpha$ such that $\alpha$, $\beta_i$ and $\gamma_i$ have the same length and \(\alpha\), \(\beta_1\), \(\beta_2\) are linearly independent.
- By~\cref{ThreeRoots} the roots $\beta_i$, $\gamma_i$ span a root subsystem $\Phi_0$ of type \(\rA_3\) or \(\rC_3\). 
- Replacing $\beta_2$ with $\gamma_2$ if necessary, we may assume that \(\beta_1\), \(\beta_2\) form an acute angle.
- Set $\delta = \gamma_1 - \gamma_2 = \beta_2 - \beta_1$ and
- \[\varepsilon_1 = N_{\beta_1, \gamma_1},\ \varepsilon_2 = N_{\beta_2, \gamma_2},\ \varepsilon_3 = N_{\delta,\gamma_2},\ \varepsilon_4 = N_{\beta_1, \delta}.\] 
- 
- Consider the case \(\Phi_0 \cong \rA_3\), in which $\delta$ is a root forming an obtuse angle with both $\beta_1$ and $\gamma_2$. 
- Under our assumptions $\beta_1\perp \gamma_2$, $\gamma_1 \perp \beta_2$, therefore 
- substituting the quadruple of roots $\beta_1, \gamma_1, -\beta_2, -\gamma_2$ into~\eqref{eq:cocycle} we obtain that
- $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.
- Notice that
- \begin{align}
- x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_{\gamma_1}(c^{(\infty)}d^{(\infty)})] \label{eq:a3-start} \\ 
- = [x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ [x_\delta(\varepsilon_3 c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})]] & \text{ by~\eqref{R3}.} \nonumber
- \end{align}
- 
-Now consider the case \(\Phi_0 = \rC_3\), in which the root $\delta$ is long.
-By our assumptions, $\beta_1$ (resp. $\beta_2$) forms an acute angle with $\gamma_2$ (resp. $\gamma_1$) and $\gamma_1 + \gamma_2$ is a root orthogonal to $\beta_1$.
-Substituting the same quadruple of roots as above into~\eqref{eq:cocycle} we obtain that
- \[-\varepsilon_1 \varepsilon_2 +  N_{\gamma_1,-\beta_2} N_{\beta_1,-\gamma_2} + 2 \varepsilon_3 \varepsilon_4 = 0\]
-from which, again, it follows that $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.
-In this case we have that
-% we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\). Let \(\delta = 2 \mathrm e_2\), then
- \begin{align}
- x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)})] & \nonumber \\
- [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)}) x_{\gamma_1 + \gamma_2}(\widehat{N}_{\delta,\gamma_1}c^{(\infty)} d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \label{eq:c3-start}\\
- = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_{\delta}(\varepsilon_3c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] &\text{ by~\eqref{R4}.} \nonumber
- \end{align}
-Now both~\eqref{eq:a3-start} and~\eqref{eq:c3-start} can be continued as follows:
+ By~\cref{ThreeRoots} such decompositions exist and the roots $\beta_i$, $\gamma_i$ span a root subsystem $\Phi_0$ of type \(\rA_3\) or \(\rC_3\).
+
+ In the case of \(\rA_3\) we may assume that \(\alpha = \mathrm e_1 - \mathrm e_4\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 - \mathrm e_4\), \(\beta_2 = \mathrm e_1 - \mathrm e_3\), \(\gamma_2 = \mathrm e_3 - \mathrm e_4\), exchanging \(\beta_i\) with \(\gamma_i\) if necessary. Let \(\delta = \mathrm e_2 - \mathrm e_3\). We have
  \begin{align*}
-  \ldots = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_\delta(\varepsilon_3c^{(\infty)})],\ {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
- = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)}) x_{\gamma_1}(c^{(\infty)}d^{(\infty)}) ] & \text{ by~\eqref{R3}}\\
- = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \\
- = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}). \end{align*}
- In both cases we obtain that \(x_{\beta_1, \gamma_1}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)} d^{(\infty)})\),
- from which and~\cref{RingPresentation} it follows that there exists a unique morphism \[\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)\] such that \(x_{\beta_1, \gamma_1}(N_{\beta_1, \gamma_1}b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}).\) It is clear that \(\widetilde x_\alpha\) satisfies~\eqref{R1}.
+ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) &= \bigl[x_{\beta_1}(b^{(\infty)}), [x_\delta(c^{(\infty)}), x_{\gamma_2}(N_{\delta, \gamma_2} d^{(\infty)})]\bigr]\\
+ &= \bigl[[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], \up{x_\delta(c^{(\infty)})}{x_{\gamma_2}(N_{\delta, \gamma_2} d^{(\infty)})}\bigr]\\
+ &= x_{\beta_2, \gamma_2}(\varepsilon b^{(\infty)} c^{(\infty)}, d^{(\infty)})
+ \end{align*}
+ for some \(\varepsilon \in \{-1, 1\}\). Since the same coefficient occurs in the identity
+ \[x_\alpha(1) = x_\alpha(\varepsilon)\]
+ in \(\St(\Phi, \mathbb Z)\), it follows by \eqref{eq:uni-rad} that \(\varepsilon = 1\).
+
+ In the case of \(C_3\) we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\), exchanging \(\beta_i\) with \(\gamma_i\) if necessary. Let \(\delta = 2 \mathrm e_2\), then
+ \begin{align*}
+ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) &= [x_{\beta_1}(b^{(\infty)}), [x_{\delta}(c^{(\infty)}), x_{\gamma_2}(N_{\delta, \gamma_2} d^{(\infty)})]] =\\
+ &= [[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], \up{x_\delta(c^{(\infty)})}{x_{\gamma_2}(N_{\delta, \gamma_2} d^{(\infty)})}] =\\
+ &= x_{\beta_2, \gamma_2}(\varepsilon' b^{(\infty)} c^{(\infty)}, d^{(\infty)})
+ \end{align*}
+ for some \(\varepsilon' \in \{-1, 1\}\). By the same agrument, \(\varepsilon' = 1\).
+
+ Hence in both cases we have
+ \begin{equation}\label{eq:balance}
+ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
+ \end{equation}
+ Applying this identity twice and using lemma \ref{RingGeneration}, we get
+ \[x_{\beta_1, \gamma_1}(b^{(\infty)}, u^{(\infty)} c^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)} u^{(\infty)}, c^{(\infty)}).\]
+ Hence by lemma \ref{RingPresentation} there is unique morphism of pro-groups \(\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) with the property
+ \[x_{\gamma_1, \beta_1}(c^{(\infty)}, b^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}).\]
+ By \eqref{eq:balance} and lemma \ref{RingGeneration} we finally obtain
+ \[x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}).\qedhere\]
+ %Replacing $\beta_2$ with $\gamma_2$ if necessary, we may assume that \(\beta_1\), \(\beta_2\) form an acute angle.
+ %Set $\delta = \gamma_1 - \gamma_2 = \beta_2 - \beta_1$ and
+ %\[\varepsilon_1 = N_{\beta_1, \gamma_1},\ \varepsilon_2 = N_{\beta_2, \gamma_2},\ \varepsilon_3 = N_{\delta,\gamma_2},\ \varepsilon_4 = N_{\beta_1, \delta}.\] 
+ 
+ %Consider the case \(\Phi_0 \cong \rA_3\), in which $\delta$ is a root forming an obtuse angle with both $\beta_1$ and $\gamma_2$. 
+ %Under our assumptions $\beta_1\perp \gamma_2$, $\gamma_1 \perp \beta_2$, therefore 
+ %substituting the quadruple of roots $\beta_1, \gamma_1, -\beta_2, -\gamma_2$ into~\eqref{eq:cocycle} we obtain that
+ %$\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.
+ %Notice that
+ %\begin{align}
+ %x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_{\gamma_1}(c^{(\infty)}d^{(\infty)})] \label{eq:a3-start} \\ 
+ %= [x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ [x_\delta(\varepsilon_3 c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})]] & \text{ by~\eqref{R3}.} \nonumber
+ %\end{align}
+ 
+%Now consider the case \(\Phi_0 = \rC_3\), in which the root $\delta$ is long.
+%By our assumptions, $\beta_1$ (resp. $\beta_2$) forms an acute angle with $\gamma_2$ (resp. $\gamma_1$) and $\gamma_1 + \gamma_2$ is a root orthogonal to $\beta_1$.
+%Substituting the same quadruple of roots as above into~\eqref{eq:cocycle} we obtain that
+ %\[-\varepsilon_1 \varepsilon_2 +  N_{\gamma_1,-\beta_2} N_{\beta_1,-\gamma_2} + 2 \varepsilon_3 \varepsilon_4 = 0\]
+%from which, again, it follows that $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.
+%In this case we have that
+% we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\). Let \(\delta = 2 \mathrm e_2\), then
+ %\begin{align}
+ %x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)})] & \nonumber \\
+ %[x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)}) x_{\gamma_1 + \gamma_2}(\widehat{N}_{\delta,\gamma_1}c^{(\infty)} d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \label{eq:c3-start}\\
+ %= [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_{\delta}(\varepsilon_3c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] &\text{ by~\eqref{R4}.} \nonumber
+ %\end{align}
+%Now both~\eqref{eq:a3-start} and~\eqref{eq:c3-start} can be continued as follows:
+ %\begin{align*}
+  %\ldots = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_\delta(\varepsilon_3c^{(\infty)})],\ {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
+ %= [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)}) x_{\gamma_1}(c^{(\infty)}d^{(\infty)}) ] & \text{ by~\eqref{R3}}\\
+ %= [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \\
+ %= x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}). \end{align*}
+ %In both cases we obtain that \(x_{\beta_1, \gamma_1}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)} d^{(\infty)})\),
+ %from which and~\cref{RingPresentation} it follows that there exists a unique morphism \[\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)\] such that \(x_{\beta_1, \gamma_1}(N_{\beta_1, \gamma_1}b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}).\) It is clear that \(\widetilde x_\alpha\) satisfies~\eqref{R1}.
 \end{proof}
 
 From lemmas \ref{lem:elim-lhs}, \ref{lem:new-root} and \ref{RingGeneration} it follows that \(\St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) satisfies all Steinberg relations with \(\alpha\) on the left-hand side.
@@ -635,10 +670,10 @@ Suppose that the root \(\alpha\) occurs on the right-hand side of \eqref{R3} or 
 
 
  \begin{theorem}\label{DoubleRootElimination}
-  Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\), \(\alpha, \beta \in \Phi\) be linearly independent roots. Then \(\St^{(\infty)}(\Phi / \{\alpha, \beta\}, R) \to \St^{(\infty)}(\Phi, R)\) is an epimorphism of pro-groups.
+  Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\), \(\Phi_0 \subseteq \Phi\) be a subsystem of rank \(2\) (i.e. \(\Phi_0 = \Phi \cap (\mathbb R\alpha + \mathbb R\beta)\) for linearly independent \(\alpha, \beta \in \Phi\)). Then \(\St^{(\infty)}(\Phi \setminus \Phi_0, R) \to \St^{(\infty)}(\Phi, R)\) is an epimorphism of pro-groups.
  \end{theorem}
  \begin{proof}
-  If \(\Phi_0\) is not of type \(A_2\), then every root from \(\Phi_0\) may be decomposed into a sum of two roots with the same length, these roots do not lie in \(\Phi_0\) and we are done by lemma \ref{SteinbergPresentation}. If \(\Phi_0\) is of type \(A_2\), apply lemma \ref{ThreeRoots}.
+  If \(\Phi_0\) is not of type \(\rA_2\), then every root from \(\Phi_0\) may be decomposed into a sum of two roots with the same length, these roots do not lie in \(\Phi_0\) and we are done by lemma \ref{SteinbergPresentation}. If \(\Phi_0\) is of type \(\rA_2\), apply lemma \ref{ThreeRoots}.
  \end{proof}
 
 
@@ -679,12 +714,12 @@ Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{
  \[\up{x_\alpha(u)}{x_\alpha(a^{(\infty)})} = x_\alpha(a^{(\infty)}).\]
 \end{lemma}
 \begin{proof}
- In is clear from the definitions that \(\Torus(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi, R)\). For every root \(\alpha \in \Phi\) the root subgroup \(x_\alpha(S^{-1} R) \leq \St(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi \setminus \{\alpha, -\alpha\}, R)\), hence on \(\St^{(\infty)}(\Phi, R)\) by theorem \ref{SingleRootElimination}. Moreover, the actions of \(g x_\alpha(u) g^{-1}\) and \(x_\alpha(\alpha(g) u)\) coincide for all \(g \in \Torus(\Phi, S^{-1} R)\), \(u \in R\). We still have to check that the actions of \(x_\alpha(u)\) and \(x_\beta(v)\) satisfy the Steinberg relation on \(x_\alpha(u)\) and \(x_\beta(v)\) if \(\alpha \neq -\beta\). But this is obvious if we consider the action on \(\St^{(\infty)}(\Phi / \{\alpha, \beta\}, R)\), so the claim follows by theorem \ref{DoubleRootElimination}.
+ In is clear from the definitions that \(\Torus(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi, R)\). For every root \(\alpha \in \Phi\) the root subgroup \(x_\alpha(S^{-1} R) \leq \St(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi \setminus \{\alpha, -\alpha\}, R)\), hence on \(\St^{(\infty)}(\Phi, R)\) by theorem \ref{SingleRootElimination}. Moreover, the actions of \(g x_\alpha(u) g^{-1}\) and \(x_\alpha(\alpha(g) u)\) coincide for all \(g \in \Torus(\Phi, S^{-1} R)\), \(u \in R\). We still have to check that the actions of \(x_\alpha(u)\) and \(x_\beta(v)\) satisfy the Steinberg relation on \(x_\alpha(u)\) and \(x_\beta(v)\) if \(\alpha \neq -\beta\). But this is obvious if we consider the action on \(\St^{(\infty)}(\Phi \setminus \Phi_0, R)\) for \(\Phi_0 = \Phi \cap (\mathbb R\alpha + \mathbb R\beta)\), so the claim follows by theorem \ref{DoubleRootElimination}.
  % !!!!!!!!!!!!!!! Here Phi / {alpha, beta} may be replaced by a better notation. !!!!!!!!!!!!!!!
 
  Equivariance of the morphism \(\mathrm{st}\) is clear. If \(\alpha = \beta + \gamma\) for roots \(\beta, \gamma \in \Phi\) with \(|\alpha| = |\beta| = |\gamma|\), then
  \begin{align*}
-  \up{x_\alpha(u)}{x_\alpha(N_{\beta, \gamma} b^{(\infty)} c^{(\infty)})} &= [\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}] =\\
+  \up{x_\alpha(u)}{x_\alpha(N_{\beta, \gamma} b^{(\infty)} c^{(\infty)})} &= [\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}]\\
   &= [x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})] = x_\alpha(N_{\beta, \gamma} b^{(\infty)} c^{(\infty)}),
  \end{align*}
  hence the last claim follows.
@@ -698,7 +733,7 @@ Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{
  \[h_\alpha(a) = \alpha^\vee(a)\]
  for all \(\alpha \in \Phi\) and \(a \in R_{\mathfrak m}^*\) (recall that \(R_{\mathfrak m}\) is a local ring). We only have to check that \(h_\alpha(a)\) and \(\alpha^\vee(a)\) acts in the same way on \(\St^{(\infty)}(\Phi, R)\). Indeed, if \(\beta \in \Phi\) is linearly independent with \(\alpha\), then
  \[\up{h_\alpha(a)}{x_\beta(b^{(\infty)})} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a) (b^{(\infty)})^j)\]
- for some Loran polynomials \(P_{i, j}(a) \in \mathbb Z[a, a^{-1}]\) depending only on \(\alpha\) and \(\beta\). But then in the Steinberg group \(\St(\Phi, \mathbb Z[a, a^{-1}])\) we have the identity
+ for some Laurent polynomials \(P_{i, j}(a) \in \mathbb Z[a, a^{-1}]\) depending only on \(\alpha\) and \(\beta\). But then in the Steinberg group \(\St(\Phi, \mathbb Z[a, a^{-1}])\) we have the identity
  \[\up{h_\alpha(a)}{x_\beta(1)} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a)).\]
  From \eqref{eq:uni-rad} we have \(P_{i, j}(a) = 0\) with the only exception \(P_{0, 0}(a) = a^{(\beta, \alpha)}\).
 \end{proof}
@@ -708,13 +743,23 @@ Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{
 
 Here we prove that the Steinberg group \(\St(\Phi, R)\) is a crossed module over \(\GG(\Phi, R)\). In the proofs we always take \(S = R \setminus \mathfrak m\) for a given maximal ideal \(\mathfrak m \trianglelefteq R\).
 
+For any ring \(R\) with a multiplicative subset \(S \subseteq R\) let \(\pi_R \colon R^{(\infty)} \to R\), \(\pi_{\St} \colon \St^{(\infty)}(\Phi, R) \to \St(\Phi, R)\), and \(\pi_{\GG} \colon \GG^{(\infty)}(\Phi, R) \to \GG(\Phi, R)\) be the canonical morphisms.
+
 \begin{lemma}\label{CentralityK2}
  Let \(R\) be a commutative ring, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Then \(\mathrm K_2(\Phi, R) = \Ker(\mathrm{st} \colon \St(\Phi, R) \to \GG(\Phi, R))\) is a central subgroup of \(\St(\Phi, R)\).
 \end{lemma}
 \begin{proof}
  Let \(g \in \mathrm K_2(\Phi, R)\) and \(\alpha \in \Phi\) be a root. Consider the ideal
  \[\mathfrak a = \{a \in R \mid \up g{x_\alpha(ra)} = x_\alpha(ra) \text{ for all } r \in R\}.\]
- We have to show that \(\mathfrak a = R\). Take a maximal ideal \(\mathfrak m \trianglelefteq R\), then by theorem \ref{ChevalleyLocalAction}, \(g\) trivially acts on the pro-group \(\St^{(\infty)}(\Phi, R)\). This means that \(\mathfrak a \not \leq \mathfrak m\).
+ We have to show that \(\mathfrak a = R\). Take a maximal ideal \(\mathfrak m \trianglelefteq R\), then by theorem \ref{ChevalleyLocalAction}, \(g\) trivially acts on the pro-group \(\St^{(\infty)}(\Phi, R)\). Hence
+ \begin{align*}
+  \up g{x_\alpha(\pi_R(a^{(\infty)}))}
+  &= \up g{\pi_{\St}(x_\alpha(a^{(\infty)}))}
+  = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})})\\
+  &= \pi_{\St}(x_\alpha(a^{(\infty)}))
+  = x_\alpha(\pi_R(a^{(\infty)})).
+ \end{align*}
+ This means that \(\mathfrak a \not \leq \mathfrak m\).
 \end{proof}
 
 The next result is actually well-known. % !!!!!!!!! Add references !!!!!!!!!!!
@@ -724,11 +769,16 @@ The next result is actually well-known. % !!!!!!!!! Add references !!!!!!!!!!!
 \end{lemma}
 \begin{proof}
  Let \(g \in \GG(\Phi, R)\) and \(\alpha \in \Phi\) be a root. Consider the ideal
- \[\mathfrak a = \{a \in R \mid \up g{x_\alpha(Ra)} \in \mathrm E(\Phi, R)\}.\]
- Again, we have to show that \(\mathfrak a = R\). Take a maximal ideal \(\mathfrak m \trianglelefteq R\), then by theorem \ref{ChevalleyLocalAction}, \(g\) acts on the pro-group \(\St^{(\infty)}(\Phi, R)\) such that \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is equivariant. As above, this means that \(\mathfrak a \not \leq \mathfrak m\).
+ \[\mathfrak a = \{a \in R \mid \up g{t_\alpha(Ra)} \in \mathrm E(\Phi, R)\}.\]
+ Again, we have to show that \(\mathfrak a = R\). Take a maximal ideal \(\mathfrak m \trianglelefteq R\), then by theorem \ref{ChevalleyLocalAction}, \(g\) acts on the pro-group \(\St^{(\infty)}(\Phi, R)\) such that \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is equivariant. Then
+ \[
+  \up g{t_\alpha(\pi_R(a^{(\infty)}))}
+  = \up g{\pi_{\GG}(\mathrm{st}(x_\alpha(a^{(\infty)})))}
+  = \pi_{\GG}(\mathrm{st}(\up g{x_\alpha(a^{(\infty)})}))
+  = \mathrm{st}(\pi_{\St}(\up g{x_\alpha(a^{(\infty)})})).
+ \]
+ This means that \(\mathfrak a \not \leq \mathfrak m\).
 \end{proof}
-
-For any ring \(R\) with a multiplicative subset \(S \subseteq R\) let \(\pi_R \colon R^{(\infty)} \to R\) and \(\pi_{\St} \colon \St^{(\infty)}(\Phi, R) \to R\) be the canonical morphisms.
 
 \begin{theorem}\label{SteinbergCrossedModule}
  Let \(R\) be a commutative ring, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Then \(\mathrm{st} \colon \St(\Phi, R) \to \GG(\Phi, R)\) is a crossed module in a unique way.
@@ -749,39 +799,28 @@ For any ring \(R\) with a multiplicative subset \(S \subseteq R\) let \(\pi_R \c
  Fix a root \(\alpha \in \Phi\). There are roots \(\beta, \gamma \in \Phi\) of the same length such that \(\alpha = \beta + \gamma\). Let \(y_\alpha(a)\) be the only element of \([Y_\beta(N_{\beta, \gamma}^{-1}), Y_\gamma(a)]\). Clearly, \(y_\alpha \colon R \to \St(\Phi, R)\) is a homomorphism. For any maximal ideal \(\mathfrak m \trianglelefteq R\) we have
  \begin{align*}
   y_\alpha(\pi_R(a^{(\infty)}))
-  &= [Y_\beta(N_{\beta, \gamma}^{-1}), \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})] =\\
+  &= [Y_\beta(N_{\beta, \gamma}^{-1}), \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})]\\
   %
   &= \pi_{\St}\bigl(\up{g t_\beta(N_{\beta, \gamma}^{-1})}{x_\gamma(a^{(\infty)})}\, \up g{x_\gamma(-a^{(\infty)})}\bigr) = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})}).
  \end{align*}
 
- It remains to check that \(y_\alpha(a)\) satisfy the Steinberg relations \ref{R3} and \ref{R4}. Take roots \(\alpha, \beta \in \Phi\) such that \(\alpha + \beta \in \Phi\), but \(2\alpha + \beta\) and \(\alpha + 2\beta\) are not roots. Fix an element \(a \in R\) and consider the ideal
- \[\mathfrak b_1 = \{b \in R \mid [y_\alpha(a), y_\beta(br)] = y_{\alpha + \beta}(N_{\alpha, \beta} abr) \text{ for all } r \in R\}.\]
- For any maximal ideal \(\mathfrak m \trianglelefteq R\) we have
+ It remains to check that \(y_\alpha(a)\) satisfy the Steinberg relations \eqref{R3} and \eqref{R4}. Take roots \(\alpha, \beta \in \Phi\) such that \(\alpha + \beta, 2\alpha + \beta \in \Phi\). Fix an element \(a \in R\) and consider the ideal
  \begin{align*}
- [y_\alpha(a), y_\beta(\pi_R(b^{(\infty)}))] &= [y_\alpha(a), \pi_{\St}(\up g{x_\beta(b^{(\infty)})})] =\\
- %
- &= \pi_{\St}\bigl(\up{g t_\alpha(a)}{x_\beta(b^{(\infty)})}\, \up g{x_\beta(-b^{(\infty)})}\bigr) =\\
- %
- &= \pi_{\St}(\up g{x_{\alpha + \beta}(N_{\alpha, \beta} a b^{(\infty)})}) = y_{\alpha + \beta}(N_{\alpha, \beta} a \pi_R(b^{(\infty)})).
- \end{align*}
- It follows that \(\mathfrak b_1 \not \leq \mathfrak m\), i.e. \(\mathfrak b_1 = R\) and we have \ref{R3}.
-
- Similarly, take roots \(\alpha, \beta \in \Phi\) such that \(\alpha + \beta, 2\alpha + \beta \in \Phi\). Fix an element \(a \in R\) and consider the ideal
- \begin{align*}
- \mathfrak b_2 = \{b \in R \mid [y_\alpha(a), y_\beta(br)] &= y_{\alpha + \beta}(N_{\alpha, \beta} abr)\\
- &\quad y_{2\alpha + \beta}(N_{\alpha, \beta} \widehat N_{\alpha, \alpha + \beta} a^2 br) \text{ for all } r \in R\}.
+ \mathfrak b_2 = \{b \in R &\mid [y_\alpha(a), y_\beta(br)]\\
+ &= y_{\alpha + \beta}(N_{\alpha, \beta} abr)
+ y_{2\alpha + \beta}(N_{\alpha, \beta} \widehat N_{\alpha, \alpha + \beta} a^2 br) \text{ for all } r \in R\}.
  \end{align*}
  For any maximal ideal \(\mathfrak m \trianglelefteq R\) we have
  \begin{align*}
- [y_\alpha(a), y_\beta(\pi_R(b^{(\infty)}))] &= [y_\alpha(a), \pi_{\St}(\up g{x_\beta(b^{(\infty)})})] =\\
+ [y_\alpha(a), y_\beta(\pi_R(b^{(\infty)}))] &= [y_\alpha(a), \pi_{\St}(\up g{x_\beta(b^{(\infty)})})]\\
  %
- &= \pi_{\St}\bigl(\up{g t_\alpha(a)}{x_\beta(b^{(\infty)})}\, \up g{x_\beta(-b^{(\infty)})}\bigr) =\\
+ &= \pi_{\St}\bigl(\up{g t_\alpha(a)}{x_\beta(b^{(\infty)})}\, \up g{x_\beta(-b^{(\infty)})}\bigr)\\
  %
- &= \pi_{\St}\bigl(\up g{x_{\alpha + \beta}(N_{\alpha, \beta} a b^{(\infty)})}\, \up g{x_{2\alpha + \beta}(N_{\alpha, \beta} \widehat N_{\alpha, \alpha + \beta} a^2 b^{(\infty)})}\bigr) =\\
+ &= \pi_{\St}\bigl(\up g{x_{\alpha + \beta}(N_{\alpha, \beta} a b^{(\infty)})}\, \up g{x_{2\alpha + \beta}(N_{\alpha, \beta} \widehat N_{\alpha, \alpha + \beta} a^2 b^{(\infty)})}\bigr)\\
  %
  &= y_{\alpha + \beta}(N_{\alpha, \beta} a \pi_R(b^{(\infty)})) y_{2\alpha + \beta}(N_{\alpha, \beta} \widehat N_{\alpha, \alpha + \beta} a^2 \pi_R(b^{(\infty)})).
  \end{align*}
- It follows that \(\mathfrak b_2 \not \leq \mathfrak m\), i.e. \(\mathfrak b_2 = R\).
+ It follows that \(\mathfrak b_2 \not \leq \mathfrak m\), i.e. \(\mathfrak b_2 = R\). The proof of \eqref{R3} is the same.
 \end{proof}
 
 

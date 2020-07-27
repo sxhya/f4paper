@@ -45,6 +45,7 @@
 \newcommand{\Fun}{\mathbf{Fun}}
 \newcommand{\Mod}{\mathbf{Mod}}
 \newcommand{\op}{\mathrm{op}}
+\newcommand{\ZZ}{\mathbb{Z}}
 
 \newcommand{\up}[2]{{^{#1}\!{#2}}}
 
@@ -64,7 +65,7 @@ In this section we recall the construction of the pro-completion of \(\mathcal C
 
 Recall that a nonempty small category \(\mathcal I\) is called {\it filtered} if
 \begin{itemize}
- \item for any two objects \(i, k \in Ob(\mathcal{I})\) there is a diagram \(i \to j \leftarrow k\) in \(\mathcal I\);
+ \item for any two objects \(i, k \in Ob(\mathcal{I})\) there is a diagram \(i \to j \leftarrow k\) in \(\mathcal I\) (i.\,e. $i$ and $k$ have an upper bound);
  \item every two parallel morphisms \(i \rightrightarrows j\) are equalized by some morphism \(j \to k\) in \(\mathcal I\).
 \end{itemize}
 A {\it pro-object} in \(\mathcal C\) is, by definition, a functor $X^{(\infty)}\colon \mathcal{I}_X^{\op} \to \mathcal{C}$, i.\,e. a contravariant functor from a filtered category \(\mathcal I_X\), called {\it the category of indices of $X^{(\infty)}$}, to the category \(\mathcal C\). 
@@ -233,6 +234,8 @@ Let $\Phi$ be an irreducible root system of rank $\geq 3$.
 We assume that the root system is $\Phi$ contained in a Euclidean space $V = \mathbb{R}^\ell$ whose scalar product we denote by $(-, -)$.
 For a pair of roots $\alpha, \beta \in \Phi$ we denote by $\langle \alpha, \beta \rangle$ the integer $\tfrac{2(\alpha, \beta)}{|\beta|^2}$.
 
+Recall that a root subset $\Sigma \subseteq \Phi$ is called {\it closed} if $\alpha, \beta \in \Sigma$, $\alpha+\beta\in\Phi$ imply $\alpha+\beta\in \Sigma$. A closed root subset $\Sigma$ is called {\it symmetric} (resp. {\it special}) if $\Psi = -\Psi$ (resp. $\Psi \cap -\Psi = \emptyset$). By definition, a {\it root subsystem} $\Psi \subseteq \Phi$ is a symmetric and closed root subset.
+
 We start by recalling the classical definition of the Steinberg group.
 \begin{df} \label{def:Steinberg}
 Let $R$ be a ring. Recall the {\it Steinberg group $\St(\Phi, R)$} is given by generators $x_\alpha(a)$, where $\alpha \in \Phi$ and $a \in R$ and the following list of defining relations:
@@ -261,15 +264,12 @@ To formulate it succintly, we extend the domain of the structure constant functi
 Now if $\alpha, \beta, \gamma, \delta$ are pairwise linearly independent roots such that $\alpha+\beta+\gamma+\delta = 0$ then the following identity holds:
 \begin{equation} \label{eq:cocycle} \tfrac{1}{|\alpha+\beta|^2} N_{\alpha,\beta} N_{\gamma,\delta} + \tfrac{1}{|\beta+\gamma|^2} N_{\beta,\gamma} N_{\alpha,\delta} + \tfrac{1}{|\gamma+\alpha|^2} N_{\gamma,\alpha} N_{\beta,\delta} = 0. \end{equation}
 
-It is well-known that if \(\Pi \subseteq \Phi\) is a system of positive roots, then for any linear order on \(\Pi\) the map
-\begin{equation} \label{eq:uni-rad}
-R^\Pi \to \St(\Phi, R), \enskip (r_\alpha)_\alpha \mapsto \prod_\alpha x_\alpha(r_\alpha)
-\end{equation}
-is an injection. Also, \(\prod_\alpha x_\alpha(R)\) is a nilpotent subgroup of \(\St(\Phi, R)\), it isomorphically maps onto the unipotent radical of a Borel subgroup of \(\GG(\Phi, R)\).
+\begin{rem}\label{rem:uni-rad}
+Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the restriction of the canonical map $\St(\Phi, R)\to\GG(\Phi, R)$ to the subgroup \[\mathrm{U}(\Sigma, R) = \langle x_{\alpha}(a) \mid a\in R,\ \alpha\in \Sigma \rangle \leq \St(\Phi, R)\] is injective. Morever, for any chosen linear order on \(\Sigma\) the map $R^{\Sigma} \to \mathrm{U}(\Sigma, R)$ given by $(r_\alpha)_\alpha \mapsto \prod_\alpha x_\alpha(r_\alpha)$ is a bijection. \end{rem}
 
 Notice that the multiplicative identity of $R$ is actually never used in the definition of the Steinberg group, 
  which allows one to use it in the situation when $R$ is an rng.
-This also allows one to ``deform'' the above definition and, by analogy with the homotopes of rngs introduced in~\cref{ring-homotope}, come to the notion of a ``homotope'' of the Steinberg group.
+This also allows one to ``deform'' this definition and, by analogy with the homotopes of rngs introduced in~\cref{ring-homotope}, come to the notion of a ``homotope'' of the Steinberg group.
 \begin{df}\label{def:Steinberg-homotope}
  Let $R$ be an rng with a fixed element $s \in R$ and, as before, $\Phi$ be a root system of rank $\geq 3$.
  The {\it $s$-homotope $\St^{(s)}(\Phi, R)$} of the Steinberg group, by definition, is the group given by generators $x_\alpha^{(s)}(a)$, $a\in R$, $\alpha\in\Phi$ and the following list of relations: \begin{align}
@@ -316,9 +316,10 @@ Let us verify the first assertion. Since there is only a finite number of roots 
 Since the root elements $x_\alpha^{(s)}(a)$ generate $\St^{(s)}(\Phi, R)$ we obtain that the morphisms $f_1$ and $f_2$ are equal.
 
 Let us verify the second assertion. By definition, a morphism $f_\alpha \colon R^{(\infty)} \to G$ corresponds to a single group homomorphism 
- $f_\alpha^{\circ} \colon R^{(s_\alpha)} \to G$ for some $s_\alpha \in S$.
+ $f'_\alpha \colon R^{(s_\alpha)} \to G$ for some $s_\alpha \in S$. Precomposing each $f'_\alpha$ with the structure morhism $R^{(s)} \to R^{(s_\alpha)}$ for sufficiently large $s \in S$, we obtain a collection of homomorphisms $\widetilde{f}_\alpha \colon R^{(s)} \to G$.
+ 
 Notice that~\eqref{R1}--\eqref{R4} specify only a {\it finite} collection of identities in $\Pro(\Set)$ to which $f_\alpha$'s must satisfy.
-Unwinding the definitions, we find a sufficiently large index $s \in S$ such that composite homomorphisms $\widetilde{f}_\alpha$ defined as the composites of $f_\alpha^{(\circ)}\colon R^{(s_\alpha)} \to G$ with the structure morphisms $R^{(s)} \to R^{(s_\alpha)}$ satisfy the same identities (with $f_\alpha$'s replaced by $\widetilde{f}_\alpha$'s).
+Unwinding the definitions, we find a sufficiently large index $s \in S$ such that $\widetilde{f}_\alpha$ satisfy the same identities (with $f_\alpha$'s replaced by $\widetilde{f}_\alpha$'s).
 Thus, we obtain a group homomorphism $\St^{(s)}(\Phi, R) \to G$, which, in turn, determines a morphism $\St^{(\infty)}(\Phi, R) \to G$.
 \end{proof}
 Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a group object in $\Pro(\Set)$ is essential in the proof of the above lemma.
@@ -334,8 +335,6 @@ Throughout this section we make use of the following commutator identities:
 % \begin{equation} [x,\ yzw]& =   [x,\ y] \cdot \up{y}[x,\ z] \cdot \up{yz} [x, w] \end{equation}
 
 \subsection{Elimination of roots}
-Recall that a root subset $\Psi \subseteq \Phi$ is called {\it closed} if $\alpha, \beta \in \Psi$, $\alpha+\beta\in\Phi$ imply $\alpha+\beta\in \Psi$. A closed root subset $\Psi$ will be called a {\it subsystem} if $\Psi = -\Psi$.
-
 \begin{lemma}\label{ThreeRoots}
 Let \(\Phi\) be a root system of rank \(\geq 3\) and not of type \(\rB_\ell\) or \(\rC_\ell\). Let \(\alpha, \beta, \gamma \in \Phi\) be a triple of roots having the same length such that $\alpha = \beta + \gamma$.  
 Then there exist roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R\beta + \mathbb R\gamma)\) having the same length as $\beta$ and, moreover, such that \(\beta_1 + \beta_2 = \beta\).
@@ -376,8 +375,8 @@ Our immediate goal is to construct the root subgroup morphisms
 
 %The next step of the proof of~\cref{SingleRootElimination} is to verify the Steinberg relations, which are ``missing'' from the presentation of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$.
 %This is accomplished in a series of lemmas below.
-Notice that none of these Steinberg relations simultaneously involves both \(\alpha\) and \(-\alpha\).
-Thus, by symmetry it suffices to verify only Steinberg relations involving \(\alpha\).
+%Notice that none of these Steinberg relations simultaneously involves both \(\alpha\) and \(-\alpha\).
+%Thus, by symmetry it suffices to verify only Steinberg relations involving \(\alpha\).
 
 %To verify the assertion of the theorem we need to construct a pro-group morphism \[G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi \setminus \{\pm\alpha\}, R)\] such that \(G_\alpha \circ x_\beta = x_\beta\) for all \(\beta \neq \pm \alpha\). By~\cref{SteinbergPresentation} it suffices to construct a pair of morphisms \(\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) which together with $\widetilde{x}_\beta$, $\beta\neq \pm\alpha$, satisfy the relations \eqref{R1}--\eqref{R4} missing from the presentation of $\St(\Phi\setminus\{\pm\alpha\}, R)$. As before, we understand Steinberg relations as equalities of morphisms in $\Pro(\Set)$ according to~\cref{conv:notation}.
 
@@ -386,37 +385,44 @@ Let $\beta, \gamma \in \Phi$ be arbitrary roots such that $\alpha = \beta+\gamma
 Denote by $x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)})$ the morphism
  \[[x_\beta(N_{\beta,\gamma}b^{(\infty)}),\ x_\gamma(c^{(\infty)})]\colon R^{(\infty)} \times R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R).\]
 See~\cref{conv:notation} for the explanation of the notation used in the above formula.
-
-%Of course, alternatively, $x_{\beta,\gamma}$ can be defined as the class of the pre-morphism $x_{\beta,\gamma}^* = \mathrm{id}_S$, $x_{\beta,\gamma}^{(s)} \colon R^{(s)}\times R^{(s)} \to \St^{(s)}(\Phi\setminus\{\pm\alpha\}, R)$, $x_{\beta,\gamma}^{(s)}(b^{(s)}, c^{(s)}) = [x_\beta^{(s)}(b), x_\gamma^{(s)}(c)].$
 \end{df}
  
 \begin{lemma} \label{lem:elim-lhs}
- The Steinberg relations~\eqref{R2}--\eqref{R4} with \(\alpha\) on the left-hand side hold for \(\St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\), if we substitute \(x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})\) instead of \(x_\alpha(a^{(\infty)})\) and \(b^{(\infty)} c^{(\infty)}\) instead of \(a^{(\infty)}\) on the right-hand side.
+ The morphism $x_{\beta, \gamma}$ satisfies the following relations:
+ \begin{align}  
+  [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] &= 1, \label{R2-bg}\\ 
+ \multispan2{\hfil if $\alpha + \delta \not\in\Phi \cup \{0\};$} \nonumber \\
+ [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] &= x_{\alpha + \delta}(N_{\alpha,\delta} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}), \label{R3-bg} \\
+ \multispan2{\hfill if $\alpha+\delta\in\Phi$ but $\alpha+2\delta,\ 2\alpha+\delta\not\in\Phi;$} \nonumber \\
+ [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] &= x_{\alpha + \delta}(N_{\alpha,\delta} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}) \cdot \label{R4-bg1} \\ & \cdot x_{2\alpha+\delta}(N_{\alpha,\delta} \cdot \widehat{N}_{\alpha, \alpha+\delta}\cdot {b^{(\infty)}}^2{c^{(\infty)}}^2d^{(\infty)}), \nonumber \\ \multispan2{ \hfill if $\alpha+\delta,2\alpha+\delta\in\Phi.$ \nonumber} \\
+ [x_\delta(d^{(\infty)}), x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})] &= x_{\alpha + \delta}(N_{\delta, \alpha} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}) \cdot \label{R4-bg2} \\ & \cdot x_{\alpha+2\delta}(N_{\delta, \alpha} \cdot \widehat{N}_{\delta, \alpha+\delta}\cdot {b^{(\infty)}}{c^{(\infty)}}{d^{(\infty)}}^2), \nonumber \\ \multispan2{ \hfill if $\alpha+\delta,\alpha+2\delta\in\Phi.$ \nonumber} \end{align}
 \end{lemma}
 \begin{proof}
- If \(\delta \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\), then
- \begin{align*}
-  &\bigl[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),
-  x_\delta(d^{(\infty)})\bigr] \\
+ First of all, observe that the above relations are obtained from the pro-group analogues of \eqref{R2}--\eqref{R4} by replacing $x_\alpha(a^{(\infty)})$ with $x_{\beta, \gamma}(b^{\infty}, c^{\infty})$.
+ 
+ Let us first consider the case \(\delta \in \Phi \setminus (\ZZ \beta + \ZZ \gamma)\).
+%  Notice that the root subset $\Sigma = \Phi \cap (\ZZ_{\geq 0}\beta + \ZZ_{\geq 0}\gamma + \ZZ_{>0}\delta)$ is special and does not contain $\pm\alpha$, $-\beta$ or $-\gamma$. Thus, the relations between the remaining root subgroup morphisms of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ suffice to rewrite the left-hand side of~\eqref{R2-bg}--\eqref{R4-bg2} as follows:
+ \begin{align}
+  &\bigl[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\delta(d^{(\infty)})\bigr] = \label{eq:24_1} \\
   %
   &= \up{x_\beta(N_{\beta, \gamma} b^{(\infty)})
    x_\gamma(c^{(\infty)})
    x_\beta(-N_{\beta, \gamma} b^{(\infty)})
    x_\gamma(-c^{(\infty)})}
   {x_\delta(d^{(\infty)})}\,
-  x_\delta(-d^{(\infty)})\\
+  x_\delta(-d^{(\infty)}) = \nonumber \\
   %
   &= \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ i, j \geq 0; k > 0}}
-  x_{i\beta + j\gamma + k\delta} \bigl(A_{i, j, k} (b^{(\infty)})^i (c^{(\infty)})^j (d^{(\infty)})^k\bigr)
- \end{align*}
- for some integers \(A_{i, j, k}\) depending only on the roots \(\beta\), \(\gamma\), \(\delta\). The same integers arise in the decomposition
+  x_{i\beta + j\gamma + k\delta} \bigl(A_{i, j, k} (b^{(\infty)})^i (c^{(\infty)})^j (d^{(\infty)})^k\bigr). \nonumber
+ \end{align}
+ The integers \(A_{i, j, k}\) depend only on the roots \(\beta\), \(\gamma\), \(\delta\) and the chosen order of factors.
+ They can be determined from the following identity in $\St(\Phi, \mathbb{Z})$ (we assume that the order of factors is the same):
  \begin{align*}
-  [x_\alpha(1), x_\delta(1)]
-  = \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ i, j \geq 0; k > 0}}
-  x_{i\beta + j\gamma + k\delta}(A_{i, j, k})
+  [x_\alpha(1), x_\delta(1)] = \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ i, j \geq 0; k > 0}}
+  x_{i\beta + j\gamma + k\delta}(A_{i, j, k}).
  \end{align*}
- in the Steinberg group \(\St(\Phi, \mathbb Z)\). In this Steinberg group we already have the Steinberg relation for \([x_\alpha(1), x_\delta(1)]\), and the integers \(A_{i, j, k}\) are uniquely determined by \eqref{eq:uni-rad}. It follows that \(A_{i, j, k}\) are precisely the same as in the Steinberg relation with \(\alpha\) and \(\delta\) on the left-hand side.
-
+ The constants $A_{i,j,k}$ coincide with the constants in the right-hand sides of~\eqref{R2}--\eqref{R4}, in particular, $A_{i,j,k}=0$ for $i\neq j$. Thus, in the case under consideration, \eqref{R2-bg}--\eqref{R4-bg2} follow from~\eqref{eq:24_1}.
+ 
  It remains to prove the Steinberg relations with all roots in \(\Phi \cap (\mathbb R \beta + \mathbb R \gamma)\). By lemma \ref{ThreeRoots} there are roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\) such that \(|\beta_1| = |\beta_2| = |\beta|\) and \(\beta = \beta_1 + \beta_2\). Moreover, we know all possible arrangements of these roots in a root subsystem of type \(\rA_3\) or \(\rC_3\). Using the already proved Steinberg relations for \(x_{\beta, \gamma}\), we get
  \begin{align*}
   &\bigl[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),
@@ -436,7 +442,7 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
  for some integers \(B_{i, j, k}\) depending on the roots \(\beta_1\), \(\beta_2\), \(\gamma\). These integers also arise in the decomposition
  \[[x_\alpha(1), x_\beta(N_{\beta_1, \beta_2})] = \prod_{\substack{i\alpha + j\beta_1 + k\beta_2 \in \Phi\\ i \geq 0; j, k > 0}}
   x_{i\alpha + j\beta_1 + k\beta_2}(B_{i, j, k})\]
- in the Steinberg group \(\St(\Phi, \mathbb Z)\). In this Steinberg group the commutant is trivial, hence by \eqref{eq:uni-rad} we have \(B_{i, j, k} = 0\) for all \(i, j, k\). Then
+ in the Steinberg group \(\St(\Phi, \mathbb Z)\). In this Steinberg group the commutant is trivial, hence by \cref{rem:uni-rad} we have \(B_{i, j, k} = 0\) for all \(i, j, k\). Then
  \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\beta(d^{(\infty)})] = 1\]
  by lemma \ref{RingGeneration}. The proof of
  \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\gamma(d^{(\infty)})] = 1\]
@@ -504,7 +510,7 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
  \end{align*}
  for some \(\varepsilon \in \{-1, 1\}\). Since the same coefficient occurs in the identity
  \[x_\alpha(1) = x_\alpha(\varepsilon)\]
- in \(\St(\Phi, \mathbb Z)\), it follows by \eqref{eq:uni-rad} that \(\varepsilon = 1\).
+ in \(\St(\Phi, \mathbb Z)\), it follows by \cref{rem:uni-rad} that \(\varepsilon = 1\).
 
  In the case of \(C_3\) we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\), exchanging \(\beta_i\) with \(\gamma_i\) if necessary. Let \(\delta = 2 \mathrm e_2\), then
  \begin{align*}
@@ -613,7 +619,7 @@ Suppose that the root \(\alpha\) occurs on the right-hand side of \eqref{R3} or 
   &[x_\gamma(1), x_\beta(N_{\beta_1, \beta_2})]\\
   &= x_\alpha(A_1)\, x_{\mathrm e_1 - \mathrm e_3}(A_2)\, x_{\mathrm e_1 + \mathrm e_2}(A_3)\, x_{2 \mathrm e_1}(A_4)
  \end{align*}
- in the Steinberg group \(\St(\Phi, \mathbb Z)\). In this group the commutator equals to \(x_\alpha(N_{\gamma, \beta})\), hence \(A_1 = N_{\gamma, \beta}\) and \(A_i = 0\) for \(i > 1\) by \eqref{eq:uni-rad}. From lemma \ref{RingGeneration} it follows that
+ in the Steinberg group \(\St(\Phi, \mathbb Z)\). In this group the commutator equals to \(x_\alpha(N_{\gamma, \beta})\), hence \(A_1 = N_{\gamma, \beta}\) and \(A_i = 0\) for \(i > 1\) by \cref{rem:uni-rad}. From lemma \ref{RingGeneration} it follows that
  \[[x_\gamma(c^{(\infty)}), x_\beta(b^{(\infty)})] = 
  \widetilde x_\alpha(N_{\gamma, \beta} c^{(\infty)} b^{(\infty)}).\]
 
@@ -735,7 +741,7 @@ Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{
  \[\up{h_\alpha(a)}{x_\beta(b^{(\infty)})} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a) (b^{(\infty)})^j)\]
  for some Laurent polynomials \(P_{i, j}(a) \in \mathbb Z[a, a^{-1}]\) depending only on \(\alpha\) and \(\beta\). But then in the Steinberg group \(\St(\Phi, \mathbb Z[a, a^{-1}])\) we have the identity
  \[\up{h_\alpha(a)}{x_\beta(1)} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a)).\]
- From \eqref{eq:uni-rad} we have \(P_{i, j}(a) = 0\) with the only exception \(P_{0, 0}(a) = a^{(\beta, \alpha)}\).
+ From \cref{rem:uni-rad} we have \(P_{i, j}(a) = 0\) with the only exception \(P_{0, 0}(a) = a^{(\beta, \alpha)}\).
 \end{proof}
 
 

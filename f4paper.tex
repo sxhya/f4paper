@@ -1,6 +1,6 @@
 \documentclass{article}
 
-\usepackage{amsmath, amssymb, amsthm, amscd, alltt, graphicx}
+\usepackage{amsmath, mathtools, amssymb, amsthm, amscd, alltt, graphicx, comment}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[capitalise]{cleveref}
@@ -30,7 +30,7 @@
 \newtheorem{rem}[lemma]{Remark}
 \newtheorem{conv}[lemma]{Convention} \Crefname{conv}{Convention}{Conventions}
 
-\newenvironment{psmallmatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
+%\newenvironment{psmallmatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
 
 \DeclareMathOperator\St{St}
 \DeclareMathOperator\Ker{Ker}
@@ -337,7 +337,7 @@ Throughout this section we make use of the following commutator identities:
 \subsection{Elimination of roots}
 \begin{lemma}\label{ThreeRoots}
 Let \(\Phi\) be a root system of rank \(\geq 3\) and not of type \(\rB_\ell\) or \(\rC_\ell\). Let \(\alpha, \beta, \gamma \in \Phi\) be a triple of roots having the same length such that $\alpha = \beta + \gamma$.  
-Then there exist roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R\beta + \mathbb R\gamma)\) having the same length as $\beta$ and, moreover, such that \(\beta_1 + \beta_2 = \beta\).
+Then there exist roots \(\beta_1, \beta_2 \in \Phi \setminus (\ZZ\beta + \ZZ\gamma)\) having the same length as $\beta$ and, moreover, such that \(\beta_1 + \beta_2 = \beta\).
 
 The roots $\alpha, \gamma, \beta_1, \beta_2$ are contained in a root subsystem $\Phi_0 \subseteq \Phi$, of type either \(\rA_3\) or \(\rC_3\). There is an embedding \(\Phi_0 \hookrightarrow  \mathbb R^3\) such that \(\beta = \mathrm e_1 - \mathrm e_2\), \(\gamma = \mathrm e_2 - \mathrm e_3\) and 
 \begin{itemize}
@@ -391,7 +391,7 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
  The morphism $x_{\beta, \gamma}$ satisfies the following relations:
  \begin{align}  
   [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] &= 1, \label{R2-bg}\\ 
- \multispan2{\hfil if $\alpha + \delta \not\in\Phi \cup \{0\};$} \nonumber \\
+ \multispan2{\hfil if $\alpha + \delta \not\in\Phi \cup \{0\},\ \delta\neq\alpha;$} \nonumber \\
  [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] &= x_{\alpha + \delta}(N_{\alpha,\delta} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}), \label{R3-bg} \\
  \multispan2{\hfill if $\alpha+\delta\in\Phi$ but $\alpha+2\delta,\ 2\alpha+\delta\not\in\Phi;$} \nonumber \\
  [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] &= x_{\alpha + \delta}(N_{\alpha,\delta} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}) \cdot \label{R4-bg1} \\ & \cdot x_{2\alpha+\delta}(N_{\alpha,\delta} \cdot \widehat{N}_{\alpha, \alpha+\delta}\cdot {b^{(\infty)}}^2{c^{(\infty)}}^2d^{(\infty)}), \nonumber \\ \multispan2{ \hfill if $\alpha+\delta,2\alpha+\delta\in\Phi.$ \nonumber} \\
@@ -401,9 +401,9 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
  First of all, observe that the above relations are obtained from the pro-group analogues of \eqref{R2}--\eqref{R4} by replacing $x_\alpha(a^{(\infty)})$ with $x_{\beta, \gamma}(b^{\infty}, c^{\infty})$.
  
  Let us first consider the case \(\delta \in \Phi \setminus (\ZZ \beta + \ZZ \gamma)\).
-%  Notice that the root subset $\Sigma = \Phi \cap (\ZZ_{\geq 0}\beta + \ZZ_{\geq 0}\gamma + \ZZ_{>0}\delta)$ is special and does not contain $\pm\alpha$, $-\beta$ or $-\gamma$. Thus, the relations between the remaining root subgroup morphisms of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ suffice to rewrite the left-hand side of~\eqref{R2-bg}--\eqref{R4-bg2} as follows:
+ Notice that the root subset $\Sigma = \Phi \cap (\ZZ_{\geq 0}\beta + \ZZ_{\geq 0}\gamma + \ZZ_{>0}\delta)$ is special and does not contain $\pm\alpha$, $-\beta$ or $-\gamma$. Thus, the relations between the remaining root subgroup morphisms of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ suffice to rewrite the left-hand side of~\eqref{R2-bg}--\eqref{R4-bg2} as follows:
  \begin{align}
-  &\bigl[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\delta(d^{(\infty)})\bigr] = \label{eq:24_1} \\
+  &\bigl[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\delta(d^{(\infty)})\bigr] = \label{eq:elim-lhs_1} \\
   %
   &= \up{x_\beta(N_{\beta, \gamma} b^{(\infty)})
    x_\gamma(c^{(\infty)})
@@ -415,40 +415,37 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
   &= \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ i, j \geq 0; k > 0}}
   x_{i\beta + j\gamma + k\delta} \bigl(A_{i, j, k} (b^{(\infty)})^i (c^{(\infty)})^j (d^{(\infty)})^k\bigr). \nonumber
  \end{align}
- The integers \(A_{i, j, k}\) depend only on the roots \(\beta\), \(\gamma\), \(\delta\) and the chosen order of factors.
- They can be determined from the following identity in $\St(\Phi, \mathbb{Z})$ (we assume that the order of factors is the same):
- \begin{align*}
+ The integers \(A_{i, j, k}\) in the above formula depend only on the roots \(\beta\), \(\gamma\), \(\delta\) (a priori they also depend on the chosen order of factors). To determine the constants $A_{i,j,k}$, one can compute the commutator $[x_\alpha(1),\ x_\delta(1)]$ in $\St(\Phi, \ZZ)$ via the same procedure as in~\eqref{eq:elim-lhs_1}:
+ \begin{equation} \label{eq:elim-lhs_2}
   [x_\alpha(1), x_\delta(1)] = \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ i, j \geq 0; k > 0}}
   x_{i\beta + j\gamma + k\delta}(A_{i, j, k}).
- \end{align*}
- The constants $A_{i,j,k}$ coincide with the constants in the right-hand sides of~\eqref{R2}--\eqref{R4}, in particular, $A_{i,j,k}=0$ for $i\neq j$. Thus, in the case under consideration, \eqref{R2-bg}--\eqref{R4-bg2} follow from~\eqref{eq:24_1}.
+ \end{equation}
+  By~\cref{rem:uni-rad} the integers $A_{i,j,k}$ are uniquely determined by~\eqref{eq:elim-lhs_2}.
+  It is easy to see that, depending on the relative position of $\alpha$ and $\delta$, the integers $A_{i,j,k}$ coincide with the structure constants in the right-hand sides of~\eqref{R2},~\eqref{R3} or~\eqref{R4}, in particular, $A_{i,j,k}=0$ for $i\neq j$.
+  Thus, we obtain that \eqref{R2-bg}--\eqref{R4-bg2} follow from~\eqref{eq:elim-lhs_1}.
  
- It remains to prove the Steinberg relations with all roots in \(\Phi \cap (\mathbb R \beta + \mathbb R \gamma)\). By lemma \ref{ThreeRoots} there are roots \(\beta_1, \beta_2 \in \Phi \setminus (\mathbb R \beta + \mathbb R \gamma)\) such that \(|\beta_1| = |\beta_2| = |\beta|\) and \(\beta = \beta_1 + \beta_2\). Moreover, we know all possible arrangements of these roots in a root subsystem of type \(\rA_3\) or \(\rC_3\). Using the already proved Steinberg relations for \(x_{\beta, \gamma}\), we get
- \begin{align*}
-  &\bigl[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),
-  x_\beta(N_{\beta_1, \beta_2}
-   b_1^{(\infty)} b_2^{(\infty)})\bigr]\\
-  %
-  &= \bigl[\up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
-   {x_{\beta_1}(b_1^{(\infty)})},
-  \up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
-   {x_{\beta_2}(b_2^{(\infty)})}\bigr]\,
-  x_\beta(-N_{\beta_1, \beta_2}
-   b_1^{(\infty)} b_2^{(\infty)})\\
-  %
-  &= \prod_{\substack{i\alpha + j\beta_1 + k\beta_2 \in \Phi\\ i \geq 0; j, k > 0}}
-  x_{i\alpha + j\beta_1 + k\beta_2}\bigl(B_{i, j, k} (b^{(\infty)} c^{(\infty)})^i (b_1^{(\infty)})^j (b_2^{(\infty)})^k\bigr)
- \end{align*}
- for some integers \(B_{i, j, k}\) depending on the roots \(\beta_1\), \(\beta_2\), \(\gamma\). These integers also arise in the decomposition
- \[[x_\alpha(1), x_\beta(N_{\beta_1, \beta_2})] = \prod_{\substack{i\alpha + j\beta_1 + k\beta_2 \in \Phi\\ i \geq 0; j, k > 0}}
-  x_{i\alpha + j\beta_1 + k\beta_2}(B_{i, j, k})\]
- in the Steinberg group \(\St(\Phi, \mathbb Z)\). In this Steinberg group the commutant is trivial, hence by \cref{rem:uni-rad} we have \(B_{i, j, k} = 0\) for all \(i, j, k\). Then
- \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\beta(d^{(\infty)})] = 1\]
- by lemma \ref{RingGeneration}. The proof of
- \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\gamma(d^{(\infty)})] = 1\]
- is the same.
-
- Finally,
+ It remains to verify Steinberg relations in the case \(\delta \in \Phi \cap (\ZZ \beta + \ZZ \gamma)\).
+ By~\cref{ThreeRoots} there exist roots \(\beta_1, \beta_2 \in \Phi \setminus (\ZZ \beta + \ZZ \gamma)\) such that \(|\beta_1| = |\beta_2| = |\beta|\) and \(\beta = \beta_1 + \beta_2\). 
+ Recall that the root subsystem $\Phi_0 \subseteq \Phi$ containing $\beta,\gamma,\beta_1,\beta_2$ is of type $\rA_3$ or $\rC_3$. 
+ In both cases we may assume that $\alpha + \beta_2 \not\in\Phi$.
+ 
+ Let us first verify the relation~\eqref{R2-bg} in the case $\delta \in \{\beta, \gamma\}$. By symmetry we may assume that $\delta = \beta$. 
+ Direct computation shows that
+ \begin{align}
+  [x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\beta(N_{\beta_1, \beta_2} b_1^{(\infty)}b_2^{(\infty)})] = \label{eq:elim-lhs3} \\
+   = [x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ [x_{\beta_1}(b_1^{(\infty)}),\ x_{\beta_2}(b_2^{(\infty)})]]  & \text{ by~\eqref{R3}} \nonumber \\ 
+   = [[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_{\beta_1}(b_1)],\ \up{x_{\beta_1}(b_1^{(\infty)})} x_{\beta_2}(b_2^{(\infty)})]  & \text{ by~\eqref{eq:HW-corr},\eqref{R2-bg}.} \nonumber \end{align}
+In the case $\Phi\cong \rA_3$ the inner commutator in the last expression is trivial by~\eqref{R2-bg},
+ therefore the outer commutator is trivial as well.
+In the case $\Phi\cong \rC_3$ the last expression can be further simplified using (the already verified)~\eqref{R3-bg} and~\eqref{R3} as follows:
+\[ = [x_{\alpha+\beta_1}(N_{\alpha, \beta_1} b^{(\infty)}c^{(\infty)}b_1^{(\infty)}),\ x_{\beta}(N_{\beta_1, \beta_2} b_1^{(\infty)} b_2^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})]. \]
+It is clear that the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} and~\eqref{R2-bg}.  
+  In both cases the right-hand side of~\eqref{eq:elim-lhs3} is trivial. Consequently, from~\cref{RingGeneration} we obtain that
+ $[x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\beta(d^{(\infty)})] = 1,$
+ which completes the proof of~\eqref{R2-bg}. 
+ 
+ Finally, it remains to verify~\eqref{R3-bg} in the case $\delta \in \{-\beta, -\gamma\}$.
+ Again, by symmetry it suffices to consider the case $\delta = -\beta$.
  \begin{align*}
   &[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),
   x_{-\beta}(N_{-\beta_1, -\beta_2} b_1^{(\infty)} b_2^{(\infty)})]\\
@@ -743,7 +740,6 @@ Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{
  \[\up{h_\alpha(a)}{x_\beta(1)} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a)).\]
  From \cref{rem:uni-rad} we have \(P_{i, j}(a) = 0\) with the only exception \(P_{0, 0}(a) = a^{(\beta, \alpha)}\).
 \end{proof}
-
 
 \subsection{Steinberg crossed module}
 

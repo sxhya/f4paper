@@ -263,6 +263,8 @@ We also need yet another identity for structure constants.
 To formulate it succintly, we extend the domain of the structure constant function $N_{-,-}$ by setting $N_{\alpha, \beta} = 0$ whenever $\alpha+\beta\not\in\Phi\setminus\{0\}$.
 Now if $\alpha, \beta, \gamma, \delta$ are pairwise linearly independent roots such that $\alpha+\beta+\gamma+\delta = 0$ then the following identity holds:
 \begin{equation} \label{eq:cocycle} \tfrac{1}{|\alpha+\beta|^2} N_{\alpha,\beta} N_{\gamma,\delta} + \tfrac{1}{|\beta+\gamma|^2} N_{\beta,\gamma} N_{\alpha,\delta} + \tfrac{1}{|\gamma+\alpha|^2} N_{\gamma,\alpha} N_{\beta,\delta} = 0. \end{equation}
+An equivalent way to state~\eqref{eq:cocycle} is as follows: for every triple $\alpha, \beta, \gamma$ of pairwise linearly independent roots such that $\alpha+\beta+\gamma\neq 0$ one has
+\begin{equation} \label{eq:cocycle2} N_{\alpha,\beta+\gamma} N_{\beta,\gamma} + N_{\beta,\gamma+\alpha} N_{\gamma,\alpha} + N_{\gamma,\alpha+\beta}N_{\alpha,\beta} = 0.\end{equation}
 
 \begin{rem}\label{rem:uni-rad}
 Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the restriction of the canonical map $\St(\Phi, R)\to\GG(\Phi, R)$ to the subgroup \[\mathrm{U}(\Sigma, R) = \langle x_{\alpha}(a) \mid a\in R,\ \alpha\in \Sigma \rangle \leq \St(\Phi, R)\] is injective. Morever, for any chosen linear order on \(\Sigma\) the map $R^{\Sigma} \to \mathrm{U}(\Sigma, R)$ given by $(r_\alpha)_\alpha \mapsto \prod_\alpha x_\alpha(r_\alpha)$ is a bijection. \end{rem}
@@ -328,7 +330,7 @@ Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a g
 Throughout this section we make use of the following commutator identities:
 \begin{align}
 \label{eq:comm-mult-rhs}[x,\ yz]& =   [x,\ y] \cdot {}^{y}\![x,\ z],
-%\\\label{eq:comm-mult-lhs}[xy,\ z]& = \up{x}[y,\ z] \cdot [x,\ z],
+\\ \label{eq:comm-mult-lhs}[xy,\ z]& = \up{x}[y,\ z] \cdot [x,\ z],
 \end{align}
 \begin{equation} \label{eq:HW-corr} [x,z] = 1 \text{ implies } [x, [y,z]] = [[x,y],{}^yz].
 \end{equation}
@@ -413,7 +415,7 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
   x_\delta(-d^{(\infty)}) = \nonumber \\
   %
   &= \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ i, j \geq 0; k > 0}}
-  x_{i\beta + j\gamma + k\delta} \bigl(A_{i, j, k} (b^{(\infty)})^i (c^{(\infty)})^j (d^{(\infty)})^k\bigr). \nonumber
+  x_{i\beta + j\gamma + k\delta} \bigl(A_{i, j, k} {b^{(\infty)}}^i {c^{(\infty)}}^j {d^{(\infty)}}^k\bigr). \nonumber
  \end{align}
  The integers \(A_{i, j, k}\) in the above formula depend only on the roots \(\beta\), \(\gamma\), \(\delta\) (a priori they also depend on the chosen order of factors). To determine the constants $A_{i,j,k}$, one can compute the commutator $[x_\alpha(1),\ x_\delta(1)]$ in $\St(\Phi, \ZZ)$ via the same procedure as in~\eqref{eq:elim-lhs_1}:
  \begin{equation} \label{eq:elim-lhs_2}
@@ -435,9 +437,9 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
   [x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\beta(N_{\beta_1, \beta_2} b_1^{(\infty)}b_2^{(\infty)})] = \label{eq:elim-lhs3} \\
    = [x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ [x_{\beta_1}(b_1^{(\infty)}),\ x_{\beta_2}(b_2^{(\infty)})]]  & \text{ by~\eqref{R3}} \nonumber \\ 
    = [[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_{\beta_1}(b_1)],\ \up{x_{\beta_1}(b_1^{(\infty)})} x_{\beta_2}(b_2^{(\infty)})]  & \text{ by~\eqref{eq:HW-corr},\eqref{R2-bg}.} \nonumber \end{align}
-In the case $\Phi\cong \rA_3$ the inner commutator in the last expression is trivial by~\eqref{R2-bg},
- therefore the outer commutator is trivial as well.
-In the case $\Phi\cong \rC_3$ the last expression can be further simplified using (the already verified)~\eqref{R3-bg} and~\eqref{R3} as follows:
+In the case $\Phi_0\cong \rA_3$ the inner commutator in the last expression is trivial by~\eqref{R2-bg},
+ therefore so is the outer commutator.
+In the case $\Phi_0\cong \rC_3$ the last expression can be further simplified using~\eqref{R3} and the already proved relation~\eqref{R3-bg} as follows:
 \[ = [x_{\alpha+\beta_1}(N_{\alpha, \beta_1} b^{(\infty)}c^{(\infty)}b_1^{(\infty)}),\ x_{\beta}(N_{\beta_1, \beta_2} b_1^{(\infty)} b_2^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})]. \]
 It is clear that the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} and~\eqref{R2-bg}.  
   In both cases the right-hand side of~\eqref{eq:elim-lhs3} is trivial. Consequently, from~\cref{RingGeneration} we obtain that
@@ -445,10 +447,11 @@ It is clear that the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} an
  which completes the proof of~\eqref{R2-bg}. 
  
  Finally, it remains to verify~\eqref{R3-bg} in the case $\delta \in \{-\beta, -\gamma\}$.
- Again, by symmetry it suffices to consider the case $\delta = -\beta$.
+ By symmetry it suffices to consider the case $\delta = -\beta$.
+ From the already proved relations~\eqref{R2-bg}--\eqref{R3-bg} and the other Steinberg relations one obtains that
  \begin{align*}
   &[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),
-  x_{-\beta}(N_{-\beta_1, -\beta_2} b_1^{(\infty)} b_2^{(\infty)})]\\
+  x_{-\beta}(N_{-\beta_1, -\beta_2} b_1^{(\infty)} b_2^{(\infty)})] = \\
   %
   &= [\up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
    {x_{-\beta_1}(b_1^{(\infty)})},
@@ -457,17 +460,12 @@ It is clear that the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} an
   x_{-\beta}(-N_{-\beta_1, -\beta_2} b_1^{(\infty)} b_2^{(\infty)})\\
   %
   &= \prod_{\substack{i\alpha - j\beta_1 - k\beta_2 \in \Phi\\ i, j, k \geq 0\\ (i, j, k) \neq (0, 0, 0)}}
-  x_{i\alpha - j\beta_1 - k\beta_2}\bigl(C_{i, j, k} (b^{(\infty)} c^{(\infty)})^i (b_1^{(\infty)})^j (b_2^{(\infty)})^k\bigr),
+  x_{i\alpha - j\beta_1 - k\beta_2}\bigl(B_{i, j, k} \cdot {b^{(\infty)}}^i {c^{(\infty)}}^i {b_1^{(\infty)}}^j {b_2^{(\infty)}}^k\bigr),  
  \end{align*}
- and \(C_{i, j, k} = 0\) with the only exception \(C_{1, 1, 1} = N_{\alpha, -\beta}\). Hence
- \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_{-\beta}(d^{(\infty)})] = x_\gamma(N_{\alpha, -\beta} b^{(\infty)} c^{(\infty)} d^{(\infty)})\]
- again by lemma \ref{RingGeneration}. The same argument gives
- \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_{-\gamma}(d^{(\infty)})] = x_\beta(N_{\alpha, -\gamma} b^{(\infty)} c^{(\infty)} d^{(\infty)}).\]
-
- Finally, for any two decompositions \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) with \(|\alpha| = |\beta_i| = |\gamma_i|\) the relation
- \[[x_{\beta_1, \gamma_1}(b_1^{(\infty)}, c_1^{(\infty)}),
- x_{\beta_2, \gamma_2}(b_2^{(\infty)}, c_2^{(\infty)})] = 1\]
- easily follows from the already proved Steinberg relations.
+for some integers $B_{i,j,k}$.
+Direct computation or an argument similar to the one used in the first part of the proof shows that all the constants \(B_{i, j, k}\) are zero with the sole exception of \(B_{1, 1, 1}$, which is equal to $N_{\alpha, -\beta}\). Consequently, by~\cref{RingGeneration} one has
+ \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_{-\beta}(d^{(\infty)})] = x_\gamma(N_{\alpha, -\beta} b^{(\infty)} c^{(\infty)} d^{(\infty)}),\]
+which finishes the proof of~\eqref{R3-bg}.
 \end{proof}
 
 \begin{lemma}\label{lem:new-root}
@@ -475,31 +473,29 @@ It is clear that the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} an
  $R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R),$ which we denote by $\widetilde{x}_\alpha$. The resulting morphism $\widetilde{x}_\alpha$ does not depend on the choice of $\beta$ and $\gamma$ and satisfies the relation~\eqref{R1}.
 \end{lemma}
 \begin{proof}
- By lemma \ref{lem:elim-lhs} we have
+ First of all, observe that~\eqref{R2-bg} implies the identity \[[x_{\beta, \gamma}(b_1^{(\infty)}, c_1^{(\infty)}),
+ x_{\beta, \gamma}(b_2^{(\infty)}, c_2^{(\infty)})] = 1.\] 
+ Notice also that~\eqref{eq:comm-mult-lhs} and~\cref{lem:elim-lhs} imply that
  \begin{align*}
- &x_{\beta, \gamma}\bigl(b_1^{(\infty)} + b_2^{(\infty)}, c^{(\infty)}\bigr)\\
- &= \bigl[x_\beta(N_{\beta, \gamma} b_1^{(\infty)})
+ x_{\beta, \gamma}\bigl(b_1^{(\infty)} + b_2^{(\infty)}, c^{(\infty)}\bigr)
+ = \bigl[x_\beta(N_{\beta, \gamma} b_1^{(\infty)})
  x_\beta(N_{\beta, \gamma} b_2^{(\infty)}),
  x_\gamma(c^{(\infty)})\bigr]\\
- &= x_{\beta, \gamma}(b_1^{(\infty)}, c^{(\infty)})\,
- x_{\beta, \gamma}(b_2^{(\infty)}, c^{(\infty)})
+ = x_{\beta, \gamma}(b_1^{(\infty)}, c^{(\infty)})\,
+ x_{\beta, \gamma}(b_2^{(\infty)}, c^{(\infty)}).
  \end{align*}
- and similarly
+ Similarly, one can show that
  \[x_{\beta, \gamma}\bigl(b^{(\infty)}, c_1^{(\infty)} + c_2^{(\infty)}\bigr)
  = x_{\beta, \gamma}(b^{(\infty)}, c_1^{(\infty)})\,
  x_{\beta, \gamma}(b^{(\infty)}, c_2^{(\infty)}).\]
- Hence the morphism \(x_{\beta, \gamma}\) of pro-sets satisfy the first three conditions of lemma \ref{RingPresentation}. It follows that
- \begin{align*}
- x_{\gamma, \beta}(c^{(\infty)}, b^{(\infty)})
- &= \up{x_\gamma(N_{\gamma, \beta} c^{(\infty)})}
- {[x_\beta(b^{(\infty)}), x_\gamma(-N_{\gamma, \beta} c^{(\infty)})]}\\
- &= x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}).
- \end{align*}
+ Thus, the morphism \(x_{\beta, \gamma}\) satisfies the first three conditions of~\cref{RingPresentation}. 
+ 
+ %It follows that \begin{align*} x_{\gamma, \beta}(c^{(\infty)}, b^{(\infty)}) &= \up{x_\gamma(N_{\gamma, \beta} c^{(\infty)})} {[x_\beta(b^{(\infty)}), x_\gamma(-N_{\gamma, \beta} c^{(\infty)})]}\\ &= x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}). \end{align*}
 
- Suppose that \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) are two different decompositions for $\alpha$ such that $\alpha$, $\beta_i$ and $\gamma_i$ have the same length and \(\alpha\), \(\beta_1\), \(\beta_2\) are linearly independent.
+ Now suppose that \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) are two different decompositions for $\alpha$ such that $\alpha$, $\beta_i$ and $\gamma_i$ have the same length and \(\alpha\), \(\beta_1\), \(\beta_2\) are linearly independent.
  By~\cref{ThreeRoots} such decompositions exist and the roots $\beta_i$, $\gamma_i$ span a root subsystem $\Phi_0$ of type \(\rA_3\) or \(\rC_3\).
 
- In the case of \(\rA_3\) we may assume that \(\alpha = \mathrm e_1 - \mathrm e_4\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 - \mathrm e_4\), \(\beta_2 = \mathrm e_1 - \mathrm e_3\), \(\gamma_2 = \mathrm e_3 - \mathrm e_4\), exchanging \(\beta_i\) with \(\gamma_i\) if necessary. Let \(\delta = \mathrm e_2 - \mathrm e_3\). We have
+ In the case of \(\rA_3\) we may assume that \(\alpha = \mathrm e_1 - \mathrm e_4\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 - \mathrm e_4\), \(\beta_2 = \mathrm e_1 - \mathrm e_3\), \(\gamma_2 = \mathrm e_3 - \mathrm e_4\), swapping \(\beta_i\) with \(\gamma_i\) if necessary. Let \(\delta = \mathrm e_2 - \mathrm e_3\). We have
  \begin{align*}
  x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) &= \bigl[x_{\beta_1}(b^{(\infty)}), [x_\delta(c^{(\infty)}), x_{\gamma_2}(N_{\delta, \gamma_2} d^{(\infty)})]\bigr]\\
  &= \bigl[[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], \up{x_\delta(c^{(\infty)})}{x_{\gamma_2}(N_{\delta, \gamma_2} d^{(\infty)})}\bigr]\\

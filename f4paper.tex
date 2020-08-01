@@ -18,9 +18,10 @@
 \numberwithin{equation}{section}
 
 \newtheorem{lemma}{Lemma} \numberwithin{lemma}{section}
-\newtheorem{prop}{Proposition} \numberwithin{prop}{section}
+\newtheorem{prop}[lemma]{Proposition}
 \newtheorem{theorem}{Theorem}
-\newtheorem*{theorem*}{Theorem}
+\newtheorem{corollary}[lemma]{Corollary} 
+\newtheorem*{theorem*}{Theorem} 
 
 \theoremstyle{definition} 
 \newtheorem{df}[lemma]{Definition} \Crefname{df}{Definition}{Definitions}
@@ -339,19 +340,19 @@ Throughout this section we make use of the following commutator identities:
 \subsection{Elimination of roots}
 \begin{lemma}\label{ThreeRoots}
 Let \(\Phi\) be a root system of rank \(\geq 3\) and not of type \(\rB_\ell\) or \(\rC_\ell\). Let \(\alpha, \beta, \gamma \in \Phi\) be a triple of roots having the same length such that $\alpha = \beta + \gamma$.  
-Then there exist roots \(\beta_1, \beta_2 \in \Phi \setminus (\ZZ\beta + \ZZ\gamma)\) having the same length as $\beta$ and, moreover, such that \(\beta_1 + \beta_2 = \beta\).
+Then there exist roots \(\beta_1, \gamma_1 \in \Phi \setminus (\ZZ\beta + \ZZ\gamma)\) having the same length as $\beta$ and, moreover, such that \(\beta_1 + \gamma_1 = \beta\).
 
-The roots $\alpha, \gamma, \beta_1, \beta_2$ are contained in a root subsystem $\Phi_0 \subseteq \Phi$, of type either \(\rA_3\) or \(\rC_3\). There is an embedding \(\Phi_0 \hookrightarrow  \mathbb R^3\) such that \(\beta = \mathrm e_1 - \mathrm e_2\), \(\gamma = \mathrm e_2 - \mathrm e_3\) and 
+The roots $\beta, \gamma, \beta_1, \gamma_1$ are contained in a root subsystem $\Phi_0 \subseteq \Phi$, of type either \(\rA_3\) or \(\rC_3\). There is an embedding \(\Phi_0 \hookrightarrow  \mathbb R^3\) such that \(\beta = \mathrm e_1 - \mathrm e_3\), \(\gamma = \mathrm e_3 - \mathrm e_2\) and 
 \begin{itemize}
- \item \(\{\beta_1, \beta_2\} = \{\mathrm e_1 - \mathrm e_4, \mathrm e_4 - \mathrm e_2\}\) in the case \(\Phi_0\cong\rA_3\);
- \item \(\{\beta_1, \beta_2\} = \{\mathrm e_1 + \mathrm e_3, -\mathrm e_2 - \mathrm e_3\}\) in the case \(\Phi_0\cong\rC_3\).
+ \item \((\beta_1, \gamma_1) = (\mathrm e_1 - \mathrm e_4, \mathrm e_4 - \mathrm e_3)\) in the case \(\Phi_0\cong\rA_3\);
+ \item \((\beta_1, \gamma_1) = (\mathrm e_1 + \mathrm e_2, -\mathrm e_2 - \mathrm e_3)\) in the case \(\Phi_0\cong\rC_3\).
 \end{itemize}
 \end{lemma}
 \begin{proof}
 Denote by $\Phi'$ the subset of $\Phi$ consisting of roots having the same length as $\beta$.
 It follows from our assumptions that either $\Phi$ is simply-laced and $\Phi' = \Phi$ or $\Phi = \rF_4$, in which case $\Phi'$ is a root subset isomorphic to $\rD_4$ (notice that $\Phi'$ is closed only if $\beta$ is long). In either case the Dynkin diagram of $\Phi'$ is simply laced and has at least $3$ vertices, which implies the first assertion.
 
-Notice that the smallest root subsystem $\Phi_0$ containing $\alpha, \gamma, \beta_1, \beta_2$ is irreducible and has rank $3$, which implies that it is either of type  $\rC_3$ (if $\Phi = \rF_4$ and $\beta$ is short) or $\rA_3$ (otherwise). \end{proof}
+Notice that the smallest root subsystem $\Phi_0$ containing $\alpha, \gamma, \beta_1, \gamma_1$ is irreducible and has rank $3$, which implies that it is either of type  $\rC_3$ (if $\Phi = \rF_4$ and $\beta$ is short) or $\rA_3$ (otherwise). \end{proof}
 
 \begin{df}
 Let $R$ be a ring, $S$ be its multiplicative system of and $\alpha$ be a root of an irreducible root system $\Phi$ of rank $\geq 3$. 
@@ -440,7 +441,7 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
 In the case $\Phi_0\cong \rA_3$ the inner commutator in the last expression is trivial by~\eqref{R2-bg},
  therefore so is the outer commutator.
 In the case $\Phi_0\cong \rC_3$ the last expression can be further simplified using~\eqref{R3} and the already proved relation~\eqref{R3-bg} as follows:
-\[ = [x_{\alpha+\beta_1}(N_{\alpha, \beta_1} b^{(\infty)}c^{(\infty)}b_1^{(\infty)}),\ x_{\beta}(N_{\beta_1, \beta_2} b_1^{(\infty)} b_2^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})]. \]
+\[ \ldots = [x_{\alpha+\beta_1}(N_{\alpha, \beta_1} b^{(\infty)}c^{(\infty)}b_1^{(\infty)}),\ x_{\beta}(N_{\beta_1, \beta_2} b_1^{(\infty)} b_2^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})]. \]
 It is clear that the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} and~\eqref{R2-bg}.  
   In both cases the right-hand side of~\eqref{eq:elim-lhs3} is trivial. Consequently, from~\cref{RingGeneration} we obtain that
  $[x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\beta(d^{(\infty)})] = 1,$
@@ -460,22 +461,22 @@ It is clear that the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} an
   x_{-\beta}(-N_{-\beta_1, -\beta_2} b_1^{(\infty)} b_2^{(\infty)})\\
   %
   &= \prod_{\substack{i\alpha - j\beta_1 - k\beta_2 \in \Phi\\ i, j, k \geq 0\\ (i, j, k) \neq (0, 0, 0)}}
-  x_{i\alpha - j\beta_1 - k\beta_2}\bigl(B_{i, j, k} \cdot {b^{(\infty)}}^i {c^{(\infty)}}^i {b_1^{(\infty)}}^j {b_2^{(\infty)}}^k\bigr),  
+  x_{i\alpha - j\beta_1 - k\beta_2}\bigl(B_{i, j, k} {b^{(\infty)}}^i {c^{(\infty)}}^i {b_1^{(\infty)}}^j {b_2^{(\infty)}}^k\bigr),  
  \end{align*}
 for some integers $B_{i,j,k}$.
-Direct computation or an argument similar to the one used in the first part of the proof shows that all the constants \(B_{i, j, k}\) are zero with the sole exception of \(B_{1, 1, 1}$, which is equal to $N_{\alpha, -\beta}\). Consequently, by~\cref{RingGeneration} one has
+Direct computation (or an argument similar to the one used in the first part of the proof) shows that the constants \(B_{i, j, k}\) are all zero with the sole exception of \(B_{1, 1, 1}$, which is equal to $N_{\alpha, -\beta}\). Consequently, from~\cref{RingGeneration} we obtain that
  \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_{-\beta}(d^{(\infty)})] = x_\gamma(N_{\alpha, -\beta} b^{(\infty)} c^{(\infty)} d^{(\infty)}),\]
 which finishes the proof of~\eqref{R3-bg}.
 \end{proof}
 
 \begin{lemma}\label{lem:new-root}
- The morphism $x_{\beta, \gamma}$ satisfies the identities of~\cref{RingPresentation} and therefore gives rise to a morphism
+ The morphism $x_{\beta, \gamma}$ satisfies the identities listed in~\cref{RingPresentation} and therefore gives rise to a morphism
  $R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R),$ which we denote by $\widetilde{x}_\alpha$. The resulting morphism $\widetilde{x}_\alpha$ does not depend on the choice of $\beta$ and $\gamma$ and satisfies the relation~\eqref{R1}.
 \end{lemma}
 \begin{proof}
  First of all, observe that~\eqref{R2-bg} implies the identity \[[x_{\beta, \gamma}(b_1^{(\infty)}, c_1^{(\infty)}),
  x_{\beta, \gamma}(b_2^{(\infty)}, c_2^{(\infty)})] = 1.\] 
- Notice also that~\eqref{eq:comm-mult-lhs} and~\cref{lem:elim-lhs} imply that
+ Notice also that~\eqref{eq:comm-mult-lhs} and~\eqref{R2-bg} imply that
  \begin{align*}
  x_{\beta, \gamma}\bigl(b_1^{(\infty)} + b_2^{(\infty)}, c^{(\infty)}\bigr)
  = \bigl[x_\beta(N_{\beta, \gamma} b_1^{(\infty)})
@@ -484,17 +485,29 @@ which finishes the proof of~\eqref{R3-bg}.
  = x_{\beta, \gamma}(b_1^{(\infty)}, c^{(\infty)})\,
  x_{\beta, \gamma}(b_2^{(\infty)}, c^{(\infty)}).
  \end{align*}
- Similarly, one can show that
+ Similarly, one can show the equality
  \[x_{\beta, \gamma}\bigl(b^{(\infty)}, c_1^{(\infty)} + c_2^{(\infty)}\bigr)
  = x_{\beta, \gamma}(b^{(\infty)}, c_1^{(\infty)})\,
  x_{\beta, \gamma}(b^{(\infty)}, c_2^{(\infty)}).\]
- Thus, the morphism \(x_{\beta, \gamma}\) satisfies the first three conditions of~\cref{RingPresentation}. 
+ Thus, the morphism \(x_{\beta, \gamma}\) satisfies the first three requirements of~\cref{RingPresentation}. 
  
  %It follows that \begin{align*} x_{\gamma, \beta}(c^{(\infty)}, b^{(\infty)}) &= \up{x_\gamma(N_{\gamma, \beta} c^{(\infty)})} {[x_\beta(b^{(\infty)}), x_\gamma(-N_{\gamma, \beta} c^{(\infty)})]}\\ &= x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}). \end{align*}
 
- Now suppose that \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) are two different decompositions for $\alpha$ such that $\alpha$, $\beta_i$ and $\gamma_i$ have the same length and \(\alpha\), \(\beta_1\), \(\beta_2\) are linearly independent.
- By~\cref{ThreeRoots} such decompositions exist and the roots $\beta_i$, $\gamma_i$ span a root subsystem $\Phi_0$ of type \(\rA_3\) or \(\rC_3\).
-
+ Now suppose that \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) are two different decompositions for $\alpha$ such that $\alpha$, $\beta_i$ and $\gamma_i$ have the same length and \(\alpha\), \(\beta_1\), \(\beta_2\) are linearly independent. By~\cref{ThreeRoots} such decompositions exist and the roots $\beta_i$, $\gamma_i$ are contained in a root subsystem $\Phi_0$ of type \(\rA_3\) or \(\rC_3\). We also may assume that \((\beta_1, \gamma_1) = (\mathrm e_1 - \mathrm e_2,  \mathrm e_2 - \mathrm e_3)\) and one of the following alternatives is true:
+ \begin{itemize}
+ \item \((\beta_2, \gamma_2) = (\mathrm e_1 - \mathrm e_4, \mathrm e_4 - \mathrm e_3)\) in the case \(\Phi_0\cong\rA_3\), \item \((\beta_2, \gamma_2) = (\mathrm e_1 + \mathrm e_2, -\mathrm e_2 - \mathrm e_3)\) in the case \(\Phi_0\cong\rC_3\).
+\end{itemize}
+ Set $\delta = \gamma_1 - \gamma_2 = \beta_2 - \beta_1$ and \[\varepsilon_1 = N_{\beta_1, \gamma_1},\ \varepsilon_2 = N_{\beta_2, \gamma_2},\ \varepsilon_3 = N_{\delta,\gamma_2},\ \varepsilon_4 = N_{\beta_1, \delta}.\]
+ In both cases substituting the quadruple $(\beta_1, \gamma_1, -\beta_2, -\gamma_2)$ into~\eqref{eq:cocycle}
+ we obtain that $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.  Consequently, one has
+ \begin{align*}
+x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)})] & \nonumber \\
+= [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_{\delta}(\varepsilon_3c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] &\text{  by~\eqref{R3} or~\eqref{R2},\eqref{R4},\eqref{eq:comm-mult-rhs}.} \nonumber \\ 
+= [[x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_\delta(\varepsilon_3c^{(\infty)})],\ {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
+= [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)}) x_{\gamma_1}(c^{(\infty)}d^{(\infty)}) ] & \text{ by~\eqref{R3}}\\
+= [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \\
+= x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}). \end{align*}
+\begin{comment} 
  In the case of \(\rA_3\) we may assume that \(\alpha = \mathrm e_1 - \mathrm e_4\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 - \mathrm e_4\), \(\beta_2 = \mathrm e_1 - \mathrm e_3\), \(\gamma_2 = \mathrm e_3 - \mathrm e_4\), swapping \(\beta_i\) with \(\gamma_i\) if necessary. Let \(\delta = \mathrm e_2 - \mathrm e_3\). We have
  \begin{align*}
  x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) &= \bigl[x_{\beta_1}(b^{(\infty)}), [x_\delta(c^{(\infty)}), x_{\gamma_2}(N_{\delta, \gamma_2} d^{(\infty)})]\bigr]\\
@@ -512,54 +525,23 @@ which finishes the proof of~\eqref{R3-bg}.
  &= x_{\beta_2, \gamma_2}(\varepsilon' b^{(\infty)} c^{(\infty)}, d^{(\infty)})
  \end{align*}
  for some \(\varepsilon' \in \{-1, 1\}\). By the same agrument, \(\varepsilon' = 1\).
-
- Hence in both cases we have
+\end{comment}
+ Thus, in both cases we obtain that
  \begin{equation}\label{eq:balance}
  x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
  \end{equation}
- Applying this identity twice and using lemma \ref{RingGeneration}, we get
+ Applying~\eqref{eq:balance} twice and invoking~\cref{RingGeneration}, we obtain that
  \[x_{\beta_1, \gamma_1}(b^{(\infty)}, u^{(\infty)} c^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)} u^{(\infty)}, c^{(\infty)}).\]
- Hence by lemma \ref{RingPresentation} there is unique morphism of pro-groups \(\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) with the property
- \[x_{\gamma_1, \beta_1}(c^{(\infty)}, b^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}).\]
- By \eqref{eq:balance} and lemma \ref{RingGeneration} we finally obtain
- \[x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}).\qedhere\]
- %Replacing $\beta_2$ with $\gamma_2$ if necessary, we may assume that \(\beta_1\), \(\beta_2\) form an acute angle.
- %Set $\delta = \gamma_1 - \gamma_2 = \beta_2 - \beta_1$ and
- %\[\varepsilon_1 = N_{\beta_1, \gamma_1},\ \varepsilon_2 = N_{\beta_2, \gamma_2},\ \varepsilon_3 = N_{\delta,\gamma_2},\ \varepsilon_4 = N_{\beta_1, \delta}.\] 
- 
- %Consider the case \(\Phi_0 \cong \rA_3\), in which $\delta$ is a root forming an obtuse angle with both $\beta_1$ and $\gamma_2$. 
- %Under our assumptions $\beta_1\perp \gamma_2$, $\gamma_1 \perp \beta_2$, therefore 
- %substituting the quadruple of roots $\beta_1, \gamma_1, -\beta_2, -\gamma_2$ into~\eqref{eq:cocycle} we obtain that
- %$\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.
- %Notice that
- %\begin{align}
- %x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_{\gamma_1}(c^{(\infty)}d^{(\infty)})] \label{eq:a3-start} \\ 
- %= [x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ [x_\delta(\varepsilon_3 c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})]] & \text{ by~\eqref{R3}.} \nonumber
- %\end{align}
- 
-%Now consider the case \(\Phi_0 = \rC_3\), in which the root $\delta$ is long.
-%By our assumptions, $\beta_1$ (resp. $\beta_2$) forms an acute angle with $\gamma_2$ (resp. $\gamma_1$) and $\gamma_1 + \gamma_2$ is a root orthogonal to $\beta_1$.
-%Substituting the same quadruple of roots as above into~\eqref{eq:cocycle} we obtain that
- %\[-\varepsilon_1 \varepsilon_2 +  N_{\gamma_1,-\beta_2} N_{\beta_1,-\gamma_2} + 2 \varepsilon_3 \varepsilon_4 = 0\]
-%from which, again, it follows that $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.
-%In this case we have that
-% we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\). Let \(\delta = 2 \mathrm e_2\), then
- %\begin{align}
- %x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)})] & \nonumber \\
- %[x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)}) x_{\gamma_1 + \gamma_2}(\widehat{N}_{\delta,\gamma_1}c^{(\infty)} d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \label{eq:c3-start}\\
- %= [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_{\delta}(\varepsilon_3c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] &\text{ by~\eqref{R4}.} \nonumber
- %\end{align}
-%Now both~\eqref{eq:a3-start} and~\eqref{eq:c3-start} can be continued as follows:
- %\begin{align*}
-  %\ldots = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_\delta(\varepsilon_3c^{(\infty)})],\ {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
- %= [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)}) x_{\gamma_1}(c^{(\infty)}d^{(\infty)}) ] & \text{ by~\eqref{R3}}\\
- %= [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \\
- %= x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}). \end{align*}
- %In both cases we obtain that \(x_{\beta_1, \gamma_1}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)} d^{(\infty)})\),
- %from which and~\cref{RingPresentation} it follows that there exists a unique morphism \[\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)\] such that \(x_{\beta_1, \gamma_1}(N_{\beta_1, \gamma_1}b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}).\) It is clear that \(\widetilde x_\alpha\) satisfies~\eqref{R1}.
+ Thus, the last requirement of~\cref{RingPresentation} is satisfied. Consequently, there exists a unique morphism of pro-groups \(\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) satisfying
+ \[x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)}).\]
+ %By \eqref{eq:balance} and lemma \ref{RingGeneration} we finally obtain
+ %\[x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}).\qedhere\]
 \end{proof}
 
-From lemmas \ref{lem:elim-lhs}, \ref{lem:new-root} and \ref{RingGeneration} it follows that \(\St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) satisfies all Steinberg relations with \(\alpha\) on the left-hand side.
+Combining \cref{lem:elim-lhs,lem:new-root} we immediately obtain the following.
+\begin{corollary}
+ The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the Steinberg relations~\eqref{R2}--\eqref{R4}, in which it occurs of the left-hand side.
+\end{corollary}
 
 \begin{lemma} \label{lem:elim-rhs}
  The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the Steinberg relations~\eqref{R3}--\eqref{R4} in which it occurs on the right-hand side.

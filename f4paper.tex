@@ -559,38 +559,16 @@ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\v
 
 Combining \cref{lem:elim-lhs,lem:new-root} we immediately obtain the following.
 \begin{corollary}
- The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations~\eqref{R2}--\eqref{R4}, in which it occurs on the left-hand side.
+ The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations of type~\eqref{R2}--\eqref{R4}, in which it occurs on the left-hand side.
 \end{corollary}
 
-\begin{lemma} \label{lem:elim-rhs}
- The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations~\eqref{R3}--\eqref{R4} in which it occurs on the right-hand side.
+\begin{lemma} \label{lem:elim-rhs-r4}
+ The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations of type~\eqref{R4} in which it occurs on the right-hand side.
 \end{lemma}
 \begin{proof}
-%It remains to prove (\ref{S3}) and (\ref{S4}) with \(\alpha\) from the right.
+We need to verify the relation \[ [x_{\beta}(b^{(\infty)}),\ x_{\gamma}(c^{(\infty)})] = x_{\beta+\gamma}(N_{\beta,\gamma}b^{(\infty)} c^{(\infty)}) x_{2\beta+\gamma}(N_{\beta,\gamma}^{2,1}{b^{(\infty)}}^2c^{(\infty)}),\] in the case when either $\alpha = \beta + \gamma$ or $\alpha = 2\beta + \gamma$. Both possibilies may occur only for $\Phi = \rF_4$.
 
-%First of all, let us verify the assertion for the following relation of type~\eqref{R4}:
-%\[[x_{\beta}(b^{(\infty)}), x_\gamma(c^{(\infty)})] = x_{\beta + \gamma}(N_{\beta, \gamma}b^{(\infty)}c^{(\infty)}) x_{2\beta + \gamma}(N_{\beta,\gamma}\widehat{N}_{\beta,\beta+\gamma}{b^{(\infty)}}^2c^{(\infty)}),\]
-%where $\alpha$ is either $\beta + \gamma$ or $2\beta+\gamma$. We may assume that $\Phi = \rF_4$.
-
-%\begin{enumerate}
- %\item Case $\alpha = \beta + \gamma$ Notice that $\alpha$ is short. By our assumptions, we can decompose $\beta = \beta_1 + \beta_2$ for some short roots $\beta_i\in\Phi$.
- %The subsystem spanned by $\beta_i$ and $\gamma$, clearly, has type $\rC_3$. We may assume that $\beta_1 \perp \gamma$ and that $\beta_2$ forms an obtuse angle with $\gamma$. Set $\varepsilon_1 = N_{\beta,\gamma}$, $\varepsilon_2 = N_{\beta_1, \beta_2 + \gamma}$, $\varepsilon_3 = N_{\beta_1, \beta_2}$, $\varepsilon_4 = N_{\beta_2, \gamma}$. Substituting quadruple $(\beta,\gamma,-\beta_1, -\beta_2-\gamma)$ into~\eqref{eq:cocycle} we obtain that $\varepsilon_1 \varepsilon_2 = \varepsilon_3 \varepsilon_4.$
- %\begin{align*}
-  %\up{x_\gamma(c)}x_\beta(\varepsilon_3 b_1 b_2) = [\up{x_\gamma(c)} x_{\beta_1}(b_1), \up{x_\gamma(c)} x_{\beta_2}(b_2)] &\text{ by~\eqref{R3}}\\ 
-  %= [x_{\beta_1}(b_1), x_{\beta_2 + \gamma}(-\varepsilon_4b_2c) \cdot x_{\beta_2}(b_2) \cdot x_{2\beta_2 + \gamma}(\varepsilon_4\widehat{N}_{\beta_2, \beta_2+\gamma} b_2^2 c)]&\text{ by~\eqref{R2},\eqref{R4}}\\
-  %= [x_{\beta_1}(b_1), x_{\beta_2 + \gamma}(-\varepsilon_4b_2c)] \cdot \up{x_{\beta_2 + \gamma}(-\varepsilon_4b_2c)} [x_{\beta_1}(b_1), x_{\beta_2}(b_2)] \cdot \\ \cdot \up{x_{\beta_2 + \gamma}(*) x_{\beta_2}(*)}[x_{\beta_1}(b_1), x_{2\beta_2 + \gamma}(\varepsilon_4\widehat{N}_{\beta_2, \beta_2+\gamma} b_2^2 c)] & \text{ by~\eqref{eq:comm-mult-rhs}}\\
-  %= \widetilde{x}_{\alpha}(-\varepsilon_2 \varepsilon_4 b_1b_2c) \cdot \up{x_{\beta_2 + \gamma}(-\varepsilon_4b_2c)} x_{\beta}(\varepsilon_3b_1b_2) \cdot \\ \cdot \up{x_{\beta_2 + \gamma}(*) x_{\beta_2}(*)}(x_{\beta_1 + 2\beta_2+\gamma}(\varepsilon_4 N_{\beta_1, 2\beta_2 + \gamma} \widehat{N}_{\beta_2, \beta_2 + \gamma} b_1 b_2^2 c ) \cdot \\ \cdot x_{2\beta+\gamma}(\varepsilon_4 N_{\beta_1, 2\beta_2 + \gamma} \widehat{N}_{\beta_2, \beta_2 + \gamma} \widehat{N}_{\beta_1, \beta_1 + 2\beta_2 + \gamma} b_1^2 b_2^2 c )) &\text{ by~\eqref{R4}}\\
-  %=_? \widetilde{x}_{\alpha}(-\varepsilon_2\varepsilon_4 b_1b_2c) \cdot x_{\beta}(\varepsilon_3 b_1 b_2) \cdot x_{\beta_1 + 2\beta_2+\gamma}(0) \cdot \\ \cdot x_{2\beta+\gamma}(N_{\beta, \gamma} \widehat{N}_{\beta, \beta+\gamma} b_1^2 b_2^2 c ) &\text{ by ???}
- %\end{align*}
-%To be finished...
- 
- %\item Case $\alpha = 2\beta + \gamma$.
-%\end{enumerate}
-
-Suppose that the root \(\alpha\) occurs on the right-hand side of \eqref{R3} or \eqref{R4}, and \(\beta\), \(\gamma\) are the roots on the left hand side. If \(|\alpha| = |\beta| = |\gamma|\), then this is actually the definition of \(\widetilde x_\alpha\). Hence we have only the following cases: \(\alpha = \beta + \gamma\) with \(\alpha\) long and \(\beta\), \(\gamma\) short, \(\alpha = \beta + \gamma\) with \(\alpha\), \(\beta\) short and \(\gamma\) long, \(\alpha = 2\beta + \gamma\) for \(\beta\) short and \(\alpha\), \(\gamma\) long. All of them are possible only for \(\Phi = \rF_4\).
-
-\begin{enumerate}
- \item If \(\alpha = \beta + \gamma\) with \(\alpha\), \(\beta\) short and \(\gamma\) long, consider a decomposition \(\beta = \beta_1 + \beta_2\) for short roots \(\beta_i\). The smallest root subsystem containing \(\beta_i\) and \(\gamma\) is of type \(\rC_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_1 - \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\beta_2 = \mathrm e_2 - \mathrm e_3\), \(\gamma = 2\mathrm e_3\). We have
+If \(\alpha = \beta + \gamma\) with \(\alpha\), \(\beta\) short and \(\gamma\) long, consider a decomposition \(\beta = \beta_1 + \beta_2\) for short roots \(\beta_i\). The smallest root subsystem containing \(\beta_i\) and \(\gamma\) is of type \(\rC_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_1 - \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\beta_2 = \mathrm e_2 - \mathrm e_3\), \(\gamma = 2\mathrm e_3\). We have
  
  \begin{align*}
   &\bigl[x_\gamma(c^{(\infty)}),
@@ -618,7 +596,7 @@ Suppose that the root \(\alpha\) occurs on the right-hand side of \eqref{R3} or 
  \[[x_\gamma(c^{(\infty)}), x_\beta(b^{(\infty)})] = 
  \widetilde x_\alpha(N_{\gamma, \beta} c^{(\infty)} b^{(\infty)}).\]
 
- \item Suppose that \(\alpha = 2\beta + \gamma\) for \(\beta\) short and \(\alpha\), \(\gamma\) long. Then consider a decomposition \(\gamma = \gamma_1 + \gamma_2\) for long roots \(\gamma_i\). The smallest root subsystem containing \(\beta\) and \(\gamma_i\) is of type \(\rB_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_3\), \(\gamma = \mathrm e_1 - \mathrm e_3\), \(\gamma_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_2 = \mathrm e_2 - \mathrm e_3\). Then
+ Suppose that \(\alpha = 2\beta + \gamma\) for \(\beta\) short and \(\alpha\), \(\gamma\) long. Then consider a decomposition \(\gamma = \gamma_1 + \gamma_2\) for long roots \(\gamma_i\). The smallest root subsystem containing \(\beta\) and \(\gamma_i\) is of type \(\rB_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_3\), \(\gamma = \mathrm e_1 - \mathrm e_3\), \(\gamma_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_2 = \mathrm e_2 - \mathrm e_3\). Then
  \begin{align*}
   &\bigl[x_\beta(b^{(\infty)}),
    x_\gamma(N_{\gamma_1, \gamma_2} c_1^{(\infty)} c_2^{(\infty)})\bigr]\\
@@ -637,9 +615,16 @@ Suppose that the root \(\alpha\) occurs on the right-hand side of \eqref{R3} or 
  By the same argument as in the first case, \(B_1 = N_{\beta, \gamma} \widehat N_{\beta, \beta + \gamma}\), \(B_2 = B_3 = 0\), and \(B_4 = N_{\beta, \gamma}\). Hence by \cref{RingGeneration} we have
  \[[x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})]
  = x_{\beta + \gamma}(N_{\beta, \gamma} b^{(\infty)} c^{(\infty)})\,
- \widetilde x_\alpha\bigl(N_{\beta, \gamma} \widehat N_{\beta, \beta + \gamma} (b^{(\infty)})^2 c^{(\infty)}\bigr).\]
+ \widetilde x_\alpha\bigl(N_{\beta, \gamma} \widehat N_{\beta, \beta + \gamma} (b^{(\infty)})^2 c^{(\infty)}\bigr). \qedhere\]
+\end{proof}
 
- \item If \(\beta\) and \(\gamma\) are short, then the smallest root subsystem containing \(\alpha\), \(\beta\), \(\gamma\) is of type \(\rB_2\). Without loss of generality let \(\alpha = \mathrm e_1 + \mathrm e_2\), \(\beta = \mathrm e_1\), and \(\gamma = \mathrm e_2\). Then using the previous case we get
+\begin{lemma} \label{lem:elim-rhs-r3}
+ The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations~of type \eqref{R3} in which it occurs on the right-hand side.
+\end{lemma}
+\begin{proof}
+If \(|\alpha| = |\beta| = |\gamma|\), then this is actually the definition of \(\widetilde x_\alpha\). Hence we have only the following case: \(\alpha = \beta + \gamma\) with \(\alpha\) long and \(\beta\), \(\gamma\) short.
+
+ If \(\beta\) and \(\gamma\) are short, then the smallest root subsystem containing \(\alpha\), \(\beta\), \(\gamma\) is of type \(\rB_2\). Without loss of generality let \(\alpha = \mathrm e_1 + \mathrm e_2\), \(\beta = \mathrm e_1\), and \(\gamma = \mathrm e_2\). Then using the previous case we get
  \begin{align*}
   &\up{x_\beta(d^{(\infty)})}
    {\bigl(x_\gamma(N_{\beta, \gamma - \beta} b^{(\infty)} c^{(\infty)})\,
@@ -664,8 +649,8 @@ Suppose that the root \(\alpha\) occurs on the right-hand side of \eqref{R3} or 
  It by \cref{RingGeneration} that
  \[[x_\beta(d^{(\infty)}), x_\gamma(c^{(\infty)})] 
  = \widetilde x_\alpha(N_{\beta, \gamma} d^{(\infty)} c^{(\infty)}).\qedhere\]
- \end{enumerate}
-\end{proof}
+\end{proof} 
+
  
  Now clearly \(G_\alpha\) is the inverse of \(F_\alpha\).
 

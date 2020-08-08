@@ -247,22 +247,23 @@ Recall that a root subset $\Sigma \subseteq \Phi$ is called {\it closed} if $\al
 
 We start by recalling the classical definition of the Steinberg group.
 \begin{df} \label{def:Steinberg}
-Let $R$ be a ring. Recall the {\it Steinberg group $\St(\Phi, R)$} is given by generators $x_\alpha(a)$, where $\alpha \in \Phi$ and $a \in R$ and the following list of defining relations:
+Let $R$ be a ring. Recall the {\it Steinberg group $\St(\Phi, R)$} is given by generators $x_\alpha(a)$, where $\alpha \in \Phi$ and $a \in R$ and the following list of defining relations (cf.~\cite{Re75}):
 \begin{align}
  x_\alpha(a) \cdot x_\alpha(b)    &= x_\alpha(a+b); \tag{R1} \label{R1} \\
  [x_\alpha(a),\ x_\beta(b)] &= 1, \tag{R2} \label{R2} \\ 
  \multispan2{\hfil if $\alpha + \beta \not\in\Phi \cup \{0\};$} \nonumber \\
  [x_\alpha(a),\ x_\beta(b)] &= x_{\alpha + \beta}(N_{\alpha,\beta} \cdot ab), \tag{R3} \label{R3} \\
  \multispan2{\hfill if $\alpha+\beta\in\Phi$ but $\alpha+2\beta,\ 2\alpha+\beta\not\in\Phi;$} \nonumber \\
- [x_\alpha(a),\ x_\beta(b)] &= x_{\alpha + \beta}(N_{\alpha,\beta} \cdot ab) \cdot x_{2\alpha+\beta}(N_{\alpha,\beta} \cdot \widehat{N}_{\alpha, \alpha+\beta}\cdot a^2b), \tag{R4} \label{R4} \\ \multispan2{ \hfill if $\alpha+\beta,2\alpha+\beta\in\Phi$.} \nonumber  \end{align}
+ [x_\alpha(a),\ x_\beta(b)] &= x_{\alpha + \beta}(N_{\alpha,\beta} \cdot ab) \cdot x_{2\alpha+\beta}(N_{\alpha,\beta}^{2,1} \cdot a^2b), \tag{R4} \label{R4} \\ \multispan2{ \hfill if $\alpha+\beta,2\alpha+\beta\in\Phi$.} \nonumber  \end{align}
 \end{df}
-The constants $N_{\alpha,\beta}$ appearing in the above relations are called the {\it structure constants} of the Chevalley group of type $\Phi$.
-Different methods of computing signs of these constants have been proposed in the literature, see e.\,g.~\cite{VP}.
-For the purposes of the present article, the standard properties of structure constants suffice. Let us briefly recall them.
+The constants $N_{\alpha,\beta}$ and $N_{\alpha,\beta}^{2,1}$ appearing in the above relations are called the {\it structure constants} of the Chevalley group of type $\Phi$. Let us take a closer a look at them.
 
 First of all, notice that we excluded the case $\Phi=\mathsf{G}_2$ so the only possibilities for $N_{\alpha, \beta}$ appearing in the above relations are $\pm 1$ or $\pm 2$.
 Notice that $|N_{\alpha,\beta}| = 2$ only when $\alpha$ and $\beta$ are short but $\alpha+\beta$ is long, in which case we set $\widehat{N}_{\alpha, \beta} = \frac{1}{2} N_{\alpha, \beta}$.
 In the other cases $|N_{\alpha, \beta}| = 1$.
+Now, by definition, $N_{\alpha,\beta}^{2,1} = N_{\alpha,\beta} \cdot \widehat{N}_{\alpha, \alpha+\beta}$. 
+
+Several different methods of computing signs of the structure constants have been described in the literature, see e.\,g.~\cite{VP}. In any case, these constants must satisfy certain relations, which suffice for the purposes of the present article. 
 
 Recall from~\cite[\S~14]{VP}) that
 \begin{equation} \label{eq:sc-ids-sl} N_{\alpha, \beta} = -N_{\beta,\alpha} = - N_{-\alpha, -\beta} = \tfrac{|\alpha+\beta|^2}{|\alpha|^2} N_{\beta, -\alpha-\beta} = \tfrac{|\alpha+\beta|^2}{|\beta|^2} N_{-\alpha-\beta, \alpha}. \end{equation}
@@ -290,7 +291,7 @@ This also allows one to ``deform'' this definition and, by analogy with the homo
  \multispan2{\hfil if $\alpha + \beta \not\in\Phi \cup \{0\};$} \nonumber \\
  [x^{(s)}_\alpha(a),\ x^{(s)}_\beta(b)] &= x^{(s)}_{\alpha + \beta}(N_{\alpha,\beta} \cdot sab), \tag{S$3_s$} \label{S3} \\
  \multispan2{\hfill if $\alpha+\beta\in\Phi$ but $\alpha+2\beta,\ 2\alpha+\beta\not\in\Phi;$} \nonumber \\
- [x^{(s)}_\alpha(a),\ x^{(s)}_\beta(b)] &= x^{(s)}_{\alpha + \beta}(N_{\alpha,\beta} \cdot sab) \cdot x^{(s)}_{2\alpha+\beta}(N_{\alpha,\beta} \cdot \widehat{N}_{\alpha, \alpha+\beta}\cdot s^2a^2b), \tag{S$4_s$} \label{S4} \\ \multispan2{ \hfill if $\alpha+\beta,2\alpha+\beta\in\Phi$.} \nonumber  \end{align} 
+ [x^{(s)}_\alpha(a),\ x^{(s)}_\beta(b)] &= x^{(s)}_{\alpha + \beta}(N_{\alpha,\beta} \cdot sab) \cdot x^{(s)}_{2\alpha+\beta}(N_{\alpha,\beta}^{2,1}\cdot s^2a^2b), \tag{S$4_s$} \label{S4} \\ \multispan2{ \hfill if $\alpha+\beta,2\alpha+\beta\in\Phi$.} \nonumber  \end{align} 
  
  Now if $R$ is a ring with a multiplicative system $S$, then for every $s, s' \in S$ there is a group homomorphism $\St^{(ss')}(\Phi, R) \to \St^{(s)}(\Phi, R)$ given by the obvious map $x_\alpha^{(ss')}(a) \mapsto x_\alpha^{(s')}(sa)$.
  These homomorphisms together form a projective system in $\Group$, whose formal projective limit will be called the {\it Steinberg pro-group} and will be denoted by $\St^{(\infty)}(\Phi, R)$.
@@ -417,8 +418,8 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
  \multispan2{\hfil if $\alpha + \delta \not\in\Phi \cup \{0\},\ \delta\neq\alpha;$} \nonumber \\
  [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] &= x_{\alpha + \delta}(N_{\alpha,\delta} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}), \label{R3-bg} \\
  \multispan2{\hfill if $\alpha+\delta\in\Phi$ but $\alpha+2\delta,\ 2\alpha+\delta\not\in\Phi;$} \nonumber \\
- [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] &= x_{\alpha + \delta}(N_{\alpha,\delta} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}) \cdot \label{R4-bg1} \\ & \cdot x_{2\alpha+\delta}(N_{\alpha,\delta} \cdot \widehat{N}_{\alpha, \alpha+\delta}\cdot {b^{(\infty)}}^2{c^{(\infty)}}^2d^{(\infty)}), \nonumber \\ \multispan2{ \hfill if $\alpha+\delta,2\alpha+\delta\in\Phi.$ \nonumber} \\
- [x_\delta(d^{(\infty)}), x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})] &= x_{\alpha + \delta}(N_{\delta, \alpha} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}) \cdot \label{R4-bg2} \\ & \cdot x_{\alpha+2\delta}(N_{\delta, \alpha} \cdot \widehat{N}_{\delta, \alpha+\delta}\cdot {b^{(\infty)}}{c^{(\infty)}}{d^{(\infty)}}^2), \nonumber \\ \multispan2{ \hfill if $\alpha+\delta,\alpha+2\delta\in\Phi.$ \nonumber} \end{align}
+ [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] &= x_{\alpha + \delta}(N_{\alpha,\delta} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}) \cdot \label{R4-bg1} \\ & \cdot x_{2\alpha+\delta}(N_{\alpha,\delta}^{2,1} \cdot {b^{(\infty)}}^2{c^{(\infty)}}^2d^{(\infty)}), \nonumber \\ \multispan2{ \hfill if $\alpha+\delta,2\alpha+\delta\in\Phi.$ \nonumber} \\
+ [x_\delta(d^{(\infty)}), x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})] &= x_{\alpha + \delta}(N_{\delta, \alpha} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}) \cdot \label{R4-bg2} \\ & \cdot x_{\alpha+2\delta}(N_{\delta, \alpha}^{2,1} \cdot {b^{(\infty)}}{c^{(\infty)}}{d^{(\infty)}}^2), \nonumber \\ \multispan2{ \hfill if $\alpha+\delta,\alpha+2\delta\in\Phi.$ \nonumber} \end{align}
 \end{lemma}
 \begin{proof}
  First of all, observe that the above relations are obtained from \eqref{R2}--\eqref{R4} by replacing $x_\alpha(a^{(\infty)})$ with $x_{\beta, \gamma}(b^{\infty}, c^{\infty})$.

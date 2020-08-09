@@ -558,7 +558,7 @@ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\v
 \end{proof}
 
 Combining \cref{lem:elim-lhs,lem:new-root} we immediately obtain the following.
-\begin{corollary}
+\begin{corollary} \label{cor:elim-lhs}
  The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations of type~\eqref{R2}--\eqref{R4}, in which it occurs on the left-hand side.
 \end{corollary}
 
@@ -566,36 +566,19 @@ Combining \cref{lem:elim-lhs,lem:new-root} we immediately obtain the following.
  The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations of type~\eqref{R4} in which it occurs on the right-hand side.
 \end{lemma}
 \begin{proof}
-We need to verify the relation \[ [x_{\beta}(b^{(\infty)}),\ x_{\gamma}(c^{(\infty)})] = x_{\beta+\gamma}(N_{\beta,\gamma}b^{(\infty)} c^{(\infty)}) x_{2\beta+\gamma}(N_{\beta,\gamma}^{2,1}{b^{(\infty)}}^2c^{(\infty)}),\] in the case when either $\alpha = \beta + \gamma$ or $\alpha = 2\beta + \gamma$. Both possibilies may occur only for $\Phi = \rF_4$.
+We need to verify the relation \begin{equation}\label{eq:elim-rhs-r4-1} [x_{\beta}(b^{(\infty)}),\ x_{\gamma}(c^{(\infty)})] = x_{\beta+\gamma}(N_{\beta,\gamma}b^{(\infty)} c^{(\infty)}) x_{2\beta+\gamma}(N_{\beta,\gamma}^{2,1}{b^{(\infty)}}^2c^{(\infty)}),\end{equation} in the case when either $\alpha = \beta + \gamma$ or $\alpha = 2\beta + \gamma$. Both possibilies may occur only for $\Phi = \rF_4$.
 
-If \(\alpha = \beta + \gamma\) with \(\alpha\), \(\beta\) short and \(\gamma\) long, consider a decomposition \(\beta = \beta_1 + \beta_2\) for short roots \(\beta_i\). The smallest root subsystem containing \(\beta_i\) and \(\gamma\) is of type \(\rC_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_1 - \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\beta_2 = \mathrm e_2 - \mathrm e_3\), \(\gamma = 2\mathrm e_3\). We have
+If \(\alpha = \beta + \gamma\) with \(\alpha\), \(\beta\) short and \(\gamma\) long, consider a decomposition \(\beta = \beta_1 + \beta_2\) for short roots \(\beta_i\). The smallest root subsystem containing \(\beta_i\) and \(\gamma\) is of type \(\rC_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_1 - \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\beta_2 = \mathrm e_2 - \mathrm e_3\), \(\gamma = 2\mathrm e_3\). Set $\varepsilon_1 = N_{\beta_1, \beta_2},$ $\varepsilon_2 = N_{\beta_2,\gamma}^{2,1},$ $\varepsilon_3 = N_{\beta_2, \gamma},$ $\varepsilon_4 = N_{\beta_1, 2\beta_2+\gamma}^{2,1},$ $\varepsilon_5 = N_{\beta_1, 2\beta_2+\gamma},$ $\varepsilon_6 = N_{\beta_1,\beta_2+\gamma},$ $\varepsilon_7 = N_{\beta_2+\gamma, \beta}.$ From~\eqref{R4} we immediately obtain that
+ \begin{align*}
+  \bigl[x_\gamma(c^{(\infty)}), x_\beta(\varepsilon_1 b_1^{(\infty)} b_2^{(\infty)})\bigr]
+  = \bigl[x_{\beta_1}(b_1^{(\infty)}), \up{x_\gamma(c^{(\infty)})} {x_{\beta_2}(b_2^{(\infty)})}\bigr]\,
+  x_\beta(-\varepsilon_1 b_1^{(\infty)} b_2^{(\infty)}) \\
+  =[x_{\beta_1}(b_1^{(\infty)}),\ x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_2+\gamma}(-\varepsilon_3b_2^{(\infty)}c^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})] x_{\beta}(-\varepsilon_1b_1b_2) \end{align*}
+ Direct computation involving~\eqref{eq:comm-mult-rhs}, \cref{cor:elim-lhs} and relations~\eqref{R2}--\eqref{R4} shows that the latter expression simplifies to
+ \begin{multline*}  x_{2\beta + \gamma}( - \varepsilon_2 \varepsilon_4 {b_1^{(\infty)}}^2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_1 + 2\beta_2 + \gamma}(-(\varepsilon_2\varepsilon_5 +\varepsilon_1\varepsilon_3\varepsilon_7) b_1^{(\infty)}{b_2^{(\infty)}}^2c^{(\infty)}) \cdot \\ \cdot \widetilde{x}_{\alpha}(-\varepsilon_3 \varepsilon_6 b_1^{(\infty)}b_2^{(\infty)}c^{(\infty)}).\end{multline*}
+Substituting the triples $(\beta_1, \beta_2+\gamma, \beta_2)$, $(\beta_1, \beta_2, \gamma)$, $(\beta_1, \beta_1+\beta_2, \beta_2+\gamma)$ into~\eqref{eq:cocycle2} we obtain the equalities $ \varepsilon_2 \varepsilon_3 \varepsilon_5 = - \varepsilon_1 \varepsilon_7$, $ \varepsilon_3 \varepsilon_6  = N_{\beta, \gamma}\varepsilon_1$, $2 \varepsilon_4 \varepsilon_5 \varepsilon_7 = - \varepsilon_6 N_{\beta,\alpha}$. Together with~\cref{RingGeneration} they imply the identity \[[x_\gamma(c^{(\infty)}), x_\beta(b^{(\infty)})] = 
+ \widetilde{x}_\alpha(-N_{\beta, \gamma} b^{(\infty)} c^{(\infty)}) x_{2\beta+\gamma}(-N_{\beta,\gamma}^{2,1} {b^{(\infty)}}^2 {c^{(\infty)}}^2),\] which is a restatement of~\eqref{eq:elim-rhs-r4-1}. 
  
- \begin{align*}
-  &\bigl[x_\gamma(c^{(\infty)}),
-  x_\beta(N_{\beta_1, \beta_2} b_1^{(\infty)} b_2^{(\infty)})\bigr]\\
-  %
-  &= \bigl[x_{\beta_1}(b_1^{(\infty)}),
-  \up{x_\gamma(c^{(\infty)})}
-   {x_{\beta_2}(b_2^{(\infty)})}\bigr]\,
-  x_\beta(-N_{\beta_1, \beta_2} b_1^{(\infty)} b_2^{(\infty)}) =\\
-  %
-  &= \widetilde x_\alpha(A_1 c^{(\infty)} b_1^{(\infty)} b_2^{(\infty)})
-  x_{\mathrm e_1 - \mathrm e_3}(A_2 b_1^{(\infty)} b_2^{(\infty)})\,
-  x_{\mathrm e_1 + \mathrm e_2}\bigl(A_3 b_1^{(\infty)} (b_2^{(\infty)})^2 c^{(\infty)}\bigr)\\
-  &\quad x_{\mathrm e_1 - \mathrm e_2}\bigl(A_3 b_1^{(\infty)}\bigr)\,
-  x_{2\mathrm e_1}\bigl(A_4 (b_1^{(\infty)} b_2^{(\infty)})^2 c^{(\infty)} \bigr).
- \end{align*}
- for some integers \(A_i\), since the only needed Steinberg relations with \(\alpha\) on the right-hand side are \eqref{R1} and
- \[[x_{\mathrm e_1 - \mathrm e_2}(u^{(\infty)}), x_{\mathrm e_2 + \mathrm e_3}(v^{(\infty)})] = x_\alpha(\pm u^{(\infty)} v^{(\infty)}).\]
- Also,
- \begin{align*}
-  &[x_\gamma(1), x_\beta(N_{\beta_1, \beta_2})]\\
-  &= x_\alpha(A_1)\, x_{\mathrm e_1 - \mathrm e_3}(A_2)\, x_{\mathrm e_1 + \mathrm e_2}(A_3)\, x_{2 \mathrm e_1}(A_4)
- \end{align*}
- in the Steinberg group \(\St(\Phi, \mathbb Z)\). In this group the commutator equals to \(x_\alpha(N_{\gamma, \beta})\), hence \(A_1 = N_{\gamma, \beta}\) and \(A_i = 0\) for \(i > 1\) by \cref{rem:uni-rad}. From lemma \ref{RingGeneration} it follows that
- \[[x_\gamma(c^{(\infty)}), x_\beta(b^{(\infty)})] = 
- \widetilde x_\alpha(N_{\gamma, \beta} c^{(\infty)} b^{(\infty)}).\]
-
  Suppose that \(\alpha = 2\beta + \gamma\) for \(\beta\) short and \(\alpha\), \(\gamma\) long. Then consider a decomposition \(\gamma = \gamma_1 + \gamma_2\) for long roots \(\gamma_i\). The smallest root subsystem containing \(\beta\) and \(\gamma_i\) is of type \(\rB_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_3\), \(\gamma = \mathrm e_1 - \mathrm e_3\), \(\gamma_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_2 = \mathrm e_2 - \mathrm e_3\). Then
  \begin{align*}
   &\bigl[x_\beta(b^{(\infty)}),

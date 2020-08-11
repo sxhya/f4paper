@@ -335,7 +335,7 @@ The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\i
 \end{rem}
 
 \begin{lemma}\label{SteinbergPresentation}
-Let \(G^{(\infty)}\) be a pro-group. The morphisms \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R), \ \alpha\in \Phi\] ``generate'' $\St^{(\infty)}(\Phi, R)$. In other words, to ensure that a pair of morphisms $f_1,f_2\colon\St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to verify the equalities $f_1 x_{\alpha} = f_2 x_\alpha$ for all $\alpha\in\Phi$.
+Let \(G^{(\infty)}\) be a pro-group. The morphisms \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R), \ \alpha\in \Phi\] ``generate'' $\St^{(\infty)}(\Phi, R)$ in the categorical sense. In other words, to ensure that a pair of morphisms $f_1,f_2\colon\St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to verify the equalities $f_1 x_{\alpha} = f_2 x_\alpha$ for all $\alpha\in\Phi$.
 
 To obtain a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ it suffices to construct a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\) satisfying the pro-analogues of~\eqref{R2}--\eqref{R4} (in which $x_\alpha$'s are replaced with $f_{\alpha}$'s).
 \end{lemma}
@@ -384,10 +384,12 @@ As before, these $s$-homotopes form a projective system, whose formal projective
 \end{df}
 
 For $\beta \neq \pm\alpha$ we use the same notation $x_\beta$ for the ``root subgroup'' morphisms $R^{(\infty)}\to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R)$.
-
+\begin{rem} \label{rem:xpma-presentation}
+ One can obtain the analogue of~\cref{SteinbergPresentation} for the pro-group $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ by repeating the same proof verbatim. In particular, $x_\beta$, $\beta\neq \pm\alpha$ ``generate'' $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ in the categorical sense.
+\end{rem}
 There is a morphism of pro-groups
-\[ F_\alpha \colon \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R) \to \St^{(\infty)}(\Phi, R). \]
-given by the pre-morphism $F_\alpha^{*} = \mathrm{id}_S$ and the homomorphisms \[F_\alpha^{(s)} \colon \St^{(s)}(\Phi \setminus\{\pm\alpha\}, R) \to \St^{(s)}(\Phi, R),\] which are induced by the obvious embedding of generators.
+$F_\alpha \colon \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R) \to \St^{(\infty)}(\Phi, R).$
+given by the pre-morphism $F_\alpha^{*} = \mathrm{id}_S$ and the homomorphisms \[F_\alpha^{(s)} \colon \St^{(s)}(\Phi \setminus\{\pm\alpha\}, R) \to \St^{(s)}(\Phi, R)\] induced by the obvious embedding of generators.
 
 Notice that, in general, the individual homomorphisms $F_\alpha^{(s)}$ need {\it not} be isomorphisms (at least if $s \neq 1$). On the other hand, as the following result shows, the morphism of pro-groups $F_\alpha$ is often an isomorphism. 
 \begin{theorem}\label{SingleRootElimination}
@@ -400,10 +402,10 @@ Our immediate goal is to construct the root subgroup morphisms
 \begin{df} \label{def:xbg}
 Let $\beta, \gamma \in \Phi$ be an arbitrary fixed pair of roots such that $\alpha = \beta+\gamma$ and the length of $\beta$, $\gamma$ is the same as $\alpha$'s. 
 Denote by $x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)})$ the morphism
- \[[x_\beta(N_{\beta,\gamma}b^{(\infty)}),\ x_\gamma(c^{(\infty)})]\colon R^{(\infty)} \times R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R).\]
-See~\cref{conv:notation} for the explanation of the notation used in the above formula.
+ $[x_\beta(N_{\beta,\gamma}b^{(\infty)}),\ x_\gamma(c^{(\infty)})]\colon R^{(\infty)} \times R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R).$
+%See~\cref{conv:notation} for the explanation of the notation used in the above formula.
 \end{df}
-Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism $x_{\beta,\gamma}$ (see~\cref{lem:new-root}). However, in order to be able to do this we need the following assertion.
+Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism $x_{\beta,\gamma}$, see~\cref{lem:new-root}. However, in order to be able to do this we need the following assertion.
 
 \begin{lemma} \label{lem:elim-lhs}
  The morphism $x_{\beta, \gamma}$ satisfies the following relations:
@@ -535,12 +537,12 @@ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\v
 Now we need to verify that $\widetilde{x}_\alpha$ satisfies the relations~\eqref{R2}--\eqref{R4}.
 Notice that none of these relations simultaneously involves both \(\alpha\) and \(-\alpha\).
 Thus, by symmetry it suffices to verify only Steinberg relations involving \(\alpha\).
-Moreover, the proof of the those relations, which involve $\widetilde{x}_\alpha$ on the left-hand side, is now immediate. Indeed, combining \cref{lem:elim-lhs,lem:new-root} we immediately obtain the following.
+Combining \cref{lem:elim-lhs,lem:new-root} we immediately obtain the following.
 \begin{corollary} \label{cor:elim-lhs}
  The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations of type~\eqref{R2}--\eqref{R4}, in which it occurs on the left-hand side.
 \end{corollary}
 
-Thus, to finish the proof of~\cref{SingleRootElimination} it suffices to consider the case when $\widetilde{x}_\alpha$ occurs on the right-hand side of Steinberg relations.
+Thus, to finish the proof of~\cref{SingleRootElimination} it suffices to consider the case when $\widetilde{x}_\alpha$ occurs in the right-hand side of the commutator formula.
 \begin{lemma} \label{lem:elim-rhs-r4}
  The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations of type~\eqref{R4} in which it occurs on the right-hand side.
 \end{lemma}
@@ -595,22 +597,22 @@ Set $\varepsilon_1 = N_{\beta,\gamma-\beta}^{2,1}$, $\varepsilon_2 = N_{\beta,\g
 The relation~\eqref{eq:elim-rhs-r3-1} now follows from \cref{RingGeneration} and the identity $2\varepsilon_1 = \varepsilon_2 N_{\beta, \gamma}$. \end{proof} 
 
 \begin{proof}[Proof of~\cref{SingleRootElimination}]
-To verify the assertion of the theorem we need to construct a pro-group morphism \[G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi \setminus \{\pm\alpha\}, R)\] such that \(G_\alpha \circ x_\beta = x_\beta\) for all \(\beta \neq \pm \alpha\). By~\cref{SteinbergPresentation} it suffices to construct a pair of morphisms \(\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) which together with $\widetilde{x}_\beta$, $\beta\neq \pm\alpha$, satisfy the relations \eqref{R1}--\eqref{R4} missing from the presentation of $\St(\Phi\setminus\{\pm\alpha\}, R)$.
-\end{proof}
+For the sake of brevity let us rename the root subgroup morphisms $x_\beta$ of $\St(\Phi\setminus\{\pm\alpha\}, R^{(\infty)})$ for $\beta\neq \pm\alpha$ to $x'_{\beta}$. For the morphisms $x_\beta$ of $\St^{(\infty)}(\Phi, R)$ we continue to use the usual notation. Also denote $\St^{(\infty)}(\Phi, R)$ by $H^{(\infty)}$ and $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ by $H^{(\infty)}_\alpha$.
 
- 
-Now clearly \(G_\alpha\) is the inverse of \(F_\alpha\).
+By~\cref{SteinbergPresentation} the morphisms $\widetilde{x}_{\pm\alpha}$ together with $x'_\beta$, $\beta\neq \pm \alpha$ give rise to a morphism $G_\alpha \colon H^{(\infty)} \to H^{(\infty)}_\alpha$. By definition, $G_\alpha x_\beta = x_\beta'$ for $\beta\neq\pm\alpha$ and $G_\alpha x_{\pm\alpha} = \widetilde x_{\pm\alpha}$. On the other hand, it is clear that $F_\alpha x_\beta' = x_\beta$ for $\beta\neq \pm\alpha$. To see that $G_\alpha$ is inverse to $F_\alpha$ it remains to use the first part of~\cref{SteinbergPresentation} and~\cref{rem:xpma-presentation}.
+\end{proof}
 
 
  \begin{theorem}\label{DoubleRootElimination}
-  Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\), \(\Phi_0 \subseteq \Phi\) be a subsystem of rank \(2\) (i.e. \(\Phi_0 = \Phi \cap (\mathbb R\alpha + \mathbb R\beta)\) for linearly independent \(\alpha, \beta \in \Phi\)). Then \(\St^{(\infty)}(\Phi \setminus \Phi_0, R) \to \St^{(\infty)}(\Phi, R)\) is an epimorphism of pro-groups.
+  Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\), \(\Phi_0 \subseteq \Phi\) be a subsystem of rank \(2\) (i.e. \(\Phi_0 = \Phi \cap (\mathbb R\alpha + \mathbb R\beta)\) for linearly independent \(\alpha, \beta \in \Phi\)). Then 
+  \[\St^{(\infty)}(\Phi \setminus \Phi_0, R) \to \St^{(\infty)}(\Phi, R)\] is an epimorphism of pro-groups.
  \end{theorem}
  \begin{proof}
-  If \(\Phi_0\) is not of type \(\rA_2\), then every root from \(\Phi_0\) may be decomposed into a sum of two roots with the same length, these roots do not lie in \(\Phi_0\) and we are done by lemma \ref{SteinbergPresentation}. If \(\Phi_0\) is of type \(\rA_2\), apply lemma \ref{ThreeRoots}.
+  If \(\Phi_0\) is not of type \(\rA_2\), then every root from \(\Phi_0\) may be decomposed into a sum of two roots of the same length, these roots do not lie in \(\Phi_0\) and we are done by~\cref{SteinbergPresentation}. If \(\Phi_0\) is of type \(\rA_2\), apply~\cref{ThreeRoots}.
  \end{proof}
 
 
-\subsection{Localization}
+\section{Localization}
 
 Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{(\infty)}\) is an \(S^{-1} R\)-algebra in the following sense: for every element \(\frac rs \in S^{-1} R\) there is a well-defined pro-group endomorphism \(m_{\frac rs} \colon R^{(\infty)} \to R^{(\infty)}\) given by \(m_{\frac rs}^*(s') = ss'\) and \(m_{\frac rs}^{(s')}(a^{(ss')}) = (ra)^{(s')}\) for some choice of \(r\) and \(s\). Moreover, \(m\) is actually a homomorphism of rings \(S^{-1} R \to \Pro(\Group)(R^{(\infty)})\) and \(m_{\frac rs}(a^{(\infty)} b^{(\infty)}) = m_{\frac rs}(a^{(\infty)}) b^{(\infty)} = a^{(\infty)} m_{\frac rs}(b^{(\infty)})\). We usually write \(\frac rs a^{(\infty)}\) instead of \(m_{\frac rs}(a^{(\infty)})\). Similarly, \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) acts on the Chevalley pro-group \(\GG^{(\infty)}(\Phi, R)\) by automorphisms.
 
@@ -671,7 +673,7 @@ Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset. Then \(R^{
  From \cref{rem:uni-rad} we have \(P_{i, j}(a) = 0\) with the only exception \(P_{0, 1}(a) = a^{(\beta, \alpha)}\).
 \end{proof}
 
-\subsection{Steinberg crossed module}
+\section{Steinberg crossed module}
 
 Here we prove that the Steinberg group \(\St(\Phi, R)\) is a crossed module over \(\GG(\Phi, R)\). In the proofs we always take \(S = R \setminus \mathfrak m\) for a given maximal ideal \(\mathfrak m \trianglelefteq R\).
 

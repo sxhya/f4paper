@@ -61,6 +61,16 @@
 \begin{document}
 
 \section{Preliminaries}
+Throughout this paper all commutators are left normed, i.\,e. $[x, y] = xyx^{-1}y^{-1}$. We denote by $x^y$ and $\up{y}x$ the elements $xyx^{-1}$ and $yxy^{-1}$.
+In this paper we also make use the following commutator identities:
+\begin{align}
+\label{eq:comm-mult-rhs}[x,\ yz]& =   [x,\ y] \cdot \up{y}[x,\ z],
+\\ \label{eq:comm-mult-lhs}[xy,\ z]& = \up{x}[y,\ z] \cdot [x,\ z],
+\end{align}
+\begin{equation} \label{eq:HW-corr} [x,z] = 1 \text{ implies } [x, [y,z]] = [[x,y],\up{y}z].
+\end{equation}
+
+
 \subsection{Generalities on pro-objects}
 Let \(\mathcal C\) be an arbitrary category.
 In this section we recall the construction of the pro-completion of \(\mathcal C\) (cf. \cite[Section~6.1]{SK06}).
@@ -344,17 +354,7 @@ Thus, we obtain a group homomorphism $\St^{(s)}(\Phi, R) \to G$, which, in turn,
 \end{proof}
 Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a group object in $\Pro(\Set)$ is essential in the proof of the above lemma.
 
-\section{Main result}
-Throughout this section we make use of the following commutator identities:
-\begin{align}
-\label{eq:comm-mult-rhs}[x,\ yz]& =   [x,\ y] \cdot {}^{y}\![x,\ z],
-\\ \label{eq:comm-mult-lhs}[xy,\ z]& = \up{x}[y,\ z] \cdot [x,\ z],
-\end{align}
-\begin{equation} \label{eq:HW-corr} [x,z] = 1 \text{ implies } [x, [y,z]] = [[x,y],{}^yz].
-\end{equation}
-% \begin{equation} [x,\ yzw]& =   [x,\ y] \cdot \up{y}[x,\ z] \cdot \up{yz} [x, w] \end{equation}
-
-\subsection{Elimination of roots}
+\section{Elimination of roots}
 \begin{lemma}\label{ThreeRoots}
 Let \(\Phi\) be a root system of rank \(\geq 3\) and not of type \(\rB_\ell\) or \(\rC_\ell\). Let \(\alpha, \beta, \gamma \in \Phi\) be a triple of roots having the same length such that $\alpha = \beta + \gamma$.  
 Then there exist roots \(\beta_1, \gamma_1 \in \Phi \setminus (\ZZ\beta + \ZZ\gamma)\) having the same length as $\beta$ and, moreover, such that \(\beta_1 + \gamma_1 = \beta\).
@@ -397,20 +397,14 @@ The proof of~\cref{SingleRootElimination} occupies the rest of this subsection.
 Our immediate goal is to construct the root subgroup morphisms
 \[\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R) \] ``missing'' from the presentation of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$. The construction of $\widetilde{x}_{-\alpha}$ is analogous to $\widetilde{x}_\alpha$, so it suffices to construct only the latter.
 
-%The next step of the proof of~\cref{SingleRootElimination} is to verify the Steinberg relations, which are ``missing'' from the presentation of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$.
-%This is accomplished in a series of lemmas below.
-%Notice that none of these Steinberg relations simultaneously involves both \(\alpha\) and \(-\alpha\).
-%Thus, by symmetry it suffices to verify only Steinberg relations involving \(\alpha\).
-
-%To verify the assertion of the theorem we need to construct a pro-group morphism \[G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi \setminus \{\pm\alpha\}, R)\] such that \(G_\alpha \circ x_\beta = x_\beta\) for all \(\beta \neq \pm \alpha\). By~\cref{SteinbergPresentation} it suffices to construct a pair of morphisms \(\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) which together with $\widetilde{x}_\beta$, $\beta\neq \pm\alpha$, satisfy the relations \eqref{R1}--\eqref{R4} missing from the presentation of $\St(\Phi\setminus\{\pm\alpha\}, R)$. As before, we understand Steinberg relations as equalities of morphisms in $\Pro(\Set)$ according to~\cref{conv:notation}.
-
-\begin{df}
-Let $\beta, \gamma \in \Phi$ be arbitrary roots such that $\alpha = \beta+\gamma$ and the length of $\beta$, $\gamma$ is the same as $\alpha$'s. 
+\begin{df} \label{def:xbg}
+Let $\beta, \gamma \in \Phi$ be an arbitrary fixed pair of roots such that $\alpha = \beta+\gamma$ and the length of $\beta$, $\gamma$ is the same as $\alpha$'s. 
 Denote by $x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)})$ the morphism
  \[[x_\beta(N_{\beta,\gamma}b^{(\infty)}),\ x_\gamma(c^{(\infty)})]\colon R^{(\infty)} \times R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R).\]
 See~\cref{conv:notation} for the explanation of the notation used in the above formula.
 \end{df}
- 
+Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism $x_{\beta,\gamma}$ (see~\cref{lem:new-root}). However, in order to be able to do this we need the following assertion.
+
 \begin{lemma} \label{lem:elim-lhs}
  The morphism $x_{\beta, \gamma}$ satisfies the following relations:
  \begin{align}  
@@ -456,8 +450,8 @@ See~\cref{conv:notation} for the explanation of the notation used in the above f
  Let us first verify the relation~\eqref{R2-bg} in the case $\delta \in \{\beta, \gamma\}$. By symmetry we may assume that $\delta = \beta$. 
  Direct computation shows that
  \begin{align}
-  [x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\beta(N_{\beta_1, \beta_2} b_1^{(\infty)}b_2^{(\infty)})] = \label{eq:elim-lhs3} \\
-   = [x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ [x_{\beta_1}(b_1^{(\infty)}),\ x_{\beta_2}(b_2^{(\infty)})]]  & \text{ by~\eqref{R3}} \nonumber \\ 
+  [x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\beta(N_{\beta_1, \beta_2} b_1^{(\infty)}b_2^{(\infty)})] \nonumber \\
+   = [x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ [x_{\beta_1}(b_1^{(\infty)}),\ x_{\beta_2}(b_2^{(\infty)})]]  & \text{ by~\eqref{R3}} \label{eq:elim-lhs3} \\ 
    = [[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_{\beta_1}(b_1)],\ \up{x_{\beta_1}(b_1^{(\infty)})} x_{\beta_2}(b_2^{(\infty)})]  & \text{ by~\eqref{eq:HW-corr},\eqref{R2-bg}.} \nonumber \end{align}
 In the case $\Phi_0\cong \rA_3$ the inner commutator in the last expression is trivial by~\eqref{R2-bg},
  therefore so is the outer commutator.
@@ -511,8 +505,6 @@ which finishes the proof of~\eqref{R3-bg}.
  x_{\beta, \gamma}(b^{(\infty)}, c_2^{(\infty)}).\]
  Thus, the morphism \(x_{\beta, \gamma}\) satisfies the first three requirements of~\cref{RingPresentation}. 
  
- %It follows that \begin{align*} x_{\gamma, \beta}(c^{(\infty)}, b^{(\infty)}) &= \up{x_\gamma(N_{\gamma, \beta} c^{(\infty)})} {[x_\beta(b^{(\infty)}), x_\gamma(-N_{\gamma, \beta} c^{(\infty)})]}\\ &= x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}). \end{align*}
-
  Now suppose that \(\alpha = \beta_1 + \gamma_1 = \beta_2 + \gamma_2\) are two different decompositions for $\alpha$ such that $\alpha$, $\beta_i$ and $\gamma_i$ have the same length and \(\alpha\), \(\beta_1\), \(\beta_2\) are linearly independent. By~\cref{ThreeRoots} such decompositions exist and the roots $\beta_i$, $\gamma_i$ are contained in a root subsystem $\Phi_0$ of type \(\rA_3\) or \(\rC_3\). We also may assume that \((\beta_1, \gamma_1) = (\mathrm e_1 - \mathrm e_2,  \mathrm e_2 - \mathrm e_3)\) and one of the following alternatives holds:
  \begin{itemize}
  \item \((\beta_2, \gamma_2) = (\mathrm e_1 - \mathrm e_4, \mathrm e_4 - \mathrm e_3)\) in the case \(\Phi_0\cong\rA_3\), \item \((\beta_2, \gamma_2) = (\mathrm e_1 + \mathrm e_2, -\mathrm e_2 - \mathrm e_3)\) in the case \(\Phi_0\cong\rC_3\).
@@ -520,31 +512,13 @@ which finishes the proof of~\eqref{R3-bg}.
  Set $\delta = \gamma_1 - \gamma_2 = \beta_2 - \beta_1$ and \[\varepsilon_1 = N_{\beta_1, \gamma_1},\ \varepsilon_2 = N_{\beta_2, \gamma_2},\ \varepsilon_3 = N_{\delta,\gamma_2},\ \varepsilon_4 = N_{\beta_1, \delta}.\]
  Substituting the triple $(\beta_1, \gamma_1, -\beta_2)$ into~\eqref{eq:cocycle2}, it is not hard to show in both cases that $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$.  Consequently, we obtain that
  \begin{align*}
-x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)})] & \nonumber \\
+x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)})] &\text{ by~\cref{def:xbg}} \nonumber \\
 = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_{\delta}(\varepsilon_3c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] &\text{  by~\eqref{R3} or~\eqref{R2},\eqref{R4},\eqref{eq:comm-mult-rhs}.} \nonumber \\ 
 = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_\delta(\varepsilon_3c^{(\infty)})],\ {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
 = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)}) x_{\gamma_1}(c^{(\infty)}d^{(\infty)}) ] & \text{ by~\eqref{R3}}\\
 = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \\
-= x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}). \end{align*}
-\begin{comment} 
- In the case of \(\rA_3\) we may assume that \(\alpha = \mathrm e_1 - \mathrm e_4\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 - \mathrm e_4\), \(\beta_2 = \mathrm e_1 - \mathrm e_3\), \(\gamma_2 = \mathrm e_3 - \mathrm e_4\), swapping \(\beta_i\) with \(\gamma_i\) if necessary. Let \(\delta = \mathrm e_2 - \mathrm e_3\). We have
- \begin{align*}
- x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) &= \bigl[x_{\beta_1}(b^{(\infty)}), [x_\delta(c^{(\infty)}), x_{\gamma_2}(N_{\delta, \gamma_2} d^{(\infty)})]\bigr]\\
- &= \bigl[[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], \up{x_\delta(c^{(\infty)})}{x_{\gamma_2}(N_{\delta, \gamma_2} d^{(\infty)})}\bigr]\\
- &= x_{\beta_2, \gamma_2}(\varepsilon b^{(\infty)} c^{(\infty)}, d^{(\infty)})
- \end{align*}
- for some \(\varepsilon \in \{-1, 1\}\). Since the same coefficient occurs in the identity
- \[x_\alpha(1) = x_\alpha(\varepsilon)\]
- in \(\St(\Phi, \mathbb Z)\), it follows by \cref{rem:uni-rad} that \(\varepsilon = 1\).
+= x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}) &\text{ by~\cref{def:xbg}.} \end{align*}
 
- In the case of \(C_3\) we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_1 = \mathrm e_2 + \mathrm e_3\), \(\beta_2 = \mathrm e_1 + \mathrm e_2\), \(\gamma_2 = \mathrm e_3 - \mathrm e_2\), exchanging \(\beta_i\) with \(\gamma_i\) if necessary. Let \(\delta = 2 \mathrm e_2\), then
- \begin{align*}
- x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) &= [x_{\beta_1}(b^{(\infty)}), [x_{\delta}(c^{(\infty)}), x_{\gamma_2}(N_{\delta, \gamma_2} d^{(\infty)})]] =\\
- &= [[x_{\beta_1}(b^{(\infty)}), x_\delta(c^{(\infty)})], \up{x_\delta(c^{(\infty)})}{x_{\gamma_2}(N_{\delta, \gamma_2} d^{(\infty)})}] =\\
- &= x_{\beta_2, \gamma_2}(\varepsilon' b^{(\infty)} c^{(\infty)}, d^{(\infty)})
- \end{align*}
- for some \(\varepsilon' \in \{-1, 1\}\). By the same agrument, \(\varepsilon' = 1\).
-\end{comment}
  Thus, in both cases we obtain that
  \begin{equation}\label{eq:balance}
  x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
@@ -557,24 +531,30 @@ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\v
  %\[x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}).\qedhere\]
 \end{proof}
 
-Combining \cref{lem:elim-lhs,lem:new-root} we immediately obtain the following.
+
+Now we need to verify that $\widetilde{x}_\alpha$ satisfies the relations~\eqref{R2}--\eqref{R4}.
+Notice that none of these relations simultaneously involves both \(\alpha\) and \(-\alpha\).
+Thus, by symmetry it suffices to verify only Steinberg relations involving \(\alpha\).
+Moreover, the proof of the those relations, which involve $\widetilde{x}_\alpha$ on the left-hand side, is now immediate. Indeed, combining \cref{lem:elim-lhs,lem:new-root} we immediately obtain the following.
 \begin{corollary} \label{cor:elim-lhs}
  The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations of type~\eqref{R2}--\eqref{R4}, in which it occurs on the left-hand side.
 \end{corollary}
 
+Thus, to finish the proof of~\cref{SingleRootElimination} it suffices to consider the case when $\widetilde{x}_\alpha$ occurs on the right-hand side of Steinberg relations.
 \begin{lemma} \label{lem:elim-rhs-r4}
  The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations of type~\eqref{R4} in which it occurs on the right-hand side.
 \end{lemma}
 \begin{proof}
-We need to verify the relation \begin{equation}\label{eq:elim-rhs-r4-1} [x_{\beta}(b^{(\infty)}),\ x_{\gamma}(c^{(\infty)})] = x_{\beta+\gamma}(N_{\beta,\gamma}b^{(\infty)} c^{(\infty)}) x_{2\beta+\gamma}(N_{\beta,\gamma}^{2,1}{b^{(\infty)}}^2c^{(\infty)}),\end{equation} in the case when either $\alpha = \beta + \gamma$ or $\alpha = 2\beta + \gamma$. Both possibilies may occur only for $\Phi = \rF_4$.
+We only need to consider the case $\Phi = \rF_4$.
+We need to verify the relation obtained from \begin{equation}\label{eq:elim-rhs-r4-1} [x_{\beta}(b^{(\infty)}),\ x_{\gamma}(c^{(\infty)})] = x_{\beta+\gamma}(N_{\beta,\gamma}b^{(\infty)} c^{(\infty)}) x_{2\beta+\gamma}(N_{\beta,\gamma}^{2,1}{b^{(\infty)}}^2c^{(\infty)})\end{equation} by replacing either $x_{\beta+\gamma}$ or $x_{2\beta+\gamma}$ with $\widetilde{x}_{\alpha}$.
 
-First, let us consider the case \(\alpha = \beta + \gamma\), in which \(\alpha\), \(\beta\) are short and \(\gamma\) is long. consider a decomposition \(\beta = \beta_1 + \beta_2\) for short roots \(\beta_i\). The smallest root subsystem containing \(\beta_i\) and \(\gamma\) is of type \(\rC_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_1 - \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\beta_2 = \mathrm e_2 - \mathrm e_3\), \(\gamma = 2\mathrm e_3\). Set $\varepsilon_1 = N_{\beta_1, \beta_2},$ $\varepsilon_2 = N_{\beta_2,\gamma}^{2,1},$ $\varepsilon_3 = N_{\beta_2, \gamma},$ $\varepsilon_4 = N_{\beta_1, 2\beta_2+\gamma}^{2,1},$ $\varepsilon_5 = N_{\beta_1, 2\beta_2+\gamma},$ $\varepsilon_6 = N_{\beta_1,\beta_2+\gamma},$ $\varepsilon_7 = N_{\beta_2+\gamma, \beta}.$ From~\eqref{R4} we immediately obtain that
+First, let us consider the case \(\alpha = \beta + \gamma\), in which \(\alpha\), \(\beta\) are short and \(\gamma\) is long. Consider a decomposition \(\beta = \beta_1 + \beta_2\) for some short roots \(\beta_i\). The smallest root subsystem containing \(\beta_i\) and \(\gamma\) is of type \(\rC_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_1 - \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\beta_2 = \mathrm e_2 - \mathrm e_3\), \(\gamma = 2\mathrm e_3\). Set $\varepsilon_1 = N_{\beta_1, \beta_2},$ $\varepsilon_2 = N_{\beta_2,\gamma}^{2,1},$ $\varepsilon_3 = N_{\beta_2, \gamma},$ $\varepsilon_4 = N_{\beta_1, 2\beta_2+\gamma}^{2,1},$ $\varepsilon_5 = N_{\beta_1, 2\beta_2+\gamma},$ $\varepsilon_6 = N_{\beta_1,\beta_2+\gamma},$ $\varepsilon_7 = N_{\beta_2+\gamma, \beta}.$ From~\eqref{R4} we immediately obtain that
  \begin{multline*}
   \bigl[x_\gamma(c^{(\infty)}), x_\beta(\varepsilon_1 b_1^{(\infty)} b_2^{(\infty)})\bigr]
   = \bigl[x_{\beta_1}(b_1^{(\infty)}), \up{x_\gamma(c^{(\infty)})} {x_{\beta_2}(b_2^{(\infty)})}\bigr]\,
   x_\beta(-\varepsilon_1 b_1^{(\infty)} b_2^{(\infty)}) \\
   =[x_{\beta_1}(b_1^{(\infty)}),\ x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_2+\gamma}(-\varepsilon_3b_2^{(\infty)}c^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})] x_{\beta}(-\varepsilon_1b_1b_2) \end{multline*}
- Direct computation involving~\eqref{eq:comm-mult-rhs}, \cref{cor:elim-lhs} and relations~\eqref{R2}--\eqref{R4} shows that the latter expression simplifies to
+ Direct computation involving~\eqref{eq:comm-mult-rhs}, \cref{cor:elim-lhs} and relations~\eqref{R2}--\eqref{R4} shows that the latter expression further simplifies to
  \begin{multline*}  x_{2\beta + \gamma}( - \varepsilon_2 \varepsilon_4 {b_1^{(\infty)}}^2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_1 + 2\beta_2 + \gamma}(-(\varepsilon_2\varepsilon_5 +\varepsilon_1\varepsilon_3\varepsilon_7) b_1^{(\infty)}{b_2^{(\infty)}}^2c^{(\infty)}) \cdot \\ \cdot \widetilde{x}_{\alpha}(-\varepsilon_3 \varepsilon_6 b_1^{(\infty)}b_2^{(\infty)}c^{(\infty)}).\end{multline*}
 Substituting the triples $(\beta_1, \beta_2+\gamma, \beta_2)$, $(\beta_1, \beta_2, \gamma)$, $(\beta_1, \beta_1+\beta_2, \beta_2+\gamma)$ into~\eqref{eq:cocycle2} we obtain the equalities $ \varepsilon_2 \varepsilon_3 \varepsilon_5 = - \varepsilon_1 \varepsilon_7$, $ \varepsilon_3 \varepsilon_6  = N_{\beta, \gamma}\varepsilon_1$, $2 \varepsilon_4 \varepsilon_5 \varepsilon_7 = - \varepsilon_6 N_{\beta,\alpha}$. Together with~\cref{RingGeneration} they imply the identity \[[x_\gamma(c^{(\infty)}), x_\beta(b^{(\infty)})] = 
  \widetilde{x}_\alpha(-N_{\beta, \gamma} b^{(\infty)} c^{(\infty)}) x_{2\beta+\gamma}(-N_{\beta,\gamma}^{2,1} {b^{(\infty)}}^2 {c^{(\infty)}}^2),\] which is a restatement of~\eqref{eq:elim-rhs-r4-1}. 
@@ -594,37 +574,32 @@ Substituting the triples $(\beta_1, \beta_2+\gamma, \beta_2)$, $(\beta_1, \beta_
  The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations~of type \eqref{R3} in which it occurs on the right-hand side.
 \end{lemma}
 \begin{proof}
-If \(|\alpha| = |\beta| = |\gamma|\), then this is actually the definition of \(\widetilde x_\alpha\). Hence we have only the following case: \(\alpha = \beta + \gamma\) with \(\alpha\) long and \(\beta\), \(\gamma\) short.
-
- If \(\beta\) and \(\gamma\) are short, then the smallest root subsystem containing \(\alpha\), \(\beta\), \(\gamma\) is of type \(\rB_2\). Without loss of generality let \(\alpha = \mathrm e_1 + \mathrm e_2\), \(\beta = \mathrm e_1\), and \(\gamma = \mathrm e_2\). Then using the previous case we get
- \begin{align*}
-  &\up{x_\beta(d^{(\infty)})}
-   {\bigl(x_\gamma(N_{\beta, \gamma - \beta} b^{(\infty)} c^{(\infty)})\,
-   \widetilde x_\alpha(N_{\beta, \gamma - \beta} \widehat N_{\beta, \gamma}
-   (b^{(\infty)})^2 c^{(\infty)})\bigr)}\\
-  %
-  &= \bigl[x_\beta(b^{(\infty)}),
+We need to verify the relation 
+\begin{equation}\label{eq:elim-rhs-r3-1} [x_{\beta}(b^{(\infty)}),\ x_{\gamma}(c^{(\infty)})] = \widetilde{x}_{\alpha}(N_{\beta,\gamma} b^{(\infty)}c^{(\infty)}).\end{equation}
+In the case when $\alpha$, $\beta$ and $\gamma$ have the same length the assertion follows from \cref{lem:new-root}. Thus, we only need to consider the case when \(\alpha = \beta + \gamma\) and \(\alpha\) is long while \(\beta\) and \(\gamma\) are short. The smallest root subsystem containing \(\alpha\), \(\beta\), \(\gamma\) is of type \(\rB_2\). Without loss of generality we may assume \(\alpha = \mathrm e_1 + \mathrm e_2\), \(\beta = \mathrm e_1\), and \(\gamma = \mathrm e_2\).
+Set $\varepsilon_1 = N_{\beta,\gamma-\beta}^{2,1}$, $\varepsilon_2 = N_{\beta,\gamma-\beta}$. Direct computation shows that \begin{align*}
+  \up{x_\beta(d^\infty)} x_\gamma(\varepsilon_2b^{(\infty)}c^{(\infty)}) \cdot \widetilde{x}_\alpha(\varepsilon_1 {b^{(\infty)}}^2{c^{(\infty)}}) \\
+  = \up{x_\beta(d^{(\infty)})}
+   {\bigl(x_\gamma(\varepsilon_2 b^{(\infty)} c^{(\infty)})\,
+   \widetilde x_\alpha(\varepsilon_1
+   {b^{(\infty)}}^2 c^{(\infty)})\bigr)} & \text{ by \cref{cor:elim-lhs}}\\
+  = \bigl[x_\beta(b^{(\infty)}),
   \up{x_\beta(d^{(\infty)})}
-   {x_{\gamma - \beta}(c^{(\infty)})}\bigr]\\
-  %
-  &= \up{x_\beta(b^{(\infty)} + d^{(\infty)})}
+   {x_{\gamma - \beta}(c^{(\infty)})}\bigr] & \text{ by~\eqref{R2}, \cref{lem:elim-rhs-r4}}\\
+  = \up{x_\beta(b^{(\infty)} + d^{(\infty)})}
    {x_{\gamma - \beta}(c^{(\infty)})}\,
   \up{x_\beta(d^{(\infty)})}
-   {x_{\gamma - \beta}(-c^{(\infty)})} =\\
-  %
-  &= x_\gamma(N_{\beta, \gamma - \beta} b^{(\infty)} c^{(\infty)})\\
-  &\quad \widetilde x_\alpha(N_{\beta, \gamma - \beta} \widehat N_{\beta, \gamma}
-   (b^{(\infty)})^2 c^{(\infty)}
-   + N_{\beta, \gamma} N_{\beta, \gamma - \beta}
-   b^{(\infty)} c^{(\infty)} d^{(\infty)}).
+   {x_{\gamma - \beta}(-c^{(\infty)})} & \text{ by~\eqref{R1}} \\  
+  = x_{\gamma}(\varepsilon_2 b^{(\infty)}c^{(\infty)}) \widetilde{x}_{\alpha}(2\varepsilon_1{b^{(\infty)}}{d^{(\infty)}}) \widetilde{x}_\alpha(\varepsilon_1 {b^{(\infty)}}^2{c^{(\infty)}}) & \text{ by~\cref{lem:elim-rhs-r4}}
  \end{align*}
- It by \cref{RingGeneration} that
- \[[x_\beta(d^{(\infty)}), x_\gamma(c^{(\infty)})] 
- = \widetilde x_\alpha(N_{\beta, \gamma} d^{(\infty)} c^{(\infty)}).\qedhere\]
-\end{proof} 
+The relation~\eqref{eq:elim-rhs-r3-1} now follows from \cref{RingGeneration} and the identity $2\varepsilon_1 = \varepsilon_2 N_{\beta, \gamma}$. \end{proof} 
+
+\begin{proof}[Proof of~\cref{SingleRootElimination}]
+To verify the assertion of the theorem we need to construct a pro-group morphism \[G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi \setminus \{\pm\alpha\}, R)\] such that \(G_\alpha \circ x_\beta = x_\beta\) for all \(\beta \neq \pm \alpha\). By~\cref{SteinbergPresentation} it suffices to construct a pair of morphisms \(\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) which together with $\widetilde{x}_\beta$, $\beta\neq \pm\alpha$, satisfy the relations \eqref{R1}--\eqref{R4} missing from the presentation of $\St(\Phi\setminus\{\pm\alpha\}, R)$.
+\end{proof}
 
  
- Now clearly \(G_\alpha\) is the inverse of \(F_\alpha\).
+Now clearly \(G_\alpha\) is the inverse of \(F_\alpha\).
 
 
  \begin{theorem}\label{DoubleRootElimination}

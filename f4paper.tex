@@ -319,7 +319,7 @@ defined by the pre-morphism $x_\alpha^* = \mathrm{id}_S$, $x_\alpha^{(s)}(a^{(s)
 \begin{df}
  Let $R$ be a ring with a multiplicative system $S$.
  Consider the projective system of relative Chevalley groups (also called congruence subgroups) 
- $\GG(\Phi, R^{(s)} \rtimes R, R^{(s)}) = \Ker\left(\GG_{sc}(\Phi, R^{(s)} \rtimes R) \to \GG_{sc}(\Phi, R)\right)$ with the structure morphisms induced by the structure morphisms of \(R^{(\infty)}\). Define the {\it simply-connected Chevalley pro-group} $\GG^{(\infty)}(\Phi, R)$ as the formal projective limit of this system.
+ $\GG(\Phi, R^{(s)} \rtimes R, R^{(s)}) = \Ker\left(\GG_{sc}(\Phi, R^{(s)} \rtimes R) \to \GG_{sc}(\Phi, R)\right)$ with the structure morphisms induced by the structure morphisms of \(R^{(\infty)}\). Define the {\it simply-connected Chevalley pro-group} $\GG^{(\infty)}(\Phi, R)$ as the formal projective limit of this system. The definition may be formulated in terms of Hopf algebras. Let \(H\) be the Hopf \(R\)-algebra corresponding to \(\GG_{sc}(\Phi, R)\) and \(\varepsilon \colon H \to R\) be the augmentation. Then \(\GG^{(s)}(\Phi, R) \cong \Rng_R(\Ker(\varepsilon), R^{(s)})\), where \(\Rng_R\) is the category of commutative non-unital \(R\)-algebras. This isomorphism commutes with the structure morphisms of the pro-objects.
 \end{df}
 
 % If R is a domain, then this should be the projective limit of G(Phi, R, sR)...
@@ -618,10 +618,12 @@ Clearly, the set $\Pro(\Group)(R^{(\infty)})$ of endomorphisms of the additive p
 
 The pro-ring $R^{(\infty)}$ can be turned into an \(S^{-1} R\)-algebra in the following manner. For every fraction \(\frac rs \in S^{-1} R\) there is a well-defined pro-group endomorphism \(m_{\frac rs} \colon R^{(\infty)} \to R^{(\infty)}\) given by \(m_{\frac rs}^*(s') = ss'\) and \(m_{\frac rs}^{(s')}(a^{(ss')}) = (ra)^{(s')}\). It is easy to see that $m_{\frac{r}{s}}$ does not depend on the choice \(r\) and \(s\). Moreover, \(m\) is actually a homomorphism of rings \(S^{-1} R \to \Pro(\Group)(R^{(\infty)})\) and \(m_{\frac rs}(a^{(\infty)} b^{(\infty)}) = m_{\frac rs}(a^{(\infty)}) b^{(\infty)} = a^{(\infty)} m_{\frac rs}(b^{(\infty)})\). For shortness we write \(\frac rs a^{(\infty)}\) instead of \(m_{\frac rs}(a^{(\infty)})\). 
 
-Similarly, \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) acts on the Chevalley pro-group \(\GG^{(\infty)}(\Phi, R)\) by automorphisms.
+Similarly, \(\GG_{sc}(\Phi, S^{-1} R)\) acts on the Chevalley pro-group \(\GG^{(\infty)}(\Phi, R)\) by automorphisms. Indeed, let \(H\) be the Hopf \(R\)-algebra of \(\GG_{sc}(\Phi, R)\) with the augmentation \(\varepsilon\), the comultiplication \(\Delta\), and the antipode \(S\). Recall that \(H\) is of finite presentation as a commutative \(R\)-algebra. Take \(g \in \GG_{sc}(\Phi, S^{-1} R) \cong \mathbf{Ring}_R(H, S^{-1} R)\) and a sufficiently large \(s \in S\). For any \(h \in \GG^{(ss')}(\Phi, R) \cong \Rng_R(\Ker(\varepsilon), R^{(s)})\) let \(\up gh\) be the composition
+\[\Ker(\varepsilon) \xrightarrow{(\mathrm{id} \otimes \mathrm{id} \otimes S) \circ \Delta^2} H \otimes \Ker(\varepsilon) \otimes H \xrightarrow{g \otimes f \otimes g} S^{-1} R \otimes R^{(ss')} \otimes S^{-1} R \to R^{(s')}.\]
+Here the last map is only partially defined. But we may choose \(s\) such that the composition is defined on a finite generating set of \(\Ker(\varepsilon)\) and maps finitely many relations between them to \(0\). It is easy to see that we get a homomorphism \(\GG_{sc}(\Phi, S^{-1} R) \to \mathrm{Aut}(\GG^{(\infty)}(\Phi, R))\)
 
 \begin{df}\label{root-action}
- Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, and \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). For every root \(\beta \in \Phi\) and every \(g\) in the standard torus \(\Torus(\Phi, S^{-1} R)\) of \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) let
+ Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, and \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). For every root \(\beta \in \Phi\) and every \(g\) in the standard torus \(\Torus(\Phi, S^{-1} R)\) of \(\GG_{sc}(\Phi, S^{-1} R)\) let
  \[\up g{x_\beta(b^{(\infty)})} = x_\beta(\beta(g) b^{(\infty)}).\]
  For every linearly independent \(\alpha, \beta \in \Phi\) and \(u \in S^{-1} R\) let
  \begin{align*}
@@ -665,10 +667,10 @@ Similarly, \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) acts on the Chevalley pro-group
 \end{proof}
 
 \begin{theorem}\label{ChevalleyLocalAction}
- Let \(R\) be a ring, \(\mathfrak m \trianglelefteq R\) be a maximal ideal, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Consider a multiplicative subset \(S = R \setminus \mathfrak m\). Then the action from lemma \ref{SteinbergLocalAction} factors through an action of the group \(\GG_{\mathrm{sc}}(\Phi, R_{\mathfrak m})\) on \(\St^{(\infty)}(\Phi, R)\). The morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is \(\GG_{\mathrm{sc}}(\Phi, R_{\mathfrak m})\)-equivariant.
+ Let \(R\) be a ring, \(\mathfrak m \trianglelefteq R\) be a maximal ideal, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Consider a multiplicative subset \(S = R \setminus \mathfrak m\). Then the action from lemma \ref{SteinbergLocalAction} factors through an action of the group \(\GG_{sc}(\Phi, R_{\mathfrak m})\) on \(\St^{(\infty)}(\Phi, R)\). The morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is \(\GG_{sc}(\Phi, R_{\mathfrak m})\)-equivariant.
 \end{theorem}
 \begin{proof}
- For \(a \in R_{\mathfrak m}^*\) and \(\alpha \in \Phi\) let \(w_\alpha(a) = x_\alpha(a) x_{-\alpha}(-a^{-1}) x_\alpha(a)\) and \(h_\alpha(a) = w_\alpha(a) w_\alpha(1)^{-1}\). It is well-known that \(\GG_{\mathrm{sc}}(\Phi, R_{\mathfrak m})\) is the factor-group of \(\St(\Phi, R_{\mathfrak m}) \rtimes \Torus(\Phi, R_{\mathfrak m})\) by the relations
+ For \(a \in R_{\mathfrak m}^*\) and \(\alpha \in \Phi\) let \(w_\alpha(a) = x_\alpha(a) x_{-\alpha}(-a^{-1}) x_\alpha(a)\) and \(h_\alpha(a) = w_\alpha(a) w_\alpha(1)^{-1}\). It is well-known that \(\GG_{sc}(\Phi, R_{\mathfrak m})\) is the factor-group of \(\St(\Phi, R_{\mathfrak m}) \rtimes \Torus(\Phi, R_{\mathfrak m})\) by the relations
  \[h_\alpha(a) = \alpha^\vee(a)\]
  for all \(\alpha \in \Phi\) and \(a \in R_{\mathfrak m}^*\) (recall that \(R_{\mathfrak m}\) is a local ring). We only have to check that \(h_\alpha(a)\) and \(\alpha^\vee(a)\) acts in the same way on \(\St^{(\infty)}(\Phi, R)\). Indeed, if \(\beta \in \Phi\) is linearly independent with \(\alpha\), then
  \[\up{h_\alpha(a)}{x_\beta(b^{(\infty)})} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a) (b^{(\infty)})^j)\]

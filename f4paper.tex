@@ -272,11 +272,11 @@ The constants $N_{\alpha,\beta}$ and $N_{\alpha,\beta}^{2,1}$ appearing in the a
 First of all, notice that we excluded the case $\Phi=\mathsf{G}_2$ so the only possibilities for $N_{\alpha, \beta}$ appearing in the above relations are $\pm 1$ or $\pm 2$.
 Notice that $|N_{\alpha,\beta}| = 2$ only when $\alpha$ and $\beta$ are short but $\alpha+\beta$ is long, in which case we set $\widehat{N}_{\alpha, \beta} = \frac{1}{2} N_{\alpha, \beta}$.
 In the other cases $|N_{\alpha, \beta}| = 1$.
-Now, by definition, $N_{\alpha,\beta}^{2,1} = N_{\alpha,\beta} \cdot \widehat{N}_{\alpha, \alpha+\beta}$. 
+Now, by definition, $N_{\alpha,\beta}^{2,1} = N_{\alpha,\beta} \cdot \widehat{N}_{\alpha, \alpha+\beta}$.
+It is clear that $|N_{\alpha,\beta}^{2,1}|=1$.
 
-Several different methods of computing signs of the structure constants have been described in the literature, see e.\,g.~\cite{VP}. In any case, these constants must satisfy certain relations, which suffice for the purposes of the present article. 
-
-Recall from~\cite[\S~14]{VP}) that
+Many different methods of the choice of signs of the structure constants have been proposed in the literature, see e.\,g.~\cite{VP}. 
+Regardless of their concrete choice, however, the structure constants always must satisfy certain relations. First of all, recall from~\cite[\S~14]{VP}) that
 \begin{equation} \label{eq:sc-ids-sl} N_{\alpha, \beta} = -N_{\beta,\alpha} = - N_{-\alpha, -\beta} = \tfrac{|\alpha+\beta|^2}{|\alpha|^2} N_{\beta, -\alpha-\beta} = \tfrac{|\alpha+\beta|^2}{|\beta|^2} N_{-\alpha-\beta, \alpha}. \end{equation}
 These identities will be used in the sequel without explicit reference. 
 
@@ -295,7 +295,7 @@ Notice that the multiplicative identity of $R$ is actually never used in the def
  which allows one to use it in the situation when $R$ is an rng.
 %This also allows one to ``deform'' this definition and, by analogy with the homotopes of rngs introduced in~\cref{ring-homotope}, come to the notion of a ``homotope'' of the Steinberg group.
 \begin{df}\label{def:Steinberg-homotope}
- Let $R$ be an ring with and $S$ be a multiplicative subset of $R$. Also let $\Phi$ be a root system of rank $\geq 3$. Applying the Steinberg group functor $\St(\Phi, -)$ to the projective system of rngs $R^{(s)}$ (see~\cref{ring-homotope}) we obtain a projective system of groups, whose formal projective limit will be denoted by $\St^{(\infty)}(\Phi, R)$ and will be called the {\it Steinberg pro-group}.
+ Let $R$ be an ring and $S$ be a multiplicative subset of $R$. Also let $\Phi$ be a root system of rank $\geq 3$. Applying the Steinberg group functor $\St(\Phi, -)$ to the projective system of rngs $R^{(s)}$ (see~\cref{ring-homotope}) we obtain a projective system of groups, whose formal projective limit will be denoted by $\St^{(\infty)}(\Phi, R)$ and will be called the {\it Steinberg pro-group}.
  
 \begin{comment}
  is the group given by generators $x_\alpha^{(s)}(a)$, $a\in R$, $\alpha\in\Phi$ and the following list of relations: \begin{align}

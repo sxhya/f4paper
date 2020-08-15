@@ -292,11 +292,13 @@ This identity is an equivalent form of (N9) in~\cite[\S~14]{VP} (cf. also (H4) i
 Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the restriction of the canonical map $\St(\Phi, R)\to\GG(\Phi, R)$ to the subgroup \[\mathrm{U}(\Sigma, R) = \langle x_{\alpha}(a) \mid a\in R,\ \alpha\in \Sigma \rangle \leq \St(\Phi, R)\] is injective. Morever, for any chosen linear order on \(\Sigma\) the map $R^{\Sigma} \to \mathrm{U}(\Sigma, R)$ given by $(r_\alpha)_\alpha \mapsto \prod_\alpha x_\alpha(r_\alpha)$ is a bijection. \end{rem}
 
 Notice that the multiplicative identity of $R$ is actually never used in the definition of the Steinberg group, 
- which allows one to use it in the situation when $R$ is an rng
-This also allows one to ``deform'' this definition and, by analogy with the homotopes of rngs introduced in~\cref{ring-homotope}, come to the notion of a ``homotope'' of the Steinberg group.
+ which allows one to use it in the situation when $R$ is an rng.
+%This also allows one to ``deform'' this definition and, by analogy with the homotopes of rngs introduced in~\cref{ring-homotope}, come to the notion of a ``homotope'' of the Steinberg group.
 \begin{df}\label{def:Steinberg-homotope}
- Let $R$ be an rng with a fixed element $s \in R$ and, as before, $\Phi$ be a root system of rank $\geq 3$.
- The {\it $s$-homotope $\St^{(s)}(\Phi, R)$} of the Steinberg group, by definition, is the group given by generators $x_\alpha^{(s)}(a)$, $a\in R$, $\alpha\in\Phi$ and the following list of relations: \begin{align}
+ Let $R$ be an ring with and $S$ be a multiplicative subset of $R$. Also let $\Phi$ be a root system of rank $\geq 3$. Applying the Steinberg group functor $\St(\Phi, -)$ to the projective system of rngs $R^{(s)}$ (see~\cref{ring-homotope}) we obtain a projective system of groups, whose formal projective limit will be denoted by $\St^{(\infty)}(\Phi, R)$ and will be called the {\it Steinberg pro-group}.
+ 
+\begin{comment}
+ is the group given by generators $x_\alpha^{(s)}(a)$, $a\in R$, $\alpha\in\Phi$ and the following list of relations: \begin{align}
  x^{(s)}_\alpha(a) \cdot x^{(s)}_\alpha(b)    &= x^{(s)}_\alpha(a+b); \tag{S$1_s$} \label{S1} \\
  [x^{(s)}_\alpha(a),\ x^{(s)}_\beta(b)] &= 1, \tag{S$2_s$} \label{S2} \\ 
  \multispan2{\hfil if $\alpha + \beta \not\in\Phi \cup \{0\};$} \nonumber \\
@@ -306,20 +308,23 @@ This also allows one to ``deform'' this definition and, by analogy with the homo
  Now if $R$ is a ring with a multiplicative system $S$, then for every $s, s' \in S$ there is a group homomorphism $\St^{(ss')}(\Phi, R) \to \St^{(s)}(\Phi, R)$ given by the obvious map $x_\alpha^{(ss')}(a) \mapsto x_\alpha^{(s')}(sa)$.
  These homomorphisms together form a projective system in $\Group$, whose formal projective limit will be called the {\it Steinberg pro-group} and will be denoted by $\St^{(\infty)}(\Phi, R)$.
  By definition, $\St^{(\infty)}(\Phi, R)$ is an object of $\Pro(\Group)$. It can also be considered as a group object in $\Pro(\Set)$. 
+\end{comment}
 \end{df}
 
 \begin{rem} \label{rem:pro-Steinberg-comment}
-There is a group homomorphism $\St^{(s)}(\Phi, R) \to \St(\Phi, sR)$ given by $x_\alpha^{(s)}(a)\mapsto x_\alpha(sa)$, which is easily seen to be an isomorphism in the case when $R$ is an integral domain (cf.~\cref{rem:prorings-comment}). Similarly to pro-rngs, Steinberg pro-groups often do not have global elements.
+There is a group homomorphism $\St(\Phi, R^{(s)}) \to \St(\Phi, sR)$ given by $x_\alpha^{(s)}(a)\mapsto x_\alpha(sa)$. By~\cref{rem:prorings-comment} this homomorphism is isomorphism in the case when $R$ is an integral domain. Thus, similarly to pro-rngs, Steinberg pro-groups often do not have global elements.
 \end{rem}
  
 For every root $\alpha \in \Phi$ there is a ``root subgroup'' morphism in $\Pro(\Group)$
 \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R).\] 
-defined by the pre-morphism $x_\alpha^* = \mathrm{id}_S$, $x_\alpha^{(s)}(a^{(s)}) = x_\alpha^{(s)}(a)$.
+defined by the pre-morphism $x_\alpha^* = \mathrm{id}_S$, $x_\alpha^{(s)}(a^{(s)}) = x_\alpha(a^{(s)})$.
 
 \begin{df}
  Let $R$ be a ring with a multiplicative system $S$.
  Consider the projective system of relative Chevalley groups (also called congruence subgroups) 
- $\GG(\Phi, R^{(s)} \rtimes R, R^{(s)}) = \Ker\left(\GG_{sc}(\Phi, R^{(s)} \rtimes R) \to \GG_{sc}(\Phi, R)\right)$ with the structure morphisms induced by the structure morphisms of \(R^{(\infty)}\). Define the {\it simply-connected Chevalley pro-group} $\GG^{(\infty)}(\Phi, R)$ as the formal projective limit of this system. The definition may be formulated in terms of Hopf algebras. Let \(H\) be the Hopf \(R\)-algebra corresponding to \(\GG_{sc}(\Phi, R)\) and \(\varepsilon \colon H \to R\) be the augmentation. Then \(\GG^{(s)}(\Phi, R) \cong \Rng_R(\Ker(\varepsilon), R^{(s)})\), where \(\Rng_R\) is the category of commutative non-unital \(R\)-algebras. This isomorphism commutes with the structure morphisms of the pro-objects.
+ $\GG(\Phi, R^{(s)} \rtimes R, R^{(s)}) = \Ker\left(\GG_{sc}(\Phi, R^{(s)} \rtimes R) \to \GG_{sc}(\Phi, R)\right)$ with the structure morphisms induced by the structure morphisms of \(R^{(\infty)}\). Define the {\it simply-connected Chevalley pro-group} $\GG^{(\infty)}(\Phi, R)$ as the formal projective limit of this system. 
+ 
+ The definition may be formulated in terms of Hopf algebras. Let \(H\) be the Hopf \(\ZZ\)-algebra corresponding to \(\GG_{sc}(\Phi, -)\) and \(\varepsilon \colon H \to \ZZ\) be the augmentation map. Then \(\GG^{(s)}(\Phi, R) \cong \Rng(\Ker(\varepsilon), R^{(s)})\). This isomorphism commutes with the structure morphisms of the pro-objects.
 \end{df}
 
 % If R is a domain, then this should be the projective limit of G(Phi, R, sR)...
@@ -330,7 +335,7 @@ The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\i
 %It follows that all maps \(x_{ij}^{(s)} \colon R_{ij} \to \stlin(R)^{(s)}\) are injective.
 
 \begin{rem}
- To formulate the next lemma, we need to introduce a way of reinterpreting the usual Steinberg relations~\eqref{R1}--\eqref{R4} as certain relations between the morphisms $x_\alpha$ in the category $\Pro(\Set)$. We call these relations the {\it pro-analogues} of~\eqref{R1}--\eqref{R4}. To obtain these relations one has to add the upper index $(\infty)$ to the variables $a$, $b$ occuring in~\eqref{R1}--\eqref{R4} and then read the resulting expressions according to~\cref{conv:notation}. 
+ To formulate the next lemma, we need to introduce a way of reinterpreting the usual Steinberg relations~\eqref{R1}--\eqref{R4} as relations between the morphisms $x_\alpha$ in the category $\Pro(\Set)$. We call these relations the {\it pro-analogues} of~\eqref{R1}--\eqref{R4}. To obtain these relations one has to add the upper index $(\infty)$ to the variables $a$, $b$ occuring in~\eqref{R1}--\eqref{R4} and then read the resulting expressions according to~\cref{conv:notation}. 
  Thus, for example, the pro-analogue of~\eqref{R1} is the identity $x_\alpha(a^{(\infty)}) x_\alpha(b^{(\infty)}) = x_\alpha(a^{(\infty)} + b^{(\infty)})$, or in the usual notation $m (x_\alpha \times x_\alpha) = x_\alpha (+_{R^{(\infty)}})$. It is clear that this relation is automatically satisfied by $x_\alpha$ for every $\alpha\in \Phi$.
 \end{rem}
 
@@ -591,8 +596,7 @@ Set $\varepsilon_1 = N_{\beta,\gamma-\beta}^{2,1}$, $\varepsilon_2 = N_{\beta,\g
 The relation~\eqref{eq:elim-rhs-r3-1} now follows from \cref{RingGeneration} and the identity $2\varepsilon_1 = \varepsilon_2 N_{\beta, \gamma}$. \end{proof} 
 
 \begin{proof}[Proof of~\cref{SingleRootElimination}]
-To help distinguish between the root subgroup morphisms of $\St^{(\infty)}(\Phi, R)$ and $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$.
-For the sake of brevity let us rename the root subgroup morphisms $x_\beta$, $\beta\neq\pm\alpha$ of $\St(\Phi\setminus\{\pm\alpha\}, R^{(\infty)})$ to $\widetilde{x}_{\beta}$. For the morphisms $x_\beta$ of $\St^{(\infty)}(\Phi, R)$ we continue to use the usual notation. 
+To help distinguish between the root subgroup morphisms of $\St^{(\infty)}(\Phi, R)$ and $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ we rename the root subgroup morphisms $x_\beta$, $\beta\neq\pm\alpha$ of $\St(\Phi\setminus\{\pm\alpha\}, R^{(\infty)})$ to $\widetilde{x}_{\beta}$. For the morphisms $x_\beta$ of $\St^{(\infty)}(\Phi, R)$ we continue to use the usual notation. 
 
 By~\cref{SteinbergPresentation} the morphisms $\widetilde{x}_{\beta}$ give rise to a morphism $G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$. By definition, $G_\alpha x_\beta = \widetilde{x}_\beta$ for all $\beta$. On the other hand, it is clear that $F_\alpha \widetilde{x}_\beta = x_\beta$ for $\beta\neq \pm\alpha$. To see that $G_\alpha$ is inverse to $F_\alpha$ it remains to use the first part of~\cref{SteinbergPresentation} and~\cref{rem:xpma-presentation}.
 \end{proof}

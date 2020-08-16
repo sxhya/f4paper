@@ -49,6 +49,8 @@
 \newcommand{\op}{\mathrm{op}}
 \newcommand{\ZZ}{\mathbb{Z}}
 
+\newcommand{\otimeshat}{\mathbin{\widehat{\otimes}}}
+
 \newcommand{\up}[2]{{^{#1}\!{#2}}}
 
 \newcommand{\rA}{\mathsf{A}}
@@ -326,9 +328,11 @@ defined by the pre-morphism $x_\alpha^* = \mathrm{id}_S$, $x_\alpha^{(s)}(a^{(s)
 \end{df}
 
 \begin{rem}
- The above definition may be formulated in terms of Hopf algebras. Let \(H\) be the Hopf \(\ZZ\)-algebra corresponding to \(\GG_{sc}(\Phi, -)\), \(\varepsilon \colon H \to \ZZ\) be the counit, \(\Delta \colon H \to H \otimes H\) be the comultiplication, and \(S \colon H \to H\) be the antipode. Then there is a canonical isomorphism \(\GG^{(s)}(\Phi, R) \cong \Rng(\Ker(\varepsilon), R^{(s)})\). The inverse on this group is the pre-composition with \(S \colon \Ker(\varepsilon) \to \Ker(\varepsilon)\), the neutral element is the zero map \(0 \colon \Ker(\varepsilon) \to R^{(s)}\), and the group product of \(g, h \in \Rng(\Ker(\varepsilon), R^{(s)})\) is \(g \odot h + g + h\), where \(g \odot h\) is the composition
- \[\Ker(\varepsilon) \xrightarrow{\widetilde \Delta} \Ker(\varepsilon) \otimes \Ker(\varepsilon) \xrightarrow{g \otimes h} R^{(s)} \otimes R^{(s)} \to R^{(s)}\]
- and \(\widetilde \Delta \colon \Ker(\varepsilon) \to \Ker(\varepsilon) \otimes \Ker(\varepsilon), x \mapsto \Delta(x) - x \otimes 1 - 1 \otimes x\).
+ The above definition may be formulated in terms of Hopf algebras. Let \(H\) be the Hopf \(\ZZ\)-algebra corresponding to \(\GG_{sc}(\Phi, -)\), \(\varepsilon \colon H \to \ZZ\) be the counit, \(\Delta \colon H \to H \otimes H\) be the comultiplication, and \(S \colon H \to H\) be the antipode. %Then there is a canonical isomorphism \(\GG^{(s)}(\Phi, R) \cong \Rng(\Ker(\varepsilon), R^{(s)})\). The inverse on this group is the pre-composition with \(S \colon \Ker(\varepsilon) \to \Ker(\varepsilon)\), the neutral element is the zero map \(0 \colon \Ker(\varepsilon) \to R^{(s)}\), and the group product of \(g, h \in \Rng(\Ker(\varepsilon), R^{(s)})\) is \(g \odot h + g + h\), where \(g \odot h\) is the composition
+ %\[\Ker(\varepsilon) \xrightarrow{\widetilde \Delta} \Ker(\varepsilon) \otimes \Ker(\varepsilon) \xrightarrow{g \otimes h} R^{(s)} \otimes R^{(s)} \to R^{(s)}\]
+ %and \(\widetilde \Delta \colon \Ker(\varepsilon) \to \Ker(\varepsilon) \otimes \Ker(\varepsilon), x \mapsto \Delta(x) - x \otimes 1 - 1 \otimes x\).
+ Note that \(\Ker(\varepsilon)\) is a Hopf object in \(\Rng\) with respect to the monoidal operation \(R \otimeshat S = R \oplus S \oplus R \otimes S\) (i.e. the coproduct of rngs). Then there is a canonical isomorphism \(\GG^{(s)}(\Phi, R) \cong \Rng(\Ker(\varepsilon), R^{(s)})\). The inverse on this group is the pre-composition with \(S \colon \Ker(\varepsilon) \to \Ker(\varepsilon)\), the neutral element is the zero map \(0 \colon \Ker(\varepsilon) \to R^{(s)}\), and the group product of \(g, h \in \Rng(\Ker(\varepsilon), R^{(s)})\) is the convolution in \(\Rng\), i.e. the composition
+ \[\Ker(\varepsilon) \xrightarrow{\Delta} \Ker(\varepsilon) \otimeshat \Ker(\varepsilon) \xrightarrow{g \otimeshat h} R^{(s)} \otimeshat R^{(s)} \to R^{(s)}.\]
 \end{rem}
 
 % If R is a domain, then this should be the projective limit of G(Phi, R, sR)...

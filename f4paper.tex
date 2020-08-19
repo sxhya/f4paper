@@ -324,14 +324,19 @@ defined by the pre-morphism $x_\alpha^* = \mathrm{id}_S$, $x_\alpha^{(s)}(a^{(s)
 \begin{df}
  Let $R$ be a ring with a multiplicative system $S$.
  Consider the projective system of relative Chevalley groups (also called congruence subgroups) 
- $\GG^{(s)}(\Phi, R) = \GG(\Phi, R^{(s)} \rtimes R, R^{(s)}) = \Ker\left(\GG_{sc}(\Phi, R^{(s)} \rtimes R) \to \GG_{sc}(\Phi, R)\right)$ with the structure morphisms induced by the structure morphisms of \(R^{(\infty)}\). Define the {\it simply-connected Chevalley pro-group} $\GG^{(\infty)}(\Phi, R)$ as the formal projective limit of this system.
+ \[\GG^{(s)}(\Phi, R) = \GG(\Phi, R^{(s)} \rtimes \ZZ, R^{(s)}) = \Ker\left(\GG_{sc}(\Phi, R^{(s)} \rtimes \ZZ) \to \GG_{sc}(\Phi, \ZZ)\right)\] with the structure morphisms induced by the structure morphisms of \(R^{(\infty)}\). Define the {\it simply-connected Chevalley pro-group} $\GG^{(\infty)}(\Phi, R)$ as the formal projective limit of this system.
 \end{df}
 
 \begin{rem}
- The above definition may be formulated in terms of Hopf algebras. Let \(H\) be the Hopf \(\ZZ\)-algebra corresponding to \(\GG_{sc}(\Phi, -)\), \(\varepsilon \colon H \to \ZZ\) be the counit, \(\Delta \colon H \to H \otimes H\) be the comultiplication, and \(S \colon H \to H\) be the antipode. %Then there is a canonical isomorphism \(\GG^{(s)}(\Phi, R) \cong \Rng(\Ker(\varepsilon), R^{(s)})\). The inverse on this group is the pre-composition with \(S \colon \Ker(\varepsilon) \to \Ker(\varepsilon)\), the neutral element is the zero map \(0 \colon \Ker(\varepsilon) \to R^{(s)}\), and the group product of \(g, h \in \Rng(\Ker(\varepsilon), R^{(s)})\) is \(g \odot h + g + h\), where \(g \odot h\) is the composition
- %\[\Ker(\varepsilon) \xrightarrow{\widetilde \Delta} \Ker(\varepsilon) \otimes \Ker(\varepsilon) \xrightarrow{g \otimes h} R^{(s)} \otimes R^{(s)} \to R^{(s)}\]
- %and \(\widetilde \Delta \colon \Ker(\varepsilon) \to \Ker(\varepsilon) \otimes \Ker(\varepsilon), x \mapsto \Delta(x) - x \otimes 1 - 1 \otimes x\).
- Note that \(\Ker(\varepsilon)\) is a Hopf object in \(\Rng\) with respect to the monoidal operation \(R \otimeshat S = R \oplus S \oplus R \otimes S\) (i.e. the coproduct of rngs). Then there is a canonical isomorphism \(\GG^{(s)}(\Phi, R) \cong \Rng(\Ker(\varepsilon), R^{(s)})\). The inverse on this group is the pre-composition with \(S \colon \Ker(\varepsilon) \to \Ker(\varepsilon)\), the neutral element is the zero map \(0 \colon \Ker(\varepsilon) \to R^{(s)}\), and the group product of \(g, h \in \Rng(\Ker(\varepsilon), R^{(s)})\) is the convolution in \(\Rng\), i.e. the composition
+ The definition of the group $\GG^{(s)}(\Phi, R)$ can be reformulated in terms of Hopf algebras. Denote by \(H_\Phi\) be the Hopf \(\ZZ\)-algebra corresponding to the group scheme \(\GG_{sc}(\Phi, -)\).
+ 
+ Recall that the coproduct in the category $\Rng$ is given by \[R_1 \otimeshat R_2 = (R_1 \otimes_{\ZZ} R_2) \oplus R_1 \oplus R_2.\]
+ Thus, $\Rng$ has the structure of a symmetric monoidal category with zero ring as the unit object and $\otimeshat$ as the tensor product.
+ 
+ We claim that the augmentation ideal \(\Ker(\varepsilon)\) of $H_\Phi$ has the structure of a Hopf algebra object (also called Hopf monoid) in \(\Rng\). The coproduct $\Delta$ and the antipode $S$ are induced from the corresponding morphisms defining the structure of a Hopf algebra on $H_\Phi$. The counit $\varepsilon$ is the single homomorphism $\Ker(\varepsilon) \to 0$.
+ 
+ Now if $R$ is an arbitary ring and $s \in R$ then there is a canonical isomorphism \(\GG^{(s)}(\Phi, R) \cong \Rng(\Ker(\varepsilon), R^{(s)})\). The structure of a group on $\GG^{(s)}(\Phi, R)$ is then induced from the Hopf monoid structure on $\Ker(\varepsilon)$ by duality.
+ For instance, the neutral element in this group is the zero map \(0 \colon \Ker(\varepsilon) \to R^{(s)}\). The product of \(g, h \in \Rng(\Ker(\varepsilon), R^{(s)})\) is the composite map
  \[\Ker(\varepsilon) \xrightarrow{\Delta} \Ker(\varepsilon) \otimeshat \Ker(\varepsilon) \xrightarrow{g \otimeshat h} R^{(s)} \otimeshat R^{(s)} \to R^{(s)}.\]
 \end{rem}
 

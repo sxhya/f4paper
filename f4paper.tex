@@ -333,7 +333,7 @@ defined by the pre-morphism $x_\alpha^* = \mathrm{id}_S$, $x_\alpha^{(s)}(a^{(s)
  Recall that the coproduct in the category $\Rng$ is given by \[R_1 \otimeshat R_2 = (R_1 \otimes_{\ZZ} R_2) \oplus R_1 \oplus R_2.\]
  Thus, $\Rng$ has the structure of a symmetric monoidal category with zero ring as the unit object and $\otimeshat$ as the tensor product.
  
- We claim that the augmentation ideal \(\Ker(\varepsilon)\) of $H_\Phi$ has the structure of a Hopf algebra object (also called Hopf monoid) in \(\Rng\). The coproduct $\Delta$ and the antipode $S$ are induced from the corresponding morphisms defining the structure of a Hopf algebra on $H_\Phi$. The counit $\varepsilon$ is the single homomorphism $\Ker(\varepsilon) \to 0$.
+ We claim that the augmentation ideal \(\Ker(\varepsilon)\) of $H_\Phi$ has the structure of a Hopf algebra object (also called Hopf monoid) in \(\Rng\). The coproduct $\Delta$ and the antipode $S$ are induced from the corresponding morphisms defining the structure of a Hopf algebra on $H_\Phi$. The counit $\varepsilon$ is the unique homomorphism $\Ker(\varepsilon) \to 0$.
  
  Now if $R$ is an arbitary ring and $s \in R$ then there is a canonical isomorphism \(\GG^{(s)}(\Phi, R) \cong \Rng(\Ker(\varepsilon), R^{(s)})\). The structure of a group on $\GG^{(s)}(\Phi, R)$ is then induced from the Hopf monoid structure on $\Ker(\varepsilon)$ by duality.
  For instance, the neutral element in this group is the zero map \(0 \colon \Ker(\varepsilon) \to R^{(s)}\). The product of \(g, h \in \Rng(\Ker(\varepsilon), R^{(s)})\) is the composite map
@@ -642,40 +642,44 @@ $\Rng(\Ker(\varepsilon), R^{(f(s))}) \to \Rng(\Ker(\varepsilon), R^{(s)})$ for s
 \[\xymatrix{ \Ker(\varepsilon) \ar[r]^(0.4){\mathrm{Conj}_g} & S^{-1}R \otimes \Ker(\varepsilon) \ar[r]^{\mathrm{id}\otimes h} & S^{-1}R \otimes R^{(ss_0)} \ar[r] & S^{-1}R \otimes_R R^{(ss_0)}}\]
 lands in the $R$-submodule $A_{s_0} = \langle \frac{r}{s_0} \otimes r'^{(ss_0)}\mid r, r' \in R \rangle$ of $S^{-1}R \otimes_R R^{(ss_0)}$. It is easy to see that $A_{s_0}$ is, in fact, a subring of $S^{-1}R \otimes_R R^{(ss_0)}$. To obtain the required element $\up g h$ it remains to postcompose the above arrow with the homomorphism $A_{s_0} \to R^{(s)}$ defined on tensors via $\frac{r}{s_0} \otimes r'^{(ss_0)} \mapsto rr'^{(s)}$. It can be checked directly that the described construction produces the sought group action.
 
+Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1}R)$ on the Steinberg pro-group $\St^{(\infty)}(\Phi, R)$.
 \begin{df}\label{root-action}
- Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, and \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). For every root \(\beta \in \Phi\) and every \(g\) in the standard torus \(\Torus(\Phi, S^{-1} R)\) of \(\GG_{sc}(\Phi, S^{-1} R)\) let
- \[\up g{x_\beta(b^{(\infty)})} = x_\beta(\beta(g) b^{(\infty)}).\]
- For every linearly independent \(\alpha, \beta \in \Phi\) and \(u \in S^{-1} R\) let
+ Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, and \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_\ell\) and \(\rC_\ell\). 
+ %For every root \(\beta \in \Phi\) and every \(g\) in the standard torus \(\Torus(\Phi, S^{-1} R)\) of \(\GG_{sc}(\Phi, S^{-1} R)\) let  \[\up g{x_\beta(b^{(\infty)})} = x_\beta(\beta(g) b^{(\infty)}).\]
+ For every linearly independent \(\alpha, \beta \in \Phi\) and \(u \in S^{-1} R\) set
  \begin{align*}
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
- &= x_\beta(b^{(\infty)}), \\
- \multispan2{\hfil if $\alpha + \beta \notin \Phi$;} \\
+ &:= x_\beta(b^{(\infty)}), \\
+ \multispan2{\hfil if $\alpha + \beta \notin \Phi \cup \{0\}$;} \\
  %
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
- &= x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)
-  x_\beta(b^{(\infty)}), \\
+ &:= x_\beta(b^{(\infty)})
+ x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr), \\
  \multispan2{\hfill if $\alpha + \beta \in \Phi$ but $\alpha + 2\beta, 2\alpha + \beta \notin \Phi$;} \\
  %
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
- &= x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)
-  x_{2\alpha + \beta}\bigl(N_{\alpha, \beta} \widehat N_{\alpha, \alpha + \beta} u^2 b^{(\infty)}\bigr)
-  x_\beta(b^{(\infty)}), \\
+ &:= x_\beta(b^{(\infty)})
+  x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)
+  x_{2\alpha + \beta}\bigl(N^{2,1}_{\alpha, \beta} u^2 b^{(\infty)}\bigr), \\
  \multispan2{\hfill if $\alpha + \beta, 2\alpha + \beta \in \Phi$;} \\
  %
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
- &= x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)
-  x_{\alpha + 2\beta}\bigl(N_{\alpha, \beta} \widehat N_{\beta, \alpha + \beta} u (b^{(\infty)})^2\bigr)
-  x_\beta(b^{(\infty)}), \\
+ &:= x_\beta(b^{(\infty)})
+  x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)
+  x_{\alpha + 2\beta}\bigl(-N^{2,1}_{\beta, \alpha} u {b^{(\infty)}}^2\bigr), \\
  \multispan2{\hfill if $\alpha + \beta, \alpha + 2\beta \in \Phi$.}
  \end{align*} 
 \end{df}
 
 \begin{lemma}\label{SteinbergLocalAction}
- Let \(R\) be a ring with a multiplicative subset \(S \subseteq R\), \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Then the group \(\St(\Phi, S^{-1} R) \rtimes \Torus(\Phi, S^{-1} R)\) acts on the pro-group \(\St^{(\infty)}(\Phi, R)\) (by pro-group automorphisms) as in the definition \ref{root-action}, the morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is equivariant with respect to this action. This action also satisfies
+ Let \(R\) be a ring with a multiplicative subset \(S \subseteq R\), \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_\ell\) and \(\rC_\ell\). Then the group \(\St(\Phi, S^{-1} R)\) 
+ % \(\St(\Phi, S^{-1} R) \rtimes \Torus(\Phi, S^{-1} R)\) 
+ acts on the pro-group \(\St^{(\infty)}(\Phi, R)\) by pro-group automorphisms as in the definition \ref{root-action}. The morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is equivariant with respect to this action. This action also satisfies the identity
  \[\up{x_\alpha(u)}{x_\alpha(a^{(\infty)})} = x_\alpha(a^{(\infty)}).\]
 \end{lemma}
 \begin{proof}
- In is clear from the definitions that \(\Torus(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi, R)\). For every root \(\alpha \in \Phi\) the root subgroup \(x_\alpha(S^{-1} R) \leq \St(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi \setminus \{\alpha, -\alpha\}, R)\), hence on \(\St^{(\infty)}(\Phi, R)\) by theorem \ref{SingleRootElimination}. Moreover, the actions of \(g x_\alpha(u) g^{-1}\) and \(x_\alpha(\alpha(g) u)\) coincide for all \(g \in \Torus(\Phi, S^{-1} R)\), \(u \in R\). We still have to check that the actions of \(x_\alpha(u)\) and \(x_\beta(v)\) satisfy the Steinberg relation on \(x_\alpha(u)\) and \(x_\beta(v)\) if \(\alpha \neq -\beta\). But this is obvious if we consider the action on \(\St^{(\infty)}(\Phi \setminus \Phi_0, R)\) for \(\Phi_0 = \Phi \cap (\mathbb R\alpha + \mathbb R\beta)\), so the claim follows by theorem \ref{DoubleRootElimination}.
+ %In is clear from the definitions that \(\Torus(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi, R)\).
+ For every root \(\alpha \in \Phi\) the root subgroup \(x_\alpha(S^{-1} R) \leq \St(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi \setminus \{\alpha, -\alpha\}, R)\), hence on \(\St^{(\infty)}(\Phi, R)\) by theorem \ref{SingleRootElimination}. Moreover, the actions of \(g x_\alpha(u) g^{-1}\) and \(x_\alpha(\alpha(g) u)\) coincide for all \(g \in \Torus(\Phi, S^{-1} R)\), \(u \in R\). We still have to check that the actions of \(x_\alpha(u)\) and \(x_\beta(v)\) satisfy the Steinberg relation on \(x_\alpha(u)\) and \(x_\beta(v)\) if \(\alpha \neq -\beta\). But this is obvious if we consider the action on \(\St^{(\infty)}(\Phi \setminus \Phi_0, R)\) for \(\Phi_0 = \Phi \cap (\mathbb R\alpha + \mathbb R\beta)\), so the claim follows by theorem \ref{DoubleRootElimination}.
  % !!!!!!!!!!!!!!! Here Phi / {alpha, beta} may be replaced by a better notation. !!!!!!!!!!!!!!!
 
  Equivariance of the morphism \(\mathrm{st}\) may be checked directly by definitions. If \(\alpha = \beta + \gamma\) for roots \(\beta, \gamma \in \Phi\) with \(|\alpha| = |\beta| = |\gamma|\), then

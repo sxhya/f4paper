@@ -384,6 +384,17 @@ It follows from our assumptions that either $\Phi$ is simply-laced and $\Phi' = 
 
 Notice that the smallest root subsystem $\Phi_0$ containing $\alpha, \gamma, \beta_1, \gamma_1$ is irreducible and has rank $3$, which implies that it is either of type  $\rC_3$ (if $\Phi = \rF_4$ and $\beta$ is short) or $\rA_3$ (otherwise). \end{proof}
 
+For the rest of this section we assume that \(R\) is an arbitrary commutative ring, 
+ \(S \subseteq R\) is a multiplicative subset of $R$ and \(\Phi\) is a root system of rank \(\geq 3\) different from \(\rB_\ell\) and \(\rC_\ell\). 
+
+As an immediate application of the above lemma we prove the following generation result, which is a stronger version of the first claim of~\cref{SteinbergPresentation}.
+ \begin{lemma}\label{DoubleRootElimination}  
+  Let $\alpha, \beta \in \Phi$ be a pair of nonparallel roots. Denote by \(\Phi_0 \subseteq \Phi\) the rank \(2\) subsystem spanned by $\alpha, \beta \in \Phi$, i.e. \(\Phi_0 = \Phi \cap (\ZZ\alpha + \ZZ\beta)\). The collection of root subgroup morphisms $x_\gamma \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ for $\gamma \in \Phi\setminus \Phi_0$ generates $\St^{(\infty)}(\Phi, R)$ in the categorical sense. In other words, for any pro-group $G^{(\infty)}$ to show that morphisms $f_1, f_2 \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to show that $f_1x_\gamma = f_2x_\gamma$ for all $\gamma \in \Phi\setminus\Phi_0$.
+ \end{lemma}
+ \begin{proof}
+  If \(\Phi_0\) is not of type \(\rA_2\), then every root from \(\Phi_0\) may be decomposed into a sum of two roots of the same length, these roots do not lie in \(\Phi_0\) and we are done by~\cref{SteinbergPresentation}. If \(\Phi_0\) is of type \(\rA_2\), apply~\cref{ThreeRoots}.
+ \end{proof}
+
 \begin{df}
 Let $R$ be a ring, $S$ be a multiplicative subset of $R$ and $\alpha$ be a root of an irreducible root system $\Phi$ of rank $\geq 3$. 
 
@@ -618,34 +629,27 @@ By~\cref{SteinbergPresentation} the morphisms $\widetilde{x}_{\beta}$ give rise 
 \end{proof}
 
 
- \begin{theorem}\label{DoubleRootElimination}
-  Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_\ell\) and \(\rC_\ell\).
-  Let \(\Phi_0 \subseteq \Phi\) be a subsystem of rank \(2\) spanned by a pair of nonparallel roots $\alpha, \beta \in \Phi$ (i.e. \(\Phi_0 = \Phi \cap (\mathbb R\alpha + \mathbb R\beta)\)). Then the collection of root subgroup morphisms $x_\gamma \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ for $\gamma \in \Phi\setminus \Phi_0$ generate $\St^{(\infty)}(\Phi, R)$ in the categorical sense, i.\,e. to show that a pair of morphisms $f_1, f_2 \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to show that $f_1x_\gamma = f_2x_\gamma$ for all $\gamma \in \Phi\setminus\Phi_0$.
- \end{theorem}
- \begin{proof}
-  If \(\Phi_0\) is not of type \(\rA_2\), then every root from \(\Phi_0\) may be decomposed into a sum of two roots of the same length, these roots do not lie in \(\Phi_0\) and we are done by~\cref{SteinbergPresentation}. If \(\Phi_0\) is of type \(\rA_2\), apply~\cref{ThreeRoots}.
- \end{proof}
-
-
 \section{The action of localized groups on pro-groups} \label{sec:local-action}
 \subsection{The case of Chevalley groups}
-Our first goal is to show that \(\GG_{sc}(\Phi, S^{-1} R)\) can be made to act on the Chevalley pro-group \(\GG^{(\infty)}(\Phi, R)\) by conjugation. Indeed, denote by \(H_\Phi\) the Hopf \(\ZZ\)-algebra of \(\GG_{sc}(\Phi, -)\) with the structure of a Hopf algebra given by the triple $(\Delta, S, \varepsilon)$. Recall that \(H_\Phi\) is a finitely presented commutative \(\ZZ\)-algebra, therefore $\Ker(\varepsilon)$ is at least a finitely generated rng. Consider the ``co-conjugation'' map (written down in Sweedler notation)
-\[\mathrm{Conj} \colon \Ker(\varepsilon) \to H_\Phi \otimes \Ker(\varepsilon),\ h \mapsto \sum h_{(1)} S(h_{(3)}) \otimes h_{(2)}.\]
+Our first goal is to show that \(\GG_{sc}(\Phi, S^{-1} R)\) can be made to act on the Chevalley pro-group \(\GG^{(\infty)}(\Phi, R)\) by conjugation. Indeed, denote by \(H_\Phi\) the Hopf \(\ZZ\)-algebra of \(\GG_{sc}(\Phi, -)\) with the structure of a Hopf algebra given by the triple $(\Delta, S, \varepsilon)$. Recall that \(H_\Phi\) is a finitely presented commutative \(\ZZ\)-algebra, therefore $\Ker(\varepsilon)$ is at least a finitely generated rng. Consider the ``coconjugation'' homomorphism (written down in Sweedler notation)
+\[\mathrm{Coconj} \colon \Ker(\varepsilon) \to H_\Phi \otimes \Ker(\varepsilon),\ h \mapsto \sum h_{(1)} S(h_{(3)}) \otimes h_{(2)}.\]
 Now let $g$ be an element of $\mathbf{Ring}(H_\Phi, S^{-1}R) \cong \GG_{sc}(\Phi, S^{-1} R)\).
-Now consider the morphism $\mathrm{Conj}_g$ of ``co-conjugation with $g$'', which is defined as the composite of the following two rng homomorphisms:
-\[\xymatrix{\Ker(\varepsilon) \ar[r]^(.4){\mathrm{Conj}} & H_\Phi \otimes \Ker(\varepsilon) \ar[r]^(0.45){g\otimes\mathrm{id}} & S^{-1}R \otimes \Ker(\varepsilon).}\]
-Since $\Ker(\varepsilon)$ is finitely generated, there exists $s_0 \in S$ such that the image of every generator $x_i$ of $\Ker(\varepsilon)$ under $\mathrm{Conj}_g$ can be written as $\sum_j \frac{r_j}{s_0} \otimes x_{ij}$.
+Now consider the homomorphism $\mathrm{Coconj}_g$ of ``coconjugation by $g$'', which is defined as the composite of the following two rng homomorphisms:
+\[\xymatrix{\Ker(\varepsilon) \ar[r]^(.4){\mathrm{Coconj}} & H_\Phi \otimes \Ker(\varepsilon) \ar[r]^(0.45){g\otimes\mathrm{id}} & S^{-1}R \otimes \Ker(\varepsilon).}\]
+Since $\Ker(\varepsilon)$ is finitely generated, there exists $s_0 \in S$ such that the image of every generator $x_i$ of $\Ker(\varepsilon)$ under $\mathrm{Coconj}_g$ can be written as $\sum_j \frac{r_j}{s_0} \otimes x_{ij}$.
 
 Our goal is to construct the automorphism $\GG^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)$ of ``conjugation by $g$''. By definition, this amounts to constructing a collection of homomorphisms
 $\Rng(\Ker(\varepsilon), R^{(f(s))}) \to \Rng(\Ker(\varepsilon), R^{(s)})$ for some function $f \colon S \to S$. Set $f(s) = ss_0$ and let $h$ be an element of $\Rng(\Ker(\varepsilon), R^{(ss_0)})$. It is clear that the composite homomorphism
-\[\xymatrix{ \Ker(\varepsilon) \ar[r]^(0.4){\mathrm{Conj}_g} & S^{-1}R \otimes \Ker(\varepsilon) \ar[r]^{\mathrm{id}\otimes h} & S^{-1}R \otimes R^{(ss_0)} \ar[r] & S^{-1}R \otimes_R R^{(ss_0)}}\]
+\[\xymatrix{ \Ker(\varepsilon) \ar[r]^(0.4){\mathrm{Coconj}_g} & S^{-1}R \otimes \Ker(\varepsilon) \ar[r]^{\mathrm{id}\otimes h} & S^{-1}R \otimes R^{(ss_0)} \ar[r] & S^{-1}R \otimes_R R^{(ss_0)}}\]
 lands in the $R$-submodule $A_{s_0} = \langle \frac{r}{s_0} \otimes r'^{(ss_0)}\mid r, r' \in R \rangle$ of $S^{-1}R \otimes_R R^{(ss_0)}$. It is easy to see that $A_{s_0}$ is, in fact, a subring of $S^{-1}R \otimes_R R^{(ss_0)}$. To obtain the required element $\up g h$ it remains to postcompose the above arrow with the homomorphism $A_{s_0} \to R^{(s)}$ defined on tensors via $\frac{r}{s_0} \otimes r'^{(ss_0)} \mapsto rr'^{(s)}$. It can be checked directly that the described construction produces the sought group action.
 
 \subsection{The case of Steinberg groups}
 Let \(R\) be a ring and \(S \subseteq R\) be a multiplicative subset.
 Clearly, the set $\Pro(\Group)(R^{(\infty)})$ of endomorphisms of the additive pro-group of the pro-rng $R^{(\infty)}$ can be endowed with the structure of an associative ring. The addition is given by  $(f, g) \mapsto (+_{R^{(\infty)}}) (f\times g) \Delta$, while the multiplication is the usual composition of endomorphisms.
 
-The pro-ring $R^{(\infty)}$ can be turned into an \(S^{-1} R\)-algebra in the following manner. For every class of fractions \([\frac rs] \in S^{-1} R\) there is a well-defined pro-group endomorphism \(m_{[\frac rs]} \colon R^{(\infty)} \to R^{(\infty)}\) given by \(m_{[\frac rs]}^*(s') = ss'\) and \(m_{[\frac rs]}^{(s')}(a^{(ss')}) = (ra)^{(s')}\). It is easy to see that $m_{[\frac{r}{s}]}$ does not depend on the choice of the representative \(\tfrac r s\). Moreover, it is easy to see that \(m\) is actually a homomorphism of rings \(S^{-1} R \to \Pro(\Group)(R^{(\infty)})\) and that \[m_{[\frac rs]}(a^{(\infty)} b^{(\infty)}) = m_{[\frac rs]}(a^{(\infty)}) b^{(\infty)} = a^{(\infty)} m_{[\frac rs]}(b^{(\infty)}).\] For shortness we write \(\frac rs a^{(\infty)}\) instead of \(m_{[\frac rs]}(a^{(\infty)})\). 
+The pro-ring $R^{(\infty)}$ can be turned into an \(S^{-1} R\)-algebra in the following manner. For every class of fractions \([\frac rs] \in S^{-1} R\) there is a well-defined pro-group endomorphism \(m_{[\frac rs]} \colon R^{(\infty)} \to R^{(\infty)}\) given by \(m_{[\frac rs]}^*(s') = ss'\) and \(m_{[\frac rs]}^{(s')}(a^{(ss')}) = (ra)^{(s')}\). It is easy to see that $m_{[\frac{r}{s}]}$ does not depend on the choice of the representative \(\tfrac r s\). Moreover, it is easy to see that \(m\) is actually a homomorphism of rings \(S^{-1} R \to \Pro(\Group)(R^{(\infty)})\) and that 
+\begin{equation} \label{eq:m-mult} m_{[\frac rs]}(a^{(\infty)} b^{(\infty)}) = m_{[\frac rs]}(a^{(\infty)}) b^{(\infty)} = a^{(\infty)} m_{[\frac rs]}(b^{(\infty)}).\end{equation}
+For shortness we write \(\frac rs a^{(\infty)}\) instead of \(m_{[\frac rs]}(a^{(\infty)})\). 
 
 Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1}R)$ on the Steinberg pro-group $\St^{(\infty)}(\Phi, R)$.
 \begin{df}\label{root-action}
@@ -695,7 +699,6 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  It is easy to see that the mapping $u \mapsto \up{x_\alpha(u)}(-)$, in fact, specifies a group homomorphism $S^{-1}R \to \Aut(\St^{(\infty)}(\Phi, R))$.
  %Moreover, the actions of \(g x_\alpha(u) g^{-1}\) and \(x_\alpha(\alpha(g) u)\) coincide for all \(g \in \Torus(\Phi, S^{-1} R)\), \(u \in R\).
  We still have to check that the actions of \(x_\alpha(u)\) and \(x_\beta(v)\) satisfy the Steinberg relation on \(x_\alpha(u)\) and \(x_\beta(v)\) if \(\alpha \neq -\beta\). But this is obvious if we consider the action on \(\St^{(\infty)}(\Phi \setminus \Phi_0, R)\) for \(\Phi_0 = \Phi \cap (\mathbb R\alpha + \mathbb R\beta)\), so the claim follows by theorem \ref{DoubleRootElimination}.
- % !!!!!!!!!!!!!!! Here Phi / {alpha, beta} may be replaced by a better notation. !!!!!!!!!!!!!!!
 
  Equivariance of the morphism \(\mathrm{st}\) may be checked directly by definitions. If \(\alpha = \beta + \gamma\) for roots \(\beta, \gamma \in \Phi\) with \(|\alpha| = |\beta| = |\gamma|\), then
  \begin{align*}

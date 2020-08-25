@@ -37,6 +37,7 @@
 \DeclareMathOperator\St{St}
 \DeclareMathOperator\Ker{Ker}
 \DeclareMathOperator\GG{G}
+\DeclareMathOperator\E{E}
 \DeclareMathOperator\Torus{T}
 \DeclareMathOperator{\Pro}{Pro}
 \DeclareMathOperator\Aut{Aut}
@@ -244,7 +245,7 @@ Consider the map \(f' \colon R^{(s^2)} \to G\) given by
 it is a homomorphism by the first and the third identities.
 From the last two identities we conclude that for all \(a, b \in R\) one has
 \begin{align*}
-f'\bigl(a^{(s^2)} b^{(s^2)})
+f'\bigl(a^{(s^2)} b^{(s^2)}\bigr)
 &= g' \bigl( 1^{(s)}, (s^2 ab)^{(s)} \bigr) =\\
 &= g' \bigl( (sa)^{(s)}, (sb)^{(s)} \bigr) =\\
 &= g' \bigl(a^{(s^2)}, b^{(s^2)}\bigr).
@@ -711,16 +712,23 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
 \end{proof}
 
 \begin{theorem}\label{ChevalleyLocalAction}
- Let \(R\) be a ring, \(\mathfrak m \trianglelefteq R\) be a maximal ideal, \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_l\) and \(\rC_l\). Consider a multiplicative subset \(S = R \setminus \mathfrak m\). Then the action from lemma \ref{SteinbergLocalAction} factors through an action of the group \(\GG_{sc}(\Phi, R_{\mathfrak m})\) on \(\St^{(\infty)}(\Phi, R)\). The morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is \(\GG_{sc}(\Phi, R_{\mathfrak m})\)-equivariant.
+ Let \(R\) be a ring, \(M \trianglelefteq R\) be a maximal ideal and \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_\ell\) and \(\rC_\ell\). Set \(S = R \setminus M\). Then the action of $\St(\Phi, R_M)$ defined in~\cref{SteinbergLocalAction} gives rise to an action of the group \(\GG_{sc}(\Phi, R_M)\) on \(\St^{(\infty)}(\Phi, R)\). The morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is \(\GG_{sc}(\Phi, R_M)\)-equivariant.
 \end{theorem}
 \begin{proof}
- For \(a \in R_{\mathfrak m}^*\) and \(\alpha \in \Phi\) let \(w_\alpha(a) = x_\alpha(a) x_{-\alpha}(-a^{-1}) x_\alpha(a)\) and \(h_\alpha(a) = w_\alpha(a) w_\alpha(1)^{-1}\). It is well-known that \(\GG_{sc}(\Phi, R_{\mathfrak m})\) is the factor-group of \(\St(\Phi, R_{\mathfrak m}) \rtimes \Torus(\Phi, R_{\mathfrak m})\) by the relations
- \[h_\alpha(a) = \alpha^\vee(a)\]
- for all \(\alpha \in \Phi\) and \(a \in R_{\mathfrak m}^*\) (recall that \(R_{\mathfrak m}\) is a local ring). We only have to check that \(h_\alpha(a)\) and \(\alpha^\vee(a)\) acts in the same way on \(\St^{(\infty)}(\Phi, R)\). Indeed, if \(\beta \in \Phi\) is linearly independent with \(\alpha\), then
- \[\up{h_\alpha(a)}{x_\beta(b^{(\infty)})} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a) (b^{(\infty)})^j)\]
- for some Laurent polynomials \(P_{i, j}(a) \in \mathbb Z[a, a^{-1}]\) depending only on \(\alpha\) and \(\beta\). But then in the Steinberg group \(\St(\Phi, \mathbb Z[a, a^{-1}])\) we have the identity
- \[\up{h_\alpha(a)}{x_\beta(1)} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a)).\]
- From \cref{rem:uni-rad} we have \(P_{i, j}(a) = 0\) with the only exception \(P_{0, 1}(a) = a^{(\beta, \alpha)}\).
+ Recall that for \(a, b \in R_M^\times\) and \(\alpha \in \Phi\) one can define the following elements of $\St(\Phi, R_M)$: 
+  \begin{align*} w_\alpha(a) & =  x_\alpha(a) \cdot x_{-\alpha}(-a^{-1}) \cdot x_\alpha(a), \\
+                 h_\alpha(a) & =  w_\alpha(a) \cdot w_\alpha(1)^{-1}, \\
+                 \{ a,\-b \}_\alpha & = h_\alpha(ab) \cdot h_\alpha^{-1}(a) \cdot h_\alpha^{-1}(b). \end{align*}
+ Since $R_M$ is local, the group $\GG_{sc}(\Phi, R_M)$ coincides with its elementary subgroup $\E(\Phi, R)$.
+ Consquently, by~\cite[Theorem~2.13]{Ste73} the group \(\GG_{sc}(\Phi, R_M)\) is the quotient of \(\St(\Phi, R_M)\) by the relations $\{a,\-b\}_\alpha = 1$ for \(a, b \in R_M^\times\) and some fixed long root $\alpha\in\Phi$. Thus, it remains to check that the Steinberg symbols $\{a,\-b\}_\alpha$ act trivially on \(\St^{(\infty)}(\Phi, R)\), which, in turn, follows from the relations
+ \begin{equation}\label{eq:h-conj} \up{h_\alpha(a)}x_\beta(b^{(\infty)}) = x_\beta(a^{\langle \beta, \alpha \rangle}b^{(\infty)}),\ \beta\neq\pm\alpha. \end{equation}
+ 
+ Now let \(\beta \in \Phi\) be a root linearly independent with \(\alpha\).
+ It is clear that
+ \[\up{h_\alpha(a)}{x_\beta(b^{(\infty)})} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a) \cdot {b^{(\infty)}}^j)\]
+ for some Laurent polynomials \(P_{i, j}(a) \in \mathbb Z[a, a^{-1}]\) depending only on \(\alpha\) and \(\beta\). Since in the Steinberg group \(\St(\Phi, \mathbb Z[a, a^{-1}])\) we have a similar identity
+ \[\up{h_\alpha(a)}{x_\beta(1)} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a)) = x_{\beta}(a^{\langle \beta,\-\alpha \rangle}),\]
+ we conclude by~\cref{rem:uni-rad} that \(P_{i, j}(a) = 0\) with the sole exception of \(P_{0, 1}(a) = a^{(\beta, \alpha)}\), which completes the proof of~\eqref{eq:h-conj}.
 \end{proof}
 
 \section{Steinberg crossed module}

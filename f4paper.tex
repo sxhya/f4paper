@@ -734,7 +734,12 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
 \section{Steinberg crossed module}
 In this section we prove our main result, namely that Steinberg group \(\St(\Phi, R)\) is a crossed module over \(\GG(\Phi, R)\). For the rest of this section $R$ is an arbitrary commutative ring and $M$ is a maximal ideal of $R$.
 As before, \(\Phi\) is a root system of rank \(\geq 3\) different from \(\rB_\ell\) and \(\rC_\ell\).
-We also set  $S = R \setminus M$ and denote by \[\pi_R \colon R^{(\infty)} \to R,\ \pi_{\St} \colon \St^{(\infty)}(\Phi, R) \to \St(\Phi, R)\text{ and } \pi_{\GG} \colon \GG^{(\infty)}(\Phi, R) \to \GG(\Phi, R).\] the canonical pro-group morphisms.
+
+Let $S = R\setminus M$ be the multiplicative system associated to a maximal ideal $M \trianglelefteq R$.
+Notice that by~\cref{ChevalleyLocalAction} the group $\GG_{sc}(\Phi, R)$ acts on both $\St^{(\infty)}(\Phi, R)$ and $\GG^{(\infty)}(\Phi, R)$ by conjugation and this action is preserved by the morphism $\mathrm{st}$.
+We denote by \[\pi_R \colon R^{(\infty)} \to R,\ \pi_{\St} \colon \St^{(\infty)}(\Phi, R) \to \St(\Phi, R)\text{ and } \pi_{\GG} \colon \GG^{(\infty)}(\Phi, R) \to \GG(\Phi, R).\] the canonical pro-group morphisms. Notice that the action of $h\in \GG_{sc}(\Phi, R)$ is preserved by $\pi_{\GG}$, i.\,e. $\up{h}\pi_{\GG}(g^{(\infty)}) = \pi_{\GG}(\up{h} {g^{(\infty)}})$.
+Similarly, the conjugation action of $h\in \St(\Phi, R)$ on $\St^{(\infty)}(\Phi, R)$ is preserved by $\pi_{\St}$, i.\,e. $\up{h}\pi_{\St}(g^{(\infty)}) = \pi_{\St}(\up{h}{g^{(\infty)}})$.
+Notice also that $\pi_R x_\alpha = x_\alpha \pi_{\St}$ and $\pi_{\GG} \mathrm{st} = \mathrm{st}\pi_{\St}$.
 
 \begin{lemma}\label{CentralityK2}
  The subgroup \(\mathrm K_2(\Phi, R) = \Ker(\mathrm{st} \colon \St(\Phi, R) \to \GG(\Phi, R))\) is contained in the center of \(\St(\Phi, R)\).
@@ -743,7 +748,8 @@ We also set  $S = R \setminus M$ and denote by \[\pi_R \colon R^{(\infty)} \to R
  Let $g$ be an element of $\mathrm K_2(\Phi, R)$ and $\alpha \in \Phi$ be a root. Consider the ideal
  \[I = \{a \in R \mid \up g {x_\alpha(ra)} = x_\alpha(ra) \text{ for all } r \in R\}.\]
  We need to show that \(I = R\). Let $M \trianglelefteq R$ be a maximal ideal.
- By~\cref{ChevalleyLocalAction}, the element \(g\) acts trivially on the pro-group \(\St^{(\infty)}(\Phi, R)\). Consequently, we obtain that 
+ Since the element \(g\) acts trivially on the pro-group \(\St^{(\infty)}(\Phi, R)\) associated with $S = R \setminus M$,
+ we obtain the following equality of morphisms $R^{(\infty)} \to \St(\Phi, R)$:
  \begin{multline*}
   \up g {x_\alpha(\pi_R(a^{(\infty)}))}
   = \up g{\pi_{\St}(x_\alpha(a^{(\infty)}))}
@@ -760,9 +766,11 @@ We also set  $S = R \setminus M$ and denote by \[\pi_R \colon R^{(\infty)} \to R
  The subgroup \(\mathrm E(\Phi, R) = \mathrm{Im}(\mathrm{st} \colon \St(\Phi, R) \to \GG_{sc}(\Phi, R))\) is normal in \(\GG_{sc}(\Phi, R)\).
 \end{lemma}
 \begin{proof}
- Let $g$ be an element of $\GG(\Phi, R)\) and \(\alpha \in \Phi\) be a root. Consider the ideal
- \[I = \{a \in R \mid \up g{t_\alpha(Ra)} \in \mathrm E(\Phi, R)\}.\]
- Again, we need to show that \(I = R\). Let \(M \trianglelefteq R\) be a maximal ideal. By~\cref{ChevalleyLocalAction} \(g\) acts on the pro-group \(\St^{(\infty)}(\Phi, R)\) in such a way that \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is equivariant. Consequently, we obtain that
+ Let $g$ be an element of $\GG_{sc}(\Phi, R)\) and \(\alpha \in \Phi\) be a root. Consider the ideal
+ \[I = \{a \in R \mid \up g{t_\alpha(ra)} \in \mathrm E(\Phi, R)\text{ for all }r\in R\}.\]
+ Again, we need to show that \(I = R\). Let \(M \trianglelefteq R\) be a maximal ideal. 
+ Since \(g\) acts on the pro-groups \(\St^{(\infty)}(\Phi, R)\) and $\GG^{(\infty)}(\Phi, R)$ associated with the subset $S = R \setminus M$ and 
+ this action is preserved by $\mathrm{st}$, we obtain the following equality of morphisms $R^{(\infty)} \to \GG_{sc}(\Phi, R)$:
  \[
   \up g{t_\alpha(\pi_R(a^{(\infty)}))}
   = \up g{\pi_{\GG}(\mathrm{st}(x_\alpha(a^{(\infty)})))}
@@ -776,32 +784,38 @@ We also set  $S = R \setminus M$ and denote by \[\pi_R \colon R^{(\infty)} \to R
  The homomorphism \(\mathrm{st} \colon \St(\Phi, R) \to \GG_{sc}(\Phi, R)\) can be turned into a crossed module in a unique way.
 \end{theorem}
 \begin{proof}
- We already know from~\cref{CentralityK2} that the Steinberg group \(\St(\Phi, R)\) is a central extension of the elementary group \(\mathrm E(\Phi, R)\). For any \(g \in \GG_{sc}(\Phi, R)\) it remains to construct an automorphism \(\up g{(-)} \colon \St(\Phi, R) \to \St(\Phi, R)\) such that \(\mathrm{st}\) is equivariant. Such an endomorphism is necessarily unique and multiplicative in \(g\).
+ %We already know from~\cref{CentralityK2} that the Steinberg group \(\St(\Phi, R)\) is a central extension of the elementary group \(\mathrm E(\Phi, R)\).
+ Let $g$ be an element of $\GG_{sc}(\Phi, R)$. Our first goal is to construct an automorphism \(\up g{(-)} \colon \St(\Phi, R) \to \St(\Phi, R)\).% such that \(\mathrm{st}\) is equivariant. 
+ %Such an endomorphism is necessarily unique and multiplicative in \(g\).
  
- Let $g$ be an element of $\GG_{sc}(\Phi, R)\) and $\alpha$ be a root of $\Phi$. Since \(\mathrm E(\Phi, R) \trianglelefteq \GG_{sc}(\Phi, R)\) by~\cref{Normality}, the set
- $Y_\alpha(a) = \mathrm{st}^{-1}\bigl(\up g{t_\alpha(a)}\bigr)$
- is nonempty for all \(a \in R\). Moreover, it is a coset of \(\mathrm K_2(\Phi, R)\) and \(Y_\alpha(a + a') = Y_\alpha(a) Y_\alpha(a')\).
+ Notice that by~\cref{CentralityK2} we already know that $\mathrm K_2(\Phi, R)$ is a central subgroup of $\St(\Phi, R)$.
+ Let $\alpha$ be a root of $\Phi$. Since \(\mathrm E(\Phi, R) \trianglelefteq \GG_{sc}(\Phi, R)\) by~\cref{Normality}, the set
+ $Y_\alpha(a) = \mathrm{st}^{-1}\bigl(g{t_\alpha(a)} g^{-1}\bigr)$ is nonempty for all \(a \in R\). 
+ Moreover, $Y_\alpha(a)$ is a coset of the subgroup \(\mathrm K_2(\Phi, R)\) and \(Y_\alpha(a + a') = Y_\alpha(a) Y_\alpha(a')\).
 
- First of all, let us show that \([Y_\alpha(a), Y_\beta(b)] = 1\) in the case when \(\alpha + \beta \notin \Phi \cup \{0\}\). For any such \(\alpha, \beta\) and any \(a \in R\) let $h$ be an element of $Y_\alpha(a)\). Consider the ideal
- \[I = \{b \in R \mid [h, Y_\beta(bR)] = 1\}.\]
- If \(M \trianglelefteq R\) is a maximal ideal, then
- \[[h, \pi_{\St}(\up g {x_\beta(b^{(\infty)})})] = \pi_{\St}(\up{g t_\alpha(a)} {x_\beta(-b^{(\infty)})}) \pi_{\St}(\up g {x_\beta(-b^{(\infty)})}) = 1.\]
- Thus, \(I \not \subseteq M\) and consequently \(I = R\) and we are done.
+ First of all, let us show that \([Y_\alpha(a), Y_\beta(b)] = 1\) provided \(\alpha + \beta \notin \Phi \cup \{0\}\). 
+ Let \(\alpha, \beta\) be roots as above, $a$ be an element of $R$ and $h$ be an element of $Y_\alpha(a)\).
+ Set $I = \{b \in R \mid [h, Y_\beta(bR)] = 1\}$ and let \(M \trianglelefteq R\) be a maximal ideal. Since
+ \[[h, \pi_{\St}(\up g {x_\beta(b^{(\infty)})})] = \pi_{\St}(\up{g t_\alpha(a)} {x_\beta(-b^{(\infty)})}) \pi_{\St}(\up g {x_\beta(-b^{(\infty)})}) = 1,\]
+ we obtain \(I \not \subseteq M\) and, consequently, that \(I = R\), which proves the assertion.
 
- Now let $\alpha$ be a root of $\Phi$. There exist roots \(\beta, \gamma \in \Phi\) of the same length such that \(\alpha = \beta + \gamma\). Denote by \(y_\alpha(a)\) the only element of \([Y_\beta(N_{\beta, \gamma}^{-1}), Y_\gamma(a)]\). Clearly, \(y_\alpha \colon R \to \St(\Phi, R)\) is a homomorphism. For any maximal ideal \(M \trianglelefteq R\) we have
- \begin{align*}
-  y_\alpha(\pi_R(a^{(\infty)}))
-  &= [Y_\beta(N_{\beta, \gamma}^{-1}), \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})] =\\
-  &= \pi_{\St}\bigl(\up{g t_\beta(N_{\beta, \gamma}^{-1})}{x_\gamma(a^{(\infty)})}\, \up g{x_\gamma(-a^{(\infty)})}\bigr) = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})}).
- \end{align*}
-
- It remains to check that \(y_\alpha(a)\) satisfy the Steinberg relations \eqref{R3} and \eqref{R4}. Take roots \(\alpha, \beta \in \Phi\) such that \(\alpha + \beta, 2\alpha + \beta \in \Phi\). Fix an element \(a \in R\) and consider the ideal
+ Now let $\alpha$ be a root of $\Phi$. By our assumptions on $\Phi$ there exist roots \(\beta, \gamma \in \Phi\) of the same length such that \(\alpha = \beta + \gamma\). Denote by \(y_\alpha(a)\) the only element of the set \([Y_\beta(N_{\beta, \gamma}), Y_\gamma(a)]\). Clearly, \(y_\alpha \colon R \to \St(\Phi, R)\) is a homomorphism. 
+ 
+ It remains to check that \(y_\alpha(a)\) satisfy the Steinberg relations \eqref{R3} and \eqref{R4}.
+ Let \(M \trianglelefteq R\) be a maximal ideal. First of all, notice that
+ \begin{multline} \label{eq:scm1}
+  y_\alpha(\pi_R(a^{(\infty)})) = [Y_\beta(N_{\beta, \gamma}), \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})] =\\
+  = \pi_{\St}\bigl(\up{g t_\beta(N_{\beta, \gamma})}{x_\gamma(a^{(\infty)})}\, \up g{x_\gamma(-a^{(\infty)})}\bigr) = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})}).
+ \end{multline}
+ 
+ Now let $a$ be an element of $R$ and \(\alpha, \beta\) be roots of $\Phi$ such that \(\alpha + \beta, 2\alpha + \beta \in \Phi\). 
+ Set
  \begin{align*}
  J = \{b \in R &\mid [y_\alpha(a), y_\beta(br)] = \\
  &= y_{\alpha + \beta}(N_{\alpha, \beta} abr)
  y_{2\alpha + \beta}(N_{\alpha, \beta}^{2,1} a^2 br) \text{ for all } r \in R\}.
  \end{align*}
- For any maximal ideal \(M \trianglelefteq R\) we have
+ Now from~\eqref{eq:scm1} we obtain that
  \begin{align*}
  [y_\alpha(a), y_\beta(\pi_R(b^{(\infty)}))] &= [y_\alpha(a), \pi_{\St}(\up g{x_\beta(b^{(\infty)})})]\\
  %
@@ -811,7 +825,7 @@ We also set  $S = R \setminus M$ and denote by \[\pi_R \colon R^{(\infty)} \to R
  %
  &= y_{\alpha + \beta}(N_{\alpha, \beta} a \pi_R(b^{(\infty)})) y_{2\alpha + \beta}(N_{\alpha, \beta}^{2,1} a^2 \pi_R(b^{(\infty)})).
  \end{align*}
- It follows that \(J \not \leq M\), i.e. \(J = R\). The verification of~\eqref{R3} is similar but easier.
+ It follows that \(J \not \subseteq M\), i.e. \(J = R\). The verification of~\eqref{R3} is similar but easier.
 \end{proof}
 
 

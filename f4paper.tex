@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[oneside, 11pt]{amsart}
 
 \usepackage{amsmath, mathtools, amssymb, amsthm, amscd, alltt, graphicx, comment}
 \usepackage[utf8]{inputenc}
@@ -32,8 +32,6 @@
 \newtheorem{rem}[lemma]{Remark}
 \newtheorem{conv}[lemma]{Convention} \Crefname{conv}{Convention}{Conventions}
 
-%\newenvironment{psmallmatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
-
 \DeclareMathOperator\St{St}
 \DeclareMathOperator\Ker{Ker}
 \DeclareMathOperator\GG{G}
@@ -62,7 +60,18 @@
 \newcommand{\rE}{\mathsf{E}}
 \newcommand{\rF}{\mathsf{F}}
 \newcommand{\rG}{\mathsf{G}}
+
+\title{Centrality of $K_2$ for Chevalley groups}
+\keywords {Steinberg group, pro-group, Suslin normality theorem. {\em Mathematical Subject Classification (2010):} 19C09, 20G35, 20H05}
+
+\author {Andrei Lavrenov} \email{avlavrenov at gmail.com}
+\author {Sergey Sinchuk} \email {sinchukss at gmail.com}
+\author {Egor Voronestky} \email {voronetckiiegor at yandex.ru}
+
+\date {\today}
+
 \begin{document}
+\maketitle
 
 \section{Preliminaries}
 Throughout this paper all commutators are left normed, i.\,e. $[x, y] = xyx^{-1}y^{-1}$. We denote by $x^y$ and $\up{y}x$ the elements $xyx^{-1}$ and $yxy^{-1}$.
@@ -214,7 +223,6 @@ First of all, notice that the present conventions apply only to algebraic expres
   \item The exact names of the variables occuring in a pro-expression are unimportant and are usually chosen arbitrarily. On the other hand, there is always some natural order on the variables that allows one to read the pro-expression unequivocally. In particular, $[t_1^{(\infty)}, t_2^{(\infty)}]$ and $[a^{(\infty)}, b^{(\infty)}]$ denote the same pro-set morphism $G^{(\infty)} \times G^{(\infty)} \to G^{(\infty)}$, while $[t_1^{(\infty)}, t_2^{(\infty)}]$ and $[t_2^{(\infty)}, t_1^{(\infty)}]$ are two different morphisms.
   \item The domain of the pro-set morphism defined by a pro-expression will usually be clear from the context. 
   Most often, it is a power of a single pro-object. In this case to determine the exponent one should count the number of different variables occuring in the expression.
-  %\item In order to specify the domain of a variable $a^{(\infty)}$ occuring in the expression, we use the notation $a^{(\infty)} \in X^{(\infty)}$ (this notation is not confusing since we never refer to the actual elements of pro-sets, recall that the elements of our pro-sets are usually uninteresting, cf.~\cref{rem:prorings-comment}).
   \item The notation for the multiplication operation is usually suppressed, i.\,e. we prefer the notation $a^{(\infty)} b^{(\infty)}$ to $m(a^{(\infty)}, b^{(\infty)})$ or $a^{(\infty)} \cdot b^{(\infty)}$.
   \item The syntax of tuples is used to denote the product of morphisms. For example, if $f,g \colon X^{(\infty)} \to Y^{(\infty)}$ are morphisms of pro-sets, then the notation $(f(x_1^{(\infty)}), g(x_2^{(\infty)}))$ means simply $f\times g$.
   \item If $g$ is a morphism of pro-sets with $X^{(\infty)} \times Y^{\infty}$ as its domain, then we write $g(a^{(\infty)}, b^{(\infty)})$ instead of $g((a^{(\infty)}, b^{(\infty)}))$.
@@ -286,8 +294,6 @@ These identities will be used in the sequel without explicit reference.
 
 We also will need another identity for structure constants.
 To formulate it succintly, we extend the domain of the structure constant function $N_{-,-}$ by setting $N_{\alpha, \beta} = 0$ whenever $\alpha+\beta\not\in\Phi\setminus\{0\}$.
-%Now if $\alpha, \beta, \gamma, \delta$ are pairwise linearly independent roots such that $\alpha+\beta+\gamma+\delta = 0$ then the following identity holds:
-%\begin{equation} \label{eq:cocycle} \tfrac{1}{|\alpha+\beta|^2} N_{\alpha,\beta} N_{\gamma,\delta} + \tfrac{1}{|\beta+\gamma|^2} N_{\beta,\gamma} N_{\alpha,\delta} + \tfrac{1}{|\gamma+\alpha|^2} N_{\gamma,\alpha} N_{\beta,\delta} = 0. \end{equation}
 Now if $\alpha, \beta, \gamma$ is a triple of pairwise linearly independent roots such that $\alpha+\beta+\gamma\neq 0$, then one has 
 \begin{equation}\label{eq:cocycle2} N_{\alpha,\beta+\gamma} N_{\beta,\gamma} + N_{\beta,\gamma+\alpha} N_{\gamma,\alpha} + N_{\gamma,\alpha+\beta}N_{\alpha,\beta} = 0. \end{equation}
 This identity is an equivalent form of (N9) in~\cite[\S~14]{VP} (cf. also (H4) in~\cite{Re75}).
@@ -297,22 +303,8 @@ Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the 
 
 Notice that the multiplicative identity of $R$ is actually never used in the definition of the Steinberg group, 
  which allows one to use it in the situation when $R$ is an rng.
-%This also allows one to ``deform'' this definition and, by analogy with the homotopes of rngs introduced in~\cref{ring-homotope}, come to the notion of a ``homotope'' of the Steinberg group.
 \begin{df}\label{def:Steinberg-homotope}
- Let $R$ be an ring and $S$ be a multiplicative subset of $R$. Also let $\Phi$ be a root system of rank $\geq 3$. Applying the Steinberg group functor $\St(\Phi, -)$ to the projective system of rngs $R^{(s)}$ (see~\cref{ring-homotope}) we obtain a projective system of groups, whose formal projective limit will be denoted by $\St^{(\infty)}(\Phi, R)$ and will be called the {\it Steinberg pro-group}.
- 
-\begin{comment}
- is the group given by generators $x_\alpha^{(s)}(a)$, $a\in R$, $\alpha\in\Phi$ and the following list of relations: \begin{align}
- x^{(s)}_\alpha(a) \cdot x^{(s)}_\alpha(b)    &= x^{(s)}_\alpha(a+b); \tag{S$1_s$} \label{S1} \\
- [x^{(s)}_\alpha(a),\ x^{(s)}_\beta(b)] &= 1, \tag{S$2_s$} \label{S2} \\ 
- \multispan2{\hfil if $\alpha + \beta \not\in\Phi \cup \{0\};$} \nonumber \\
- [x^{(s)}_\alpha(a),\ x^{(s)}_\beta(b)] &= x^{(s)}_{\alpha + \beta}(N_{\alpha,\beta} \cdot sab), \tag{S$3_s$} \label{S3} \\
- \multispan2{\hfill if $\alpha+\beta\in\Phi$ but $\alpha+2\beta,\ 2\alpha+\beta\not\in\Phi;$} \nonumber \\
- [x^{(s)}_\alpha(a),\ x^{(s)}_\beta(b)] &= x^{(s)}_{\alpha + \beta}(N_{\alpha,\beta} \cdot sab) \cdot x^{(s)}_{2\alpha+\beta}(N_{\alpha,\beta}^{2,1}\cdot s^2a^2b), \tag{S$4_s$} \label{S4} \\ \multispan2{ \hfill if $\alpha+\beta,2\alpha+\beta\in\Phi$.} \nonumber  \end{align} 
- Now if $R$ is a ring with a multiplicative system $S$, then for every $s, s' \in S$ there is a group homomorphism $\St^{(ss')}(\Phi, R) \to \St^{(s)}(\Phi, R)$ given by the obvious map $x_\alpha^{(ss')}(a) \mapsto x_\alpha^{(s')}(sa)$.
- These homomorphisms together form a projective system in $\Group$, whose formal projective limit will be called the {\it Steinberg pro-group} and will be denoted by $\St^{(\infty)}(\Phi, R)$.
- By definition, $\St^{(\infty)}(\Phi, R)$ is an object of $\Pro(\Group)$. It can also be considered as a group object in $\Pro(\Set)$. 
-\end{comment}
+ Let $R$ be an ring and $S$ be a multiplicative subset of $R$. Also let $\Phi$ be a root system of rank $\geq 3$. Applying the Steinberg group functor $\St(\Phi, -)$ to the projective system of rngs $R^{(s)}$ (see~\cref{ring-homotope}) we obtain a projective system of groups, whose formal projective limit will be denoted by $\St^{(\infty)}(\Phi, R)$ and will be called the {\it Steinberg pro-group}. 
 \end{df}
 
 \begin{rem} \label{rem:pro-Steinberg-comment}
@@ -343,11 +335,6 @@ Recall that there is well-defined homomorphism $\mathrm{st}\colon \St(\Phi, R) \
  For instance, the neutral element in this group is the zero map \(0 \colon \Ker(\varepsilon) \to R^{(s)}\). The product of \(g, h \in \Rng(\Ker(\varepsilon), R^{(s)})\) is the composite map
  \[\Ker(\varepsilon) \xrightarrow{\Delta} \Ker(\varepsilon) \otimeshat \Ker(\varepsilon) \xrightarrow{g \otimeshat h} R^{(s)} \otimeshat R^{(s)} \to R^{(s)}.\]
 \end{rem}
-
-% If R is a domain, then this should be the projective limit of G(Phi, R, sR)...
-
-%The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) of the above homomorphism is given by the pre-morphism \(\mathrm{st}^* = \mathrm{id}_S\), \(\mathrm{st}^{(s)}\bigl(x_{\alpha}^{(s)}(a)\bigr) = t_\alpha(a^{(s)})\). 
-%It follows that all maps \(x_{ij}^{(s)} \colon R_{ij} \to \stlin(R)^{(s)}\) are injective.
 
 \begin{rem}
  To formulate the next lemma, we need to introduce a way of reinterpreting the usual Steinberg relations~\eqref{R2}--\eqref{R4} as relations between the morphisms $x_\alpha$ in the category $\Pro(\Group)$. We call these relations the {\it pro-analogues} of~\eqref{R2}--\eqref{R4}. To obtain these relations one has to add the upper index $(\infty)$ to the free variables $a$, $b$ occuring in~\eqref{R2}--\eqref{R4} and then read the resulting expressions according to~\cref{conv:notation}. 
@@ -427,7 +414,6 @@ Our immediate goal is to construct the root subgroup morphisms
 Let $\beta, \gamma \in \Phi$ be an arbitrary fixed pair of roots such that $\alpha = \beta+\gamma$ and the length of $\beta$, $\gamma$ is the same as $\alpha$'s. 
 Denote by $x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)})$ the morphism
  $[x_\beta(N_{\beta,\gamma}b^{(\infty)}),\ x_\gamma(c^{(\infty)})]\colon R^{(\infty)} \times R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R).$
-%See~\cref{conv:notation} for the explanation of the notation used in the above formula.
 \end{df}
 Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism $x_{\beta,\gamma}$, see~\cref{lem:new-root}. However, in order to be able to do this we need the following assertion.
 
@@ -557,8 +543,6 @@ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\v
  \[x_{\beta_1, \gamma_1}(b^{(\infty)}, u^{(\infty)} c^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)} u^{(\infty)}, c^{(\infty)}).\]
  Thus, the last requirement of~\cref{RingPresentation} is satisfied. Consequently, there exists a unique morphism of pro-groups \(\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) satisfying
  \[x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)}). \qedhere\]
- %By \eqref{eq:balance} and lemma \ref{RingGeneration} we finally obtain
- %\[x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}).\qedhere\]
 \end{proof}
 
 The next step in the proof of~\cref{SingleRootElimination} is to verify that $\widetilde{x}_\alpha$ satisfies the relations~\eqref{R2}--\eqref{R4}.
@@ -659,8 +643,6 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  For $u \in S^{-1}R$ and a root subgroup morphism $x_\beta$ of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ we define the morphism 
  $\up{x_\alpha(u)}x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$
  via one of the following identities:
- %For every root \(\beta \in \Phi\) and every \(g\) in the standard torus \(\Torus(\Phi, S^{-1} R)\) of \(\GG_{sc}(\Phi, S^{-1} R)\) let  \[\up g{x_\beta(b^{(\infty)})} = x_\beta(\beta(g) b^{(\infty)}).\]
- %For every nonparallel \(\alpha, \beta \in \Phi\) and \(u \in S^{-1} R\) set
  \begin{align*}
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
  &:= x_\beta(b^{(\infty)}), \\
@@ -691,14 +673,12 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  The morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is equivariant with respect to this action.
  This action also satisfies the equality \[\up{x_\alpha(u)}{x_\alpha(a^{(\infty)})} = x_\alpha(a^{(\infty)}).\]
 \end{prop}
-\begin{proof}
- %In is clear from the definitions that \(\Torus(\Phi, S^{-1} R)\) acts on \(\St^{(\infty)}(\Phi, R)\).
+\begin{proof} 
  It can be checked directly that the root subgroup morphisms \[\{\up{x_\alpha(u)} x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R) \mid \beta \neq \pm \alpha \}\] defined above satisfy the defining relations of $\St^{(\infty)}(\Phi\setminus\{\pm \alpha\}, R)$.
  Consequently, by~\cref{rem:xpma-presentation} they give rise to an endomorphism of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$, which we denote by $\up{x_\alpha(u)}(-)$.
  Since $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ is isomorphic to $\St^{(\infty)}(\Phi, R)$ by~\cref{SingleRootElimination}, we obtain an endomorphism of $\St^{(\infty)}(\Phi, R)$, which we also denote by $\up{x_\alpha(u)}(-)$.
  
- It is easy to see that the mapping $u \mapsto \up{x_\alpha(u)}(-)$, in fact, specifies a group homomorphism $S^{-1}R \to \Aut(\St^{(\infty)}(\Phi, R))$.
- %Moreover, the actions of \(g x_\alpha(u) g^{-1}\) and \(x_\alpha(\alpha(g) u)\) coincide for all \(g \in \Torus(\Phi, S^{-1} R)\), \(u \in R\).
+ It is easy to see that the mapping $u \mapsto \up{x_\alpha(u)}(-)$, in fact, specifies a group homomorphism $S^{-1}R \to \Aut(\St^{(\infty)}(\Phi, R))$. 
  
  The next step of the proof is to verify that the constructed action satisfies the Steinberg relations~\eqref{R2}--\eqref{R4} defining the group $\St(\Phi, S^{-1}R)$.
  Let $R_{\alpha, \beta}$ be one of these relations involving the roots $\alpha$ and $\beta$ in the left-hand side. Denote by $\Phi_0$ the rank $2$ root subsystem spanned by $\alpha$ and $\beta$. Let $\gamma \in \Phi\setminus \Phi_0$ be a root. We claim that a direct computation involving \cref{root-action}, the pro-analogues of~\eqref{R2}--\eqref{R4} and~\eqref{eq:m-mult} shows that the conjugation by the left and right side of $R_{\alpha, \beta}$ transform $x_\gamma$ to the same morphism $R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$.
@@ -780,13 +760,18 @@ Notice also that $\pi_R x_\alpha = x_\alpha \pi_{\St}$ and $\pi_{\GG} \mathrm{st
  which implies that \(I \not \subseteq M\).
 \end{proof}
 
+Let $N$ be a group acting on itself by left conjugation.
+A group homomorphism $\varphi\colon M \to N$ is called a {\it crossed module} if one can define the action of the group $N$ on $M$ in such a way that that $\varphi$ preserves the action of $N$ and, moreover, the identity ${}^{\varphi(m)}\!m' = m m' m^{-1}$, called {\it Peiffer identity}, holds for all $m, m' \in M$.
+
 \begin{theorem}\label{SteinbergCrossedModule}
  The homomorphism \(\mathrm{st} \colon \St(\Phi, R) \to \GG_{sc}(\Phi, R)\) can be turned into a crossed module in a unique way.
 \end{theorem}
-\begin{proof}
- %We already know from~\cref{CentralityK2} that the Steinberg group \(\St(\Phi, R)\) is a central extension of the elementary group \(\mathrm E(\Phi, R)\).
- Let $g$ be an element of $\GG_{sc}(\Phi, R)$. Our first goal is to construct an automorphism \(\up g{(-)} \colon \St(\Phi, R) \to \St(\Phi, R)\).% such that \(\mathrm{st}\) is equivariant. 
- %Such an endomorphism is necessarily unique and multiplicative in \(g\).
+\begin{proof}  
+ Notice that under our assumptions the group $\E(\Phi, R)$ is perfect, therefore by~\cite[Lemma~1.1]{St71} for every $g\in \GG_{sc}(\Phi, R)$ there may exist at most one endomorphism $\up g (-)$ of $\St(\Phi, R)$ satisfying 
+ \begin{equation} \label{eq:scm-2}\up{g}{\mathrm{st}(h)} = \mathrm{st} (\up g h)\text{ for all }h \in \St(\Phi, R).  \end{equation}
+ Thus, to construct an action of $\GG_{sc}(\Phi, R)$ on $\St(\Phi, R)$ it suffices to construct an endomorphism 
+  \(\up g{(-)} \colon \St(\Phi, R) \to \St(\Phi, R)\) satisfying~\eqref{eq:scm-2}.
+ Also, this action would automatically satisfy Peiffer identity.
  
  Notice that by~\cref{CentralityK2} we already know that $\mathrm K_2(\Phi, R)$ is a central subgroup of $\St(\Phi, R)$.
  Let $\alpha$ be a root of $\Phi$. Since \(\mathrm E(\Phi, R) \trianglelefteq \GG_{sc}(\Phi, R)\) by~\cref{Normality}, the set
@@ -797,9 +782,11 @@ Notice also that $\pi_R x_\alpha = x_\alpha \pi_{\St}$ and $\pi_{\GG} \mathrm{st
  Let \(\alpha, \beta\) be roots as above, $a$ be an element of $R$ and $h$ be an element of $Y_\alpha(a)\).
  Set $I = \{b \in R \mid [h, Y_\beta(bR)] = 1\}$ and let \(M \trianglelefteq R\) be a maximal ideal. Since
  \[[h, \pi_{\St}(\up g {x_\beta(b^{(\infty)})})] = \pi_{\St}(\up{g t_\alpha(a)} {x_\beta(-b^{(\infty)})}) \pi_{\St}(\up g {x_\beta(-b^{(\infty)})}) = 1,\]
- we obtain \(I \not \subseteq M\) and, consequently, that \(I = R\), which proves the assertion.
+ we obtain that \(I \not \subseteq M\) and, consequently, that \(I = R\), which proves the assertion.
 
- Now let $\alpha$ be a root of $\Phi$. By our assumptions on $\Phi$ there exist roots \(\beta, \gamma \in \Phi\) of the same length such that \(\alpha = \beta + \gamma\). Denote by \(y_\alpha(a)\) the only element of the set \([Y_\beta(N_{\beta, \gamma}), Y_\gamma(a)]\). Clearly, \(y_\alpha \colon R \to \St(\Phi, R)\) is a homomorphism. 
+ Now let $\alpha$ be a root of $\Phi$. By our assumptions on $\Phi$ there exist roots \(\beta, \gamma \in \Phi\) of the same length such that \(\alpha = \beta + \gamma\). Denote by \(y_\alpha(a)\) the only element of the set \([Y_\beta(N_{\beta, \gamma}), Y_\gamma(a)]\). 
+ We define the endomorphism $\up g (-)$ on the generators of $\St(\Phi, R)$ by $\up g {x_\alpha(a)} = y_\alpha(a)$. 
+ Clearly, \(y_\alpha(a)\) satisfy~\eqref{R1}. Since $y_\alpha(a) \in Y_\alpha(a)$ we also obtain that $y_\alpha(a)$ satisfy relations~\eqref{R2}.
  
  It remains to check that \(y_\alpha(a)\) satisfy the Steinberg relations \eqref{R3} and \eqref{R4}.
  Let \(M \trianglelefteq R\) be a maximal ideal. First of all, notice that
@@ -809,24 +796,22 @@ Notice also that $\pi_R x_\alpha = x_\alpha \pi_{\St}$ and $\pi_{\GG} \mathrm{st
  \end{multline}
  
  Now let $a$ be an element of $R$ and \(\alpha, \beta\) be roots of $\Phi$ such that \(\alpha + \beta, 2\alpha + \beta \in \Phi\). 
- Set
+ Consider the ideal
  \begin{align*}
  J = \{b \in R &\mid [y_\alpha(a), y_\beta(br)] = \\
  &= y_{\alpha + \beta}(N_{\alpha, \beta} abr)
  y_{2\alpha + \beta}(N_{\alpha, \beta}^{2,1} a^2 br) \text{ for all } r \in R\}.
  \end{align*}
- Now from~\eqref{eq:scm1} we obtain that
+ From~\eqref{eq:scm1} we obtain that
  \begin{align*}
- [y_\alpha(a), y_\beta(\pi_R(b^{(\infty)}))] &= [y_\alpha(a), \pi_{\St}(\up g{x_\beta(b^{(\infty)})})]\\
- %
+ [y_\alpha(a), y_\beta(\pi_R(b^{(\infty)}))] &= [y_\alpha(a), \pi_{\St}(\up g{x_\beta(b^{(\infty)})})]\\ 
  &= \pi_{\St}\bigl(\up{g t_\alpha(a)}{x_\beta(b^{(\infty)})}\, \up g{x_\beta(-b^{(\infty)})}\bigr)\\
- %
  &= \pi_{\St}\bigl(\up g{x_{\alpha + \beta}(N_{\alpha, \beta} a b^{(\infty)})}\, \up g{x_{2\alpha + \beta}(N_{\alpha, \beta}^{2,1} a^2 b^{(\infty)})}\bigr)\\
- %
  &= y_{\alpha + \beta}(N_{\alpha, \beta} a \pi_R(b^{(\infty)})) y_{2\alpha + \beta}(N_{\alpha, \beta}^{2,1} a^2 \pi_R(b^{(\infty)})).
  \end{align*}
- It follows that \(J \not \subseteq M\), i.e. \(J = R\). The verification of~\eqref{R3} is similar but easier.
-\end{proof}
+ It follows that \(J \not \subseteq M\), i.e. \(J = R\). The verification of~\eqref{R3} is similar but easier.   
+ 
+ It is clear that the constructed endomorphism satisfies~\eqref{eq:scm-2}. \end{proof}
 
 
 \printbibliography

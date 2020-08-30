@@ -73,6 +73,32 @@
 \begin{document}
 \maketitle
 
+\section{Introduction}
+This paper is the final installment in the series of articles by the third-named author devoted to the proof of centrality of $\mathrm K_2$ modeled on linear groups. In the previous articles of the series~\cite{Vor1, Vor2} the third-named author has already proven the centrality of $\mathrm K_2$ for the so-called {\it odd unitary groups}. These groups, introduced by V.~Petrov in~\cite{Pe05}, encompass a large class of classical-like groups over noncommutative rings including, in particular, the usual classical Chevalley groups.
+
+Let us briefly explain the reader how our result fit into the general picture.
+Recall that Steinberg groups $\St(\Phi, R)$ are certain groups given by generators and relations, that were classically introduced by R.~Steinberg and J.~Milnor in~\cite{St62, Milnor} as combinatorial approximations of the simply-connected Chevalley groups. For example, every element of the special linear group $\mathrm{SL}_n(\mathbb F_q)$ over a finite field can be presented as a product of elementary transvections $t_{ij}(a)$ ($i\neq j$, $a\in \mathbb F_q$). These elements are taken as the generators of the Steinberg group $\St_n(\mathbb{F}_q)$. 
+Moreover, any two such presentations of the same element of $\mathrm{SL}_n(\mathbb{F}_q)$ can be related one with the other
+ by a sequence of the following ``elementary'' transformations: 
+\begin{itemize} 
+ \item $t_{ij}(a)t_{ij}(b) = t_{ij}(a+b)$; 
+ \item $t_{ij}(a)t_{hk}(b) = t_{hk}(b)t_{ij}(a)$ for $j\neq h$ and $i\neq k$; 
+ \item $t_{ij}(a)t_{jk}(b)t_{ij}(-a)t_{jk}(-b) = t_{ik}(ab)$ for $i\neq k$.
+\end{itemize} 
+These transformations are taken as the defining relations of the Steinberg group $\St_n(\mathbb{F}_q)$.
+Thus, in the finite field case one has $\St_n(\mathbb{F}_q) \cong \mathrm{SL}_n(\mathbb{F}_q)$.
+
+For an infinite field $F$ the Steinberg group $\mathrm{St}(\Phi,\,F)$ no longer coincides with the simply-connected Chevalley group $\GG_{sc}(\Phi, R)$, but rather is the universal central extension of the latter.
+By the classical theory of central extensions the kernel of the natural homomorphism $\St(\Phi,\,F)\to\GG_{sc}(\Phi, F)$ coincides with the Schur multiplier $\mathrm H_2(\mathrm G_{\mathrm{sc}}(\Phi,\,F),\,\mathbb Z)$. The concrete presentation of this group in the field case was obtained by H.~Matsumoto in~\cite{Ma69}. Similar presentation for the special linear group over a skew field also has been obtained by U.~Rehmann in~\cite{Re78}.
+
+J.~Milnor has shown that the linear Steinberg group $\St_n(R)$ over a general ring has trivial Schur multiplier provided $n \geq 4$.
+This shows that $\St_n(R)$ is a good candidate for the role of the universal central extension of its image in $\GG_{sc}(\Phi, R)$. 
+The centrality of the homomorphism $\St_n(R) \to \mathrm{GL}_n(R)$ for finite $n$ was not studied by Milnor as he was more concerned with the case $n = \infty$. Recall that the functor $\mathrm K_2$ was originally defined by Milnor as the kernel of the homomorphism $\St_\infty(R) \to \mathrm{GL}_\infty(R)$, i.\,e. as the group of ``non-elementary'' relations between transvections of the infinite-dimensional general linear group.
+Milnor's approach was followed by M.~Stein who defined Steinberg groups $\St(\Phi, R)$ in the context of arbitrary Chevalley groups and, by analogy,  defined the functor $\mathrm K_2(\Phi, R)$ as the kernel of the natural homomorphism $\mathrm{st}\colon \St(\Phi, R) \to \GG_{sc}(\Phi, R)$;  see~\cref{def:Steinberg}. Also M.~Stein together with W.~van der Kallen were able to compute Schur multipliers of $\St(\Phi, R)$ for $\Phi$ of rank $\geq 3$; see~\cite{St71, vdKStein}. The triviality of Schur multipliers for unitary Steinberg groups of sufficiently large rank in the noncommutative case has also been studied in~\cite{Bak, Tang, LavU, LavOU}.
+
+\subsection{Acknowledgements}
+The work of the second-named author was supported by RFBR grant No 18-31-20044.
+
 \section{Preliminaries}
 Throughout this paper all commutators are left normed, i.\,e. $[x, y] = xyx^{-1}y^{-1}$. We denote by $x^y$ and $\up{y}x$ the elements $xyx^{-1}$ and $yxy^{-1}$.
 In this paper we also make use the following commutator identities:
@@ -812,7 +838,5 @@ A group homomorphism $\varphi\colon M \to N$ is called a {\it crossed module} if
  It follows that \(J \not \subseteq M\), i.e. \(J = R\). The verification of~\eqref{R3} is similar but easier.   
  
  It is clear that the constructed endomorphism satisfies~\eqref{eq:scm-2}. \end{proof}
-
-
 \printbibliography
 \end{document}

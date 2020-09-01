@@ -100,10 +100,10 @@ The first proof of the centrality of the linear functor \[\mathrm K_{2,n}(R) = \
 The result of van der Kallen was further generalized by M.~Tulenbaev to all almost commutative rings, i.\,e. algebras module finite over their centers; see~\cite{Tul}.
 
 While the centrality of $\mathrm K_2(\Phi, R)$ has been long known for rings of small Krull dimension, e.\,g. for semilocal rings (see~\cite{Ste73}), the question whether it holds for an {\it arbitrary} commutative ring has remained open since~\cite{vdK}.
-On the other hand, the analogue of Suslin's normality theorem for Chevalley groups of rank $\geq 2$, i.\,e. the normality of the subgroup $\E_{sc}(\Phi, R):= \mathrm{Im}(\mathrm{st})$ for arbitrary commutative ring $R$, was soon shown to hold by G.~Taddei, see~\cite{Ta86}. 
+On the other hand, the analogue of Suslin's normality theorem for Chevalley groups of rank $\geq 2$, i.\,e. the normality of the subgroup $\E_{sc}(\Phi, R):= \mathrm{Im}(\mathrm{st})$ for an arbitrary commutative ring $R$, was soon obtained by G.~Taddei, see~\cite{Ta86}. 
 
-The first advancement in the solution of the centrality problem for arbitrary commutative rings since~\cite{vdK} was the counterexample of M.~Wendt~\cite{Wendt} which showed that the centrality of $\mathrm K_2$ may fail for root systems of rank $2$ (similarly, there is a counterexample to Suslin's normality theorem for the rank $1$ group $\mathrm{SL}_2(R)$). Soon the papers~\cite{Lav,Sin,LavSin} of the first- and second-named authors appeared, in which it was shown that the centrality of $\mathrm K_2$ does hold for the Chevalley groups of type $\rC_\ell$, $\rD_\ell$, $\rE_\ell$ provided $\ell\geq 3$. In~\cite{Lav} a symplectic analogue of the technique of~\cite{vdK} was developed, while in~\cite{Sin, LavSin} the proof was based on the amalgamation theorem for relative Steinberg groups which reduced the problem of centrality to the already-known linear case. Nevertheless, neither of these two approaches seemed to work for the root systems $\rB_\ell$ and $\rF_4$. Finally, in~\cite{Vor1} the third-named author has developed a novel pro-group approach, which allowed him not only to generalize~\cite{vdK,Tul} to even larger class of noncommutative rings, but also to prove the centrality of $\mathrm K_2$ for odd unitary groups and, thus, cover all classical groups, including the case $\rB_\ell$, see~\cite{Vor2}. In the present paper these methods are employed to verify the centrality of $\mathrm K_2$ in the case $\Phi = \rF_4$, the only case which has remained open until now.
-This is accomplished in~\cref{SteinbergCrossedModule} below. Our method of proof also applies to root systems of type $\rA_{\geq 3}$, $\rD_{\geq 4}$, $\rE_{6,7,8}$, and thus gives a proof of the centrality of $\mathrm{K}_2$ independent of the earlier papers~\cite{vdK,Sin,LavSin}. In course of the proof we also reprove Taddei's normality theorem~\cite{Ta86} in the specified cases; see~\cref{Normality}. Thus, the main consequence of \cite{Vor1,Vor2} and our~\cref{SteinbergCrossedModule} can be formulated as follows.
+The first advancement in the solution of the centrality problem for arbitrary commutative rings since~\cite{vdK} was the counterexample of M.~Wendt~\cite{Wendt} which showed that the centrality of $\mathrm K_2$ may fail for root systems of rank $2$ (similarly, there is a counterexample to Suslin's normality theorem for the rank $1$ group $\mathrm{SL}_2(R)$). Soon the papers~\cite{Lav,Sin,LavSin} of the first- and second-named authors appeared, in which it was shown that the centrality of $\mathrm K_2$ does hold for all the Chevalley groups of type $\rC_\ell$, $\rD_\ell$, $\rE_\ell$ provided $\ell\geq 3$. In~\cite{Lav} a symplectic analogue of the technique of~\cite{vdK} was developed, while in~\cite{Sin, LavSin} the proof was based on the amalgamation theorem for relative Steinberg groups which reduced the problem of centrality to the already-known linear case. Nevertheless, neither of these two approaches seemed to work for the root systems $\rB_\ell$ and $\rF_4$. Finally, in~\cite{Vor1} the third-named author has developed a novel pro-group approach, which allowed him not only to generalize~\cite{vdK,Tul} to even larger class of noncommutative rings, but also to prove the centrality of $\mathrm K_2$ for odd unitary groups and, thus, cover all classical groups, including the case $\rB_\ell$, see~\cite{Vor2}. In the present paper these methods are employed to verify the centrality of $\mathrm K_2$ in the case $\Phi = \rF_4$, the only case which has remained open until now.
+This is accomplished in~\cref{SteinbergCrossedModule} below. Our method of proof also applies to root systems of type $\rA_{\geq 3}$, $\rD_{\geq 4}$, $\rE_{6,7,8}$, and thus gives a proof of the centrality of $\mathrm{K}_2$ independent of the earlier papers~\cite{vdK,Sin,LavSin}. In course of the proof we also reprove Taddei's normality theorem~\cite{Ta86} in the aforementioned cases; see~\cref{Normality}. Thus, the main consequence of \cite{Vor1,Vor2} and our~\cref{SteinbergCrossedModule} can be formulated as follows.
 \begin{theorem*}
 Let $R$ be a commutative ring, $\Phi$ be an irreducible root system of rank $\geq 3$. 
 Then the map $\mathrm{st}\colon\mathrm{St}(\Phi,\,R) \to \mathrm{E}_{\mathrm{sc}}(\Phi,\,R)$ is a central extension.
@@ -221,7 +221,7 @@ where the structure of a group object on $G^{(\infty)}$ is given by the triple $
 \subsection{Homotopes of rings and pro-rings}
 Let $R$ be an arbitrary ring and let \(S\) be some fixed multiplicative subset of $R$ containing a unit. Denote by $\mathcal{S}$ the category, whose objects are the elements of \(S\) and whose morphisms \(\mathcal{S}(s, s')\) are all \(s'' \in S\) such that \(ss'' = s'\). The composition and the identity morphisms are induced by the ring structure on $R$. It is clear that $\mathcal{S}$ is a filtered category. Unless stated otherwise, all the pro-sets that we encounter in the sequel have \(\mathcal S\) as their category of indices.
 
-We introduce the notion of a {\it homotope} of a ring inspired by a similar notion from nonassociative algebra (cf. McCrimmon?). 
+We introduce the notion of a {\it homotope} of a ring inspired by a similar notion from nonassociative algebra.
 \begin{df} \label{ring-homotope}
  Let $s$ be an element of $R$.  
  By definition, the {\it \(s\)-homotope} of \(R\) is the rng \(R^{(s)} = \{a^{(s)} \mid a \in R\}\) with the operations of addition and multiplication given by
@@ -237,7 +237,7 @@ Notice that every pro-rng $R^{(\infty)}$ can be considered as a pro-group by for
 \begin{rem}\label{rem:prorings-comment}
  Denote by $sR$ the principal ideal of $R$ generated by $s$. 
  There is an rgn homomorphism $R^{(s)} \to sR$ given by $r^{(s)}\mapsto sr$.
- In the case when $R$ is an integral domain this homomorphism is easily seen to be an rng isomorphism.
+ In the case when $R$ is an integral domain this homomorphism is easily seen to be an rng isomorphism. 
  
  The reason why we use homotopes rather than principal ideals in the definition of $R^{(\infty)}$ is that
  there is always a ``division by $s$'' homomorphism of $R$-modules $R^{(ss')} \to R^{(s')}$ given by $r^{(ss')} \mapsto r^{(s')},$
@@ -247,6 +247,11 @@ Notice that every pro-rng $R^{(\infty)}$ can be considered as a pro-group by for
  Notice also that the projective limit of $R^{(s)}$ in $\Rng$ is often trivial.
  Indeed, if $R$ is a domain, then the limit of $R^{(s)}$ in $\Rng$ computes the intersection of the principal ideals $\bigcap_{s\in S} sR$, which often coincides with the zero ring. 
  This also shows that the set of {\it global elements} of $R^{(\infty)}$ (i.\,e. the hom-set in $\Pro(\Set)$ from the terminal object $1$ to $R^{(\infty)}$) is often trivial and therefore will be of little interest to us.
+\end{rem}
+
+\begin{rem}
+ It is possible to prove the main results of the paper without using ring homotopes.
+ This approach is outlined in~\cref{no-homotopes}.
 \end{rem}
 
 Recall that a morphism \(f \in \mathcal C(X, Y)\) is called a split epimorphism (or a retraction) if it admits a section,
@@ -765,8 +770,15 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  we conclude by~\cref{rem:uni-rad} that \(P_{i, j}(t) = 0\) with the sole exception of \(P_{0, 1}(t) = t^{(\beta, \alpha)}\). Thus, the proof of~\eqref{eq:h-conj} is complete.
 \end{proof}
 
-\section{Steinberg crossed module}
-In this section we prove our main result, namely that Steinberg group \(\St(\Phi, R)\) is a crossed module over \(\GG(\Phi, R)\). For the rest of this section $R$ is an arbitrary commutative ring and $M$ is a maximal ideal of $R$.
+\section{Proof of the main result}
+In this section we prove the main results of the paper, namely the centrality of $\mathrm{K}_2$.
+Actually, we prove a somewhat stronger result, namely we endow the canonical homomorphism $\mathrm{st}\colon \St(\Phi, R) \to \GG_{sc}(\Phi, R)$ with the structure of a crossed module. Let us briefly recall the definition of the latter. 
+
+Let $N$ be a group acting on itself by left conjugation.
+A group homomorphism $\varphi\colon M \to N$ is called a {\it crossed module} if one can define the action of the group $N$ on $M$ in such a way that that $\varphi$ preserves the action of $N$ and, moreover, the identity ${}^{\varphi(m)}\!m' = m m' m^{-1}$, called {\it Peiffer identity}, holds for all $m, m' \in M$.
+It is an easy exercise that the kernel of $\varphi$ is a central subgroup of $M$, while the image 
+
+For the rest of this section $R$ is an arbitrary commutative ring and $M$ is a maximal ideal of $R$.
 As before, \(\Phi\) is a root system of rank \(\geq 3\) different from \(\rB_\ell\) and \(\rC_\ell\).
 
 Let $S = R\setminus M$ be the multiplicative system associated to a maximal ideal $M \trianglelefteq R$.
@@ -813,9 +825,6 @@ Notice also that $\pi_R x_\alpha = x_\alpha \pi_{\St}$ and $\pi_{\GG} \mathrm{st
  \]
  which implies that \(I \not \subseteq M\).
 \end{proof}
-
-Let $N$ be a group acting on itself by left conjugation.
-A group homomorphism $\varphi\colon M \to N$ is called a {\it crossed module} if one can define the action of the group $N$ on $M$ in such a way that that $\varphi$ preserves the action of $N$ and, moreover, the identity ${}^{\varphi(m)}\!m' = m m' m^{-1}$, called {\it Peiffer identity}, holds for all $m, m' \in M$.
 
 \begin{theorem}\label{SteinbergCrossedModule}
  The homomorphism \(\mathrm{st} \colon \St(\Phi, R) \to \GG_{sc}(\Phi, R)\) can be turned into a crossed module in a unique way.
@@ -866,5 +875,17 @@ A group homomorphism $\varphi\colon M \to N$ is called a {\it crossed module} if
  It follows that \(J \not \subseteq M\), i.e. \(J = R\). The verification of~\eqref{R3} is similar but easier.   
  
  It is clear that the constructed endomorphism satisfies~\eqref{eq:scm-2}. \end{proof}
+ 
+ \subsection{Concluding remarks} \label{no-homotopes}
+ It is possible to prove the centrality of $\mathrm{K}_2$ without using the concept of a ring homotope introduced in~\cref{ring-homotope}.
+ Indeed, the idea is to reduce to the case of domains using the following result.
+ \begin{lemma} Let $R$ be a commutative ring, $I$ be an ideal of $R$ and $\Phi$ be a root system of rank $\geq 3$.
+ The centrality of $\mathrm{K}_2(\Phi, R)$ implies the centrality of $\mathrm K_2(\Phi, R/I)$. \end{lemma}
+ \begin{proof} Under our assumptions the elementary subgroup $\E_{sc}(\Phi, R)$ is perfect, therefore one can repeat the proof of \cite[Lemma~5.3]{St99}) verbatim. 
+ One will also need to refer to~\cite{Va86} for the commutator formula in the context of Chevalley groups. \end{proof}
+ Since every commutative ring $R$ can be presented as a quotient of the polynomial ring over $\ZZ$ with possibly infinite number of variables,
+  we may restrict ourselves to considering only integral domains throughout the paper.
+ As noted before, in this case the homotopes $R^{(s)}$ turn into the usual principal ideals $sR \trianglelefteq R$.
+ 
 \printbibliography
 \end{document}

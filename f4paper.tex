@@ -109,11 +109,11 @@ Let $R$ be a commutative ring, $\Phi$ be an irreducible root system of rank $\ge
 Then the map $\mathrm{st}\colon\mathrm{St}(\Phi,\,R) \to \mathrm{E}_{\mathrm{sc}}(\Phi,\,R)$ is a central extension.
 \end{theorem*}
 
-As a corollary, we obtain that Stein's $\mathrm K_2$-group $\mathrm{K}_2(\Phi, R)$ defined as the the kernel of the homomorphism~\eqref{eq:st} coincides with the unstable $\mathrm{K}_2$-group defined via Quillen's $+$-construction applied to the perfect subgroup $\mathrm{E}_{sc}(\Phi, R)$: \[\mathrm{K}_2(\Phi, R) \cong \mathrm{K}_2^Q(\Phi, R) := \pi_2\mathrm{BG}_{sc}(\Phi,\,R)^+_{\mathrm{E}_{sc}(\Phi, R)}.\] The latter group coincides with the second homology group $\mathrm H_2(\mathrm E_{sc}(\Phi,\,R),\,\mathbb Z)$; see e.\,g.~\cite[\S~IV.1]{Weibel}.
+As a corollary, we obtain that Stein's $\mathrm K_2$-group $\mathrm{K}_2(\Phi, R)$ defined as the the kernel of the homomorphism~\eqref{eq:st} coincides with the unstable $\mathrm{K}_2$-group defined via Quillen's $+$-construction applied to the perfect subgroup $\mathrm{E}_{sc}(\Phi, R)$: \[ \mathrm{K}_2^Q(\Phi, R) := \pi_2\mathrm{BG}_{sc}(\Phi,\,R)^+_{\mathrm{E}_{sc}(\Phi, R)}.\] The latter group also coincides with the second homology group $\mathrm H_2(\mathrm E_{sc}(\Phi,\,R),\,\mathbb Z)$; see e.\,g.~\cite[\S~IV.1]{Weibel}.
 Thus, combining the above theorem with the known results~\cite{St71,vdKStein} we obtain the following.
 \begin{corollary*}
 For an arbitrary commutative ring $R$ and a root system $\Phi=\mathrm \rA_\ell,\rB_\ell,\rC_\ell$ for $\ell\geq4$, $\Phi=\mathrm \rD_\ell$ for $\ell\geq5$, or $\Phi=\mathrm \rE_6,\,\mathrm \rE_7,\,\mathrm \rE_8$ one has $\mathrm K_2(\Phi,\,R)=\mathrm K_2^Q(\Phi,\,R)$. Moreover, for $\Phi=\rA_3,\rB_3,\rC_3,\rD_4,\rF_4$ the following exact sequences hold:
-\[ \xymatrix{ 1\ar@{->}[r]&{\mathrm H_2(\mathrm{St}(\Phi,\,R),\mathbb Z)}\ar@{->}[r]&\mathrm K_2^Q(\Phi,\,R)\ar@{->}[r]&\mathrm K_2^S(\Phi,\,R)\ar@{->}[r]&1,} \text{where} \]
+\[ \xymatrix{ 1\ar@{->}[r]&{\mathrm H_2(\mathrm{St}(\Phi,\,R),\mathbb Z)}\ar@{->}[r]&\mathrm K_2^Q(\Phi,\,R)\ar@{->}[r]&\mathrm K_2(\Phi,\,R)\ar@{->}[r]&1,} \text{where} \]
 \begin{align*}
 \mathrm H_2\big(\mathrm{St}(\mathrm A_3,\,R),\mathbb Z\big)&=R/\langle2, (t^2-t)(s^2-s)\mid t,\,s\in R\rangle,\\
 \mathrm H_2\big(\mathrm{St}(\mathrm B_3,\,R),\mathbb Z\big)&=R/\langle6, 3(t^2-t)(s^2-s), 2(t^3-t)\mid t,\,s\in R\rangle,\\
@@ -123,6 +123,23 @@ For an arbitrary commutative ring $R$ and a root system $\Phi=\mathrm \rA_\ell,\
 \end{align*}
 In particular, for $\Phi=\mathrm A_3,\mathrm C_3,\mathrm D_4,\mathrm F_4$ the equality $\mathrm K_2(\Phi,\,R)=\mathrm K_2^Q(\Phi,\,R)$ holds iff $R$ does not have residue fields isomorphic to $\mathbb F_2$ and $\mathrm K_2(\mathrm B_3,\,R)=\mathrm K_2^Q(\mathrm B_3,\,R)$ iff $R$ does not have residue fields isomorphic to $\mathbb F_2$ and $\mathbb F_3$.
 \end{corollary*}
+
+Since the proof of the main theorem is rather long and technical and the setting of the papers~\cite{Vor1,Vor2} is already rather general, let us briefly sketch the key ideas of our proof using the simplest case of the functor $\mathrm{K}_{2,n}$ as an example.
+Already in this form our proof can be seen to be influenced by the Quillen--Suslin local-global principle.
+
+Consider an arbitrary element $g$ from $\mathrm K_{2,n}(R)$. We want to show that $g$ commutes with $x_{ij}(r)$ for every $r\in R$.
+Consider the set \[I=\{a\in R\mid [g,\,x_{ij}(aR)]=1\},\] which is easily seen to be, in fact, an ideal. 
+To prove the centrality of $\mathrm{K}_{2,n}(R)$ it suffices to show that $I=R$.
+Assume the contrary and consider an arbitrary maximal ideal $M \trianglelefteq R$ containing $I$. 
+By the centrality of $\mathrm K_{2,n}(R_M)$ one has $[\lambda_{M}(g),\,x_{ij}(r)]=1$ for all $r\in R_{M}$ (we denote by $\lambda_M$ the localization homomorphism $R \to R_M$). If we were able to show for some $s_0\in R\setminus M$ that
+\begin{equation} \label{intro} [g,\,x_{ij}(s_0R)]=1, \end{equation}
+or, in other words, that $s_0\in I\cap R\setminus M$, this would lead to a contradiction and would complete the proof of the centrality of $\mathrm K_{2,n}(R)$.
+
+The naive expectation why~(\ref{intro}) must hold is as follows: if we take any presentation $g=\prod_hx_{k_h l_h}(r_h)$ for some $r_h\in R$, then after localization at $M$ the equality $[\prod_hx_{k_h l_h}(r_h),\,x_{ij}(s_0r)]=1$ will be a consequence of a finite number of Steinberg relations. These relations involve denominators from $R\setminus M$, but it seems possible to choose $s_0$ so large that all the denominators in all the Steinberg relations involved disappear after reducing the fractions. This would mean that the relation $[g,\,x_{ij}(s_0r)]=1$ already holds in the Steinberg group $\St_n(R)$.
+
+Unfortunately, it is not that easy to formalize the last argument. Clasically, this formalization looked as follows (cf.~\cite{Tul,Sin,LavSin,Lavlgp}):
+first, the localization at a maximal ideal was reduced to the localization at some principal ideal $sR$ (cf, e.\,g. the proof of ~\cite[Theorem~2]{Sin}), ...
+ 
 
 \subsection{Acknowledgements}
 The work of the second-named author was supported by RFBR grant No 18-31-20044.
@@ -776,7 +793,7 @@ Actually, we prove a somewhat stronger result, namely we endow the canonical hom
 
 Let $N$ be a group acting on itself by left conjugation.
 A group homomorphism $\varphi\colon M \to N$ is called a {\it crossed module} if one can define the action of the group $N$ on $M$ in such a way that that $\varphi$ preserves the action of $N$ and, moreover, the identity ${}^{\varphi(m)}\!m' = m m' m^{-1}$, called {\it Peiffer identity}, holds for all $m, m' \in M$.
-It is an easy exercise that the kernel of $\varphi$ is a central subgroup of $M$, while the image 
+It is an easy exercise that the kernel of $\varphi$ is a central subgroup of $M$, while the image of $\varphi$ is normal in $N$.
 
 For the rest of this section $R$ is an arbitrary commutative ring and $M$ is a maximal ideal of $R$.
 As before, \(\Phi\) is a root system of rank \(\geq 3\) different from \(\rB_\ell\) and \(\rC_\ell\).

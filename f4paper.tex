@@ -79,20 +79,19 @@ This paper is the final installment in the series of articles by the third-named
 
 Let us briefly explain the reader how our result fit into the general picture.
 Recall that Steinberg groups $\St(\Phi, R)$ are certain groups given by generators and relations, that were classically introduced by R.~Steinberg and J.~Milnor in~\cite{St62, Milnor} as combinatorial approximations of the simply-connected Chevalley groups. For example, every element of the special linear group $\mathrm{SL}_n(\mathbb F_q)$ over a finite field can be presented as a product of elementary transvections $t_{ij}(a)$ ($i\neq j$, $a\in \mathbb F_q$). These elements are taken as the generators of the Steinberg group $\St_n(\mathbb{F}_q)$. 
-Moreover, any two such presentations of the same element of $\mathrm{SL}_n(\mathbb{F}_q)$ can be related one with the other
- by a sequence of the following ``elementary'' transformations: 
+Moreover, any two such presentations of the same element of $\mathrm{SL}_n(\mathbb{F}_q)$ can be rewritten one into the other
+ via a sequence of the following ``elementary'' relations: 
 \begin{itemize} 
  \item $t_{ij}(a)t_{ij}(b) = t_{ij}(a+b)$; 
  \item $t_{ij}(a)t_{hk}(b) = t_{hk}(b)t_{ij}(a)$ for $j\neq h$ and $i\neq k$; 
  \item $t_{ij}(a)t_{jk}(b)t_{ij}(-a)t_{jk}(-b) = t_{ik}(ab)$ for $i\neq k$.
 \end{itemize} 
-These transformations are taken as the defining relations of the Steinberg group $\St_n(\mathbb{F}_q)$.
-Thus, in the finite field case one has $\St_n(\mathbb{F}_q) \cong \mathrm{SL}_n(\mathbb{F}_q)$.
+These relations are called {\it Steinberg relations} and are taken as the defining relations of the Steinberg group $\St_n(\mathbb{F}_q)$. Thus, in the finite field case one has $\St_n(\mathbb{F}_q) \cong \mathrm{SL}_n(\mathbb{F}_q)$.
 
 For an infinite field $F$ the Steinberg group $\mathrm{St}(\Phi,\,F)$ no longer coincides with the simply-connected Chevalley group $\GG_{sc}(\Phi, F)$, but rather is the universal central extension of the latter.
 By the classical theory of central extensions the kernel of the natural homomorphism $\St(\Phi,\,F)\to\GG_{sc}(\Phi, F)$ coincides with the Schur multiplier $\mathrm H_2(\mathrm G_{\mathrm{sc}}(\Phi,\,F),\,\mathbb Z)$. The concrete presentation of this kernel in the field case was obtained by H.~Matsumoto in~\cite{Ma69}. Similar presentation for the special linear group over a skew field also has been obtained by U.~Rehmann in~\cite{Re78}.
 
-Recall that the algebraic $\mathrm K_2$-functor was originally defined by J.~Milnor as the kernel of the homomorphism $\St_\infty(R) \to \mathrm{GL}_\infty(R)$, i.\,e. as the group of ``non-elementary'' relations between transvections in the infinite-dimensional general linear group. Also he showed that the linear Steinberg group $\St_n(R)$ over an arbitrary ring has trivial Schur multiplier for $n \geq 5$. This shows that $\St_n(R)$ is a good candidate for the role of the universal central extension of the elementary subgroup $\mathrm{E}_n(R) = \mathrm{Im}(\St_n(R) \to \mathrm{SL}_n(R))$. %The centrality of the homomorphism $\St_n(R) \to \mathrm{GL}_n(R)$ for finite $n$, however, was not studied in~\cite{Milnor}.
+Recall that the algebraic $\mathrm K_2$-functor was originally defined by J.~Milnor as the kernel of the homomorphism $\St_\infty(R) \to \mathrm{GL}_\infty(R)$, i.\,e. as the group of ``nontrivial'' relations between transvections in the infinite-dimensional general linear group. Also he showed that the linear Steinberg group $\St_n(R)$ over an arbitrary ring has trivial Schur multiplier for $n \geq 5$. This shows that $\St_n(R)$ is a good candidate for the role of the universal central extension of the elementary subgroup $\mathrm{E}_n(R) = \mathrm{Im}(\St_n(R) \to \mathrm{SL}_n(R))$. %The centrality of the homomorphism $\St_n(R) \to \mathrm{GL}_n(R)$ for finite $n$, however, was not studied in~\cite{Milnor}.
 
 Milnor's approach was followed by M.~Stein who defined Steinberg groups $\St(\Phi, R)$ in the context of arbitrary Chevalley groups and, by analogy,  defined the functor $\mathrm K_2(\Phi, R)$ as the kernel of the natural homomorphism \begin{equation}\label{eq:st}\mathrm{st}\colon \St(\Phi, R) \to \GG_{sc}(\Phi, R).\end{equation} Also M.~Stein and W.~van der Kallen computed Schur multipliers of $\St(\Phi, R)$ for $\Phi$ of rank $\geq 3$; see~\cite{St71, vdKStein}. The Schur multipliers in the setting of unitary Steinberg groups over noncommutative rings have also been studied in~\cite{Bak, Tang, LavU, LavOU}.
 
@@ -102,7 +101,7 @@ The result of van der Kallen was further generalized by M.~Tulenbaev to all almo
 While the centrality of $\mathrm K_2(\Phi, R)$ has been long known for rings of small Krull dimension, e.\,g. for semilocal rings (see~\cite{Ste73}), the question whether it holds for an {\it arbitrary} commutative ring has remained open since~\cite{vdK}.
 On the other hand, the analogue of Suslin's normality theorem for Chevalley groups of rank $\geq 2$, i.\,e. the normality of the subgroup $\E_{sc}(\Phi, R):= \mathrm{Im}(\mathrm{st})$ for an arbitrary commutative ring $R$, was soon obtained by G.~Taddei, see~\cite{Ta86}. 
 
-The first advancement in the solution of the centrality problem for arbitrary commutative rings since~\cite{vdK} was the counterexample of M.~Wendt~\cite{Wendt} which showed that the centrality of $\mathrm K_2$ may fail for root systems of rank $2$ (similarly, there is a counterexample to Suslin's normality theorem for the rank $1$ group $\mathrm{SL}_2(R)$). Soon the papers~\cite{Lav,Sin,LavSin} of the first- and second-named authors appeared, in which it was shown that the centrality of $\mathrm K_2$ does hold for all the Chevalley groups of type $\rC_\ell$, $\rD_\ell$, $\rE_\ell$ provided $\ell\geq 3$. In~\cite{Lav} a symplectic analogue of the technique of~\cite{vdK} was developed, while in~\cite{Sin, LavSin} the proof was based on the amalgamation theorem for relative Steinberg groups which reduced the problem of centrality to the already-known linear case. Nevertheless, neither of these two approaches seemed to work for the root systems $\rB_\ell$ and $\rF_4$. Finally, in~\cite{Vor1} the third-named author has developed a novel pro-group approach, which allowed him not only to generalize~\cite{vdK,Tul} to even larger class of noncommutative rings, but also to prove the centrality of $\mathrm K_2$ for odd unitary groups and, thus, cover all classical groups, including the case $\rB_\ell$, see~\cite{Vor2}. In the present paper these methods are employed to verify the centrality of $\mathrm K_2$ in the case $\Phi = \rF_4$, the only case which has remained open until now.
+The first advancement in the solution of the centrality problem for arbitrary commutative rings since~\cite{vdK} was the counterexample of M.~Wendt~\cite{Wendt} which showed that the centrality of $\mathrm K_2$ may fail for root systems of rank $2$ (similarly, there is a counterexample to Suslin's normality theorem for the rank $1$ group $\mathrm{SL}_2(R)$). Soon the papers~\cite{Lav,Sin,LavSin} of the first- and second-named authors appeared, in which it was shown that the centrality of $\mathrm K_2$ does, indeed, hold for all the Chevalley groups of type $\rC_\ell$, $\rD_\ell$, $\rE_\ell$ provided $\ell\geq 3$. In~\cite{Lav} a symplectic analogue of the technique of~\cite{vdK} was developed, while in~\cite{Sin, LavSin} the proof was based on the amalgamation theorem for relative Steinberg groups which reduced the problem of centrality to the already-known linear case. Nevertheless, neither of these two approaches seemed to work for the root systems $\rB_\ell$ and $\rF_4$. Finally, in~\cite{Vor1} the third-named author has developed a novel pro-group approach, which allowed him not only to generalize~\cite{vdK,Tul} to even larger class of noncommutative rings, but also to prove the centrality of $\mathrm K_2$ for odd unitary groups and, thus, cover all classical groups, including the case $\rB_\ell$, see~\cite{Vor2}. In the present paper these methods are employed to verify the centrality of $\mathrm K_2$ in the case $\Phi = \rF_4$, the only case which has remained open until now.
 This is accomplished in~\cref{SteinbergCrossedModule} below. Our method of proof also applies to root systems of type $\rA_{\geq 3}$, $\rD_{\geq 4}$, $\rE_{6,7,8}$, and thus gives a proof of the centrality of $\mathrm{K}_2$ independent of the earlier papers~\cite{vdK,Sin,LavSin}. In course of the proof we also reprove Taddei's normality theorem~\cite{Ta86} in the aforementioned cases; see~\cref{Normality}. Thus, the main consequence of \cite{Vor1,Vor2} and our~\cref{SteinbergCrossedModule} can be formulated as follows.
 \begin{theorem*}
 Let $R$ be a commutative ring, $\Phi$ be an irreducible root system of rank $\geq 3$. 
@@ -124,9 +123,9 @@ For an arbitrary commutative ring $R$ and a root system $\Phi=\mathrm \rA_\ell,\
 In particular, for $\Phi=\mathrm A_3,\mathrm C_3,\mathrm D_4,\mathrm F_4$ the equality $\mathrm K_2(\Phi,\,R)=\mathrm K_2^Q(\Phi,\,R)$ holds iff $R$ does not have residue fields isomorphic to $\mathbb F_2$ and $\mathrm K_2(\mathrm B_3,\,R)=\mathrm K_2^Q(\mathrm B_3,\,R)$ iff $R$ does not have residue fields isomorphic to $\mathbb F_2$ and $\mathbb F_3$.
 \end{corollary*}
 
-Since the proof of the main theorem is rather long and technical and the setting of the papers~\cite{Vor1,Vor2} is already rather general, let us briefly sketch the key ideas of our proof using the simplest case of the functor $\mathrm{K}_{2,n}$ as an example.
-Already in this form our proof can be seen to be influenced by the Quillen--Suslin local-global principle.
+Since the proof of the main theorem is rather long and technical and the setting of the papers~\cite{Vor1,Vor2} is already rather general, let us briefly sketch the key ideas of our proof using the simplest case of the functor $\mathrm{K}_{2,n}$ as an example. For simplicity, we also assume that the ring $R$ is an integral domain.
 
+The proof is based on a variant of Quillen--Suslin's local-global principle.
 Consider an arbitrary element $g$ from $\mathrm K_{2,n}(R)$. We want to show that $g$ commutes with $x_{ij}(r)$ for every $r\in R$.
 Consider the set \[I=\{a\in R\mid [g,\,x_{ij}(aR)]=1\},\] which is easily seen to be, in fact, an ideal. 
 To prove the centrality of $\mathrm{K}_{2,n}(R)$ it suffices to show that $I=R$.
@@ -135,11 +134,24 @@ By the centrality of $\mathrm K_{2,n}(R_M)$ one has $[\lambda_{M}(g),\,x_{ij}(r)
 \begin{equation} \label{intro} [g,\,x_{ij}(s_0R)]=1, \end{equation}
 or, in other words, that $s_0\in I\cap R\setminus M$, this would lead to a contradiction and would complete the proof of the centrality of $\mathrm K_{2,n}(R)$.
 
-The naive expectation why~(\ref{intro}) must hold is as follows: if we take any presentation $g=\prod_hx_{k_h l_h}(r_h)$ for some $r_h\in R$, then after localization at $M$ the equality $[\prod_hx_{k_h l_h}(r_h),\,x_{ij}(s_0r)]=1$ will be a consequence of a finite number of Steinberg relations. These relations involve denominators from $R\setminus M$, but it seems possible to choose $s_0$ so large that all the denominators in all the Steinberg relations involved disappear after reducing the fractions. This would mean that the relation $[g,\,x_{ij}(s_0r)]=1$ already holds in the Steinberg group $\St_n(R)$.
+Now take any presentation of $g$ as $\prod_hx_{k_h l_h}(r_h)$ for some $r_h\in R$ and $k_h\neq l_h$. The equality $[\prod_hx_{k_h l_h}(r_h),\,x_{ij}(s_0r)]=1$ in $\St_n(R_M)$ is a consequence of a finite number of Steinberg relations involving denominators from $R\setminus M$. Naively one would hope to ``get rid of'' these denominators, i.\,e. to find $s_0 \in R\setminus M$ so large that the relation $[g,\,x_{ij}(s_0r)]=1$ becomes a consequence of Steinberg relations defining the group $\St_n(R)$.
 
-Unfortunately, it is not that easy to formalize the last argument. Clasically, this formalization looked as follows (cf.~\cite{Tul,Sin,LavSin,Lavlgp}):
-first, the localization at a maximal ideal was reduced to the localization at some principal ideal $sR$ (cf, e.\,g. the proof of ~\cite[Theorem~2]{Sin}), ...
- 
+Unfortunately, formally proving the last claim is not easy. Clasically, the proof went as follows (cf.~\cite{Tul,Sin,LavSin,Lavlgp}): first, the localization at a maximal ideal was reduced to the localization at some element $s$ (cf. e.\,g. the proof of~\cite[Theorem~2]{Sin}), then a trick called {\it Dilation principle} was used (cf. e.\,g.~\cite[Lemma~15]{Sin}).
+The proof of the Dilation principle, however, further required finding nontrivial ad hoc presentations of relative Steinberg groups.
+For example~\cite{Tul, Lavlgp} relied on a variant of van der Kallen's another presentation for linear and symplectic groups, while~\cite{Sin, LavSin} relied on the amalgamation theorem for relative Steinberg groups; see~\cite[Theorem~9]{Sin}. However, it was not easy to transfer these approaches to all Chevalley groups.
+
+A remarkable idea of the third-named author was to abandon relative Steinberg groups $\St(\Phi, R, I)$ and instead work with sequences of {\it unrelativized} Steinberg groups $\St(\Phi, s^nR)$, $n \in \mathbb N$ given by the usual Steinberg presentations.
+It turns out that it is possible to define the ``conjugation'' action of the Steinberg group $\St(\Phi, R_s)$ upon such a sequence. Naively, for each $g \in \St(\Phi, R_s)$ this automorphism of conjugation by $g$ corresponds to a collection of group homomorphisms \[\{\St(\Phi, s^{m_2}R) \to \St(\Phi, s^{m_1}R)\}_{m_1 \in \mathbb N },\] where $m_2$ depends on $g$ and $m_1$.
+
+In fact, it is possible to even further generalize this construction to arbitrary localizations, not just principal ones.
+Indeed, if $S \subseteq R$ is an arbitrary multiplicative subset of a domain $R$, then one can consider the following diagram.
+Its objects are unrelativized Steinberg groups $\St(\Phi, sR)$, $s \in S$, while its arrows are the homomorphisms
+\[ \St(\Phi, s_2R) \to \St(\Phi, s_1R),\ x_\alpha(a) \mapsto x_\alpha(a), \]
+which may exist, obviously, only if $s_1$ divides $s_2$.
+The above diagram is called the {\it Steinberg pro-group}. It is possible to define an action of $\St(\Phi, S^{-1}R)$ upon the Steinberg pro-group. For each $x_{\alpha}(a/s)$, $a\in R$, $s\in S=R\setminus M$ the automorphism of conjugation by $x_\alpha(a/s)$ corresponds to a collection of group homomorphisms \[\{\St(\Phi, f(s)R) \to \St(\Phi, sR)\}_{s \in S},\] where $f \colon S \to S$ is some function such that $s$ divides $f(s)$. In fact, a morphism between pro-groups should be defined not just as a collection of homomorphisms, but as an {\it equivalence class} of such collections. We refer the reader to~\cref{sec:pro-obj} for more formal treatment of pro-groups and to~\cref{sec:local-action} for the formal definition of the action of the Steinberg group $\St(\Phi, S^{-1}R)$.
+
+Now the proof of~\eqref{intro} goes as follows.
+
 
 \subsection{Acknowledgements}
 The work of the second-named author was supported by RFBR grant No 18-31-20044.
@@ -155,7 +167,7 @@ In this paper we also make use the following commutator identities:
 \end{equation}
 
 
-\subsection{Generalities on pro-objects}
+\subsection{Generalities on pro-objects} \label{sec:pro-obj}
 Let \(\mathcal C\) be an arbitrary category.
 In this section we recall the construction of the pro-completion of \(\mathcal C\) (cf. \cite[Section~6.1]{SK06}).
 
@@ -690,7 +702,7 @@ By~\cref{SteinbergPresentation} the morphisms $\widetilde{x}_{\beta}$ give rise 
 \end{proof}
 
 
-\section{The action of localized groups on pro-groups} \label{sec:local-action}
+\section{The action of \texorpdfstring{$\GG_{sc}(\Phi, S^{-1}R)$}{G(Ф, R)} on pro-groups} \label{sec:local-action}
 Throughout this section \(R\) is a ring and \(S \subseteq R\) is a multiplicative subset.
 \subsection{The case of Chevalley groups}
 Our first goal is to show that \(\GG_{sc}(\Phi, S^{-1} R)\) can be made to act on the Chevalley pro-group \(\GG^{(\infty)}(\Phi, R)\) by conjugation. Denote by \(H_\Phi\) the Hopf \(\ZZ\)-algebra of \(\GG_{sc}(\Phi, -)\) with the structure of a Hopf algebra given by the triple $(\Delta, S, \varepsilon)$. Recall that \(H_\Phi\) is a finitely presented commutative \(\ZZ\)-algebra, therefore $\Ker(\varepsilon)$ is at least a finitely generated rng. Consider the ``coconjugation'' homomorphism (written down in Sweedler notation)

@@ -5,8 +5,10 @@
 \usepackage[T1]{fontenc}
 \usepackage[breaklinks=false,unicode]{hyperref}
 \usepackage[capitalise]{cleveref}
-\usepackage[matrix,arrow,curve]{xy}
+\usepackage[matrix,arrow,curve,tips]{xy}
 \usepackage[notref, notcite]{showkeys}
+
+\SelectTips{cm}{12}
 
 \usepackage[backend=biber, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
 \addbibresource{f4paper.bib}
@@ -112,7 +114,8 @@ As a corollary, we obtain that Stein's $\mathrm K_2$-group $\mathrm{K}_2(\Phi, R
 Thus, combining the above theorem with the known results~\cite{St71,vdKStein} we obtain the following.
 \begin{corollary*}
 For an arbitrary commutative ring $R$ and a root system $\Phi=\mathrm \rA_\ell,\rB_\ell,\rC_\ell$ for $\ell\geq4$, $\Phi=\mathrm \rD_\ell$ for $\ell\geq5$, or $\Phi=\mathrm \rE_6,\,\mathrm \rE_7,\,\mathrm \rE_8$ one has $\mathrm K_2(\Phi,\,R)=\mathrm K_2^Q(\Phi,\,R)$. Moreover, for $\Phi=\rA_3,\rB_3,\rC_3,\rD_4,\rF_4$ the following exact sequences hold:
-\[ \xymatrix{ 1\ar@{->}[r]&{\mathrm H_2(\mathrm{St}(\Phi,\,R),\mathbb Z)}\ar@{->}[r]&\mathrm K_2^Q(\Phi,\,R)\ar@{->}[r]&\mathrm K_2(\Phi,\,R)\ar@{->}[r]&1,} \text{where} \]
+\[ \xymatrix{ 1\ar@{->}[r]&{\mathrm H_2(\mathrm{St}(\Phi,\,R),\mathbb Z)}\ar@{->}[r]&\mathrm K_2^Q(\Phi,\,R)\ar@{->}[r]&\mathrm K_2(\Phi,\,R)\ar@{->}[r]&1,}\]
+where
 \begin{align*}
 \mathrm H_2\big(\mathrm{St}(\mathrm A_3,\,R),\mathbb Z\big)&=R/\langle2, (t^2-t)(s^2-s)\mid t,\,s\in R\rangle,\\
 \mathrm H_2\big(\mathrm{St}(\mathrm B_3,\,R),\mathbb Z\big)&=R/\langle6, 3(t^2-t)(s^2-s), 2(t^3-t)\mid t,\,s\in R\rangle,\\
@@ -351,8 +354,8 @@ it is a homomorphism by the first and the third identities.
 From the last two identities we conclude that for all \(a, b \in R\) one has
 \begin{align*}
 f'\bigl(a^{(s^2)} b^{(s^2)}\bigr)
-&= g' \bigl( 1^{(s)}, (s^2 ab)^{(s)} \bigr) =\\
-&= g' \bigl( (sa)^{(s)}, (sb)^{(s)} \bigr) =\\
+&= g' \bigl( 1^{(s)}, (s^2 ab)^{(s)} \bigr)\\
+&= g' \bigl( (sa)^{(s)}, (sb)^{(s)} \bigr)\\
 &= g' \bigl(a^{(s^2)}, b^{(s^2)}\bigr).
 \end{align*}
 It is clear that \(f'\) defines the required morphism \(f\) of pro-groups.
@@ -481,7 +484,7 @@ As an immediate application of the above lemma we prove the following generation
   
   Let $\delta$ be a root lying in $\Phi_0$. We claim that $\delta$ can be decomposed as a sum $\gamma_1 + \gamma_2$ for some $\gamma_1,\gamma_2 \in \Phi\setminus\Phi_0$ having the same length as $\delta$. Indeed, in the case when \(\Phi_0\) is of type \(\rA_2\) the assertion follows from~\cref{ThreeRoots}, otherwise it is obvious.  
   It is clear that
-  \begin{multline*} f_1(x_\delta(a^{(\infty)}b^{(\infty)})) = [f_1(x_{\gamma_1}(N_{\gamma_1, \gamma_2}a^{(\infty)})),\ f_1(x_{\gamma_2}(b^{(\infty)}))] = \\
+  \begin{multline*} f_1(x_\delta(a^{(\infty)}b^{(\infty)})) = [f_1(x_{\gamma_1}(N_{\gamma_1, \gamma_2}a^{(\infty)})),\ f_1(x_{\gamma_2}(b^{(\infty)}))] \\
   = [f_2(x_{\gamma_1}(N_{\gamma_1, \gamma_2}a^{(\infty)})),\ f_2(x_{\gamma_2}(b^{(\infty)}))] = f_2(x_\delta(a^{(\infty)}b^{(\infty)})), \end{multline*}
   which together with~\cref{RingGeneration} implies the required equality $f_1 x_\delta = f_2 x_\delta$.
  \end{proof}
@@ -530,14 +533,14 @@ Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism
  Let us first consider the case \(\delta \in \Phi \setminus (\ZZ \beta + \ZZ \gamma)\).
  Notice that the root subset $\Sigma = \Phi \cap (\ZZ_{\geq 0}\beta + \ZZ_{\geq 0}\gamma + \ZZ_{>0}\delta)$ is special and does not contain $\pm\alpha$, $-\beta$ or $-\gamma$. Thus, the relations between the remaining root subgroup morphisms of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ suffice to rewrite the left-hand side of~\eqref{R2-bg}--\eqref{R4-bg2} as follows:
  \begin{align}
-  &\bigl[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\delta(d^{(\infty)})\bigr] = \label{eq:elim-lhs_1} \\
+  &\bigl[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\delta(d^{(\infty)})\bigr] \label{eq:elim-lhs_1} \\
   %
   &= \up{x_\beta(N_{\beta, \gamma} b^{(\infty)})
    x_\gamma(c^{(\infty)})
    x_\beta(-N_{\beta, \gamma} b^{(\infty)})
    x_\gamma(-c^{(\infty)})}
   {x_\delta(d^{(\infty)})}\,
-  x_\delta(-d^{(\infty)}) = \nonumber \\
+  x_\delta(-d^{(\infty)}) \nonumber \\
   %
   &= \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ i, j \geq 0; k > 0}}
   x_{i\beta + j\gamma + k\delta} \bigl(A_{i, j, k} {b^{(\infty)}}^i {c^{(\infty)}}^j {d^{(\infty)}}^k\bigr). \nonumber
@@ -576,7 +579,7 @@ It is clear that the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} an
  From the already proved relations~\eqref{R2-bg}--\eqref{R3-bg} and the other Steinberg relations one obtains that
  \begin{align*}
   &[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),
-  x_{-\beta}(N_{-\beta_1, -\beta_2} b_1^{(\infty)} b_2^{(\infty)})] = \\
+  x_{-\beta}(N_{-\beta_1, -\beta_2} b_1^{(\infty)} b_2^{(\infty)})] \\
   %
   &= [\up{x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})}
    {x_{-\beta_1}(b_1^{(\infty)})},
@@ -746,19 +749,19 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  \multispan2{\hfil if $\alpha + \beta \notin \Phi \cup \{0\}$;} \\
  %
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
- &:= x_\beta(b^{(\infty)})
+ &:= x_\beta(b^{(\infty)})\,
  x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr), \\
  \multispan2{\hfill if $\alpha + \beta \in \Phi$ but $\alpha + 2\beta, 2\alpha + \beta \notin \Phi$;} \\
  %
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
- &:= x_\beta(b^{(\infty)})
-  x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)
+ &:= x_\beta(b^{(\infty)})\,
+  x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)\,
   x_{2\alpha + \beta}\bigl(N^{2,1}_{\alpha, \beta} u^2 b^{(\infty)}\bigr), \\
  \multispan2{\hfill if $\alpha + \beta, 2\alpha + \beta \in \Phi$;} \\
  %
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
- &:= x_\beta(b^{(\infty)})
-  x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)
+ &:= x_\beta(b^{(\infty)})\,
+  x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)\,
   x_{\alpha + 2\beta}\bigl(-N^{2,1}_{\beta, \alpha} u {b^{(\infty)}}^2\bigr), \\
  \multispan2{\hfill if $\alpha + \beta, \alpha + 2\beta \in \Phi$.}
  \end{align*} 
@@ -821,9 +824,9 @@ As before, \(\Phi\) is a root system of rank \(\geq 3\) different from \(\rB_\el
 
 Let $S = R\setminus M$ be the multiplicative system associated to a maximal ideal $M \trianglelefteq R$.
 Notice that by~\cref{ChevalleyLocalAction} the group $\GG_{\mathrm{sc}}(\Phi, R)$ acts on both $\St^{(\infty)}(\Phi, R)$ and $\GG^{(\infty)}(\Phi, R)$ by conjugation and this action is preserved by the morphism $\mathrm{st}$.
-We denote by \[\pi_R \colon R^{(\infty)} \to R,\ \pi_{\St} \colon \St^{(\infty)}(\Phi, R) \to \St(\Phi, R)\text{ and } \pi_{\GG} \colon \GG^{(\infty)}(\Phi, R) \to \GG(\Phi, R).\] the canonical pro-group morphisms. Notice that the action of $h\in \GG_{\mathrm{sc}}(\Phi, R)$ the pro-group $\GG^{(\infty)}(\Phi, R)$ is compatible with the conjugation action of $\GG_{\mathrm{sc}}(\Phi, R)$ on itself, i.\,e. $\up{h}\pi_{\GG}(g^{(\infty)}) = \pi_{\GG}(\up{h} {g^{(\infty)}})$.
+We denote by \[\pi_R \colon R^{(\infty)} \to R,\ \pi_{\St} \colon \St^{(\infty)}(\Phi, R) \to \St(\Phi, R)\text{ and } \pi_{\GG} \colon \GG^{(\infty)}(\Phi, R) \to \GG_{\mathrm{sc}}(\Phi, R).\] the canonical pro-group morphisms. Notice that the action of $h\in \GG_{\mathrm{sc}}(\Phi, R)$ on the pro-group $\GG^{(\infty)}(\Phi, R)$ is compatible with the conjugation action of $\GG_{\mathrm{sc}}(\Phi, R)$ on itself, i.\,e. $\up{h}\pi_{\GG}(g^{(\infty)}) = \pi_{\GG}(\up{h} {g^{(\infty)}})$.
 Similarly, the conjugation action of $h\in \St(\Phi, R)$ on $\St^{(\infty)}(\Phi, R)$ is compatible with the conjugation action of $\St(\Phi, R)$ on itself, i.\,e. $\up{h}\pi_{\St}(g^{(\infty)}) = \pi_{\St}(\up{h}{g^{(\infty)}})$.
-Notice also that $\pi_R x_\alpha = x_\alpha \pi_{\St}$ and $\pi_{\GG} \mathrm{st} = \mathrm{st}\pi_{\St}$.
+Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{st} = \mathrm{st}\, \pi_{\St}$.
 
 \begin{lemma}\label{CentralityK2}
  The subgroup \(\mathrm K_2(\Phi, R) = \Ker(\mathrm{st} \colon \St(\Phi, R) \to \GG(\Phi, R))\) is contained in the center of \(\St(\Phi, R)\).
@@ -837,7 +840,7 @@ Notice also that $\pi_R x_\alpha = x_\alpha \pi_{\St}$ and $\pi_{\GG} \mathrm{st
  \begin{multline*}
   \up g {x_\alpha(\pi_R(a^{(\infty)}))}
   = \up g{\pi_{\St}(x_\alpha(a^{(\infty)}))}
-  = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})})= \\
+  = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})}) \\
   = \pi_{\St}(x_\alpha(a^{(\infty)}))
   = x_\alpha(\pi_R(a^{(\infty)})),
  \end{multline*}
@@ -882,7 +885,7 @@ Notice also that $\pi_R x_\alpha = x_\alpha \pi_{\St}$ and $\pi_{\GG} \mathrm{st
  First of all, let us show that \([Y_\alpha(a), Y_\beta(b)] = 1\) provided \(\alpha + \beta \notin \Phi \cup \{0\}\). 
  Let \(\alpha, \beta\) be roots as above, $a$ be an element of $R$ and $h$ be an element of $Y_\alpha(a)\).
  Set $I = \{b \in R \mid [h, Y_\beta(bR)] = 1\}$ and let \(M \trianglelefteq R\) be a maximal ideal. Since
- \[[h, \pi_{\St}(\up g {x_\beta(b^{(\infty)})})] = \pi_{\St}(\up{g t_\alpha(a)} {x_\beta(-b^{(\infty)})}) \pi_{\St}(\up g {x_\beta(-b^{(\infty)})}) = 1,\]
+ \[[h, \pi_{\St}(\up g {x_\beta(b^{(\infty)})})] = \pi_{\St}(\up{g t_\alpha(a)} {x_\beta(b^{(\infty)})}) \pi_{\St}(\up g {x_\beta(-b^{(\infty)})}) = 1,\]
  we obtain that \(I \not \subseteq M\) and, consequently, that \(I = R\), which proves the assertion.
 
  Now let $\alpha$ be a root of $\Phi$. By our assumptions on $\Phi$ there exist roots \(\beta, \gamma \in \Phi\) of the same length such that \(\alpha = \beta + \gamma\). Denote by \(y_\alpha(a)\) the only element of the set \([Y_\beta(N_{\beta, \gamma}), Y_\gamma(a)]\). 
@@ -892,14 +895,14 @@ Notice also that $\pi_R x_\alpha = x_\alpha \pi_{\St}$ and $\pi_{\GG} \mathrm{st
  It remains to check that \(y_\alpha(a)\) satisfy the Steinberg relations \eqref{R3} and \eqref{R4}.
  Let \(M \trianglelefteq R\) be a maximal ideal. First of all, notice that
  \begin{multline} \label{eq:scm1}
-  y_\alpha(\pi_R(a^{(\infty)})) = [Y_\beta(N_{\beta, \gamma}), \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})] =\\
+  y_\alpha(\pi_R(a^{(\infty)})) = [Y_\beta(N_{\beta, \gamma}), \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})]\\
   = \pi_{\St}\bigl(\up{g t_\beta(N_{\beta, \gamma})}{x_\gamma(a^{(\infty)})}\, \up g{x_\gamma(-a^{(\infty)})}\bigr) = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})}).
  \end{multline}
  
  Now let $a$ be an element of $R$ and \(\alpha, \beta\) be roots of $\Phi$ such that \(\alpha + \beta, 2\alpha + \beta \in \Phi\). 
  Consider the ideal
  \begin{align*}
- J = \{b \in R &\mid [y_\alpha(a), y_\beta(br)] = \\
+ J = \{b \in R &\mid [y_\alpha(a), y_\beta(br)] \\
  &= y_{\alpha + \beta}(N_{\alpha, \beta} abr)
  y_{2\alpha + \beta}(N_{\alpha, \beta}^{2,1} a^2 br) \text{ for all } r \in R\}.
  \end{align*}

@@ -130,27 +130,36 @@ Consider an arbitrary element $g$ from $\mathrm K_{2,n}(R)$. We want to show tha
 Consider the set \[I=\{a\in R\mid [g,\,x_{ij}(aR)]=1\},\] which is easily seen to be, in fact, an ideal. 
 To prove the centrality of $\mathrm{K}_{2,n}(R)$ it suffices to show that $I=R$.
 Assume the contrary and consider an arbitrary maximal ideal $M \trianglelefteq R$ containing $I$. 
-By the centrality of $\mathrm K_{2,n}(R_M)$ one has $[\lambda_{M}(g),\,x_{ij}(r)]=1$ for all $r\in R_{M}$ (we denote by $\lambda_M$ the localization homomorphism $R \to R_M$). If we were able to show for some $s_0\in R\setminus M$ that
-\begin{equation} \label{intro} [g,\,x_{ij}(s_0R)]=1, \end{equation}
-or, in other words, that $s_0\in I\cap R\setminus M$, this would lead to a contradiction and would complete the proof of the centrality of $\mathrm K_{2,n}(R)$.
+By the centrality of $\mathrm K_{2,n}(R_M)$ one has the identity $[\lambda_{M}(g),\,x_{ij}(r)]=1$ for all $r\in R_{M}$ (we denote by $\lambda_M$ the localization homomorphism $R \to R_M$). 
+If we were able to show for some $s_0\in R\setminus M$ that the identity \begin{equation} \label{intro} [g,\,x_{ij}(s_0R)]=1, \end{equation} holds in $\St(\Phi, R)$ or, in other words, that $s_0\in I\cap R\setminus M$, this would lead to a contradiction and hence would complete the proof of the centrality of $\mathrm K_{2,n}(R)$. %Naively one would hope to ``get rid of'' the denominators in these identities, i.\,e. to find $s_0 \in R\setminus M$ so large that the relation $[g,\,x_{ij}(s_0r)]=1$ becomes a consequence of Steinberg relations defining the group $\St_n(R)$.
+Unfortunately, formally proving this is not easy. 
 
-Now take any presentation of $g$ as $\prod_hx_{k_h l_h}(r_h)$ for some $r_h\in R$ and $k_h\neq l_h$. The equality $[\prod_hx_{k_h l_h}(r_h),\,x_{ij}(s_0r)]=1$ in $\St_n(R_M)$ is a consequence of a finite number of Steinberg relations involving denominators from $R\setminus M$. Naively one would hope to ``get rid of'' these denominators, i.\,e. to find $s_0 \in R\setminus M$ so large that the relation $[g,\,x_{ij}(s_0r)]=1$ becomes a consequence of Steinberg relations defining the group $\St_n(R)$.
+In the earlier papers the proof went as follows (cf.~\cite{Tul,Sin,LavSin,Lavlgp}).
+First, a formal variable was thrown in and the original question was reduced to the question of the triviality of $[g, x_{ij}(t)]$ in $\St_n(R[t])$. Then via a trick the problem was reduced to proving the {\it dilation principle} on principal localizations (see e.\,g.~\cite[Lemma~15]{Sin}), whose proof, in turn, was based on the isomorphism of {\it relative Steinberg groups} $\St_n(R_a[t], tR_a[t]) \cong \St_n(R \ltimes R_a[t], tR_a[t])$; cf.~\cite[Remark~3.12]{Sin}. Essentially this isomorphism means that it possible to define a conjugation action of $\St_n(R_a)$ on the group $\St_n(R\ltimes R_a[t], tR_a[t])$.
+This last step, however, required finding nontrivial ad hoc presentations of relative Steinberg groups.
+For example~\cite{Tul, Lavlgp} relied on a variant of van der Kallen's ``another presentation''~\cite{vdK} for linear and symplectic groups, while~\cite{Sin, LavSin} used the amalgamation theorem for relative Steinberg groups; see~\cite[Theorem~9]{Sin}. However, it was not easy to transfer to all Chevalley groups either of these approaches.
 
-Unfortunately, formally proving the last claim is not easy. Clasically, the proof went as follows (cf.~\cite{Tul,Sin,LavSin,Lavlgp}): first, the localization at a maximal ideal was reduced to the localization at some element $s$ (cf. e.\,g. the proof of~\cite[Theorem~2]{Sin}), then a trick called {\it Dilation principle} was used (cf. e.\,g.~\cite[Lemma~15]{Sin}).
-The proof of the Dilation principle, however, further required finding nontrivial ad hoc presentations of relative Steinberg groups.
-For example~\cite{Tul, Lavlgp} relied on a variant of van der Kallen's another presentation for linear and symplectic groups, while~\cite{Sin, LavSin} relied on the amalgamation theorem for relative Steinberg groups; see~\cite[Theorem~9]{Sin}. However, it was not easy to transfer these approaches to all Chevalley groups.
-
-A remarkable idea of the third-named author was to abandon relative Steinberg groups $\St(\Phi, R, I)$ and instead work with sequences of {\it unrelativized} Steinberg groups $\St(\Phi, s^nR)$, $n \in \mathbb N$ given by the usual Steinberg presentations.
-It turns out that it is possible to define the ``conjugation'' action of the Steinberg group $\St(\Phi, R_s)$ upon such a sequence. Naively, for each $g \in \St(\Phi, R_s)$ this automorphism of conjugation by $g$ corresponds to a collection of group homomorphisms \[\{\St(\Phi, s^{m_2}R) \to \St(\Phi, s^{m_1}R)\}_{m_1 \in \mathbb N },\] where $m_2$ depends on $g$ and $m_1$.
+A remarkable idea of the third-named author was to abandon relative Steinberg groups altogether and instead work with sequences of {\it unrelativized} Steinberg groups $\St(\Phi, a^nR)$, $n \in \mathbb N$ given by the usual Steinberg presentations.
+It turns out that it is possible to naturally define the ``conjugation'' action of the Steinberg group $\St(\Phi, R_a)$ on such a sequence. Naively, for each $g \in \St(\Phi, R_a)$ the automorphism of conjugation by $g$ corresponds to a collection of group homomorphisms \[\{\St(\Phi, a^{m_2}R) \to \St(\Phi, a^{m_1}R)\}_{m_1 \in \mathbb N },\] where $m_2$ depends on $g$ and $m_1$.
 
 In fact, it is possible to even further generalize this construction to arbitrary localizations, not just principal ones.
 Indeed, if $S \subseteq R$ is an arbitrary multiplicative subset of a domain $R$, then one can consider the following diagram.
 Its objects are unrelativized Steinberg groups $\St(\Phi, sR)$, $s \in S$, while its arrows are the homomorphisms
 \[ \St(\Phi, s_2R) \to \St(\Phi, s_1R),\ x_\alpha(a) \mapsto x_\alpha(a), \]
-which may exist, obviously, only if $s_1$ divides $s_2$.
-The above diagram is called the {\it Steinberg pro-group}. It is possible to define an action of $\St(\Phi, S^{-1}R)$ upon the Steinberg pro-group. For each $x_{\alpha}(a/s)$, $a\in R$, $s\in S=R\setminus M$ the automorphism of conjugation by $x_\alpha(a/s)$ corresponds to a collection of group homomorphisms \[\{\St(\Phi, f(s)R) \to \St(\Phi, sR)\}_{s \in S},\] where $f \colon S \to S$ is some function such that $s$ divides $f(s)$. In fact, a morphism between pro-groups should be defined not just as a collection of homomorphisms, but as an {\it equivalence class} of such collections. We refer the reader to~\cref{sec:pro-obj} for more formal treatment of pro-groups and to~\cref{sec:local-action} for the formal definition of the action of the Steinberg group $\St(\Phi, S^{-1}R)$.
+which may exist, obviously, only if $s_1$ divides $s_2$. 
+The above diagram is called the {\it Steinberg pro-group} and its arrows are called the {\it structure morphisms}. 
+The key claim is that it is possible to define an action of $\St(\Phi, S^{-1}R)$ on the Steinberg pro-group. 
 
-Now the proof of~\eqref{intro} goes as follows.
+For each $x_{\alpha}(a/s)$, $a\in R$, $s\in S = R\setminus M$ the automorphism of conjugation by $x_\alpha(a/s)$ would correspond to a certain collection of group homomorphisms \[\{conj_{x_\alpha(a/s)}(t) \colon  \St(\Phi, c^*(t)R) \to \St(\Phi, tR)\}_{t \in S},\] where $c^*\colon S \to S$ is the function $t \mapsto ts$, called the {\it index function}.
+
+In fact, a morphism between pro-groups should be defined not just as a collection of homomorphisms, but rather as an {\it equivalence class} of such collections. By definition, two pro-group morphisms $m_1$ and $m_2$ with index functions $m_1^*$,$m_2^* \colon S \to S$ are equivalent, if for every $t$ one can choose $s$ divisible both by $m_1^*(t)$ and $m_2^*(t)$ so that the homomorphisms \[m_i(t) \colon \St(\Phi, m_i^*(t)R) \to \St(\Phi, tR),\ i=1,2\] coincide after precomposition with the structure morphisms \[\St(\Phi, sR) \to \St(\Phi, m^*_i(t)R),\ i=1,2.\]
+We refer the reader to~\cref{sec:pro-obj} for a more thorough treatment of the formalism of pro-groups.
+
+After the automorphisms of conjugation by $x_\alpha(a/s)$ are defined, the proof of~\eqref{intro} can be finished as follows.
+We verify that these automorphisms satisfy the Steinberg relations defining $\St(\Phi, S^{-1}R)$ and, moreover, that the Steinberg  symbols $\{b_1, b_2\}$, $b_1, b_2 \in {S^{-1}R}^\times$ act trivially on the pro-group.
+Thus, one can define the pro-group automorphism $conj_{\lambda_M(g)}$ of conjugation by $\lambda_M(g)$ as a suitable composition of $conj_{x_{\alpha_i}(a_i/s_i)}$.
+Moreover, for $g\in \St(\Phi, R)$ this pro-group automorphism is compatible with the usual conjugation action of $g$,
+i.\,e. for some $s_0 \in S$ the group homomorphism $conj_{\lambda_M(g)}(1) \colon \St(\Phi, s_0R) \to \St(\Phi, R)$ coincides with the obvious homomorphism $h \mapsto ghg^{-1}$. Since our conjugation action factorizes through $\St(\Phi, S^{-1}R)$ we obtain that the conjugation by $g \in \mathrm K_2(\Phi, R)$ acts trivially on $x_\alpha(s_0R)$ and we are done.
 
 
 \subsection{Acknowledgements}
@@ -812,8 +821,8 @@ As before, \(\Phi\) is a root system of rank \(\geq 3\) different from \(\rB_\el
 
 Let $S = R\setminus M$ be the multiplicative system associated to a maximal ideal $M \trianglelefteq R$.
 Notice that by~\cref{ChevalleyLocalAction} the group $\GG_{\mathrm{sc}}(\Phi, R)$ acts on both $\St^{(\infty)}(\Phi, R)$ and $\GG^{(\infty)}(\Phi, R)$ by conjugation and this action is preserved by the morphism $\mathrm{st}$.
-We denote by \[\pi_R \colon R^{(\infty)} \to R,\ \pi_{\St} \colon \St^{(\infty)}(\Phi, R) \to \St(\Phi, R)\text{ and } \pi_{\GG} \colon \GG^{(\infty)}(\Phi, R) \to \GG(\Phi, R).\] the canonical pro-group morphisms. Notice that the action of $h\in \GG_{\mathrm{sc}}(\Phi, R)$ is preserved by $\pi_{\GG}$, i.\,e. $\up{h}\pi_{\GG}(g^{(\infty)}) = \pi_{\GG}(\up{h} {g^{(\infty)}})$.
-Similarly, the conjugation action of $h\in \St(\Phi, R)$ on $\St^{(\infty)}(\Phi, R)$ is preserved by $\pi_{\St}$, i.\,e. $\up{h}\pi_{\St}(g^{(\infty)}) = \pi_{\St}(\up{h}{g^{(\infty)}})$.
+We denote by \[\pi_R \colon R^{(\infty)} \to R,\ \pi_{\St} \colon \St^{(\infty)}(\Phi, R) \to \St(\Phi, R)\text{ and } \pi_{\GG} \colon \GG^{(\infty)}(\Phi, R) \to \GG(\Phi, R).\] the canonical pro-group morphisms. Notice that the action of $h\in \GG_{\mathrm{sc}}(\Phi, R)$ the pro-group $\GG^{(\infty)}(\Phi, R)$ is compatible with the conjugation action of $\GG_{\mathrm{sc}}(\Phi, R)$ on itself, i.\,e. $\up{h}\pi_{\GG}(g^{(\infty)}) = \pi_{\GG}(\up{h} {g^{(\infty)}})$.
+Similarly, the conjugation action of $h\in \St(\Phi, R)$ on $\St^{(\infty)}(\Phi, R)$ is compatible with the conjugation action of $\St(\Phi, R)$ on itself, i.\,e. $\up{h}\pi_{\St}(g^{(\infty)}) = \pi_{\St}(\up{h}{g^{(\infty)}})$.
 Notice also that $\pi_R x_\alpha = x_\alpha \pi_{\St}$ and $\pi_{\GG} \mathrm{st} = \mathrm{st}\pi_{\St}$.
 
 \begin{lemma}\label{CentralityK2}
@@ -860,7 +869,7 @@ Notice also that $\pi_R x_\alpha = x_\alpha \pi_{\St}$ and $\pi_{\GG} \mathrm{st
 \end{theorem}
 \begin{proof}  
  Notice that under our assumptions the group $\E(\Phi, R)$ is perfect, therefore by~\cite[Lemma~1.1]{St71} for every $g\in \GG_{\mathrm{sc}}(\Phi, R)$ there may exist at most one endomorphism $\up g (-)$ of $\St(\Phi, R)$ satisfying 
- \begin{equation} \label{eq:scm-2}\up{g}{\mathrm{st}(h)} = \mathrm{st} (\up g h)\text{ for all }h \in \St(\Phi, R).  \end{equation}
+ \begin{equation} \label{eq:scm-2}\up{g}{\mathrm{st}(h)} = \mathrm{st} (g h g^{-1})\text{ for all }h \in \St(\Phi, R).  \end{equation}
  Thus, to construct an action of $\GG_{\mathrm{sc}}(\Phi, R)$ on $\St(\Phi, R)$ it suffices to construct an endomorphism 
   \(\up g{(-)} \colon \St(\Phi, R) \to \St(\Phi, R)\) satisfying~\eqref{eq:scm-2}.
  Also, this action would automatically satisfy Peiffer identity.

@@ -6,7 +6,7 @@
 \usepackage[breaklinks=false,unicode]{hyperref}
 \usepackage[capitalise]{cleveref}
 \usepackage[matrix,arrow,curve,tips]{xy}
-\usepackage[notref, notcite]{showkeys}
+%\usepackage[notref, notcite]{showkeys}
 
 \SelectTips{cm}{12}
 
@@ -76,6 +76,7 @@
 
 \begin{document}
 \maketitle
+\begin{abstract} We prove the centrality of $\mathrm K_2(\Phi, R)$ for an arbitrary commutative ring $R$ and root system $\Phi$ of rank $\geq 3$. Our proof uses only elementary localization techniques reformulated in terms of pro-groups. \end{abstract}
 
 \section{Introduction}
 This paper is the final installment in the series of articles by the third-named author devoted to the proof of centrality of $\mathrm K_2$ modeled on linear groups. In the previous articles of the series~\cite{Vor1, Vor2} the third-named author has already proven the centrality of $\mathrm K_2$ for the so-called {\it odd unitary groups} (see~\cite{Pe05}), while the present paper focuses on Chevalley groups.
@@ -141,7 +142,7 @@ Unfortunately, formally proving this is not easy.
 In the earlier papers the proof went as follows; cf.~\cite{Tul,Sin,LavSin,Lavlgp}.
 First, a formal variable was thrown in and the original question was reduced to the question of the triviality of $[g, x_{ij}(t)]$ in $\St_n(R[t])$, which, in turn, was further reduced to proving the {\it Dilation principle}, a certain assertion about principal localizations (see e.\,g.~\cite[Lemma~15]{Sin}). The proof of the Dilation principle was based on the isomorphism of {\it relative Steinberg groups} $\St_n(R_a[t], tR_a[t]) \cong \St_n(R \ltimes R_a[t], tR_a[t])$; cf.~\cite[Remark~3.12]{Sin}. Essentially this isomorphism means that it possible to define a conjugation action of $\St_n(R_a)$ on the group $\St_n(R\ltimes R_a[t], tR_a[t])$.
 This last step, however, required finding nontrivial ad hoc presentations of relative Steinberg groups.
-For example~\cite{Tul, Lavlgp} relied on a variant of van der Kallen's ``another presentation''~\cite{vdK} for linear and symplectic groups, while~\cite{Sin, LavSin} were based on the amalgamation theorem for relative Steinberg groups; see~\cite[Theorem~9]{Sin}. However, it was not easy to transfer to all Chevalley groups either of these two approaches.
+For example~\cite{Lavlgp} relied on a variant of van der Kallen's ``another presentation''~\cite{vdK} for symplectic groups, while~\cite{Sin, LavSin} were based on the amalgamation theorem for relative Steinberg groups; see~\cite[Theorem~9]{Sin}. However, it was not easy to transfer to all Chevalley groups either of these two approaches.
 
 A remarkable idea of the third-named author was to abandon relative Steinberg groups altogether and instead work with sequences of {\it unrelativized} Steinberg groups $\St(\Phi, a^nR)$, $n \in \mathbb N$ given by the usual Steinberg presentations.
 It turns out that it is possible to naturally define the ``conjugation'' action of the Steinberg group $\St(\Phi, R_a)$ on such a sequence. Naively, for $g \in \St(\Phi, R_a)$ the automorphism of conjugation by $g$ corresponds to a collection of group homomorphisms \[\{\St(\Phi, a^{c^*(m)}R) \to \St(\Phi, a^{m}R)\}_{m \in \mathbb N },\] where $c^*\colon \mathbb N \to \mathbb N$ is some function depending on $g$.

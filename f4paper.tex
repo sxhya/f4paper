@@ -64,7 +64,7 @@
 \newcommand{\rF}{\mathsf{F}}
 \newcommand{\rG}{\mathsf{G}}
 
-\title{Centrality of $K_2$ for Chevalley groups: a pro-group approach}
+\title{Centrality of $\mathrm K_2$ for Chevalley groups: a pro-group approach}
 \keywords {Steinberg group, pro-group, Suslin normality theorem. {\em Mathematical Subject Classification (2010):} 19C09, 20G35, 20H05}
 
 \author[1] {Andrei Lavrenov} \email{avlavrenov at gmail.com} 
@@ -99,14 +99,14 @@ Recall that the algebraic $\mathrm K_2$-functor was originally defined by J.~Mil
 
 Milnor's approach was followed by M.~Stein who defined Steinberg groups $\St(\Phi, R)$ in the context of arbitrary Chevalley groups and, by analogy,  defined the functor $\mathrm K_2(\Phi, R)$ as the kernel of the natural homomorphism \begin{equation}\label{eq:st}\mathrm{st}\colon \St(\Phi, R) \to \GG_{\mathrm{sc}}(\Phi, R).\end{equation} Also M.~Stein and W.~van der Kallen computed Schur multipliers of $\St(\Phi, R)$ for $\Phi$ of rank $\geq 3$; see~\cite{St71, vdKStein}. The Schur multipliers in the setting of unitary Steinberg groups over noncommutative rings have also been studied in~\cite{Bak, Tang, LavU, LavOU}.
 
-The first proof of the centrality of the linear functor \[\mathrm K_{2,n}(R) = \Ker(\St_n(R) \to \mathrm{SL}_n(R))\] for an {\it arbitrary} commutative ring $R$ was obtained by W.~van der Kallen in~\cite{vdK} for $n \geq 4$. His proof was influenced by the proof of the Suslin normality theorem, which asserts that the elementary subgroup $\mathrm E_n(R)$ is normal in $\mathrm{SL}_n(R)$ for an arbitarary commutative $R$ and $n \geq 3$. Recall that the latter result is one of the ingredients in Suslin's proof of the so-called $\mathrm K_1$-analogue of the Serre problem; see~\cite{Suslin}. %It was also directly influenced by an earlier solution \cite{Quillen, SuslinProj} of the Serre problem by D.~Quillen and A.~Suslin.
-The result of van der Kallen was further generalized by M.~Tulenbaev to all almost commutative rings, i.\,e. algebras module finite over their centers; see~\cite{Tul}.
+The first proof of the centrality of the linear functor \[\mathrm K_{2,n}(R) = \Ker(\St_n(R) \to \mathrm{SL}_n(R))\] for an {\it arbitrary} commutative ring $R$ was obtained by W.~van der Kallen in~\cite{vdK} for $n \geq 4$. His proof was influenced by the proof of the Suslin normality theorem, which asserts that the elementary subgroup $\mathrm E_n(R)$ is normal in $\mathrm{SL}_n(R)$ for an arbitarary commutative $R$ and $n \geq 3$. The latter result is one of the ingredients in Suslin's proof of the so-called $\mathrm K_1$-analogue of the Serre problem; see~\cite{Suslin}. %It was also directly influenced by an earlier solution \cite{Quillen, SuslinProj} of the Serre problem by D.~Quillen and A.~Suslin.
+The result of van der Kallen was further generalized by M.~Tulenbaev to almost commutative rings, i.\,e. algebras module finite over their centers; see~\cite{Tul}.
 
 While the centrality of $\mathrm K_2(\Phi, R)$ has been long known for rings of small Krull dimension, e.\,g. for semilocal rings (see~\cite{Ste73}), the question whether it holds for an {\it arbitrary} commutative ring has remained open since~\cite{vdK}.
 On the other hand, the analogue of Suslin's normality theorem for Chevalley groups of rank $\geq 2$, i.\,e. the normality of the subgroup $\E_{\mathrm{sc}}(\Phi, R):= \mathrm{Im}(\mathrm{st})$ for an arbitrary commutative ring $R$, was soon obtained by G.~Taddei, see~\cite{Ta86}. 
 
 The first advancement in the solution of the centrality problem for arbitrary commutative rings since~\cite{vdK} was the counterexample of M.~Wendt~\cite{Wendt} which showed that the centrality of $\mathrm K_2$ may fail for root systems of rank $2$ (similarly, there is a counterexample to Suslin's normality theorem for the rank $1$ group $\mathrm{SL}_2(R)$). Soon the papers~\cite{Lav,Sin,LavSin} of the first- and second-named authors appeared, in which it was shown that the centrality of $\mathrm K_2$ does, indeed, hold for all the Chevalley groups of type $\rC_\ell$, $\rD_\ell$, $\rE_\ell$ provided $\ell\geq 3$. In~\cite{Lav} a symplectic analogue of the technique of~\cite{vdK} was developed, while in~\cite{Sin, LavSin} the proof was based on the amalgamation theorem for relative Steinberg groups which reduced the problem of centrality to the already-known linear case. Nevertheless, neither of these two approaches seemed to work for the root systems $\rB_\ell$ and $\rF_4$. Finally, in~\cite{Vor1} the third-named author has developed a novel pro-group approach, which allowed him not only to generalize~\cite{vdK,Tul} to even larger class of noncommutative rings, but also to prove the centrality of $\mathrm K_2$ for odd unitary groups and, thus, cover all classical groups, including the case $\rB_\ell$, see~\cite{Vor2}. In the present paper these methods are employed to verify the centrality of $\mathrm K_2$ in the case $\Phi = \rF_4$, the only case which has remained open until now.
-This is accomplished in~\cref{SteinbergCrossedModule} below. Our method of proof also applies to root systems of type $\rA_{\geq 3}$, $\rD_{\geq 4}$, $\rE_{6,7,8}$, and thus gives a proof of the centrality of $\mathrm{K}_2$ independent of the earlier papers~\cite{vdK,Sin,LavSin}. In course of the proof we also reprove Taddei's normality theorem~\cite{Ta86} in the aforementioned cases; see~\cref{Normality}. Thus, the main consequence of \cite{Vor1,Vor2} and our~\cref{SteinbergCrossedModule} can be formulated as follows.
+This is accomplished in~\cref{SteinbergCrossedModule} below. Our method of proof also applies to root systems of type $\rA_{\geq 3}$, $\rD_{\geq 4}$, $\rE_{6,7,8}$, and thus gives a proof of the centrality of $\mathrm{K}_2$ independent of the earlier papers~\cite{vdK,Sin,LavSin}. In course of the proof we also reprove Taddei's normality theorem~\cite{Ta86} in the aforementioned cases; see~\cref{Normality}. Thus, the main consequence of \cite{Vor2} and our~\cref{SteinbergCrossedModule} can be formulated as follows.
 \begin{theorem*}
 Let $R$ be a commutative ring, $\Phi$ be an irreducible root system of rank $\geq 3$. 
 Then the map $\mathrm{st}\colon\mathrm{St}(\Phi,\,R) \to \mathrm{E}_{\mathrm{sc}}(\Phi,\,R)$ is a central extension.
@@ -307,7 +307,7 @@ Notice that every pro-rng $R^{(\infty)}$ can be considered as a pro-group by for
  The existence of this division homomorphism will be important in~\cref{sec:local-action}.
  
  Notice also that the projective limit of $R^{(s)}$ in $\Rng$ is often trivial.
- Indeed, if $R$ is a domain, then the limit of $R^{(s)}$ in $\Rng$ computes the intersection of the principal ideals $\bigcap_{s\in S} sR$, which often coincides with the zero ring. 
+ Indeed, if $R$ is a domain, then the limit of $R^{(s)}$ in $\Rng$ computes the intersection of the principal ideals $\bigcap_{s\in S} sR$, which often coincides with the zero rng. 
  This also shows that the set of {\it global elements} of $R^{(\infty)}$ (i.\,e. the hom-set in $\Pro(\Set)$ from the terminal object $1$ to $R^{(\infty)}$) is often trivial and therefore will be of little interest to us.
 \end{rem}
 
@@ -443,7 +443,7 @@ Recall that there is well-defined homomorphism $\mathrm{st}\colon \St(\Phi, R) \
  The definition of the group $\GG^{(s)}(\Phi, R)$ can be reformulated in terms of Hopf algebras. Denote by \(H_\Phi\) be the Hopf \(\ZZ\)-algebra corresponding to the group scheme \(\GG_{\mathrm{sc}}(\Phi, -)\).
  
  Recall that the coproduct in the category $\Rng$ is given by \[R_1 \otimeshat R_2 = (R_1 \otimes_{\ZZ} R_2) \oplus R_1 \oplus R_2.\]
- Thus, $\Rng$ has the structure of a symmetric monoidal category with zero ring as the unit object and $\otimeshat$ as the tensor product.
+ Thus, $\Rng$ has the structure of a symmetric monoidal category with zero rng as the unit object and $\otimeshat$ as the tensor product.
  
  We claim that the augmentation ideal \(\Ker(\varepsilon)\) of $H_\Phi$ has the structure of a Hopf algebra object (also called Hopf monoid) in \(\Rng\). The coproduct $\Delta$ and the antipode $S$ are induced from the corresponding morphisms defining the structure of a Hopf algebra on $H_\Phi$. The counit $\varepsilon$ is the unique homomorphism $\Ker(\varepsilon) \to 0$.
  
@@ -461,7 +461,7 @@ Recall that there is well-defined homomorphism $\mathrm{st}\colon \St(\Phi, R) \
 \begin{lemma}\label{SteinbergPresentation}
 Let \(G^{(\infty)}\) be a pro-group. The morphisms \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R), \ \alpha\in \Phi\] ``generate'' $\St^{(\infty)}(\Phi, R)$ in the categorical sense. In other words, to ensure that a pair of morphisms $f_1,f_2\colon\St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to verify the equalities $f_1 x_{\alpha} = f_2 x_\alpha$ for all $\alpha\in\Phi$.
 
-To obtain a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ it suffices to construct a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\) satisfying the pro-analogues of~\eqref{R2}--\eqref{R4} (in which $x_\alpha$'s are replaced with $f_{\alpha}$'s).
+To obtain a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ it suffices to construct a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\) satisfying the pro-analogues of~\eqref{R2}--\eqref{R4}, in which $x_\alpha$'s are replaced with $f_{\alpha}$'s.
 \end{lemma}
 \begin{proof}
 Notice that by~\cref{lem:proobj-is-a-limit} both of the assertions can be verified in the special case when $G^{(\infty)} = G$ is a group.
@@ -888,7 +888,7 @@ Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{
  The homomorphism \(\mathrm{st} \colon \St(\Phi, R) \to \GG_{\mathrm{sc}}(\Phi, R)\) can be turned into a crossed module in a unique way.
 \end{theorem}
 \begin{proof}  
- Notice that under our assumptions the group $\E_\mathrm{sc}(\Phi, R)$ is perfect, therefore by~\cite[Lemma~1.1]{St71} for every $g\in \GG_{\mathrm{sc}}(\Phi, R)$ there may exist at most one endomorphism $\up g (-)$ of $\St(\Phi, R)$ satisfying 
+ Notice that under our assumptions the group $\St(\Phi, R)$ is perfect, therefore by~\cite[Lemma~1.1]{St71} for every $g\in \GG_{\mathrm{sc}}(\Phi, R)$ there may exist at most one endomorphism $\up g (-)$ of $\St(\Phi, R)$ satisfying 
  \begin{equation} \label{eq:scm-2}\up{g}{\mathrm{st}(h)} = \mathrm{st} (g h g^{-1})\text{ for all }h \in \St(\Phi, R).  \end{equation}
  Thus, to construct an action of $\GG_{\mathrm{sc}}(\Phi, R)$ on $\St(\Phi, R)$ it suffices to construct an endomorphism 
   \(\up g{(-)} \colon \St(\Phi, R) \to \St(\Phi, R)\) satisfying~\eqref{eq:scm-2}.

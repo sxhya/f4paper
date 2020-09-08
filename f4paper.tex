@@ -77,10 +77,12 @@
 
 \begin{document}
 \maketitle
-\begin{abstract} We prove the centrality of $\mathrm K_2(\Phi, R)$ for an arbitrary commutative ring $R$ and root system $\Phi$ of rank $\geq 3$. Our proof uses only elementary localization techniques reformulated in terms of pro-groups. \end{abstract}
+\begin{abstract} 
+We prove the centrality of $\mathrm K_2 (\rF_4, \,R)$ for an arbitrary commutative ring $R$. This completes the proof of the centrality of $\mathrm K_2(\Phi,\, R)$ for any root system $\Phi$ of rank $\geq 3$. Our proof uses only elementary localization techniques reformulated in terms of pro-groups. 
+Another new result of the paper is the construction of a crossed module on the canonical homomorphism $\St(\Phi, R) \to \GG_\mathrm{sc}(\Phi, R)$, which has not been known previouly for exceptional $\Phi$. \end{abstract}
 
 \section{Introduction}
-This paper is the final installment in the series of articles by the third-named author devoted to the proof of centrality of $\mathrm K_2$ modeled on linear groups. In the previous articles of the series~\cite{Vor1, Vor2} the third-named author has already proven the centrality of $\mathrm K_2$ for the so-called {\it odd unitary groups} (see~\cite{Pe05}), while the present paper focuses on Chevalley groups.
+This paper is the third installment in the series of articles by the third-named author devoted to the proof of centrality of $\mathrm K_2$ modeled on linear groups. In the previous articles of the series~\cite{Vor1, Vor2} the third-named author has already proven the centrality of $\mathrm K_2$ for the so-called {\it odd unitary groups} (see~\cite{Pe05}), while the present paper focuses on Chevalley groups.
 
 Let us briefly explain the reader how our results fit into the general picture.
 Recall that Steinberg groups $\St(\Phi, R)$ are certain groups given by generators and relations, that were classically introduced by R.~Steinberg and J.~Milnor in~\cite{St62, Milnor} as combinatorial approximations of the simply-connected Chevalley groups. For example, every element of the special linear group $\mathrm{SL}_n(\mathbb F_q)$ over a finite field can be presented as a product of elementary transvections $t_{ij}(a)$ ($i\neq j$, $a\in \mathbb F_q$). These elements are taken as the generators of the Steinberg group $\St_n(\mathbb{F}_q)$. 
@@ -112,14 +114,13 @@ Let $R$ be a commutative ring, $\Phi$ be an irreducible root system of rank $\ge
 Then the map $\mathrm{st}\colon\mathrm{St}(\Phi,\,R) \to \mathrm{E}_{\mathrm{sc}}(\Phi,\,R)$ is a central extension.
 \end{theorem*}
 
-In fact, in~\cref{SteinbergCrossedModule} we prove a stronger result. More precisely, we endow the canonical homomorphism~\eqref{eq:st} with the structure of a crossed module; see~\cref{df:crossed-module}. This is yet another new result of the paper. Notice that no construction of a crossed module upon~\eqref{eq:st} was presented in~\cite{Lav, Sin, LavSin}. Some of the material of the present paper (e.\,g.~\cref{sec:local-Chevalley}) is required only for this construction and is not needed for the proof of the centrality of $\mathrm K_2$.
+In fact, in~\cref{SteinbergCrossedModule} we prove a stronger result. More precisely, we endow the canonical homomorphism~\eqref{eq:st} with the structure of a crossed module; see~\cref{df:crossed-module}. This is yet another new result of the paper. Notice that no construction of a crossed module on~\eqref{eq:st} was presented in~\cite{Lav, Sin, LavSin}. Some of the material of the present paper (e.\,g.~\cref{sec:local-Chevalley}) is required only for this construction and is not needed for the proof of the centrality of $\mathrm K_2$.
 
-As a corollary of the above Theorem we obtain that Stein's $\mathrm K_2$-group $\mathrm{K}_2(\Phi, R)$ defined as the the kernel of the homomorphism~\eqref{eq:st} coincides with the unstable $\mathrm{K}_2$-group defined via Quillen's $+$-construction applied to the perfect subgroup $\mathrm{E}_{\mathrm{sc}}(\Phi, R)$: \[ \mathrm{K}_2^Q(\Phi, R) := \pi_2\mathrm{BG}_{\mathrm{sc}}(\Phi,\,R)^+_{\mathrm{E}_{\mathrm{sc}}(\Phi, R)}.\] The latter group also coincides with the second homology group $\mathrm H_2(\mathrm E_{\mathrm{sc}}(\Phi,\,R),\,\mathbb Z)$; see e.\,g.~\cite[\S~IV.1]{Weibel}.
-Thus, combining the above theorem with the known results~\cite{St71,vdKStein} we obtain the following.
+As a corollary of the above Theorem we obtain that Stein's $\mathrm K_2$-group $\mathrm{K}_2(\Phi, R)$ defined as the the kernel of the homomorphism~\eqref{eq:st} coincides with the unstable $\mathrm{K}_2$-group defined via Quillen's $+$-construction applied to the perfect subgroup $\mathrm{E}_{\mathrm{sc}}(\Phi, R)$: \[ \mathrm{K}_2^Q(\Phi, R) := \pi_2\mathrm{BG}_{\mathrm{sc}}(\Phi,\,R)^+_{\mathrm{E}_{\mathrm{sc}}(\Phi, R)}.\] The latter group also coincides with the homology group $\mathrm H_2(\mathrm E_{\mathrm{sc}}(\Phi,\,R),\,\mathbb Z)$; see e.\,g.~\cite[\S~IV.1]{Weibel}.
+Thus, combining the above theorem with~\cite{St71,vdKStein} we obtain the following result.
 \begin{corollary*}
-For an arbitrary commutative ring $R$ and a root system $\Phi=\mathrm \rA_\ell,\rB_\ell,\rC_\ell$ for $\ell\geq4$, $\Phi=\mathrm \rD_\ell$ for $\ell\geq5$, or $\Phi=\mathrm \rE_6,\,\mathrm \rE_7,\,\mathrm \rE_8$ one has $\mathrm K_2(\Phi,\,R)=\mathrm K_2^Q(\Phi,\,R)$. Moreover, for $\Phi=\rA_3,\rB_3,\rC_3,\rD_4,\rF_4$ the following exact sequences hold:
-\[ \xymatrix{ 1\ar@{->}[r]&{\mathrm H_2(\mathrm{St}(\Phi,\,R),\mathbb Z)}\ar@{->}[r]&\mathrm K_2^Q(\Phi,\,R)\ar@{->}[r]&\mathrm K_2(\Phi,\,R)\ar@{->}[r]&1,}\]
-where
+For an arbitrary commutative ring $R$ and a root system $\Phi$ of rank $\geq 3$ there is an exact sequence \[ \xymatrix{ 1\ar@{->}[r]&{\mathrm H_2(\mathrm{St}(\Phi,\,R),\mathbb Z)}\ar@{->}[r]&\mathrm K_2^Q(\Phi,\,R)\ar@{->}[r]&\mathrm K_2(\Phi,\,R)\ar@{->}[r]&1,}\] in which the group $\mathrm H_2(\mathrm{St}(\Phi, R), \ZZ)$ is trivial in the cases 
+\[\Phi= \rA_{\geq 4},\rB_{\geq 4},\rC_{\geq 4}, \rD_{\geq 5}, \rE_{6,7,8},\] or is one of the groups in the following list:
 \begin{align*}
 \mathrm H_2\big(\mathrm{St}(\mathrm A_3,\,R),\mathbb Z\big)&=R/\langle2, (t^2-t)(s^2-s)\mid t,\,s\in R\rangle,\\
 \mathrm H_2\big(\mathrm{St}(\mathrm B_3,\,R),\mathbb Z\big)&=R/\langle6, 3(t^2-t)(s^2-s), 2(t^3-t)\mid t,\,s\in R\rangle,\\
@@ -468,15 +469,15 @@ To obtain a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ it suff
 \begin{proof}
 Notice that by~\cref{lem:proobj-is-a-limit} both of the assertions can be verified in the special case when $G^{(\infty)} = G$ is a group.
 
-Let us verify the first assertion. Since there is only a finite number of roots in $\Phi$ one can find a sufficiently large index $s \in S$ such that the homomorphisms $f_1^{(s)}, f_2^{(s)}\colon \St^{(s)}(\Phi, R) \to G$ become equal after precomposition with $x_\alpha$ for all $\alpha \in \Phi$.
-Since the root elements $x_\alpha^{(s)}(a)$ generate $\St^{(s)}(\Phi, R)$ we obtain that the morphisms $f_1$ and $f_2$ are equal.
+Let us verify the first assertion. Since there is only a finite number of roots in $\Phi$ one can find a sufficiently large index $s \in S$ such that the homomorphisms $f_1^{(s)}, f_2^{(s)}\colon \St(\Phi, R^{(s)}) \to G$ become equal after precomposition with $x_\alpha$ for all $\alpha \in \Phi$.
+Since the root elements $x_\alpha^{(s)}(a)$ generate $\St(\Phi, R^{(s)})$ we obtain that the morphisms $f_1$ and $f_2$ are equal.
 
 Let us verify the second assertion. By definition, a morphism $f_\alpha \colon R^{(\infty)} \to G$ corresponds to a single group homomorphism 
  $f'_\alpha \colon R^{(s_\alpha)} \to G$ for some $s_\alpha \in S$. Precomposing each $f'_\alpha$ with the structure morhism $R^{(s)} \to R^{(s_\alpha)}$ for sufficiently large $s \in S$, we obtain a collection of homomorphisms $\widetilde{f}_\alpha \colon R^{(s)} \to G$.
  
 Notice that~\eqref{R2}--\eqref{R4} specify only a {\it finite} collection of identities in $\Pro(\Set)$ to which $f_\alpha$'s must satisfy.
 Unwinding the definitions, we find a sufficiently large index $s \in S$ such that $\widetilde{f}_\alpha$ satisfy the same identities (with $f_\alpha$'s replaced by $\widetilde{f}_\alpha$'s).
-Thus, we obtain a group homomorphism $\St^{(s)}(\Phi, R) \to G$, which, in turn, determines a morphism $\St^{(\infty)}(\Phi, R) \to G$.
+Thus, we obtain a group homomorphism $\St(\Phi, R^{(s)}) \to G$, which, in turn, determines a morphism $\St^{(\infty)}(\Phi, R) \to G$.
 \end{proof}
 Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a group object in $\Pro(\Set)$ is essential in the proof of the above lemma.
 

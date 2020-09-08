@@ -436,11 +436,7 @@ defined by the pre-morphism $x_\alpha^* = \mathrm{id}_S$, $x_\alpha^{(s)}(a^{(s)
 Recall that there is well-defined homomorphism $\mathrm{st}\colon \St(\Phi, R) \to \GG_{\mathrm{sc}}(\Phi, R)$ sending each generator $x_\alpha(a)$ to the root unipotent $t_\alpha(a)$. The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) of this homomorphism is given by the pre-morphism \(\mathrm{st}^* = \mathrm{id}_S\), \(\mathrm{st}^{(s)}\bigl(x_{\alpha}(a^{(s)})\bigr) = t_\alpha(a^{(s)})\). 
 
 \begin{rem}\label{rem:uni-rad}
-Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the restriction of the canonical map $\St(\Phi, R)\to\GG_{\mathrm{st}}(\Phi, R)$ to the subgroup \[\mathrm{U}(\Sigma, R) = \langle x_{\alpha}(a) \mid a\in R,\ \alpha\in \Sigma \rangle \leq \St(\Phi, R)\] is injective. Morever, for any chosen linear order on \(\Sigma\) the map $R^{\Sigma} \to \mathrm{U}(\Sigma, R)$ given by $(r_\alpha)_\alpha \mapsto \prod_\alpha x_\alpha(r_\alpha)$ is a bijection.
-%There is the obvious pro-group analogue \(\mathrm U^{(\infty)}(\Sigma, R)\) with a morphism \(\mathrm U^{(\infty)}(\Sigma, R) \to \St^{(\infty)}(\Phi, R)\) of pro-groups 
-%(it seems to be a monomorhism, though we do not need this property)
-%and an isomorphism \(\mathrm U^{(\infty)}(\Sigma, R) \cong (R^{(\infty)})^\Sigma\) of pro-sets.
-\end{rem}
+Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the restriction of the canonical map $\St(\Phi, R)\to\GG_{\mathrm{st}}(\Phi, R)$ to the subgroup \[\mathrm{U}(\Sigma, R) = \langle x_{\alpha}(a) \mid a\in R,\ \alpha\in \Sigma \rangle \leq \St(\Phi, R)\] is injective. Morever, for any chosen linear order on \(\Sigma\) the map $R^{\Sigma} \to \mathrm{U}(\Sigma, R)$ given by $(r_\alpha)_\alpha \mapsto \prod_\alpha x_\alpha(r_\alpha)$ is a bijection. \end{rem}
 
 \begin{rem}
  The definition of the group $\GG(\Phi, R^{(s)})$ can be reformulated in terms of Hopf algebras. Denote by \(H_\Phi\) be the Hopf \(\ZZ\)-algebra corresponding to the group scheme \(\GG_{\mathrm{sc}}(\Phi, -)\).
@@ -534,17 +530,25 @@ Let $\beta, \gamma \in \Phi$ be an arbitrary fixed pair of roots such that $\alp
 Denote by $x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)})$ the morphism
  $[x_\beta(N_{\beta,\gamma}b^{(\infty)}),\ x_\gamma(c^{(\infty)})]\colon R^{(\infty)} \times R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R).$
 \end{df}
-Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism $x_{\beta,\gamma}$, see~\cref{lem:new-root}. However, in order to be able to do this we need the following assertion.
+Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism $x_{\beta,\gamma}$, see~\cref{lem:new-root}. However, in order to be able to do this we first need to prove the following assertion.
 
 \begin{lemma} \label{lem:elim-lhs}
  The morphism $x_{\beta, \gamma}$ satisfies the following relations:
- \begin{align}  
-  [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] &= 1, \label{R2-bg}\\ 
- \multispan2{\hfil if $\alpha + \delta \not\in\Phi \cup \{0\},\ \delta\neq\alpha;$} \nonumber \\
- [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] &= x_{\alpha + \delta}(N_{\alpha,\delta} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}), \label{R3-bg} \\
- \multispan2{\hfill if $\alpha+\delta\in\Phi$ but $\alpha+2\delta,\ 2\alpha+\delta\not\in\Phi;$} \nonumber \\
- [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] &= x_{\alpha + \delta}(N_{\alpha,\delta} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}) \cdot \label{R4-bg1} \\ & \cdot x_{2\alpha+\delta}(N_{\alpha,\delta}^{2,1} \cdot {b^{(\infty)}}^2{c^{(\infty)}}^2d^{(\infty)}), \nonumber \\ \multispan2{ \hfill if $\alpha+\delta,2\alpha+\delta\in\Phi.$ \nonumber} \\
- [x_\delta(d^{(\infty)}), x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})] &= x_{\alpha + \delta}(N_{\delta, \alpha} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}) \cdot \label{R4-bg2} \\ & \cdot x_{\alpha+2\delta}(N_{\delta, \alpha}^{2,1} \cdot {b^{(\infty)}}{c^{(\infty)}}{d^{(\infty)}}^2), \nonumber \\ \multispan2{ \hfill if $\alpha+\delta,\alpha+2\delta\in\Phi.$ \nonumber} \end{align}
+ \begin{multline} \label{R2-bg}
+  [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] = 1, \hfill \text{if $\alpha + \delta \not\in\Phi \cup \{0\},\ \delta\neq\alpha;$}
+ \end{multline}
+ \begin{multline} \label{R3-bg}
+   [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] = x_{\alpha + \delta}(N_{\alpha,\delta} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}), \hfill \\ \text{if $\alpha+\delta\in\Phi$ but $\alpha+2\delta,\ 2\alpha+\delta\not\in\Phi;$}
+ \end{multline}
+ {\setlength{\abovedisplayskip}{0pt} \setlength{\belowdisplayskip}{0pt}
+ \begin{multline} \label{R4-bg1}
+  [x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\delta(d^{(\infty)})] = \\ = x_{\alpha + \delta}(N_{\alpha,\delta} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}) \cdot  x_{2\alpha+\delta}(N_{\alpha,\delta}^{2,1} \cdot {b^{(\infty)}}^2{c^{(\infty)}}^2d^{(\infty)}) \\
+  \text{if $\alpha+\delta,2\alpha+\delta\in\Phi.$}
+ \end{multline} 
+ \begin{multline} \label{R4-bg2}
+  [x_\delta(d^{(\infty)}), x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)})] = \\ = x_{\alpha + \delta}(N_{\delta, \alpha} \cdot b^{(\infty)}c^{(\infty)}d^{(\infty)}) \cdot x_{\alpha+2\delta}(N_{\delta, \alpha}^{2,1} \cdot {b^{(\infty)}}{c^{(\infty)}}{d^{(\infty)}}^2) \\
+  \text{if $\alpha+\delta,\alpha+2\delta\in\Phi.$}
+ \end{multline}}
 \end{lemma}
 \begin{proof}
  First of all, observe that the above relations are obtained from \eqref{R2}--\eqref{R4} by replacing $x_\alpha(a^{(\infty)})$ with $x_{\beta, \gamma}(b^{\infty}, c^{\infty})$.
@@ -732,6 +736,8 @@ To help distinguish between the root subgroup morphisms of $\St^{(\infty)}(\Phi,
 By~\cref{SteinbergPresentation} the morphisms $\widetilde{x}_{\beta}$ give rise to a morphism $G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$. By definition, $G_\alpha x_\beta = \widetilde{x}_\beta$ for all $\beta$. On the other hand, it is clear that $F_\alpha \widetilde{x}_\beta = x_\beta$ for $\beta\neq \pm\alpha$. To see that $G_\alpha$ is inverse to $F_\alpha$ it remains to invoke the first part of~\cref{SteinbergPresentation} and~\cref{rem:xpma-presentation}.
 \end{proof}
 
+In the special case $S = \{1\}$ we obtain the following result.
+\begin{corollary}  For every root \(\alpha \in \Phi\) there is a group isomorphism \[\St(\Phi, R) \cong \St(\Phi, R).\] \end{corollary}
 
 \section{The action of \texorpdfstring{$\GG_{\mathrm{sc}}(\Phi, S^{-1}R)$}{G(Ф, R)} on pro-groups} \label{sec:local-action}
 Throughout this section \(R\) is a ring and \(S \subseteq R\) is a multiplicative subset.
@@ -743,7 +749,7 @@ Consider the homomorphism $\mathrm{Coconj}_g$ of ``coconjugation by $g$'', which
 \[\xymatrix{\Ker(\varepsilon) \ar[r]^(.4){\mathrm{Coconj}} & H_\Phi \otimes \Ker(\varepsilon) \ar[r]^(0.45){g\otimes\mathrm{id}} & S^{-1}R \otimes \Ker(\varepsilon).}\]
 Since $\Ker(\varepsilon)$ is finitely generated, there exists $s_0 \in S$ such that the image of every generator $x_i$ of $\Ker(\varepsilon)$ under $\mathrm{Coconj}_g$ can be written as $\sum_j \frac{r_j}{s_0} \otimes x_{ij}$.
 
-We are ready to construct the automorphism $\up g{(-)} \colon \GG^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)$ of ``conjugation by $g$''. By definition, this amounts to constructing a collection of homomorphisms
+We are ready to construct the automorphism \[\up g{(-)} \colon \GG^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\] of ``conjugation by $g$''. By definition, this amounts to constructing a collection of homomorphisms
 $\Rng(\Ker(\varepsilon), R^{(f(s))}) \to \Rng(\Ker(\varepsilon), R^{(s)})$ for some function $f \colon S \to S$. Set $f(s) = ss_0$ and let $h$ be an element of $\Rng(\Ker(\varepsilon), R^{(ss_0)})$. It is clear that the composite homomorphism
 \[\xymatrix{ \Ker(\varepsilon) \ar[r]^(0.4){\mathrm{Coconj}_g} & S^{-1}R \otimes \Ker(\varepsilon) \ar[r]^{\mathrm{id}\otimes h} & S^{-1}R \otimes R^{(ss_0)} \ar[r] & S^{-1}R \otimes_R R^{(ss_0)}}\]
 lands in the $R$-submodule $A_{s_0} = \langle \frac{r}{s_0} \otimes r'^{(ss_0)}\mid r, r' \in R \rangle$ of $S^{-1}R \otimes_R R^{(ss_0)}$. Here $A_{s_0}$ is, in fact, a subring of $S^{-1}R \otimes_R R^{(ss_0)}$. To obtain the required element $\up g h$ it remains to postcompose the above arrow with the homomorphism $A_{s_0} \to R^{(s)}$ defined on tensors via $\frac{r}{s_0} \otimes r'^{(ss_0)} \mapsto rr'^{(s)}$.
@@ -806,13 +812,13 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  Let us check that the morphisms \[\{\up{x_\alpha(u)} x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R) \mid \beta \neq \pm \alpha \}\] defined above satisfy the defining relations of $\St^{(\infty)}(\Phi\setminus\{\pm \alpha\}, R)$. 
  First of all, observe that these morphisms are, in fact, morphisms of pro-groups.
  Now let \(\beta, \gamma \in \Phi \setminus \{\pm \alpha\}\) be a pair of nonparallel roots. %there is Steinberg relation for \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})]\) in \(\St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\). 
- Consider the ``universal'' identity
- \[[\up{x_\alpha(t)}{x_\beta(b)}, \up{x_\alpha(t)}{x_\gamma(c)}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(t)}{x_{i\beta + j\gamma}(N_{\beta, \gamma}^{i, j} b^i c^j)}\]
- in \(\St(\Phi, \mathbb Z[b, c, t])\), where \(N_{\beta, \gamma}^{1, 1} = N_{\beta, \gamma}\) and \(N_{\beta, \gamma}^{1, 2} = -N_{\gamma, \beta}^{2, 1}\). This identity is a consequence of the defining relations of \(\St(\Phi \setminus \{\pm \alpha\}, \mathbb Z[b, c, t])\) and the Steinberg relations for \([x_\alpha(t), x_\delta(d)]\), where \(\delta \in \Phi \setminus \{\pm \alpha\}\) and \(d \in b \mathbb Z[b, c, t] + c \mathbb Z[b, c, t]\). Applying the pro-analogs of these relations, we get
- \[[\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(u)}{x_{i\beta + j\gamma}\bigl(N_{\beta, \gamma}^{i, j} \bigl(b^{(\infty)}\bigr)^i \bigl(c^{(\infty)}\bigr)^j\bigr)}.\]
- %Then there is a special root subset \(\Sigma \subseteq \Phi\) containing all the roots \(\alpha, \beta, \gamma\), and the required relations are some identities in the pro-group \(\mathrm U^{(\infty)}(\Sigma, R) \cong (R^{(\infty)})^\Sigma\) (see \cref{rem:uni-rad}). But then these identities follows from the ``universal'' identity
- %\[[\up{x_\alpha(t)}{x_\beta(b)}, \up{x_\alpha(t)}{x_\gamma(c)}] = \up{x_\alpha(t)}{[x_\beta(b), x_\gamma(c)]}\]
- %in \(\St(\Phi, \mathbb Z[b, c, t])\), the definitions, and the Steinberg relations.
+ Consider the ``universal'' identity in \(\St(\Phi \setminus \{\pm \alpha\}, \mathbb Z[b, c, t])\) obtained from the identity
+ \[[\up{x_\alpha(t)}{x_\beta(b)}, \up{x_\alpha(t)}{x_\gamma(c)}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(t)}{x_{i\beta + j\gamma}(N_{\beta, \gamma}^{i, j} b^i c^j)},\]
+ where \(N_{\beta, \gamma}^{1, 1} = N_{\beta, \gamma}\) and \(N_{\beta, \gamma}^{1, 2} = -N_{\gamma, \beta}^{2, 1}\),
+ by expanding the conjugates in both sides of the equality.
+ Since \(\St(\Phi \setminus \{\pm \alpha\}, \ZZ[b, c, t]) \cong \St(\Phi, \ZZ[b, c, t])\) this identity is a consequence of the defining relations of $\St(\Phi \setminus \{\pm \alpha\}, \ZZ[b,c,t])$.  
+ Consequently, from the pro-analogues of these relations, we obtain the required identity
+ \[[\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(u)}{x_{i\beta + j\gamma}\bigl(N_{\beta, \gamma}^{i, j} {b^{(\infty)}}^i {c^{(\infty)}}^j \bigr)}.\]
 
  By~\cref{rem:xpma-presentation} we have an endomorphism of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$, which we denote by $\up{x_\alpha(u)}(-)$.
  Since $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ is isomorphic to $\St^{(\infty)}(\Phi, R)$ by~\cref{SingleRootElimination}, we obtain an endomorphism of $\St^{(\infty)}(\Phi, R)$, which we also denote by $\up{x_\alpha(u)}(-)$. It is easy to see that the mapping $u \mapsto \up{x_\alpha(u)}(-)$, in fact, specifies a group homomorphism $S^{-1}R \to \Aut(\St^{(\infty)}(\Phi, R))$. 

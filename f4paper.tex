@@ -7,7 +7,7 @@
 \usepackage[capitalise]{cleveref}
 \usepackage[matrix,arrow,curve,tips]{xy}
 \usepackage{scalerel}
-\usepackage[notref, notcite]{showkeys}
+%\usepackage[notref, notcite]{showkeys}
 
 \SelectTips{cm}{12}
 
@@ -455,7 +455,8 @@ Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the 
  
  We claim that the augmentation ideal \(\Ker(\varepsilon)\) of $H_\Phi$ has the structure of a Hopf algebra object (also called Hopf monoid) in \(\Rng\). The coproduct $\Delta$ and the antipode $S$ are induced from the corresponding morphisms defining the structure of a Hopf algebra on $H_\Phi$. The counit $\varepsilon$ is the unique homomorphism $\Ker(\varepsilon) \to 0$.
  
- Now if $R$ is an arbitary ring and $s \in R$ then there is a canonical isomorphism \(\GG(\Phi, R^{(s)}) \cong \Rng(\Ker(\varepsilon), R^{(s)})\). The structure of a group on $\GG(\Phi, R^{(s)})$ is then induced from the Hopf monoid structure on $\Ker(\varepsilon)$ by duality.
+ Now if $R$ is an arbitary ring and $s \in R$ then there is a canonical isomorphism \(\Rng(\Ker(\varepsilon), R^{(s)}) \cong \GG(\Phi, R^{(s)})\) induced by the mapping \[h \mapsto \left(a \mapsto \left(h(a - \varepsilon(a)),\, \varepsilon(a)\right)\right).\]
+ The structure of a group on $\GG(\Phi, R^{(s)})$ is then induced from the Hopf monoid structure on $\Ker(\varepsilon)$ by duality.
  For instance, the neutral element in this group is the zero map \(0 \colon \Ker(\varepsilon) \to R^{(s)}\). The product of \(g, h \in \Rng(\Ker(\varepsilon), R^{(s)})\) is the composite map
  \[\Ker(\varepsilon) \xrightarrow{\Delta} \Ker(\varepsilon) \otimeshat \Ker(\varepsilon) \xrightarrow{g \otimeshat h} R^{(s)} \otimeshat R^{(s)} \to R^{(s)}.\]
 \end{rem}

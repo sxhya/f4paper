@@ -7,7 +7,7 @@
 \usepackage[capitalise]{cleveref}
 \usepackage[matrix,arrow,curve,tips]{xy}
 \usepackage{scalerel}
-%\usepackage[notref, notcite]{showkeys}
+\usepackage[notref, notcite]{showkeys}
 
 \SelectTips{cm}{12}
 
@@ -182,11 +182,14 @@ Although, the groups $\St(\Phi, tR)$ and $\St(\Phi\setminus\{\pm \alpha\}, tR)$ 
 If written in down-to-earth terms, the aforementioned isomorphism of pro-groups amounts to the following collection of group homomorphisms in the ``non-obvious'' direction:
 \[\{F_\alpha(t)\colon \St(\Phi, t^3R)\rightarrow \St(\Phi\setminus\{\pm \alpha\}, tR) \}_{t\in S}.\]
 Of course, the natural choice for the image of $x_\alpha(t^3r)$ would be the commutator  $[x_{\alpha-\beta}(t^2b),\,x_{\beta}(\pm t)]$ for some $\beta \in \Phi$ such that $\alpha-\beta\in \Phi$.
-The fact that this definition does not depend on the choice of $\beta$ can be checked using the Hall--Witt identity (notice that we can further decompose $x_{\alpha-\beta}(t^2b)$ into a commutator in $\St(\Phi, tR)$).
+The fact that this definition does not depend on the choice of $\beta$ can be checked using the Hall--Witt identity~\eqref{eq:HW} (notice that we can further decompose $x_{\alpha-\beta}(t^2b)$ into a commutator in $\St(\Phi, tR)$).
 Similarly, we can verify that these commutators satisfy the relations missing from the presentation of $\St(\Phi\setminus\{\pm\alpha\}, t^3R)$. Keeping track of index functions and individual homomorphisms $F_\alpha(t)$ in such computations, however, is not very convenient, therefore, to simplify the proof of~\cref{SingleRootElimination}, we prefer to write down all commutator formula calculations inside the category of pro-groups. In addition, to reduce the number of cases that need to be considered, we also assume throughout the paper that $\Phi$ is not of type $\rB_\ell$ or $\rC_\ell$. The latter assumption makes it possible to decompose any root of $\Phi$ into a sum of roots having the same length. Now, composing $F_\alpha(t)$ and $\mathrm{conj}'_{x_\alpha(r/s)}(t)$ in a suitable way we obtain the sought pro-group morphism $\mathrm{conj}_{x_\alpha(r/s)}$.
 
 \subsection{Acknowledgements}
-The authors of the paper were supported by ``Native towns'', a social investment program of PJSC ``Gazprom Neft''. The first-named author was also supported by Young Russian Mathematics award, and by Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The second-named author was also supported by RFBR grant No. 18-31-20044.
+The authors of the paper were supported by ``Native towns'', a social investment program of PJSC ``Gazprom Neft''.
+The second-named author was supported by RFBR grant No. 18-31-20044. 
+The first-named author was also supported by Young Russian Mathematics award, and by Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619.
+The second- and third-named authors were also supported by the Foundation for the Advancement of Theoretical Physics and Mathematics ``BASIS``.
 
 \section{Preliminaries}
 Throughout this paper all commutators are left normed, i.\,e. $[x, y] = xyx^{-1}y^{-1}$. We denote by $x^y$ and $\up{y}x$ the elements $xyx^{-1}$ and $yxy^{-1}$.
@@ -195,9 +198,11 @@ In this paper we also make use the following commutator identities:
 \label{eq:comm-mult-rhs}[x,\ yz]& =   [x,\ y] \cdot \up{y}[x,\ z],
 \\ \label{eq:comm-mult-lhs}[xy,\ z]& = \up{x}[y,\ z] \cdot [x,\ z],
 \end{align}
+Recall that the Hall--Witt identity asserts that
+\begin{equation} \label{eq:HW} [[x,\,y],\,\up{y} z] \cdot [[y,\,z],\,\up{z} x] \cdot [[z,\,x],\,\up{x} y] = 1. \end{equation}
+As a corollary we obtain that
 \begin{equation} \label{eq:HW-corr} [x,z] = 1 \text{ implies } [x, [y,z]] = [[x,y],\up{y}z].
 \end{equation}
-
 
 \subsection{Generalities on pro-objects} \label{sec:pro-obj}
 Let \(\mathcal C\) be an arbitrary category.
@@ -427,9 +432,13 @@ For every root $\alpha \in \Phi$ there is a ``root subgroup'' morphism in $\Pro(
 \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R).\] 
 defined by the pre-morphism $x_\alpha^* = \mathrm{id}_S$, $x_\alpha^{(s)}(a^{(s)}) = x_\alpha(a^{(s)})$.
 
-\begin{df}
+Recall that for an ideal $I \trianglelefteq R$ the {\it congruence subgroup} $\GG_\mathrm{sc}(\Phi, R, I)$ is defined as 
+ the kernel of the homomorphism $\GG_\mathrm{sc}(\Phi, R) \to \GG_\mathrm{sc}(\Phi, R/I)$.
+
+Recall also that one can define the unitalization of an rng $R$ as the semidirect product $R \rtimes \ZZ$ (cf. e.\,g.~\cite[Definition~3.2]{Sin}).
+ \begin{df}
  Let $R$ be a ring with a multiplicative system $S$.
- Consider the projective system of relative Chevalley groups (also called congruence subgroups) 
+ Consider the projective system of congruence subgroups 
  \[\GG(\Phi, R^{(s)}) := \GG_{\mathrm{sc}}(\Phi, R^{(s)} \rtimes \ZZ, R^{(s)}) = \Ker\left(\GG_{\mathrm{sc}}(\Phi, R^{(s)} \rtimes \ZZ) \to \GG_{\mathrm{sc}}(\Phi, \ZZ)\right)\] with the structure morphisms induced by the structure morphisms of \(R^{(\infty)}\). Define the {\it simply-connected Chevalley pro-group} $\GG^{(\infty)}(\Phi, R)$ as the formal projective limit of this system.
 \end{df}
 
@@ -982,12 +991,14 @@ Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{
  \begin{lemma} Let $R$ be a commutative ring, $I$ be an ideal of $R$ and $\Phi$ be a root system of rank $\geq 3$.
  The centrality of $\mathrm{K}_2(\Phi, R)$ implies the centrality of $\mathrm K_2(\Phi, R/I)$. \end{lemma}
  \begin{proof} Consider the following commutative diagram
-	 \[\xymatrix{\St(\Phi, R) \ar[r]^{\rho_\St} \ar[d]^{\mathrm{st}_R} & \St(\Phi, R/I) \ar[d]^{\mathrm{st}_{R/I}} \\ \mathrm{E}_{\mathrm{sc}}(\Phi,R) \ar[r]^{\rho_\mathrm{E}} & \mathrm{E}_{\mathrm{sc}}(\Phi, R/I).}\]
-	 We denote by $\St(\Phi, R, I)$ the normal closure in $\St(\Phi, R)$ of the subgroup generated by elements $x_\alpha(s)$, where $s\in I$, $\alpha\in\Phi$. We also denote by $\E_{\mathrm{sc}}(\Phi, R, I)$ the image of this subgroup under $\mathrm{st}_R$. Denote by $H$ the preimage of $\mathrm{K}_2(\Phi, R/I)$ under $\rho_\St$. Also set $H'=[H, \St(\Phi, R)]$. Standard commutator identities show that $H'$ is a normal subgroup of $\St(\Phi, R)$. Under our assumptions the group $\St(\Phi, R)$ is perfect, therefore using Hall--Witt identity we obtain that
-	 \begin{multline}\nonumber H' = [H,\, \St(\Phi, R)] = [H,\, [\St(\Phi, R), \St(\Phi, R)]] \subseteq \\ \subseteq [[H,\, \St(\Phi, R)],\, \St(\Phi, R)] = [H', \St(\Phi, R)]. \end{multline} 
-		 Since $\mathrm{st}_{R}(H)$ is contained in the congruence subgroup $\GG_\mathrm{sc}(\Phi, R, I)$ we obtain from the standard commutator formula~\cite{Va86} that $\mathrm{st}(H')\subseteq\E_\mathrm{sc}(\Phi, R, I)$. Thus, $H'\subseteq \St(\Phi, R, I) \cdot \mathrm{K}_2(\Phi, R)$. Finally, from our assumptions we obtain that
-	 \[H' \subseteq [H', \St(\Phi, R)] \subseteq [\St(\Phi, R, I)\mathrm{K}_2(\Phi, R),\, \St(\Phi, R)] \subseteq \St(\Phi,R,I),\]
-from which the assertion of the lemma follows.
+ \[\xymatrix{\St(\Phi, R) \ar[r]^{\rho_\mathrm{St}} \ar[d]^{\mathrm{st}} & \St(\Phi, R/I) \ar[d] \\ \mathrm{E}_{\mathrm{sc}}(\Phi,R) \ar[r]^{\rho_\mathrm{E}} & \mathrm{E}_{\mathrm{sc}}(\Phi, R/I).}\]
+ We denote by $\St(\Phi, R, I)$ the normal closure in $\St(\Phi, R)$ of the subgroup generated by elements $x_\alpha(s)$, where $s\in I$, $\alpha\in\Phi$. We also denote by $\E_{\mathrm{sc}}(\Phi, R, I)$ the image of this subgroup under $\mathrm{st}$.
+ It is clear that $\E_\mathrm{sc}(\Phi, R, I)$ lies in the kernel of $\rho_\mathrm{E}$.
+ 
+ Denote by $H$ the preimage of $\mathrm{K}_2(\Phi, R/I)$ under $\rho_\mathrm{St}$. Also set $H'=[H, \St(\Phi, R)]$. The identity~\eqref{eq:comm-mult-rhs} shows that $H'$ is a normal subgroup of $\St(\Phi, R)$. Under our assumptions the group $\St(\Phi, R)$ is perfect, therefore using Hall--Witt identity~\eqref{eq:HW} we obtain that
+ \begin{multline}\nonumber H' = [H,\, \St(\Phi, R)] = \left[H,\, [\St(\Phi, R), \St(\Phi, R)]\right] \subseteq \\ \subseteq \left[[H,\, \St(\Phi, R)],\, \St(\Phi, R)\right] = [H', \St(\Phi, R)]. \end{multline} 
+ Since $\mathrm{st}(H)$ is contained in the congruence subgroup $\GG_\mathrm{sc}(\Phi, R, I)$ we obtain from the standard commutator formula~\cite{Va86} that $\mathrm{st}(H')\subseteq\E_\mathrm{sc}(\Phi, R, I)$. Thus, $H'\subseteq \St(\Phi, R, I) \cdot \mathrm{K}_2(\Phi, R)$. Finally, from our assumptions we obtain that
+ \[H' \subseteq [H', \St(\Phi, R)] \subseteq [\St(\Phi, R, I)\cdot \mathrm{K}_2(\Phi, R),\, \St(\Phi, R)] \subseteq \St(\Phi,R,I),\] from which the assertion of the lemma follows.
  \end{proof}
  Since every commutative ring $R$ can be presented as a quotient of the polynomial ring over $\ZZ$ with possibly infinite number of variables,
   we may restrict ourselves to considering only integral domains throughout the paper.

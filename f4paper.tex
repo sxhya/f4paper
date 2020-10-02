@@ -185,7 +185,7 @@ If written in down-to-earth terms, the aforementioned isomorphism of pro-groups 
 \[\{F_\alpha(t)\colon \St(\Phi, t^3R)\rightarrow \St(\Phi\setminus\{\pm \alpha\}, tR) \}_{t\in S}.\]
 Of course, the natural choice for the image of $x_\alpha(t^3r)$ would be the commutator  $[x_{\alpha-\beta}(t^2b),\,x_{\beta}(\pm t)]$ for some $\beta \in \Phi$ such that $\alpha-\beta\in \Phi$.
 The fact that this definition does not depend on the choice of $\beta$ can be checked using the Hall--Witt identity~\eqref{eq:HW} (notice that we can further decompose $x_{\alpha-\beta}(t^2b)$ into a commutator in $\St(\Phi, tR)$).
-Similarly, we can verify that these commutators satisfy the relations missing from the presentation of $\St(\Phi\setminus\{\pm\alpha\}, t^3R)$. Keeping track of index functions and individual homomorphisms $F_\alpha(t)$ in such computations, however, is not very convenient, therefore, to simplify the proof of~\cref{SingleRootElimination}, we prefer to write down all commutator formula calculations inside the category of pro-groups. In addition, to reduce the number of cases that need to be considered, we also assume throughout the paper that $\Phi$ is not of type $\rB_\ell$ or $\rC_\ell$. The latter assumption makes it possible to decompose any root of $\Phi$ into a sum of roots having the same length. Now, composing $F_\alpha(t)$ and $\mathrm{conj}'_{x_\alpha(r/s)}(t)$ in a suitable way we obtain the sought pro-group morphism $\mathrm{conj}_{x_\alpha(r/s)}$.
+Similarly, we can verify that these commutators satisfy the relations missing from the presentation of $\St(\Phi\setminus\{\pm\alpha\}, t^3R)$. Keeping track of index functions and individual homomorphisms $F_\alpha(t)$ in such computations, however, is not very convenient, so, to simplify the proof of~\cref{SingleRootElimination}, we prefer to write down all commutator formula calculations inside the category of pro-groups. In addition, to reduce the number of cases that need to be considered, we also assume throughout the paper that $\Phi$ is not of type $\rB_\ell$ or $\rC_\ell$. The latter assumption makes it possible to decompose any root of $\Phi$ into a sum of roots having the same length. Now, composing $F_\alpha(t)$ and $\mathrm{conj}'_{x_\alpha(r/s)}(t)$ in a suitable way we obtain the sought pro-group morphism $\mathrm{conj}_{x_\alpha(r/s)}$.
 
 \subsection{Acknowledgements}
 The authors of the paper were supported by ``Native towns'', a social investment program of PJSC ``Gazprom Neft''.
@@ -274,7 +274,7 @@ The category of pro-groups \(\Pro(\Group)\) embeds into \(\Pro(\Set)\). Every pr
  (which are part of the structure of a cartesian monoidal category on $\Pro(\Set)$) 
  and the morphisms defining the structure of a $T$-model on $X^{(\infty)}$.
  
- In order to shorten the notation, to denote the interpretation morphism $w^{(\infty)}$ we often use the original term for $w$, in which every symbol of a free variable $t_i$ is replaced by the symbol $t_i^{(\infty)}$.
+ In order to simplify the notation, to denote the interpretation morphism $w^{(\infty)}$ we often use the original term for $w$, in which every symbol of a free variable $t_i$ is replaced by the symbol $t_i^{(\infty)}$.
 \end{df}
 
 \begin{example}\label{example-commutator}
@@ -390,9 +390,9 @@ For a pair of roots $\alpha, \beta \in \Phi$ we denote by $\langle \alpha, \beta
 
 Recall that a root subset $\Sigma \subseteq \Phi$ is called {\it closed} if $\alpha, \beta \in \Sigma$, $\alpha+\beta\in\Phi$ imply $\alpha+\beta\in \Sigma$. A closed root subset $\Sigma$ is called {\it symmetric} (resp. {\it special}) if $\Psi = -\Psi$ (resp. $\Psi \cap -\Psi = \emptyset$). By definition, a {\it root subsystem} $\Psi \subseteq \Phi$ is a symmetric and closed root subset.
 
-We start by recalling the classical definition of the Steinberg group.
+We start by recalling the definition of the Steinberg group.
 \begin{df} \label{def:Steinberg}
-Let $R$ be a ring. Recall the {\it Steinberg group $\St(\Phi, R)$} is given by generators $x_\alpha(a)$, where $\alpha \in \Phi$ and $a \in R$ and the following list of defining relations (cf.~\cite{Re75}):
+Let $R$ be a ring. The {\it Steinberg group $\St(\Phi, R)$} is given by generators $x_\alpha(a)$, where $\alpha \in \Phi$ and $a \in R$ and the following list of defining relations (cf.~\cite{Re75}):
 \begin{align}
  x_\alpha(a) \cdot x_\alpha(b)    &= x_\alpha(a+b); \tag{R1} \label{R1} \\
  [x_\alpha(a),\ x_\beta(b)] &= 1, \tag{R2} \label{R2} \\ 
@@ -423,7 +423,7 @@ This identity is an equivalent form of (N9) in~\cite[\S~14]{VP} (cf. also (H4) i
 Notice that the multiplicative identity of $R$ is actually never used in the definition of the Steinberg group, 
  which allows one to use it in the situation when $R$ is an rng.
 \begin{df}\label{def:Steinberg-homotope}
- Let $R$ be an ring and $S$ be a multiplicative subset of $R$. Also let $\Phi$ be a root system of rank $\geq 3$. Applying the Steinberg group functor $\St(\Phi, -)$ to the projective system of rngs $R^{(s)}$ (see~\cref{ring-homotope}) we obtain a projective system of groups, whose formal projective limit will be denoted by $\St^{(\infty)}(\Phi, R)$ and will be called the {\it Steinberg pro-group}. 
+ Let $R$ be a ring and $S$ be a multiplicative subset of $R$. Also let $\Phi$ be a root system of rank $\geq 3$. Applying the Steinberg group functor $\St(\Phi, -)$ to the projective system of rngs $R^{(s)}$ (see~\cref{ring-homotope}) we obtain a projective system of groups, whose formal projective limit will be denoted by $\St^{(\infty)}(\Phi, R)$ and will be called the {\it Steinberg pro-group}. 
 \end{df}
 
 \begin{rem} \label{rem:pro-Steinberg-comment}

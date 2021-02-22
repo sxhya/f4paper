@@ -1,0 +1,742 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amscd}
+%\usepackage[hyper]{amsbib}
+
+\usepackage[matrix,arrow,curve]{xy}
+
+\usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
+
+%\usepackage{eufrak}
+
+\usepackage{stmaryrd}
+
+\begin{document}
+
+%\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+%\newcommand{\Dom}{\mathop{\mathrm{Dom}}\nolimits}
+%\newcommand{\Card}{\mathop{\mathrm{Card}}\nolimits}
+%\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+%\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
+%\newcommand{\Cent}{\mathop{\mathrm{Cent}}\nolimits}
+%\newcommand{\E}{{\mathrm{E}}}
+\newcommand{\St}{\mathop{\mathrm{St}}\nolimits}
+%\newcommand{\Sp}{\mathop{\mathrm{Sp}}\nolimits}
+%\newcommand{\Ep}{\mathop{\mathrm{Ep}}\nolimits}
+%\newcommand{\GL}{\mathop{\mathrm{GL}}\nolimits}
+%\newcommand{\SL}{\mathop{\mathrm{SL}}\nolimits}
+%\newcommand{\Kt}{\mathop{\mathrm{K_2}}\nolimits}
+%\newcommand{\Ko}{\mathop{\mathrm{K_1}}\nolimits}
+%\newcommand{\SKo}{\mathop{\mathrm{SK_1}}\nolimits}
+%\newcommand{\Ho}{\mathop{\mathrm{H_1}}\nolimits}
+%\newcommand{\Hf}{\mathop{\mathrm{H_1}}\nolimits}
+%\newcommand{\Ht}{\mathop{\mathrm{H_2}}\nolimits}
+%\newcommand{\Hs}{\mathop{\mathrm{H_2}}\nolimits}
+%\newcommand{\epi}{\twoheadrightarrow}
+%\newcommand{\sgn}{\mathrm{sgn}}
+%\newcommand{\eps}[1]{\varepsilon_{#1}}
+%\newcommand{\lan}{\langle}
+%\newcommand{\ran}{\rangle}
+%\newcommand{\inv}{^{-1}}
+%\newcommand{\ur}[1]{\!\,^{(#1)}U_1}
+%\newcommand{\ps}[1]{\!\,^{(#1)}\!P_1}
+%\newcommand{\ls}[1]{\!\,^{(#1)}\!L_1}
+
+%\newcommand{\M}{{\mathrm{M}}\,\!}
+%\newcommand{\fp}{\mathfrak L}
+%\newcommand{\ind}{\mathop{\mathrm{ind}}\nolimits}
+%\newcommand{\EU}{\mathop{\mathrm{EU}}\nolimits}
+%\newcommand{\KU}{\mathop{\mathrm{K_2U}}\nolimits}
+%\newcommand{\GQ}{\mathop{\mathrm{GQ}}\nolimits}
+%\newcommand{\GH}{\mathop{\mathrm{GH}}\nolimits}
+%\newcommand{\StU}{\mathop{\mathrm{StU}}\nolimits}
+%\newcommand{\sta}[1]{\StU(#1,\,R,\,\mathfrak{L})}
+%\newcommand{\st}{\sta{2n}}
+
+%\newcommand{\sign}[1]{\mathrm{sign}(#1)}
+
+
+\newtheorem{lemma}{Lemma} \numberwithin{lemma}{section}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{prop}[lemma]{Proposition}
+\newtheorem{theorem}[lemma]{Theorem}
+\newtheorem{corollary}[lemma]{Corollary} 
+\newtheorem*{theorem*}{Theorem} 
+\newtheorem*{corollary*}{Corollary} 
+
+\theoremstyle{definition} 
+\newtheorem{df}[lemma]{Definition} %\Crefname{df}{Definition}{Definitions}
+%\newtheorem{example}[lemma]{Example} \Crefname{example}{Example}{Examples}
+
+%\theoremstyle{remark} 
+%\newtheorem{rem}[lemma]{Remark}
+%\newtheorem{conv}[lemma]{Convention} \Crefname{conv}{Convention}{Conventions}
+
+%\newenvironment{psmallmatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
+
+%\DeclareMathOperator\St{St}
+%\DeclareMathOperator\Ker{Ker}
+%\DeclareMathOperator\GG{G}
+%\DeclareMathOperator\Torus{T}
+%\DeclareMathOperator{\Pro}{Pro}
+
+
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Group}{\mathbf{Grp}}
+\newcommand{\Rng}{\mathbf{Rng}}
+\newcommand{\Fun}{\mathbf{Fun}}
+\newcommand{\Mod}{\mathbf{Mod}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\otimeshat}{\mathbin{\widehat{\otimes}}}
+
+\newcommand{\up}[2]{{^{#1}\!{#2}}}
+
+\newcommand{\rA}{\mathsf{A}}
+\newcommand{\rB}{\mathsf{B}}
+\newcommand{\rC}{\mathsf{C}}
+\newcommand{\rD}{\mathsf{D}}
+\newcommand{\rE}{\mathsf{E}}
+\newcommand{\rF}{\mathsf{F}}
+\newcommand{\rG}{\mathsf{G}}
+
+\section{Про-группа Стейнберга}
+
+Пусть $R$~--- область, $s\in R\setminus0$, $\Phi$~--- система корней с простыми связями ранга хотя бы $3$. Все системы корней в этом тектсте приведённые неприводимые.
+
+Напомним сначала определение про-группы Стейнберга. Рассмотрим цепочку {\it нерелятивизованных} групп Стейнберга $\mathrm{St}(\Phi, s^nR)$ для $n\in\mathbb N\cup0$, то есть, групп, заданных обычными соотношениями Стейнберга, но меньшим числом образующих: только теми $x_{\alpha}(a)$, для которых $a$ лежит в соответствующем идеале $s^nR$. Морфизмы в цепочке
+$$
+\ldots\rightarrow\mathrm{St}(\Phi, s^3R)\rightarrow\mathrm{St}(\Phi, s^2R)\rightarrow\mathrm{St}(\Phi, sR)\rightarrow\mathrm{St}(\Phi, R)
+$$
+определены естественным образом. Такая система гомоморфизмов называется {\it про-группой Стейнберга}, и обозначается $\St^\infty(\Phi,\,s^\bullet R)$. Как правило, мы никак не обозначаем структурные морфизмы $\St^\infty(\Phi,\,s^\bullet R)$ ни в диаграмах, ни в формулах, в частности, обозначаем элементы $\mathrm{St}(\Phi, s^nR)$ и их образы в $\mathrm{St}(\Phi, s^{n-1}R)$ одной и той же буквой.
+
+На каждой из групп $\mathrm{St}(\Phi, s^nR)$ нет действия $\mathrm{St}(\Phi, R_s)$, но можно определить гомоморфизмы сопряжения элементами из $\mathrm{St}(\Phi, R_s)$, которые действуют из группы с большим $n$ в группу с меньшим. Если на таких системах гомоморфизмов задать подходящее отношение эквивалентности, то мы получим действие $\mathrm{St}(\Phi, R_s)$ на про-группе $\mathrm{St}^\infty(\Phi, s^\bullet R)$.
+
+\begin{df}
+{\it Представителем эндоморфизма} $\eta$ про-группы $\St^\infty(\Phi,\,s^\bullet R)$ называются следующие данные: 
+\begin{itemize}
+\item
+отображение $\eta^*\colon\mathbb N\cup0\rightarrow\mathbb N\cup0$,
+\item
+для каждого $i\in\mathbb N\cup0$ гомоморфизм групп $\eta_{\,i}\colon\St(\Phi,\,s^{\eta^*(i)}R)\rightarrow\St(\Phi,\,s^{i}R)$,
+\end{itemize}
+при этом для любых $i \leq j$ найдётся $k \geq \eta^*(i),\eta^*(j)$ такой, что диаграмма
+$$
+\xymatrix{
+\St(\Phi,\,s^kR)\ar[r]\ar[rd]&\St(\Phi,\,s^{\eta^*(j)}R)\ar[r]^{\ \ \eta_{\,j}}&\St(\Phi,\,s^{j}R)\ar[d]\\
+&\St(\Phi,\,s^{\eta^*(i)}R)\ar[r]^{\ \ \eta_{\,i}}&\St(\Phi,\,s^{i}R)
+}
+$$
+коммутативна.
+
+Представители эндооморфизмов $\eta$ и $\theta$ называются {\it эквивалентными}, если для любого $i\in\mathbb N\cup0$ найдётся $k \geq \eta^*(i),\theta^*(i)$ такой, что диаграмма
+$$
+\xymatrix{
+\St(\Phi,\,s^kR)\ar[r]\ar[d]&\St(\Phi,\,s^{\eta^*(i)}R)\ar[d]^{\eta_{\,i}}\\
+\St(\Phi,\,s^{\theta^*(i)}R)\ar[r]^{\ \ \theta_{i}}&\St(\Phi,\,s^{i}R)
+}
+$$
+коммутативна.
+
+Например, если рассмотреть произвольную функцию $\theta^*$ такую, что $\theta^*(i)\geq\eta^*(i)$ для всех $i$, и задать $\theta_i$ как композиции $\eta_{\,i}$ и структурных отображений $\St^\infty(\Phi,s^\bullet R)$, то такой представитель $\theta$ будет эквивалентен $\eta$.
+
+{\it Эндоморфизмом} $g$ про-группы $\St^\infty(\Phi,\,s^\bullet R)$ называется класс эквивалентности предстаителей эндоморфизмов. Ясно, что эндоморфизмы $\St^\infty(\Phi,\,s^\bullet R)$ образуют моноид $\mathrm{End}\bigl(\St^\infty(\Phi,\,s^\bullet R)\bigr)$ относительно композиции. Нас будут в основном интересовать его обратимые элементы, то есть автоморфизмы про-группы \(\St^\infty(\Phi, s^\bullet R)\).
+
+Предположим, что существует и зафиксирован гомоморфизм групп $$\Xi\colon\St(\Phi,\,R_s)\rightarrow\mathrm{Aut}\big(\St^\infty(\Phi,\,s^\bullet R)\big).$$ Тогда для $g\in\St(\Phi,\,R_s)$ и представителя $\eta$ автоморфизма $\Xi(g)$ мы будем говорить, что $\eta$ является {\it строгим представителем} $\Xi(g)$, если для любого $i$ и для любого $x\in\St(\Phi,\,s^{\,\eta^*(i)}R)$ верно, что
+$$
+\lambda_s\big(\eta_i(x)\big) = g \lambda_s(x) g^{-1} \in \St(\Phi, R_s),
+$$
+где $\lambda_s$ обозначает гомоморфизм главной локализации в $s$. Ясно, что композиция строгих представителей снова будет строгой.
+\end{df}
+
+
+\begin{theorem}[Воронецкий]
+\label{vor}
+Существует гомоморфизм групп 
+$$
+\Xi\colon\St(\Phi,\,R_s)\rightarrow\mathrm{Aut}\big(\St^\infty(\Phi,\,s^\bullet R)\big)
+$$
+такой, что у любого $g\in\St(\Phi,\,R_s)$ существует строгий представитель.
+\end{theorem}
+
+Напомним возможную конструкцию таких строгих представителей. Ясно, что достаточно построить строгих представителей для образующих $g=x_\alpha(\frac a {s^k})$. Тогда рассмотрим $\eta^*(i) = 2p(i+k)$ для достаточно большой константы \(p\) и определим отображение
+$$
+\eta_i\colon\St(\Phi,\,s^{2p(i+k)}R)\rightarrow\St(\Phi,\,s^iR)
+$$
+по следующему правилу. Для $\beta\in\Phi$ такого, что \(\alpha + \beta \notin \Phi \cup \{0\}\), положим 
+$$\eta_i\bigl(x_\beta(s^{2p(i+k)}b)\bigr)=x_\beta(s^{2p(i+k)}b).$$
+Если $\alpha+\beta$~--- корень, положим
+$$
+\eta_i\bigl(x_\beta(s^{2p(i+k)}b)\bigr)=x_{\alpha+\beta}(N_{\alpha \beta}\,s^{2p(i + k) - k}ab)\, x_\beta(s^{2p(i + k)}b).
+$$
+Наконец, если $-\alpha = \beta + \gamma$ какое-то разложение в сумму корней, то положим
+$$
+\eta_i\bigl(x_{-\alpha}(s^{2p(i + k)} b)\bigr) = \bigl[x_{-\gamma}(N_{\alpha\beta} s^{p(i + k) - k} ab)\,
+x_\beta(s^{p(i + k)} b),
+x_{-\beta}(N_{\alpha\gamma} N_{\beta\gamma} s^{p(i + k) - k} a)\,
+x_\gamma(N_{\beta \gamma} s^{p(i + k)})\bigr]
+$$
+(такое определение не зависит от выбора $\beta$ и $\gamma$).
+
+В [LSV] доказана корректность определения таких гомоморфизмов $\eta_i$, а также проверено, что они задают действие $\St(\Phi,\,R_s)$ на $\St^\infty(\Phi,\,s^\bullet R)$.
+
+Эта конструкция показывает, что выбор строгих представителей в естественном смысле функториален. 
+\begin{corollary}
+\label{vorcor}
+Пусть $f\colon B\rightarrow A$~--- гомоморфизм областей, $h\in B$, $s=f(h)\neq0$, и $u\in\St(\Phi,\,B_h)$. Тогда можно выбрать для $u$ строгого представителя $\eta$ автоморфизма $\Xi(u)$ про-группы $\St^\infty(\Phi,\,h^\bullet B)$, а также для $f(u)\in\St(\Phi,\,A_s)$ строгого представителя $\theta$ автоморфизма $\Xi\big(f(u)\big)$ про-группы $\St^\infty(\Phi,\,s^\bullet A)$ таким образом, чтобы $\eta^*(i)=\theta^*(i)$ и
+$$f\bigl(\eta_i(x)\bigr) = \theta_i\bigl(f(x)\bigr)$$
+для любого $x\in\St(\Phi,\,h^{\eta^*(0)}B)$ и любого \(i\).
+\end{corollary}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Теорема о склейке}
+
+Пользуясь Теоремой~\ref{vor}, мы докажем Теорему~\ref{glueing} о склейке для $\St(\Phi,-)$. Впервые аналогичный результат для проективных модулей был доказан by Lindel-Lutkebohrnert и независимо by Mohan Kumar while proving Bass--Quillen conjecture for a power series ring over a field. Затем Линдел применил такую склейку при решения проблемы Басса--Квиллена для существенно гладких алгебр над совершенным полем.
+
+Как и в предыдущем параграфе, здесь $\Phi$~--- система корней с простыми связями ранга хотя бы 3.
+
+\begin{theorem}
+\label{glueing}
+Пусть $B$~--- подобласть в области $A$, $h\in B\setminus0$ такой, что $A / hA = B / hB$. Это эквивалентно тому, что $A = Ah^n + B$ и $Ah^n \cap B = Bh^n$ для любого $n$. Рассмотрим диаграмму
+$$
+\xymatrix{
+\St(\Phi,\,B)\ar[r]^{\iota}\ar[d]_{\lambda_h}&\St(\Phi,\,A)\ar[d]^{\lambda_h}\\
+\St(\Phi,\,B_h)\ar[r]^{\iota}&\St(\Phi,\,A_h).
+}
+$$
+Предположим, что для $u\in\St(\Phi,\,B_h)$ и $v\in\St(\Phi,\,A)$ верно, что $$\iota(u)=\lambda_h(v)\in\St(\Phi,\,A_h).$$
+Тогда найдётся $w\in\St(\Phi,\,B)$ такой, что $u=\lambda_h(w)$, и $v=\iota(w)$.
+\end{theorem}
+\begin{proof}
+Хорошо известно, что для работы с $\mathrm K_1$-функтором важно изучение различных разложений группы $\mathrm G(\Phi,\,R)$ в произведение подгрупп, см.~[??]. В том же самом смысле, для работы с $\mathrm K_2$-функтором оказывается важно изучение главных однородных $\St(\Phi,\,R)$-множеств, см.~[??].
+
+Рассмотрим множество
+$$
+V = \St(\Phi, B_h) \times_{\St(\Phi, B)} \St(\Phi, A),
+$$
+равное по определению фактор-множеству декартова произведения $\St(\Phi,\,B_h)\times_{}\St(\Phi,\,A)$ по следующему отношению эквивалентности $\sim\,$: для любых $u\in\St(\Phi,\,B_h)$, $v\in\St(\Phi,\,A)$ и $w\in\St(\Phi,\,B)$ положим
+$$
+(u\, \iota(w), v)\sim(u, \lambda_h(w) v).
+$$
+Мы покажем, что каноническое отображение \(V \to \St(\Phi, A_h), (u, v) \mapsto \iota(u) \lambda_h(v)\) является биекцией. 
+
+Построим действие группы $\St(\Phi, A_h)$ на $V$. Рассмотим $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$ и $\frac c {h^s} \in A_h$, и выберем для $u$ строгого представителя $\eta$ автоморфизма $\Xi(u)^{-1}$ про-группы $\St^\infty(\Phi, h^\bullet B)$, а также для $\iota(u)$ строгого представителя $\theta$ автоморфизма $\Xi\bigl(\iota(u)\bigr)^{-1}$ про-группы $\St^\infty(\Phi, h^\bullet A)$ по Следствию~\ref{vorcor} таким образом, чтобы $\eta^*(0) = \theta^*(0)$ и $$\iota\bigl(\eta_0(x)\bigr) = \theta_0\bigl(\iota(x)\bigr)$$ для любого $x\in\St(\Phi,\,h^{\eta^*(0)}B)$.
+
+Выберем $n \geq \theta^*(0) + s$ и представление $c = ah^n + b$, $a\in A$, $b\in B$. Положим
+$$\textstyle
+x_\alpha(\frac c {h^s}) (u, v) = \bigl(x_\alpha(\frac b {h^s}) u, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr).
+$$
+Ниже в лемме \ref{well-def} мы покажем, что это определение не зависит ни от каких выборов. Тогда действие элемента $x_\alpha(\frac c {h^s})$ на $V$ корректно определено, и остаётся проверить, что оно продолжается до действия группы Стейберга $\St(\Phi, A_h)$.
+
+Покажем сначала, что 
+$$\textstyle
+x_\alpha(\frac c {h^s})\, \bigl(x_\alpha(\frac{c'}{h^s})\, (u, v)\bigr) = x_\alpha(\frac{c+c'}{h^s})\, (u, v).
+$$
+Для этого выберем разложения $c = ah^n + b$, $c' = a'h^n + b'$ как в определении действия, где \(n\) достаточно большое. Поскольку $x_\alpha(\frac{b'}{h^s})$ действует тривиально на $x_\alpha(ah^{n-s})$ при достаточно большом $n$, можно выбрать строгих представителей $\theta$ для $\Xi(\iota(u))^{-1}$ и $\theta'$ для $\Xi(x_\alpha(\frac{b'}{h^s})\, \iota(u))^{-1}$ таким образом, чтобы
+$$
+\theta'_0\bigl(x_\alpha(ah^{n-s})\bigr) = \theta_0\bigl(x_\alpha(ah^{n-s})\bigr)
+$$
+(и аналогично для согласованных с ними $\eta$ и $\eta'$). Тогда
+$$\textstyle
+x_\alpha(\frac c {h^s})\, \bigl(x_\alpha(\frac{b'}{h^s})\, u, \theta_0(x_\alpha(a' h^{n-s}))\, v\bigr) = \bigl(x_\alpha(\frac{b + b'}{h^s})\, u, \theta'_0(x_\alpha(a h^{n - s}))\, \theta_0(x_\alpha(a' h^{n - s}))\, v\bigr),
+$$
+что доказывает первое соотношение. Точно также можно проверить, что $x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})$ и $x_\beta(\frac{c'}{h^s})\, x_\alpha(\frac c {h^s})$ действуют одинаково при $\alpha + \beta \notin \Phi \cup \{0\}$.
+
+Наконец, в случае $\alpha + \beta \in \Phi$ покажем, что 
+$$\textstyle
+f = x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})
+\text{ и }
+g = x_{\alpha + \beta}(N_{\alpha \beta} \frac{cc'}{h^{2s}})\, x_\beta(\frac{c'}{h^s})\, x_\alpha(\frac c {h^s})
+$$ 
+действуют одинаково. Выберем разложения $c = ah^n + b$, $c' = a'h^n + b'$ и $cc' = (aa' h^n + ab' + a'b) h^n + bb'$ для достаточно большого \(n\).
+Тогда
+$$\textstyle
+f\,(u, v) = \bigl(x_\alpha(\frac b {h^s})\, x_\beta(\frac{b'}{h^s})\, u,
+\theta'_0(x_\alpha(ah^{n - s}))\, \theta_0(x_\beta(a'h^{n - s}))\, v\bigr),
+$$
+где $\theta$~--- строгий представитель $\Xi(\iota(u))^{-1}$, а $\theta'$~--- строгий представитель $\Xi(x_\beta(\frac{b'}{h^s})\, \iota(u))^{-1}$. Можно выбрать $\theta'$ таким образом, чтобы
+$$
+\theta'_0(x_\alpha(ah^{n - s})) = \theta_0\bigl(x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha\beta} ab'h^{n - 2s})\bigr).
+$$
+Далее, 
+\begin{multline*}\textstyle
+g\, (u, v) = \bigl(x_{\alpha+\beta}(N_{\alpha \beta} \frac{bb'}{h^{2s}})\, x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b {h^s})\, u,\\
+\theta'''_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa' h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr)\, \theta''_0(x_\beta(a'h^{n-s}))\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr),
+\end{multline*}
+где $\theta''$ строго представляет $\Xi(x_\alpha(\frac b {h^s})\, \iota(u))^{-1}$ и $\theta'''$ строго представляет $\Xi(x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b{h^s})\, \iota(u))^{-1}$. Можно выбрать $\theta''$ и $\theta'''$ таким образом, чтобы 
+$$
+\theta''_0(x_\beta(a' h^{n - s})) = \theta_0\bigl(x_{\alpha + \beta}(-N_{\alpha \beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\bigr),
+$$
+и
+$$
+\theta'''_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr) = \theta_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr).
+$$
+Теперь остаётся проверить, что
+\begin{multline*}
+x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha \beta} ab' h^{n - 2s})\, x_\beta(a' h^{n - s}) =\\
+= x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa' h^n + ab' + a'b) h^{n - 2s}\bigr)\, x_{\alpha + \beta}(-N_{\alpha\beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\, x_\alpha(ah^{n - s}).
+\end{multline*}
+Но это как раз является соотношением Стейнберга.
+
+Итак, действие $\St(\Phi, A_h)$ на $V$ корректно определено. Из построения следует, что каноническое отображение \(V \to \St(\Phi, A_h)\) сохраняет это действие, если \(\St(\Phi, A_h)\) действует сама на себе левыми сдвигами. Так как \((1, 1) \in V\) отображается в \(1 \in \St(\Phi, A_h)\), остаётся проверить транзитивность действия на \(V\). Но из нашего построения следует, что \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Следовательно, \(V \to \St(\Phi, A_h)\) биекция.
+
+Пусть теперь \(u \in \St(\Phi, B_h)\) и \(v \in \St(\Phi, A)\) такие, что \(\iota(u) = \lambda_h(v)\). Тогда класс \((u, v^{-1})\) в \(V\) отображается в \(1 \in \St(\Phi, A_h)\). А это значит, что \((u, v^{-1}) \sim (1, 1)\).
+%Итак, действие $\St(\Phi,\,A_h)$ на $V$ корректно определено, более того, из определения действия и независимости от выбора $n$ следует, что для любого $f\in\St(\Phi,\,B_h)$ и $(u,\,v)\in V$ верно, что
+%$$
+%\iota(f)\cdot(u,\,v)=(f\cdot u,\,v).
+%$$
+%Кроме того, поскольку для $1\in\St(\Phi,\,A_h)$ мы можем выбрать представителя $\theta$, таким образом, что $\theta_0(x)=x$, то для любого $g\in\St(\Phi,\,A)$ и $v\in\St(\Phi,\,A)$ из определения следует, что
+%$$
+%\lambda_h(g)\cdot(1,\,v)=(1,\,g\cdot v).
+%$$
+%Этого достаточно, чтобы завершить доказательство теоремы. Действительно, предположим, что для $u\in\St(\Phi,\,B_h)$ и $v\in\St(\Phi,\,A)$ верно, что $$\iota(u)=\lambda_h(v)\in\St(\Phi,\,A_h).$$
+%Тогда
+%$$
+%(u,\,1)=\iota(u)\cdot(1,\,1)=\lambda_h(v)\cdot(1,\,1)=(1,\,h).
+%$$
+%По определению отношения эквивалентности на $V$, из этого в точности следует, что существет $w\in\St(\Phi,\,B)$ такой, что $u=\lambda_h(w)$, и $v=\iota(w)$, и теорема доказана.
+%
+%Но, разумеется, то же самое рассуждение показывает, что $(1,1)$ можно перевести в любой элемент $V$ действием $\St(\Phi,\,A_h)$, то есть, действие транзитивно. Кроме того, корректно определено отображение
+%$$
+%V\rightarrow\St(\Phi,\,A_h),\quad (u,\,v)\mapsto\iota(u)\cdot\lambda_h(v),
+%$$
+%которое эквивариантно, если $\St(\Phi,\,A_h)$ действует на себе левыми сдвигами. Из этого сразу следует, что если $g\cdot(1,\,1)=(1,\,1)$, то $g=1$, то есть, действие $\St(\Phi,\,A_h)$ на $V$ свободно, и $V$ является главным однородным $\St(\Phi,\,A_h)$-множеством.
+\end{proof}
+
+\begin{lemma}\label{well-def}
+Действие \(x_\alpha(\frac c{h^s})\) на элементе \((u, v)\) не зависит от выбора разложения \(c\), согласованных строгих представителей \(\Sigma(u^{-1})\) и \(\Sigma(\iota(u^{-1}))\), а также представителя \((u, v)\) в своём классе эквивалентности в \(V\).
+\end{lemma}
+\begin{proof}
+Покажем, что действие не зависит от выбора разложения $c$. Действительно, пусть $k = \theta^*(0) + s$ и $c = a' h^k + b'$. Так как $a' h^k - a h^n = b - b' \in Ah^k \cap B = Bh^k$, то существует $d \in B$ такой, что $b = b' + dh^k$. Тогда
+$$\textstyle
+x_\alpha(\frac b {h^s}) u = \bigl(x_\alpha(\frac{b'}{h^s}) u\bigr) \bigl(u^{-1} x_\alpha(dh^{k - s}) u\bigr).
+$$
+Поскольку $\eta$~--- строгий представитель $\Xi(u)^{-1}$, мы заключаем, что $$u^{-1} x_\alpha(dh^{k-s}) u = \lambda_h \bigl(\eta_0(x_\alpha(dh^{k - s}))\bigr)$$
+и
+$$\textstyle
+\bigl(x_\alpha(\frac b {h^s}) u, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr) \sim \bigl(x_\alpha(\frac{b'}{h^s}) u, \iota\bigl(\eta_0(x_\alpha(dh^{k-s}))\bigr)\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr).
+$$
+
+Согласованный выбор $\eta$ и $\theta$ гарантирует нам, что 
+$$
+\iota\bigl(\eta_0(x_\alpha(dh^{k-s}))\bigr) = \theta_0(x_\alpha(dh^{k - s})),
+$$
+а поскольку $\theta_0$ является гомоморфизмом, 
+$$
+\theta_0(x_\alpha(dh^{k - s}))\, \theta_0(x_\alpha(ah^{n - s})) = \theta_0(x_\alpha(dh^{k-s} + ah^{n - s})) = \theta_0(x_\alpha(a'h^{k - s})).
+$$
+
+Теперь проверим, что действие не зависит от выбора строгих представителей. Пусть строгие представители $\eta'$ и $\theta'$ эквивалентны \(\eta\) и \(\theta\) соответственно. По определению эквивалентности существует такое $n \geq \max(\theta^*(0) + s, {\theta'}^*(0) + s)$, что 
+$$
+\theta_0(x_\alpha(ah^{n - s})) = \theta_0'(x_\alpha(ah^{n - s}))
+$$
+для любого $a \in A$. Поскольку определение не зависит от выбора разложения $c$, мы заключаем, что оно не зависит и от выбора $\eta$ и $\theta$.
+
+Наконец, покажем, что действие не зависит и от выбора представителя $(u, v)$ как элемента $V$. Пусть $u = u' \lambda_h(w)$, где $w \in \St(\Phi,\,B)$. Выберем согласованные строгие представители $\eta'$, $\theta'$ для $\Xi(u')^{-1}$ и $\Xi(\iota(u'))^{-1}$, а также $\eta$, $\theta$ для $\Xi(u)^{-1}$ и $\Xi(\iota(u))^{-1}$ по Следствию~\ref{vorcor}. Ясно, что для некоторого строгого представителя $\zeta$ автоморфизма $\Xi(\iota(w))^{-1}$ будет выполнено $\zeta_0(x) = \iota(w)^{-1}\, x\, \iota(w)$ для всех $x \in \St(\Phi, h^{\zeta^*(0)} A)$.
+%Поэтому можно найти $\theta$~--- строгого представителя $\iota(u)$ такого, что $\theta_{0}(x)=\iota(w)^{-1}\theta'_0(x)\iota(w)$, и согласованного с ним $\eta$~--- строгого представителя $u$.
+%Поскольку определение не зависит от выбора строго представителя, мы заключаем, что
+Тогда
+$$\textstyle
+\bigl(x_\alpha(\frac b {h^s})\, u' \lambda_h(w), \theta_0(x_\alpha(ah^{n - s}))\, v\bigr) \sim \bigl(x_\alpha(\frac b {h^s})\, u', \iota(w)\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr),
+$$
+при этом
+$$
+\iota(w)\, \theta_0\big(x_\alpha(ah^{n-s})\big) = \theta'_0\big(x_\alpha(ah^{n-s})\big)\, \iota(w)
+$$
+для всех \(a\), если \(n\) достаточно велико.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+\section{Lindel--Popescu Bingo}
+
+В этом параграфе мы аксоматизируем рассуждение Ворста, который применил результаты Линдела о гипотезе Басса--Квиллена для существенно гладких алгебр, чтобы доказать аналог результата Линдела $\mathrm K_1$. Ставрова добавила к рассуждению Ворста результаты Попеску, и получила $\mathrm K_1$-аналог гипотезы Басса--Квиллена для регулярных колец, содержащих поле (в действительности, не только {\it линейный} $\mathrm K_1$-аналог, но и для функторов $\mathrm K_1^G$ построенных по изотропной редуктивной группе $G$).
+
+Пусть $k$~--- коммутативное кольцо с $1$, $\mathcal A\mathsf{lg}_k$ обозначает категорию коммутативных $k$-алгебр, и $\mathcal G\mathsf{rp}$ обозначает категорию групп.
+\begin{theorem}
+\label{lpb}
+Пусть ковариантный функтор 
+$$
+\mathrm K\colon\mathcal A\mathsf{lg}_k\rightarrow\mathcal G\mathsf{rp}
+$$
+удовлетворяет следующим свойствам.\\
+%{\rm\bf (PSP)} Perfect subfield property. Если $F\in\mathcal A\mathsf{lg}_k$ является полем, то $F$ содержит совершенное подполе $L\subseteq F$, которое также является $k$-алгеброй.\\
+{\rm\bf (CDC)} Commuting with directed colimits. Функтор $\mathrm K$ коммутирует с направленными копределами.\\
+{\rm\bf (HIF)} Homotopy invariance for fields. Если $F\in\mathcal A\mathsf{lg}_k$ является полем, и $F[t]$ обозначает кольцо многочленов над $F$, то каноническое вложение $F\subseteq F[t]$ индуцирует изоморфизм
+$$
+\mathrm K(F)\cong\mathrm K(F[t]).
+$$
+{\rm\bf (HIL)} Homotopy invariance for localizations. Если $R\in\mathcal A\mathsf{lg}_k$ является областью, и каноническое вложение $R\subseteq R[t]$ индуцирует изоморфизм $\mathrm K(R)\cong\mathrm K(R[t])$, то для любого мультипликативного множества $S\subseteq R$ вложение $R_S\subseteq R_S[t]$ тоже индуцирует изоморфизм
+$$
+\mathrm K(R_S)\cong\mathrm K(R_S[t]).
+$$
+{\rm\bf (LGP)} Quillen--Suslin local-global principle. Если для $R\in\mathcal A\mathsf{lg}_k$, и $g\in\mathrm K(R[t])$ естественное отображение эвалюации $\mathrm{ev}_{t=0}\colon R[t]\rightarrow R$ и все максимальные локализации $\lambda_{\mathfrak m}\colon R[t]\rightarrow R_{\mathfrak m}[t]$, где $\mathfrak m\in\mathrm{Max}\,R$, переводят $g$ в $1$, то есть, $\mathrm K(\mathrm{ev}_{t=0})(g)=1\in\mathrm K(R)$, и $\mathrm K(\lambda_{\mathfrak m})(g)=1\in\mathrm K(R_{\mathfrak m}[t])$ для всех $\mathfrak m$, то $$g=1\in\mathrm K(R[t]).$$
+{\rm\bf (LHT)} Local Horrocks' Theorem. Если $R\in\mathcal A\mathsf{lg}_k$ является локальной областью, то естественное отображение $\lambda_t\colon R[t]\rightarrow R[t,t^{-1}]$ индуцирует инъективное отображение 
+$$
+\mathrm K(\lambda_t)\colon\mathrm K(R[t])\rightarrowtail\mathrm K(R[t,t^{-1}]),
+$$ 
+и пересечение образов $\mathrm K(\lambda_t)$ и $\mathrm K(\lambda_{t^{-1}})$ совпадает с $\mathrm K(R)$, где $\lambda_{t^{-1}}\colon R[t^{-1}]\rightarrow R[t,t^{-1}]$ обозначает естественное отображение локализации, и $\mathrm K(R)$ вложен в $\mathrm K(R[t,t^{-1}])$, поскольку $R\rightarrow R[t,t^{-1}]$ является ретракцией,
+$$
+\mathrm{Im}\,\mathrm K(\lambda_t)\cap\mathrm{Im}\,\mathrm K(\lambda_{t^{-1}}) = \mathrm K(R).
+$$
+{\rm\bf (LGL)} Lindel's Glueing Lemma. Пусть $B\in\mathcal A\mathsf{lg}_k$~--- подобласть в области $A$, $h\in B\setminus0$ такой, что $A/h = B/h$, и рассмотрим диаграмму
+$$
+\xymatrix{
+B\ar[r]^{\iota}\ar[d]_{\lambda_h}&A\ar[d]^{\lambda_h}\\
+B_h\ar[r]^{\iota}&A_h.
+}
+$$
+Предположим, что для $u\in\mathrm K(B_h)$ и $v\in\mathrm K(A)$ верно, что $$\mathrm K(\iota)(u)=\mathrm K(\lambda_h)(v)\in\mathrm K(A_h).$$
+Тогда найдётся $w\in\mathrm K(B)$ такой, что $u=\mathrm K(\lambda_h)(w)$, и $v=\mathrm K(\iota)(w)$.
+
+Тогда для функтора $\mathrm K$ как следствие имеет место следующее свойство.\\
+{\bf(ALP)} Analogue of Lindel--Popescu Theorem. Для любой алгебры $R\in\mathcal A\mathsf{lg}_k$, являющейся регулярным {\rm(}нётеровым{\rm)} кольцом, и содержащей совершенное поле $F\in\mathcal A\mathsf{lg}_k$, естественное отображение $R\subseteq R[t]$ индуцирует изоморфизм
+$$
+\mathrm K(R)\cong\mathrm K(R[t]).
+$$
+\end{theorem}
+
+Доказательство теоремы разбито на ряд лемм, чтобы было проще следить, как используются разные свойства. Схематически взаимосвязь разных свойств, введённых в этом параграфе, можно изобразить при помощи следующей диаграммы.
+$$
+\xymatrix{
+&{\bf(LGP)}\ar[d]\ar[dddrr]&&\\
+{\bf(LHT)}\ar[r]&{\bf(GHT)}\ar[rdd]&&\\
+&{\bf(HIF)}\ar[rd]&&\\
+&{\bf(ZGL)}\ar[r]&{\bf(ASP)}\ar[r]&{\bf(ALP)}\\
+&{\bf(CDC)}\ar[ru]\ar[rru]&&\\
+&&&\\
+{\bf(LGL)}\ar[ruuu]\ar[rrruuu]&{\bf(HIL)}\ar[rruuu]&&
+}
+$$
+Прежде всего, локально-глобальный принцип позволяет глобализовать теорему Хоррокса, см.~[??].
+\begin{lemma}[Global Horrocks' Theorem]
+\label{ght}
+Пусть $\mathrm K\colon\mathcal A\mathsf{lg}_k\rightarrow\mathcal G\mathsf{rp}$ удовлетворяет свойствам {\bf(LGP)} и {\bf(LHT)} из формулировки Теоремы~\ref{lpb}. Тогда $\mathrm K$ удовлетворяет также следующему свойству.\\
+{\rm\bf(GHT)} Если $R\in\mathcal A\mathsf{lg}_k$ является областью, то естественное отображение $\lambda_t\colon R[t]\rightarrow R[t,t^{-1}]$ индуцирует инъективное отображение 
+$$
+\mathrm K(\lambda_t)\colon\mathrm K(R[t])\rightarrowtail\mathrm K(R[t,t^{-1}]),
+$$ 
+и пересечение образов $\mathrm K(\lambda_t)$ и $\mathrm K(\lambda_{t^{-1}})$ совпадает с $\mathrm K(R)$, 
+$$
+\mathrm{Im}\,\mathrm K(\lambda_t)\cap\mathrm{Im}\,\mathrm K(\lambda_{t^{-1}}) = \mathrm K(R).
+$$
+\end{lemma}
+\begin{proof}
+Докажем первое утверждение. Действительно, пусть $g\in\mathrm K(R[t])$, и $\mathrm K(\lambda_t)(g)=1\in\mathrm K(R[t,t^{-1}])$. Поскольку $R\hookrightarrow R[t]$ является ретракцией, мы считаем $\mathrm K(R)$ вложенным в $\mathrm K(R[t])$, и рассмотрим $h=g\cdot\mathrm K(\mathrm{ev}_{t=0})(g)^{-1}$. Тогда $\mathrm K(\mathrm{ev}_{t=0})(h)=1$, кроме того, $K(\lambda_t)\big(\mathrm K(\lambda_{\mathfrak m})(h)\big)=1$ для любого $\mathfrak m\in\mathrm{Max}\,R$, поэтому из {\bf(LHT)} следует, что $\mathrm K(\lambda_{\mathfrak m})(h)=1$, а тогда из {\bf(LGP)} следует, что $h=1$, то есть, $g=\mathrm K(\mathrm{ev}_{t=0})(g)$. Однако по условию $\mathrm K(\lambda_t)(g)=1$, а $\mathrm K(R)$ вкладывается в $\mathrm K(R[t,t^{-1}])$, поэтому $g=1$.
+
+Пусть теперь $\mathrm K(\lambda_t)(g)=\mathrm K(\lambda_{t^{-1}})(h)\in\mathrm K(R[t,t^{-1}])$. Обозначим $f=\mathrm K(\mathrm{ev}_{t=0})(g)$, тогда $\mathrm K(\lambda_{\mathfrak m})(gf^{-1})\in\mathrm K(R)$ по {\bf(LHT)} для любого $\mathfrak m\in\mathrm{Max}\,R$, а поскольку $\mathrm K(\mathrm{ev}_{t=0})(gf^{-1})=1$, то $\mathrm K(\lambda_{\mathfrak m})(gf^{-1})=1$. Тогда по {\bf(LGP)} мы заключаем, что $g=f\in\mathrm K(R)$.
+\end{proof}
+
+Также отметим, что частным случаем~{\bf(LGL)} является следующее свойство.
+\begin{lemma}[Zariski Glueing Lemma]
+\label{zgl}
+Пусть $\mathrm K\colon\mathcal A\mathsf{lg}_k\rightarrow\mathcal G\mathsf{rp}$ удовлетворяет свойству {\bf(LGL)} из формулировки Теоремы~\ref{lpb}. Тогда он также удовлетворяет следующему свойству.\\
+{\rm\bf(ZGL)}
+Пусть $R\in\mathcal A\mathsf{lg}_k$~--- область, $a$, $b\in R$ порождают единичный идеал, $aR+bR=R$. Рассмотрим диаграмму
+$$
+\xymatrix{
+R\ar[r]^{\lambda_a}\ar[d]_{\lambda_b}&R_a\ar[d]^{\lambda_b}\\
+R_b\ar[r]^{\lambda_a}&R_{ab}.
+}
+$$
+Предположим, что для $u\in\mathrm K(R_a)$ и $v\in\mathrm K(R_b)$ верно, что $$\mathrm K(\lambda_b)(u)=\mathrm K(\lambda_a)(v)\in\mathrm K(R_{ab}).$$
+Тогда найдётся $w\in\mathrm K(R)$ такой, что $u=\mathrm K(\lambda_a)(w)$, и $v=\mathrm K(\lambda_b)(w)$.
+\end{lemma}
+\begin{proof}
+Положим $B=R$, $A=R_a$ и $h=b$. Заметим, что $Ah+B=A$, поскольку для любого $r/a^s\in A=R_a$ можно выбрать разложение единицы $xa^s+yb^s=1$, и тогда $r/a^s$ раскладывается в сумму $rx\in R=B$, и $ryb^s/a^s\in bR_a=hA$ (при $s=0$ можно взять $y=0$). Кроме того, заметим, что $Ah\cap B=Bh$. Действительно, если $rb/a^s=c\in B=R$, то есть, $rb=a^sc$, то, пользуясь разложением единицы $xa^s+yb^s=1$, получаем, что $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b\in bR=hB$ (при $s=0$ можно считать, что $y=0$). Остаётся применить {\bf(LGL)}.
+\end{proof}
+
+
+Следующая лемма в частных случаях была доказана в~[??].
+\begin{lemma}
+\label{lmp}
+Пусть функтор $\mathrm K\colon\mathcal A\mathsf{lg}_k\rightarrow\mathcal G\mathsf{rp}$ удовлетворяет свойствам {\bf(ZGL)} из формулировки Леммы~\ref{zgl} и {\bf(GHT)} из формулировки Леммы~\ref{ght}. Тогда для любой $R\in\mathcal A\mathsf{lg}_k$ области, и любого унитального многочлена $f\in R[t]$ естественное отображение $\lambda_f\colon R\rightarrow R_f$ индуцирует инъективное отображение
+$$
+\mathrm K(R[t])\rightarrowtail\mathrm K(R[t]_f).
+$$
+\end{lemma}
+\begin{proof}
+Если $f=\sum_{i=0}^n a_it^i$, $a_n=1$, рассмотрим многочлен $$g=1+a_{n-1}t^{-1}+\ldots+a_0t^{-n}\in R[t^{-1}],$$ и рассмотрим коммутативную диаграмму
+$$
+\xymatrix{
+R[t]\ar[r]^{\lambda_t\ \ }\ar[d]_{\lambda_f}&R[t,t^{-1}]\ar[d]&R[t^{-1}]\ar[l]_{\ \ \lambda_{t^{-1}}}\ar[d]^{\lambda_g}\\
+R[t]_f\ar[r]&R[t,t^{-1}]_f=R[t,t^{-1}]_g&R[t^{-1}]_g.\ar[l]
+}
+$$
+Пусть $x\in\mathrm K(R[t])$, и $\mathrm K(\lambda_f)(x)=1$. Тогда образы элементов $\mathrm K(\lambda_t)(x)\in\mathrm K(R[t,t^{-1}])$ и $1\in\mathrm K(R[t^{-1}]_g)$ в $\mathrm K(R[t,t^{-1}]_g)$ совпадают, и по свойству {\bf(ZGL)}, применённому к правому квадрату, существует $y\in\mathrm K(R[t^{-1}])$ такой, что $\mathrm K(\lambda_{t^{-1}})(y)=\mathrm K(\lambda_t)(x)$, и $\mathrm K(\lambda_{g})(y)=1$. По свойству {\bf(GHT)} мы заключаем, что $x=y\in\mathrm K(R)$, но так как $\mathrm K(\lambda_{g})(y)=1$, то $y=1$.
+\end{proof}
+
+
+
+
+
+
+
+Пользуясь последней леммой, мы покажем, как вывести из свойства {\bf(HIF)} аналог проблемы Серра.
+\begin{lemma}[Analogue of Serre's problem]
+\label{asp}
+Если функтор $\mathrm K\colon\mathcal A\mathsf{lg}_k\rightarrow\mathcal G\mathsf{rp}$ удовлетворяет свойствам {\bf(CDC)} и {\bf(HIF)} из формулировки Теоремы~\ref{lpb}, {\bf(ZGL)} из формулировки Леммы~\ref{zgl} и {\bf(GHT)} из формулировки Леммы~\ref{ght}, то он также удовлетворяет следующему свойству.\\
+{\bf(ASP)} Для любого $F\in\mathcal A\mathsf{lg}_k$ являющейся полем, естественное вложение $F\subseteq F[t_1,\ldots,t_n]$ индуцирует изоморфизм
+$$
+\mathrm K(F)\cong\mathrm K(F[t_1,\ldots,t_n]),
+$$
+где $F[t_1,\ldots,t_n]$ обозначает кольцо многочленов.
+\end{lemma}
+\begin{proof}
+Сначала покажем, что естественное вложение кольца $F[t_1,\ldots,t_n]$ в кольцо $F(t_1)[t_2,\ldots,t_n]$ индуцирует инъективное отображение
+$$
+\mathrm K(F[t_1,\ldots,t_n])\rightarrowtail\mathrm K(F(t_1)[t_2,\ldots,t_n]).
+$$
+Действительно, пусть $x\in\mathrm K(F[t_1,\ldots,t_n])$ переходит при этом отображении в единицу. Поскольку $F(t_1)[t_2,\ldots,t_n]$ является копределом $F[t_1,\ldots,t_n]_f$ по унитальным $f\in F[t_1]$, то по {\bf(CDC)} найдётся унитальный $f\in F[t_1]$ такой, что $\mathrm K(\lambda_f)(x)=1$. Тогда применяя Лемму~\ref{lmp} к кольцу $R=F[t_2,\ldots,t_n]$, получаем, что $x=1$. 
+
+Теперь докажем утверждение леммы индукцией по числу полиномиальных переменных $n$. Ясно, что отображение $F(t_1)[t_2,\ldots,t_n]\rightarrow F(t_1)$, эвалюирующее $t_i$ в $0$ при $i>1$, индуцирует изоморфизм
+$$
+\mathrm K\big(F(t_1)[t_2,\ldots,t_n]\big)\cong\mathrm K\big(F(t_1)\big)
+$$
+по индукционному предположению. Тогда из коммутативности диаграммы
+$$
+\xymatrix{
+\mathrm K(F[t_1,\ldots,t_n])\ \ar@{>->}[r]\ar[d]_{t_i=0}&\mathrm K\big(F(t_1)[t_2,\ldots,t_n]\big)\ar[d]^{\cong}\\
+\mathrm K(F[t_1])\ar[r]&\mathrm K\big(F(t_1)\big)
+}
+$$
+мы получаем, что $\mathrm K(F[t_1,\ldots,t_n])$ вкладывается в $\mathrm K\big(F(t_1)\big)$, и его образ содержится в образе $\mathrm K(F[t_1])$. Однако по {\bf(HIF)} мы знаем, что $\mathrm K(F[t_1])\cong\mathrm K(F)$, следовательно образ $\mathrm K(F[t_1,\ldots,t_n])$ совпадает с $\mathrm K(F)$.
+\end{proof}
+
+
+
+
+
+
+
+Следующие теоремы Линдела и Попеску являются ключевыми ингридиентами в доказательстве гипотезы Басса--Квиллена для регулярных колец, содержащих поле. 
+\begin{theorem}[Lindel]
+\label{lindel}
+Пусть $F$~--- совершенное поле, и $A$~--- локальная область положительной размерности, существенно гладкая над $F$. Тогда $A$ содержит подобласть локальную подобласть $B$, являющуюся локализацией кольца многочленов над $F$ {\rm(}от нескольких переменных{\rm)}, и существует $h\in B\setminus A^\times$ такой, что $A/h=B/h$. 
+\end{theorem}
+См.~[Lindel, Lemma, Proposition~2 and~2'], [Vorst, Proposiion~3.2], а также [Bhatwadekar, Proposition~4.8].
+
+\begin{theorem}[Popescu]
+\label{popescu}
+Пусть $F$~--- совершенное поле, и $R$~--- регулярная локальная область, содержащая $F$. Тогда $R$ является направленным копределом локальных областей, существенно гладких над $F$.
+\end{theorem}
+См.~[Popescu], [Swan].\\
+
+Наконец, мы можем завершить доказательство Теоремы~\ref{lpb}. Рассуждение следует статьям [Vorst] и [Stavrova].
+
+\begin{lemma}
+Пусть функтор $\mathrm K\colon\mathcal A\mathsf{lg}_k\rightarrow\mathcal G\mathsf{rp}$ удовлетворяет свойствам {\bf(CDC)}, {\bf(HIL)}, {\bf(LGP)}, {\bf(LGL)} из формулировки Теоремы~\ref{lpb}, а также {\bf(ASP)} из формулировки Леммы~\ref{asp}. Тогда для него верно заключение Теоремы~\ref{lpb} {\bf(ALP)}. 
+\end{lemma}
+\begin{proof}
+Сначала докажем заключение Теоремы~\ref{lpb} для области $A$, существенно гладкой над совершенным полем $F\in\mathcal A\mathsf{lg}_k$. Проведём индукцию по размерности $A$. Благодаря {\bf(LGP)} можно считать, что $A$ локально. Тогда если $d=\mathrm{dim}\,A$ равна нулю, то $A$ является полем, и мы можем применить {\bf(ASP)}. Для $d>0$ также будем считать, что $A$ локально. Пусть $g\in\mathrm K(A[t])$, и мы можем считать, что $\mathrm K(\mathrm{ev}_{t=0})(g)=1$. Выберем $B\subseteq A$ и $h\in B\setminus A^\times$ по Теореме~\ref{lindel}. Возможно, $A_h$ перестало быть локальным, однако $\mathrm{dim}\,A_h<d$ (ведь максимальный идеал $A$ становится единичным при локализации), и мы заключаем по индукционному предположению, что $\mathrm K(A_h[t])=\mathrm K(A_h)$. Тогда $\mathrm K(\lambda_h)(g)=1$, и по {\bf(LGL)} можно выбрать общий прообраз $f\in\mathrm K(B[t])$ для $g$ и $1\in\mathrm K(B_h[t])$. Из {\bf(HIL)} и {\bf(ASP)} следует, что $f\in\mathrm K(B)$, значит $g\in\mathrm K(A)$.
+
+Теперь из {\bf(CDC)} и Теоремы~\ref{popescu} немедленно следует, что $\mathrm K(R[t])\cong\mathrm K(R)$ для любой локальной регулярной области, содержащей совершенное поле $F\in\mathcal A\mathsf{lg}_k$. Благодаря {\bf(LGP)}, из этого следует {\bf(ALP)}.
+\end{proof}
+
+\section{Свойства $\mathrm K_2$-функторов}
+
+В этом параграфе $\Phi$ обозначает произвольную систему корней.
+
+\begin{lemma}
+\label{k2cdc}
+Функторы  $\mathrm G_{\mathrm{sc}}(\Phi,\,-)$, $\St(\Phi,\,-)$ и $\mathrm K_2(\Phi,\,-)$ коммутируют с направленными копределами. 
+\end{lemma}
+\begin{proof}
+Утверждение про $\mathrm G_{\mathrm{sc}}(\Phi,\,-)$ следует, например, из существования точного представления. 
+
+Пусть $R=\mathrm{colim}_I R_i$~--- направленный копредел колец. Покажем, что 
+$$
+\St(\Phi,\,R)=\mathrm{colim}_I\St(\Phi,\,R_i).
+$$
+Для этого можно проверить универсальное свойство копредела. Если $f_i\colon\St(\Phi,\,R_i)\rightarrow G$, и $x_\alpha(r)\in\St(\Phi,\,R)$, можно найти $r'\in R_i$ для некоторого $i$ такой, что $r'$ переходит в $r$, и определить $f(x_\alpha(r))=f_i(x_\alpha(r'))$. Легко видеть, что такое определение не зависит от выбора $i$, и сохраняет соотношения Стейнберга. Тогда $f$ будет искомым отображением из $\St(\Phi,\,R)$ в $G$, замыкающим диаграмму до коммутативной. Единственность такого $g$ также легко проверить на образующих.
+
+Теперь утверждение про $\mathrm K_2$ следует из того, что направленный копредел является точным функтором в категории групп, но поскольку я не знаю, где это написано, то привожу доказательство. Рассмотрим естественное отображение
+$$
+f\colon\mathrm{colim}_I\mathrm K_2(\Phi,\,R_i)\rightarrow\mathrm K_2(\Phi,\,R),
+$$
+и докажем, что оно является биекцией. Если $x\in\mathrm K_2(\Phi,\,R)$, то найдётся $y\in\St(\Phi,\,R_i)$ для некоторого $i$ по предыдущему пункту, который переходит в $x$. Пусть $\phi$ обозначает естественное отображение
+$$
+\phi\colon\St(\Phi,\,-)\rightarrow\mathrm G_{\mathrm{sc}}(\Phi,\,-).
+$$
+Поскольку $\phi(y)$ в пределе переходит в $1$, можно считать, что $\phi(y)=1$, то есть $y\in\mathrm K_2(\Phi,\,R_i)$. Это доказывает сюръективность $f$. Пусть теперь $x\in\mathrm{colim}_I\mathrm K_2(\Phi,\,R_i)$ переходит в $1$ под действием $f$. Тогда образ $x$ в $x\in\mathrm{colim}_I\St(\Phi,\,R_i)$ также равен $1$, и используя конструкцию прямого предела в категории групп
+$$
+\left(\bigsqcup_i\mathrm K_2(\Phi,\,R_i)/\sim\right)\rightarrow\left(\bigsqcup_i\St(\Phi,\,R_i)/\sim\right),
+$$
+мы заключаем, что $x$ равен $1$.
+\end{proof}
+
+\begin{lemma}
+\label{k2hil}
+Если $R$ является областью, $\Phi$ имеет ранг хотя бы $3$ {\rm(}наверное, можно и $2$, но нужно куда-то сослаться или написать что-то более подробное в доказательстве{\rm)}, и каноническое вложение $R\subseteq R[t]$ индуцирует изоморфизм $\mathrm K_2(\Phi,\,R)\cong\mathrm K_2(\Phi,\,R[t])$, то для любого мультипликативного множества $S\subseteq R$ вложение $R_S\subseteq R_S[t]$ тоже индуцирует изоморфизм.
+\end{lemma}
+\begin{proof}
+Пусть $g\in\mathrm K_2(\Phi,\,R_S[t])$, и $g(0)=1$. Тогда для некоторого $f\in S$ верно, что $g(ft)$ приходит из $\St(\Phi,\,R[t])$. Действительно, достаточно рассмотреть любое разложение $g$ в произведение $z_{\alpha}(r/s,\,tq)$, где $r,q\in R[t]$, $s\in S$, и разложить
+$$
+z_{\alpha}(r/s,\,f^2tq)=[x_{\alpha-\beta}(ftq),\,x_{\beta}(fN_{\alpha,\,\beta})]^{x_{-\alpha}(r/s)}
+$$
+в случае системы корней с простыми связями. Тогда ясно, что достаточно большой $f$ можно подобрать. Если в системе корней есть кратные связи, рассуждение аналогично.
+
+Итак, пусть $h\in\St(\Phi,\,R[t]$, и $\lambda_S(h)=g(ft)$, $f\in S$. Ясно, что в действительности $h\in\mathrm K_2(\Phi,\,R[t])$, поэтому $h\in\mathrm K_2(\Phi,\,R)$. Таким образом, $g(ft)\in\mathrm K_2(\Phi,\,R_S)$, $f\in S$, и подставляя $t\mapsto f^{-1}t$ получаем, что $g\in\mathrm K_2(\Phi,\,R_S)$.
+\end{proof}
+
+Следующая Теорема доказана в [Rehmann, Satz1, Korollar].
+
+\begin{theorem}
+Если $F$ является полем, то $\mathrm K_2(\Phi,\,F[t])\cong\mathrm K_2(\Phi,\,F)$.
+\end{theorem}
+
+\section{Основные результаты}
+
+\begin{theorem}
+Пусть $R$ является регулярным кольцом, содержащим поле, и $\Phi=\rA_l$, $l\geq4$, или $R$ является регулярным кольцом, содержащим поле характеристики $\neq2$, и $\Phi=\rD_l$, $l\geq7$. Тогда
+$$
+\mathrm K_2(\Phi,\,R[t])\cong\mathrm K_2(\Phi,\,R).
+$$
+\end{theorem}
+\begin{proof}
+Заметим, что если $k=\mathbb Z$ или $k=\mathbb Z[1/2]$, то $k$-алгебра, являющаяся полем, содержит простое подполе, которое совершенно и также является $k$-алгеброй. Тогда остаётся применить Теорему~\ref{lpb}.
+\end{proof}
+
+\begin{corollary}
+Если $F$~--- поле, $\mathrm{char}\,F\neq2$, $l\geq7$, то
+$$
+\mathrm H_2\big(\mathrm{Spin}_{2l}(F[t_1,\ldots,t_n]),\,\mathbb Z\big)=\cfrac{F^\times\otimes F^\times}{a\otimes(1-a)}.
+$$
+\end{corollary}
+
+\section{Homotopies of Steinberg groups}
+
+
+The homotopy groups of a simplicial group $G^\bullet$ can be computed using the normalized Moore complex $\mathrm NG^\bullet$,
+$$
+\mathrm N^0G^\bullet\leftarrow\mathrm N^1G^\bullet\leftarrow\mathrm N^2G^\bullet\leftarrow\cdots
+$$
+where $\mathrm N^nG=\cap_{i=1}^n\mathrm{Ker}\,\partial_i$, and differentials $\mathrm d_n\colon\mathrm N^{n}G^\bullet\rightarrow\mathrm N^{n-1}G^\bullet$ are induced by $\partial_0$. The homotopy groups of $G^\bullet$ are equal to
+$$
+\pi_n\,G^\bullet = \cfrac{\mathrm{Ker}\,\mathrm d_n}{\mathrm{Im}\,\mathrm d_{n+1}},
+$$
+see, e.g.~[May\,1967, Propositions~17.3 and~17.4].
+
+Observe also that for a morphism of simplicial groups $f^\bullet\colon G^\bullet\twoheadrightarrow Q^\bullet$ with all $f^n\colon C^n\twoheadrightarrow Q^n$ surjective, the groups $K^n=\mathrm{Ker}\,f^n$ with faces and degeneracies induced from $G^\bullet$ also form a simlicial group $K^\bullet$. Moreover, the sequence
+$$
+\cdots\rightarrow\pi_{n+1}\,Q^\bullet\rightarrow\pi_n\,K^\bullet\rightarrow\pi_n\,G^\bullet\rightarrow\pi_n\,Q^\bullet\rightarrow\cdots
+$$
+is exact (a direct proof of this fact can be found, e.g., in~[Innasaridze\,1975, Theorem~1.3]).
+
+For a ring $R$ consider the simplitial ring $R[\Delta^\bullet]$, i.e., $R[\Delta^n]=R[t_0,\ldots,t_n]/\sum t_i-1$, 
+$$
+\xymatrix{
+\cfrac{R[t_0]}{t_0-1}\ \ar[r]&\ar@<1ex>[l]\ar@<-1ex>[l]\ \cfrac{R[t_0,t_1]}{t_0+t_1-1}\ \ar@<1ex>[r]\ar@<-1ex>[r]&\ar@<2ex>[l]\ar@<-2ex>[l]\ar[l]\ \cfrac{R[t_0,t_1,t_2]}{t_0+t_1+t_2-1}\ \ar[r]\ar@<2ex>[r]\ar@<-2ex>[r]&\ar@<1ex>[l]\ar@<-1ex>[l]\ar@<3ex>[l]\ar@<-3ex>[l]\ \cdots
+}
+$$
+where the face maps $\partial_i\colon R[\Delta^n]\rightarrow R[\Delta^{n-1}]$ are given by 
+$$
+\partial_i(t_j)=
+\begin{cases}
+t_j,&j<i,\\
+0,&j=i,\\
+t_{j-1},&j>i,
+\end{cases}
+$$ 
+and the degeneracies $\sigma_i\colon R[\Delta^n]\rightarrow R[\Delta^{n+1}]$ are given by
+$$
+\sigma_i(t_j)=
+\begin{cases}
+t_j,&j<i,\\
+t_i+t_{i+1},&j=i,\\
+t_{j+1},&j>i.
+\end{cases}
+$$
+For a functor $G\colon\mathcal R\mathsf{ings}\rightarrow\mathcal G\mathsf{rps}$ and a ring $R$ we will consider the simplicial group $G(R[\Delta^\bullet])$, and its homotopy groups $\pi_n\,G(R[\Delta^\bullet])$. 
+
+В следующей лемме я что-то не уверен насчёт $\Phi=\rC_2,\ \rG_2$. Возможно эти случаи нужно исключить. Но для $\rA_2$, вроде, работает.
+
+\begin{lemma}
+Let $\Phi$ be a root system, and $\mathrm E(\Phi,\,-)$ and $\mathrm{St}(\Phi,\,-)$ denote the corresonding elementary and Steinberg group functors. Then for any ring $R$ holds
+$$
+\pi_0\,\mathrm E(\Phi,\,R[\Delta^\bullet])=*=\pi_0\,\mathrm{St}(\Phi,\,R[\Delta^\bullet]).
+$$
+If, moreover, $\Phi$ is of rank at least $2$, then
+$$
+\pi_1\,\mathrm{St}(\Phi,\,R[\Delta^\bullet])=1.
+$$
+\begin{proof}
+The map $\partial_1\colon\mathrm{St}(\Phi,\,R[\Delta^1])\rightarrow\mathrm{St}(\Phi,\,R[\Delta^0])$ is given by $t_1\mapsto0$, therefore 
+$$
+\mathrm N^1\mathrm{St}(\Phi,\,R[\Delta^\bullet])=\mathrm{Ker}\,\partial_1=\mathrm{St}(\Phi,\,R[t_1],\,t_1),
+$$
+and $\mathrm d^1\colon\mathrm N^1\mathrm{St}(\Phi,\,R[\Delta^\bullet])\rightarrow\mathrm N^0\mathrm{St}(\Phi,\,R[\Delta^\bullet])=\mathrm{St}(\Phi,\,R)$ is induced by $\partial_0$, which sends $t_1$ to $t_0=1$. %Consider now the (set-theoretic) map
+%$$
+%\varphi\colon\mathrm{St}(\Phi,\,R[t_1])\rightarrow\mathrm{St}(\Phi,\,R[t_1],\,t_1)
+%$$
+%sending $g(t_1)$ to $g(t_1)g(0)^{-1}$. The composition $\mathrm d_1\circ\varphi$ sends $g(t_1)$ to $g(1)g(0)^{-1}$, and 
+Then $\mathrm d_1$ is obviously surjective, since any elementary generator $x_\alpha(r)$ is an image of $x_\alpha(rt_1)$. This shows that $$\pi_0\,\mathrm{St}(\Phi,\,R[\Delta^\bullet])=*.$$ The argument for $\pi_0\,\mathrm E(\Phi,\,R[\Delta^\bullet])$ is the same.
+
+The kernel of $\mathrm d_1$ is equal to $\mathrm{St}(\Phi,\,R[t_1],\,t_1)\cap\mathrm{St}(\Phi,\,R[t_1],\,t_1-1)$, or, in other words, to the kernel of the map
+$$
+\mathrm{St}(\Phi,\,R[t_1])\rightarrow\mathrm{St}(\Phi,\,R)\times\mathrm{St}(\Phi,\,R)
+$$
+sending $g(t_1)$ to $\big(g(0),\,g(1)\big)$. 
+
+Using the fact that the rank of $\Phi$ is at least $2$, one can identify $\mathrm{St}(\Phi,\,R)\times\mathrm{St}(\Phi,\,R)$ with $\mathrm{St}(\Phi,\,R\times R)$. Indeed, it is easy to show that $x_{\alpha}(a,0)$ commutes with $x_\beta(0,b)$ in $\mathrm{St}(\Phi,\,R\times R)$ for all $\alpha$, $\beta\in\Phi$, $a$, $b\in R$ (for $\beta=-\alpha$ decompose $\beta$ as a sum of roots). Благодаря этому можно определить отображение
+$$
+\mathrm{St}(\Phi,\,R)\times\mathrm{St}(\Phi,\,R)\rightarrow\mathrm{St}(\Phi,\,R\times R),
+$$
+которое будет обратным к естественной стрелке в другую сторону.
+
+Since the ideals $(t_1)$ and $(t_1-1)$ are coprime, we can identify $R\times R$ and $R[t_1]/t_1(t_1-1)$ по китайской теоереме об остатках. Теперь очевидно, что $\mathrm{Ker}\,\mathrm d_1$ совпадает с ядром отображения
+$$
+\mathrm{St}(\Phi,\,R[t_1])\rightarrow\mathrm{St}\big(\Phi,\,R[t_1]/t_1(t_1-1)\big),
+$$
+то есть, $\mathrm{Ker}\,\mathrm d_1$ порождено $x_{\alpha}\big(t_1(t_1-1)r(t_1)\big)^{g(t_1)}$.
+
+Now recall that $\partial_1\colon\mathrm{St}(\Phi,\,R[\Delta^2])\rightarrow\mathrm{St}(\Phi,\,R[\Delta^1])$ is given by $t_1\mapsto0$, $t_2\mapsto t_1$, and $\partial_2\colon\mathrm{St}(\Phi,\,R[\Delta^2])\rightarrow\mathrm{St}(\Phi,\,R[\Delta^1])$ by $t_1\mapsto t_1$, $t_2\mapsto0$, therefore
+$$
+\mathrm N^2\mathrm{St}(\Phi,\,R[\Delta^\bullet])=\mathrm{Ker}\,\partial_1\cap\mathrm{Ker}\,\partial_2=\mathrm{St}(\Phi,\,R[t_1,\,t_2],\,t_1)\cap\mathrm{St}(\Phi,\,R[t_1,\,t_2],\,t_2).
+$$
+Тогда $\mathrm d_2$, индуцированное $\partial_0$, переводит $t_1$ в $t_0=1-t_1$, и $t_2$ в $t_1$. Из этого сразу следует, что $\mathrm d_2$ сюръективно накрывает $\mathrm{Ker}\,\mathrm d_1$, поскольку элемент $x_{\alpha}\big(t_1t_2\,r(t_2)\big)^{g(t_2)}$ лежит в $\mathrm N^2\mathrm{St}(\Phi,\,R[\Delta^\bullet])$ и переходит в образующую $x_{\alpha}\big(t_1(t_1-1)r(t_1)\big)^{g(t_1)}$ группы $\mathrm{Ker}\,\mathrm d_1$.
+%$$
+%\psi\colon\
+%$$
+\end{proof}
+\end{lemma}
+
+
+
+
+
+
+
+\end{document}

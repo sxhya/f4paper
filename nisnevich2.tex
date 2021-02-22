@@ -1,21 +1,22 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[oneside, 11pt]{amsart}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
 \usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amscd}
-\usepackage{amsthm}
-\usepackage{amscd}
-%\usepackage[hyper]{amsbib}
-
+\usepackage{amsmath, amssymb, amscd, amsthm, amscd}
+\usepackage[breaklinks=true,unicode]{hyperref}
+\usepackage[capitalise]{cleveref}
 \usepackage[matrix,arrow,curve]{xy}
-
 \usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
-
-%\usepackage{eufrak}
-
 \usepackage{stmaryrd}
+
+\usepackage[backend=biber, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
+\addbibresource{nisnevich2.bib}
+
+\renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
+\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+\newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{https://dx.doi.org/\thefield{doi}}{#1}}}
+\DeclareFieldFormat[article, inproceedings, inbook, book, online]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+\renewcommand*{\bibfont}{\footnotesize}
 
 \begin{document}
 
@@ -25,7 +26,7 @@
 %\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
 %\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
 %\newcommand{\Cent}{\mathop{\mathrm{Cent}}\nolimits}
-%\newcommand{\E}{{\mathrm{E}}}
+\newcommand{\K}{{\mathrm{K}}}
 \newcommand{\St}{\mathop{\mathrm{St}}\nolimits}
 %\newcommand{\Sp}{\mathop{\mathrm{Sp}}\nolimits}
 %\newcommand{\Ep}{\mathop{\mathrm{Ep}}\nolimits}
@@ -107,8 +108,8 @@
 \newcommand{\rF}{\mathsf{F}}
 \newcommand{\rG}{\mathsf{G}}
 
-\section{Про-группа Стейнберга}
-
+\section{Introduction}
+\subsection{Overview of the pro-group technique}
 Пусть $R$~--- область, $s\in R\setminus0$, $\Phi$~--- система корней с простыми связями ранга хотя бы $3$. Все системы корней в этом тектсте приведённые неприводимые.
 
 Напомним сначала определение про-группы Стейнберга. Рассмотрим цепочку {\it нерелятивизованных} групп Стейнберга $\mathrm{St}(\Phi, s^nR)$ для $n\in\mathbb N\cup0$, то есть, групп, заданных обычными соотношениями Стейнберга, но меньшим числом образующих: только теми $x_{\alpha}(a)$, для которых $a$ лежит в соответствующем идеале $s^nR$. Морфизмы в цепочке
@@ -195,26 +196,7 @@ $$f\bigl(\eta_i(x)\bigr) = \theta_i\bigl(f(x)\bigr)$$
 для любого $x\in\St(\Phi,\,h^{\eta^*(0)}B)$ и любого \(i\).
 \end{corollary}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Теорема о склейке}
+\section{A patching theorem for $\K_2(\Phi, R)$}
 
 Пользуясь Теоремой~\ref{vor}, мы докажем Теорему~\ref{glueing} о склейке для $\St(\Phi,-)$. Впервые аналогичный результат для проективных модулей был доказан by Lindel-Lutkebohrnert и независимо by Mohan Kumar while proving Bass--Quillen conjecture for a power series ring over a field. Затем Линдел применил такую склейку при решения проблемы Басса--Квиллена для существенно гладких алгебр над совершенным полем.
 
@@ -380,8 +362,7 @@ $$
 
 
 
-\section{Lindel--Popescu Bingo}
-
+\section{Formalism of Lindel--Popescu theorem}
 В этом параграфе мы аксоматизируем рассуждение Ворста, который применил результаты Линдела о гипотезе Басса--Квиллена для существенно гладких алгебр, чтобы доказать аналог результата Линдела $\mathrm K_1$. Ставрова добавила к рассуждению Ворста результаты Попеску, и получила $\mathrm K_1$-аналог гипотезы Басса--Квиллена для регулярных колец, содержащих поле (в действительности, не только {\it линейный} $\mathrm K_1$-аналог, но и для функторов $\mathrm K_1^G$ построенных по изотропной редуктивной группе $G$).
 
 Пусть $k$~--- коммутативное кольцо с $1$, $\mathcal A\mathsf{lg}_k$ обозначает категорию коммутативных $k$-алгебр, и $\mathcal G\mathsf{rp}$ обозначает категорию групп.
@@ -478,7 +459,6 @@ $$
 Положим $B=R$, $A=R_a$ и $h=b$. Заметим, что $Ah+B=A$, поскольку для любого $r/a^s\in A=R_a$ можно выбрать разложение единицы $xa^s+yb^s=1$, и тогда $r/a^s$ раскладывается в сумму $rx\in R=B$, и $ryb^s/a^s\in bR_a=hA$ (при $s=0$ можно взять $y=0$). Кроме того, заметим, что $Ah\cap B=Bh$. Действительно, если $rb/a^s=c\in B=R$, то есть, $rb=a^sc$, то, пользуясь разложением единицы $xa^s+yb^s=1$, получаем, что $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b\in bR=hB$ (при $s=0$ можно считать, что $y=0$). Остаётся применить {\bf(LGL)}.
 \end{proof}
 
-
 Следующая лемма в частных случаях была доказана в~[??].
 \begin{lemma}
 \label{lmp}
@@ -497,12 +477,6 @@ R[t]_f\ar[r]&R[t,t^{-1}]_f=R[t,t^{-1}]_g&R[t^{-1}]_g.\ar[l]
 $$
 Пусть $x\in\mathrm K(R[t])$, и $\mathrm K(\lambda_f)(x)=1$. Тогда образы элементов $\mathrm K(\lambda_t)(x)\in\mathrm K(R[t,t^{-1}])$ и $1\in\mathrm K(R[t^{-1}]_g)$ в $\mathrm K(R[t,t^{-1}]_g)$ совпадают, и по свойству {\bf(ZGL)}, применённому к правому квадрату, существует $y\in\mathrm K(R[t^{-1}])$ такой, что $\mathrm K(\lambda_{t^{-1}})(y)=\mathrm K(\lambda_t)(x)$, и $\mathrm K(\lambda_{g})(y)=1$. По свойству {\bf(GHT)} мы заключаем, что $x=y\in\mathrm K(R)$, но так как $\mathrm K(\lambda_{g})(y)=1$, то $y=1$.
 \end{proof}
-
-
-
-
-
-
 
 Пользуясь последней леммой, мы покажем, как вывести из свойства {\bf(HIF)} аналог проблемы Серра.
 \begin{lemma}[Analogue of Serre's problem]
@@ -535,12 +509,6 @@ $$
 мы получаем, что $\mathrm K(F[t_1,\ldots,t_n])$ вкладывается в $\mathrm K\big(F(t_1)\big)$, и его образ содержится в образе $\mathrm K(F[t_1])$. Однако по {\bf(HIF)} мы знаем, что $\mathrm K(F[t_1])\cong\mathrm K(F)$, следовательно образ $\mathrm K(F[t_1,\ldots,t_n])$ совпадает с $\mathrm K(F)$.
 \end{proof}
 
-
-
-
-
-
-
 Следующие теоремы Линдела и Попеску являются ключевыми ингридиентами в доказательстве гипотезы Басса--Квиллена для регулярных колец, содержащих поле. 
 \begin{theorem}[Lindel]
 \label{lindel}
@@ -565,7 +533,8 @@ $$
 Теперь из {\bf(CDC)} и Теоремы~\ref{popescu} немедленно следует, что $\mathrm K(R[t])\cong\mathrm K(R)$ для любой локальной регулярной области, содержащей совершенное поле $F\in\mathcal A\mathsf{lg}_k$. Благодаря {\bf(LGP)}, из этого следует {\bf(ALP)}.
 \end{proof}
 
-\section{Свойства $\mathrm K_2$-функторов}
+\section{Main results}
+\subsection{Analogue of Serre's problem for $\K_2$}
 
 В этом параграфе $\Phi$ обозначает произвольную систему корней.
 
@@ -611,13 +580,11 @@ $$
 Итак, пусть $h\in\St(\Phi,\,R[t]$, и $\lambda_S(h)=g(ft)$, $f\in S$. Ясно, что в действительности $h\in\mathrm K_2(\Phi,\,R[t])$, поэтому $h\in\mathrm K_2(\Phi,\,R)$. Таким образом, $g(ft)\in\mathrm K_2(\Phi,\,R_S)$, $f\in S$, и подставляя $t\mapsto f^{-1}t$ получаем, что $g\in\mathrm K_2(\Phi,\,R_S)$.
 \end{proof}
 
-Следующая Теорема доказана в [Rehmann, Satz1, Korollar].
+Следующая Теорема доказана в~\cite[Korollar von Satz 1]{Re75}.
 
 \begin{theorem}
 Если $F$ является полем, то $\mathrm K_2(\Phi,\,F[t])\cong\mathrm K_2(\Phi,\,F)$.
 \end{theorem}
-
-\section{Основные результаты}
 
 \begin{theorem}
 Пусть $R$ является регулярным кольцом, содержащим поле, и $\Phi=\rA_l$, $l\geq4$, или $R$ является регулярным кольцом, содержащим поле характеристики $\neq2$, и $\Phi=\rD_l$, $l\geq7$. Тогда
@@ -635,10 +602,9 @@ $$
 \mathrm H_2\big(\mathrm{Spin}_{2l}(F[t_1,\ldots,t_n]),\,\mathbb Z\big)=\cfrac{F^\times\otimes F^\times}{a\otimes(1-a)}.
 $$
 \end{corollary}
+\subsection{An analogue of Gersten's conjecture for $\K_2$.}
 
-\section{Homotopies of Steinberg groups}
-
-
+\subsection{$\K_2(\Phi, R)$ as a fundamental group}
 The homotopy groups of a simplicial group $G^\bullet$ can be computed using the normalized Moore complex $\mathrm NG^\bullet$,
 $$
 \mathrm N^0G^\bullet\leftarrow\mathrm N^1G^\bullet\leftarrow\mathrm N^2G^\bullet\leftarrow\cdots
@@ -683,20 +649,15 @@ For a functor $G\colon\mathcal R\mathsf{ings}\rightarrow\mathcal G\mathsf{rps}$ 
 
 В следующей лемме я что-то не уверен насчёт $\Phi=\rC_2,\ \rG_2$. Возможно эти случаи нужно исключить. Но для $\rA_2$, вроде, работает.
 
+\begin{lemma} \label{lem:fprod} For an arbitrary irreducible root system $\Phi$ of rank $\geq 2$ the Steinberg group functor commutes with finite direct products. \end{lemma}
+\begin{proof} Using the fact that the rank of $\Phi$ is at least $2$, one can identify $\mathrm{St}(\Phi,\,R)\times\mathrm{St}(\Phi,\,R)$ with $\mathrm{St}(\Phi,\,R\times R)$. Indeed, it is easy to show that $x_{\alpha}(a,0)$ commutes with $x_\beta(0,b)$ in $\mathrm{St}(\Phi,\,R\times R)$ for all $\alpha$, $\beta\in\Phi$, $a$, $b\in R$ (for $\beta=-\alpha$ decompose $\beta$ as a sum of roots). Благодаря этому можно определить отображение $$\mathrm{St}(\Phi,\,R)\times\mathrm{St}(\Phi,\,R)\rightarrow\mathrm{St}(\Phi,\,R\times R),$$ которое будет обратным к естественной стрелке в другую сторону. \end{proof}
+
 \begin{lemma}
-Let $\Phi$ be a root system, and $\mathrm E(\Phi,\,-)$ and $\mathrm{St}(\Phi,\,-)$ denote the corresonding elementary and Steinberg group functors. Then for any ring $R$ holds
-$$
-\pi_0\,\mathrm E(\Phi,\,R[\Delta^\bullet])=*=\pi_0\,\mathrm{St}(\Phi,\,R[\Delta^\bullet]).
-$$
-If, moreover, $\Phi$ is of rank at least $2$, then
-$$
-\pi_1\,\mathrm{St}(\Phi,\,R[\Delta^\bullet])=1.
-$$
+Let $\Phi$ be a root system, and $\mathrm E(\Phi,\,-)$ and $\mathrm{St}(\Phi,\,-)$ denote the corresonding elementary and Steinberg group functors. Then for any ring $R$ holds $$\pi_0\,\mathrm E(\Phi,\,R[\Delta^\bullet])=*=\pi_0\,\mathrm{St}(\Phi,\,R[\Delta^\bullet]).$$ If, moreover, $\Phi$ is of rank at least $2$, then $$\pi_1\,\mathrm{St}(\Phi,\,R[\Delta^\bullet])=1.$$
+\end{lemma}
 \begin{proof}
 The map $\partial_1\colon\mathrm{St}(\Phi,\,R[\Delta^1])\rightarrow\mathrm{St}(\Phi,\,R[\Delta^0])$ is given by $t_1\mapsto0$, therefore 
-$$
-\mathrm N^1\mathrm{St}(\Phi,\,R[\Delta^\bullet])=\mathrm{Ker}\,\partial_1=\mathrm{St}(\Phi,\,R[t_1],\,t_1),
-$$
+$$\mathrm N^1\mathrm{St}(\Phi,\,R[\Delta^\bullet])=\mathrm{Ker}\,\partial_1=\mathrm{St}(\Phi,\,R[t_1],\,t_1),$$
 and $\mathrm d^1\colon\mathrm N^1\mathrm{St}(\Phi,\,R[\Delta^\bullet])\rightarrow\mathrm N^0\mathrm{St}(\Phi,\,R[\Delta^\bullet])=\mathrm{St}(\Phi,\,R)$ is induced by $\partial_0$, which sends $t_1$ to $t_0=1$. %Consider now the (set-theoretic) map
 %$$
 %\varphi\colon\mathrm{St}(\Phi,\,R[t_1])\rightarrow\mathrm{St}(\Phi,\,R[t_1],\,t_1)
@@ -710,12 +671,7 @@ $$
 $$
 sending $g(t_1)$ to $\big(g(0),\,g(1)\big)$. 
 
-Using the fact that the rank of $\Phi$ is at least $2$, one can identify $\mathrm{St}(\Phi,\,R)\times\mathrm{St}(\Phi,\,R)$ with $\mathrm{St}(\Phi,\,R\times R)$. Indeed, it is easy to show that $x_{\alpha}(a,0)$ commutes with $x_\beta(0,b)$ in $\mathrm{St}(\Phi,\,R\times R)$ for all $\alpha$, $\beta\in\Phi$, $a$, $b\in R$ (for $\beta=-\alpha$ decompose $\beta$ as a sum of roots). Благодаря этому можно определить отображение
-$$
-\mathrm{St}(\Phi,\,R)\times\mathrm{St}(\Phi,\,R)\rightarrow\mathrm{St}(\Phi,\,R\times R),
-$$
-которое будет обратным к естественной стрелке в другую сторону.
-
+Invoke~\cref{lem:fprod}.
 Since the ideals $(t_1)$ and $(t_1-1)$ are coprime, we can identify $R\times R$ and $R[t_1]/t_1(t_1-1)$ по китайской теоереме об остатках. Теперь очевидно, что $\mathrm{Ker}\,\mathrm d_1$ совпадает с ядром отображения
 $$
 \mathrm{St}(\Phi,\,R[t_1])\rightarrow\mathrm{St}\big(\Phi,\,R[t_1]/t_1(t_1-1)\big),
@@ -731,12 +687,6 @@ $$
 %\psi\colon\
 %$$
 \end{proof}
-\end{lemma}
 
-
-
-
-
-
-
+\printbibliography
 \end{document}

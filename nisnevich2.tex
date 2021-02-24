@@ -110,90 +110,89 @@
 
 \section{Introduction}
 \subsection{Overview of the pro-group technique}
-Пусть $R$~--- область, $s\in R\setminus0$, $\Phi$~--- система корней с простыми связями ранга хотя бы $3$. Все системы корней в этом тектсте приведённые неприводимые.
+Let $R$ be an integral domain, $s \in R \setminus \{0\}$, $\Phi$ be a simply-laced root system of rank at least $3$. All root systems in this text are reduced and irreducible.
 
-Напомним сначала определение про-группы Стейнберга. Рассмотрим цепочку {\it нерелятивизованных} групп Стейнберга $\mathrm{St}(\Phi, s^nR)$ для $n\in\mathbb N\cup0$, то есть, групп, заданных обычными соотношениями Стейнберга, но меньшим числом образующих: только теми $x_{\alpha}(a)$, для которых $a$ лежит в соответствующем идеале $s^nR$. Морфизмы в цепочке
+Recall a definition of Steinberg pro-groups. Consider a chain of {\it unrelativized} Steinberg groups $\St(\Phi, s^n R)$ for $n \in \mathbb N \cup \{0\}$, i.e. the groups with the generators $x_{\alpha}(a)$ for $\alpha \in \Phi$, $a \in s^n R$ and the ordinary Steinbrg relations. The homomorphisms in the chain
 $$
-\ldots\rightarrow\mathrm{St}(\Phi, s^3R)\rightarrow\mathrm{St}(\Phi, s^2R)\rightarrow\mathrm{St}(\Phi, sR)\rightarrow\mathrm{St}(\Phi, R)
+\ldots \to \St(\Phi, s^3 R) \to \St(\Phi, s^2 R) \to \St(\Phi, s R) \to \St(\Phi, R)
 $$
-определены естественным образом. Такая система гомоморфизмов называется {\it про-группой Стейнберга}, и обозначается $\St^\infty(\Phi,\,s^\bullet R)$. Как правило, мы никак не обозначаем структурные морфизмы $\St^\infty(\Phi,\,s^\bullet R)$ ни в диаграмах, ни в формулах, в частности, обозначаем элементы $\mathrm{St}(\Phi, s^nR)$ и их образы в $\mathrm{St}(\Phi, s^{n-1}R)$ одной и той же буквой.
+are defined in the natural way. Such a tower is called a {\it Steinberg pro-group}, it is denoted by $\St^\infty(\Phi, s^\bullet R)$. We usually do not write explicitly the structure homomorphisms of $\St^\infty(\Phi, s^\bullet R)$ in diagrams and formulas. In particular, we denote the elements of $\St(\Phi, s^n R)$ and their images in $\St(\Phi, s^{n - 1} R)$ by the same letters.
 
-На каждой из групп $\mathrm{St}(\Phi, s^nR)$ нет действия $\mathrm{St}(\Phi, R_s)$, но можно определить гомоморфизмы сопряжения элементами из $\mathrm{St}(\Phi, R_s)$, которые действуют из группы с большим $n$ в группу с меньшим. Если на таких системах гомоморфизмов задать подходящее отношение эквивалентности, то мы получим действие $\mathrm{St}(\Phi, R_s)$ на про-группе $\mathrm{St}^\infty(\Phi, s^\bullet R)$.
+We cannot conjugate elements of $\mathrm{St}(\Phi, s^nR)$ by elements of $\mathrm{St}(\Phi, R_s)$. Fortunately, there is such a conjugation action on the whole Steinberg pro-group.
 
 \begin{df}
-{\it Представителем эндоморфизма} $\eta$ про-группы $\St^\infty(\Phi,\,s^\bullet R)$ называются следующие данные: 
+An {\it endomorphism representative} $\eta$ of the Steinberg pro-group $\St^\infty(\Phi,\,s^\bullet R)$ is the following data: 
 \begin{itemize}
 \item
-отображение $\eta^*\colon\mathbb N\cup0\rightarrow\mathbb N\cup0$,
+a map $\eta^* \colon \mathbb N \cup \{0\} \to \mathbb N \cup \{0\}$,
 \item
-для каждого $i\in\mathbb N\cup0$ гомоморфизм групп $\eta_{\,i}\colon\St(\Phi,\,s^{\eta^*(i)}R)\rightarrow\St(\Phi,\,s^{i}R)$,
+for each $i \in \mathbb N \cup \{0\}$ a group homomorphism $\eta_i \colon \St(\Phi, s^{\eta^*(i)} R) \to \St(\Phi, s^i R)$,
 \end{itemize}
-при этом для любых $i \leq j$ найдётся $k \geq \eta^*(i),\eta^*(j)$ такой, что диаграмма
+such that for every $i \leq j$ there is $k \geq \eta^*(i), \eta^*(j)$ making the diagram
 $$
 \xymatrix{
-\St(\Phi,\,s^kR)\ar[r]\ar[rd]&\St(\Phi,\,s^{\eta^*(j)}R)\ar[r]^{\ \ \eta_{\,j}}&\St(\Phi,\,s^{j}R)\ar[d]\\
-&\St(\Phi,\,s^{\eta^*(i)}R)\ar[r]^{\ \ \eta_{\,i}}&\St(\Phi,\,s^{i}R)
+\St(\Phi, s^k R) \ar[r] \ar[rd] & \St(\Phi, s^{\eta^*(j)} R)\ar[r]^(0.55){\eta_j} & \St(\Phi, s^j R) \ar[d]\\
+&\St(\Phi, s^{\eta^*(i)} R) \ar[r]^(0.55){\eta_i} & \St(\Phi, s^i R)
 }
 $$
-коммутативна.
+commutative.
 
-Представители эндооморфизмов $\eta$ и $\theta$ называются {\it эквивалентными}, если для любого $i\in\mathbb N\cup0$ найдётся $k \geq \eta^*(i),\theta^*(i)$ такой, что диаграмма
+Endomorphism representatives $\eta$ and $\theta$ are called {\it equivalent} if for every $i \in \mathbb N \cup \{0\}$ there is $k \geq \eta^*(i), \theta^*(i)$ making the diagram
 $$
 \xymatrix{
-\St(\Phi,\,s^kR)\ar[r]\ar[d]&\St(\Phi,\,s^{\eta^*(i)}R)\ar[d]^{\eta_{\,i}}\\
-\St(\Phi,\,s^{\theta^*(i)}R)\ar[r]^{\ \ \theta_{i}}&\St(\Phi,\,s^{i}R)
+\St(\Phi, s^k R)\ar[r]\ar[d] & \St(\Phi, s^{\eta^*(i)} R) \ar[d]^{\eta_i}\\
+\St(\Phi, s^{\theta^*(i)} R) \ar[r]^(0.55){\theta_i} & \St(\Phi, s^i R)
 }
 $$
-коммутативна.
+commutatuve.
 
-Например, если рассмотреть произвольную функцию $\theta^*$ такую, что $\theta^*(i)\geq\eta^*(i)$ для всех $i$, и задать $\theta_i$ как композиции $\eta_{\,i}$ и структурных отображений $\St^\infty(\Phi,s^\bullet R)$, то такой представитель $\theta$ будет эквивалентен $\eta$.
+For example, if we consider any map $\theta^*$ such that $\theta^*(i) \geq \eta^*(i)$ for all $i$ and define $\theta_i$ as the composition of $\eta_i$ and the structure homomorphism of $\St^\infty(\Phi, s^\bullet R)$, then such a representative $\theta$ is equivalent to $\eta$.
 
-{\it Эндоморфизмом} $g$ про-группы $\St^\infty(\Phi,\,s^\bullet R)$ называется класс эквивалентности предстаителей эндоморфизмов. Ясно, что эндоморфизмы $\St^\infty(\Phi,\,s^\bullet R)$ образуют моноид $\mathrm{End}\bigl(\St^\infty(\Phi,\,s^\bullet R)\bigr)$ относительно композиции. Нас будут в основном интересовать его обратимые элементы, то есть автоморфизмы про-группы \(\St^\infty(\Phi, s^\bullet R)\).
+An {\it endomorphism} $g$ of the pro-group $\St^\infty(\Phi,\,s^\bullet R)$ is the equivalence class of endomorphism representatives. Clearly, endomorphisms of $\St^\infty(\Phi,\,s^\bullet R)$ form a monoid $\mathrm{End}\bigl(\St^\infty(\Phi,\,s^\bullet R)\bigr)$ under composition. We are interested in its invertible elements, i.e. the automorphisms of the pro-group \(\St^\infty(\Phi, s^\bullet R)\).
 
-Предположим, что существует и зафиксирован гомоморфизм групп $$\Xi\colon\St(\Phi,\,R_s)\rightarrow\mathrm{Aut}\big(\St^\infty(\Phi,\,s^\bullet R)\big).$$ Тогда для $g\in\St(\Phi,\,R_s)$ и представителя $\eta$ автоморфизма $\Xi(g)$ мы будем говорить, что $\eta$ является {\it строгим представителем} $\Xi(g)$, если для любого $i$ и для любого $x\in\St(\Phi,\,s^{\,\eta^*(i)}R)$ верно, что
+Suppose that there is a fixed group homomorphism $$\Xi \colon \St(\Phi, R_s) \to \mathrm{Aut}\bigl(\St^\infty(\Phi, s^\bullet R)\bigr).$$ For any $g \in \St(\Phi, R_s)$ we say that a representative $\eta$ of the automorphism $\Xi(g)$ is {\it strict} if for every $i$ and for every $x \in \St(\Phi, s^{\eta^*(i)} R)$ the identity
 $$
-\lambda_s\big(\eta_i(x)\big) = g \lambda_s(x) g^{-1} \in \St(\Phi, R_s),
+\lambda_s\bigl(\eta_i(x)\bigr) = g \lambda_s(x) g^{-1} \in \St(\Phi, R_s)
 $$
-где $\lambda_s$ обозначает гомоморфизм главной локализации в $s$. Ясно, что композиция строгих представителей снова будет строгой.
+holds, where $\lambda_s$ is the principal localization at $s$. Clearly, a composition of strict representatives is strict.
 \end{df}
 
 
-\begin{theorem}[Воронецкий]
+\begin{theorem}[Voronetsky]
 \label{vor}
-Существует гомоморфизм групп 
+There is a group homomorphism 
 $$
-\Xi\colon\St(\Phi,\,R_s)\rightarrow\mathrm{Aut}\big(\St^\infty(\Phi,\,s^\bullet R)\big)
+\Xi \colon \St(\Phi, R_s) \to \mathrm{Aut}\bigl(\St^\infty(\Phi, s^\bullet R)\bigr)
 $$
-такой, что у любого $g\in\St(\Phi,\,R_s)$ существует строгий представитель.
+such that every automorphism $\Xi(g)$ for $g \in \St(\Phi, R_s)$ has a strict representative.
 \end{theorem}
 
-Напомним возможную конструкцию таких строгих представителей. Ясно, что достаточно построить строгих представителей для образующих $g=x_\alpha(\frac a {s^k})$. Тогда рассмотрим $\eta^*(i) = 2p(i+k)$ для достаточно большой константы \(p\) и определим отображение
+Recall a possible construction of such strict representatives. Clearly, it suffices to construct a strict representative for \(\Xi(g)\), where $g = x_\alpha(\frac a {s^k})$ is a generator of $\St(\Phi, R_s)$. Take $\eta^*(i) = 2p(i + k)$ for sufficiently large constant \(p\) and define
 $$
-\eta_i\colon\St(\Phi,\,s^{2p(i+k)}R)\rightarrow\St(\Phi,\,s^iR)
+\eta_i \colon \St(\Phi, s^{2p(i + k)} R) \to \St(\Phi, s^i R)
 $$
-по следующему правилу. Для $\beta\in\Phi$ такого, что \(\alpha + \beta \notin \Phi \cup \{0\}\), положим 
-$$\eta_i\bigl(x_\beta(s^{2p(i+k)}b)\bigr)=x_\beta(s^{2p(i+k)}b).$$
-Если $\alpha+\beta$~--- корень, положим
+by the following rule. For $\beta \in \Phi$ such that \(\alpha + \beta \notin \Phi \cup \{0\}\) let 
+$$\eta_i \bigl(x_\beta(s^{2p(i + k)} b)\bigr) = x_\beta(s^{2p(i + k)}b).$$
+If $\alpha + \beta$ is a root, let
 $$
-\eta_i\bigl(x_\beta(s^{2p(i+k)}b)\bigr)=x_{\alpha+\beta}(N_{\alpha \beta}\,s^{2p(i + k) - k}ab)\, x_\beta(s^{2p(i + k)}b).
+\eta_i\bigl(x_\beta(s^{2p(i + k)} b)\bigr) = x_{\alpha + \beta}(N_{\alpha \beta} s^{2p(i + k) - k} ab)\, x_\beta(s^{2p(i + k)} b).
 $$
-Наконец, если $-\alpha = \beta + \gamma$ какое-то разложение в сумму корней, то положим
+Finally, if $-\alpha = \beta + \gamma$ is any decomposition into a sum of roots, then let
 $$
 \eta_i\bigl(x_{-\alpha}(s^{2p(i + k)} b)\bigr) = \bigl[x_{-\gamma}(N_{\alpha\beta} s^{p(i + k) - k} ab)\,
 x_\beta(s^{p(i + k)} b),
 x_{-\beta}(N_{\alpha\gamma} N_{\beta\gamma} s^{p(i + k) - k} a)\,
-x_\gamma(N_{\beta \gamma} s^{p(i + k)})\bigr]
+x_\gamma(N_{\beta \gamma} s^{p(i + k)})\bigr].
 $$
-(такое определение не зависит от выбора $\beta$ и $\gamma$).
 
-В [LSV] доказана корректность определения таких гомоморфизмов $\eta_i$, а также проверено, что они задают действие $\St(\Phi,\,R_s)$ на $\St^\infty(\Phi,\,s^\bullet R)$.
+It is proved in [LSV] that the homomorphisms $\eta_i$ are well-deined and they give an action of $\St(\Phi, R_s)$ on $\St^\infty(\Phi, s^\bullet R)$.
 
-Эта конструкция показывает, что выбор строгих представителей в естественном смысле функториален. 
+Such consruction shows that the choice of strict representatives is functorial is some natural sense. 
 \begin{corollary}
 \label{vorcor}
-Пусть $f\colon B\rightarrow A$~--- гомоморфизм областей, $h\in B$, $s=f(h)\neq0$, и $u\in\St(\Phi,\,B_h)$. Тогда можно выбрать для $u$ строгого представителя $\eta$ автоморфизма $\Xi(u)$ про-группы $\St^\infty(\Phi,\,h^\bullet B)$, а также для $f(u)\in\St(\Phi,\,A_s)$ строгого представителя $\theta$ автоморфизма $\Xi\big(f(u)\big)$ про-группы $\St^\infty(\Phi,\,s^\bullet A)$ таким образом, чтобы $\eta^*(i)=\theta^*(i)$ и
+Let $f \colon B \to A$ be a homomorphism of integral domains, $h \in B$, $s = f(h) \neq 0$, and $u \in \St(\Phi, B_h)$. Then there is a strict representative $\eta$ of the automorphism $\Xi(u)$ of the pro-group $\St^\infty(\Phi, h^\bullet B)$ and a strict representative $\theta$ of the automorphism $\Xi\bigl(f(u)\bigr)$ of the pro-group $\St^\infty(\Phi, s^\bullet A)$ such that $\eta^*(i) = \theta^*(i)$ and
 $$f\bigl(\eta_i(x)\bigr) = \theta_i\bigl(f(x)\bigr)$$
-для любого $x\in\St(\Phi,\,h^{\eta^*(0)}B)$ и любого \(i\).
+for all $x \in \St(\Phi, h^{\eta^*(0)}B)$ and for all \(i\).
 \end{corollary}
 
 \section{A patching theorem for $\K_2(\Phi, R)$}

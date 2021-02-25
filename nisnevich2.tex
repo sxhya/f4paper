@@ -1,13 +1,13 @@
 \documentclass[oneside, 11pt]{amsart}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
-\usepackage{graphicx}
-\usepackage{amsmath, amssymb, amscd, amsthm, amscd}
+\usepackage{graphicx, comment}
+\usepackage{amsmath, amssymb, amscd, amscd}
 \usepackage[breaklinks=true,unicode]{hyperref}
 \usepackage[capitalise]{cleveref}
 \usepackage[matrix,arrow,curve]{xy}
 \usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
-\usepackage{stmaryrd}
+%\usepackage{stmaryrd}
 
 \usepackage[backend=biber, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
 \addbibresource{nisnevich2.bib}
@@ -19,7 +19,6 @@
 \renewcommand*{\bibfont}{\footnotesize}
 
 \begin{document}
-
 %\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
 %\newcommand{\Dom}{\mathop{\mathrm{Dom}}\nolimits}
 %\newcommand{\Card}{\mathop{\mathrm{Card}}\nolimits}
@@ -28,6 +27,7 @@
 %\newcommand{\Cent}{\mathop{\mathrm{Cent}}\nolimits}
 \newcommand{\K}{{\mathrm{K}}}
 \newcommand{\St}{\mathop{\mathrm{St}}\nolimits}
+\newcommand{\Gsc}{\mathrm{G}_\mathrm{sc}}
 %\newcommand{\Sp}{\mathop{\mathrm{Sp}}\nolimits}
 %\newcommand{\Ep}{\mathop{\mathrm{Ep}}\nolimits}
 %\newcommand{\GL}{\mathop{\mathrm{GL}}\nolimits}
@@ -107,6 +107,8 @@
 \newcommand{\rE}{\mathsf{E}}
 \newcommand{\rF}{\mathsf{F}}
 \newcommand{\rG}{\mathsf{G}}
+
+\newcommand{\catname}[1]{{\normalfont\textbf{#1}}} %Category name
 
 \section{Introduction}
 \subsection{Overview of the pro-group technique}
@@ -586,7 +588,7 @@ $$
 Если $F$ является полем, то $\mathrm K_2(\Phi,\,F[t])\cong\mathrm K_2(\Phi,\,F)$.
 \end{theorem}
 
-\begin{theorem}
+\begin{theorem} \label{theorem:Lindel-Popescu-for-K2}
 Пусть $R$ является регулярным кольцом, содержащим поле, и $\Phi=\rA_l$, $l\geq4$, или $R$ является регулярным кольцом, содержащим поле характеристики $\neq2$, и $\Phi=\rD_l$, $l\geq7$. Тогда
 $$
 \mathrm K_2(\Phi,\,R[t])\cong\mathrm K_2(\Phi,\,R).
@@ -605,6 +607,17 @@ $$
 \subsection{An analogue of Gersten's conjecture for $\K_2$.}
 
 \subsection{$\K_2(\Phi, R)$ as a fundamental group}
+The aim of this section is to show that Stein's group $\K_2(\Phi, R)$ can be interpreted as the fundamental group of the simplicial group $\Gsc(\Phi, R[\Delta^\bullet])$ under the assumption that $\Phi$ and $R$ satisfy the requirements of~\cref{theorem:Lindel-Popescu-for-K2}. This is achieved in~\cref{theorem:pi1-GRDelta} below. Notice that this result is similar to the computation performed by K.~V\"olkel and M.~Wendt in~\cite[\S.~3]{VW16}. Recall that~\cite[Proposition~3.2]{VW16} applies to a much wider class of groups, namely, isotropic reductive groups over an infinite field $k$ but at the same it requires that $R=k$. As a corollary of~\cref{theorem:pi1-GRDelta} and a general representability result of A.~Asok, M.~Hoyois and M.~Wendt (see~\cite[Theorem~4.3.1]{AHW18}) we obtain an interpretation of $\K_2(\Phi, R)$ in terms of $\mathbb{A}^1$-homotopy theory.
+
+First of all, recall that for a ring $R$ we denote by $R[\Delta^\bullet]$ the standard simplicial ring as defined in~\cite{Jar83}. 
+
+For a functor $G\colon\mathcal R\mathsf{ings}\rightarrow\mathcal G\mathsf{rps}$ and a ring $R$ we will consider the simplicial group $G(R[\Delta^\bullet])$, and its homotopy groups $\pi_n\,G(R[\Delta^\bullet])$. 
+
+В следующей лемме я что-то не уверен насчёт $\Phi=\rC_2,\ \rG_2$. Возможно эти случаи нужно исключить. Но для $\rA_2$, вроде, работает.
+
+\begin{lemma} \label{lem:fprod} For an arbitrary irreducible root system $\Phi$ of rank $\geq 2$ the Steinberg group functor commutes with finite direct products. \end{lemma}
+\begin{proof} Using the fact that the rank of $\Phi$ is at least $2$, one can identify $\mathrm{St}(\Phi,\,R)\times\mathrm{St}(\Phi,\,R)$ with $\mathrm{St}(\Phi,\,R\times R)$. Indeed, it is easy to show that $x_{\alpha}(a,0)$ commutes with $x_\beta(0,b)$ in $\mathrm{St}(\Phi,\,R\times R)$ for all $\alpha$, $\beta\in\Phi$, $a$, $b\in R$ (for $\beta=-\alpha$ decompose $\beta$ as a sum of roots). Благодаря этому можно определить отображение $$\mathrm{St}(\Phi,\,R)\times\mathrm{St}(\Phi,\,R)\rightarrow\mathrm{St}(\Phi,\,R\times R),$$ которое будет обратным к естественной стрелке в другую сторону. \end{proof}
+
 The homotopy groups of a simplicial group $G^\bullet$ can be computed using the normalized Moore complex $\mathrm NG^\bullet$,
 $$
 \mathrm N^0G^\bullet\leftarrow\mathrm N^1G^\bullet\leftarrow\mathrm N^2G^\bullet\leftarrow\cdots
@@ -620,37 +633,6 @@ $$
 \cdots\rightarrow\pi_{n+1}\,Q^\bullet\rightarrow\pi_n\,K^\bullet\rightarrow\pi_n\,G^\bullet\rightarrow\pi_n\,Q^\bullet\rightarrow\cdots
 $$
 is exact (a direct proof of this fact can be found, e.g., in~[Innasaridze\,1975, Theorem~1.3]).
-
-For a ring $R$ consider the simplitial ring $R[\Delta^\bullet]$, i.e., $R[\Delta^n]=R[t_0,\ldots,t_n]/\sum t_i-1$, 
-$$
-\xymatrix{
-\cfrac{R[t_0]}{t_0-1}\ \ar[r]&\ar@<1ex>[l]\ar@<-1ex>[l]\ \cfrac{R[t_0,t_1]}{t_0+t_1-1}\ \ar@<1ex>[r]\ar@<-1ex>[r]&\ar@<2ex>[l]\ar@<-2ex>[l]\ar[l]\ \cfrac{R[t_0,t_1,t_2]}{t_0+t_1+t_2-1}\ \ar[r]\ar@<2ex>[r]\ar@<-2ex>[r]&\ar@<1ex>[l]\ar@<-1ex>[l]\ar@<3ex>[l]\ar@<-3ex>[l]\ \cdots
-}
-$$
-where the face maps $\partial_i\colon R[\Delta^n]\rightarrow R[\Delta^{n-1}]$ are given by 
-$$
-\partial_i(t_j)=
-\begin{cases}
-t_j,&j<i,\\
-0,&j=i,\\
-t_{j-1},&j>i,
-\end{cases}
-$$ 
-and the degeneracies $\sigma_i\colon R[\Delta^n]\rightarrow R[\Delta^{n+1}]$ are given by
-$$
-\sigma_i(t_j)=
-\begin{cases}
-t_j,&j<i,\\
-t_i+t_{i+1},&j=i,\\
-t_{j+1},&j>i.
-\end{cases}
-$$
-For a functor $G\colon\mathcal R\mathsf{ings}\rightarrow\mathcal G\mathsf{rps}$ and a ring $R$ we will consider the simplicial group $G(R[\Delta^\bullet])$, and its homotopy groups $\pi_n\,G(R[\Delta^\bullet])$. 
-
-В следующей лемме я что-то не уверен насчёт $\Phi=\rC_2,\ \rG_2$. Возможно эти случаи нужно исключить. Но для $\rA_2$, вроде, работает.
-
-\begin{lemma} \label{lem:fprod} For an arbitrary irreducible root system $\Phi$ of rank $\geq 2$ the Steinberg group functor commutes with finite direct products. \end{lemma}
-\begin{proof} Using the fact that the rank of $\Phi$ is at least $2$, one can identify $\mathrm{St}(\Phi,\,R)\times\mathrm{St}(\Phi,\,R)$ with $\mathrm{St}(\Phi,\,R\times R)$. Indeed, it is easy to show that $x_{\alpha}(a,0)$ commutes with $x_\beta(0,b)$ in $\mathrm{St}(\Phi,\,R\times R)$ for all $\alpha$, $\beta\in\Phi$, $a$, $b\in R$ (for $\beta=-\alpha$ decompose $\beta$ as a sum of roots). Благодаря этому можно определить отображение $$\mathrm{St}(\Phi,\,R)\times\mathrm{St}(\Phi,\,R)\rightarrow\mathrm{St}(\Phi,\,R\times R),$$ которое будет обратным к естественной стрелке в другую сторону. \end{proof}
 
 \begin{lemma}
 Let $\Phi$ be a root system, and $\mathrm E(\Phi,\,-)$ and $\mathrm{St}(\Phi,\,-)$ denote the corresonding elementary and Steinberg group functors. Then for any ring $R$ holds $$\pi_0\,\mathrm E(\Phi,\,R[\Delta^\bullet])=*=\pi_0\,\mathrm{St}(\Phi,\,R[\Delta^\bullet]).$$ If, moreover, $\Phi$ is of rank at least $2$, then $$\pi_1\,\mathrm{St}(\Phi,\,R[\Delta^\bullet])=1.$$
@@ -687,6 +669,11 @@ $$
 %\psi\colon\
 %$$
 \end{proof}
+
+\begin{theorem} \label{theorem:pi1-GRDelta}
+ One has $\pi_1(\Gsc(\Phi, R[\Delta^\bullet])) = \K_2(\Phi, R)$.
+\end{theorem}
+
 
 \printbibliography
 \end{document}

@@ -142,9 +142,9 @@ It follows directly from Chevalley commutator formula that the commutators $[x_{
 Indeed, setting $c = (1, 0)$ we obtain that $y_\alpha(a, b) = y_\alpha(ac, b) = y_\alpha(a, bc) = y_\alpha(a, 0) = 1$. \end{proof}
 
 \subsection{Overview of the pro-group technique}
-Let $R$ be an integral domain, $s \in R \setminus \{0\}$, $\Phi$ be a simply-laced root system of rank at least $3$. All root systems in this text are reduced and irreducible.
+Let $R$ be an integral domain, $s \in R \setminus \{0\}$, $\Phi$ be a simply-laced root system of rank at least $3$. All root systems in this text are reduced and irreducible. By \(\mathbb N\) we mean the set of non-negative integer numbers.
 
-Recall a definition of Steinberg pro-groups. Consider a chain of {\it unrelativized} Steinberg groups $\St(\Phi, s^n R)$ for $n \in \mathbb N \cup \{0\}$, i.e. the groups with the generators $x_{\alpha}(a)$ for $\alpha \in \Phi$, $a \in s^n R$ and the ordinary Steinbrg relations. The homomorphisms in the chain
+Recall a definition of Steinberg pro-groups. Consider a chain of {\it unrelativized} Steinberg groups $\St(\Phi, s^n R)$ for $n \in \mathbb N$, i.e. the groups with the generators $x_{\alpha}(a)$ for $\alpha \in \Phi$, $a \in s^n R$ and the ordinary Steinbrg relations. The homomorphisms in the chain
 $$
 \ldots \to \St(\Phi, s^3 R) \to \St(\Phi, s^2 R) \to \St(\Phi, s R) \to \St(\Phi, R)
 $$
@@ -156,26 +156,23 @@ We cannot conjugate elements of $\mathrm{St}(\Phi, s^nR)$ by elements of $\mathr
 An {\it endomorphism representative} $\eta$ of the Steinberg pro-group $\St^\infty(\Phi,\,s^\bullet R)$ is the following data: 
 \begin{itemize}
 \item
-a map $\eta^* \colon \mathbb N \cup \{0\} \to \mathbb N \cup \{0\}$,
+a map $\eta^* \colon \mathbb N \to \mathbb N$,
 \item
-for each $i \in \mathbb N \cup \{0\}$ a group homomorphism $\eta_i \colon \St(\Phi, s^{\eta^*(i)} R) \to \St(\Phi, s^i R)$,
+for each $i \in \mathbb N$ a group homomorphism $\eta_i \colon \St(\Phi, s^{\eta^*(i)} R) \to \St(\Phi, s^i R)$,
 \end{itemize}
 such that for every $i \leq j$ there is $k \geq \eta^*(i), \eta^*(j)$ making the diagram
-$$
-\xymatrix{
-\St(\Phi, s^k R) \ar[r] \ar[rd] & \St(\Phi, s^{\eta^*(j)} R)\ar[r]^(0.55){\eta_j} & \St(\Phi, s^j R) \ar[d]\\
-&\St(\Phi, s^{\eta^*(i)} R) \ar[r]^(0.55){\eta_i} & \St(\Phi, s^i R)
-}
-$$
+$$\begin{tikzcd}[row sep=tiny]
+& \St(\Phi, s^{\eta^*(j)} R)\ar{r}{\eta_j} & \St(\Phi, s^j R) \ar{dd}\\
+\St(\Phi, s^k R) \ar{ur} \ar{dr} & &\\
+&\St(\Phi, s^{\eta^*(i)} R) \ar{r}{\eta_i} & \St(\Phi, s^i R)
+\end{tikzcd}$$
 commutative.
 
-Endomorphism representatives $\eta$ and $\theta$ are called {\it equivalent} if for every $i \in \mathbb N \cup \{0\}$ there is $k \geq \eta^*(i), \theta^*(i)$ making the diagram
-$$
-\xymatrix{
-\St(\Phi, s^k R)\ar[r]\ar[d] & \St(\Phi, s^{\eta^*(i)} R) \ar[d]^{\eta_i}\\
-\St(\Phi, s^{\theta^*(i)} R) \ar[r]^(0.55){\theta_i} & \St(\Phi, s^i R)
-}
-$$
+Endomorphism representatives $\eta$ and $\theta$ are called {\it equivalent} if for every $i \in \mathbb N$ there is $k \geq \eta^*(i), \theta^*(i)$ making the diagram
+$$\begin{tikzcd}
+\St(\Phi, s^k R) \ar{r} \ar{d} & \St(\Phi, s^{\eta^*(i)} R) \ar{d}{\eta_i}\\
+\St(\Phi, s^{\theta^*(i)} R) \ar{r}{\theta_i} & \St(\Phi, s^i R)
+\end{tikzcd}$$
 commutatuve.
 
 For example, if we consider any map $\theta^*$ such that $\theta^*(i) \geq \eta^*(i)$ for all $i$ and define $\theta_i$ as the composition of $\eta_i$ and the structure homomorphism of $\St^\infty(\Phi, s^\bullet R)$, then such a representative $\theta$ is equivalent to $\eta$.
@@ -231,165 +228,136 @@ for all $x \in \St(\Phi, h^{\eta^*(0)}B)$ and for all \(i\).
 
 Пользуясь Теоремой~\ref{vor}, мы докажем Теорему~\ref{glueing} о склейке для $\St(\Phi,-)$. Впервые аналогичный результат для проективных модулей был доказан by Lindel-Lutkebohrnert и независимо by Mohan Kumar while proving Bass--Quillen conjecture for a power series ring over a field. Затем Линдел применил такую склейку при решения проблемы Басса--Квиллена для существенно гладких алгебр над совершенным полем.
 
-Как и в предыдущем параграфе, здесь $\Phi$~--- система корней с простыми связями ранга хотя бы 3.
+As in the previous section $\Phi$ is a simply-laced root system of rank at least $3$.
 
-\begin{theorem}
-\label{glueing}
-Пусть $B$~--- подобласть в области $A$, $h\in B\setminus0$ такой, что $A / hA = B / hB$. Это эквивалентно тому, что $A = Ah^n + B$ и $Ah^n \cap B = Bh^n$ для любого $n$. Рассмотрим диаграмму
+\begin{theorem}\label{glueing}
+Let $B$ be a subring of an integral domain $A$, $h\in B \setminus \{0\}$ be such that $A / hA = B / hB$. This is equivalent to $A = Ah^n + B$ and $Ah^n \cap B = Bh^n$ for all $n \in \mathbb N$. Consider the diagram
 $$
 \xymatrix{
 \St(\Phi,\,B)\ar[r]^{\iota}\ar[d]_{\lambda_h}&\St(\Phi,\,A)\ar[d]^{\lambda_h}\\
 \St(\Phi,\,B_h)\ar[r]^{\iota}&\St(\Phi,\,A_h).
 }
 $$
-Предположим, что для $u\in\St(\Phi,\,B_h)$ и $v\in\St(\Phi,\,A)$ верно, что $$\iota(u)=\lambda_h(v)\in\St(\Phi,\,A_h).$$
-Тогда найдётся $w\in\St(\Phi,\,B)$ такой, что $u=\lambda_h(w)$, и $v=\iota(w)$.
+Suppose that the identity
+$$\iota(u) = \lambda_h(v) \in \St(\Phi, A_h)$$
+holds for some $u \in \St(\Phi, B_h)$ and $v \in \St(\Phi, A)$. Then there is $w \in \St(\Phi, B)$ such that $u = \lambda_h(w)$ and $v = \iota(w)$.
 \end{theorem}
 \begin{proof}
 Хорошо известно, что для работы с $\mathrm K_1$-функтором важно изучение различных разложений группы $\mathrm G(\Phi,\,R)$ в произведение подгрупп, см.~[??]. В том же самом смысле, для работы с $\mathrm K_2$-функтором оказывается важно изучение главных однородных $\St(\Phi,\,R)$-множеств, см.~[??].
 
-Рассмотрим множество
+Consider the set
 $$
 V = \St(\Phi, B_h) \times_{\St(\Phi, B)} \St(\Phi, A),
 $$
-равное по определению фактор-множеству декартова произведения $\St(\Phi,\,B_h)\times_{}\St(\Phi,\,A)$ по следующему отношению эквивалентности $\sim\,$: для любых $u\in\St(\Phi,\,B_h)$, $v\in\St(\Phi,\,A)$ и $w\in\St(\Phi,\,B)$ положим
+by definition it is the factor-set of the Cartesian product $\St(\Phi, B_h) \times \St(\Phi, A)$ by the following equivalence relation: for every $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, and $w \in \St(\Phi, B)$ let
 $$
-(u\, \iota(w), v)\sim(u, \lambda_h(w) v).
+(u\, \iota(w), v) \sim (u, \lambda_h(w)\, v).
 $$
-Мы покажем, что каноническое отображение \(V \to \St(\Phi, A_h), (u, v) \mapsto \iota(u) \lambda_h(v)\) является биекцией. 
+We show that the canonical map $V \to \St(\Phi, A_h), (u, v) \mapsto \iota(u)\, \lambda_h(v)$ is a bijection.
 
-Построим действие группы $\St(\Phi, A_h)$ на $V$. Рассмотим $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$ и $\frac c {h^s} \in A_h$, и выберем для $u$ строгого представителя $\eta$ автоморфизма $\Xi(u)^{-1}$ про-группы $\St^\infty(\Phi, h^\bullet B)$, а также для $\iota(u)$ строгого представителя $\theta$ автоморфизма $\Xi\bigl(\iota(u)\bigr)^{-1}$ про-группы $\St^\infty(\Phi, h^\bullet A)$ по Следствию~\ref{vorcor} таким образом, чтобы $\eta^*(0) = \theta^*(0)$ и $$\iota\bigl(\eta_0(x)\bigr) = \theta_0\bigl(\iota(x)\bigr)$$ для любого $x\in\St(\Phi,\,h^{\eta^*(0)}B)$.
+Let us construct an action of the group $\St(\Phi, A_h)$ on $V$. Take $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $\frac c {h^s} \in A_h$. Choose a strict representative $\eta$ of the automorphism $\Xi(u)^{-1}$ of the pro-group $\St^\infty(\Phi, h^\bullet B)$ and a strict representative $\theta$ of the automorphism $\Xi\bigl(\iota(u)\bigr)^{-1}$ of the pro-group $\St^\infty(\Phi, h^\bullet A)$ using Corollart~\ref{vorcor} in such a way that $\eta^*(0) = \theta^*(0)$ and $$\iota\bigl(\eta_0(x)\bigr) = \theta_0\bigl(\iota(x)\bigr)$$ for all $x\in\St(\Phi, h^{\eta^*(0)}B)$.
 
-Выберем $n \geq \theta^*(0) + s$ и представление $c = ah^n + b$, $a\in A$, $b\in B$. Положим
+Choose $n \geq \theta^*(0) + s$ and a decomposition $c = ah^n + b$ for $a \in A$, $b \in B$. Define
 $$\textstyle
-x_\alpha(\frac c {h^s}) (u, v) = \bigl(x_\alpha(\frac b {h^s}) u, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr).
+x_\alpha(\frac c {h^s}) (u, v) = \bigl(x_\alpha(\frac b {h^s})\, u, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr).
 $$
-Ниже в лемме \ref{well-def} мы покажем, что это определение не зависит ни от каких выборов. Тогда действие элемента $x_\alpha(\frac c {h^s})$ на $V$ корректно определено, и остаётся проверить, что оно продолжается до действия группы Стейберга $\St(\Phi, A_h)$.
+In lemma \ref{well-def} below we show that this construction is independent on all choices. Then the actions of all Steinberg generators $x_\alpha(\frac c {h^s})$ on $V$ are well-defined and it remains to check that they give an action of the Steinberg group $\St(\Phi, A_h)$.
 
-Покажем сначала, что 
+At first we show that 
 $$\textstyle
 x_\alpha(\frac c {h^s})\, \bigl(x_\alpha(\frac{c'}{h^s})\, (u, v)\bigr) = x_\alpha(\frac{c+c'}{h^s})\, (u, v).
 $$
-Для этого выберем разложения $c = ah^n + b$, $c' = a'h^n + b'$ как в определении действия, где \(n\) достаточно большое. Поскольку $x_\alpha(\frac{b'}{h^s})$ действует тривиально на $x_\alpha(ah^{n-s})$ при достаточно большом $n$, можно выбрать строгих представителей $\theta$ для $\Xi(\iota(u))^{-1}$ и $\theta'$ для $\Xi(x_\alpha(\frac{b'}{h^s})\, \iota(u))^{-1}$ таким образом, чтобы
+Choose decompositions $c = ah^n + b$, $c' = a'h^n + b'$ as in the definition of the action, where \(n\) is sufficiently large. Since $x_\alpha(\frac{b'}{h^s})$ trivially acts on $x_\alpha(ah^{n-s})$ for sufficiently large $n$, there are strict representatives $\theta$ of $\Xi(\iota(u))^{-1}$ and $\theta'$ of $\Xi(x_\alpha(\frac{b'}{h^s})\, \iota(u))^{-1}$ such that
 $$
 \theta'_0\bigl(x_\alpha(ah^{n-s})\bigr) = \theta_0\bigl(x_\alpha(ah^{n-s})\bigr)
 $$
-(и аналогично для согласованных с ними $\eta$ и $\eta'$). Тогда
+and similarly for the corresponding $\eta$ and $\eta'$. Then
 $$\textstyle
 x_\alpha(\frac c {h^s})\, \bigl(x_\alpha(\frac{b'}{h^s})\, u, \theta_0(x_\alpha(a' h^{n-s}))\, v\bigr) = \bigl(x_\alpha(\frac{b + b'}{h^s})\, u, \theta'_0(x_\alpha(a h^{n - s}))\, \theta_0(x_\alpha(a' h^{n - s}))\, v\bigr),
 $$
-что доказывает первое соотношение. Точно также можно проверить, что $x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})$ и $x_\beta(\frac{c'}{h^s})\, x_\alpha(\frac c {h^s})$ действуют одинаково при $\alpha + \beta \notin \Phi \cup \{0\}$.
+this proves the identity. The proof that $x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})$ and $x_\beta(\frac{c'}{h^s})\, x_\alpha(\frac c {h^s})$ identically act for $\alpha + \beta \notin \Phi \cup \{0\}$ is the same.
 
-Наконец, в случае $\alpha + \beta \in \Phi$ покажем, что 
+In the case $\alpha + \beta \in \Phi$ we have to show that
 $$\textstyle
 f = x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})
-\text{ и }
+\text{ and }
 g = x_{\alpha + \beta}(N_{\alpha \beta} \frac{cc'}{h^{2s}})\, x_\beta(\frac{c'}{h^s})\, x_\alpha(\frac c {h^s})
 $$ 
-действуют одинаково. Выберем разложения $c = ah^n + b$, $c' = a'h^n + b'$ и $cc' = (aa' h^n + ab' + a'b) h^n + bb'$ для достаточно большого \(n\).
-Тогда
+act identically on $V$. Choose decompositions $c = ah^n + b$, $c' = a'h^n + b'$ and $cc' = (aa' h^n + ab' + a'b) h^n + bb'$ for sufficiently large \(n\).
+Then
 $$\textstyle
 f\,(u, v) = \bigl(x_\alpha(\frac b {h^s})\, x_\beta(\frac{b'}{h^s})\, u,
 \theta'_0(x_\alpha(ah^{n - s}))\, \theta_0(x_\beta(a'h^{n - s}))\, v\bigr),
 $$
-где $\theta$~--- строгий представитель $\Xi(\iota(u))^{-1}$, а $\theta'$~--- строгий представитель $\Xi(x_\beta(\frac{b'}{h^s})\, \iota(u))^{-1}$. Можно выбрать $\theta'$ таким образом, чтобы
+where $\theta$ is a strict representative of $\Xi(\iota(u))^{-1}$ and $\theta'$ is a strict representative of $\Xi(x_\beta(\frac{b'}{h^s})\, \iota(u))^{-1}$. It is possible to choose $\theta'$ in such a way that
 $$
 \theta'_0(x_\alpha(ah^{n - s})) = \theta_0\bigl(x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha\beta} ab'h^{n - 2s})\bigr).
 $$
-Далее, 
+Next, 
 \begin{multline*}\textstyle
 g\, (u, v) = \bigl(x_{\alpha+\beta}(N_{\alpha \beta} \frac{bb'}{h^{2s}})\, x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b {h^s})\, u,\\
 \theta'''_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa' h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr)\, \theta''_0(x_\beta(a'h^{n-s}))\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr),
 \end{multline*}
-где $\theta''$ строго представляет $\Xi(x_\alpha(\frac b {h^s})\, \iota(u))^{-1}$ и $\theta'''$ строго представляет $\Xi(x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b{h^s})\, \iota(u))^{-1}$. Можно выбрать $\theta''$ и $\theta'''$ таким образом, чтобы 
+where $\theta''$ is a strict representative of $\Xi(x_\alpha(\frac b {h^s})\, \iota(u))^{-1}$ and $\theta'''$ is a strict representative of $\Xi(x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b{h^s})\, \iota(u))^{-1}$. We can choose $\theta''$ and $\theta'''$ in such a way that 
 $$
 \theta''_0(x_\beta(a' h^{n - s})) = \theta_0\bigl(x_{\alpha + \beta}(-N_{\alpha \beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\bigr),
 $$
-и
+and
 $$
 \theta'''_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr) = \theta_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr).
 $$
-Теперь остаётся проверить, что
+It remains to check that
 \begin{multline*}
 x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha \beta} ab' h^{n - 2s})\, x_\beta(a' h^{n - s}) =\\
 = x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa' h^n + ab' + a'b) h^{n - 2s}\bigr)\, x_{\alpha + \beta}(-N_{\alpha\beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\, x_\alpha(ah^{n - s}).
 \end{multline*}
-Но это как раз является соотношением Стейнберга.
+This is exactly a Steinberg relation.
 
-Итак, действие $\St(\Phi, A_h)$ на $V$ корректно определено. Из построения следует, что каноническое отображение \(V \to \St(\Phi, A_h)\) сохраняет это действие, если \(\St(\Phi, A_h)\) действует сама на себе левыми сдвигами. Так как \((1, 1) \in V\) отображается в \(1 \in \St(\Phi, A_h)\), остаётся проверить транзитивность действия на \(V\). Но из нашего построения следует, что \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Следовательно, \(V \to \St(\Phi, A_h)\) биекция.
+It follows that the action of $\St(\Phi, A_h)$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_h)\) preserves the action, where \(\St(\Phi, A_h)\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_h)\), it remains to check transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Hence \(V \to \St(\Phi, A_h)\) is a bijection.
 
-Пусть теперь \(u \in \St(\Phi, B_h)\) и \(v \in \St(\Phi, A)\) такие, что \(\iota(u) = \lambda_h(v)\). Тогда класс \((u, v^{-1})\) в \(V\) отображается в \(1 \in \St(\Phi, A_h)\). А это значит, что \((u, v^{-1}) \sim (1, 1)\).
-%Итак, действие $\St(\Phi,\,A_h)$ на $V$ корректно определено, более того, из определения действия и независимости от выбора $n$ следует, что для любого $f\in\St(\Phi,\,B_h)$ и $(u,\,v)\in V$ верно, что
-%$$
-%\iota(f)\cdot(u,\,v)=(f\cdot u,\,v).
-%$$
-%Кроме того, поскольку для $1\in\St(\Phi,\,A_h)$ мы можем выбрать представителя $\theta$, таким образом, что $\theta_0(x)=x$, то для любого $g\in\St(\Phi,\,A)$ и $v\in\St(\Phi,\,A)$ из определения следует, что
-%$$
-%\lambda_h(g)\cdot(1,\,v)=(1,\,g\cdot v).
-%$$
-%Этого достаточно, чтобы завершить доказательство теоремы. Действительно, предположим, что для $u\in\St(\Phi,\,B_h)$ и $v\in\St(\Phi,\,A)$ верно, что $$\iota(u)=\lambda_h(v)\in\St(\Phi,\,A_h).$$
-%Тогда
-%$$
-%(u,\,1)=\iota(u)\cdot(1,\,1)=\lambda_h(v)\cdot(1,\,1)=(1,\,h).
-%$$
-%По определению отношения эквивалентности на $V$, из этого в точности следует, что существет $w\in\St(\Phi,\,B)$ такой, что $u=\lambda_h(w)$, и $v=\iota(w)$, и теорема доказана.
-%
-%Но, разумеется, то же самое рассуждение показывает, что $(1,1)$ можно перевести в любой элемент $V$ действием $\St(\Phi,\,A_h)$, то есть, действие транзитивно. Кроме того, корректно определено отображение
-%$$
-%V\rightarrow\St(\Phi,\,A_h),\quad (u,\,v)\mapsto\iota(u)\cdot\lambda_h(v),
-%$$
-%которое эквивариантно, если $\St(\Phi,\,A_h)$ действует на себе левыми сдвигами. Из этого сразу следует, что если $g\cdot(1,\,1)=(1,\,1)$, то $g=1$, то есть, действие $\St(\Phi,\,A_h)$ на $V$ свободно, и $V$ является главным однородным $\St(\Phi,\,A_h)$-множеством.
+Now let \(u \in \St(\Phi, B_h)\) and \(v \in \St(\Phi, A)\) be such that \(\iota(u) = \lambda_h(v)\). The class of \((u, v^{-1})\) in \(V\) maps to \(1 \in \St(\Phi, A_h)\). Hence \((u, v^{-1}) \sim (1, 1)\).
 \end{proof}
 
 \begin{lemma}\label{well-def}
-Действие \(x_\alpha(\frac c{h^s})\) на элементе \((u, v)\) не зависит от выбора разложения \(c\), согласованных строгих представителей \(\Sigma(u^{-1})\) и \(\Sigma(\iota(u^{-1}))\), а также представителя \((u, v)\) в своём классе эквивалентности в \(V\).
+The action of \(x_\alpha(\frac c{h^s})\) on the element \((u, v) \in V\) is independent on the choices of a decomposition of \(c\), coherent strict representatives of \(\Sigma(u^{-1})\) and \(\Sigma(\iota(u^{-1}))\), and a representative \((u, v)\) of its equivalence class in \(V\).
 \end{lemma}
 \begin{proof}
-Покажем, что действие не зависит от выбора разложения $c$. Действительно, пусть $k = \theta^*(0) + s$ и $c = a' h^k + b'$. Так как $a' h^k - a h^n = b - b' \in Ah^k \cap B = Bh^k$, то существует $d \in B$ такой, что $b = b' + dh^k$. Тогда
+Let us show that the action is independent on the choice of a decomposition of $c$. Indeed, let $k = \theta^*(0) + s$ and $c = a' h^k + b'$. Since $a' h^k - a h^n = b - b' \in Ah^k \cap B = Bh^k$, there is $d \in B$ such that $b = b' + dh^k$. Then
 $$\textstyle
 x_\alpha(\frac b {h^s}) u = \bigl(x_\alpha(\frac{b'}{h^s}) u\bigr) \bigl(u^{-1} x_\alpha(dh^{k - s}) u\bigr).
 $$
-Поскольку $\eta$~--- строгий представитель $\Xi(u)^{-1}$, мы заключаем, что $$u^{-1} x_\alpha(dh^{k-s}) u = \lambda_h \bigl(\eta_0(x_\alpha(dh^{k - s}))\bigr)$$
-и
+Since $\eta$ is a strict representative of $\Xi(u)^{-1}$, it follows that $$u^{-1} x_\alpha(dh^{k-s}) u = \lambda_h \bigl(\eta_0(x_\alpha(dh^{k - s}))\bigr)$$
+and
 $$\textstyle
 \bigl(x_\alpha(\frac b {h^s}) u, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr) \sim \bigl(x_\alpha(\frac{b'}{h^s}) u, \iota\bigl(\eta_0(x_\alpha(dh^{k-s}))\bigr)\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr).
 $$
 
-Согласованный выбор $\eta$ и $\theta$ гарантирует нам, что 
+A coherent choice of $\eta$ and $\theta$ guarantees that
 $$
 \iota\bigl(\eta_0(x_\alpha(dh^{k-s}))\bigr) = \theta_0(x_\alpha(dh^{k - s})),
 $$
-а поскольку $\theta_0$ является гомоморфизмом, 
+and, since $\theta_0$ is a homomorphism,
 $$
 \theta_0(x_\alpha(dh^{k - s}))\, \theta_0(x_\alpha(ah^{n - s})) = \theta_0(x_\alpha(dh^{k-s} + ah^{n - s})) = \theta_0(x_\alpha(a'h^{k - s})).
 $$
 
-Теперь проверим, что действие не зависит от выбора строгих представителей. Пусть строгие представители $\eta'$ и $\theta'$ эквивалентны \(\eta\) и \(\theta\) соответственно. По определению эквивалентности существует такое $n \geq \max(\theta^*(0) + s, {\theta'}^*(0) + s)$, что 
+Now we check that the action is independent on the choice of strict representatives. Let the strict representatives $\eta'$ and $\theta'$ be equivalent to $\eta$ and $\theta$ respectively. By definition of the equivalence, there is $n \geq \max(\theta^*(0) + s, {\theta'}^*(0) + s)$ such that 
 $$
 \theta_0(x_\alpha(ah^{n - s})) = \theta_0'(x_\alpha(ah^{n - s}))
 $$
-для любого $a \in A$. Поскольку определение не зависит от выбора разложения $c$, мы заключаем, что оно не зависит и от выбора $\eta$ и $\theta$.
+for all $a \in A$. Since the action is independent on the choice of a decomposition of $c$, it follows that it is also independent on the choices of $\eta$ and $\theta$.
 
-Наконец, покажем, что действие не зависит и от выбора представителя $(u, v)$ как элемента $V$. Пусть $u = u' \lambda_h(w)$, где $w \in \St(\Phi,\,B)$. Выберем согласованные строгие представители $\eta'$, $\theta'$ для $\Xi(u')^{-1}$ и $\Xi(\iota(u'))^{-1}$, а также $\eta$, $\theta$ для $\Xi(u)^{-1}$ и $\Xi(\iota(u))^{-1}$ по Следствию~\ref{vorcor}. Ясно, что для некоторого строгого представителя $\zeta$ автоморфизма $\Xi(\iota(w))^{-1}$ будет выполнено $\zeta_0(x) = \iota(w)^{-1}\, x\, \iota(w)$ для всех $x \in \St(\Phi, h^{\zeta^*(0)} A)$.
-%Поэтому можно найти $\theta$~--- строгого представителя $\iota(u)$ такого, что $\theta_{0}(x)=\iota(w)^{-1}\theta'_0(x)\iota(w)$, и согласованного с ним $\eta$~--- строгого представителя $u$.
-%Поскольку определение не зависит от выбора строго представителя, мы заключаем, что
-Тогда
+Finally, we prove that the action is independent on the choice of $(u, v)$ in its equivalence class. Let $u = u' \lambda_h(w)$ for some $w \in \St(\Phi,\,B)$. Choose coherent strict representatives $\eta$, $\theta$, $\eta'$, $\theta'$ of $\Xi(u)^{-1}$, $\Xi(\iota(u))^{-1}$, $\Xi(u')^{-1}$, $\Xi(\iota(u'))^{-1}$, by Corollary~\ref{vorcor}. Clearly, for some strict representative $\zeta$ of $\Xi(\iota(w))^{-1}$ we have $\zeta_0(x) = \iota(w)^{-1}\, x\, \iota(w)$ for all $x \in \St(\Phi, h^{\zeta^*(0)} A)$.
+Then
 $$\textstyle
 \bigl(x_\alpha(\frac b {h^s})\, u' \lambda_h(w), \theta_0(x_\alpha(ah^{n - s}))\, v\bigr) \sim \bigl(x_\alpha(\frac b {h^s})\, u', \iota(w)\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr),
 $$
-при этом
+so
 $$
 \iota(w)\, \theta_0\big(x_\alpha(ah^{n-s})\big) = \theta'_0\big(x_\alpha(ah^{n-s})\big)\, \iota(w)
 $$
-для всех \(a\), если \(n\) достаточно велико.
+for all \(a\) if \(n\) is large enough.
 \end{proof}
-
-
-
-
-
-
-
 
 
 
@@ -441,6 +409,35 @@ $$
 \end{theorem}
 
 Доказательство теоремы разбито на ряд лемм, чтобы было проще следить, как используются разные свойства. Схематически взаимосвязь разных свойств, введённых в этом параграфе, можно изобразить при помощи следующей диаграммы.
+
+\begin{center}
+\begin{tikzpicture}
+\node (alp) at ( 2,  0) {\textbf{(ALP)}};
+\node (asp) at ( 0,  0) {\textbf{(ASP)}}
+  edge[->] (alp);
+\node (hil) at ( 2, -1) {\textbf{(HIL)}}
+  edge[->] (alp);
+\node (cdc) at ( 0, -1) {\textbf{(CDC)}}
+  edge[->] (asp)
+  edge[->] (alp);
+\node (zgl) at (-2, -1) {\textbf{(ZGL)}}
+  edge[->] (asp);
+\node (lgl) at (-2, -2) {\textbf{(LGL)}}
+  edge[->] (zgl)
+  edge[->, bend right = 20] (alp);
+\node (hif) at (-2,  0) {\textbf{(HIF)}}
+  edge[->] (asp);
+\node (ght) at ( 0,  1) {\textbf{(GHT)}}
+  edge[->] (asp);
+\node (lgp) at ( 0,  2) {\textbf{(LGP)}}
+  edge[->] (ght)
+  edge[->, bend left = 20] (alp);
+\node (lht) at (-2,  1) {\textbf{(LHT)}}
+  edge[->] (ght);
+\end{tikzpicture}
+\end{center}
+
+\iffalse
 $$
 \xymatrix{
 &{\bf(LGP)}\ar[d]\ar[dddrr]&&\\
@@ -452,6 +449,7 @@ $$
 {\bf(LGL)}\ar[ruuu]\ar[rrruuu]&{\bf(HIL)}\ar[rruuu]&&
 }
 $$
+\fi
 Прежде всего, локально-глобальный принцип позволяет глобализовать теорему Хоррокса, см.~[??].
 \begin{lemma}[Global Horrocks' Theorem]
 \label{ght}

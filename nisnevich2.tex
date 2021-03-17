@@ -551,7 +551,7 @@ The functors $\Gsc(\Phi,\,-)$, $\St(\Phi,\,-)$ and $\K_2(\Phi,\,-)$ commute with
 \begin{proof}
 The assertion for $\mathrm G_{\mathrm{sc}}(\Phi,\,-)$ follows from the fact that it is represented in the category $\catname{Ring}$ by a finitely presented Hopf $\ZZ$-algebra (see e.\,g. \cite[Lemma~10.127.3]{stacks-project}). The assertion for $\St(\Phi, -)$ is obvious from its definition. 
 
-The assertion for the functor $\K_2(\Phi, -)$ now follows from the assertions for $\St(\Phi, -)$ and $\Gsc(\Phi, R)$ using the fact that filtered colimits commute with finite limits (e.\,g. they commute with kernels).
+The assertion for the functor $\K_2(\Phi, -)$ now follows from the assertions for $\St(\Phi, -)$ and $\Gsc(\Phi, R)$ using the fact that filtered colimits commute with finite limits in $\catname{Grp}$ (in particular, they commute with kernels).
 \end{proof}
 
 \begin{comment}
@@ -639,10 +639,9 @@ Let $f\colon G_\bullet\twoheadrightarrow Q_\bullet$ be a degreewise surjective m
  For $\Phi$ and $R$ as in~\cref{theorem:LP-for-K2} one has $\pi_1(\Gsc(\Phi, R[\Delta^\bullet])) = \K_2(\Phi, R)$.
 \end{theorem}
 \begin{proof}
- First of all, notice that under our assumptions the homotopy invariance of $\K_1(\Phi, -)$ holds, see~\cite[Theorem~1.3]{Sta14}. This implies that the canonical inclusions \[N_i(\Gsc(\Phi, R[\Delta^\bullet]))\hookrightarrow N_i(\E(\Phi, R[\Delta^\bullet]))\] of terms of the respective Moore complexes is, in fact, an isomorphism for $i > 0$. This implies that the fundamental groups of $\Gsc(\Phi, R[\Delta^\bullet])$ and $\E(\Phi, R[\Delta^\bullet])$ coincide.
+First of all, notice that by the homotopy invariance for $\K_1$ (see e.\,g.~\cite[Theorem~1.3]{Sta14}) the simplicial group $\K_1(\Phi, R[\Delta^\bullet])$ is discrete. Applying the exact sequence~\eqref{eq:simplicial-les} to the canonical morphism $\Gsc(\Phi\,,R[\Delta^\bullet]) \to \K_1(\Phi\,,R[\Delta^\bullet])$, we obtain that $\pi_1(\Gsc(\Phi, R[\Delta^\bullet])) \cong \pi_1(\E(\Phi, R[\Delta^\bullet]))$.
  
- Consider the simplicial map $\mathrm{st}_\bullet \colon \St(\Phi, R[\Delta^\bullet]) \to \E(\Phi, R[\Delta^\bullet])$ given by canonical projections $\mathrm{st}$ in each degree. 
- Now the application of~\eqref{eq:simplicial-les} yields an exact sequence of groups
+Now consider the simplicial map $\mathrm{st}_\bullet \colon \St(\Phi, R[\Delta^\bullet]) \to \E(\Phi, R[\Delta^\bullet])$ given by canonical projections $\mathrm{st}$ in each degree. The application of~\eqref{eq:simplicial-les} yields an exact sequence of groups
 \[
 \pi_1\bigl(\St(\Phi, R[\Delta^\bullet])\bigr) \to \pi_1\bigl(\E(\Phi, R[\Delta^\bullet])\bigr) \to \pi_0\bigl(\K_2(\Phi, R[\Delta^\bullet])\bigr) \to \pi_0\bigl(\St(\Phi, R[\Delta^\bullet])\bigr).
 \]

@@ -362,16 +362,12 @@ for all \(a\) if \(n\) is large enough.
 \section{Formalism of Lindel--Popescu theorem}
 В этом параграфе мы аксоматизируем рассуждение Ворста, который применил результаты Линдела о гипотезе Басса--Квиллена для существенно гладких алгебр, чтобы доказать аналог результата Линдела $\K_1$. Ставрова добавила к рассуждению Ворста результаты Попеску, и получила $\K_1$-аналог гипотезы Басса--Квиллена для регулярных колец, содержащих поле (в действительности, не только {\it линейный} $\K_1$-аналог, но и для функторов $\K_1^G$ построенных по изотропной редуктивной группе $G$).
 
-Пусть $k$~--- коммутативное кольцо с $1$, $\mathcal A\mathsf{lg}_k$ обозначает категорию коммутативных $k$-алгебр, и $\mathcal G\mathsf{rp}$ обозначает категорию групп.
+Let $k$ be a commutative ring with a unit. We denote by $\catname{Alg}_k$ the category of commutative $k$-algebras. Let us formulate
+
 \begin{theorem}
 \label{lpb}
-Пусть ковариантный функтор 
-$$
-\K\colon\mathcal A\mathsf{lg}_k\rightarrow\mathcal G\mathsf{rp}
-$$
-удовлетворяет следующим свойствам.\\
+Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ commutes with filtered colimits and, moreover, satisfies the following assumptions:\\
 %{\rm\bf (PSP)} Perfect subfield property. Если $F\in\mathcal A\mathsf{lg}_k$ является полем, то $F$ содержит совершенное подполе $L\subseteq F$, которое также является $k$-алгеброй.\\
-{\rm\bf (CDC)} Commuting with directed colimits. Функтор $\K$ коммутирует с направленными копределами.\\
 {\rm\bf (HIF)} Homotopy invariance for fields. Если $F\in\mathcal A\mathsf{lg}_k$ является полем, и $F[t]$ обозначает кольцо многочленов над $F$, то каноническое вложение $F\subseteq F[t]$ индуцирует изоморфизм
 $$
 \K(F)\cong\K(F[t]).
@@ -406,6 +402,7 @@ $$
 
 Доказательство теоремы разбито на ряд лемм, чтобы было проще следить, как используются разные свойства. Схематически взаимосвязь разных свойств, введённых в этом параграфе, можно изобразить при помощи следующей диаграммы.
 
+\begin{comment}
 \begin{center}
 \begin{tikzpicture}
 \node (alp) at ( 2,  0) {\textbf{(ALP)}};
@@ -432,6 +429,7 @@ $$
   edge[->] (ght);
 \end{tikzpicture}
 \end{center}
+\end{comment}
 
 Прежде всего, локально-глобальный принцип позволяет глобализовать теорему Хоррокса, см.~[??].
 \begin{lemma}[Global Horrocks' Theorem]
@@ -520,13 +518,14 @@ $$\begin{tikzcd}
 \label{lindel}
 Пусть $F$~--- совершенное поле, и $A$~--- локальная область положительной размерности, существенно гладкая над $F$. Тогда $A$ содержит подобласть локальную подобласть $B$, являющуюся локализацией кольца многочленов над $F$ {\rm(}от нескольких переменных{\rm)}, и существует $h\in B\setminus A^\times$ такой, что $A/h=B/h$. 
 \end{theorem}
-См.~[Lindel, Lemma, Proposition~2 and~2'], [Vorst, Proposiion~3.2], а также [Bhatwadekar, Proposition~4.8].
+\begin{proof} See~\cite[Lemma, Proposition~2 and~2']{Li81}, \cite[Proposition~3.2]{Vo81} and also [Bhatwadekar, Proposition~4.8]. \end{proof}
+
 
 \begin{theorem}[Popescu]
 \label{popescu}
 Пусть $F$~--- совершенное поле, и $R$~--- регулярная локальная область, содержащая $F$. Тогда $R$ является направленным копределом локальных областей, существенно гладких над $F$.
 \end{theorem}
-См.~[Popescu], [Swan].\\
+\begin{proof} See~\cite{Po90,Sw98}. \end{proof}
 
 Наконец, мы можем завершить доказательство Теоремы~\ref{lpb}. Рассуждение следует статьям [Vorst] и [Stavrova].
 
@@ -614,7 +613,7 @@ in which $N_n(G) = \cap_{i=1}^n\Ker(d_i) \trianglelefteq G_n$ and the differenti
 
 \begin{prop}\label{prop:pi1-StDelta} Let $\Phi$ be an arbitrary irreducible root system. Then for any ring $R$ the simplicial groups $\E(\Phi,\,R[\Delta^\bullet])$ and $\St(\Phi,\,R[\Delta^\bullet])$ are connected. If, moreover, $\Phi$ has rank at least $2$ then the simplicial group $\St(\Phi, R[\Delta^\bullet])$ is simply-connected. \end{prop}
 \begin{proof}
-In our computations we identify the ring $R[\Delta^n] = R[t_0,\ldots t_n]/\langle \sum_{i=0}^n t_i -1 \rangle$ with $R[t_1, \ldots, t_n]$ via $t_0 = 1 - \sum_{i=1}^n t_i$. We also use concrete formulas from~\cite{Jar83} for the faces of $R[\Delta^\bullet]$.
+In our computations we identify the ring $R[\Delta^n] = R[t_0,\ldots t_n]/\langle \sum_{i=0}^n t_i -1 \rangle$ with $R[t_1, \ldots, t_n]$ via $t_0 = 1 - \sum_{i=1}^n t_i$. We also use concrete formulas from~\cite{Jar83} for the face maps of $R[\Delta^\bullet]$.
 
 The map $d_1\colon\St(\Phi,\,R[\Delta^1])\rightarrow\St(\Phi,\,R[\Delta^0])$ is given by $t_1\mapsto0$, therefore \[N_1\St(\Phi,\,R[\Delta^\bullet])=\Ker(d_1)=\St(\Phi,\,R[t_1],\,\langle t_1\rangle),\]
 and $\partial_1\colon N_1\St(\Phi,\,R[\Delta^\bullet])\rightarrow N_0\St(\Phi,\,R[\Delta^\bullet])=\St(\Phi,\,R)$ is induced by $d_0$, which sends $t_1$ to $t_0=1$. 

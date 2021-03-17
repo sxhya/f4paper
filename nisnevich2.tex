@@ -545,32 +545,22 @@ $$\begin{tikzcd}
 В этом параграфе $\Phi$ обозначает произвольную систему корней.
 
 \begin{lemma}
-\label{k2cdc}
-Функторы  $\mathrm G_{\mathrm{sc}}(\Phi,\,-)$, $\St(\Phi,\,-)$ и $\K_2(\Phi,\,-)$ коммутируют с направленными копределами. 
+\label{k2cdc} 
+The functors $\Gsc(\Phi,\,-)$, $\St(\Phi,\,-)$ and $\K_2(\Phi,\,-)$ commute with filtered colimits.
 \end{lemma}
 \begin{proof}
-Утверждение про $\mathrm G_{\mathrm{sc}}(\Phi,\,-)$ следует, например, из существования точного представления. 
+The assertion for $\mathrm G_{\mathrm{sc}}(\Phi,\,-)$ follows from the fact that it is represented in the category $\catname{Ring}$ by a finitely presented Hopf $\ZZ$-algebra (see e.\,g. \cite[Lemma~10.127.3]{stacks-project}). The assertion for $\St(\Phi, -)$ is obvious from its definition. 
 
-Пусть $R=\mathrm{colim}_I R_i$~--- направленный копредел колец. Покажем, что 
-$$
-\St(\Phi,\,R)=\mathrm{colim}_I\St(\Phi,\,R_i).
-$$
-Для этого можно проверить универсальное свойство копредела. Если $f_i\colon\St(\Phi,\,R_i)\rightarrow G$, и $x_\alpha(r)\in\St(\Phi,\,R)$, можно найти $r'\in R_i$ для некоторого $i$ такой, что $r'$ переходит в $r$, и определить $f(x_\alpha(r))=f_i(x_\alpha(r'))$. Легко видеть, что такое определение не зависит от выбора $i$, и сохраняет соотношения Стейнберга. Тогда $f$ будет искомым отображением из $\St(\Phi,\,R)$ в $G$, замыкающим диаграмму до коммутативной. Единственность такого $g$ также легко проверить на образующих.
-
-Теперь утверждение про $\K_2$ следует из того, что направленный копредел является точным функтором в категории групп, но поскольку я не знаю, где это написано, то привожу доказательство. Рассмотрим естественное отображение
-$$
-f\colon\mathrm{colim}_I\K_2(\Phi,\,R_i)\rightarrow\K_2(\Phi,\,R),
-$$
-и докажем, что оно является биекцией. Если $x\in\K_2(\Phi,\,R)$, то найдётся $y\in\St(\Phi,\,R_i)$ для некоторого $i$ по предыдущему пункту, который переходит в $x$. Пусть $\phi$ обозначает естественное отображение
-$$
-\phi\colon\St(\Phi,\,-)\rightarrow\mathrm G_{\mathrm{sc}}(\Phi,\,-).
-$$
-Поскольку $\phi(y)$ в пределе переходит в $1$, можно считать, что $\phi(y)=1$, то есть $y\in\K_2(\Phi,\,R_i)$. Это доказывает сюръективность $f$. Пусть теперь $x\in\mathrm{colim}_I\K_2(\Phi,\,R_i)$ переходит в $1$ под действием $f$. Тогда образ $x$ в $x\in\mathrm{colim}_I\St(\Phi,\,R_i)$ также равен $1$, и используя конструкцию прямого предела в категории групп
-$$
-\left(\bigsqcup_i\K_2(\Phi,\,R_i)/\sim\right)\rightarrow\left(\bigsqcup_i\St(\Phi,\,R_i)/\sim\right),
-$$
-мы заключаем, что $x$ равен $1$.
+The assertion for the functor $\K_2(\Phi, -)$ now follows from the assertions for $\St(\Phi, -)$ and $\Gsc(\Phi, R)$ using the fact that filtered colimits commute with finite limits (e.\,g. they commute with kernels).
 \end{proof}
+
+\begin{comment}
+Пусть $R=\mathrm{colim}_I R_i$~--- направленный копредел колец. Покажем, что 
+$$ \St(\Phi,\,R)=\mathrm{colim}_I\St(\Phi,\,R_i). $$ Для этого можно проверить универсальное свойство копредела. Если $f_i\colon\St(\Phi,\,R_i)\rightarrow G$, и $x_\alpha(r)\in\St(\Phi,\,R)$, можно найти $r'\in R_i$ для некоторого $i$ такой, что $r'$ переходит в $r$, и определить $f(x_\alpha(r))=f_i(x_\alpha(r'))$. Легко видеть, что такое определение не зависит от выбора $i$, и сохраняет соотношения Стейнберга. Тогда $f$ будет искомым отображением из $\St(\Phi,\,R)$ в $G$, замыкающим диаграмму до коммутативной. Единственность такого $g$ также легко проверить на образующих. \end{comment}
+
+\begin{comment}
+Теперь утверждение про $\K_2$ следует из того, что направленный копредел является точным функтором в категории групп, но поскольку я не знаю, где это написано, то привожу доказательство. Рассмотрим естественное отображение $$ f\colon\mathrm{colim}_I\K_2(\Phi,\,R_i)\rightarrow\K_2(\Phi,\,R), $$ и докажем, что оно является биекцией. Если $x\in\K_2(\Phi,\,R)$, то найдётся $y\in\St(\Phi,\,R_i)$ для некоторого $i$ по предыдущему пункту, который переходит в $x$. Пусть $\phi$ обозначает естественное отображение $$ \phi\colon\St(\Phi,\,-)\rightarrow\mathrm G_{\mathrm{sc}}(\Phi,\,-). $$ Поскольку $\phi(y)$ в пределе переходит в $1$, можно считать, что $\phi(y)=1$, то есть $y\in\K_2(\Phi,\,R_i)$. Это доказывает сюръективность $f$. Пусть теперь $x\in\mathrm{colim}_I\K_2(\Phi,\,R_i)$ переходит в $1$ под действием $f$. Тогда образ $x$ в $x\in\mathrm{colim}_I\St(\Phi,\,R_i)$ также равен $1$, и используя конструкцию прямого предела в категории групп $$ \left(\bigsqcup_i\K_2(\Phi,\,R_i)/\sim\right)\rightarrow\left(\bigsqcup_i\St(\Phi,\,R_i)/\sim\right), $$ мы заключаем, что $x$ равен $1$.
+\end{comment}
 
 \begin{lemma}
 \label{k2hil}
@@ -649,7 +639,7 @@ Let $f\colon G_\bullet\twoheadrightarrow Q_\bullet$ be a degreewise surjective m
  For $\Phi$ and $R$ as in~\cref{theorem:LP-for-K2} one has $\pi_1(\Gsc(\Phi, R[\Delta^\bullet])) = \K_2(\Phi, R)$.
 \end{theorem}
 \begin{proof}
- First of all, notice that the homotopy invariance of $\K_1(\Phi, -)$ implies that the fundamental groups of $\Gsc(\Phi, R[\Delta^\bullet])$ and $\E(\Phi, R[\Delta^\bullet])$ coincide. %TODO: Reference?
+ First of all, notice that under our assumptions the homotopy invariance of $\K_1(\Phi, -)$ holds, see~\cite[Theorem~1.3]{Sta14}. This implies that the canonical inclusions \[N_i(\Gsc(\Phi, R[\Delta^\bullet]))\hookrightarrow N_i(\E(\Phi, R[\Delta^\bullet]))\] of terms of the respective Moore complexes is, in fact, an isomorphism for $i > 0$. This implies that the fundamental groups of $\Gsc(\Phi, R[\Delta^\bullet])$ and $\E(\Phi, R[\Delta^\bullet])$ coincide.
  
  Consider the simplicial map $\mathrm{st}_\bullet \colon \St(\Phi, R[\Delta^\bullet]) \to \E(\Phi, R[\Delta^\bullet])$ given by canonical projections $\mathrm{st}$ in each degree. 
  Now the application of~\eqref{eq:simplicial-les} yields an exact sequence of groups

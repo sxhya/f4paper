@@ -365,64 +365,43 @@ for all \(a\) if \(n\) is large enough.
 В этом параграфе мы аксоматизируем рассуждение Ворста, который применил результаты Линдела о гипотезе Басса--Квиллена для существенно гладких алгебр, чтобы доказать аналог результата Линдела $\K_1$. Ставрова добавила к рассуждению Ворста результаты Попеску, и получила $\K_1$-аналог гипотезы Басса--Квиллена для регулярных колец, содержащих поле (в действительности, не только {\it линейный} $\K_1$-аналог, но и для функторов $\K_1^G$ построенных по изотропной редуктивной группе $G$).
 
 
-Let $k$ be a unital commutative ring with a unit and let $\catname{Alg}_k$ denote the category of commutative $k$-algebras.
-Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor. Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by the ring homomorphism of evaluation at $t=0$. It is clear that $NK$ is a functor $\catname{Alg}_k \to \catname{Grp}$.
+Let $k$ be a unital commutative ring  with a unit (usually it is either $\ZZ$ or $\ZZ[\frac{1}{2}]$). Let $\catname{Alg}_k$ denote the category of commutative $k$-algebras. 
 
-\begin{df}\label{df:key-assumptions} Let us list the assumptions that we are going to impose on $K$.
- \begin{itemize}
-  \item[(LGP)] \label{LGP} We say that $K$ satisfies the {\it Quillen--Suslin local-global principle} if for every $R\in\catname{Alg}_k$ the natural map $NK(R) \to \prod_{M \in \Max(R)} NK(R_M)$ is injective.
-  \item[(LPP)] \label{LPP} Let $\iota \colon B \hookrightarrow A$ be an inclusion of $k$-algebras and let $h$ be an element of $B$, which is not invertible in $A$. Consider the following commutative diagram: 
-  \[\begin{tikzcd} B \ar{r}{\iota} \ar{d}{\lambda_h} & A \ar{d}{\lambda_h}\\ B_h \ar{r}{\iota} & A_h. \end{tikzcd}\]
+\begin{df}\label{df:key-assumptions} 
+Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor. Let us summarize the properties of $K$ which will be relevant for us later in the proof of Lindel--Popescu theorem.
+ \begin{enumerate}
+  \item \label{CFC} We say that $K$ is {\it finitary} if it commutes with directed filtered colimits.
+  \item \label{LGP} Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by the morphism of evaluation $t=0$. It is clear that $NK$ is also a functor $\catname{Alg}_k \to \catname{Grp}$. We say that $K$ satisfies the {\it Quillen--Suslin local-global principle} if for every $R\in\catname{Alg}_k$ the natural map $NK(R) \to \prod_{M \in \Max(R)} K(R_M)$ is injective.
+  \item \label{LPP} Let $\iota \colon B \hookrightarrow A$ be an inclusion of $k$-algebras and let $h$ be an element of $B$, which is not invertible in $A$. Consider the following commutative diagram: 
+  \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
   We say that $K$ satisfies the {\it Lindel patching property} if the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] is surjective.
-  \item[(HT)] \label{HT} We say that {\it Horrocks theorem} is satisfied for $K$ if for every domain $R \in \catname{Alg}_k$ the following digram is a pullback square in which all homomorphisms are injective: %(observe that only the injectivity of the right and the bottom arrows is a nontrivial condition):
-  \[\begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \ar[d] \\ K(R[t^{-1}]) \ar[r] & K(R[t, t^{-1}]). \end{tikzcd} \]
- \end{itemize}
-\end{df}
+  \item \label{PGP} We say that $K$ satisfies the {\it $\mathbb{P}^1$-glueing property} if for every domain $R \in \catname{Alg}_k$ the following digram is a pullback square in which all homomorphisms are injective: %(observe that only the injectivity of the right and the bottom arrows is a nontrivial condition):
+  \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \ar[d] \\ K(R[t^{-1}]) \ar[r] & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
+ \end{enumerate}
+ \end{df}
 
-\begin{theorem}
+\begin{theorem}[Lindel--Popescu]
 \label{lpb}
-Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ commutes with filtered colimits, satisfies the assumptions mentioned in Definition~\ref{df:key-assumptions}, moreover, satisfies the following assumptions:\\
-%{\rm\bf (PSP)} Perfect subfield property. Если $F\in\mathcal A\mathsf{lg}_k$ является полем, то $F$ содержит совершенное подполе $L\subseteq F$, которое также является $k$-алгеброй.\\
+Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the assumptions mentioned in Definition~\ref{df:key-assumptions} and, moreover, satisfies the following assumptions:\\
 {\rm\bf (HIF)} Homotopy invariance for fields. Если $F\in\mathcal A\mathsf{lg}_k$ является полем, и $F[t]$ обозначает кольцо многочленов над $F$, то каноническое вложение $F\subseteq F[t]$ индуцирует изоморфизм
-$$
-\K(F)\cong\K(F[t]).
-$$
+$$\K(F)\cong\K(F[t]).$$
 {\rm\bf (HIL)} Homotopy invariance for localizations. Если $R\in\mathcal A\mathsf{lg}_k$ является областью, и каноническое вложение $R\subseteq R[t]$ индуцирует изоморфизм $\K(R)\cong\K(R[t])$, то для любого мультипликативного множества $S\subseteq R$ вложение $R_S\subseteq R_S[t]$ тоже индуцирует изоморфизм
-$$
-\K(R_S)\cong\K(R_S[t]).
-$$
-
-Тогда для функтора $\K$ как следствие имеет место следующее свойство.\\
-{\bf(ALP)} Analogue of Lindel--Popescu Theorem. Для любой алгебры $R\in\mathcal A\mathsf{lg}_k$, являющейся регулярным {\rm(}нётеровым{\rm)} кольцом, и содержащей совершенное поле $F\in\mathcal A\mathsf{lg}_k$, естественное отображение $R\subseteq R[t]$ индуцирует изоморфизм
-$$
-\K(R)\cong\K(R[t]).
-$$
+$$\K(R_S)\cong\K(R_S[t]).$$
+Then for every regular $R\in\catname{Alg}_k$ containing a perfect field $F \in \catname{Alg}_k$, the natural map $R \to R[t]$ induces an isomorphism $\K(R)\cong \K(R[t]).$
 \end{theorem}
 
 Before we proceed with the proof of the theorem let us make a few remarks.
-First of all, notice that the fulfillment of the Horrocks theorem~\ref{HT} by the functor $K$ can be verified locally, cf. with the proof of~\cite[Theorem~1]{LS20}.
-\begin{lemma}[Global Horrocks' Theorem]
-\label{ght}
-Пусть $\K\colon\mathcal A\mathsf{lg}_k\rightarrow\mathcal G\mathsf{rp}$ удовлетворяет свойствам {\bf(LGP)} и {\bf(LHT)} из формулировки Теоремы~\ref{lpb}. Тогда $\K$ удовлетворяет также следующему свойству.\\
-{\rm\bf(GHT)} Если $R\in\mathcal A\mathsf{lg}_k$ является областью, то естественное отображение $\lambda_t\colon R[t]\rightarrow R[t,t^{-1}]$ индуцирует инъективное отображение 
-$$
-\K(\lambda_t)\colon\K(R[t])\rightarrowtail\K(R[t,t^{-1}]),
-$$ 
-и пересечение образов $\K(\lambda_t)$ и $\K(\lambda_{t^{-1}})$ совпадает с $\K(R)$, 
-$$
-\mathrm{Im}\,\K(\lambda_t)\cap\mathrm{Im}\,\K(\lambda_{t^{-1}}) = \K(R).
-$$
-\end{lemma}
+First of all, notice that the $\mathbb{P}^1$-glueing property can be verified locally (cf. e.\,g. with the proof of~\cite[Theorem~1]{LS20}).
+\begin{lemma} \label{ght}
+Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor satisfying the Quillen--Suslin local-global principle. Assume, moreover, that for an arbitrary local domain $R$ the square~\eqref{eq:P1-square} is pullback with all arrows injective. Then $K$ satisfies the $\mathbb{P}^1$-glueing property. \end{lemma}
 \begin{proof}
 Докажем первое утверждение. Действительно, пусть $g\in\K(R[t])$, и $\K(\lambda_t)(g)=1\in\K(R[t,t^{-1}])$. Поскольку $R\hookrightarrow R[t]$ является ретракцией, мы считаем $\K(R)$ вложенным в $\K(R[t])$, и рассмотрим $h=g\cdot\K(\mathrm{ev}_{t=0})(g)^{-1}$. Тогда $\K(\mathrm{ev}_{t=0})(h)=1$, кроме того, $K(\lambda_t)\big(\K(\lambda_{\mathfrak m})(h)\big)=1$ для любого $\mathfrak m\in\mathrm{Max}\,R$, поэтому из {\bf(LHT)} следует, что $\K(\lambda_{\mathfrak m})(h)=1$, а тогда из {\bf(LGP)} следует, что $h=1$, то есть, $g=\K(\mathrm{ev}_{t=0})(g)$. Однако по условию $\K(\lambda_t)(g)=1$, а $\K(R)$ вкладывается в $\K(R[t,t^{-1}])$, поэтому $g=1$.
 
 Пусть теперь $\K(\lambda_t)(g)=\K(\lambda_{t^{-1}})(h)\in\K(R[t,t^{-1}])$. Обозначим $f=\K(\mathrm{ev}_{t=0})(g)$, тогда $\K(\lambda_{\mathfrak m})(gf^{-1})\in\K(R)$ по {\bf(LHT)} для любого $\mathfrak m\in\mathrm{Max}\,R$, а поскольку $\K(\mathrm{ev}_{t=0})(gf^{-1})=1$, то $\K(\lambda_{\mathfrak m})(gf^{-1})=1$. Тогда по {\bf(LGP)} мы заключаем, что $g=f\in\K(R)$.
 \end{proof}
 
-
-Доказательство теоремы разбито на ряд лемм, чтобы было проще следить, как используются разные свойства. Схематически взаимосвязь разных свойств, введённых в этом параграфе, можно изобразить при помощи следующей диаграммы.
-
 \begin{comment}
+Доказательство теоремы разбито на ряд лемм, чтобы было проще следить, как используются разные свойства. Схематически взаимосвязь разных свойств, введённых в этом параграфе, можно изобразить при помощи следующей диаграммы.
 \begin{center}
 \begin{tikzpicture}
 \node (alp) at ( 2,  0) {\textbf{(ALP)}};

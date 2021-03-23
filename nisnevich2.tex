@@ -362,29 +362,29 @@ for all \(a\) if \(n\) is large enough.
 
 
 \section{Formalism of Lindel--Popescu theorem}
-В этом параграфе мы аксоматизируем рассуждение Ворста, который применил результаты Линдела о гипотезе Басса--Квиллена для существенно гладких алгебр, чтобы доказать аналог результата Линдела $\K_1$. Ставрова добавила к рассуждению Ворста результаты Попеску, и получила $\K_1$-аналог гипотезы Басса--Квиллена для регулярных колец, содержащих поле (в действительности, не только {\it линейный} $\K_1$-аналог, но и для функторов $\K_1^G$ построенных по изотропной редуктивной группе $G$).
+The aim of this section is to formulate and prove a certain formal result, which we prefer to call a ``Lindel--Popescu theorem''. More concretely, our main result is~\cref{lpb} below. Essentially, it says that for a functor $K$ to prove the ``geometric case`` of the $K$-analogue of Bass--Quillen conjecture it suffices to verify that $K$ satisfies some short list of axioms. Later, in~\cref{sec:main} this result is applied to the functor $K_2$. Some of the machinery developed in this section will also be useful in the study of the $K_2$-analogue of Gersten's conjecture, see~\cref{sec:K2-GC}.
 
+Let us briefly recall the relevant historical context. Recall that Lindel's original result ? has settled the geometric case of the Bass--Quillen conjecture. Later T.~Vorst has reused Lindel's technique in his proof of the triviality of the unstable functor $K_{1,r}(R)$ for an arbitrary regular ring $R$ of finite type over a field and $r\geq 3$. Finally, in her recent work ? A.~Stavrova has combined Vorst's theorem with a theorem of D.~Popescu ? and has obtained the most general result in this direction: Theorem ?, which asserts the triviality of the functor $K_1^G(A)$ for an arbitrary regular ring containing a field and an arbitrary isotropic reductive group $G$ of rank $> ?$.
 
 Let $k$ be a unital commutative ring  with a unit (usually it is either $\ZZ$ or $\ZZ[\frac{1}{2}]$). Let $\catname{Alg}_k$ denote the category of commutative $k$-algebras.
 
-\begin{df}\label{df:key-assumptions} 
+\begin{df}\label{df:NK} 
+Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor. Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by the evaluation homomorphism $\eval_{t=0}$. It is clear that $NK$ is a functor $\catname{Alg}_k \to \catname{Grp}$.
+\end{df}
+
 Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor.
-
-Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by the evaluation homomorphism $\eval_{t=0}$ (which, in turn, is given by $f(t)\mapsto f(0)$).
-Thus, by definition, $NK(R) \leq K(R[t])$. It is also clear that $NK$ is a functor $\catname{Alg}_k \to \catname{Grp}$.
-
-Let us summarize the properties of $K$ which will be relevant for us later in the proof of Lindel--Popescu theorem.
- \begin{enumerate}
-  \item \label{CFC} We say that $K$ is {\it finitary} if it commutes with directed filtered colimits.
-  \item \label{LGP} We say that $K$ satisfies the {\it Quillen--Suslin local-global principle} if for every $R\in\catname{Alg}_k$ the natural map $NK(R) \to \prod_{M \in \Max(R)} K(R_M[t])$ is injective.
-  \item \label{LPP} Let $\iota \colon B \hookrightarrow A$ be an inclusion of $k$-algebras and let $h$ be an element of $B$, which is not invertible in $A$. Consider the following commutative diagram: 
+Our goal is to list the properties of $K$ relevant for the Lindel--Popescu theorem.
+ \begin{itemize}
+  \item[(P1)] \label{CFC} $K$ is {\it finitary}, i.\,e. it commutes with directed filtered colimits.
+  \item[(P2)] \label{LGP} $K$ satisfies the {\it Quillen--Suslin local-global principle}, i.\,e. for every $R\in\catname{Alg}_k$ the natural map $NK(R) \to \prod_{M \in \Max(R)} K(R_M[t])$ is injective.
+  \item[(P3)] \label{LPP} Let $\iota \colon B \hookrightarrow A$ be an inclusion of $k$-algebras and let $h$ be an element of $B$, which is not invertible in $A$. Consider the following commutative diagram: 
   \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
   We say that $K$ satisfies the {\it Lindel patching property} if the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] is surjective.
-  \item \label{PGP} We say that $K$ satisfies the {\it $\mathbb{P}^1$-glueing property} if for every domain $R \in \catname{Alg}_k$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
- \end{enumerate}
- \end{df}
+  \item[(P4)] \label{PGP} We say that $K$ satisfies the {\it $\mathbb{P}^1$-glueing property} if for every domain $R \in \catname{Alg}_k$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
+ \end{itemize}
 
-\begin{theorem}[Lindel--Popescu]
+The following theorem is an analogue of Lindel--Popescu theorem ?. 
+\begin{theorem}
 \label{lpb}
 Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the assumptions mentioned in Definition~\ref{df:key-assumptions} and, moreover, satisfies the following assumptions:\\
 {\rm\bf (HIF)} Homotopy invariance for fields. Если $F\in\mathcal A\mathsf{lg}_k$ является полем, и $F[t]$ обозначает кольцо многочленов над $F$, то каноническое вложение $F\subseteq F[t]$ индуцирует изоморфизм
@@ -523,7 +523,7 @@ $$\begin{tikzcd}
 Теперь из {\bf(CDC)} и Теоремы~\ref{popescu} немедленно следует, что $\K(R[t])\cong\K(R)$ для любой локальной регулярной области, содержащей совершенное поле $F\in\mathcal A\mathsf{lg}_k$. Благодаря {\bf(LGP)}, из этого следует {\bf(ALP)}.
 \end{proof}
 
-\section{Main results}
+\section{Main results}\label{sec:main}
 \subsection{Analogue of Serre's problem for \texorpdfstring{$\K_2$}{K2}}
 
 В этом параграфе $\Phi$ обозначает произвольную систему корней.
@@ -582,7 +582,7 @@ $$
 \mathrm H_2\big(\mathrm{Spin}_{2l}(F[t_1,\ldots,t_n]),\,\mathbb Z\big)=\cfrac{F^\times\otimes F^\times}{a\otimes(1-a)}.
 $$
 \end{corollary}
-\subsection{An analogue of Gersten's conjecture for $\K_2$.}
+\subsection{An analogue of Gersten's conjecture for $\K_2$.} \label{sec:K2-GC}
 
 \subsection{\texorpdfstring{$\K_2(\Phi, R)$}{K2(R)} as motivic fundamental group}
 For a ring $R$ we denote by $R[\Delta^\bullet]$ the standard simplicial ring, see e.\,g.~\cite{Jar83}. The application of a functor $G\colon\catname{Rings}\rightarrow\catname{Grps}$ to $R[\Delta^\bullet]$ yields a simplicial group $G(R[\Delta^\bullet])$, which in the context of $\mathbb{A}^1$-homotopy theory is usually called the {\it simplicial resolution} of $G$ and is denoted by $\mathrm{Sing}^{\mathbb{A}^1}_\bullet(G)(R)$.

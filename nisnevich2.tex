@@ -362,36 +362,36 @@ for all \(a\) if \(n\) is large enough.
 
 
 \section{Formalism of Lindel--Popescu theorem}
-The aim of this section is to formulate and prove a certain formal result, which we prefer to call a ``Lindel--Popescu theorem''. More concretely, our main result is~\cref{lpb} below. Essentially, it says that for a functor $K$ to prove the ``geometric case`` of the $K$-analogue of Bass--Quillen conjecture it suffices to verify that $K$ satisfies some short list of axioms. Later, in~\cref{sec:main} this result is applied to the functor $K_2$. Some of the machinery developed in this section will also be useful in the study of the $K_2$-analogue of Gersten's conjecture, see~\cref{sec:K2-GC}.
+The aim of this section is to formulate and prove Lindel--Popescu Theorem, a certain formal statement, which gives a sufficient condition for a general group-valued functor to be homotopy invariant. Later, in~\cref{sec:main} this result is applied to the functor $K_2$. Some of the machinery developed in this section also will be useful in the study of the $K_2$-analogue of Gersten's conjecture, see~\cref{sec:K2-GC}.
 
-Let us briefly recall the relevant historical context. Recall that Lindel's original result ? has settled the geometric case of the Bass--Quillen conjecture. Later T.~Vorst has reused Lindel's technique in his proof of the triviality of the unstable functor $K_{1,r}(R)$ for an arbitrary regular ring $R$ of finite type over a field and $r\geq 3$. Finally, in her recent work ? A.~Stavrova has combined Vorst's theorem with a theorem of D.~Popescu ? and has obtained the most general result in this direction: Theorem ?, which asserts the triviality of the functor $K_1^G(A)$ for an arbitrary regular ring containing a field and an arbitrary isotropic reductive group $G$ of rank $> ?$.
+Let us briefly recall the historical context, which might help to explain our choice of the name for~\cref{lpb}. Recall that H.~Lindel's paper~\cite{Li81} has settled the geometric case of the Bass--Quillen conjecture for all regular $k$-algebras $R$ essentially of finite type over $k$. Later T.~Vorst has used Lindel's result in the proof of the homotopy invariance for the unstable $\K_1$-functor, see~\cite{Vo81}. Recall that Vorst's result asserts that $\K_{1,r}(R[t]) \cong \K_{1,r}(R)$ for $r\geq 3$ and a regular ring $R$ essentially finite type over a field. Finally, in her recent work~\cite{Sta14} A.~Stavrova has combined Vorst's theorem with a theorem of D.~Popescu~\cite{Po90} and obtained a more general homotopy invariance $\K_1^G(A[t]) \cong \K_1^G(A)$ for an arbitrary regular algebra $A$ over a perfect field $k$ and a sufficiently isotropic reductive group $G$ defined over $k$, see~\cite[Theorem~1.3]{Sta14}.
 
-Let $k$ be a unital commutative ring  with a unit (usually it is either $\ZZ$ or $\ZZ[\frac{1}{2}]$). Let $\catname{Alg}_k$ denote the category of commutative $k$-algebras.
+Throughout this section we denote by $k$ a unital commutative ring. The principal cases of interest for us are when $k$ is either $\ZZ$ or $\ZZ[\frac{1}{2}]$. We denote by $\catname{Alg}_k$ the category of commutative $k$-algebras.
 
 \begin{df}\label{df:NK} 
 Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor. Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by the evaluation homomorphism $\eval_{t=0}$. It is clear that $NK$ is a functor $\catname{Alg}_k \to \catname{Grp}$.
 \end{df}
 
-Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor.
-Our goal is to list the properties of $K$ relevant for the Lindel--Popescu theorem.
+\begin{df}\label{df:key-assumptions}
+Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor. Let us list the axioms on $K$ which are going to use throughout this section.
  \begin{itemize}
-  \item[(P1)] \label{CFC} $K$ is {\it finitary}, i.\,e. it commutes with directed filtered colimits.
-  \item[(P2)] \label{LGP} $K$ satisfies the {\it Quillen--Suslin local-global principle}, i.\,e. for every $R\in\catname{Alg}_k$ the natural map $NK(R) \to \prod_{M \in \Max(R)} K(R_M[t])$ is injective.
+  \item[(P1)] \label{CFC} We say that $K$ is {\it finitary}, if it commutes with directed filtered colimits.
+  \item[(P2)] \label{LGP} By definition, $K$ satisfies the {\it Quillen--Suslin local-global principle}, if for every $R\in\catname{Alg}_k$ the natural map $NK(R) \to \prod_{M \in \Max(R)} K(R_M[t])$ is injective.
   \item[(P3)] \label{LPP} Let $\iota \colon B \hookrightarrow A$ be an inclusion of $k$-algebras and let $h$ be an element of $B$, which is not invertible in $A$. Consider the following commutative diagram: 
   \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
   We say that $K$ satisfies the {\it Lindel patching property} if the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] is surjective.
-  \item[(P4)] \label{PGP} We say that $K$ satisfies the {\it $\mathbb{P}^1$-glueing property} if for every domain $R \in \catname{Alg}_k$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
+  \item[(P4)] \label{PGP} We say that $K$ has the {\it $\mathbb{P}^1$-glueing property} if for every domain $R \in \catname{Alg}_k$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
+  \item[(P5)] \label{HIF} We say that $K$ is {\it homotopy invariant for fields} if for every field $F \in \catname{Alg}_k$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
  \end{itemize}
+\end{df} 
 
-The following theorem is an analogue of Lindel--Popescu theorem ?. 
-\begin{theorem}
+The following result is the main result of this section.
+\begin{theorem}[Lindel--Popescu]
 \label{lpb}
-Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the assumptions mentioned in Definition~\ref{df:key-assumptions} and, moreover, satisfies the following assumptions:\\
-{\rm\bf (HIF)} Homotopy invariance for fields. Если $F\in\mathcal A\mathsf{lg}_k$ является полем, и $F[t]$ обозначает кольцо многочленов над $F$, то каноническое вложение $F\subseteq F[t]$ индуцирует изоморфизм
-$$\K(F)\cong\K(F[t]).$$
+Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the assumptions listed in Definition~\ref{df:key-assumptions} and, moreover, satisfies the following additional assumption:\\
 {\rm\bf (HIL)} Homotopy invariance for localizations. Если $R\in\mathcal A\mathsf{lg}_k$ является областью, и каноническое вложение $R\subseteq R[t]$ индуцирует изоморфизм $\K(R)\cong\K(R[t])$, то для любого мультипликативного множества $S\subseteq R$ вложение $R_S\subseteq R_S[t]$ тоже индуцирует изоморфизм
 $$\K(R_S)\cong\K(R_S[t]).$$
-Then for every regular $R\in\catname{Alg}_k$ containing a perfect field $F \in \catname{Alg}_k$, the natural map $R \to R[t]$ induces an isomorphism $\K(R)\cong \K(R[t]).$
+Then for every regular $R\in\catname{Alg}_k$ containing a field $F \in \catname{Alg}_k$, the natural embedding induces an isomorphism $\K(R)\cong \K(R[t]).$
 \end{theorem}
 
 Before we proceed with the proof of the theorem let us make a few remarks.
@@ -399,10 +399,10 @@ First of all, notice that the $\mathbb{P}^1$-glueing property can be verified lo
 \begin{lemma} \label{ght}
 Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor satisfying the Quillen--Suslin local-global principle. Assume, additionally, that for an arbitrary local domain $R$ the square~\eqref{eq:P1-square} is pullback with all arrows injective. Then $K$ satisfies the $\mathbb{P}^1$-glueing property. \end{lemma}
 \begin{proof}
-Let $R$ be an arbitrary domain. Denote by $\lambda_t$ the natural embedding $R[t] \to R[t, t^{-1}]$. Let $g$ be an element of $\Ker(K(\lambda_t))$. Since $K(R)$ maps injectively into $K(R[t, t^{-1}])$, without loss of generality we may assume that $g \in NK(R)$.
+Let $R \in \catname{Alg}_k$ be an arbitrary domain. Denote by $\lambda_t$ the natural embedding $R[t] \to R[t, t^{-1}]$. Let $g$ be an element of $\Ker(K(\lambda_t))$. Since $K(R)$ maps injectively into $K(R[t, t^{-1}])$, without loss of generality we may assume that $g \in NK(R)$.
 It is clear that the image of $g$ in $K(R_M[t, t^{-1}])$ is trivial for every maximal ideal $M \trianglelefteq R$. By our assumption on $K$, the image of $g$ in $K(R_M[t])$ is also trivial for all $M$. Thus, by the local-global principle, $g \in K(R[t])$ is trivial as well and the map $K(\lambda_t)$ is injective. By symmetry, the natural homomorphism $K(\lambda_{t^{-1}})\colon K(R[t^{-1}]) \to K(R[t, t^{-1}])$ is also injective. 
 
-Let us show that~\eqref{eq:P1-square} is pullback. Suppose that the images of $g \in K(R[t])$ and $h \in K(R[t^{-1}])$ coincide in $K(R[t, t^{-1}])$. Dividing both $g$ and $h$ by $g(0) \equiv K(\eval_{t=0})(g) \in K(R)$, we may assume without loss of generality that $g \in NK(R)$. For a maximal ideal $M\trianglelefteq R$ set $g_M := K(\lambda_M)(g) \in K(R_M[t]) \cap NK(R_M)$ and $h_M := K(\lambda_M)(h) \in K(R_M[t^{-1}]))$. Clearly, their images in $K(R_M[t, t^{-1}])$ coincide. By our assumptions, the square~\eqref{eq:P1-square} is pullback for $R_M$, therefore $g_M = 1$ for all $M$, and by the local-global principle $g = 1$. \end{proof}
+Let us show that~\eqref{eq:P1-square} is pullback. Suppose that the images of $g \in K(R[t])$ and $h \in K(R[t^{-1}])$ coincide in $K(R[t, t^{-1}])$. Then so do the images of $g' = g \cdot g(0)^{-1}$ and $h' = h \cdot g(0)^{-1}$. For a maximal ideal $M\trianglelefteq R$ set $g'_M := K(\lambda_M)(g') \in K(R_M[t])$ and $h'_M := K(\lambda_M)(h') \in K(R_M[t^{-1}]))$. Clearly, their images in $K(R_M[t, t^{-1}])$ coincide. By our assumptions, the square~\eqref{eq:P1-square} is pullback for $R_M$, therefore $g'_M = 1$ for all $M$. Since $g' \in NK(R)$, by the local-global principle we obtain that $g' = 1$ and that $g$ is an image of an element of $K(R)$. By symmetry, the same assertion holds for $h$. Since $K(R)\to K(R[t, t^{-1}])$ is injective, we conclude that $g$ and $h$ are the images of the same element of $K(R)$, which completes the proof.  \end{proof}
 
 \begin{comment}
 Доказательство теоремы разбито на ряд лемм, чтобы было проще следить, как используются разные свойства. Схематически взаимосвязь разных свойств, введённых в этом параграфе, можно изобразить при помощи следующей диаграммы.

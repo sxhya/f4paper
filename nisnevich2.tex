@@ -10,6 +10,7 @@
 \usepackage{scalerel}
 \usepackage[notref, notcite]{showkeys}
 \usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
+\usepackage{enumitem}
 
 
 \usepackage[backend=biber, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
@@ -374,15 +375,15 @@ Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor. Denote by $NK(R)$
 
 \begin{df}\label{df:key-assumptions}
 Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor. Let us list the axioms on $K$ which are going to use throughout this section.
- \begin{itemize}
-  \item[(P1)] \label{CFC} We say that $K$ is {\it finitary}, if it commutes with directed filtered colimits.
-  \item[(P2)] \label{LGP} By definition, $K$ satisfies the {\it Quillen--Suslin local-global principle}, if for every $R\in\catname{Alg}_k$ the natural map $NK(R) \to \prod_{M \in \Max(R)} K(R_M[t])$ is injective.
-  \item[(P3)] \label{LPP} Let $\iota \colon B \hookrightarrow A$ be an inclusion of $k$-algebras and let $h$ be an element of $B$, which is not invertible in $A$. Consider the following commutative diagram: 
+ \begin{enumerate}[label=(P\normalfont\arabic*)]
+  \item \label{CFC} We say that $K$ is {\it finitary}, if it commutes with directed filtered colimits.
+  \item \label{LGP} By definition, $K$ satisfies the {\it Quillen--Suslin local-global principle}, if for every $R\in\catname{Alg}_k$ the natural map $NK(R) \to \prod_{M \in \Max(R)} K(R_M[t])$ is injective.
+  \item \label{LPP} Let $\iota \colon B \hookrightarrow A$ be an inclusion of $k$-algebras and let $h$ be an element of $B$, which is not invertible in $A$ such that $A / hA \cong B / hB$. Consider the following commutative diagram: 
   \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
   We say that $K$ satisfies the {\it Lindel patching property} if the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] is surjective.
-  \item[(P4)] \label{PGP} We say that $K$ has the {\it $\mathbb{P}^1$-glueing property} if for every domain $R \in \catname{Alg}_k$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
-  \item[(P5)] \label{HIF} We say that $K$ is {\it homotopy invariant for fields} if for every field $F \in \catname{Alg}_k$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
- \end{itemize}
+  \item \label{PGP} We say that $K$ has the {\it $\mathbb{P}^1$-glueing property} if for every domain $R \in \catname{Alg}_k$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
+  \item \label{HIF} We say that $K$ is {\it homotopy invariant for fields} if for every field $F \in \catname{Alg}_k$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
+ \end{enumerate}
 \end{df} 
 
 The following result is the main result of this section.
@@ -434,22 +435,19 @@ Let us show that~\eqref{eq:P1-square} is pullback. Suppose that the images of $g
 \end{center}
 \end{comment}
 
-
-Также отметим, что частным случаем~{\bf(LGL)} является следующее свойство.
-\begin{lemma}[Zariski Glueing Lemma]
-\label{zgl}
-Пусть $\K\colon\mathcal A\mathsf{lg}_k\rightarrow\mathcal G\mathsf{rp}$ удовлетворяет свойству {\bf(LGL)} из формулировки Теоремы~\ref{lpb}. Тогда он также удовлетворяет следующему свойству.\\
-{\rm\bf(ZGL)}
-Пусть $R\in\mathcal A\mathsf{lg}_k$~--- область, $a$, $b\in R$ порождают единичный идеал, $aR+bR=R$. Рассмотрим диаграмму
+Let us also note the following useful corollary of the Lindel patching property~\ref{LPP}.
+\begin{lemma}[Zariski patching]
+\label{zgl} Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the Lindel patching property. Then for every domain $R\in\catname{Alg}_k$ and a pair of coprime elements $a, b\in R$ (i.\,e. elements such that $a$ and $b$ span $R$ as an ideal). Consider the diagram
 $$\begin{tikzcd}
 R \ar{r}{\lambda_a} \ar{d}{\lambda_b} & R_a \ar{d}{\lambda_b}\\
 R_b \ar{r}{\lambda_a} & R_{ab}.
 \end{tikzcd}$$
-Предположим, что для $u\in\K(R_a)$ и $v\in\K(R_b)$ верно, что $$\K(\lambda_b)(u)=\K(\lambda_a)(v)\in\K(R_{ab}).$$
-Тогда найдётся $w\in\K(R)$ такой, что $u=\K(\lambda_a)(w)$, и $v=\K(\lambda_b)(w)$.
+Then the natural map $\Ker(\lambda_b \colon K(R) \to K(R_b)) \to \Ker(\lambda_b \colon K(R_a) \to K(R_{ab}))$ is surjective.
 \end{lemma}
 \begin{proof}
-Положим $B=R$, $A=R_a$ и $h=b$. Заметим, что $Ah+B=A$, поскольку для любого $r/a^s\in A=R_a$ можно выбрать разложение единицы $xa^s+yb^s=1$, и тогда $r/a^s$ раскладывается в сумму $rx\in R=B$, и $ryb^s/a^s\in bR_a=hA$ (при $s=0$ можно взять $y=0$). Кроме того, заметим, что $Ah\cap B=Bh$. Действительно, если $rb/a^s=c\in B=R$, то есть, $rb=a^sc$, то, пользуясь разложением единицы $xa^s+yb^s=1$, получаем, что $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b\in bR=hB$ (при $s=0$ можно считать, что $y=0$). Остаётся применить {\bf(LGL)}.
+Set $B=R$, $A=R_a$ и $h=b$. First of all, notice that $Ah+B=A$. Indeed, for every $r/a^s\in A=R_a$, $s \geq 1$ the  elements $a^s$ and $b^s$ are still coprime, therefore one can choose $x, y \in R$ so that $xa^s+yb^s=1$ and, consequently, $r/a^s$ decomposes into the sum of $rx\in R=B$ and $ryb^s/a^s\in bR_a=hA$. On the other hand, in the case $s=0$ one may take $y=0$.
+
+Let us check that $Ah\cap B=Bh$. Indeed, suppose that $rb/a^s=c\in B=R$. Then $rb=a^sc$ and from the identity $xa^s+yb^s=1$ we conclude that $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b\in bR=hB$. Again, in the case $s=0$ one may take $y=0$. It remains to invoke~\ref{LPP}. 
 \end{proof}
 
 Следующая лемма в частных случаях была доказана в~[??].

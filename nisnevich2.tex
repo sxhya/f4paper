@@ -421,22 +421,16 @@ $$\begin{tikzcd}
 	Now let us verify the injectivity of $j$, i.\,e. the inclusion $Ah\cap B \subseteq Bh$. Suppose that $rb/a^s=c\in B=R$. We may assume $s\geq 1$ otherwise there is nothing to prove. From $rb=a^sc$ and $xa^s+yb^s=1$ we obtain the required inclusion $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b \in Rb = Bh$. 
 \end{proof}
 
-Следующая лемма в частных случаях была доказана в~[??].
-\begin{lemma}
-\label{lmp}
-Пусть функтор $\K\colon\mathcal A\mathsf{lg}_k\rightarrow\mathcal G\mathsf{rp}$ удовлетворяет свойствам {\bf(ZGL)} из формулировки Леммы~\ref{zgl} и {\bf(GHT)} из формулировки Леммы~\ref{ght}. Тогда для любой $R\in\mathcal A\mathsf{lg}_k$ области, и любого унитального многочлена $f\in R[t]$ естественное отображение $\lambda_f\colon R\rightarrow R_f$ индуцирует инъективное отображение
-$$
-\K(R[t])\rightarrowtail\K(R[t]_f).
-$$
-\end{lemma}
+The following injectivity result is inspired by the proof of~\cite[Corollary~5.2]{Tu83}.
+\begin{lemma} \label{lmp}
+Suppose that a functor $\K\colon\catname{Alg}_k\rightarrow\catname{Grp}$ satisfies the properties~\ref{LPP},\ref{PGP}. Then for any domain $R\in\catname{Alg}_k$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $\K(R[t])\hookrightarrow\K(R[t]_f).$ \end{lemma}
 \begin{proof}
-Если $f=\sum_{i=0}^n a_it^i$, $a_n=1$, рассмотрим многочлен $$g=1+a_{n-1}t^{-1}+\ldots+a_0t^{-n}\in R[t^{-1}],$$ и рассмотрим коммутативную диаграмму
+	Fix a presentation $f=\sum_{i=0}^n a_it^i$, in which $a_n=1$. Set $$g=1+a_{n-1}t^{-1}+\ldots+a_0t^{-n}\in R[t^{-1}].$$ It is clear that $R[t, t^{-1}]_f \cong R[t, t^{-1}]_g$. Consider the following commutative diagram:
 $$\begin{tikzcd}
-R[t] \ar{r}{\lambda_t} \ar{d}{\lambda_f} & R[t, t^{-1}] \ar{d} & R[t^{-1}] \ar{l}[']{\lambda_{t^{-1}}} \ar{d}{\lambda_g}\\
-R[t]_f \ar{r} & R[t, t^{-1}]_f = R[t, t^{-1}]_g & R[t^{-1}]_g. \ar{l}
+	R[t] \ar{r}{\lambda_t} \ar{d}{\lambda_f} & R[t, t^{-1}] \ar{d}{\overline{\lambda}} & R[t^{-1}] \ar{l}[']{\lambda_{t^{-1}}} \ar{d}{\lambda_g}\\
+	R[t]_f \ar{r} & R[t, t^{-1}]_f & R[t^{-1}]_g. \ar{l}
 \end{tikzcd}$$
-Пусть $x\in\K(R[t])$, и $\K(\lambda_f)(x)=1$. Тогда образы элементов $\K(\lambda_t)(x)\in\K(R[t,t^{-1}])$ и $1\in\K(R[t^{-1}]_g)$ в $\K(R[t,t^{-1}]_g)$ совпадают, и по свойству {\bf(ZGL)}, применённому к правому квадрату, существует $y\in\K(R[t^{-1}])$ такой, что $\K(\lambda_{t^{-1}})(y)=\K(\lambda_t)(x)$, и $\K(\lambda_{g})(y)=1$. По свойству {\bf(GHT)} мы заключаем, что $x=y\in\K(R)$, но так как $\K(\lambda_{g})(y)=1$, то $y=1$.
-\end{proof}
+Let $x$ be an element of $\Ker(K(\lambda_f))$. Then $K(\lambda_t)(x)$ lies in $\Ker(K(\overline{\lambda}))$ so by~\cref{zgl} applied to the right square we find $y \in \Ker(K(\lambda_{g}))$ such that $K(\lambda_t)(x) = K(\lambda_{t^{-1}})(y)$. Now by~\ref{PGP} $x$ and $y$ are images of some $z \in K(R)$. Since $K(R) \to K(R[t, t^{-1}])$ is injective, we conclude that $z = 1$. Thus, $x=1$, which completes the proof. \end{proof}
 
 Пользуясь последней леммой, мы покажем, как вывести из свойства {\bf(HIF)} аналог проблемы Серра.
 \begin{lemma}[Analogue of Serre's problem]

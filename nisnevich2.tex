@@ -378,7 +378,7 @@ Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor. Let us list the a
  \begin{enumerate}[label=(P\normalfont\arabic*)]
   \item \label{CFC} We say that $K$ is {\it finitary}, if it commutes with directed filtered colimits.
   \item \label{LGP} By definition, $K$ satisfies the {\it Quillen--Suslin local-global principle}, if for every $R\in\catname{Alg}_k$ the natural map $NK(R) \to \prod_{M \in \Max(R)} K(R_M[t])$ is injective.
-  \item \label{LPP} Let $\iota \colon B \hookrightarrow A$ be an inclusion of $k$-algebras and let $h$ be an element of $B$, which is not invertible in $A$ such that $A / hA \cong B / hB$. Consider the following commutative diagram: 
+  \item \label{LPP} Let $\iota \colon B \hookrightarrow A$ be an inclusion of $k$-algebras. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / hA$. Consider the following commutative diagram: 
   \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
   We say that $K$ satisfies the {\it Lindel patching property} if the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] is surjective.
   \item \label{PGP} We say that $K$ has the {\it $\mathbb{P}^1$-glueing property} if for every domain $R \in \catname{Alg}_k$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
@@ -405,49 +405,20 @@ It is clear that the image of $g$ in $K(R_M[t, t^{-1}])$ is trivial for every ma
 
 Let us show that~\eqref{eq:P1-square} is pullback. Suppose that the images of $g \in K(R[t])$ and $h \in K(R[t^{-1}])$ coincide in $K(R[t, t^{-1}])$. Then so do the images of $g' = g \cdot g(0)^{-1}$ and $h' = h \cdot g(0)^{-1}$. For a maximal ideal $M\trianglelefteq R$ set $g'_M := K(\lambda_M)(g') \in K(R_M[t])$ and $h'_M := K(\lambda_M)(h') \in K(R_M[t^{-1}]))$. Clearly, their images in $K(R_M[t, t^{-1}])$ coincide. By our assumptions, the square~\eqref{eq:P1-square} is pullback for $R_M$, therefore $g'_M = 1$ for all $M$. Since $g' \in NK(R)$, by the local-global principle we obtain that $g' = 1$ and that $g$ is an image of an element of $K(R)$. By symmetry, the same assertion holds for $h$. Since $K(R)\to K(R[t, t^{-1}])$ is injective, we conclude that $g$ and $h$ are the images of the same element of $K(R)$, which completes the proof.  \end{proof}
 
-\begin{comment}
-Доказательство теоремы разбито на ряд лемм, чтобы было проще следить, как используются разные свойства. Схематически взаимосвязь разных свойств, введённых в этом параграфе, можно изобразить при помощи следующей диаграммы.
-\begin{center}
-\begin{tikzpicture}
-\node (alp) at ( 2,  0) {\textbf{(ALP)}};
-\node (asp) at ( 0,  0) {\textbf{(ASP)}}
-  edge[->] (alp);
-\node (hil) at ( 2, -1) {\textbf{(HIL)}}
-  edge[->] (alp);
-\node (cdc) at ( 0, -1) {\textbf{(CDC)}}
-  edge[->] (asp)
-  edge[->] (alp);
-\node (zgl) at (-2, -1) {\textbf{(ZGL)}}
-  edge[->] (asp);
-\node (lgl) at (-2, -2) {\textbf{(LGL)}}
-  edge[->] (zgl)
-  edge[->, bend right = 20] (alp);
-\node (hif) at (-2,  0) {\textbf{(HIF)}}
-  edge[->] (asp);
-\node (ght) at ( 0,  1) {\textbf{(GHT)}}
-  edge[->] (asp);
-\node (lgp) at ( 0,  2) {\textbf{(LGP)}}
-  edge[->] (ght)
-  edge[->, bend left = 20] (alp);
-\node (lht) at (-2,  1) {\textbf{(LHT)}}
-  edge[->] (ght);
-\end{tikzpicture}
-\end{center}
-\end{comment}
 
-Let us also note the following useful corollary of the Lindel patching property~\ref{LPP}.
+Let us also note the following useful particular special case of the Lindel patching property.
 \begin{lemma}[Zariski patching]
-\label{zgl} Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the Lindel patching property. Then for every domain $R\in\catname{Alg}_k$ and a pair of coprime elements $a, b\in R$ (i.\,e. elements such that $a$ and $b$ span $R$ as an ideal). Consider the diagram
+	\label{zgl} Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the Lindel patching property~\ref{LPP}. Let $R\in\catname{Alg}_k$ be a domain and $a, b$ be a pair of coprime elements of $R$. Consider the diagram
 $$\begin{tikzcd}
-R \ar{r}{\lambda_a} \ar{d}{\lambda_b} & R_a \ar{d}{\lambda_b}\\
-R_b \ar{r}{\lambda_a} & R_{ab}.
+	R \ar{r}{\lambda_a} \ar{d}[swap]{\lambda_b} & R_a \ar{d}{\overline{\lambda_b}}\\
+	R_b \ar{r}{\overline{\lambda_a}} & R_{ab}.
 \end{tikzcd}$$
-Then the natural map $\Ker(\lambda_b \colon K(R) \to K(R_b)) \to \Ker(\lambda_b \colon K(R_a) \to K(R_{ab}))$ is surjective.
+	Then the natural map $\Ker(\lambda_b) \to \Ker(\overline{\lambda_b})$ induced by $\lambda_a$ is surjective.
 \end{lemma}
 \begin{proof}
-Set $B=R$, $A=R_a$ и $h=b$. First of all, notice that $Ah+B=A$. Indeed, for every $r/a^s\in A=R_a$, $s \geq 1$ the  elements $a^s$ and $b^s$ are still coprime, therefore one can choose $x, y \in R$ so that $xa^s+yb^s=1$ and, consequently, $r/a^s$ decomposes into the sum of $rx\in R=B$ and $ryb^s/a^s\in bR_a=hA$. On the other hand, in the case $s=0$ one may take $y=0$.
+	Set $B=R$, $A=R_a$ и $h=b$. To see that the present situation is a special case of~\ref{LPP} it is enough to  check that the map $j\colon B/hB \to A/hA$ is an isomorphism. Let us first verify the surjectivity of $j$, or what is the same, the inclusion $A \subseteq Ah+B$. Fix an element $r/a^s\in A=R_a$, we need to show that it lies in $Ah+B$. We may assume that $s\geq 1$, so that $a^s$ and $b^s$ are still coprime. Choose $x, y \in R$ such that $xa^s+yb^s=1$. Thus, $r/a^s$ can be decomposed into the sum of $rx\in B$ and $ry(b/a)^s\in bR_a=hA$.
 
-Let us check that $Ah\cap B=Bh$. Indeed, suppose that $rb/a^s=c\in B=R$. Then $rb=a^sc$ and from the identity $xa^s+yb^s=1$ we conclude that $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b\in bR=hB$. Again, in the case $s=0$ one may take $y=0$. It remains to invoke~\ref{LPP}. 
+	Now let us verify the injectivity of $j$, i.\,e. the inclusion $Ah\cap B \subseteq Bh$. Suppose that $rb/a^s=c\in B=R$. We may assume $s\geq 1$ otherwise there is nothing to prove. From $rb=a^sc$ and $xa^s+yb^s=1$ we obtain the required inclusion $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b \in Rb = Bh$. 
 \end{proof}
 
 Следующая лемма в частных случаях была доказана в~[??].

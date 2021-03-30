@@ -381,7 +381,7 @@ Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor. Let us list the a
   \item \label{LPP} Let $\iota \colon B \hookrightarrow A$ be an inclusion of $k$-algebras. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / hA$. Consider the following commutative diagram: 
   \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
   We say that $K$ satisfies the {\it Lindel patching property} if the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] is surjective.
-  \item \label{PGP} We say that $K$ has the {\it $\mathbb{P}^1$-glueing property} if for every domain $R \in \catname{Alg}_k$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
+  \item \label{PGP} We say that $K$ has the {\it local $\mathbb{P}^1$-glueing property} if for every local domain $R \in \catname{Alg}_k$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
   \item \label{HIF} We say that $K$ is {\it homotopy invariant for fields} if for every field $F \in \catname{Alg}_k$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
  \end{enumerate}
 \end{df} 
@@ -396,9 +396,9 @@ Then for every regular $R\in\catname{Alg}_k$ containing a field $F \in \catname{
 \end{theorem}
 
 Before we proceed with the proof of the theorem let us make a few remarks.
-First of all, notice that the $\mathbb{P}^1$-glueing property can be verified locally (cf. e.\,g. with the proof of~\cite[Theorem~1]{LS20}).
-\begin{lemma} \label{ght}
-Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor satisfying the Quillen--Suslin local-global principle. Assume, additionally, that for an arbitrary local domain $R$ the square~\eqref{eq:P1-square} is pullback with all arrows injective. Then $K$ satisfies the $\mathbb{P}^1$-glueing property. \end{lemma}
+First of all, notice that the local-global principle allows one to obtain the following global analogue of~\ref{PGP} (cf. e.\,g. with the proof of~\cite[Theorem~1]{LS20}).
+\begin{lemma}[Global $\mathbb{P}^1$-glueing property] \label{ght}
+Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor satisfying the Quillen--Suslin local-global principle and the local $\mathbb{P}^1$-glueing property. Then for an arbitrary domain $R \in \catname{Alg}_k$ the square~\eqref{eq:P1-square} is pullback with all arrows injective. \end{lemma}
 \begin{proof}
 Let $R \in \catname{Alg}_k$ be an arbitrary domain. Denote by $\lambda_t$ the natural embedding $R[t] \to R[t, t^{-1}]$. Let $g$ be an element of $\Ker(K(\lambda_t))$. Since $K(R)$ maps injectively into $K(R[t, t^{-1}])$, without loss of generality we may assume that $g \in NK(R)$.
 It is clear that the image of $g$ in $K(R_M[t, t^{-1}])$ is trivial for every maximal ideal $M \trianglelefteq R$. By our assumption on $K$, the image of $g$ in $K(R_M[t])$ is also trivial for all $M$. Thus, by the local-global principle, $g \in K(R[t])$ is trivial as well and the map $K(\lambda_t)$ is injective. By symmetry, the natural homomorphism $K(\lambda_{t^{-1}})\colon K(R[t^{-1}]) \to K(R[t, t^{-1}])$ is also injective. 
@@ -407,8 +407,8 @@ Let us show that~\eqref{eq:P1-square} is pullback. Suppose that the images of $g
 
 
 Let us also note the following useful particular special case of the Lindel patching property.
-\begin{lemma}[Zariski patching]
-	\label{zgl} Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the Lindel patching property~\ref{LPP}. Let $R\in\catname{Alg}_k$ be a domain and $a, b$ be a pair of coprime elements of $R$. Consider the diagram
+\begin{lemma}[Zariski patching property]
+	\label{zgl} Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the Lindel patching property. Let $R\in\catname{Alg}_k$ be a domain and $a, b$ be a pair of coprime elements of $R$. Consider the diagram
 $$\begin{tikzcd}
 	R \ar{r}{\lambda_a} \ar{d}[swap]{\lambda_b} & R_a \ar{d}{\overline{\lambda_b}}\\
 	R_b \ar{r}{\overline{\lambda_a}} & R_{ab}.
@@ -423,43 +423,28 @@ $$\begin{tikzcd}
 
 The following injectivity result is inspired by the proof of~\cite[Corollary~5.2]{Tu83}.
 \begin{lemma} \label{lmp}
-Suppose that a functor $\K\colon\catname{Alg}_k\rightarrow\catname{Grp}$ satisfies the properties~\ref{LPP},\ref{PGP}. Then for any domain $R\in\catname{Alg}_k$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $\K(R[t])\hookrightarrow\K(R[t]_f).$ \end{lemma}
+Suppose that a functor $\K\colon\catname{Alg}_k\rightarrow\catname{Grp}$ satisfies the global $\mathbb{P}^1$-glueing property and the Zariski patching property. Then for any domain $R\in\catname{Alg}_k$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $\K(R[t])\hookrightarrow\K(R[t]_f).$ \end{lemma}
 \begin{proof}
 	Fix a presentation $f=\sum_{i=0}^n a_it^i$, in which $a_n=1$. Set $$g=1+a_{n-1}t^{-1}+\ldots+a_0t^{-n}\in R[t^{-1}].$$ It is clear that $R[t, t^{-1}]_f \cong R[t, t^{-1}]_g$. Consider the following commutative diagram:
 $$\begin{tikzcd}
 	R[t] \ar{r}{\lambda_t} \ar{d}{\lambda_f} & R[t, t^{-1}] \ar{d}{\overline{\lambda}} & R[t^{-1}] \ar{l}[']{\lambda_{t^{-1}}} \ar{d}{\lambda_g}\\
 	R[t]_f \ar{r} & R[t, t^{-1}]_f & R[t^{-1}]_g. \ar{l}
 \end{tikzcd}$$
-Let $x$ be an element of $\Ker(K(\lambda_f))$. Then $K(\lambda_t)(x)$ lies in $\Ker(K(\overline{\lambda}))$ so by~\cref{zgl} applied to the right square we find $y \in \Ker(K(\lambda_{g}))$ such that $K(\lambda_t)(x) = K(\lambda_{t^{-1}})(y)$. Now by~\ref{PGP} $x$ and $y$ are images of some $z \in K(R)$. Since $K(R) \to K(R[t, t^{-1}])$ is injective, we conclude that $z = 1$. Thus, $x=1$, which completes the proof. \end{proof}
+Let $x$ be an element of $\Ker(K(\lambda_f))$. Then $K(\lambda_t)(x)$ lies in $\Ker(K(\overline{\lambda}))$ so by~\cref{zgl} applied to the right square we find $y \in \Ker(K(\lambda_{g}))$ such that $K(\lambda_t)(x) = K(\lambda_{t^{-1}})(y)$. Now by~\cref{ght} $x$ and $y$ are images of some $z \in K(R)$. Since $K(R) \to K(R[t, t^{-1}])$ is injective, we conclude that $x=1$, which completes the proof. \end{proof}
 
-Пользуясь последней леммой, мы покажем, как вывести из свойства {\bf(HIF)} аналог проблемы Серра.
-\begin{lemma}[Analogue of Serre's problem]
-\label{asp}
-Если функтор $\K\colon\mathcal A\mathsf{lg}_k\rightarrow\mathcal G\mathsf{rp}$ удовлетворяет свойствам {\bf(CDC)} и {\bf(HIF)} из формулировки Теоремы~\ref{lpb}, {\bf(ZGL)} из формулировки Леммы~\ref{zgl} и {\bf(GHT)} из формулировки Леммы~\ref{ght}, то он также удовлетворяет следующему свойству.\\
-{\bf(ASP)} Для любого $F\in\mathcal A\mathsf{lg}_k$ являющейся полем, естественное вложение $F\subseteq F[t_1,\ldots,t_n]$ индуцирует изоморфизм
-$$
-\K(F)\cong\K(F[t_1,\ldots,t_n]),
-$$
-где $F[t_1,\ldots,t_n]$ обозначает кольцо многочленов.
-\end{lemma}
-\begin{proof}
-Сначала покажем, что естественное вложение кольца $F[t_1,\ldots,t_n]$ в кольцо $F(t_1)[t_2,\ldots,t_n]$ индуцирует инъективное отображение
-$$
-\K(F[t_1,\ldots,t_n])\rightarrowtail\K(F(t_1)[t_2,\ldots,t_n]).
-$$
-Действительно, пусть $x\in\K(F[t_1,\ldots,t_n])$ переходит при этом отображении в единицу. Поскольку $F(t_1)[t_2,\ldots,t_n]$ является копределом $F[t_1,\ldots,t_n]_f$ по унитальным $f\in F[t_1]$, то по {\bf(CDC)} найдётся унитальный $f\in F[t_1]$ такой, что $\K(\lambda_f)(x)=1$. Тогда применяя Лемму~\ref{lmp} к кольцу $R=F[t_2,\ldots,t_n]$, получаем, что $x=1$. 
+Now we can deduce from the previous lemma the analogue of Serre's problem for the functor $K$.
+\begin{prop}[The analogue of Serre's problem] \label{asp}
+Let $ K\colon\catname{Alg}_k\rightarrow\catname{Grp}$ be a finitary functor that is homotopy invariant for fields and also has the Zariski patching and the global $\mathbb{P}^1$-glueing  properties. Then for any field $F\in\catname{Alg}_k$ the natural embedding $F\hookrightarrow F[t_1,\ldots,t_n]$ induces an isomorphism
+$K(F)\cong K(F[t_1,\ldots,t_n]).$ \end{prop}
+\begin{proof} First of all, let us show that the map $K(F[t_1,\ldots,t_n])\to \K(F(t_1)[t_2,\ldots,t_n])$ induced by the embedding $F[t_1,\ldots,t_n] \hookrightarrow F(t_1)[t_2,\ldots,t_n]$ is injective.
+Indeed, let $x$ be an element of the kernel of this map. Since $F(t_1)[t_2,\ldots,t_n]$ is a colimit of principal localizations $F[t_1,\ldots,t_n]_f$, where $f$ varies over the elements of the multiplicative set $F[t_1] \setminus \{0\}$, by~\ref{CFC} one can find $f_0\in F[t_1]$ such that $\K(\lambda_{f_0})(x)=1$. Applying~\cref{lmp} to the ring $R=F[t_2,\ldots,t_n]$, we obtain that $x=1$. 
 
-Теперь докажем утверждение леммы индукцией по числу полиномиальных переменных $n$. Ясно, что отображение $F(t_1)[t_2,\ldots,t_n]\rightarrow F(t_1)$, эвалюирующее $t_i$ в $0$ при $i>1$, индуцирует изоморфизм
-$$
-\K\big(F(t_1)[t_2,\ldots,t_n]\big)\cong\K\big(F(t_1)\big)
-$$
-по индукционному предположению. Тогда из коммутативности диаграммы
+Now we proceed with the proof of the proposition. The proof is by induction on $n$. The induction base is precisely the condition~\ref{HIF}. By inductive assumption, the map $F(t_1)[t_2,\ldots,t_n]\rightarrow F(t_1)$ evaluating $t_i$ at $0$ for all $i>1$ induces an isomorphism $K\big(F(t_1)[t_2,\ldots,t_n]\big)\cong K\big(F(t_1)\big)$. Consider the following commutative diagram in which the left vertical arrow is also induced by the evaluation homomorphism $t_i \mapsto 0$ for $i > 1$:
 $$\begin{tikzcd}
-\K\bigl(F[t_1, \ldots, t_n]\bigr) \ar[tail]{r} \ar{d}{t_i=0} & \K\bigl(F(t_1)[t_2, \ldots, t_n]\bigr) \ar{d}{\cong}\\
-\K\bigl(F[t_1]\bigr) \ar{r} & \K\bigl(F(t_1)\bigr)
+K\bigl(F[t_1, \ldots, t_n]\bigr) \ar[hookrightarrow]{r} \ar{d} & K\bigl(F(t_1)[t_2, \ldots, t_n]\bigr) \ar{d}{\cong}\\
+K\bigl(F[t_1]\bigr) \ar{r} & K\bigl(F(t_1)\bigr).
 \end{tikzcd}$$
-мы получаем, что $\K(F[t_1,\ldots,t_n])$ вкладывается в $\K\big(F(t_1)\big)$, и его образ содержится в образе $\K(F[t_1])$. Однако по {\bf(HIF)} мы знаем, что $\K(F[t_1])\cong\K(F)$, следовательно образ $\K(F[t_1,\ldots,t_n])$ совпадает с $\K(F)$.
-\end{proof}
+From a consideration of the diagram we obtain that the left arrow is injective. The required isomorphism $K(F) \cong K(F[t_1, \ldots, t_n])$ now follows from the isomorphism $K(F[t_1]) \cong K(F)$ of~\ref{HIF}. \end{proof}
 
 Следующие теоремы Линдела и Попеску являются ключевыми ингридиентами в доказательстве гипотезы Басса--Квиллена для регулярных колец, содержащих поле. 
 \begin{theorem}[Lindel]

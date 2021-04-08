@@ -367,48 +367,59 @@ The aim of this section is to formulate and prove Lindel--Popescu Theorem, a cer
 
 Let us briefly recall the historical context, which might help to explain our choice of the name for~\cref{lpb}. Recall that H.~Lindel's paper~\cite{Li81} has settled the geometric case of the Bass--Quillen conjecture for all regular $k$-algebras $R$ essentially of finite type over $k$. Later T.~Vorst has used Lindel's result in the proof of the homotopy invariance for the unstable $\K_1$-functor, see~\cite{Vo81}. Recall that Vorst's result asserts that $\K_{1,r}(R[t]) \cong \K_{1,r}(R)$ for $r\geq 3$ and a regular ring $R$ essentially finite type over a field. Finally, in her recent work~\cite{Sta14} A.~Stavrova has combined Vorst's theorem with a theorem of D.~Popescu~\cite{Po90} and obtained a more general homotopy invariance $\K_1^G(A[t]) \cong \K_1^G(A)$ for an arbitrary regular algebra $A$ over a perfect field $k$ and a sufficiently isotropic reductive group $G$ defined over $k$, see~\cite[Theorem~1.3]{Sta14}.
 
-Throughout this section we denote by $k$ a unital commutative ring. The principal cases of interest for us are when $k$ is either $\ZZ$ or $\ZZ[\frac{1}{2}]$. We denote by $\catname{Alg}_k$ the category of commutative $k$-algebras.
+Throughout this section we denote by $\mathcal{R}$ a full subcategory of the category of unital commutative rings $\catname{Ring}$ closed under operations of taking filtered colimits, localizations and polynomial extensions. The principal cases of interest for us is when $\mathcal{R}$ is either the whole category $\catname{Ring}$ or its subcategory of $\ZZ[\tfrac{1}{2}]$-algebras. Throughout this section we also denote by $K$ an arbitrary functor $\mathcal{R} \to \catname{Grp}$.
 
 \begin{df}\label{df:NK} 
-Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor. Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by the evaluation homomorphism $\eval_{t=0}$. It is clear that $NK$ is a functor $\catname{Alg}_k \to \catname{Grp}$.
+Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by the homomorphism of evaluation at $t=0$. It is clear that $NK$ is also a functor $\mathcal{R} \to \catname{Grp}$.
 \end{df}
 
 \begin{df}\label{df:key-assumptions}
-Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor. Let us list the axioms on $K$ which are going to use throughout this section.
+Let us list the axioms on $K$ which are going to use throughout this section.
  \begin{enumerate}[label=(P\normalfont\arabic*)]
   \item \label{CFC} We say that $K$ is {\it finitary}, if it commutes with directed filtered colimits.
-  \item \label{LGP} By definition, $K$ satisfies the {\it Quillen--Suslin local-global principle}, if for every $R\in\catname{Alg}_k$ the natural map $NK(R) \to \prod_{M \in \Max(R)} K(R_M[t])$ is injective.
-  \item \label{LPP} Let $\iota \colon B \hookrightarrow A$ be an inclusion of $k$-algebras. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / hA$. Consider the following commutative diagram: 
+  \item \label{DP} For $R \in Ob(\mathcal{R})$ and a nonzero element $a \in R$ consider the following commutative diagram whose columns are the homomorphisms of evaluation at $t=0$:
+  \[\begin{tikzcd} R \ltimes t R_a[t] \ar{r}{\lambda_a} \ar{d}[swap]{\eval_{t=0}} & R_a[t] \ar{d}\\ R \ar{r} & R_a. \end{tikzcd}\]
+  We say that $K$ satisfies {\it the Dilation principle} if for every $R \in Ob(\mathcal{R})$ and $a$ as above the natural homomorphism
+  \begin{equation}\label{eq:DP-map} \Ker(K(\eval_{t=0})) \to NK(R_a)\end{equation}
+  induced by $\lambda_a$ is an isomorphism.
+  \item \label{LPP} Let $\iota \colon B \hookrightarrow A$ be an inclusion of domains belonging to $\mathcal{R}$. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / hA$. Consider the following commutative diagram: 
   \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
-  We say that $K$ satisfies the {\it Lindel patching property} if the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] is surjective.
-  \item \label{PGP} We say that $K$ has the {\it local $\mathbb{P}^1$-glueing property} if for every local domain $R \in \catname{Alg}_k$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
-  \item \label{HIF} We say that $K$ is {\it homotopy invariant for fields} if for every field $F \in \catname{Alg}_k$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
+  We say that $K$ satisfies the {\it Lindel patching property for domains} if the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
+  \item \label{PGP} We say that $K$ has the {\it local $\mathbb{P}^1$-glueing property for domains} if for every local domain $R \in Ob(\mathcal{R})$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
+  \item \label{HIF} We say that $K$ is {\it homotopy invariant for fields} if for every field $F \in Ob(\mathcal{R})$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
  \end{enumerate}
 \end{df} 
 
 The following result is the main result of this section.
 \begin{theorem}[Lindel--Popescu]
 \label{lpb}
-Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the assumptions listed in Definition~\ref{df:key-assumptions} and, moreover, satisfies the following additional assumption:\\
-{\rm\bf (HIL)} Homotopy invariance for localizations. Если $R\in\mathcal A\mathsf{lg}_k$ является областью, и каноническое вложение $R\subseteq R[t]$ индуцирует изоморфизм $\K(R)\cong\K(R[t])$, то для любого мультипликативного множества $S\subseteq R$ вложение $R_S\subseteq R_S[t]$ тоже индуцирует изоморфизм
-$$\K(R_S)\cong\K(R_S[t]).$$
-Then for every regular $R\in\catname{Alg}_k$ containing a field $F \in \catname{Alg}_k$, the natural embedding induces an isomorphism $\K(R)\cong \K(R[t]).$
+Suppose that $K$ satisfies the assumptions listed in Definition~\ref{df:key-assumptions}.
+Then for every regular ring $R\in Ob(\mathcal{R})$ containing a field $F \in Ob(\mathcal{R})$ the natural embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R)\cong K(R[t]).$
 \end{theorem}
 
 Before we proceed with the proof of the theorem let us make a few remarks.
-First of all, notice that the local-global principle allows one to obtain the following global analogue of~\ref{PGP} (cf. e.\,g. with the proof of~\cite[Theorem~1]{LS20}).
-\begin{lemma}[Global $\mathbb{P}^1$-glueing property] \label{ght}
-Let $K \colon \catname{Alg}_k \to \catname{Grp}$ be a functor satisfying the Quillen--Suslin local-global principle and the local $\mathbb{P}^1$-glueing property. Then for an arbitrary domain $R \in \catname{Alg}_k$ the square~\eqref{eq:P1-square} is pullback with all arrows injective. \end{lemma}
+First of all, we notice the Dilation principle implies the following local-global principle.
+\begin{lemma}[Quillen--Suslin local-global principle] \label{LGP}
+ Suppose that $K$ is a finitary functor satisfying the Dilation principle.
+ Then for every $R\in Ob(\mathcal{R})$ the natural map $NK(R) \to \prod_{M \in \Max(R)} NK(R_M)$ is injective.
+ In particular, $NK$ is a separated presheaf in the Zariski topology.
+\end{lemma}
 \begin{proof}
-Let $R \in \catname{Alg}_k$ be an arbitrary domain. Denote by $\lambda_t$ the natural embedding $R[t] \to R[t, t^{-1}]$. Let $g$ be an element of $\Ker(K(\lambda_t))$. Since $K(R)$ maps injectively into $K(R[t, t^{-1}])$, without loss of generality we may assume that $g \in NK(R)$.
+ 
+\end{proof}
+
+First of all, notice that the local-global principle allows one to obtain the following global analogue of~\ref{PGP} (cf. e.\,g. with the proof of~\cite[Theorem~1]{LS20}).
+\begin{lemma}[Global $\mathbb{P}^1$-glueing property for domains] \label{ght}
+Suppose that $K$ satisfies the Quillen--Suslin local-global principle and the local $\mathbb{P}^1$-glueing property. Then for an arbitrary domain $R \in Ob(\mathcal{R})$ the square~\eqref{eq:P1-square} is pullback with all arrows injective. \end{lemma}
+\begin{proof}
+Let $R \in \mathcal{R}$ be an arbitrary domain. Denote by $\lambda_t$ the natural embedding $R[t] \to R[t, t^{-1}]$. Let $g$ be an element of $\Ker(K(\lambda_t))$. Since $K(R)$ maps injectively into $K(R[t, t^{-1}])$, without loss of generality we may assume that $g \in NK(R)$.
 It is clear that the image of $g$ in $K(R_M[t, t^{-1}])$ is trivial for every maximal ideal $M \trianglelefteq R$. By our assumption on $K$, the image of $g$ in $K(R_M[t])$ is also trivial for all $M$. Thus, by the local-global principle, $g \in K(R[t])$ is trivial as well and the map $K(\lambda_t)$ is injective. By symmetry, the natural homomorphism $K(\lambda_{t^{-1}})\colon K(R[t^{-1}]) \to K(R[t, t^{-1}])$ is also injective. 
 
 Let us show that~\eqref{eq:P1-square} is pullback. Suppose that the images of $g \in K(R[t])$ and $h \in K(R[t^{-1}])$ coincide in $K(R[t, t^{-1}])$. Then so do the images of $g' = g \cdot g(0)^{-1}$ and $h' = h \cdot g(0)^{-1}$. For a maximal ideal $M\trianglelefteq R$ set $g'_M := K(\lambda_M)(g') \in K(R_M[t])$ and $h'_M := K(\lambda_M)(h') \in K(R_M[t^{-1}]))$. Clearly, their images in $K(R_M[t, t^{-1}])$ coincide. By our assumptions, the square~\eqref{eq:P1-square} is pullback for $R_M$, therefore $g'_M = 1$ for all $M$. Since $g' \in NK(R)$, by the local-global principle we obtain that $g' = 1$ and that $g$ is an image of an element of $K(R)$. By symmetry, the same assertion holds for $h$. Since $K(R)\to K(R[t, t^{-1}])$ is injective, we conclude that $g$ and $h$ are the images of the same element of $K(R)$, which completes the proof.  \end{proof}
 
-
 Let us also note the following useful particular special case of the Lindel patching property.
-\begin{lemma}[Zariski patching property]
-	\label{zgl} Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the Lindel patching property. Let $R\in\catname{Alg}_k$ be a domain and $a, b$ be a pair of coprime elements of $R$. Consider the diagram
+\begin{lemma}[Zariski patching property for domains]
+	\label{zgl} Suppose that $K$ satsifies the Lindel patching property for domains. Let $R\in Ob(\mathcal{R})$ be a domain and $a, b$ be a pair of coprime elements of $R$. Consider the diagram
 $$\begin{tikzcd}
 	R \ar{r}{\lambda_a} \ar{d}[swap]{\lambda_b} & R_a \ar{d}{\overline{\lambda_b}}\\
 	R_b \ar{r}{\overline{\lambda_a}} & R_{ab}.
@@ -423,7 +434,7 @@ $$\begin{tikzcd}
 
 The following injectivity result is inspired by the proof of~\cite[Corollary~5.2]{Tu83}.
 \begin{lemma} \label{lmp}
-Suppose that a functor $\K\colon\catname{Alg}_k\rightarrow\catname{Grp}$ satisfies the global $\mathbb{P}^1$-glueing property and the Zariski patching property. Then for any domain $R\in\catname{Alg}_k$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $\K(R[t])\hookrightarrow\K(R[t]_f).$ \end{lemma}
+Suppose that $K$ satisfies the global $\mathbb{P}^1$-glueing property and the Zariski patching property. Then for any domain $R\in Ob(\mathcal{R})$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $\K(R[t])\hookrightarrow\K(R[t]_f).$ \end{lemma}
 \begin{proof}
 	Fix a presentation $f=\sum_{i=0}^n a_it^i$, in which $a_n=1$. Set $$g=1+a_{n-1}t^{-1}+\ldots+a_0t^{-n}\in R[t^{-1}].$$ It is clear that $R[t, t^{-1}]_f \cong R[t, t^{-1}]_g$. Consider the following commutative diagram:
 $$\begin{tikzcd}
@@ -434,7 +445,7 @@ Let $x$ be an element of $\Ker(K(\lambda_f))$. Then $K(\lambda_t)(x)$ lies in $\
 
 Now we can deduce from the previous lemma the analogue of Serre's problem for the functor $K$.
 \begin{prop}[The analogue of Serre's problem] \label{asp}
-Let $ K\colon\catname{Alg}_k\rightarrow\catname{Grp}$ be a finitary functor that is homotopy invariant for fields and also has the Zariski patching and the global $\mathbb{P}^1$-glueing  properties. Then for any field $F\in\catname{Alg}_k$ the natural embedding $F\hookrightarrow F[t_1,\ldots,t_n]$ induces an isomorphism
+Suppose that $K$ is finitary, homotopy invariant for fields, satisfies the Zariski patching property and the global $\mathbb{P}^1$-glueing property. Then for any field $F\in Ob(\mathcal{R})$ the natural embedding $F\hookrightarrow F[t_1,\ldots,t_n]$ induces an isomorphism
 $K(F)\cong K(F[t_1,\ldots,t_n]).$ \end{prop}
 \begin{proof} First of all, let us show that the map $K(F[t_1,\ldots,t_n])\to \K(F(t_1)[t_2,\ldots,t_n])$ induced by the embedding $F[t_1,\ldots,t_n] \hookrightarrow F(t_1)[t_2,\ldots,t_n]$ is injective.
 Indeed, let $x$ be an element of the kernel of this map. Since $F(t_1)[t_2,\ldots,t_n]$ is a colimit of principal localizations $F[t_1,\ldots,t_n]_f$, where $f$ varies over the elements of the multiplicative set $F[t_1] \setminus \{0\}$, by~\ref{CFC} one can find $f_0\in F[t_1]$ such that $\K(\lambda_{f_0})(x)=1$. Applying~\cref{lmp} to the ring $R=F[t_2,\ldots,t_n]$, we obtain that $x=1$. 
@@ -445,6 +456,16 @@ K\bigl(F[t_1, \ldots, t_n]\bigr) \ar[hookrightarrow]{r} \ar{d} & K\bigl(F(t_1)[t
 K\bigl(F[t_1]\bigr) \ar{r} & K\bigl(F(t_1)\bigr).
 \end{tikzcd}$$
 From a consideration of the diagram we obtain that the left arrow is injective. The required isomorphism $K(F) \cong K(F[t_1, \ldots, t_n])$ now follows from the isomorphism $K(F[t_1]) \cong K(F)$ of~\ref{HIF}. \end{proof}
+
+\begin{lemma} \label{HIL} Suppose that $K$ is finitary and satisfies the Dilation principle. Suppose that for a fixed $R \in \mathcal{R}$ the embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R) \cong K(R[t])$. Then for an arbitrary multiplicative subset $S \subseteq R$ the embedding $R_S \hookrightarrow R_S[t]$ induces an isomorphism $K(R_S)\cong K(R_S[t]).$
+\end{lemma}
+\begin{proof}
+ Since $K$ is finitary and $R_S$ is a filtered colimit of principal localizations $R_a$, where $a\in S$, it suffices to verify the assertion in the special case $S = \{ 1, a, a^2, \ldots \}$ and $R_S = R_a$.
+ 
+ Fix $a \in R$. Consider the following filtered diagram of commutative rings. Its objects $A_i$ are the copies of $R[t]$ indexed by natural numbers $i$. The morphisms $f_{ij}\colon A_i \to A_j$ of this diagram exist only for $1 \leq i \leq j$. The individual morphism $f_{ij}$ is defined as the $R$-algebra homomorphism sending $t$ to $a^{j-i}t$. It is clear that the colimit of this diagram is $R \ltimes tR_a[t]$ (cf. e.\,g.~\cite[Lemma~15]{S15}). 
+ Since $K$ is finitary, we obtain that $K(R \ltimes tR_a[t]) \cong K(R)$. Consequently, by the surjectivity of~\eqref{eq:DP-map} we conclude that $NK(R_a)$ is trivial.
+\end{proof}
+
 
 Следующие теоремы Линдела и Попеску являются ключевыми ингридиентами в доказательстве гипотезы Басса--Квиллена для регулярных колец, содержащих поле. 
 \begin{theorem}[Lindel]
@@ -460,13 +481,15 @@ From a consideration of the diagram we obtain that the left arrow is injective. 
 \end{theorem}
 \begin{proof} See~\cite{Po90,Sw98}. \end{proof}
 
-Наконец, мы можем завершить доказательство Теоремы~\ref{lpb}. Рассуждение следует статьям~~\cite{Sta14, Vo81}.
+Now we are ready to finish the proof of \cref{lpb}. Our argument follows~\cite{Sta14, Vo81}.
+\begin{proof}[Proof of~\cref{lpb}]
+The first step of the proof is to verify the assertion of the theorem for an arbitrary essentially smooth $F$-algebra $A$, (see~\cite[p.~137]{Sw98} for the definitions) %
+We argue by induction on the Krull dimension $d$ of $A$. Our goal is to prove the triviality of $NK(A)$.
+Thanks to~\cref{LGP} it suffices to verify the base of induction (case $d=0$) under the additional assumption that $A$ is local.
+But $A$ must be a field and the required assertion follows from~\ref{HIF}
 
-\begin{lemma}
-Пусть функтор $\K\colon\mathcal A\mathsf{lg}_k\rightarrow\mathcal G\mathsf{rp}$ удовлетворяет свойствам {\bf(CDC)}, {\bf(HIL)}, {\bf(LGP)}, {\bf(LGL)} из формулировки Теоремы~\ref{lpb}, а также {\bf(ASP)} из формулировки Леммы~\ref{asp}. Тогда для него верно заключение Теоремы~\ref{lpb} {\bf(ALP)}. 
-\end{lemma}
-\begin{proof}
-Сначала докажем заключение Теоремы~\ref{lpb} для области $A$, существенно гладкой над совершенным полем $F\in\mathcal A\mathsf{lg}_k$. Проведём индукцию по размерности $A$. Благодаря {\bf(LGP)} можно считать, что $A$ локально. Тогда если $d=\mathrm{dim}\,A$ равна нулю, то $A$ является полем, и мы можем применить {\bf(ASP)}. Для $d>0$ также будем считать, что $A$ локально. Пусть $g\in\K(A[t])$, и мы можем считать, что $\K(\mathrm{ev}_{t=0})(g)=1$. Выберем $B\subseteq A$ и $h\in B\setminus A^\times$ по Теореме~\ref{lindel}. Возможно, $A_h$ перестало быть локальным, однако $\mathrm{dim}\,A_h<d$ (ведь максимальный идеал $A$ становится единичным при локализации), и мы заключаем по индукционному предположению, что $\K(A_h[t])=\K(A_h)$. Тогда $\K(\lambda_h)(g)=1$, и по {\bf(LGL)} можно выбрать общий прообраз $f\in\K(B[t])$ для $g$ и $1\in\K(B_h[t])$. Из {\bf(HIL)} и {\bf(ASP)} следует, что $f\in\K(B)$, значит $g\in\K(A)$.
+Let us verify the inductive step. We assume that $NK$ is trivial when evaluated upon an essentially smooth algebra with Krull dimension $<d$. Now suppose that $A$ has dimension $d$. Arguing as above, we may assume additionally that $A$ is local.
+Let $g \in NK(A)$. By~\cref{lindel}  Выберем $B\subseteq A$ и $h\in B\setminus A^\times$ по Теореме. Возможно, $A_h$ перестало быть локальным, однако $\mathrm{dim}\,A_h<d$ (ведь максимальный идеал $A$ становится единичным при локализации), и мы заключаем по индукционному предположению, что $\K(A_h[t])=\K(A_h)$. Тогда $\K(\lambda_h)(g)=1$, и по {\bf(LGL)} можно выбрать общий прообраз $f\in\K(B[t])$ для $g$ и $1\in\K(B_h[t])$. Из {\bf(HIL)} и {\bf(ASP)} следует, что $f\in\K(B)$, значит $g\in\K(A)$.
 
 Теперь из {\bf(CDC)} и Теоремы~\ref{popescu} немедленно следует, что $\K(R[t])\cong\K(R)$ для любой локальной регулярной области, содержащей совершенное поле $F\in\mathcal A\mathsf{lg}_k$. Благодаря {\bf(LGP)}, из этого следует {\bf(ALP)}.
 \end{proof}

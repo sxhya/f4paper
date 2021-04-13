@@ -1,17 +1,15 @@
 \documentclass[oneside, 11pt]{amsart} \pdfoutput=1
 \usepackage{amsmath, mathtools, amssymb, amsthm, amscd, alltt, graphicx, comment}
 \usepackage[utf8]{inputenc}
-\usepackage[english,russian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[breaklinks=true,unicode]{hyperref}
 \usepackage[capitalise]{cleveref}
-%\usepackage[matrix,arrow,curve,tips]{xy}
 \usepackage{tikz,tikz-cd}
 \usepackage{scalerel}
-\usepackage[notref, notcite]{showkeys}
+%\usepackage[notref, notcite]{showkeys}
 \usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
 \usepackage{enumitem}
-
+\usepackage[english, russian]{babel}
 
 \usepackage[backend=biber, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
 \addbibresource{nisnevich2.bib}
@@ -24,50 +22,13 @@
 
 \begin{document}
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
-%\newcommand{\Dom}{\mathop{\mathrm{Dom}}\nolimits}
-%\newcommand{\Card}{\mathop{\mathrm{Card}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
-%\newcommand{\Coker}{\mathop{\mathrm{Coker}}\nolimits}
-%\newcommand{\Cent}{\mathop{\mathrm{Cent}}\nolimits}
 \newcommand{\K}{{\mathrm{K}}}
 \newcommand{\St}{\mathop{\mathrm{St}}\nolimits}
 \newcommand{\E}{\mathrm{E}}
 \newcommand{\Gsc}{\mathrm{G}_\mathrm{sc}}
 \newcommand{\eval}{\mathrm{ev}}
 \newcommand{\Max}{\mathrm{Max}}
-%\newcommand{\Sp}{\mathop{\mathrm{Sp}}\nolimits}
-%\newcommand{\Ep}{\mathop{\mathrm{Ep}}\nolimits}
-%\newcommand{\GL}{\mathop{\mathrm{GL}}\nolimits}
-%\newcommand{\SL}{\mathop{\mathrm{SL}}\nolimits}
-%\newcommand{\Kt}{\mathop{\mathrm{K_2}}\nolimits}
-%\newcommand{\Ko}{\mathop{\mathrm{K_1}}\nolimits}
-%\newcommand{\SKo}{\mathop{\mathrm{SK_1}}\nolimits}
-%\newcommand{\Ho}{\mathop{\mathrm{H_1}}\nolimits}
-%\newcommand{\Hf}{\mathop{\mathrm{H_1}}\nolimits}
-%\newcommand{\Ht}{\mathop{\mathrm{H_2}}\nolimits}
-%\newcommand{\Hs}{\mathop{\mathrm{H_2}}\nolimits}
-%\newcommand{\epi}{\twoheadrightarrow}
-%\newcommand{\sgn}{\mathrm{sgn}}
-%\newcommand{\eps}[1]{\varepsilon_{#1}}
-%\newcommand{\lan}{\langle}
-%\newcommand{\ran}{\rangle}
-%\newcommand{\inv}{^{-1}}
-%\newcommand{\ur}[1]{\!\,^{(#1)}U_1}
-%\newcommand{\ps}[1]{\!\,^{(#1)}\!P_1}
-%\newcommand{\ls}[1]{\!\,^{(#1)}\!L_1}
-
-%\newcommand{\M}{{\mathrm{M}}\,\!}
-%\newcommand{\fp}{\mathfrak L}
-%\newcommand{\ind}{\mathop{\mathrm{ind}}\nolimits}
-%\newcommand{\EU}{\mathop{\mathrm{EU}}\nolimits}
-%\newcommand{\KU}{\mathop{\mathrm{K_2U}}\nolimits}
-%\newcommand{\GQ}{\mathop{\mathrm{GQ}}\nolimits}
-%\newcommand{\GH}{\mathop{\mathrm{GH}}\nolimits}
-%\newcommand{\StU}{\mathop{\mathrm{StU}}\nolimits}
-%\newcommand{\sta}[1]{\StU(#1,\,R,\,\mathfrak{L})}
-%\newcommand{\st}{\sta{2n}}
-%\newcommand{\sign}[1]{\mathrm{sign}(#1)}
-
 \numberwithin{equation}{section}
 \newtheorem{lemma}{Lemma} \numberwithin{lemma}{section}
 \newtheorem*{lemma*}{Lemma}
@@ -82,21 +43,6 @@
 \theoremstyle{definition} 
 \newtheorem{df}[lemma]{Definition} 
 
-%\newtheorem{example}[lemma]{Example} \Crefname{example}{Example}{Examples}
-
-%\theoremstyle{remark} 
-%\newtheorem{rem}[lemma]{Remark}
-%\newtheorem{conv}[lemma]{Convention} \Crefname{conv}{Convention}{Conventions}
-
-%\newenvironment{psmallmatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
-
-%\DeclareMathOperator\St{St}
-%\DeclareMathOperator\Ker{Ker}
-%\DeclareMathOperator\GG{G}
-%\DeclareMathOperator\Torus{T}
-%\DeclareMathOperator{\Pro}{Pro}
-
-
 \newcommand{\Set}{\mathbf{Set}}
 \newcommand{\Group}{\mathbf{Grp}}
 \newcommand{\Rng}{\mathbf{Rng}}
@@ -104,11 +50,8 @@
 \newcommand{\Mod}{\mathbf{Mod}}
 \newcommand{\op}{\mathrm{op}}
 \newcommand{\ZZ}{\mathbb{Z}}
-
 \newcommand{\otimeshat}{\mathbin{\widehat{\otimes}}}
-
 \newcommand{\up}[2]{{^{#1}\!{#2}}}
-
 \newcommand{\rA}{\mathsf{A}}
 \newcommand{\rB}{\mathsf{B}}
 \newcommand{\rC}{\mathsf{C}}
@@ -228,9 +171,8 @@ for all $x \in \St(\Phi, h^{\eta^*(0)}B)$ and for all \(i\).
 \end{corollary}
 
 \section{A patching theorem for \texorpdfstring{$\K_2(\Phi, R)$}{K2(Ф,R)}}
-
-Пользуясь Теоремой~\ref{vor}, мы докажем Теорему~\ref{glueing} о склейке для $\St(\Phi,-)$. Впервые аналогичный результат для проективных модулей был доказан by Lindel-Lutkebohrnert и независимо by Mohan Kumar while proving Bass--Quillen conjecture for a power series ring over a field. Затем Линдел применил такую склейку при решения проблемы Басса--Квиллена для существенно гладких алгебр над совершенным полем.
-
+Using Theorem~\ref{vor}, we will prove Theorem~\ref{glueing} about patching for $\St(\Phi,-)$. 
+Similar result for projective modules has been originally proved by Lindel-Lutkebohrnert and independently by Mohan Kumar as an ingredient in the proof of Bass--Quillen conjecture for the power series ring over a field. Consequently, Lindel has used similar technique in his proof of Bass--Quillen problem for essentially smooth domains over a perfect field.
 As in the previous section $\Phi$ is a simply-laced root system of rank at least $3$.
 
 \begin{theorem}\label{glueing}
@@ -244,7 +186,7 @@ $$\iota(u) = \lambda_h(v) \in \St(\Phi, A_h)$$
 holds for some $u \in \St(\Phi, B_h)$ and $v \in \St(\Phi, A)$. Then there is $w \in \St(\Phi, B)$ such that $u = \lambda_h(w)$ and $v = \iota(w)$.
 \end{theorem}
 \begin{proof}
-Хорошо известно, что для работы с $\K_1$-функтором важно изучение различных разложений группы $\mathrm G(\Phi,\,R)$ в произведение подгрупп, см.~[??]. В том же самом смысле, для работы с $\K_2$-функтором оказывается важно изучение главных однородных $\St(\Phi,\,R)$-множеств, см.~[??].
+It is well known that subgroup factorizations of $\mathrm G(\Phi,\,R)$ are an important ingredient in the study of the $\K_1$-functor. It turns out that in the study of $\K_2$-functors the $\St(\Phi,\,R)$-torsors play similar role, see~\cite{LS20}.
 
 Consider the set
 $$
@@ -365,13 +307,13 @@ for all \(a\) if \(n\) is large enough.
 \section{Formalism of Lindel--Popescu theorem}
 The aim of this section is to formulate and prove Lindel--Popescu Theorem, a certain formal statement, which gives a sufficient condition for a general group-valued functor to be homotopy invariant. Later, in~\cref{sec:main} this result is applied to the functor $K_2$. Some of the machinery developed in this section also will be useful in the study of the $K_2$-analogue of Gersten's conjecture, see~\cref{sec:K2-GC}.
 
-Let us briefly recall the historical context, which might help to explain our choice of the name for~\cref{lpb}. Recall that H.~Lindel's paper~\cite{Li81} has settled the geometric case of the Bass--Quillen conjecture for all regular $k$-algebras $R$ essentially of finite type over $k$. Later T.~Vorst has used Lindel's result in the proof of the homotopy invariance for the unstable $\K_1$-functor, see~\cite{Vo81}. Recall that Vorst's result asserts that $\K_{1,r}(R[t]) \cong \K_{1,r}(R)$ for $r\geq 3$ and a regular ring $R$ essentially finite type over a field. Finally, in her recent work~\cite{Sta14} A.~Stavrova has combined Vorst's theorem with a theorem of D.~Popescu~\cite{Po90} and obtained a more general homotopy invariance $\K_1^G(A[t]) \cong \K_1^G(A)$ for an arbitrary regular algebra $A$ over a perfect field $k$ and a sufficiently isotropic reductive group $G$ defined over $k$, see~\cite[Theorem~1.3]{Sta14}.
+Let us briefly recall the historical context, which might help to explain our choice of the name for~\cref{lpb}. Recall that H.~Lindel's paper~\cite{Li81} has settled the geometric case of the Bass--Quillen conjecture for all regular $k$-algebras $R$ essentially of finite type over $k$. Later T.~Vorst has used Lindel's result in the proof of the homotopy invariance for the unstable $\K_1$-functor, see~\cite{Vo81}. Recall that Vorst's result asserts that $\K_{1,r}(R[t]) \cong \K_{1,r}(R)$ for $r\geq 3$ and a regular ring $R$ essentially finite type over a field. Finally, in her recent work~\cite{Sta14} A.~Stavrova has combined Vorst's theorem with a theorem of D.~Popescu~\cite{Po90} and obtained a more general homotopy invariance $\K_1^G(A[t]) \cong \K_1^G(A)$ for an arbitrary regular algebra $A$ over a perfect field $F$ and a sufficiently isotropic reductive group $G$ defined over $F$, see~\cite[Theorem~1.3]{Sta14}.
 
-Throughout this section we denote by $\mathcal{R}$ either the category $\catname{Ring}$ of unital commutative rings or its full subcategory of $\ZZ[\tfrac{1}{2}]$-algebras. Throughout this section  $K$ denotes a functor $\mathcal{R} \to \catname{Grp}$.
+Throughout this section we denote by $\mathcal{R}$ the category of $k$-algebras for some fixed commutative ring $k$. The principal cases of interest for us are when either $k = \ZZ$ and $\mathcal{R} = \catname{Ring}$ or when $k = \ZZ[\tfrac{1}{2}]$ in which case $\mathcal{R}$ is the full subcategory of $\ZZ[\tfrac{1}{2}]$-algebras. We denote by $K$ a functor $\mathcal{R} \to \catname{Grp}$.
 
 For a ring $R \in \mathcal{R}$ and its element $a$ we denote by $\lambda_a$ the homomorphism of principal localization $R \to R_a$. Similarly, we denote by $\lambda_P$ the homomorphism $R \to R_P = (R\setminus P)^{-1}R$ of localization in a prime ideal $P \trianglelefteq R$. Notice that $R_a$ is the zero rng if $a$ is nilpotent. It will be convenient for us to extend the domain of the definition of $K$ and $NK$ to include the zero rng by setting $K(0) = NK(0) = 1$.
 
-Let $A$ be an $R$-algebra, $f\in R[t]$ and $a \in A$. We denote by $ev_t(a)$ (or just $ev(a)$ when $t$ is clear from the context) the unique $R$-algebra homomorphism $R[t] \to A$ mapping $t$ to $a$. For an element $g \in K(R[t])$ we often abbreviate the notation for the element $K(ev(a))(g)$ to just $g(a)$.
+Let $A$ be an $R$-algebra, $f\in R[t]$ and $a \in A$. We denote by $ev_t(a)$ (or just $ev(a)$ when $t$ is clear from the context) the unique $R$-algebra homomorphism $R[t] \to A$ mapping $t$ to $a$. For an element $g \in K(R[t])$ we often shorten the notation for the element $K(ev(a))(g)$ to just $g(a)$.
 
 \begin{df}\label{df:NK} 
 Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by the homomorphism of evaluation at $t=0$. It is clear that $NK$ is also a functor $\mathcal{R} \to \catname{Grp}$.
@@ -381,16 +323,16 @@ Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by t
 Let us list the axioms on $K$ which are going to use throughout this section.
  \begin{enumerate}[label=(A\normalfont\arabic*)]
   \item \label{CFC} {\it $K$ is finitary}, i.\,e. commutes with directed filtered colimits.
-  \item \label{DP} For $R \in Ob(\mathcal{R})$ and $a \in R$ consider the following commutative diagram whose columns are homomorphisms of ``evaluation'' at $t=0$:
+  \item \label{DP} For $R \in \mathcal{R}$ and $a \in R$ consider the following commutative diagram whose columns are homomorphisms of ``evaluation'' at $t=0$:
   \[\begin{tikzcd} R \ltimes t R_a[t] \ar{r}{\lambda_a} \ar{d}[swap]{e} & R_a[t] \ar{d}\\ R \ar{r} & R_a. \end{tikzcd}\]
   For every $R$ and $a$ as above the natural homomorphism
   \begin{equation}\label{eq:DP-map} \Ker(K(e)) \to NK(R_a)\end{equation}
   induced by $\lambda_a$ is an isomorphism.
-  \item \label{LPP} {\it $K$ satisfies the Lindel patching property for domains.} This means the following. Let $\iota \colon B \hookrightarrow A$ be an inclusion of domains belonging to $\mathcal{R}$. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / hA$. Consider the following commutative diagram: 
+  \item \label{LPP} {\it $K$ satisfies the Lindel patching property for domains.} This means the following. Let $\iota \colon B \hookrightarrow A$ be an inclusion of domains contained in $\mathcal{R}$. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / hA$. Consider the following commutative diagram: 
   \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
   Then the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
-  \item \label{PGP} {\it $K$ satisfies the local $\mathbb{P}^1$-glueing property for domains.}  By definition, this means that for every local domain $R \in Ob(\mathcal{R})$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
-  \item \label{HIF} {\it $K$ is homotopy invariant for fields}, i.\,e. for every field $F \in Ob(\mathcal{R})$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
+  \item \label{PGP} {\it $K$ satisfies the local $\mathbb{P}^1$-glueing property for domains.}  By definition, this means that for every local domain $R \in \mathcal{R}$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
+  \item \label{HIF} {\it $K$ is homotopy invariant for fields}, i.\,e. for every field $F \in \mathcal{R}$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
  \end{enumerate}
 \end{df} 
 
@@ -398,7 +340,7 @@ The following result is the main result of this section.
 \begin{theorem}[Lindel--Popescu]
 \label{lpb}
 Suppose that $K$ satisfies the assumptions listed in Definition~\ref{df:key-assumptions}.
-Then for every regular ring $R\in Ob(\mathcal{R})$ containing a field $F \in Ob(\mathcal{R})$ the natural embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R)\cong K(R[t]).$
+Then for every regular ring $R\in \mathcal{R}$ containing a field $F \in \mathcal{R}$ the natural embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R)\cong K(R[t]).$
 \end{theorem}
 
 The proof is based on a series of lemmas and is deferred until the end of this section. We start by deducing the following useful corollary of the axiom~\ref{DP}. We say that $K$ satisfies the {\it Quillen--Suslin local-global principle} if for every $R\in Ob(\mathcal{R})$ the natural map 
@@ -408,18 +350,18 @@ The proof is based on a series of lemmas and is deferred until the end of this s
 \end{lemma}
 
 \begin{proof}
- Fix a ring $R \in Ob(\mathcal{R})$ and $a \in R$. 
+ Fix a ring $R \in R$ and $a \in R$. 
  Consider the following diagram of commutative rings. Its objects $A_i$ are copies of $R[t]$ indexed by natural numbers $i$. The only arrows of this diagram are the homomorphisms $ev (a^{j-i}t)\colon A_i \to A_j$ defined for $1 \leq i \leq j$. It is clear that the diagram is filtered and its colimit is $R \ltimes tR_a[t]$ (cf. e.\,g.~\cite[Lemma~15]{S15}). 
  
  The first step of the proof of the lemma is to show that for every $g \in \Ker(NK(R) \to NK(R_a))$ there exists some natural $n$ such that $g(a^nt)$ is a trivial element of $K(R[t])$. Let $g$ be such an element. From the injectivity of~\eqref{eq:DP-map} we obtain that the image of $g$ in $K(R \ltimes tR_a[t])$ is trivial. The required assertion now follows from~\ref{CFC} and the previous paragraph.
  
- The next step of the proof is to verify that for any coprime elements $a, b \in R$ the homomorphism $\langle K(\lambda_a), K(\lambda_b) \rangle \colon NK(R) \to NK(R_a) \times NK(R_b)$ is injective. Fix $g \in \Ker(\langle \lambda_a, \lambda_b \rangle)$. We argue as in the proof of~\cite[Lemma~2.5]{Tu83}. Set $S := R[t, t_1]$. Consider the element $h(t, t_1, t_2) = g(t_1 t) \cdot g((t_1 + t_2)t)^{-1}\in K(S[t_2]).$ Clearly, $h$ lies in the kernel of the homomorphism $K(ev_{t_2}(0))$. Since evaluation commutes with localization, we obtain that the element $K(\lambda_a)(h) \in K(S_a[t_2])$ is trivial, therefore by the previous paragraph there exists $n$ such that $h(t, t_1, a^nt_2)$ is a trivial element of $K(S[t_2])$. Similarly, we find $m$ such that $h(t, t_1, b^m t_2)$ is trivial. Since $a^n$ and $b^m$ are still coprime we can find $x, y \in R$ such that $xa^n + yb^m = 1$. The required assertion now follows from the calculation:
+ The next step of the proof is to verify that for any coprime elements $a, b \in R$ the homomorphism $\langle K(\lambda_a), K(\lambda_b) \rangle \colon NK(R) \to NK(R_a) \times NK(R_b)$ is injective. Fix $g \in \Ker(\langle \lambda_a, \lambda_b \rangle)$. We argue as in the proof of~\cite[Lemma~2.5]{Tu83}. Set $S := R[t, t_1]$. Consider the element $h(t, t_1, t_2) = g(t_1 t) \cdot g((t_1 + t_2)t)^{-1}\in K(S[t_2]).$ Clearly, $h$ lies in the kernel of the homomorphism $K(ev_{t_2}(0))$. Since evaluation commutes with localization, we obtain that the element $K(\lambda_a)(h) \in K(S_a[t_2])$ is trivial, therefore by the previous paragraph there exists $n$ such that $h(t, t_1, a^nt_2)$ is a trivial element of $K(S[t_2])$. Similarly, we find $m$ such that $h(t, t_1, b^m t_2)$ is trivial. Since $a^n$ and $b^m$ are still coprime we can find $x, y \in R$ such that $xa^n + yb^m = 1$. The required assertion now follows from the following calculation:
  $$1 = h(t, 1, -yb^m) \cdot h(t, xa^n, -xa^n) = g(t)\cdot g(xa^n\cdot t)^{-1} \cdot g(xa^n\cdot t) \cdot g(0)^{-1} = g(t).$$
  
- We now can finish the proof of the lemma. We argue as in the proof of~\cite[Theorem~2]{S15}. Let $g$ be an element of the kernel of~\eqref{QS-def}. Denote by $Q(g)$ the set consisting of all elements $c \in R$ for which $K(\lambda_c)(g)$ is trivial. Let us check that this set is, in fact, an ideal. Fix $a, b \in Q(g)$ and let $c$ be an element of the ideal $\langle a, b \rangle$. Notice that $\overline{a} = \lambda_c(a)$, $\overline{b} = \lambda_c(b)$ are coprime elements of $R_c$. From the identities $\lambda_{\overline{a}}\lambda_c = \lambda_{\lambda_a(c)}\lambda_a$ and $\lambda_{\overline{b}}\lambda_c = \lambda_{\lambda_b(c)}\lambda_b$ we obtain that $g' = K(\lambda_c)(g)$ lies in the kernel of $\langle K(\lambda_{\overline{a}}), K(\lambda_{\overline{b}}) \rangle.$ By the previous paragraph, we obtain that $g' = 1$ and hence that $c \in Q(g)$. We have shown that $Q(g)$ is an ideal of $R$. If $Q(g)$ is proper then it is contained in a maximal ideal $M \trianglelefteq R$, in which case from $K(\lambda_M)(g) = 1$ and~\ref{CFC} we obtain that $K(\lambda_s)(g) = 1$ for some $s \in R \setminus M$. Thus, we obtain a contradiction, so $Q(g) = R$ and $g = 1$.
+ Now we can finish the proof of the lemma. We argue as in the proof of~\cite[Theorem~2]{S15}. Let $g$ be an element of the kernel of~\eqref{QS-def}. Denote by $Q(g)$ the set consisting of all elements $c \in R$ for which $K(\lambda_c)(g)$ is trivial. Let us check that this set is, in fact, an ideal. Fix $a, b \in Q(g)$ and let $c$ be an element of the ideal $\langle a, b \rangle$. Notice that $\overline{a} = \lambda_c(a)$, $\overline{b} = \lambda_c(b)$ are coprime elements of $R_c$. From the identities $\lambda_{\overline{a}}\lambda_c = \lambda_{\lambda_a(c)}\lambda_a$ and $\lambda_{\overline{b}}\lambda_c = \lambda_{\lambda_b(c)}\lambda_b$ we obtain that $g' = K(\lambda_c)(g)$ lies in the kernel of $\langle K(\lambda_{\overline{a}}), K(\lambda_{\overline{b}}) \rangle.$ By the previous paragraph, we obtain that $g' = 1$ and hence that $c \in Q(g)$. We have shown that $Q(g)$ is an ideal of $R$. If $Q(g)$ is proper then it is contained in a maximal ideal $M \trianglelefteq R$, in which case from $K(\lambda_M)(g) = 1$ and~\ref{CFC} we obtain that $K(\lambda_s)(g) = 1$ for some $s \in R \setminus M$. Thus, we obtain a contradiction, so $Q(g) = R$ and $g = 1$.
 \end{proof}
 
-First of all, notice that the local-global principle allows one to obtain the following global analogue of~\ref{PGP} (cf. e.\,g. with the proof of~\cite[Theorem~1]{LS20}).
+First of all, notice that the local-global principle allows one to obtain the following global version of~\ref{PGP} (cf. e.\,g. with the proof of~\cite[Theorem~1]{LS20}).
 \begin{lemma}[Global $\mathbb{P}^1$-glueing property for domains] \label{ght}
 Suppose that $K$ satisfies the Quillen--Suslin local-global principle and the local $\mathbb{P}^1$-glueing property. Then for an arbitrary domain $R \in Ob(\mathcal{R})$ the square~\eqref{eq:P1-square} is pullback with all arrows injective. \end{lemma}
 \begin{proof}
@@ -437,7 +379,7 @@ $$\begin{tikzcd}
 \end{tikzcd}$$
 	Then the natural map $\Ker(\lambda_b) \to \Ker(\overline{\lambda_b})$ induced by $\lambda_a$ is surjective.
 \end{lemma}
-\begin{proof} %TODO: Something should be not invertible?
+\begin{proof}
 	Set $B=R$, $A=R_a$ и $h=b$. To see that the present situation is a special case of~\ref{LPP} it is enough to  check that the map $j\colon B/hB \to A/hA$ is an isomorphism. Let us first verify the surjectivity of $j$, or what is the same, the inclusion $A \subseteq Ah+B$. Fix an element $r/a^s\in A=R_a$, we need to show that it lies in $Ah+B$. We may assume that $s\geq 1$, so that $a^s$ and $b^s$ are still coprime. Choose $x, y \in R$ such that $xa^s+yb^s=1$. Thus, $r/a^s$ can be decomposed into the sum of $rx\in B$ and $ry(b/a)^s\in bR_a=hA$.
 
 	Now let us verify the injectivity of $j$, i.\,e. the inclusion $Ah\cap B \subseteq Bh$. Suppose that $rb/a^s=c\in B=R$. We may assume $s\geq 1$ otherwise there is nothing to prove. From $rb=a^sc$ and $xa^s+yb^s=1$ we obtain the required inclusion $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b \in Rb = Bh$. 
@@ -445,7 +387,7 @@ $$\begin{tikzcd}
 
 The following injectivity result is inspired by the proof of~\cite[Corollary~5.2]{Tu83}.
 \begin{lemma} \label{lmp}
-Suppose that $K$ satisfies the global $\mathbb{P}^1$-glueing property and the Zariski patching property. Then for any domain $R\in Ob(\mathcal{R})$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $\K(R[t])\hookrightarrow\K(R[t]_f).$ \end{lemma}
+Suppose that $K$ satisfies the global $\mathbb{P}^1$-glueing property and the Zariski patching property. Then for any domain $R\in R$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $\K(R[t])\hookrightarrow\K(R[t]_f).$ \end{lemma}
 \begin{proof}
 	Fix a presentation $f=\sum_{i=0}^n a_it^i$, in which $a_n=1$. Set $$g=1+a_{n-1}t^{-1}+\ldots+a_0t^{-n}\in R[t^{-1}].$$ It is clear that $R[t, t^{-1}]_f \cong R[t, t^{-1}]_g$. Consider the following commutative diagram:
 $$\begin{tikzcd}
@@ -456,7 +398,7 @@ Let $x$ be an element of $\Ker(K(\lambda_f))$. Then $K(\lambda_t)(x)$ lies in $\
 
 Now we can deduce from the previous lemma the analogue of Serre's problem for the functor $K$.
 \begin{prop}[The analogue of Serre's problem] \label{asp}
-Suppose that $K$ is finitary, homotopy invariant for fields, satisfies the Zariski patching property and the global $\mathbb{P}^1$-glueing property for domains. Then for any field $F\in Ob(\mathcal{R})$ the natural embedding $F\hookrightarrow F[t_1,\ldots,t_n]$ induces an isomorphism
+Suppose that $K$ is finitary, homotopy invariant for fields, satisfies the Zariski patching property and the global $\mathbb{P}^1$-glueing property for domains. Then for any field $F\in \mathcal{R}$ the natural embedding $F\hookrightarrow F[t_1,\ldots,t_n]$ induces an isomorphism
 $K(F)\cong K(F[t_1,\ldots,t_n]).$ \end{prop}
 \begin{proof} First of all, let us show that the map $K(F[t_1,\ldots,t_n])\to \K(F(t_1)[t_2,\ldots,t_n])$ induced by the embedding $F[t_1,\ldots,t_n] \hookrightarrow F(t_1)[t_2,\ldots,t_n]$ is injective.
 Indeed, let $x$ be an element of the kernel of this map. Since $F(t_1)[t_2,\ldots,t_n]$ is a colimit of principal localizations $F[t_1,\ldots,t_n]_f$, where $f$ varies over the elements of the multiplicative set $F[t_1] \setminus \{0\}$, by~\ref{CFC} one can find $f_0\in F[t_1]$ such that $\K(\lambda_{f_0})(x)=1$. Applying~\cref{lmp} to the ring $R=F[t_2,\ldots,t_n]$, we obtain that $x=1$. 
@@ -468,20 +410,14 @@ K\bigl(F[t_1]\bigr) \ar{r} & K\bigl(F(t_1)\bigr).
 \end{tikzcd}$$
 From a consideration of the diagram we obtain that the left arrow is injective. The required isomorphism $K(F) \cong K(F[t_1, \ldots, t_n])$ now follows from the isomorphism $K(F[t_1]) \cong K(F)$ of~\ref{HIF}. \end{proof}
 
-\begin{lemma} \label{HIL} Suppose that $K$ is finitary and satisfies the Dilation principle. Suppose that for a fixed $R \in \mathcal{R}$ the embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R) \cong K(R[t])$. Then for an arbitrary multiplicative subset $S \subseteq R$ the embedding $R_S \hookrightarrow R_S[t]$ induces an isomorphism $K(R_S)\cong K(R_S[t]).$
+\begin{lemma} \label{HIL} Suppose that $K$ is finitary and satisfies the Dilation principle. Suppose that for a fixed $R \in \mathcal{R}$ one has $NK(R) = 1$. Then for an arbitrary multiplicative subset $S \subseteq R$ one has $NK(R_S) = 1$.
 \end{lemma}
 \begin{proof}
- Since $K$ is finitary and $R_S$ is a filtered colimit of principal localizations $R_a$, where $a\in S$, it suffices to verify the assertion in the special case $S = \{ 1, a, a^2, \ldots \}$ and $R_S = R_a$.
+ Since $K$ is finitary and $R_S$ is a filtered colimit of principal localizations $R_a$, where $a\in S$, it suffices to verify the assertion in the special case when $S = \{ 1, a, a^2, \ldots \}$ and $R_S = R_a$.
  
- Fix $a \in R$. Consider the following filtered diagram of commutative rings. Its objects $A_i$ are the copies of $R[t]$ indexed by natural numbers $i$. The only arrows of this diagram are homomorphisms $f_{ij}\colon A_i \to A_j$  defined for $1 \leq i \leq j$. The homomorphism $f_{ij}$ is given as the unique $R$-algebra homomorphism sending $t$ to $a^{j-i}t$. It is clear that the colimit of this diagram is $R \ltimes tR_a[t]$ (cf. e.\,g.~\cite[Lemma~15]{S15}). 
+ Fix $a \in R$. Recal from the proof of~\cref{LGP} that $R \ltimes tR_a[t]$ is a colimit of $R[t]$. 
  Since $K$ is finitary, we obtain that $K(R \ltimes tR_a[t]) \cong K(R)$. Consequently, by the surjectivity of~\eqref{eq:DP-map} we conclude that $NK(R_a)$ is trivial.
 \end{proof}
-
-
-Следующие теоремы Линдела и Попеску являются ключевыми ингридиентами в доказательстве гипотезы Басса--Квиллена для регулярных колец, содержащих поле. 
-%essentially smooth = essentially of finite type + quasi-smooth
-%required: regular local ring essentially of finite type
-%quasi-smooth => regular?
 
 Let $R$ be a commutative ring. Recall that an $R$-algebra is called {\it essentially smooth} if it is quasi-smooth and essentially of finite type over $R$ (see e.\,g.~\cite[p.~136]{Sw98}).
 \begin{theorem}[Lindel] \label{lindel}
@@ -516,7 +452,7 @@ Since $K$ commutes with filtered colimits we conclude from~\cref{popescu} and th
 \section{Main results}\label{sec:main}
 \subsection{Analogue of Serre's problem for \texorpdfstring{$\K_2$}{K2}}
 
-В этом параграфе $\Phi$ обозначает произвольную систему корней.
+In this section $\Phi$ denotes an arbitrary irreducible root system.
 
 \begin{lemma}
 \label{k2cdc} 
@@ -528,46 +464,22 @@ The assertion for $\mathrm G_{\mathrm{sc}}(\Phi,\,-)$ follows from the fact that
 The assertion for the functor $\K_2(\Phi, -)$ now follows from the assertions for $\St(\Phi, -)$ and $\Gsc(\Phi, R)$ using the fact that filtered colimits commute with finite limits in $\catname{Grp}$ (in particular, they commute with kernels).
 \end{proof}
 
-\begin{comment}
-Пусть $R=\mathrm{colim}_I R_i$~--- направленный копредел колец. Покажем, что 
-$$ \St(\Phi,\,R)=\mathrm{colim}_I\St(\Phi,\,R_i). $$ Для этого можно проверить универсальное свойство копредела. Если $f_i\colon\St(\Phi,\,R_i)\rightarrow G$, и $x_\alpha(r)\in\St(\Phi,\,R)$, можно найти $r'\in R_i$ для некоторого $i$ такой, что $r'$ переходит в $r$, и определить $f(x_\alpha(r))=f_i(x_\alpha(r'))$. Легко видеть, что такое определение не зависит от выбора $i$, и сохраняет соотношения Стейнберга. Тогда $f$ будет искомым отображением из $\St(\Phi,\,R)$ в $G$, замыкающим диаграмму до коммутативной. Единственность такого $g$ также легко проверить на образующих. \end{comment}
-
-\begin{comment}
-Теперь утверждение про $\K_2$ следует из того, что направленный копредел является точным функтором в категории групп, но поскольку я не знаю, где это написано, то привожу доказательство. Рассмотрим естественное отображение $$ f\colon\mathrm{colim}_I\K_2(\Phi,\,R_i)\rightarrow\K_2(\Phi,\,R), $$ и докажем, что оно является биекцией. Если $x\in\K_2(\Phi,\,R)$, то найдётся $y\in\St(\Phi,\,R_i)$ для некоторого $i$ по предыдущему пункту, который переходит в $x$. Пусть $\phi$ обозначает естественное отображение $$ \phi\colon\St(\Phi,\,-)\rightarrow\mathrm G_{\mathrm{sc}}(\Phi,\,-). $$ Поскольку $\phi(y)$ в пределе переходит в $1$, можно считать, что $\phi(y)=1$, то есть $y\in\K_2(\Phi,\,R_i)$. Это доказывает сюръективность $f$. Пусть теперь $x\in\mathrm{colim}_I\K_2(\Phi,\,R_i)$ переходит в $1$ под действием $f$. Тогда образ $x$ в $x\in\mathrm{colim}_I\St(\Phi,\,R_i)$ также равен $1$, и используя конструкцию прямого предела в категории групп $$ \left(\bigsqcup_i\K_2(\Phi,\,R_i)/\sim\right)\rightarrow\left(\bigsqcup_i\St(\Phi,\,R_i)/\sim\right), $$ мы заключаем, что $x$ равен $1$.
-\end{comment}
-
-\begin{lemma}
-\label{k2hil}
-Если $R$ является областью, $\Phi$ имеет ранг хотя бы $3$ {\rm(}наверное, можно и $2$, но нужно куда-то сослаться или написать что-то более подробное в доказательстве{\rm)}, и каноническое вложение $R\subseteq R[t]$ индуцирует изоморфизм $\K_2(\Phi,\,R)\cong\K_2(\Phi,\,R[t])$, то для любого мультипликативного множества $S\subseteq R$ вложение $R_S\subseteq R_S[t]$ тоже индуцирует изоморфизм.
-\end{lemma}
-\begin{proof}
-Пусть $g\in\K_2(\Phi,\,R_S[t])$, и $g(0)=1$. Тогда для некоторого $f\in S$ верно, что $g(ft)$ приходит из $\St(\Phi,\,R[t])$. Действительно, достаточно рассмотреть любое разложение $g$ в произведение $z_{\alpha}(r/s,\,tq)$, где $r,q\in R[t]$, $s\in S$, и разложить
-$$
-z_{\alpha}(r/s,\,f^2tq)=[x_{\alpha-\beta}(ftq),\,x_{\beta}(fN_{\alpha,\,\beta})]^{x_{-\alpha}(r/s)}
-$$
-в случае системы корней с простыми связями. Тогда ясно, что достаточно большой $f$ можно подобрать. Если в системе корней есть кратные связи, рассуждение аналогично.
-
-Итак, пусть $h\in\St(\Phi,\,R[t]$, и $\lambda_S(h)=g(ft)$, $f\in S$. Ясно, что в действительности $h\in\K_2(\Phi,\,R[t])$, поэтому $h\in\K_2(\Phi,\,R)$. Таким образом, $g(ft)\in\K_2(\Phi,\,R_S)$, $f\in S$, и подставляя $t\mapsto f^{-1}t$ получаем, что $g\in\K_2(\Phi,\,R_S)$.
-\end{proof}
-
-Следующая Теорема доказана в~\cite[Korollar von Satz 1]{Re75}.
+The following theorem has been proved by U.~Rehmann in \cite{Re75}, see Korollar of Satz 1.
 
 \begin{theorem}
-Если $F$ является полем, то $\K_2(\Phi,\,F[t])\cong\K_2(\Phi,\,F)$.
+For an arbitrary field $F$ one has $\K_2(\Phi,\,F[t])\cong\K_2(\Phi,\,F)$.
 \end{theorem}
 
 \begin{theorem} \label{theorem:LP-for-K2}
-Пусть $R$ является регулярным кольцом, содержащим поле, и $\Phi=\rA_l$, $l\geq4$, или $R$ является регулярным кольцом, содержащим поле характеристики $\neq2$, и $\Phi=\rD_l$, $l\geq7$. Тогда
-$$
-\K_2(\Phi,\,R[t])\cong\K_2(\Phi,\,R).
-$$
+Let $R$ be a regular ring containing a field $F$ and let $\Phi$ be either the root system $\rA_l$  for $l\geq4$, or $\rD_l$ for $l\geq7$. In the latter case assume additionally that the characteristic of $F$ is not $2$ Then one has
+\[\K_2(\Phi,\,R[t])\cong\K_2(\Phi,\,R).\]
 \end{theorem}
 \begin{proof}
-Заметим, что если $k=\mathbb Z$ или $k=\mathbb Z[1/2]$, то $k$-алгебра, являющаяся полем, содержит простое подполе, которое совершенно и также является $k$-алгеброй. Тогда остаётся применить Теорему~\ref{lpb}.
+This is a direct consequence of~\ref{lpb}.
 \end{proof}
 
 \begin{corollary}
-Если $F$~--- поле, $\mathrm{char}\,F\neq2$, $l\geq7$, то
+Let $F$ be a field $\mathrm{char}\,F\neq2$, $l\geq7$, then
 $$
 \mathrm H_2\big(\mathrm{Spin}_{2l}(F[t_1,\ldots,t_n]),\,\mathbb Z\big)=\cfrac{F^\times\otimes F^\times}{a\otimes(1-a)}.
 $$

@@ -343,7 +343,7 @@ Suppose that $K$ satisfies the assumptions listed in Definition~\ref{df:key-assu
 Then for every regular ring $R\in \mathcal{R}$ containing a field $F \in \mathcal{R}$ the natural embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R)\cong K(R[t]).$
 \end{theorem}
 
-The proof is based on a series of lemmas and is deferred until the end of this section. We start by deducing the following useful corollary of the axiom~\ref{DP}. We say that $K$ satisfies the {\it Quillen--Suslin local-global principle} if for every $R\in Ob(\mathcal{R})$ the natural map 
+The proof is based on a series of lemmas and is deferred until the end of this section. We start by deducing the following useful corollary of the axiom~\ref{DP}. We say that $K$ satisfies the {\it Quillen--Suslin local-global principle} if for every $R\in \mathcal{R}$ the natural map 
 \begin{equation} \label{QS-def} NK(R) \to \prod_{M \in \Max(R)} NK(R_M)\end{equation} is injective.
 \begin{lemma}\label{LGP}
  If $K$ is a finitary functor satisfying (A2), then it satisfies the Quillen--Suslin local-global principle. In particular, $NK$ is a separated presheaf in the Zariski topology.
@@ -363,7 +363,7 @@ The proof is based on a series of lemmas and is deferred until the end of this s
 
 First of all, notice that the local-global principle allows one to obtain the following global version of~\ref{PGP} (cf. e.\,g. with the proof of~\cite[Theorem~1]{LS20}).
 \begin{lemma}[Global $\mathbb{P}^1$-glueing property for domains] \label{ght}
-Suppose that $K$ satisfies the Quillen--Suslin local-global principle and the local $\mathbb{P}^1$-glueing property. Then for an arbitrary domain $R \in Ob(\mathcal{R})$ the square~\eqref{eq:P1-square} is pullback with all arrows injective. \end{lemma}
+Suppose that $K$ satisfies the Quillen--Suslin local-global principle and the local $\mathbb{P}^1$-glueing property. Then for an arbitrary domain $R \in \mathcal{R}$ the square~\eqref{eq:P1-square} is pullback with all arrows injective. \end{lemma}
 \begin{proof}
 Let $R \in \mathcal{R}$ be an arbitrary domain. Denote by $\lambda_t$ the natural embedding $R[t] \to R[t, t^{-1}]$. Let $g$ be an element of $\Ker(K(\lambda_t))$. Since $K(R)$ maps injectively into $K(R[t, t^{-1}])$, without loss of generality we may assume that $g \in NK(R)$.
 It is clear that the image of $g$ in $K(R_M[t, t^{-1}])$ is trivial for every maximal ideal $M \trianglelefteq R$. By our assumption on $K$, the image of $g$ in $K(R_M[t])$ is also trivial for all $M$. Thus, by the local-global principle, $g \in K(R[t])$ is trivial as well and the map $K(\lambda_t)$ is injective. By symmetry, the natural homomorphism $K(\lambda_{t^{-1}})\colon K(R[t^{-1}]) \to K(R[t, t^{-1}])$ is also injective. 
@@ -372,7 +372,7 @@ Let us show that~\eqref{eq:P1-square} is pullback. Suppose that the images of $g
 
 Let us also note the following useful particular special case of the Lindel patching property.
 \begin{lemma}[Zariski patching property for domains]
-	\label{zgl} Suppose that $K$ satsifies the Lindel patching property for domains. Let $R\in Ob(\mathcal{R})$ be a domain and $a, b$ be a pair of coprime elements of $R$. Consider the diagram
+	\label{zgl} Suppose that $K$ satsifies the Lindel patching property for domains. Let $R\in \mathcal{R}$ be a domain and $a, b$ be a pair of coprime elements of $R$. Consider the diagram
 $$\begin{tikzcd}
 	R \ar{r}{\lambda_a} \ar{d}[swap]{\lambda_b} & R_a \ar{d}{\overline{\lambda_b}}\\
 	R_b \ar{r}{\overline{\lambda_a}} & R_{ab}.

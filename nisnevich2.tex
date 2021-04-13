@@ -304,11 +304,12 @@ for all \(a\) if \(n\) is large enough.
 
 
 
-\section{Formalism of Lindel--Popescu theorem}
+\section{General formalism}
 The aim of this section is to formulate and prove Lindel--Popescu Theorem, a certain formal statement, which gives a sufficient condition for a general group-valued functor to be homotopy invariant. Later, in~\cref{sec:main} this result is applied to the functor $K_2$. Some of the machinery developed in this section also will be useful in the study of the $K_2$-analogue of Gersten's conjecture, see~\cref{sec:K2-GC}.
 
 Let us briefly recall the historical context, which might help to explain our choice of the name for~\cref{lpb}. Recall that H.~Lindel's paper~\cite{Li81} has settled the geometric case of the Bass--Quillen conjecture for all regular $k$-algebras $R$ essentially of finite type over $k$. Later T.~Vorst has used Lindel's result in the proof of the homotopy invariance for the unstable $\K_1$-functor, see~\cite{Vo81}. Recall that Vorst's result asserts that $\K_{1,r}(R[t]) \cong \K_{1,r}(R)$ for $r\geq 3$ and a regular ring $R$ essentially finite type over a field. Finally, in her recent work~\cite{Sta14} A.~Stavrova has combined Vorst's theorem with a theorem of D.~Popescu~\cite{Po90} and obtained a more general homotopy invariance $\K_1^G(A[t]) \cong \K_1^G(A)$ for an arbitrary regular algebra $A$ over a perfect field $F$ and a sufficiently isotropic reductive group $G$ defined over $F$, see~\cite[Theorem~1.3]{Sta14}.
 
+\subsection{Lindel--Popescu theorem}
 Throughout this section we denote by $\mathcal{R}$ the category of $k$-algebras for some fixed commutative ring $k$. The principal cases of interest for us are when either $k = \ZZ$ and $\mathcal{R} = \catname{Ring}$ or when $k = \ZZ[\tfrac{1}{2}]$ in which case $\mathcal{R}$ is the full subcategory of $\ZZ[\tfrac{1}{2}]$-algebras. We denote by $K$ a functor $\mathcal{R} \to \catname{Grp}$.
 
 For a ring $R \in \mathcal{R}$ and its element $a$ we denote by $\lambda_a$ the homomorphism of principal localization $R \to R_a$. Similarly, we denote by $\lambda_P$ the homomorphism $R \to R_P = (R\setminus P)^{-1}R$ of localization in a prime ideal $P \trianglelefteq R$. Notice that $R_a$ is the zero rng if $a$ is nilpotent. It will be convenient for us to extend the domain of the definition of $K$ and $NK$ to include the zero rng by setting $K(0) = NK(0) = 1$.
@@ -319,19 +320,24 @@ Let $A$ be an $R$-algebra, $f\in R[t]$ and $a \in A$. We denote by $ev_t(a)$ (or
 Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by the homomorphism of evaluation at $t=0$. It is clear that $NK$ is also a functor $\mathcal{R} \to \catname{Grp}$.
 \end{df}
 
+For $R \in \mathcal{R}$ and $a \in R$ consider the following square whose columns are homomorphisms of ``evaluation'' at $t=0$:
+  \begin{equation} \label{M-sq} \begin{tikzcd} R \ltimes t R_a[t] \ar{r}{\lambda_a} \ar{d}[swap]{e} & R_a[t] \ar{d}\\ R \ar{r} & R_a. \end{tikzcd}\end{equation}
+  The ring $R \ltimes tR_a[t]$ can be defined either via the semidirect product construction (see e.\,g. \cite[Definition~3.2]{S15}) or as the pullback of~\eqref{M-sq}. It is also clear that~\eqref{M-sq} is a Milnor square, see~\cite[Example~I.2.6]{Kbook}.
+
 \begin{df}\label{df:key-assumptions}
 Let us list the axioms on $K$ which are going to use throughout this section.
  \begin{enumerate}[label=(A\normalfont\arabic*)]
-  \item \label{CFC} {\it $K$ is finitary}, i.\,e. commutes with directed filtered colimits.
-  \item \label{DP} For $R \in \mathcal{R}$ and $a \in R$ consider the following commutative diagram whose columns are homomorphisms of ``evaluation'' at $t=0$:
-  \[\begin{tikzcd} R \ltimes t R_a[t] \ar{r}{\lambda_a} \ar{d}[swap]{e} & R_a[t] \ar{d}\\ R \ar{r} & R_a. \end{tikzcd}\]
-  For every $R$ and $a$ as above the natural homomorphism
+  \item \label{CFC} {\it $K$ is finitary}, i.\,e. commutes with filtered colimits.
+  \item \label{DP} {\it $K$ maps each square of the form~\eqref{M-sq} to a pullback square.}
+  Alternatively, this can be phrased as follows: for every $R$ and $a$ as in~\eqref{M-sq} the natural homomorphism
   \begin{equation}\label{eq:DP-map} \Ker(K(e)) \to NK(R_a)\end{equation}
   induced by $\lambda_a$ is an isomorphism.
-  \item \label{LPP} {\it $K$ satisfies the Lindel patching property for domains.} This means the following. Let $\iota \colon B \hookrightarrow A$ be an inclusion of domains contained in $\mathcal{R}$. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / hA$. Consider the following commutative diagram: 
+  \item \label{LPP} {\it $K$ satisfies the Nisnevich patching property for domains.} By this we mean the following. Let $\iota \colon B \hookrightarrow A$ be an {\'e}tale inclusion of domains contained in $\mathcal{R}$. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / hA$. Consider the following commutative diagram: 
   \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
   Then the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
-  \item \label{PGP} {\it $K$ satisfies the local $\mathbb{P}^1$-glueing property for domains.}  By definition, this means that for every local domain $R \in \mathcal{R}$ the following diagram is a pullback square in which all homomorphisms are injective (actually, only the injectivity of the right and the bottom arrows is a nontrivial condition): \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
+  \item \label{PGP} {\it $K$ satisfies the local $\mathbb{P}^1$-glueing property for domains.}  By definition, this means that for every local domain $R \in \mathcal{R}$ the following diagram is a pullback square: \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd}
+  \end{equation}
+  It is easy to see that if~\eqref{eq:P1-square} is pullback, then all its arrows are injective.
   \item \label{HIF} {\it $K$ is homotopy invariant for fields}, i.\,e. for every field $F \in \mathcal{R}$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
  \end{enumerate}
 \end{df} 
@@ -350,7 +356,7 @@ The proof is based on a series of lemmas and is deferred until the end of this s
 \end{lemma}
 
 \begin{proof}
- Fix a ring $R \in R$ and $a \in R$. 
+ Fix a ring $R \in \mathcal{R}$ and $a \in R$. 
  Consider the following diagram of commutative rings. Its objects $A_i$ are copies of $R[t]$ indexed by natural numbers $i$. The only arrows of this diagram are the homomorphisms $ev (a^{j-i}t)\colon A_i \to A_j$ defined for $1 \leq i \leq j$. It is clear that the diagram is filtered and its colimit is $R \ltimes tR_a[t]$ (cf. e.\,g.~\cite[Lemma~15]{S15}). 
  
  The first step of the proof of the lemma is to show that for every $g \in \Ker(NK(R) \to NK(R_a))$ there exists some natural $n$ such that $g(a^nt)$ is a trivial element of $K(R[t])$. Let $g$ be such an element. From the injectivity of~\eqref{eq:DP-map} we obtain that the image of $g$ in $K(R \ltimes tR_a[t])$ is trivial. The required assertion now follows from~\ref{CFC} and the previous paragraph.
@@ -363,16 +369,16 @@ The proof is based on a series of lemmas and is deferred until the end of this s
 
 First of all, notice that the local-global principle allows one to obtain the following global version of~\ref{PGP} (cf. e.\,g. with the proof of~\cite[Theorem~1]{LS20}).
 \begin{lemma}[Global $\mathbb{P}^1$-glueing property for domains] \label{ght}
-Suppose that $K$ satisfies the Quillen--Suslin local-global principle and the local $\mathbb{P}^1$-glueing property. Then for an arbitrary domain $R \in \mathcal{R}$ the square~\eqref{eq:P1-square} is pullback with all arrows injective. \end{lemma}
+Suppose that $K$ satisfies the Quillen--Suslin local-global principle and the local $\mathbb{P}^1$-glueing property. Then for an arbitrary domain $R \in \mathcal{R}$ the square~\eqref{eq:P1-square} is a pullback square. In particular, all its arrows are injective. \end{lemma}
 \begin{proof}
 Let $R \in \mathcal{R}$ be an arbitrary domain. Denote by $\lambda_t$ the natural embedding $R[t] \to R[t, t^{-1}]$. Let $g$ be an element of $\Ker(K(\lambda_t))$. Since $K(R)$ maps injectively into $K(R[t, t^{-1}])$, without loss of generality we may assume that $g \in NK(R)$.
 It is clear that the image of $g$ in $K(R_M[t, t^{-1}])$ is trivial for every maximal ideal $M \trianglelefteq R$. By our assumption on $K$, the image of $g$ in $K(R_M[t])$ is also trivial for all $M$. Thus, by the local-global principle, $g \in K(R[t])$ is trivial as well and the map $K(\lambda_t)$ is injective. By symmetry, the natural homomorphism $K(\lambda_{t^{-1}})\colon K(R[t^{-1}]) \to K(R[t, t^{-1}])$ is also injective. 
 
 Let us show that~\eqref{eq:P1-square} is pullback. Suppose that the images of $g \in K(R[t])$ and $h \in K(R[t^{-1}])$ coincide in $K(R[t, t^{-1}])$. Then so do the images of $g' = g \cdot g(0)^{-1}$ and $h' = h \cdot g(0)^{-1}$. For a maximal ideal $M\trianglelefteq R$ set $g'_M := K(\lambda_M)(g') \in K(R_M[t])$ and $h'_M := K(\lambda_M)(h') \in K(R_M[t^{-1}]))$. Clearly, their images in $K(R_M[t, t^{-1}])$ coincide. By our assumptions, the square~\eqref{eq:P1-square} is pullback for $R_M$, therefore $g'_M = 1$ for all $M$. Since $g' \in NK(R)$, by the local-global principle we obtain that $g' = 1$ and that $g$ is an image of an element of $K(R)$. By symmetry, the same assertion holds for $h$. Since $K(R)\to K(R[t, t^{-1}])$ is injective, we conclude that $g$ and $h$ are the images of the same element of $K(R)$, which completes the proof.  \end{proof}
 
-Let us also note the following useful particular special case of the Lindel patching property.
+Let us also note the following useful particular special case of the Nisnevich patching property for domains.
 \begin{lemma}[Zariski patching property for domains]
-	\label{zgl} Suppose that $K$ satsifies the Lindel patching property for domains. Let $R\in \mathcal{R}$ be a domain and $a, b$ be a pair of coprime elements of $R$. Consider the diagram
+	\label{zgl} Suppose that $K$ satsifies the Nisnevich patching property for domains. Let $R\in \mathcal{R}$ be a domain and $a, b$ be a pair of coprime elements of $R$. Consider the diagram
 $$\begin{tikzcd}
 	R \ar{r}{\lambda_a} \ar{d}[swap]{\lambda_b} & R_a \ar{d}{\overline{\lambda_b}}\\
 	R_b \ar{r}{\overline{\lambda_a}} & R_{ab}.
@@ -380,14 +386,14 @@ $$\begin{tikzcd}
 	Then the natural map $\Ker(\lambda_b) \to \Ker(\overline{\lambda_b})$ induced by $\lambda_a$ is surjective.
 \end{lemma}
 \begin{proof}
-	Set $B=R$, $A=R_a$ и $h=b$. To see that the present situation is a special case of~\ref{LPP} it is enough to  check that the map $j\colon B/hB \to A/hA$ is an isomorphism. Let us first verify the surjectivity of $j$, or what is the same, the inclusion $A \subseteq Ah+B$. Fix an element $r/a^s\in A=R_a$, we need to show that it lies in $Ah+B$. We may assume that $s\geq 1$, so that $a^s$ and $b^s$ are still coprime. Choose $x, y \in R$ such that $xa^s+yb^s=1$. Thus, $r/a^s$ can be decomposed into the sum of $rx\in B$ and $ry(b/a)^s\in bR_a=hA$.
+	Set $B=R$, $A=R_a$ и $h=b$. It is clear that $B \to A$ is an {\'e}tale homomorphism. To see that the present situation is a special case of~\ref{LPP} it is enough to  check that the map $j\colon B/hB \to A/hA$ is an isomorphism. Let us first verify the surjectivity of $j$, or what is the same, the inclusion $A \subseteq Ah+B$. Fix an element $r/a^s\in A=R_a$, we need to show that it lies in $Ah+B$. We may assume that $s\geq 1$, so that $a^s$ and $b^s$ are still coprime. Choose $x, y \in R$ such that $xa^s+yb^s=1$. Thus, $r/a^s$ can be decomposed into the sum of $rx\in B$ and $ry(b/a)^s\in bR_a=hA$.
 
 	Now let us verify the injectivity of $j$, i.\,e. the inclusion $Ah\cap B \subseteq Bh$. Suppose that $rb/a^s=c\in B=R$. We may assume $s\geq 1$ otherwise there is nothing to prove. From $rb=a^sc$ and $xa^s+yb^s=1$ we obtain the required inclusion $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b \in Rb = Bh$. 
 \end{proof}
 
 The following injectivity result is inspired by the proof of~\cite[Corollary~5.2]{Tu83}.
 \begin{lemma} \label{lmp}
-Suppose that $K$ satisfies the global $\mathbb{P}^1$-glueing property and the Zariski patching property. Then for any domain $R\in R$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $\K(R[t])\hookrightarrow\K(R[t]_f).$ \end{lemma}
+Suppose that $K$ satisfies the global $\mathbb{P}^1$-glueing property and the Zariski patching property for domains. Then for any domain $R\in \mathcal{R}$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $\K(R[t])\hookrightarrow\K(R[t]_f).$ \end{lemma}
 \begin{proof}
 	Fix a presentation $f=\sum_{i=0}^n a_it^i$, in which $a_n=1$. Set $$g=1+a_{n-1}t^{-1}+\ldots+a_0t^{-n}\in R[t^{-1}].$$ It is clear that $R[t, t^{-1}]_f \cong R[t, t^{-1}]_g$. Consider the following commutative diagram:
 $$\begin{tikzcd}
@@ -422,7 +428,7 @@ From a consideration of the diagram we obtain that the left arrow is injective. 
 Let $R$ be a commutative ring. Recall that an $R$-algebra is called {\it essentially smooth} if it is quasi-smooth and essentially of finite type over $R$ (see e.\,g.~\cite[p.~136]{Sw98}).
 \begin{theorem}[Lindel] \label{lindel}
 Let $F$ be a perfect field, $A$ be a local essentially smooth $F$-algebra of Krull dimension $\geq 1$.
-Then $A$ contains a local subdomain $B$ isomorphic to the localization of a multivariate polynomial ring over $F$ in a prime ideal and, moreover, there exists $h\in B\setminus A^\times$ such that $A/h \cong B/h$. 
+Then $A$ contains a local subdomain $B$ isomorphic to the localization of a multivariate polynomial ring over $F$ in a prime ideal. Moreover, the embedding $B\hookrightarrow A$ is {\'e}tale and there exists $h\in B\setminus A^\times$ such that $A/h \cong B/h$. 
 \end{theorem}
 \begin{proof} Recall that an essentially smooth $F$-algebra is (geometrically) regular, see e.\,g.~\cite[p.~137]{Sw98}. The claim now follows from Proposition~2 and Lemma on p.~321 of~\cite{Li81}, cf. also with Proposition 2' ibid. and~\cite[Proposition~3.2]{Vo81}. %see also [Bhatwadekar, Proposition~4.8]. 
 \end{proof}
@@ -443,7 +449,7 @@ Thanks to~\cref{LGP} it suffices to verify the base of induction (case $d=0$) un
 But in this case $A$ is neccessarily a field, so the required assertion follows from~\ref{HIF}
 
 Let us verify the inductive step. We assume that $NK$ is trivial when evaluated upon an essentially smooth algebra of Krull dimension $<d$. Now suppose that $A$ has dimension $d$. Arguing as before, we may assume additionally that $A$ is local with maximal ideal $M$.
-Let $g$ be an element of $NK(A) \leq K(A[t])$. By~\cref{lindel} we can choose $B\subseteq A$ and $h\in B\cap M$ such that $A/hA \cong B/hB$. Denote by $\lambda_h$ the principal localization homomorphism $A \to A_h$. It is clear that $A_h$ is a (possibly non-local) essentially smooth $F$-algebra of Krull dimension $<d$, so by inductive assumption $NK(A_h) = 1$ and hence $K(\lambda_h)(g) = 1$. Invoking~\ref{LPP} we find an element $h \in \Ker(K(B[t]) \to K(B_h[t]))$ mapped to $g$ under the natural homomorphism $K(B[t]) \to K(A[t])$.
+Let $g$ be an element of $NK(A) \leq K(A[t])$. By~\cref{lindel} we can choose $B\subseteq A$ and $h\in B\cap M$ such that $A/hA \cong B/hB$. Denote by $\lambda_h$ the principal localization homomorphism $A \to A_h$. It is clear that $A_h$ is a (possibly non-local) essentially smooth $F$-algebra of Krull dimension $<d$, so by inductive assumption $NK(A_h) = 1$ and hence $K(\lambda_h)(g) = 1$. Invoking~\ref{LPP} we find an element $h \in \Ker(K(B[t]) \to K(B_h[t]))$ that is mapped to $g$ under the natural homomorphism $K(B[t]) \to K(A[t])$.
 Since $B$ is a localization of a multivariate polynomial ring, we obtain from Proposition~\ref{asp} and \cref{HIL} that $NK(B) = 1$. Thus, $g = 1$ and $NK(A)$ is trivial, as required.
 
 Since $K$ commutes with filtered colimits we conclude from~\cref{popescu} and the above argument that $NK(R) = 1$ for any local regular domain containing $F$. To obtain the assertion for any regular ring it suffices to invoke~\cref{LGP}.

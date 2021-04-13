@@ -367,7 +367,7 @@ The aim of this section is to formulate and prove Lindel--Popescu Theorem, a cer
 
 Let us briefly recall the historical context, which might help to explain our choice of the name for~\cref{lpb}. Recall that H.~Lindel's paper~\cite{Li81} has settled the geometric case of the Bass--Quillen conjecture for all regular $k$-algebras $R$ essentially of finite type over $k$. Later T.~Vorst has used Lindel's result in the proof of the homotopy invariance for the unstable $\K_1$-functor, see~\cite{Vo81}. Recall that Vorst's result asserts that $\K_{1,r}(R[t]) \cong \K_{1,r}(R)$ for $r\geq 3$ and a regular ring $R$ essentially finite type over a field. Finally, in her recent work~\cite{Sta14} A.~Stavrova has combined Vorst's theorem with a theorem of D.~Popescu~\cite{Po90} and obtained a more general homotopy invariance $\K_1^G(A[t]) \cong \K_1^G(A)$ for an arbitrary regular algebra $A$ over a perfect field $k$ and a sufficiently isotropic reductive group $G$ defined over $k$, see~\cite[Theorem~1.3]{Sta14}.
 
-Throughout this section we denote by $\mathcal{R}$ a full subcategory of the category of unital commutative rings $\catname{Ring}$ closed under operations of taking filtered colimits, localizations and polynomial extensions. The principal cases of interest for us is when $\mathcal{R}$ is either the whole category $\catname{Ring}$ or its subcategory of $\ZZ[\tfrac{1}{2}]$-algebras. Throughout this section we also denote by $K$ an arbitrary functor $\mathcal{R} \to \catname{Grp}$.
+Throughout this section we denote by $\mathcal{R}$ either the category $\catname{Ring}$ of unital commutative rings or its full subcategory of $\ZZ[\tfrac{1}{2}]$-algebras. Throughout this section we also fix a functor $K \colon \mathcal{R} \to \catname{Grp}$.
 
 \begin{df}\label{df:NK} 
 Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by the homomorphism of evaluation at $t=0$. It is clear that $NK$ is also a functor $\mathcal{R} \to \catname{Grp}$.
@@ -462,36 +462,44 @@ From a consideration of the diagram we obtain that the left arrow is injective. 
 \begin{proof}
  Since $K$ is finitary and $R_S$ is a filtered colimit of principal localizations $R_a$, where $a\in S$, it suffices to verify the assertion in the special case $S = \{ 1, a, a^2, \ldots \}$ and $R_S = R_a$.
  
- Fix $a \in R$. Consider the following filtered diagram of commutative rings. Its objects $A_i$ are the copies of $R[t]$ indexed by natural numbers $i$. The morphisms $f_{ij}\colon A_i \to A_j$ of this diagram exist only for $1 \leq i \leq j$. The individual morphism $f_{ij}$ is defined as the $R$-algebra homomorphism sending $t$ to $a^{j-i}t$. It is clear that the colimit of this diagram is $R \ltimes tR_a[t]$ (cf. e.\,g.~\cite[Lemma~15]{S15}). 
+ Fix $a \in R$. Consider the following filtered diagram of commutative rings. Its objects $A_i$ are the copies of $R[t]$ indexed by natural numbers $i$. The only arrows of this diagram are homomorphisms $f_{ij}\colon A_i \to A_j$  defined for $1 \leq i \leq j$. The homomorphism $f_{ij}$ is given as the unique $R$-algebra homomorphism sending $t$ to $a^{j-i}t$. It is clear that the colimit of this diagram is $R \ltimes tR_a[t]$ (cf. e.\,g.~\cite[Lemma~15]{S15}). 
  Since $K$ is finitary, we obtain that $K(R \ltimes tR_a[t]) \cong K(R)$. Consequently, by the surjectivity of~\eqref{eq:DP-map} we conclude that $NK(R_a)$ is trivial.
 \end{proof}
 
 
 Следующие теоремы Линдела и Попеску являются ключевыми ингридиентами в доказательстве гипотезы Басса--Квиллена для регулярных колец, содержащих поле. 
-\begin{theorem}[Lindel]
-\label{lindel}
-Пусть $F$~--- совершенное поле, и $A$~--- локальная область положительной размерности, существенно гладкая над $F$. Тогда $A$ содержит подобласть локальную подобласть $B$, являющуюся локализацией кольца многочленов над $F$ {\rm(}от нескольких переменных{\rm)}, и существует $h\in B\setminus A^\times$ такой, что $A/h=B/h$. 
-\end{theorem}
-\begin{proof} See~\cite[Lemma, Proposition~2 and~2']{Li81}, \cite[Proposition~3.2]{Vo81} and also [Bhatwadekar, Proposition~4.8]. \end{proof}
+%essentially smooth = essentially of finite type + quasi-smooth
+%required: regular local ring essentially of finite type
+%quasi-smooth => regular?
 
+Let $R$ be a commutative ring. Recall that an $R$-algebra is called {\it essentially smooth} if it is quasi-smooth and essentially of finite type over $R$ (see e.\,g.~\cite[p.~136]{Sw98}).
+\begin{theorem}[Lindel] \label{lindel}
+Let $F$ be a perfect field, $A$ be a local essentially smooth $F$-algebra of Krull dimension $\geq 1$.
+Then $A$ contains a local subdomain $B$ isomorphic to the localization of a multivariate polynomial ring over $F$ in a prime ideal and, moreover, there exists $h\in B\setminus A^\times$ such that $A/h \cong B/h$. 
+\end{theorem}
+\begin{proof} Recall that an essentially smooth $F$-algebra is (geometrically) regular, see e.\,g.~\cite[p.~137]{Sw98}. The claim now follows from Proposition~2 and Lemma on p.~321 of~\cite{Li81}, cf. also with Proposition 2' ibid. and~\cite[Proposition~3.2]{Vo81}. %see also [Bhatwadekar, Proposition~4.8]. 
+\end{proof}
 
 \begin{theorem}[Popescu]
 \label{popescu}
-Пусть $F$~--- совершенное поле, и $R$~--- регулярная локальная область, содержащая $F$. Тогда $R$ является направленным копределом локальных областей, существенно гладких над $F$.
+Let $F$ be a perfect field, $R$ be a regular local $F$-algebra. Then $R$ is a filtered colimit of essentially smooth local $F$-algebras.
 \end{theorem}
-\begin{proof} See~\cite{Po90,Sw98}. \end{proof}
+\begin{proof} See~\cite[Corollary~1.3]{Sw98}.%, see also~\cite{Po90}.
+\end{proof}
 
 Now we are ready to finish the proof of \cref{lpb}. Our argument follows~\cite{Sta14, Vo81}.
 \begin{proof}[Proof of~\cref{lpb}]
-The first step of the proof is to verify the assertion of the theorem for an arbitrary essentially smooth $F$-algebra $A$, (see~\cite[p.~137]{Sw98} for the definitions) %
+Since every field contains a perfect subfield we may assume that $F$ is perfect.
+The first step of the proof is to verify the assertion of the theorem for an arbitrary essentially smooth $F$-algebra $A$,  %
 We argue by induction on the Krull dimension $d$ of $A$. Our goal is to prove the triviality of $NK(A)$.
 Thanks to~\cref{LGP} it suffices to verify the base of induction (case $d=0$) under the additional assumption that $A$ is local.
-But $A$ must be a field and the required assertion follows from~\ref{HIF}
+But in this case $A$ is neccessarily a field, so the required assertion follows from~\ref{HIF}
 
-Let us verify the inductive step. We assume that $NK$ is trivial when evaluated upon an essentially smooth algebra with Krull dimension $<d$. Now suppose that $A$ has dimension $d$. Arguing as above, we may assume additionally that $A$ is local.
-Let $g \in NK(A)$. By~\cref{lindel}  Выберем $B\subseteq A$ и $h\in B\setminus A^\times$ по Теореме. Возможно, $A_h$ перестало быть локальным, однако $\mathrm{dim}\,A_h<d$ (ведь максимальный идеал $A$ становится единичным при локализации), и мы заключаем по индукционному предположению, что $\K(A_h[t])=\K(A_h)$. Тогда $\K(\lambda_h)(g)=1$, и по {\bf(LGL)} можно выбрать общий прообраз $f\in\K(B[t])$ для $g$ и $1\in\K(B_h[t])$. Из {\bf(HIL)} и {\bf(ASP)} следует, что $f\in\K(B)$, значит $g\in\K(A)$.
+Let us verify the inductive step. We assume that $NK$ is trivial when evaluated upon an essentially smooth algebra of Krull dimension $<d$. Now suppose that $A$ has dimension $d$. Arguing as before, we may assume additionally that $A$ is local with maximal ideal $M$.
+Let $g$ be an element of $NK(A) \leq K(A[t])$. By~\cref{lindel} we can choose $B\subseteq A$ and $h\in B\cap M$ such that $A/hA \cong B/hB$. Denote by $\lambda_h$ the principal localization homomorphism $A \to A_h$. It is clear that $A_h$ is a (possibly non-local) essentially smooth $F$-algebra of Krull dimension $<d$, so by inductive assumption $NK(A_h) = 1$ and hence $K(\lambda_h)(g) = 1$. Invoking~\ref{LPP} we find an element $h \in \Ker(K(B[t]) \to K(B_h[t]))$ mapped to $g$ under the natural homomorphism $K(B[t]) \to K(A[t])$.
+Since $B$ is a localization of a multivariate polynomial ring, we obtain from Proposition~\ref{asp} and \cref{HIL} that $NK(B) = 1$. Thus, $g = 1$ and $NK(A)$ is trivial, as required.
 
-Теперь из {\bf(CDC)} и Теоремы~\ref{popescu} немедленно следует, что $\K(R[t])\cong\K(R)$ для любой локальной регулярной области, содержащей совершенное поле $F\in\mathcal A\mathsf{lg}_k$. Благодаря {\bf(LGP)}, из этого следует {\bf(ALP)}.
+Since $K$ commutes with filtered colimits we conclude from~\cref{popescu} and the above argument that $NK(R) = 1$ for any local regular domain containing $F$. To obtain the assertion for any regular ring it suffices to invoke~\cref{LGP}.
 \end{proof}
 
 \section{Main results}\label{sec:main}

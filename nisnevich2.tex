@@ -339,7 +339,7 @@ The following theorem is the main result of this section.
   \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
   Then the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
   \item \label{PGP} {\it $K$ is acyclic for local domains.}  By definition, this means that for every local domain $R \in \mathcal{R}$ the following diagram whose arrows are induced by natural embeddings is a pullback square: \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
-  The choice of the term is inspired by~\cite[Def.~III.4.1.1]{Kbook}.
+  The choice of the name for the axiom is inspired by~\cite[Def.~III.4.1.1]{Kbook}.
   It is easy to see that if~\eqref{eq:P1-square} is pullback, then all its arrows are injective.
   \item \label{HIF} {\it $K$ is homotopy invariant for fields}, i.\,e. for every field $F \in \mathcal{R}$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
  \end{enumerate}
@@ -454,6 +454,68 @@ Since $K$ commutes with filtered colimits we conclude from~\cref{popescu} and th
 \end{proof}
 
 \subsection{A general injectivity theorem}
+
+In~\cite[Theorem~2.5]{Pa19} We start by recalling the following geometric result.
+\begin{theorem*}[Panin]
+Let $F$ be a field, let $R$ be an irreducible smooth $F$-algebra of finite type, and take $M_1,\ldots,\mathfrak M_n\in\mathrm{Max}\,R$. Denote by $A=R_{M_1,\ldots,M_n}$ the semi-localisation of $R$ in the above set of maximal ideals, and fix $f\in\cap_{i=1}^n M_i\subseteq R$. Then there exists a monic polynomial $h(t)\in A[t]$, a domain $S$, and maps $\tau$, $p$, $p'$ and $\delta$ such that $A[t]/h\cong S/\tau(h)$, and the diagram
+\begin{equation*}
+ \begin{tikzcd}[column sep=4em]
+                              & A                & \\
+   A[t] \ar{d}{\lambda_h} \ar{ru}{ev(0)} \ar{r}{\tau} & S \ar{u}{\delta} \ar{d}{\lambda_{\tau(h)}}  & R \ar{ul}[swap]{\lambda_{M_1,\ldots,M_n}} \ar{d}{\lambda_f} \ar{l}[swap]{p} \\
+   A[t]_h \ar{r}[swap]{\tau\otimes_{A[t]}A[t]_h}              & S_{\tau(h)}      & R_f \ar{l}{p'}\end{tikzcd}
+\end{equation*}
+
+commutes.
+\end{theorem*}
+\begin{proof}
+ This is a special case of~\cite[Theorem~2.5]{Pa19} 
+\end{proof}
+
+Now let us deduce the following injectivity theorem from the above result.
+
+\begin{prop}
+\label{esssmooth}
+In the notation of the above theorem, set $K=\mathrm{Frac}\,A=\mathrm{Frac}\,R$, and assume that for a commutative ring $k$ we have a finitary functor $K\colon\mathcal{R}\rightarrow\catname{Grp}$,
+which is acyclic for domains and satisfies the Nisnevich patching property for domains. Then
+the canonical map $K(A)\to K(K)$ is injective.
+\end{prop}
+\begin{proof}
+Take $g\in\mathrm{Ker}\big(\mathrm K(A)\rightarrow\mathrm K(K)\big)$. Since $\mathrm K$ commutes with directed colimits, there exists $C=R_d$ smooth over $F$ and $f\in\cap_{i=1}^n\mathfrak m_i\subseteq R$ such that 
+$
+g=\lambda_{\mathfrak m_1,\ldots,\mathfrak m_n}\big(\widetilde{g}\big)
+$
+for some %$\widetilde g\in\mathrm K(C)$, and 
+$
+\widetilde g\in\mathrm{Ker}\big(\mathrm K(C)\rightarrow\mathrm K(C_f)\big).
+$ 
+
+Now we apply Panin's Theorem for $R=C$. Observe that $p\big(\widetilde g\big)$ is mapped to $1$ via $\lambda_{\tau(h)}$, and therefore by $($LGL$)$ there exist $\widetilde{\widetilde g}\in\mathrm K(A[t])$ such that $\lambda_h\Big(\widetilde{\widetilde g}\Big)=1$ and $\tau\Big(\widetilde{\widetilde g}\Big)=p\big(\widetilde g\big)$. However, since $h$ is monic, we conclude that 
+$$
+\mathrm K(A[t])\rightarrowtail\mathrm K(A[t]_h)
+$$
+is injective under our conditions on $\mathrm K$ (see Lemma~\ref{lmp}), i.e.,  $\widetilde{\widetilde g}=1$. It remains to observe that
+$$
+%1=\widetilde{\widetilde g}(0)=\delta\Big(\tau\Big(\widetilde{\widetilde g}\Big)\Big)=\delta\Big(p\big(\widetilde g\big)\Big)=\lambda_{\mathfrak m_1,\ldots,\mathfrak m_n}\big(\widetilde{g}\big)=g.
+g=\lambda_{\mathfrak m_1,\ldots,\mathfrak m_n}\big(\widetilde{g}\big)=\delta\Big(p\big(\widetilde g\big)\Big)=\delta\Big(\tau\Big(\widetilde{\widetilde g}\Big)\Big)=\widetilde{\widetilde g}(0)=1.\qedhere
+$$
+\end{proof}
+
+Now we can use the results of Popescu to prove the following theorem.
+
+\begin{theorem}
+Let $A$ be a regular (noetherian) semi-local domain containing a field $F$. Denote by $K$ the field of fractions of $A$, and assume that
+$K\colon\mathcal{R}\rightarrow\catname{Grp}$
+is a functor commuting with directed colimits and satisfying {\rm(LGL)} and {\rm(GHT)}, $k$ a commutative ring. Then
+$K(A)\rightarrowtail K(K)$
+is injective.
+\end{theorem}
+\begin{proof}
+Passing to the prime subfield we can assume that $F$ is perfect. By Popescu's theorem, $A$ is a directed colimit of smooth $F$-algebras. Since $\mathrm K$ commutes with directed colimits, we cam assume that $g$ comes from an element $\widetilde g\in\mathrm K(R)$ for a smooth $F$-algebra $R$, moreover, using that $\mathrm{Spec}\,A$ is connected, we can assume that $\mathrm{Spec}\,R$ is connected, i.e., that $R$ a domain. Using that $\mathrm K$ commutes with directed limits again, we may also assume that $\widetilde g$ vanishes in the fraction field of $R$. Passing to a principal localisation of $R$ we may assume that preimages of maximal ideals of $A$ are maximal ideals of $R$. Then by Proposition~\ref{esssmooth}, $\widetilde g$ vanishes in any semi-localisation of $R$ in a finite set of maximal ideals, but $R\rightarrow A$ factors through such a semi-localisation, and therefore we conclude that $g=1$. 
+\end{proof}
+
+
+We remark, that an analogous theorem for $\mathrm K_1^G$-functors is proven by A.~Stavrova in~\cite[Theorem~1.2]{Sta20}
+
 
 \section{Main results}\label{sec:main}
 \subsection{Analogue of Serre's problem for \texorpdfstring{$\K_2$}{K2}}

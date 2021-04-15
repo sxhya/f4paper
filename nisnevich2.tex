@@ -368,10 +368,7 @@ First of all, notice that the local-global principle allows one to obtain the fo
 \begin{lemma}[Acyclicity for domains] \label{ght}
 Suppose that $K$ satisfies the Quillen--Suslin local-global principle and the acyclicity property for local domains. Then for an arbitrary domain $R \in \mathcal{R}$ the square~\eqref{eq:P1-square} is a pullback square. In particular, all its arrows are injective. \end{lemma}
 \begin{proof}
-Let $R \in \mathcal{R}$ be an arbitrary domain. Denote by $\lambda_t$ the natural embedding $R[t] \to R[t, t^{-1}]$. Let $g$ be an element of $\Ker(K(\lambda_t))$. Since $K(R)$ maps injectively into $K(R[t, t^{-1}])$, without loss of generality we may assume that $g \in NK(R)$.
-It is clear that the image of $g$ in $K(R_M[t, t^{-1}])$ is trivial for every maximal ideal $M \trianglelefteq R$. By our assumption on $K$, the image of $g$ in $K(R_M[t])$ is also trivial for all $M$. Thus, by the local-global principle, $g \in K(R[t])$ is trivial as well and the map $K(\lambda_t)$ is injective. By symmetry, the natural homomorphism $K(\lambda_{t^{-1}})\colon K(R[t^{-1}]) \to K(R[t, t^{-1}])$ is also injective. 
-
-Let us show that~\eqref{eq:P1-square} is pullback. Suppose that the images of $g \in K(R[t])$ and $h \in K(R[t^{-1}])$ coincide in $K(R[t, t^{-1}])$. Then so do the images of $g' = g \cdot g(0)^{-1}$ and $h' = h \cdot g(0)^{-1}$. For a maximal ideal $M\trianglelefteq R$ set $g'_M := K(\lambda_M)(g') \in K(R_M[t])$ and $h'_M := K(\lambda_M)(h') \in K(R_M[t^{-1}]))$. Clearly, their images in $K(R_M[t, t^{-1}])$ coincide. By our assumptions, the square~\eqref{eq:P1-square} is pullback for $R_M$, therefore $g'_M = 1$ for all $M$. Since $g' \in NK(R)$, by the local-global principle we obtain that $g' = 1$ and that $g$ is an image of an element of $K(R)$. By symmetry, the same assertion holds for $h$. Since $K(R)\to K(R[t, t^{-1}])$ is injective, we conclude that $g$ and $h$ are the images of the same element of $K(R)$, which completes the proof.  \end{proof}
+Let $R \in \mathcal{R}$ be an arbitrary domain. Suppose that the images of $g \in K(R[t])$ and $h \in K(R[t^{-1}])$ coincide in $K(R[t, t^{-1}])$. Then so do the images of $g' = g \cdot g(0)^{-1}$ and $h' = h \cdot g(0)^{-1}$. For a maximal ideal $M\trianglelefteq R$ set $g'_M := K(\lambda_M)(g') \in K(R_M[t])$ and $h'_M := K(\lambda_M)(h') \in K(R_M[t^{-1}]))$. Clearly, their images in $K(R_M[t, t^{-1}])$ coincide. By our assumptions, the square~\eqref{eq:P1-square} is pullback for $R_M$, therefore $g'_M = 1$ for all $M$. Since $g' \in NK(R)$, by the local-global principle we obtain that $g' = 1$, hence $g$ is the image of some element of $K(R)$. By symmetry, $h$ also is the image of some another element of $K(R)$. Since $K(R)\to K(R[t, t^{-1}])$ is injective, we conclude that $g$ and $h$ are the images of the same element of $K(R)$, which completes the proof.  \end{proof}
 
 
 Let us also note the following useful particular special case of the Nisnevich patching property for domains.
@@ -402,7 +399,7 @@ Let $x$ be an element of $\Ker(K(\lambda_f))$. Then $K(\lambda_t)(x)$ lies in $\
 
 Now we can deduce from the previous lemma the analogue of Serre's problem for the functor $K$.
 \begin{prop}[The analogue of Serre's problem] \label{asp}
-Suppose that $K$ is finitary, homotopy invariant for fields, acyclic for domains and satisfies the Zariski patching property. Then for any field $F\in \mathcal{R}$ the natural embedding $F\hookrightarrow F[t_1,\ldots,t_n]$ induces an isomorphism
+Suppose that $K$ is finitary, homotopy invariant for fields, acyclic for domains and satisfies the Zariski patching property for domains. Then for any field $F\in \mathcal{R}$ the natural embedding $F\hookrightarrow F[t_1,\ldots,t_n]$ induces an isomorphism
 $K(F)\cong K(F[t_1,\ldots,t_n]).$ \end{prop}
 \begin{proof} First of all, let us show that the map $K(F[t_1,\ldots,t_n])\to \K(F(t_1)[t_2,\ldots,t_n])$ induced by the embedding $F[t_1,\ldots,t_n] \hookrightarrow F(t_1)[t_2,\ldots,t_n]$ is injective.
 Indeed, let $x$ be an element of the kernel of this map. Since $F(t_1)[t_2,\ldots,t_n]$ is a colimit of principal localizations $F[t_1,\ldots,t_n]_f$, where $f$ varies over the elements of the multiplicative set $F[t_1] \setminus \{0\}$, by~\ref{CFC} one can find $f_0\in F[t_1]$ such that $\K(\lambda_{f_0})(x)=1$. Applying~\cref{lmp} to the ring $R=F[t_2,\ldots,t_n]$, we obtain that $x=1$. 
@@ -454,10 +451,9 @@ Since $K$ commutes with filtered colimits we conclude from~\cref{popescu} and th
 \end{proof}
 
 \subsection{A general injectivity theorem}
-
-In~\cite[Theorem~2.5]{Pa19} We start by recalling the following geometric result.
-\begin{theorem*}[Panin]
-Let $F$ be a field, let $R$ be an irreducible smooth $F$-algebra of finite type, and take $M_1,\ldots,\mathfrak M_n\in\mathrm{Max}\,R$. Denote by $A=R_{M_1,\ldots,M_n}$ the semi-localisation of $R$ in the above set of maximal ideals, and fix $f\in\cap_{i=1}^n M_i\subseteq R$. Then there exists a monic polynomial $h(t)\in A[t]$, a domain $S$, and maps $\tau$, $p$, $p'$ and $\delta$ such that $A[t]/h\cong S/\tau(h)$, and the diagram
+We start by recalling the following geometric result.
+\begin{theorem}[Panin]
+Let $F$ be a field, let $R$ be an irreducible smooth $F$-algebra of finite type, and take $M_1,\ldots, M_n\in\mathrm{Max}\,R$. Denote by $A=R_{M_1,\ldots,M_n}$ the semi-localisation of $R$ in the above set of maximal ideals, and fix $f\in\cap_{i=1}^n M_i\subseteq R$. Then there exists a monic polynomial $h(t)\in A[t]$, a domain $S$, and maps $\tau$, $p$, $p'$ and $\delta$ such that $A[t]/h\cong S/\tau(h)$, and the diagram
 \begin{equation*}
  \begin{tikzcd}[column sep=4em]
                               & A                & \\
@@ -466,21 +462,19 @@ Let $F$ be a field, let $R$ be an irreducible smooth $F$-algebra of finite type,
 \end{equation*}
 
 commutes.
-\end{theorem*}
+\end{theorem}
 \begin{proof}
  This is a special case of~\cite[Theorem~2.5]{Pa19} 
 \end{proof}
 
-Now let us deduce the following injectivity theorem from the above result.
-
+%Now let us deduce the following injectivity theorem from Panin's result.
+Denote by $E$ the fraction field of $A$ (or what is the same the fraction field of $R$).
 \begin{prop}
 \label{esssmooth}
-In the notation of the above theorem, set $K=\mathrm{Frac}\,A=\mathrm{Frac}\,R$, and assume that for a commutative ring $k$ we have a finitary functor $K\colon\mathcal{R}\rightarrow\catname{Grp}$,
-which is acyclic for domains and satisfies the Nisnevich patching property for domains. Then
-the canonical map $K(A)\to K(K)$ is injective.
+Suppose that $K\colon\mathcal{R}\rightarrow\catname{Grp}$ is finitary, acyclic for domains and satisfies the Nisnevich patching property for domains. Then the canonical map $K(A)\to K(E)$ is injective.
 \end{prop}
 \begin{proof}
-Take $g\in\mathrm{Ker}\big(\mathrm K(A)\rightarrow\mathrm K(K)\big)$. Since $\mathrm K$ commutes with directed colimits, there exists $C=R_d$ smooth over $F$ and $f\in\cap_{i=1}^n\mathfrak m_i\subseteq R$ such that 
+Let $g$ be an element of the kernel of $K(A)\rightarrow K(E)$. Since $K$ commutes with filtered colimits, there exists $C=R_d$ smooth over $F$ and $f\in\cap_{i=1}^n\mathfrak m_i\subseteq R$ such that 
 $
 g=\lambda_{\mathfrak m_1,\ldots,\mathfrak m_n}\big(\widetilde{g}\big)
 $
@@ -503,11 +497,10 @@ $$
 Now we can use the results of Popescu to prove the following theorem.
 
 \begin{theorem}
-Let $A$ be a regular (noetherian) semi-local domain containing a field $F$. Denote by $K$ the field of fractions of $A$, and assume that
-$K\colon\mathcal{R}\rightarrow\catname{Grp}$
-is a functor commuting with directed colimits and satisfying {\rm(LGL)} and {\rm(GHT)}, $k$ a commutative ring. Then
-$K(A)\rightarrowtail K(K)$
-is injective.
+Suppose that $K\colon\mathcal{R}\rightarrow\catname{Grp}$
+is a finitary functor which is acyclic for domains and satisfies the Nisnevich patching property for domains. 
+Let $A$ be a regular noetherian semi-local domain containing a field $F$. 
+Then the homomorphism $K(A) \to K(\mathrm{Frac}(A))$ induced by the obvious embedding of $A \to \mathrm{Frac}(A)$ is injective.
 \end{theorem}
 \begin{proof}
 Passing to the prime subfield we can assume that $F$ is perfect. By Popescu's theorem, $A$ is a directed colimit of smooth $F$-algebras. Since $\mathrm K$ commutes with directed colimits, we cam assume that $g$ comes from an element $\widetilde g\in\mathrm K(R)$ for a smooth $F$-algebra $R$, moreover, using that $\mathrm{Spec}\,A$ is connected, we can assume that $\mathrm{Spec}\,R$ is connected, i.e., that $R$ a domain. Using that $\mathrm K$ commutes with directed limits again, we may also assume that $\widetilde g$ vanishes in the fraction field of $R$. Passing to a principal localisation of $R$ we may assume that preimages of maximal ideals of $A$ are maximal ideals of $R$. Then by Proposition~\ref{esssmooth}, $\widetilde g$ vanishes in any semi-localisation of $R$ in a finite set of maximal ideals, but $R\rightarrow A$ factors through such a semi-localisation, and therefore we conclude that $g=1$. 

@@ -42,6 +42,7 @@
 
 \theoremstyle{definition} 
 \newtheorem{df}[lemma]{Definition} 
+\newtheorem{rem}[lemma]{Remark}
 
 \newcommand{\Set}{\mathbf{Set}}
 \newcommand{\Group}{\mathbf{Grp}}
@@ -326,30 +327,33 @@ For $R \in \mathcal{R}$ and $a \in R$ consider the following square whose vertic
   \begin{equation} \label{M-sq} \begin{tikzcd} R \ltimes t R_a[t] \ar{r}{\lambda_a} \ar{d}[swap]{e} & R_a[t] \ar{d}\\ R \ar{r} & R_a. \end{tikzcd}\end{equation}
   The ring $R \ltimes tR_a[t]$ can be defined either via the semidirect product construction (see e.\,g. \cite[Definition~3.2]{S15}) or as the pullback of~\eqref{M-sq}. It is also clear that~\eqref{M-sq} is a Milnor square, see~\cite[Example~I.2.6]{Kbook}.
 
-The following theorem is the main result of this section.
-\begin{theorem}[Lindel--Popescu] \label{lpb}
+The following Lindel--Popescu-type theorem is the main result of this section.
+\begin{theorem} \label{lpb}
  Suppose that a functor $K \colon \mathcal{R} \to \catname{Grp}$ satisfies the following axioms:
- \begin{enumerate}[label=(\textnormal{A}\normalfont\arabic*)]
+ \begin{enumerate}[label=\textnormal{(A\arabic*)}]
   \item \label{CFC} {\it $K$ is finitary}, i.\,e. commutes with filtered colimits.
   \item \label{DP} {\it $K$ maps each square of the form~\eqref{M-sq} to a pullback square.}
-  Alternatively, this can be phrased as follows: for every $R \in \mathcal{R}$ and $a \in R$ the natural homomorphism
+  Since $e$ is split by the obvious embedding, this requirement is equivalent to the following one: for every $R \in \mathcal{R}$ and $a \in R$ the natural homomorphism
   \begin{equation}\label{eq:DP-map} \Ker(K(e)) \to NK(R_a)\end{equation}
   induced by $\lambda_a$ is an isomorphism.
   \item \label{LPP} {\it $K$ satisfies the Nisnevich patching property for domains.} By this we mean the following. Let $\iota \colon B \hookrightarrow A$ be an {\'e}tale inclusion of domains contained in $\mathcal{R}$. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / hA$. Consider the following commutative diagram: 
   \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
   Then the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
-  \item \label{PGP} {\it $K$ is acyclic for local domains.}  By definition, this means that for every local domain $R \in \mathcal{R}$ the following diagram whose arrows are induced by natural embeddings is a pullback square: \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}
-  The choice of the name for the axiom is inspired by~\cite[Def.~III.4.1.1]{Kbook}.
+  \item \label{PGP} {\it $K$ satisfies $\mathbb{P}^1$-glueing property for local domains.}  By definition, this means that for every local domain $R \in \mathcal{R}$ the following diagram whose arrows are induced by natural embeddings is a pullback square: \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}  
   It is easy to see that if~\eqref{eq:P1-square} is pullback, then all its arrows are injective.
   \item \label{HIF} {\it $K$ is homotopy invariant for fields}, i.\,e. for every field $F \in \mathcal{R}$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
  \end{enumerate}
- Then for every regular ring $R\in \mathcal{R}$ containing a field $F \in \mathcal{R}$ the natural embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R)\cong K(R[t]).$
-\end{theorem} 
+ Then for every regular ring $R\in \mathcal{R}$ containing a perfect field $F \in \mathcal{R}$ the natural embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R)\cong K(R[t]).$
+\end{theorem}
+\begin{rem}
+ In the literature a functor $K$ satisfying the requirement of~\ref{PGP} is sometimes called {\it acyclic} (cf.~\cite[Def.~III.4.1.1]{Kbook}).
+\end{rem}
 
-The proof is based on a series of lemmas and is deferred until the end of this section. We start by deducing the following useful corollary of the axiom~\ref{DP}. We say that $K$ satisfies the {\it Quillen--Suslin local-global principle} if for every $R\in \mathcal{R}$ the natural map 
-\begin{equation} \label{QS-def} NK(R) \to \prod_{M \in \Max(R)} NK(R_M)\end{equation} is injective.
+
+The proof is based on a series of lemmas and is deferred until the end of this section. We start by deducing the following useful corollary of the axiom~\ref{DP}. We say that $K$ satisfies the {\it Quillen--Suslin local-global principle} if for every $R\in \mathcal{R}$ the map 
+\begin{equation} \label{QS-def} \begin{tikzcd} NK(R) \ar{r}{\prod \lambda_M} & \prod\limits_{M \in \Max(R)} NK(R_M) \end{tikzcd} \end{equation} is injective.
 \begin{lemma}\label{LGP}
- If $K$ is a finitary functor satisfying (A2), then it satisfies the Quillen--Suslin local-global principle. In particular, $NK$ is a separated presheaf in the Zariski topology.
+ Suppose that $K$ is a finitary functor such that the homomorphism~\eqref{eq:DP-map} is injective for all $R$, $a$. Then $K$ satisfies the Quillen--Suslin local-global principle. In particular, $NK$ is a separated presheaf in the Zariski topology.
 \end{lemma}
 
 \begin{proof}
@@ -365,10 +369,10 @@ The proof is based on a series of lemmas and is deferred until the end of this s
 \end{proof}
 
 First of all, notice that the local-global principle allows one to obtain the following global version of~\ref{PGP} (cf. e.\,g. with the proof of~\cite[Theorem~1]{LS20}). 
-\begin{lemma}[Acyclicity for domains] \label{ght}
+\begin{lemma}[$\mathbb{P}^1$-glueing property for domains] \label{ght}
 Suppose that $K$ satisfies the Quillen--Suslin local-global principle and the acyclicity property for local domains. Then for an arbitrary domain $R \in \mathcal{R}$ the square~\eqref{eq:P1-square} is a pullback square. In particular, all its arrows are injective. \end{lemma}
 \begin{proof}
-Let $R \in \mathcal{R}$ be an arbitrary domain. Suppose that the images of $g \in K(R[t])$ and $h \in K(R[t^{-1}])$ coincide in $K(R[t, t^{-1}])$. Then so do the images of $g' = g \cdot g(0)^{-1}$ and $h' = h \cdot g(0)^{-1}$. For a maximal ideal $M\trianglelefteq R$ set $g'_M := K(\lambda_M)(g') \in K(R_M[t])$ and $h'_M := K(\lambda_M)(h') \in K(R_M[t^{-1}]))$. Clearly, their images in $K(R_M[t, t^{-1}])$ coincide. By our assumptions, the square~\eqref{eq:P1-square} is pullback for $R_M$, therefore $g'_M = 1$ for all $M$. Since $g' \in NK(R)$, by the local-global principle we obtain that $g' = 1$, hence $g$ is the image of some element of $K(R)$. By symmetry, $h$ also is the image of some another element of $K(R)$. Since $K(R)\to K(R[t, t^{-1}])$ is injective, we conclude that $g$ and $h$ are the images of the same element of $K(R)$, which completes the proof.  \end{proof}
+Let $R \in \mathcal{R}$ be an arbitrary domain. Suppose that the images of $g \in K(R[t])$ and $h \in K(R[t^{-1}])$ coincide in $K(R[t, t^{-1}])$. Then so do the images of $g' = g \cdot g(0)^{-1}$ and $h' = h \cdot g(0)^{-1}$. For a maximal ideal $M\trianglelefteq R$ set $g'_M := K(\lambda_M)(g') \in K(R_M[t])$ and $h'_M := K(\lambda_M)(h') \in K(R_M[t^{-1}]))$. Clearly, their images in $K(R_M[t, t^{-1}])$ coincide. By our assumptions, the square~\eqref{eq:P1-square} is pullback for $R_M$, therefore $g'_M = 1$ for all $M$. Since $g' \in NK(R)$, by the local-global principle we obtain that $g' = 1$, hence $g$ is the image of some element of $K(R)$. By symmetry, $h$ also is the image of some element of $K(R)$. Since $K(R)\to K(R[t, t^{-1}])$ is injective, we conclude that $g$ and $h$ are the images of the same element of $K(R)$, which completes the proof.  \end{proof}
 
 
 Let us also note the following useful particular special case of the Nisnevich patching property for domains.
@@ -386,9 +390,9 @@ $$\begin{tikzcd}
 	Now let us verify the injectivity of $j$, i.\,e. the inclusion $Ah\cap B \subseteq Bh$. Suppose that $rb/a^s=c\in B=R$. We may assume $s\geq 1$ otherwise there is nothing to prove. From $rb=a^sc$ and $xa^s+yb^s=1$ we obtain the required inclusion $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b \in Rb = Bh$. 
 \end{proof}
 
-The following injectivity result is inspired by the proof of~\cite[Corollary~5.2]{Tu83}.
+The following injectivity result is inspired by~\cite[Corollary~5.2]{Tu83}.
 \begin{lemma} \label{lmp}
-Suppose that $K$ is acyclic for domains and satisfies the Zariski patching property for domains. Then for any domain $R\in \mathcal{R}$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $\K(R[t])\hookrightarrow\K(R[t]_f).$ \end{lemma}
+Suppose that $K$ satisfies Zariski patching and $\mathbb{P}^1$-glueing properties for domains. Then for any domain $R\in \mathcal{R}$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $K(R[t])\hookrightarrow K(R[t]_f).$ \end{lemma}
 \begin{proof}
 	Fix a presentation $f=\sum_{i=0}^n a_it^i$, in which $a_n=1$. Set $$g=1+a_{n-1}t^{-1}+\ldots+a_0t^{-n}\in R[t^{-1}].$$ It is clear that $R[t, t^{-1}]_f \cong R[t, t^{-1}]_g$. Consider the following commutative diagram:
 $$\begin{tikzcd}
@@ -399,7 +403,7 @@ Let $x$ be an element of $\Ker(K(\lambda_f))$. Then $K(\lambda_t)(x)$ lies in $\
 
 Now we can deduce from the previous lemma the analogue of Serre's problem for the functor $K$.
 \begin{prop}[The analogue of Serre's problem] \label{asp}
-Suppose that $K$ is finitary, homotopy invariant for fields, acyclic for domains and satisfies the Zariski patching property for domains. Then for any field $F\in \mathcal{R}$ the natural embedding $F\hookrightarrow F[t_1,\ldots,t_n]$ induces an isomorphism
+Suppose that $K$ is finitary, homotopy invariant for fields and satisfies Zariski patching and $\mathbb{P}^1$-glueing properties for domains. Then for any field $F\in \mathcal{R}$ the natural embedding $F\hookrightarrow F[t_1,\ldots,t_n]$ induces an isomorphism
 $K(F)\cong K(F[t_1,\ldots,t_n]).$ \end{prop}
 \begin{proof} First of all, let us show that the map $K(F[t_1,\ldots,t_n])\to \K(F(t_1)[t_2,\ldots,t_n])$ induced by the embedding $F[t_1,\ldots,t_n] \hookrightarrow F(t_1)[t_2,\ldots,t_n]$ is injective.
 Indeed, let $x$ be an element of the kernel of this map. Since $F(t_1)[t_2,\ldots,t_n]$ is a colimit of principal localizations $F[t_1,\ldots,t_n]_f$, where $f$ varies over the elements of the multiplicative set $F[t_1] \setminus \{0\}$, by~\ref{CFC} one can find $f_0\in F[t_1]$ such that $\K(\lambda_{f_0})(x)=1$. Applying~\cref{lmp} to the ring $R=F[t_2,\ldots,t_n]$, we obtain that $x=1$. 
@@ -411,7 +415,7 @@ K\bigl(F[t_1]\bigr) \ar{r} & K\bigl(F(t_1)\bigr).
 \end{tikzcd}$$
 From a consideration of the diagram we obtain that the left arrow is injective. The required isomorphism $K(F) \cong K(F[t_1, \ldots, t_n])$ now follows from the isomorphism $K(F[t_1]) \cong K(F)$ of~\ref{HIF}. \end{proof}
 
-\begin{lemma} \label{HIL} Suppose that $K$ is finitary and satisfies axiom (A2). Suppose that for a fixed $R \in \mathcal{R}$ one has $NK(R) = 1$. Then for an arbitrary multiplicative subset $S \subseteq R$ one has $NK(R_S) = 1$.
+\begin{lemma} \label{HIL} Suppose that $K$ is finitary and the homomorphism~\eqref{eq:DP-map} is surjective for all $R, a$. Suppose that for a fixed $R \in \mathcal{R}$ one has $NK(R) = 1$. Then for an arbitrary multiplicative subset $S \subseteq R$ one has $NK(R_S) = 1$.
 \end{lemma}
 \begin{proof}
  Since $K$ is finitary and $R_S$ is a filtered colimit of principal localizations $R_a$, where $a\in S$, it suffices to verify the assertion in the special case when $S = \{ 1, a, a^2, \ldots \}$ and $R_S = R_a$.
@@ -437,7 +441,7 @@ Let $F$ be a perfect field, $R$ be a regular local $F$-algebra. Then $R$ is a fi
 
 Now we are ready to finish the proof of \cref{lpb}. Our argument follows~\cite{Sta14, Vo81}.
 \begin{proof}[Proof of~\cref{lpb}]
-Since every field contains a perfect subfield we may assume that $F$ is perfect.
+%Since every field contains a perfect subfield we may assume that $F$ is perfect.
 The first step of the proof is to verify the assertion of the theorem for an arbitrary essentially smooth $F$-algebra $A$,  %
 We argue by induction on the Krull dimension $d$ of $A$. Our goal is to prove the triviality of $NK(A)$.
 Thanks to~\cref{LGP} it suffices to verify the base of induction (case $d=0$) under the additional assumption that $A$ is local.

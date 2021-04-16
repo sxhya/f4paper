@@ -370,7 +370,7 @@ The proof is based on a series of lemmas and is deferred until the end of this s
 
 First of all, notice that the local-global principle allows one to obtain the following global version of~\ref{PGP} (cf. e.\,g. with the proof of~\cite[Theorem~1]{LS20}). 
 \begin{lemma}[$\mathbb{P}^1$-glueing property for domains] \label{ght}
-Suppose that $K$ satisfies the Quillen--Suslin local-global principle and the acyclicity property for local domains. Then for an arbitrary domain $R \in \mathcal{R}$ the square~\eqref{eq:P1-square} is a pullback square. In particular, all its arrows are injective. \end{lemma}
+Suppose that $K$ satisfies the Quillen--Suslin local-global principle and the $\mathbb{P}^1$-glueing property for local domains. Then for an arbitrary domain $R \in \mathcal{R}$ the square~\eqref{eq:P1-square} is a pullback square. In particular, all its arrows are injective. \end{lemma}
 \begin{proof}
 Let $R \in \mathcal{R}$ be an arbitrary domain. Suppose that the images of $g \in K(R[t])$ and $h \in K(R[t^{-1}])$ coincide in $K(R[t, t^{-1}])$. Then so do the images of $g' = g \cdot g(0)^{-1}$ and $h' = h \cdot g(0)^{-1}$. For a maximal ideal $M\trianglelefteq R$ set $g'_M := K(\lambda_M)(g') \in K(R_M[t])$ and $h'_M := K(\lambda_M)(h') \in K(R_M[t^{-1}]))$. Clearly, their images in $K(R_M[t, t^{-1}])$ coincide. By our assumptions, the square~\eqref{eq:P1-square} is pullback for $R_M$, therefore $g'_M = 1$ for all $M$. Since $g' \in NK(R)$, by the local-global principle we obtain that $g' = 1$, hence $g$ is the image of some element of $K(R)$. By symmetry, $h$ also is the image of some element of $K(R)$. Since $K(R)\to K(R[t, t^{-1}])$ is injective, we conclude that $g$ and $h$ are the images of the same element of $K(R)$, which completes the proof.  \end{proof}
 
@@ -475,7 +475,7 @@ commutes.
 Denote by $E$ the fraction field of $A$ (or what is the same the fraction field of $R$).
 \begin{prop}
 \label{esssmooth}
-Suppose that $K\colon\mathcal{R}\rightarrow\catname{Grp}$ is finitary, acyclic for domains and satisfies the Nisnevich patching property for domains. Then the canonical map $K(A)\to K(E)$ is injective.
+Suppose that $K\colon\mathcal{R}\rightarrow\catname{Grp}$ is finitary, satisfies Nisnevich patching and $\mathbb{P}^1$-glueing properties for domains. Then the canonical map $K(A)\to K(E)$ is injective.
 \end{prop}
 \begin{proof}
 Let $g$ be an element of the kernel of $K(A)\rightarrow K(E)$. Since $K$ commutes with filtered colimits, there exists $C=R_d$ smooth over $F$ and $f\in\cap_{i=1}^n\mathfrak m_i\subseteq R$ such that 
@@ -502,7 +502,7 @@ Now we can use the results of Popescu to prove the following theorem.
 
 \begin{theorem}
 Suppose that $K\colon\mathcal{R}\rightarrow\catname{Grp}$
-is a finitary functor which is acyclic for domains and satisfies the Nisnevich patching property for domains. 
+is a finitary functor which is satisfies Nisnevich patching and $\mathbb{P}^1$-glueing properties for domains. 
 Let $A$ be a regular noetherian semi-local domain containing a field $F$. 
 Then the homomorphism $K(A) \to K(\mathrm{Frac}(A))$ induced by the obvious embedding of $A \to \mathrm{Frac}(A)$ is injective.
 \end{theorem}

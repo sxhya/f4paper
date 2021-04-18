@@ -455,59 +455,48 @@ Since $K$ commutes with filtered colimits we conclude from~\cref{popescu} and th
 \end{proof}
 
 \subsection{A general injectivity theorem}
-We start by recalling the following geometric result.
+We start by recalling the following geometric result, which is part of the statement of~\cite[Theorem~2.5]{Pa19}.
 \begin{theorem}[Panin]
-Let $F$ be a field, let $R$ be an irreducible smooth $F$-algebra of finite type, and take $M_1,\ldots, M_n\in\mathrm{Max}\,R$. Denote by $A=R_{M_1,\ldots,M_n}$ the semi-localisation of $R$ in the above set of maximal ideals, and fix $f\in\cap_{i=1}^n M_i\subseteq R$. Then there exists a monic polynomial $h(t)\in A[t]$, a domain $S$, and maps $\tau$, $p$, $p'$ and $\delta$ such that $A[t]/h\cong S/\tau(h)$, and the diagram
+Let $F$ be a field, $R$ be an irreducible smooth $F$-algebra of finite type and $M_1,\ldots, M_n$ be a finite set of maximal ideals of $R$. Denote by $A=R_{M_1,\ldots,M_n}$ the correponding semi-localization of $R$. Let $f$ be an element of the intersection  $\cap_{i=1}^nM_i \subseteq R$. Then there exists a monic polynomial $h(t)\in A[t]$, a domain $S$, and homomorphisms $\tau$, $p$, $p'$ and $\delta$ such that $A[t]/hA[t]\cong S/\tau(h)S$ and the following diagram commutes:
 \begin{equation*}
  \begin{tikzcd}[column sep=4em]
-                              & A                & \\
-   A[t] \ar{d}{\lambda_h} \ar{ru}{ev(0)} \ar{r}{\tau} & S \ar{u}{\delta} \ar{d}{\lambda_{\tau(h)}}  & R \ar{ul}[swap]{\lambda_{M_1,\ldots,M_n}} \ar{d}{\lambda_f} \ar{l}[swap]{p} \\
-   A[t]_h \ar{r}[swap]{\tau\otimes_{A[t]}A[t]_h}              & S_{\tau(h)}      & R_f \ar{l}{p'}\end{tikzcd}
+   & A & \\ A[t] \ar{d}{\lambda_h} \ar{ru}{ev(0)} \ar{r}{\tau} & S \ar{u}{\delta} \ar{d}{\lambda_{\tau(h)}}  & R \ar{ul}[swap]{\lambda_{M_1,\ldots,M_n}} \ar{d}{\lambda_f} \ar{l}[swap]{p} \\
+   A[t]_h \ar{r}[swap]{\tau\otimes_{A[t]}A[t]_h}              & S_{\tau(h)}      & R_f. \ar{l}{p'}\end{tikzcd}
 \end{equation*}
-
-commutes.
 \end{theorem}
-\begin{proof}
- This is a special case of~\cite[Theorem~2.5]{Pa19} 
-\end{proof}
 
-%Now let us deduce the following injectivity theorem from Panin's result.
-Denote by $E$ the fraction field of $A$ (or what is the same the fraction field of $R$).
-\begin{prop}
+\begin{corollary}
 \label{esssmooth}
-Suppose that $K\colon\mathcal{R}\rightarrow\catname{Grp}$ is finitary, satisfies Nisnevich patching and $\mathbb{P}^1$-glueing properties for domains. Then the canonical map $K(A)\to K(E)$ is injective.
-\end{prop}
+Suppose that $K\colon\mathcal{R}\rightarrow\catname{Grp}$ is finitary and satisfies Nisnevich patching and $\mathbb{P}^1$-glueing properties for domains. Let $R, M_1, \ldots M_n, A$ be as in the statement of the above theorem. Denote by $E$ the fraction field of $A$ (which coincides with the fraction field of $R$).
+Then the canonical map $K(A)\to K(E)$ is injective.
+\end{corollary}
 \begin{proof}
-Let $g$ be an element of the kernel of $K(A)\rightarrow K(E)$. Since $K$ commutes with filtered colimits, there exists $C=R_d$ smooth over $F$ and $f\in\cap_{i=1}^n\mathfrak m_i\subseteq R$ such that 
+Let $g$ be an element of the kernel of $K(A)\rightarrow K(E)$. Since $K$ commutes with filtered colimits t $f\in\cap_{i=1}^n M_i\subseteq R$ such that 
 $
-g=\lambda_{\mathfrak m_1,\ldots,\mathfrak m_n}\big(\widetilde{g}\big)
+g=K(\lambda_{M_1,\ldots,M_n})(g_1)
 $
-for some %$\widetilde g\in\mathrm K(C)$, and 
-$
-\widetilde g\in\mathrm{Ker}\big(\mathrm K(C)\rightarrow\mathrm K(C_f)\big).
-$ 
+for some 
+$g_1\in\mathrm{Ker}(\mathrm K(R)\rightarrow\mathrm K(R_f)).$ 
 
-Now we apply Panin's Theorem for $R=C$. Observe that $p\big(\widetilde g\big)$ is mapped to $1$ via $\lambda_{\tau(h)}$, and therefore by $($LGL$)$ there exist $\widetilde{\widetilde g}\in\mathrm K(A[t])$ such that $\lambda_h\Big(\widetilde{\widetilde g}\Big)=1$ and $\tau\Big(\widetilde{\widetilde g}\Big)=p\big(\widetilde g\big)$. However, since $h$ is monic, we conclude that 
-$$
-\mathrm K(A[t])\rightarrowtail\mathrm K(A[t]_h)
-$$
-is injective under our conditions on $\mathrm K$ (see Lemma~\ref{lmp}), i.e.,  $\widetilde{\widetilde g}=1$. It remains to observe that
-$$
-%1=\widetilde{\widetilde g}(0)=\delta\Big(\tau\Big(\widetilde{\widetilde g}\Big)\Big)=\delta\Big(p\big(\widetilde g\big)\Big)=\lambda_{\mathfrak m_1,\ldots,\mathfrak m_n}\big(\widetilde{g}\big)=g.
-g=\lambda_{\mathfrak m_1,\ldots,\mathfrak m_n}\big(\widetilde{g}\big)=\delta\Big(p\big(\widetilde g\big)\Big)=\delta\Big(\tau\Big(\widetilde{\widetilde g}\Big)\Big)=\widetilde{\widetilde g}(0)=1.\qedhere
-$$
+Observe that $p(g_1)$ is mapped to $1$ via $\lambda_{\tau(h)}$, and therefore by~\ref{LPP} there exist $g_2\in\mathrm K(A[t])$ such that $\lambda_h(g_2)=1$ and $\tau(g_2)=p(g_1)$. Since $h$ is monic, we conclude by~\cref{lmp} that the homomorphism $ K(A[t])\to K(A[t]_h)$ is injective and consequently that $g_2=1$. It remains to observe that
+$$g=\lambda_{M_1,\ldots,M_n}(g_1)=\delta(p(g_1))=\delta(\tau(g_2))=g_2(0)=1.\qedhere$$
 \end{proof}
 
 Now we can use the results of Popescu to prove the following theorem.
 
 \begin{theorem}
 Suppose that $K\colon\mathcal{R}\rightarrow\catname{Grp}$
-is a finitary functor which is satisfies Nisnevich patching and $\mathbb{P}^1$-glueing properties for domains. 
-Let $A$ be a regular noetherian semi-local domain containing a field $F$. 
-Then the homomorphism $K(A) \to K(\mathrm{Frac}(A))$ induced by the obvious embedding of $A \to \mathrm{Frac}(A)$ is injective.
+is a finitary functor which satisfies Nisnevich patching and $\mathbb{P}^1$-glueing properties for domains. 
+Let $A$ be a regular semi-local domain containing a field $F$. 
+Denote by $E$ the fraction field of $A$.
+Then the natural homomorphism $K(A) \to K(E)$ is injective.
 \end{theorem}
 \begin{proof}
-Passing to the prime subfield we can assume that $F$ is perfect. By Popescu's theorem, $A$ is a directed colimit of smooth $F$-algebras. Since $\mathrm K$ commutes with directed colimits, we cam assume that $g$ comes from an element $\widetilde g\in\mathrm K(R)$ for a smooth $F$-algebra $R$, moreover, using that $\mathrm{Spec}\,A$ is connected, we can assume that $\mathrm{Spec}\,R$ is connected, i.e., that $R$ a domain. Using that $\mathrm K$ commutes with directed limits again, we may also assume that $\widetilde g$ vanishes in the fraction field of $R$. Passing to a principal localisation of $R$ we may assume that preimages of maximal ideals of $A$ are maximal ideals of $R$. Then by Proposition~\ref{esssmooth}, $\widetilde g$ vanishes in any semi-localisation of $R$ in a finite set of maximal ideals, but $R\rightarrow A$ factors through such a semi-localisation, and therefore we conclude that $g=1$. 
+Passing to the prime subfield, if necessary, we may assume that $F$ is perfect. By Popescu's theorem~\cite[Theorem~1.1]{Sw98} $A$ is a filtered colimit of smooth $F$-algebras. Since $A$ is a domain we may require additionally these smooth $F$-algebras to be domains.
+
+Since $K$ is finitary, we may assume that $g \in \Ker(K(A) \to K(E))$ comes from some element $g_1\in\mathrm K(R)$, where $R$ is a smooth $F$-domain. We may assume, additionally, that $g_1$ lies in the kernel of the natural morphism $K(R) \to K(\mathrm{Frac}(R))$.
+
+Passing to a principal localisation of $R$ we may assume that preimages of maximal ideals of $A$ are maximal ideals of $R$. Then by \cref{esssmooth}, $g_1$ vanishes in any semi-localisation of $R$ in a finite set of maximal ideals, but $R\rightarrow A$ factors through such a semi-localisation, so we conclude that $g=1$. 
 \end{proof}
 
 

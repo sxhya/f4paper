@@ -111,7 +111,7 @@ The following Lindel--Popescu-type theorem is the main result of this section.
  Then for every ring $R\in \mathcal{R}$ geometrically regular over a field $F \in \mathcal{R}$ the natural embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R)\cong K(R[t]).$
 \end{theorem}
 \begin{rem}
- In the literature a functor $K$ satisfying the requirement of~\ref{PGP} is sometimes called {\it acyclic} (cf.~\cite[Def.~III.4.1.1]{Kbook}).
+ In the literature a functor satisfying the axiom~\ref{PGP} is sometimes called {\it acyclic} (cf.~\cite[Def.~III.4.1.1]{Kbook}).
  Our axiom~\eqref{LPP} is analogous to the axiom (P3) from~\cite[Proposition~3.3.4]{AHW18}.
 \end{rem}
 
@@ -207,11 +207,11 @@ Recall the following geometric result.
 \begin{theorem}[Panin]
 \label{paninthm}
 Let $F$ be a field, $R$ be a domain smooth over $F$. Let $M_1,\ldots, M_n$ be a finite set of maximal ideals of $R$. Denote by $A=R_{M_1,\ldots,M_n}$ the correponding semi-localization of $R$. Let $f$ be an element of the intersection  $\cap_{i=1}^nM_i \subseteq R$. Then there exists a monic polynomial $h(t)\in A[t]$, a domain $S$ essentially smooth over $F$ and homomorphisms $\tau$, $p$, $p'$ and $\delta$ such that $A[t]/hA[t]\cong S/\tau(h)S$ and the following diagram commutes:
-\begin{equation*}
+\begin{equation}\label{eq:panin-diag}
  \begin{tikzcd}[column sep=4em]
    & A & \\ A[t] \ar{d}{\lambda_h} \ar{ru}{ev(0)} \ar{r}{\tau} & S \ar{u}{\delta} \ar{d}{\lambda_{\tau(h)}}  & R \ar{ul}[swap]{\lambda_{M_1,\ldots,M_n}} \ar{d}{\lambda_f} \ar{l}[swap]{p} \\
    A[t]_h \ar{r}[swap]{\tau\otimes_{A[t]}A[t]_h}              & S_{\tau(h)}      & R_f. \ar{l}{p'}\end{tikzcd}
-\end{equation*}
+\end{equation}
 \end{theorem}
 \begin{proof}
  This is a ring-theoretic restatement of the assertions (i)--(iii) of~\cite[Theorem~2.5]{Pa19}.
@@ -220,78 +220,65 @@ Let $F$ be a field, $R$ be a domain smooth over $F$. Let $M_1,\ldots, M_n$ be a 
 \begin{corollary}
 \label{esssmooth}
 Suppose that $K\colon\mathcal{R}\rightarrow\catname{Grp}$ is finitary and satisfies weak affine Nisnevich excision and $\mathbb{P}^1$-glueing properties for domains. Let $F\in\mathcal R$ be a field, and $R, M_1, \ldots M_n, A$ be as in the statement of the above theorem. Denote by $E$ the fraction field of $A$ {\rm(}which coincides with the fraction field of $R${\rm)}.
-Then for any $m\geq0$ the homomorphism $K(A[x_1,\ldots, x_m])\to K(E[x_1,\ldots, x_m])$ is injective.
+Then for any noetherian $F$-algebra $B$ the natural homomorphism $K(B \otimes_F A)\to K(B \otimes_F E)$ is injective.
 \end{corollary}
 \begin{proof}
-Let $g$ be an element of the kernel of $K(A[x_1,\ldots, x_m])\rightarrow K(E[x_1,\ldots, x_m])$. Since $K$ commutes with filtered colimits, there exists a smooth $F$-algebra $R'$, maximal ideals $M_i'$ in it, and $f\in\cap M_i'\subseteq R'$ such that $A$ is the semi-localization of $R'$ in $M_i'$, and
-$g=K(\lambda_{M_1',\ldots,M_n'})(g_1)$
-for some $g_1\in\mathrm{Ker}\left(\mathrm K(R'[x_1,\ldots, x_m])\rightarrow\mathrm K(R_f'[x_1,\ldots, x_m])\right).$ 
-In fact, one can take $R'$  to be a principal localization of $R$.
+We argue as in the proof of~\cite[Theorem~3.2]{Sta20}. Let $g$ be an element of the kernel of $K(B \otimes_F A)\rightarrow K(B \otimes_F E)$. First of all, notice that both $A$ and $E$ are filtered colimits of principal localizations of $R$. Since $K$ is finitary, there exists $f' \in \cap_{i=1}^n(R \setminus M_i)$ such that $g$ is the image of some $g_1 \in K(R_{f'}[x_1,\ldots x_m])$ under $K(\lambda_{M_1',\ldots M_n'})$, where $M_i' = R_{f'} \cdot M_i$. Set $R' := R_{f'}$.
+Clearly, there exists $f \in R'$ such that $K(\lambda_{f})(g_1) = 1$ in $K(R'_{f})$. Without loss of generality, we may assume that $f \in \cap_{i=1}^n M_i'$. 
 
-We will apply Theorem~\ref{paninthm} to the ring $R'$, maximal ideals $M_i'$ and $f$ chosen above. We will denote the induced maps on polynomial rings by the same letters. Consider the diagram
+We apply Theorem~\ref{paninthm} to the ring $R'$, maximal ideals $M_i'$ and the polynomial $f$ as above.
+Tensoring~\eqref{eq:panin-diag} with $B$ and applying functor $K$ we obtain the following commutative diagram (we use the convention that tensoring with $B$ does not change the notation for the arrows of the diagram):
 \begin{equation*} 
  \begin{tikzcd}[column sep=4em]
-   & K(A[x_1,\ldots, x_m]) & \\ 
-   K(A[x_1,\ldots, x_m][t]) \ar{d}{\lambda_h} \ar{ru}{ev_t(0)} \ar{r}{\tau} & K(S[x_1,\ldots, x_m]) \ar{u}{\delta} \ar{d}{\lambda_{\tau(h)}}  & K(R'[x_1,\ldots, x_m]) \ar{ul}[swap]{\lambda} \ar{d}{\lambda_f} \ar{l}[swap]{p} \\
-   K(A[t][x_1,\ldots, x_m]_h) \ar{r}[swap]{}              & K(S[x_1,\ldots, x_m]_{\tau(h)})      & K(R'[x_1,\ldots, x_m]_f). \ar{l}{}\end{tikzcd}
+   & K(B \otimes_F A) & \\ 
+   K(B \otimes_F A[t]) \ar{d}{K(\lambda_h)} \ar{ru}{K(ev_t(0))} \ar{r}{K(\tau)} & K(B \otimes_F S) \ar{u}{K(\delta)} \ar{d}{K(\lambda_{\tau(h)})}  & K(B \otimes_F R') \ar{ul}[swap]{K(\lambda)} \ar{d}{K(\lambda_f)} \ar{l}[swap]{K(p)} \\
+   K(B \otimes_F A[t]_h) \ar{r}[swap]{}              & K(B \otimes_F S_{\tau(h)})      & K(B \otimes_F R'_f). \ar{l}{}\end{tikzcd}
 \end{equation*}
-Observe that $p(g_1)$ is mapped to $1$ via $\lambda_{\tau(h)}$, and therefore by~\ref{LPP} there exist $g_2\in\mathrm K(A[x_1,\ldots, x_m][t])$ such that $\lambda_h(g_2)=1$ and $\tau(g_2)=p(g_1)$. Since $h$ is monic, we conclude by~\cref{lmp} that the homomorphism $ K(A[x_1,\ldots, x_m][t])\to K(A[x_1,\ldots, x_m][t]_h)$ is injective and consequently that $g_2=1$. It remains to observe that
-$$g=\lambda_{}(g_1)=\delta(p(g_1))=\delta(\tau(g_2))=g_2(0)=1.\qedhere$$
+Notice that $K(p)(g_1)$ lies in the kernel of $K(\lambda_{\tau(h)})$, therefore by~\ref{LPP} there exists $g_2\in K(B \otimes_F A[t])$ such that $K(\lambda_h)(g_2)=1$ and $K(\tau)(g_2)=K(p)(g_1)$. Since $h \in A[t]$ is monic, by~\cref{lmp} the homomorphism $K(\lambda_h)$ is injective, therefore $g_2=1$. It remains to see that
+$$g=K(\lambda)(g_1)=K(\delta)(K(p)(g_1))=K(\delta)(K(\tau)(g_2))=g_2(0)=1.\qedhere$$
 \end{proof}
-\begin{rem}
-In fact we will use only the case $m=1$ in the proof below, and after~\cref{lpb} is proven, the statement for any $m>0$ follows from the case $m=0$.
-\end{rem}
-
-Now we can use the results of Popescu to prove~\cref{lpb}. 
 
 \begin{theorem}[Popescu]
 \label{popescu}
-Let $F$ be a field, and $R$ a noetherian ring geometrically regular over $F$. Then $R$ is a filtred colimit of smooth $F$-algebras. If, moreover, $R$ is local, then $R$ is a filtered colimit of essentially smooth local $F$-algebras.
+Let $F$ be a field, and $R$ a ring geometrically regular over $F$. Then $R$ is a filtered colimit of smooth $F$-algebras.
+%If, moreover, $R$ is local, then $R$ is a filtered colimit of essentially smooth local $F$-algebras.
 \end{theorem}
-\begin{proof} See~\cite{Po90} and also~\cite[Theorem~1.1, Corollary~1.3]{Sw98}.%, see also~\cite{Po90}.
+\begin{proof} See~\cite{Po85}, ~\cite[Theorem~1.1]{Sw98}.
 \end{proof}
 
 Now we are ready to finish the proof of \cref{lpb}. %Our argument follows~\cite{Sta14, Vo81}.
 \begin{proof}[Proof of~\cref{lpb}]
-Thanks to~\cref{LGP}, we may assume additionally that $R$ is local, in particular, a domain. 
-%Since every field contains a perfect subfield we may assume that $F$ is perfect.
-Since $K$ commutes with filtered colimits we conclude from~\cref{popescu} that it suffices to verify the assertion of the theorem for an essentially smooth local $F$-algebra $R$.  %
-%We argue by induction on the Krull dimension $d$ of $A$. Our goal is to prove the triviality of $NK(A)$.
-%Thanks to~\cref{LGP} it suffices to verify the base of induction (case $d=0$) under the additional assumption that $A$ is local.
-%But in this case $A$ is neccessarily a field, so the required assertion follows from~\ref{HIF}
-%Let us verify the inductive step. We assume that $NK$ is trivial when evaluated upon an essentially smooth algebra of Krull dimension $<d$. Now suppose that $A$ has dimension $d$. Arguing as before, we may assume additionally that $A$ is local with maximal ideal $M$.
-%Let $g$ be an element of $NK(A) \leq K(A[t])$. By~\cref{lindel} we can choose $B\subseteq A$ and $h\in B\cap M$ such that $A/hA \cong B/hB$. Denote by $\lambda_h$ the principal localization homomorphism $A \to A_h$. It is clear that $A_h$ is a (possibly non-local) essentially smooth $F$-algebra of Krull dimension $<d$, so by inductive assumption $NK(A_h) = 1$ and hence $K(\lambda_h)(g) = 1$. Invoking~\ref{LPP} we find an element $h \in \Ker(K(B[t]) \to K(B_h[t]))$ that is mapped to $g$ under the natural homomorphism $K(B[t]) \to K(A[t])$.
-%Since $B$ is a localization of a multivariate polynomial ring, we obtain from Proposition~\ref{asp} and \cref{HIL} that $NK(B) = 1$. Thus, $g = 1$ and $NK(A)$ is trivial, as required.
-Consider the diagram
-$$\begin{tikzcd}
-K\bigl(R[t]\bigr) \ar[hookrightarrow]{r} \ar{d}{\mathrm{ev}_t(0)} & K\bigl((\mathrm{Frac}\,R)[t]\bigr) \ar{d}{\cong}\\
-K\bigl(R\bigr) \ar[hookrightarrow]{r} & K\bigl(\mathrm{Frac}\,R\bigr),
-\end{tikzcd}$$
-where the horisontal arrows are injective by Corollary~\ref{esssmooth}, and the right vertical arrow is an isomorphis by~\ref{HIF}. Now the injectivity of the left vertical arrow follows from the diagram (and the surjectivity is trivial).
-%Since $K$ commutes with filtered colimits we conclude from~\cref{popescu} and the above argument that $NK(R) = 1$ for any local regular domain containing $F$. To obtain the assertion for any regular ring it suffices to invoke~\cref{LGP}.
+Our goal is to prove the triviality of $NK(R)$.
+By~\cref{popescu} $R$ is a filtered colimit of smooth $F$-algebras.
+Since filtered colimits commute with finite limits and the functor $K$ is finitary, the functor $NK$ is also finitary.
+Thus, it suffices to verify the triviality of $NK(R)$ for a smooth $F$-algebra $R$.
+Further, by~\cref{LGP} we are left to prove that $NK(R_M)$ is trivial for every maximal ideal $M$ in a such an algebra.
+Denote by $E$ the fraction field of $R_M$. Consider the diagram
+\[\begin{tikzcd}
+K\bigl(R_M[t]\bigr) \ar[hookrightarrow]{r} \ar{d}{ev_t(0)} & K(E[t]) \ar{d}{\cong}\\
+K\bigl(R_M\bigr) \ar[hookrightarrow]{r} & K(E),
+\end{tikzcd}\]
+in which the right vertical arrow is an isomorphism by~\ref{HIF} and the horizontal arrows are injective by Corollary~\ref{esssmooth} 
+ (applied to $B = F, F[t]$, $A = R_M$).
+Thus, the left vertical arrow is also injective and $NK(R_M) = 1$, as required.
 \end{proof}
 
-
-
-We can also prove the following result.
-
+We can also prove the following result analogous to~\cite[Theorem~1.2]{Sta20}
 \begin{theorem}
 Suppose that $K\colon\mathcal{R}\rightarrow\catname{Grp}$
-is a finitary functor which satisfies Nisnevich patching and $\mathbb{P}^1$-glueing properties for domains. 
-Let $A$ be a semi-local noetherian domain containing a field $F\in\mathcal R$, and assume that $A$ is geometrically regular over $F$. 
+is a finitary functor satisfying weak affine Nisnevich excision and $\mathbb{P}^1$-glueing properties for domains. 
+Let $A$ be a semi-local domain geometrically regular over $F$. 
 Denote by $E$ the fraction field of $A$.
 Then the natural homomorphism $K(A) \to K(E)$ is injective.
 \end{theorem}
 \begin{proof}
-By Theorem~\ref{popescu} we know that $A$ is a filtered colimit of smooth $F$-algebras. Since $A$ is a domain we may require additionally these smooth $F$-algebras to be domains.
+By Theorem~\ref{popescu} $A$ is a filtered colimit of smooth $F$-algebras. Since $A$ is a domain we may assume additionally that these smooth $F$-algebras are domains.
 
-Since $K$ is finitary, we may assume that $g \in \Ker(K(A) \to K(E))$ comes from some element $g_1\in\mathrm K(R)$, where $R$ is a smooth $F$-domain. We may assume, additionally, that $g_1$ lies in the kernel of the natural morphism $K(R) \to K(\mathrm{Frac}(R))$.
+Since $K$ is finitary, we may assume that $g \in \Ker(K(A) \to K(E))$ comes from some element $g_1\in\mathrm K(R)$, where $R$ is a smooth $F$-domain. We may assume, additionally, that $g_1$ lies in the kernel of the natural homomorphism $K(R) \to K(\mathrm{Frac}(R))$.
 
-Consider the preimages $P_i$ of maximal ideals of $A$, and take some maximal ideals $M_i$ of $R$ that contain $P_i$. Then by \cref{esssmooth}, $g_1$ vanishes in the semi-localisation of $R$ in a finite set of maximal ideals $M_i$, therefore it vanishes in the semi-localisation of $R$ in a set of prime ideals $P_i$. But $R\rightarrow A$ factors through this semi-localisation, so we conclude that $g=1$. 
+Denote by $P_i$ the preimages of the maximal ideals of $A$ and choose some maximal ideals $M_i$ of $R$ such that $M_i$ contains $P_i$. Then by \cref{esssmooth}, $g_1$ vanishes in the semi-localisation of $R$ in the set of maximal ideals $M_i$, therefore it vanishes in the semi-localization of $R$ in the set of prime ideals $P_i$.
+But $R\rightarrow A$ factors through the latter semi-localization, so we conclude that $g=1$. 
 \end{proof}
-
-
-We remark, that an analogous theorem for $\mathrm K_1^G$-functors is proven by A.~Stavrova in~\cite[Theorem~1.2]{Sta20}
 
 %TODO: Процитировать статью НАсти "equicharacteristic", Proof of Theorem~1.1.
 

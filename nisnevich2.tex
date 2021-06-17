@@ -158,7 +158,7 @@ $$\begin{tikzcd}
 
 The following injectivity result is inspired by~\cite[Corollary~5.2]{Tu83}.
 \begin{lemma} \label{lmp}
-Suppose that $K$ satisfies weak affine Zariski excision and $\mathbb{P}^1$-glueing properties for domains. Then for any domain $R\in \mathcal{R}$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $K(R[t])\hookrightarrow K(R[t]_f).$ \end{lemma}
+Suppose that $K$ satisfies weak affine Zariski excision and $\mathbb{P}^1$-glueing properties for domains. Then for any domain $R\in \catname{Alg}_k$ and any monic polynomial $f\in R[t]$ the localization homomorphism $\lambda_f\colon R[t]\rightarrow R[t]_f$ induces an injection $K(R[t])\hookrightarrow K(R[t]_f).$ \end{lemma}
 \begin{proof}
 	Fix a presentation $f=\sum_{i=0}^n a_it^i$, in which $a_n=1$. Set $$g=1+a_{n-1}t^{-1}+\ldots+a_0t^{-n}\in R[t^{-1}].$$ It is clear that $R[t, t^{-1}]_f \cong R[t, t^{-1}]_g$. Consider the following commutative diagram:
 $$\begin{tikzcd}
@@ -223,16 +223,19 @@ By~\cref{popescu} $R$ is a filtered colimit of smooth $k$-algebras.
 Since filtered colimits commute with finite limits and the functor $K$ is finitary, the functor $NK$ is also finitary.
 Thus, it suffices to verify the triviality of $NK(R)$ for a smooth $k$-algebra $R$.
 Further, by~\cref{LGP} we are left to prove that $NK(R_M)$ is trivial for every maximal ideal $M$ in a such an algebra.
+Since every smooth scheme over $k$ is a disjoint union of smooth irreducible $k$-schemes, we may assume, without loss of generality, that $R$ is a domain.
 Denote by $E$ the fraction field of $R_M$. Consider the diagram
 \[\begin{tikzcd}
 K\bigl(R_M[t]\bigr) \ar[hookrightarrow]{r} \ar{d}{ev_t(0)} & K(E[t]) \ar{d}{\cong}\\
 K\bigl(R_M\bigr) \ar[hookrightarrow]{r} & K(E),
 \end{tikzcd}\]
 in which the right vertical arrow is an isomorphism by~\ref{HIF} and the horizontal arrows are injective by Corollary~\ref{esssmooth}.
+
+
 Thus, the left vertical arrow is also injective and $NK(R_M) = 1$, as required.
 \end{proof}
 \begin{rem}
-It is clear from the proof above that it possible to weaken the requirements on $K$ in the statement of~\cref{lpb}. For example, we could require that the assertions of the axioms \ref{DP}--\ref{PGP} hold true only for those $k$-algebras which are essentially smooth over $k$.
+It is clear from the above proof that it possible to weaken the requirements on $K$ in the statement of~\cref{lpb}. For example, we could require that the assertions of the axioms \ref{DP}--\ref{PGP} hold true only for those $k$-algebras which are essentially smooth over $k$.
 \end{rem}
 
 We can also prove the following result analogous to~\cite[Theorem~1.2]{Sta20}
@@ -249,7 +252,7 @@ By Theorem~\ref{popescu} $A$ is a filtered colimit of smooth $k$-algebras. Since
 
 Since $K$ is finitary, we may assume that $g \in \Ker(K(A) \to K(E))$ comes from some element $g_1\in\mathrm K(R)$, where $R$ is a smooth $k$-domain. We may assume, additionally, that $g_1$ lies in the kernel of the natural homomorphism $K(R) \to K(\mathrm{Frac}(R))$.
 
-Denote by $P_i$ the preimages of the maximal ideals of $A$ and choose some maximal ideals $M_i$ of $R$ such that $M_i$ contains $P_i$. Then by \cref{esssmooth}, $g_1$ vanishes in the semi-localisation of $R$ in the set of maximal ideals $M_i$, therefore it vanishes in the semi-localization of $R$ in the set of prime ideals $P_i$.
+Denote by $P_i$ the preimages of the maximal ideals of $A$ and choose some maximal ideals $M_i$ of $R$ such that $M_i$ contains $P_i$. Then by \cref{esssmooth}, $g_1$ vanishes in the semi-localization of $R$ in the set of maximal ideals $M_i$, therefore it vanishes in the semi-localization of $R$ in the set of prime ideals $P_i$.
 But $R\rightarrow A$ factors through the latter semi-localization, so we conclude that $g=1$. 
 \end{proof}
 

@@ -6,7 +6,7 @@
 \usepackage[capitalise]{cleveref}
 \usepackage{tikz,tikz-cd}
 \usepackage{scalerel}
-\usepackage[notref, notcite]{showkeys}
+%\usepackage[notref, notcite]{showkeys}
 \usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
 \usepackage{enumitem}
 
@@ -91,7 +91,7 @@ For a commutative ring $R$ and $a \in R$ consider the following commutative squa
 
 Now suppose that $k$ is a field. Following Swan we say that a $k$-algebra $R$ is {\it geometrically regular} (over $k$), if for any finite field extension $E$ of $k$ the ring $R\otimes_kE$ is regular (cf.~\cite[p.~137]{Sw98}). In particular, a geometrically regular algebra is noetherian. If $k$ is perfect then a $k$-algebra $R$ is geometrically regular over $k$ if and only if it is regular.
 
-The following Lindel--Popescu-type theorem is the main result of this section. 
+The following result gives a sufficient condition for a functor $K$ to be $\mathbb{A}^1$-invariant, cf. e.\,g. with~\cite[Proposition~2.2]{AHW20}.
 \begin{theorem} \label{lpb}
  Let $k$ be a field.
  Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the following axioms:
@@ -111,7 +111,8 @@ The following Lindel--Popescu-type theorem is the main result of this section.
 \end{theorem}
 \begin{rem}
  In the literature a functor satisfying the axiom~\ref{PGP} is sometimes called {\it acyclic} (cf.~\cite[Def.~III.4.1.1]{Kbook}).
- Our axiom~\eqref{LPP} is analogous to the axiom (P3) from~\cite[Proposition~3.3.4]{AHW18}.
+ The choice of the name for~\eqref{LPP} is inspired by axiom (P3) from~\cite[Proposition~3.3.4]{AHW18}.
+ Notice also that our axioms can be slightly relaxed, so that the assertion of the Theorem becomes slightly stronger, see Remark~\ref{rem:relax} below.
 \end{rem}
 
 The proof is based on a series of lemmas and is deferred until the end of this section. We start by deducing the following useful corollary of the axiom~\ref{DP}. 
@@ -148,7 +149,7 @@ $$\begin{tikzcd}
 	R \ar{r}{\lambda_a} \ar{d}[swap]{\lambda_b} & R_a \ar{d}{\overline{\lambda_b}}\\
 	R_b \ar{r}{\overline{\lambda_a}} & R_{ab}.
 \end{tikzcd}$$
-	Then the natural map $\Ker(\lambda_b) \to \Ker(\overline{\lambda_b})$ induced by $\lambda_a$ is surjective.
+	Then the natural map $\Ker(K(\lambda_b)) \to \Ker(K(\overline{\lambda_b}))$ induced by $\lambda_a$ is surjective.
 \end{lemma}
 %\begin{proof}
 %	Set $B=R$, $A=R_a$ и $h=b$. It is clear that $B \to A$ is an {\'e}tale homomorphism. To see that the present situation is a special case of~\ref{LPP} it is enough to  check that the map $j\colon B/hB \to A/hA$ is an isomorphism. Let us first verify the surjectivity of $j$, or what is the same, the inclusion $A \subseteq Ah+B$. Fix an element $r/a^s\in A=R_a$, we need to show that it lies in $Ah+B$. We may assume that $s\geq 1$, so that $a^s$ and $b^s$ are still coprime. Choose $x, y \in R$ such that $xa^s+yb^s=1$. Thus, $r/a^s$ can be decomposed into the sum of $rx\in B$ and $ry(b/a)^s\in bR_a=hA$.
@@ -193,7 +194,8 @@ Then for any $m\geq 0$ the natural homomorphism $K(A[x_1,\ldots, x_m])\to K(E[x_
 \end{corollary}
 \begin{proof}
 We argue as in the proof of~\cite[Theorem~3.2]{Sta20}. Set $B=k[x_1,\ldots x_m]$. Let $g$ be an element of the kernel of $K(B \otimes_k A)\rightarrow K(B \otimes_k E)$. First of all, notice that both $A$ and $E$ are filtered colimits of principal localizations of $R$. Since $K$ is finitary, there exists $f' \in \cap_{i=1}^n(R \setminus M_i)$ such that $g$ is the image of some $g_1 \in K(R_{f'}[x_1,\ldots x_m])$ under $K(\lambda_{M_1',\ldots M_n'})$, where $M_i' = R_{f'} \cdot M_i$. Set $R' := R_{f'}$.
-Clearly, there exists $f \in R'$ such that $K(\lambda_{f})(g_1) = 1$ in $K(R'_{f})$. Without loss of generality, we may assume that $f \in \cap_{i=1}^n M_i'$. 
+Clearly, there exists $f \in R'$ such that $K(\lambda_{f})(g_1) = 1$ in $K(R'_{f})$. 
+Without loss of generality, we may assume that $f \in \cap_{i=1}^n M_i'$. 
 
 We apply Theorem~\ref{paninthm} to the ring $R'$, maximal ideals $M_i'$ and the polynomial $f$ as above.
 Tensoring~\eqref{eq:panin-diag} with $B$ and applying functor $K$ we obtain the following commutative diagram (we use the convention that tensoring with $B$ does not change the notation for the arrows of the diagram):
@@ -234,8 +236,8 @@ in which the right vertical arrow is an isomorphism by~\ref{HIF} and the horizon
 
 Thus, the left vertical arrow is also injective and $NK(R_M) = 1$, as required.
 \end{proof}
-\begin{rem}
-It is clear from the above proof that it possible to weaken the requirements on $K$ in the statement of~\cref{lpb}. For example, we could require that the assertions of the axioms \ref{DP}--\ref{PGP} hold true only for those $k$-algebras which are essentially smooth over $k$.
+\begin{rem}\label{rem:relax}
+It is clear from the above proof that it possible to weaken the requirements on $K$ in the statement of~\cref{lpb}. For example, we could require that axioms \ref{DP}--\ref{PGP} hold true only for the algebras essentially smooth over $k$. Further, the assertion of the axiom~\ref{CFC} can be restricted to algebras geometrically regular over $k$.
 \end{rem}
 
 We can also prove the following result analogous to~\cite[Theorem~1.2]{Sta20}
@@ -255,7 +257,6 @@ Since $K$ is finitary, we may assume that $g \in \Ker(K(A) \to K(E))$ comes from
 Denote by $P_i$ the preimages of the maximal ideals of $A$ and choose some maximal ideals $M_i$ of $R$ such that $M_i$ contains $P_i$. Then by \cref{esssmooth}, $g_1$ vanishes in the semi-localization of $R$ in the set of maximal ideals $M_i$, therefore it vanishes in the semi-localization of $R$ in the set of prime ideals $P_i$.
 But $R\rightarrow A$ factors through the latter semi-localization, so we conclude that $g=1$. 
 \end{proof}
-
 
 \section{Introduction}
 \subsection{Steinberg groups and pro-groups}
@@ -588,8 +589,6 @@ Now consider the simplicial map $\mathrm{st}_\bullet \colon \St(\Phi, R[\Delta^\
 Now combining the above theorem with~\cite[Theorem~4.3.1]{AHW18} we obtain the following.
 \begin{corollary} \label{cor:motivic-pi1} Let $k$ be an infinite field, $A$ be an arbitrary essentially smooth $k$-algebra. Then for $\Phi$ as above one has $\pi_1^{\mathbb{A}^1}(\Gsc(\Phi, -))(A) = [S^1 \wedge (\mathrm{Spec}(A))_+, \Gsc(\Phi, -)]_{ \mathbb{A}^1,*} = \K_2(\Phi, A).$
 \end{corollary}
-
-
 
 \printbibliography
 \end{document}

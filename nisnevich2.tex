@@ -258,7 +258,8 @@ Denote by $P_i$ the preimages of the maximal ideals of $A$ and choose some maxim
 But $R\rightarrow A$ factors through the latter semi-localization, so we conclude that $g=1$. 
 \end{proof}
 
-\section{Introduction}
+\section{Preliminaries}
+
 \subsection{Steinberg groups and pro-groups}
 
 Now for $a, b \in R$ set $y_\alpha(a, b) = [x_\alpha(a), x_{-\alpha}(b)]$.
@@ -283,13 +284,41 @@ Set $A = R_1\times 0$, $B = 0 \times R_2$. It is clear that $A, B \trianglelefte
 It follows directly from Chevalley commutator formula that the commutators $[x_{\alpha}(a),\ x_\beta(b)]$ are trivial for all $\beta \neq -\alpha$. On the other hand, in order to verify the triviality of $y_\alpha(a, b) = [x_{\alpha}(a),\ x_{-\alpha}(b)]$ for $a\in A$, $b\in B$ we can apply the congruences of~\cref{lem:c-identities} (since $AB=0$ these congruences turn into equalities).
 Indeed, setting $c = c^2 = (1, 0)$ we obtain that $y_\alpha(a, b) = y_\alpha(ac, b) = y_\alpha(a, bc) = y_\alpha(a, 0) = 1$. \end{proof}
 
-\subsection{Overview of the pro-group technique}
-Let $R$ be an integral domain, $s \in R \setminus \{0\}$, $\Phi$ be a simply-laced root system of rank at least $3$. All root systems in this text are reduced and irreducible. By \(\mathbb N\) we mean the set of non-negative integer numbers.
+\subsection{Overview of Steinberg pro-groups}
+The aim of this section is to recall the technique of Steinberg pro-groups, which has been used in~\cite{LSV20} to prove the centrality of $\K_2$.
+We briefly present the key constructions from~\cite{LSV20} and also obtain some new results essential for the purposes of this article. 
 
-Recall a definition of Steinberg pro-groups. Consider a chain of {\it unrelativized} Steinberg groups $\St(\Phi, s^n R)$ for $n \in \mathbb N$, i.e. the groups with the generators $x_{\alpha}(a)$ for $\alpha \in \Phi$, $a \in s^n R$ and the ordinary Steinbrg relations. The homomorphisms in the chain
-$$
-\ldots \to \St(\Phi, s^3 R) \to \St(\Phi, s^2 R) \to \St(\Phi, s R) \to \St(\Phi, R)
-$$
+Throughout this section $R$ is an integral domain and $\Phi$ is a reduced irreducible root system of rank at least $3$.
+We denote by $\mathbb{N}$ the set of nonnegative integers.
+%All root systems in this text are reduced and irreducible. By \(\mathbb N\) we mean the set of non-negative integer numbers.
+
+We start by recalling the definition of the category $\catname{Pro}(\catname{Grp})$ of pro-groups, which is the formal pro-completion of the category of groups (cf.~\cite[\S~2.1]{LSV20}).
+By definition, its objects are contravariant functors $X^{\bullet}\colon\mathcal{C}^{\mathrm{op}} \to \catname{Grp}$ from an arbitrary filtered category $\mathcal{C}$ to the category of groups. For $X^{(\bullet)} \in 
+\catname{Pro}(\catname{Grp})$ and $c \in \mathcal{C}$ we denote by $X^{(c)}$ the value of $X^{(\bullet)}$ on $c$. 
+Let $X^{(\bullet)}\colon\mathcal{C}\to\catname{Grp}$ and $Y^{(\bullet)}\colon\mathcal{D}\to\catname{Grp}$ be a pair of pro-groups.
+
+By definition, a {\it pre-morphism} $\eta\colon X^{(\bullet)} \to Y^{(\bullet)}$ is a pair $(\eta^*, \{\eta_d\}_{d\in\mathrm{Ob}(\mathcal{D})})$ consisting of a function $\eta^*\colon \mathrm{Ob}(\mathcal{D})\to\mathrm{Ob}(\mathcal{C})$ and a collection of group-homomorphisms $\eta_d\colon X^{(\eta^*(d))}\to Y^{(d)}$ such that for every arrow $d' \to d$ there exists $c$ such that the composite homomorphisms $X^{(c)} \to X^{(\eta^*(d'))} \xrightarrow{\eta_{d'}} Y^{(d')}$ and $X^{(c)} \to X^{(\eta^*(d))} \xrightarrow{\eta_d} Y^{(d)} \to Y^{(d')}$ are equal. 
+Premorphisms $\eta, \epsilon \colon X^{(\bullet)} \to Y^{(\bullet)}$ are declared equivalent if for every $d \in \mathrm{Ob}(\mathcal{D})$ there exists $c \in \mathrm{Ob}(\mathcal{C})$ such that the composite homomorphisms $X^{(c)} \to X^{(\eta^*(d))} \xrightarrow{\eta_d} Y^{(d)}$ and $X^{(c)} \to X^{(\epsilon^*(d))} \xrightarrow{\epsilon_d} Y^{(d)}$ are equal. By definition, the set of morphisms $\catname{Pro}(\catname{Grp})(X^{(\bullet)}, Y^{(\bullet)})$ consists of equivalence classes $[\eta]$ of pre-morphisms $\eta \colon X^{(\bullet)} \to Y^{(\bullet)}$ with respect to the equivalence relation defined above.
+There is an obvious fully faithful embedding $\catname{Grp}\to\catname{Pro}(\catname{Grp})$ sending $G$ to the obvious functor $G\colon \{ * \} \to \catname{Grp}$.
+
+Let $S$ be a multiplicative subset of $R$, containing a unit. 
+We denote by $\lambda_S$ the canonical localization homomorphism $R \to R_S$. We also use the same letter for the induced homomorphism $\St(\Phi, R) \to \St(\Phi, R_S)$.
+Now let us recall the definition of the {\it Steinberg pro-group} (cf.~\cite[\S~2.4]{LSV20}). 
+It is clear that $S$ can be interpreted as a filtered category via $\mathrm{Ob}(S) = S$ and $S(s, t) = \{ u \in S \mid su = t \}$.
+For every $s$ the principal ideal $sR$ can be considered as a ring without unit (with the multiplication given by $sr \cdot sr' = s(srr')$).
+By definition, the Steinberg pro-group $\St^{\bullet}(\Phi, R, S)$ (denoted $\St^{(\infty)}(\Phi, R)$ in~\cite{LSV20}) is the functor $S \to \catname{Grp}$, whose
+value on $(s \to t)$ is given by the homomorphism $\St(\Phi, tR) \to \St(\Phi, sR)$ induced by the obvious embedding $tR \subseteq sR$.
+There is an obvious pro-group morphism $\pi \colon \St^{\bullet}(\Phi, R, S) \to \St(\Phi, R)$ given by $\pi^* \colon \{* \} \to S$, $\pi^*(*) = 1$, $\pi_{*} = \mathrm{id}_{\St(\Phi, R)}$. Postcomposing this morphism with the homomorphism $\lambda_S$ we obtain a morphism $\St^\bullet(\Phi, R, S) \to \St(\Phi, R_S)$, which we denote by $\pi_S$.
+
+%The importance of the Steinberg pro-group is illustrated by the following result, see~\cite[Proposition~4.2]{LSV20}.
+\begin{prop}
+ For a simply laced $\Phi$ and a multiplicative system $S\subseteq R$ there exists a well-defined group homomorphism $conj\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^\bullet(\Phi, R, S))$ compatible with the obvious conjugation action of $\St(\Phi, R_S)$ on itself, i.\,e. such that for every $g \in \St(\Phi, R_S)$ the following diagram of pro-groups commutes:
+ \[ \begin{tikzcd} \St^\bullet(\Phi, R, S) \ar{r}{conj(g)} \ar{d}{\pi_S} & \St^\bullet(\Phi, R, S) \ar{d}{\pi_S} \\ \St(\Phi, R_S) \ar{r}{(-)^g} & \St(\Phi, R_S). \end{tikzcd} \]
+\end{prop}
+In down-to-earth terms the latter condition states that for every $g\in \St(\Phi, R_S)$ there exists a representative $c \in conj(g)$ which amounts to the pair $c^*\colon \{*\} \to S$ and $c_{*}\colon \St(\Phi, c^*(pt)R) \to \St(\Phi, R)$ such that $\lambda_S(c_1(x)) = g\lambda_S(i(x))g^{-1}$ for all $x\in \St(\Phi, c^*(1)R)$, where $i$ denotes the canonical homomorphism $\St(\Phi, c^*(1)R) \to \St(\Phi, R)$.
+
+Consider a diagram of Steinberg groups $\St(\Phi, s^n R)$ for $n \in \mathbb N$, i.e. the groups with the generators $x_{\alpha}(a)$ for $\alpha \in \Phi$, $a \in s^n R$ and the ordinary Steinbrg relations. The homomorphisms in the chain
+$$ \ldots \to \St(\Phi, s^3 R) \to \St(\Phi, s^2 R) \to \St(\Phi, s R) \to \St(\Phi, R) $$
 are defined in the natural way. Such a tower is called a {\it Steinberg pro-group}, it is denoted by $\St^\infty(\Phi, s^\bullet R)$. We usually do not write explicitly the structure homomorphisms of $\St^\infty(\Phi, s^\bullet R)$ in diagrams and formulas. In particular, we denote the elements of $\St(\Phi, s^n R)$ and their images in $\St(\Phi, s^{n - 1} R)$ by the same letters.
 
 We cannot conjugate elements of $\mathrm{St}(\Phi, s^nR)$ by elements of $\mathrm{St}(\Phi, R_s)$. Fortunately, there is such a conjugation action on the whole Steinberg pro-group.
@@ -368,33 +397,28 @@ for all $x \in \St(\Phi, h^{\eta^*(0)}B)$ and for all \(i\).
 
 \section{A patching theorem for \texorpdfstring{$\K_2(\Phi, R)$}{K2(Ф,R)}}
 Using Theorem~\ref{vor}, we will prove Theorem~\ref{glueing} about patching for $\St(\Phi,-)$. 
-Similar result for projective modules has been originally proved by Lindel-Lutkebohrnert and independently by Mohan Kumar as an ingredient in the proof of Bass--Quillen conjecture for the power series ring over a field. Consequently, Lindel has used similar technique in his proof of Bass--Quillen problem for essentially smooth domains over a perfect field.
+Similar result for projective modules has been originally proved by Lindel-Lutkebohrnert and independently by Mohan Kumar as an ingredient in the proof of Bass--Quillen conjecture for the power series ring over a field. 
+Consequently, Lindel has used similar technique in his proof of Bass--Quillen problem for essentially smooth domains over a perfect field.
 As in the previous section $\Phi$ is a simply-laced root system of rank at least $3$.
 
 \begin{theorem}\label{glueing}
-Let $B$ be a subring of an integral domain $A$, $h\in B \setminus \{0\}$ be such that $A / hA = B / hB$. This is equivalent to $A = Ah^n + B$ and $Ah^n \cap B = Bh^n$ for all $n \in \mathbb N$. Consider the diagram
+Let $B$ be a subring of an integral domain $A$, $h\in B \setminus \{0\}$ be such that $A / hA = B / hB$. Then the following square is pullback:
 $$\begin{tikzcd}
-\St(\Phi, B) \ar{r}{\iota} \ar{d}{\lambda_h} & \St(\Phi, A) \ar{d}{\lambda_h}\\
-\St(\Phi, B_h) \ar{r}{\iota} & \St(\Phi, A_h).
+\St(\Phi, B) \ar{r}{\iota} \ar{d}{\lambda_h^B} & \St(\Phi, A) \ar{d}{\lambda_h^A}\\
+\St(\Phi, B_h) \ar{r}{\overline{\iota}} & \St(\Phi, A_h).
 \end{tikzcd}$$
-Suppose that the identity
-$$\iota(u) = \lambda_h(v) \in \St(\Phi, A_h)$$
-holds for some $u \in \St(\Phi, B_h)$ and $v \in \St(\Phi, A)$. Then there is $w \in \St(\Phi, B)$ such that $u = \lambda_h(w)$ and $v = \iota(w)$.
 \end{theorem}
 \begin{proof}
-It is well known that subgroup factorizations of $\mathrm G(\Phi,\,R)$ are an important ingredient in the study of the $\K_1$-functor. It turns out that in the study of $\K_2$-functors the $\St(\Phi,\,R)$-torsors play similar role, see~\cite{LS20}.
+%It is well known that subgroup factorizations of $\mathrm G(\Phi,\,R)$ are an important ingredient in the study of the $\K_1$-functor. It turns out that in the study of $\K_2$-functors the $\St(\Phi,\,R)$-torsors play similar role, see~\cite{LS20}. TODO:
 
-Consider the set
-$$
-V = \St(\Phi, B_h) \times_{\St(\Phi, B)} \St(\Phi, A),
-$$
-by definition it is the factor-set of the Cartesian product $\St(\Phi, B_h) \times \St(\Phi, A)$ by the following equivalence relation: for every $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, and $w \in \St(\Phi, B)$ let
-$$
-(u\, \iota(w), v) \sim (u, \lambda_h(w)\, v).
-$$
-We show that the canonical map $V \to \St(\Phi, A_h), (u, v) \mapsto \iota(u)\, \lambda_h(v)$ is a bijection.
+First of all, recall that the condition $A/hA = B/hB$ is equivalent to the fact that for every $n \geq 0$ one has $A = Ah^n + B$ and $Ah^n \cap B = Bh^n$. FOO
 
-Let us construct an action of the group $\St(\Phi, A_h)$ on $V$. Take $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $\frac c {h^s} \in A_h$. Choose a strict representative $\eta$ of the automorphism $\Xi(u)^{-1}$ of the pro-group $\St^\infty(\Phi, h^\bullet B)$ and a strict representative $\theta$ of the automorphism $\Xi\bigl(\iota(u)\bigr)^{-1}$ of the pro-group $\St^\infty(\Phi, h^\bullet A)$ using Corollart~\ref{vorcor} in such a way that $\eta^*(0) = \theta^*(0)$ and $$\iota\bigl(\eta_0(x)\bigr) = \theta_0\bigl(\iota(x)\bigr)$$ for all $x\in\St(\Phi, h^{\eta^*(0)}B)$.
+We let $\St(\Phi, B)$ act on $\St(\Phi, B_h) \times \St(\Phi, A)$ on the left via the formula 
+\[w \star (u, v) = (u \lambda_h^B(w)^{-1}, \iota(w) v),\text{ where }w \in \St(\Phi, B),\ u \in \St(\Phi, B_h),\ v \in \St(\Phi, A).\]
+Denote by $V$ the orbit set for this action. Our goal is to show that there is a bijection between $V$ and $\St(\Phi, A_h)$ defined by the formula $(u, v) \mapsto \overline{\iota}(u) \cdot \lambda_h^A(v)$.
+
+We start by constructing an action of $\St(\Phi, A_h)$ on $V$.
+Take $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $\frac c {h^s} \in A_h$. Choose a strict representative $\eta$ of the automorphism $\Xi(u)^{-1}$ of the pro-group $\St^\infty(\Phi, h^\bullet B)$ and a strict representative $\theta$ of the automorphism $\Xi\bigl(\iota(u)\bigr)^{-1}$ of the pro-group $\St^\infty(\Phi, h^\bullet A)$ using Corollart~\ref{vorcor} in such a way that $\eta^*(0) = \theta^*(0)$ and $$\iota\bigl(\eta_0(x)\bigr) = \theta_0\bigl(\iota(x)\bigr)$$ for all $x\in\St(\Phi, h^{\eta^*(0)}B)$.
 
 Choose $n \geq \theta^*(0) + s$ and a decomposition $c = ah^n + b$ for $a \in A$, $b \in B$. Define
 $$\textstyle

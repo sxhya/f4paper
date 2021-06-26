@@ -292,30 +292,42 @@ Throughout this section $R$ is an integral domain and $\Phi$ is a reduced irredu
 We denote by $\mathbb{N}$ the set of nonnegative integers.
 %All root systems in this text are reduced and irreducible. By \(\mathbb N\) we mean the set of non-negative integer numbers.
 
-We start by recalling the definition of the category $\catname{Pro}(\catname{Grp})$ of pro-groups, which is the formal pro-completion of the category of groups (cf.~\cite[\S~2.1]{LSV20}).
-By definition, its objects are contravariant functors $X^{\bullet}\colon\mathcal{C}^{\mathrm{op}} \to \catname{Grp}$ from an arbitrary filtered category $\mathcal{C}$ to the category of groups. For $X^{(\bullet)} \in 
-\catname{Pro}(\catname{Grp})$ and $c \in \mathcal{C}$ we denote by $X^{(c)}$ the value of $X^{(\bullet)}$ on $c$. 
-Let $X^{(\bullet)}\colon\mathcal{C}\to\catname{Grp}$ and $Y^{(\bullet)}\colon\mathcal{D}\to\catname{Grp}$ be a pair of pro-groups.
+We start by recalling the definition of the {\it pro-completion} $\catname{Pro}(\mathcal{C})$ of a category $\mathcal{C}$ (cf.~\cite[\S~2.1]{LSV20}).
+By definition, the objects of $\catname{Pro}(\mathcal{C})$ are functors $X^{\bullet}\colon\mathcal{I}^{\mathrm{op}} \to \mathcal{C}$, where $\mathcal{I}$ is an arbitrary filtered category. For $X^{(\bullet)} \in 
+\catname{Pro}(\mathcal{C})$ and $i \in \mathcal{I}$ we denote by $X^{(i)}$ the value of $X^{(\bullet)}$ on $i$. 
 
-By definition, a {\it pre-morphism} $\eta\colon X^{(\bullet)} \to Y^{(\bullet)}$ is a pair $(\eta^*, \{\eta_d\}_{d\in\mathrm{Ob}(\mathcal{D})})$ consisting of a function $\eta^*\colon \mathrm{Ob}(\mathcal{D})\to\mathrm{Ob}(\mathcal{C})$ and a collection of group-homomorphisms $\eta_d\colon X^{(\eta^*(d))}\to Y^{(d)}$ such that for every arrow $d' \to d$ there exists $c$ such that the composite homomorphisms $X^{(c)} \to X^{(\eta^*(d'))} \xrightarrow{\eta_{d'}} Y^{(d')}$ and $X^{(c)} \to X^{(\eta^*(d))} \xrightarrow{\eta_d} Y^{(d)} \to Y^{(d')}$ are equal. 
-Premorphisms $\eta, \epsilon \colon X^{(\bullet)} \to Y^{(\bullet)}$ are declared equivalent if for every $d \in \mathrm{Ob}(\mathcal{D})$ there exists $c \in \mathrm{Ob}(\mathcal{C})$ such that the composite homomorphisms $X^{(c)} \to X^{(\eta^*(d))} \xrightarrow{\eta_d} Y^{(d)}$ and $X^{(c)} \to X^{(\epsilon^*(d))} \xrightarrow{\epsilon_d} Y^{(d)}$ are equal. By definition, the set of morphisms $\catname{Pro}(\catname{Grp})(X^{(\bullet)}, Y^{(\bullet)})$ consists of equivalence classes $[\eta]$ of pre-morphisms $\eta \colon X^{(\bullet)} \to Y^{(\bullet)}$ with respect to the equivalence relation defined above.
-There is an obvious fully faithful embedding $\catname{Grp}\to\catname{Pro}(\catname{Grp})$ sending $G$ to the obvious functor $G\colon \{ * \} \to \catname{Grp}$.
+Let $X^{(\bullet)}\colon\mathcal{I}\to\mathcal{C}$ and $Y^{(\bullet)}\colon\mathcal{J}\to\mathcal{C}$ be a pair of pro-objects.
+By definition, a {\it pre-morphism} $\eta\colon X^{(\bullet)} \to Y^{(\bullet)}$ is a pair $(\eta^*, \{\eta_j\}_{j\in\mathrm{Ob}(\mathcal{J})})$ consisting of a function $\eta^*\colon \mathrm{Ob}(\mathcal{J})\to\mathrm{Ob}(\mathcal{I})$ and a collection of $\mathcal{C}$-morphisms $\eta_j\colon X^{(\eta^*(j))}\to Y^{(j)}$ such that for every arrow $j' \to j$ there exists $i$ such that the composite morphisms $X^{(i)} \to X^{(\eta^*(j'))} \xrightarrow{\eta_{j'}} Y^{(j')}$ and $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)} \to Y^{(j')}$ are equal. 
+Pre-morphisms $\eta, \epsilon \colon X^{(\bullet)} \to Y^{(\bullet)}$ are declared equivalent if for every $j \in \mathrm{Ob}(\mathcal{J})$ there exists $i \in \mathrm{Ob}(\mathcal{I})$ such that the composite homomorphisms $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)}$ and $X^{(i)} \to X^{(\epsilon^*(j))} \xrightarrow{\epsilon_j} Y^{(j)}$ are equal. By definition, the set of morphisms $\catname{Pro}(\mathcal{C})(X^{(\bullet)}, Y^{(\bullet)})$ consists of equivalence classes $[\eta]$ of pre-morphisms $\eta \colon X^{(\bullet)} \to Y^{(\bullet)}$ with respect to the equivalence relation defined above. There is a fully faithful embedding $\mathcal{C}\to\catname{Pro}(\mathcal{C})$ sending $X \in \mathrm{Ob}(\mathcal{C})$ to the obvious functor $X\colon \{ * \} \to \mathcal{C}$. 
 
-Let $S$ be a multiplicative subset of $R$, containing a unit. 
-We denote by $\lambda_S$ the canonical localization homomorphism $R \to R_S$. We also use the same letter for the induced homomorphism $\St(\Phi, R) \to \St(\Phi, R_S)$.
+Let $S$ be a multiplicative subset of $R$ containing $1$. 
+We denote by $\lambda_S$ the canonical localization homomorphism $R \to R_S$.
+We also reuse the same notation for the induced homomorphism $\St(\Phi, R) \to \St(\Phi, R_S)$ of Steinberg groups.
+
+Notice that $S$ can be interpreted as a filtered category with $\mathrm{Ob}(S) = S$ and $S(s, t) = \{ u \in S \mid su = t \}$.
+For shortness, we call a commutative ring without unit an {\it rng} and denote the category of rngs by $\catname{Rng}$.
+For $s\in S$ the principal ideal $sR$ can be considered as an rng. We define the pro-rng $R^{(\infty)}$ as the functor $S^\mathrm{op} \to \catname{Rng}$ whose value on an arrow $(s \to t)\in S$ is defined as the obvious embedding of rngs $tR \hookrightarrow sR$. Obviously, $R^{(\infty)}$ depends on $S$, however for shortness we suppress $S$ from the notation.
+
 Now let us recall the definition of the {\it Steinberg pro-group} (cf.~\cite[\S~2.4]{LSV20}). 
-It is clear that $S$ can be interpreted as a filtered category via $\mathrm{Ob}(S) = S$ and $S(s, t) = \{ u \in S \mid su = t \}$.
-For every $s$ the principal ideal $sR$ can be considered as a ring without unit (with the multiplication given by $sr \cdot sr' = s(srr')$).
-By definition, the Steinberg pro-group $\St^{\bullet}(\Phi, R, S)$ (denoted $\St^{(\infty)}(\Phi, R)$ in~\cite{LSV20}) is the functor $S \to \catname{Grp}$, whose
-value on $(s \to t)$ is given by the homomorphism $\St(\Phi, tR) \to \St(\Phi, sR)$ induced by the obvious embedding $tR \subseteq sR$.
-There is an obvious pro-group morphism $\pi \colon \St^{\bullet}(\Phi, R, S) \to \St(\Phi, R)$ given by $\pi^* \colon \{* \} \to S$, $\pi^*(*) = 1$, $\pi_{*} = \mathrm{id}_{\St(\Phi, R)}$. Postcomposing this morphism with the homomorphism $\lambda_S$ we obtain a morphism $\St^\bullet(\Phi, R, S) \to \St(\Phi, R_S)$, which we denote by $\pi_S$.
+By definition, the Steinberg pro-group $\St^{(\infty)}(\Phi, R)$ is the functor $S^\mathrm{op} \to \catname{Grp}$ obtained from the pro-rng $R^{(\infty)}$ by postcomposition with $\St(\Phi, -)$.
+We denote by $\pi_S$ the pro-group morphism $\St^{(\infty)}(\Phi, R) \to \St(\Phi, R_S)$ defined by the pre-morphism $\pi^* \colon \{* \} \to S$, $\pi^*(*) = 1$, $\pi_{*} = \lambda_S \colon \St(\Phi, R) \to \St(\Phi, R_S)$. 
 
 %The importance of the Steinberg pro-group is illustrated by the following result, see~\cite[Proposition~4.2]{LSV20}.
-\begin{prop}
- For a simply laced $\Phi$ and a multiplicative system $S\subseteq R$ there exists a well-defined group homomorphism $conj\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^\bullet(\Phi, R, S))$ compatible with the obvious conjugation action of $\St(\Phi, R_S)$ on itself, i.\,e. such that for every $g \in \St(\Phi, R_S)$ the following diagram of pro-groups commutes:
- \[ \begin{tikzcd} \St^\bullet(\Phi, R, S) \ar{r}{conj(g)} \ar{d}{\pi_S} & \St^\bullet(\Phi, R, S) \ar{d}{\pi_S} \\ \St(\Phi, R_S) \ar{r}{(-)^g} & \St(\Phi, R_S). \end{tikzcd} \]
+\begin{prop}\label{prop:conj-action}
+ For a simply laced $\Phi$ and a multiplicative system $S\subseteq R$ there exists a well-defined group homomorphism $conj\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^{(\infty)}(\Phi, R))$ compatible with the obvious conjugation action of $\St(\Phi, R_S)$ on itself, i.\,e. such that for every $g \in \St(\Phi, R_S)$ the following diagram of pro-groups commutes:
+ \[ \begin{tikzcd} \St^{(\infty)}(\Phi, R) \ar{r}{conj(g)} \ar{d}{\pi_S} & \St^{(\infty)}(\Phi, R) \ar{d}{\pi_S} \\ \St(\Phi, R_S) \ar{r}{(-)^g} & \St(\Phi, R_S). \end{tikzcd} \]
 \end{prop}
-In down-to-earth terms the latter condition states that for every $g\in \St(\Phi, R_S)$ there exists a representative $c \in conj(g)$ which amounts to the pair $c^*\colon \{*\} \to S$ and $c_{*}\colon \St(\Phi, c^*(pt)R) \to \St(\Phi, R)$ such that $\lambda_S(c_1(x)) = g\lambda_S(i(x))g^{-1}$ for all $x\in \St(\Phi, c^*(1)R)$, where $i$ denotes the canonical homomorphism $\St(\Phi, c^*(1)R) \to \St(\Phi, R)$.
+In down-to-earth terms the latter condition states that for every $g\in \St(\Phi, R_S)$ there exists $s_0 \in S$ and a homomorphism $c_g\colon \St(\Phi, s_0 R) \to \St(\Phi, R)$ such that $\lambda_S(c_g(x)) = g\lambda_S(i(x))g^{-1}$ for all $x\in \St(\Phi, s_0 R)$, where $i$ denotes the homomorphism $\St(\Phi, s_0 R) \to \St(\Phi, R)$ induced by the obvious embedding $s_0R \hookrightarrow R$.
+
+We also need to study some basic functoriality properties of the above construction.
+Let $R_1, R_2$ be a pair of domains, $S_1 \subseteq R_1$, $S_2 \subseteq R_2$ be a pair of multiplicative subsets and let $f \colon R_1 \to R_2$ be a homomorphism such that $f(S_1)\subseteq S_2$.
+It is clear that $f$ induces a ring homomorphism $(R_1)_{S_1} \to (R_2)_{S_2}$, which we denote by $\overline{f}$.
+Now suppose that there is a map $f^* \colon S_2 \to S_1$ such that $s$ divides $f(f^*(s))$ for all $s \in S_2$. We claim that $f^*$ and the obvious embeddings $\{f(f^*(s)R_1) \hookrightarrow sR_2\}_{s\in S_2}$ specify a pre-morphism of pro-rngs. We denote by $f^{(\infty)}$ the corresponding pro-rng morphism $R_1^{(\infty)} \to R_2^{(\infty)}$. We also reuse the same notation for the induced morphism of Steinberg pro-groups.
+
+\begin{prop}
+ The action $conj$ constructed in Proposition~\ref{prop:conj-action} has the additional property that the following diagram commutes for every $g \in \St(\Phi, (R_1)_S)$:
+ \[ \begin{tikzcd} \St^{(\infty)}(\Phi, R_1) \ar{r}{conj(g)} \ar{d}{f^{(\infty)}} & \St^{(\infty)}(\Phi, R_1) \ar{d}{f^{(\infty)}} \\ \St^{(\infty)}(\Phi, R_2) \ar{r}{conj(\overline{f}(g))} & \St^{(\infty)}(\Phi, R_2). \end{tikzcd} \]
+\end{prop}
 
 Consider a diagram of Steinberg groups $\St(\Phi, s^n R)$ for $n \in \mathbb N$, i.e. the groups with the generators $x_{\alpha}(a)$ for $\alpha \in \Phi$, $a \in s^n R$ and the ordinary Steinbrg relations. The homomorphisms in the chain
 $$ \ldots \to \St(\Phi, s^3 R) \to \St(\Phi, s^2 R) \to \St(\Phi, s R) \to \St(\Phi, R) $$

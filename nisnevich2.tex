@@ -285,20 +285,16 @@ It follows directly from Chevalley commutator formula that the commutators $[x_{
 Indeed, setting $c = c^2 = (1, 0)$ we obtain that $y_\alpha(a, b) = y_\alpha(ac, b) = y_\alpha(a, bc) = y_\alpha(a, 0) = 1$. \end{proof}
 
 \subsection{Overview of Steinberg pro-groups}
-The aim of this section is to recall the technique of Steinberg pro-groups, which has been used in~\cite{LSV20} to prove the centrality of $\K_2$.
-We briefly present the key constructions from~\cite{LSV20} and also obtain some new results essential for the purposes of this article. 
-
-Throughout this section $R$ is an integral domain and $\Phi$ is a reduced irreducible root system of rank at least $3$.
-We denote by $\mathbb{N}$ the set of nonnegative integers.
+The aim of this section is to recall the formalism of pro-objects, which has been used in~\cite{LSV20} to prove the centrality of $\K_2$. We briefly present key definitions and obtain some new results which will be used later in the article. We refer the reader to \cite[Section~6.1]{SK06} and~\cite[\S~2]{LSV20} for a more thorough introduction to the formalism of pro-objects. Throughout this section $R$ is an integral domain and $\Phi$ is a reduced irreducible root system of rank at least $3$.
 %All root systems in this text are reduced and irreducible. By \(\mathbb N\) we mean the set of non-negative integer numbers.
 
 We start by recalling the definition of the {\it pro-completion} $\catname{Pro}(\mathcal{C})$ of a category $\mathcal{C}$ (cf.~\cite[\S~2.1]{LSV20}).
-By definition, the objects of $\catname{Pro}(\mathcal{C})$ are functors $X^{\bullet}\colon\mathcal{I}^{\mathrm{op}} \to \mathcal{C}$, where $\mathcal{I}$ is an arbitrary filtered category. For $X^{(\bullet)} \in 
-\catname{Pro}(\mathcal{C})$ and $i \in \mathcal{I}$ we denote by $X^{(i)}$ the value of $X^{(\bullet)}$ on $i$. 
+By definition, the objects of $\catname{Pro}(\mathcal{C})$ are functors $X^{(\infty)}\colon\mathcal{I}^{\mathrm{op}} \to \mathcal{C}$, where $\mathcal{I}$ is a small nonempty filtered category. For $X^{(\infty)} \in 
+\catname{Pro}(\mathcal{C})$ and $i \in \mathcal{I}$ we denote by $X^{(i)}$ the value of $X^{(\infty)}$ on $i$. 
 
-Let $X^{(\bullet)}\colon\mathcal{I}\to\mathcal{C}$ and $Y^{(\bullet)}\colon\mathcal{J}\to\mathcal{C}$ be a pair of pro-objects.
-By definition, a {\it pre-morphism} $\eta\colon X^{(\bullet)} \to Y^{(\bullet)}$ is a pair $(\eta^*, \{\eta_j\}_{j\in\mathrm{Ob}(\mathcal{J})})$ consisting of a function $\eta^*\colon \mathrm{Ob}(\mathcal{J})\to\mathrm{Ob}(\mathcal{I})$ and a collection of $\mathcal{C}$-morphisms $\eta_j\colon X^{(\eta^*(j))}\to Y^{(j)}$ such that for every arrow $j' \to j$ there exists $i$ such that the composite morphisms $X^{(i)} \to X^{(\eta^*(j'))} \xrightarrow{\eta_{j'}} Y^{(j')}$ and $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)} \to Y^{(j')}$ are equal. 
-Pre-morphisms $\eta, \epsilon \colon X^{(\bullet)} \to Y^{(\bullet)}$ are declared equivalent if for every $j \in \mathrm{Ob}(\mathcal{J})$ there exists $i \in \mathrm{Ob}(\mathcal{I})$ such that the composite homomorphisms $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)}$ and $X^{(i)} \to X^{(\epsilon^*(j))} \xrightarrow{\epsilon_j} Y^{(j)}$ are equal. By definition, the set of morphisms $\catname{Pro}(\mathcal{C})(X^{(\bullet)}, Y^{(\bullet)})$ consists of equivalence classes $[\eta]$ of pre-morphisms $\eta \colon X^{(\bullet)} \to Y^{(\bullet)}$ with respect to the equivalence relation defined above. There is a fully faithful embedding $\mathcal{C}\to\catname{Pro}(\mathcal{C})$ sending $X \in \mathrm{Ob}(\mathcal{C})$ to the obvious functor $X\colon \{ * \} \to \mathcal{C}$. 
+Let $X^{(\infty)}\colon\mathcal{I}\to\mathcal{C}$ and $Y^{(\infty)}\colon\mathcal{J}\to\mathcal{C}$ be a pair of pro-objects.
+By definition, a {\it pre-morphism} $\eta\colon X^{(\infty)} \to Y^{(\infty)}$ is a pair $(\eta^*, \{\eta_j\}_{j\in\mathrm{Ob}(\mathcal{J})})$ consisting of a map $\eta^*\colon \mathrm{Ob}(\mathcal{J})\to\mathrm{Ob}(\mathcal{I})$ and a collection of $\mathcal{C}$-morphisms $\eta_j\colon X^{(\eta^*(j))}\to Y^{(j)}$ such that for every arrow $j' \to j$ there exists $i$ such that the composite morphisms $X^{(i)} \to X^{(\eta^*(j'))} \xrightarrow{\eta_{j'}} Y^{(j')}$ and $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)} \to Y^{(j')}$ are equal. 
+Pre-morphisms $\eta, \epsilon \colon X^{(\infty)} \to Y^{(\infty)}$ are declared equivalent if for every $j \in \mathrm{Ob}(\mathcal{J})$ there exists $i \in \mathrm{Ob}(\mathcal{I})$ such that the composite homomorphisms $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)}$ and $X^{(i)} \to X^{(\epsilon^*(j))} \xrightarrow{\epsilon_j} Y^{(j)}$ are equal. By definition, the set of morphisms $\catname{Pro}(\mathcal{C})(X^{(\infty)}, Y^{(\infty)})$ consists of equivalence classes $[\eta]$ of pre-morphisms $\eta \colon X^{(\infty)} \to Y^{(\infty)}$ with respect to the equivalence relation defined above. The composition of a pair of pre-morphisms \(f \colon X^{(\infty)} \to Y^{(\infty)}\) and \(g \colon Y^{(\infty)} \to Z^{(\infty)}\) is defined as the pre-morphism \(g \circ f\), where \((g \circ f)^*(i) = f^*(g^*(i))\) and \((g \circ f)^{(i)} = g^{(i)} \circ f^{(g^*(i))}\). There is a fully faithful embedding $\mathcal{C}\to\catname{Pro}(\mathcal{C})$ sending $X \in \mathrm{Ob}(\mathcal{C})$ to the obvious functor $X\colon \{ * \} \to \mathcal{C}$. 
 
 Let $S$ be a multiplicative subset of $R$ containing $1$. 
 We denote by $\lambda_S$ the canonical localization homomorphism $R \to R_S$.
@@ -315,19 +311,31 @@ We denote by $\pi_S$ the pro-group morphism $\St^{(\infty)}(\Phi, R) \to \St(\Ph
 %The importance of the Steinberg pro-group is illustrated by the following result, see~\cite[Proposition~4.2]{LSV20}.
 \begin{prop}\label{prop:conj-action}
  For a simply laced $\Phi$ and a multiplicative system $S\subseteq R$ there exists a well-defined group homomorphism $conj\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^{(\infty)}(\Phi, R))$ compatible with the obvious conjugation action of $\St(\Phi, R_S)$ on itself, i.\,e. such that for every $g \in \St(\Phi, R_S)$ the following diagram of pro-groups commutes:
- \[ \begin{tikzcd} \St^{(\infty)}(\Phi, R) \ar{r}{conj(g)} \ar{d}{\pi_S} & \St^{(\infty)}(\Phi, R) \ar{d}{\pi_S} \\ \St(\Phi, R_S) \ar{r}{(-)^g} & \St(\Phi, R_S). \end{tikzcd} \]
+ \begin{equation} \label{eq:conj-pis} \begin{tikzcd} \St^{(\infty)}(\Phi, R) \ar{r}{conj(g)} \ar{d}{\pi_S} & \St^{(\infty)}(\Phi, R) \ar{d}{\pi_S} \\ \St(\Phi, R_S) \ar{r}{(-)^g} & \St(\Phi, R_S). \end{tikzcd} \end{equation}
 \end{prop}
-In down-to-earth terms the latter condition states that for every $g\in \St(\Phi, R_S)$ there exists $s_0 \in S$ and a homomorphism $c_g\colon \St(\Phi, s_0 R) \to \St(\Phi, R)$ such that $\lambda_S(c_g(x)) = g\lambda_S(i(x))g^{-1}$ for all $x\in \St(\Phi, s_0 R)$, where $i$ denotes the homomorphism $\St(\Phi, s_0 R) \to \St(\Phi, R)$ induced by the obvious embedding $s_0R \hookrightarrow R$.
+\begin{proof}
+The existence of the homomorphism $conj$ has been shown in~\cite[Proposition~4.2]{LSV20}, so we only need to verify the commutativity of the diagram~\eqref{eq:conj-pis}. 
+Since $conj$ is a homomorphism, it is enough to consider the case $g = x_\alpha(u)$, $\alpha \in \Phi$, $u \in R_S$.
+In view of~\cite[Lemma~3.2]{LSV20}, to verify the commutativity of~\eqref{eq:conj-pis} it is enough to verify the equalities $\pi_S conj(g) x_\beta= (-)^g\pi_S x_\beta$ for $\beta\neq \pm\alpha$, where $x_\beta\colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ are ``root subgroup morphisms'' defined in~\cite[\S~2.4]{LSV20}.
+It remains to see that the fulfillment of these equalities is a direct consequence of the definition of $conj$ (cf. the equalities before~\cite[Proposition~4.2]{LSV20}). \end{proof}
+\begin{rem}
+Unwinding the definitions, we see that the commutativity of~\eqref{eq:conj-pis} is equivalent to the fact that for every $g\in \St(\Phi, R_S)$ there exists $s_0 \in S$ and a homomorphism $c_g\colon \St(\Phi, s_0 R) \to \St(\Phi, R)$ such that $\lambda_S(c_g(x)) = g\lambda_S(i(x))g^{-1}$ for all $x\in \St(\Phi, s_0 R)$, where $i$ denotes the homomorphism $\St(\Phi, s_0 R) \to \St(\Phi, R)$ induced by the obvious embedding $s_0R \hookrightarrow R$.
+\end{rem}
 
 We also need to study some basic functoriality properties of the above construction.
-Let $R_1, R_2$ be a pair of domains, $S_1 \subseteq R_1$, $S_2 \subseteq R_2$ be a pair of multiplicative subsets and let $f \colon R_1 \to R_2$ be a homomorphism such that $f(S_1)\subseteq S_2$.
-It is clear that $f$ induces a ring homomorphism $(R_1)_{S_1} \to (R_2)_{S_2}$, which we denote by $\overline{f}$.
-Now suppose that there is a map $f^* \colon S_2 \to S_1$ such that $s$ divides $f(f^*(s))$ for all $s \in S_2$. We claim that $f^*$ and the obvious embeddings $\{f(f^*(s)R_1) \hookrightarrow sR_2\}_{s\in S_2}$ specify a pre-morphism of pro-rngs. We denote by $f^{(\infty)}$ the corresponding pro-rng morphism $R_1^{(\infty)} \to R_2^{(\infty)}$. We also reuse the same notation for the induced morphism of Steinberg pro-groups.
+Let $R, R'$ be a pair of domains, $S \subseteq R$, $S' \subseteq R'$ be a pair of multiplicative subsets and let $f \colon R \to R'$ be a homomorphism such that $f(S)\subseteq S'$.
+It is clear that $f$ induces a ring homomorphism $R_S \to R'_{S'}$, which we denote by $\overline{f}$.
+Now suppose that there is a map $f^* \colon S' \to S$ such that $t$ divides $f(f^*(t))$ for all $t \in S'$ (this means, in particular, that $R'_{f(S)} \cong R'_{S'}$). We claim that $f^*$ and the obvious embeddings $\{f(f^*(t)R) \hookrightarrow tR'\}_{t\in S'}$ specify a pre-morphism of pro-rngs. We denote by $f^{(\infty)}$ the corresponding pro-rng morphism $R^{(\infty)} \to R'^{(\infty)}$. We reuse the notation $\overline{f}$, $f^{(\infty)}$ for the induced morphisms of Steinberg groups and pro-groups.
 
 \begin{prop}
- The action $conj$ constructed in Proposition~\ref{prop:conj-action} has the additional property that the following diagram commutes for every $g \in \St(\Phi, (R_1)_S)$:
- \[ \begin{tikzcd} \St^{(\infty)}(\Phi, R_1) \ar{r}{conj(g)} \ar{d}{f^{(\infty)}} & \St^{(\infty)}(\Phi, R_1) \ar{d}{f^{(\infty)}} \\ \St^{(\infty)}(\Phi, R_2) \ar{r}{conj(\overline{f}(g))} & \St^{(\infty)}(\Phi, R_2). \end{tikzcd} \]
+ The action $conj$ constructed in Proposition~\ref{prop:conj-action} has the additional property that the following diagram commutes for every $g \in \St(\Phi, R_S)$:
+ \[ \begin{tikzcd} \St^{(\infty)}(\Phi, R) \ar{r}{conj(g)} \ar{d}{f^{(\infty)}} & \St^{(\infty)}(\Phi, R) \ar{d}{f^{(\infty)}} \\ \St^{(\infty)}(\Phi, R') \ar{r}{conj(\overline{f}(g))} & \St^{(\infty)}(\Phi, R'). \end{tikzcd} \]
 \end{prop}
+\begin{proof}
+% Since $conj$ is a homomorphism, it suffices to consider the case $g = x_\alpha(u)$, $u \in R_S$.
+\end{proof}
+
+
 
 Consider a diagram of Steinberg groups $\St(\Phi, s^n R)$ for $n \in \mathbb N$, i.e. the groups with the generators $x_{\alpha}(a)$ for $\alpha \in \Phi$, $a \in s^n R$ and the ordinary Steinbrg relations. The homomorphisms in the chain
 $$ \ldots \to \St(\Phi, s^3 R) \to \St(\Phi, s^2 R) \to \St(\Phi, s R) \to \St(\Phi, R) $$
@@ -423,14 +431,14 @@ $$\begin{tikzcd}
 \begin{proof}
 %It is well known that subgroup factorizations of $\mathrm G(\Phi,\,R)$ are an important ingredient in the study of the $\K_1$-functor. It turns out that in the study of $\K_2$-functors the $\St(\Phi,\,R)$-torsors play similar role, see~\cite{LS20}. TODO:
 
-First of all, recall that the condition $A/hA = B/hB$ is equivalent to the fact that for every $n \geq 0$ one has $A = Ah^n + B$ and $Ah^n \cap B = Bh^n$. FOO
+First of all, recall that the condition $A/hA = B/hB$ is equivalent to the fact that for every $n \geq 0$ one has $A = Ah^n + B$ and $Ah^n \cap B = Bh^n$.
 
 We let $\St(\Phi, B)$ act on $\St(\Phi, B_h) \times \St(\Phi, A)$ on the left via the formula 
 \[w \star (u, v) = (u \lambda_h^B(w)^{-1}, \iota(w) v),\text{ where }w \in \St(\Phi, B),\ u \in \St(\Phi, B_h),\ v \in \St(\Phi, A).\]
 Denote by $V$ the orbit set for this action. Our goal is to show that there is a bijection between $V$ and $\St(\Phi, A_h)$ defined by the formula $(u, v) \mapsto \overline{\iota}(u) \cdot \lambda_h^A(v)$.
 
 We start by constructing an action of $\St(\Phi, A_h)$ on $V$.
-Take $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $\frac c {h^s} \in A_h$. Choose a strict representative $\eta$ of the automorphism $\Xi(u)^{-1}$ of the pro-group $\St^\infty(\Phi, h^\bullet B)$ and a strict representative $\theta$ of the automorphism $\Xi\bigl(\iota(u)\bigr)^{-1}$ of the pro-group $\St^\infty(\Phi, h^\bullet A)$ using Corollart~\ref{vorcor} in such a way that $\eta^*(0) = \theta^*(0)$ and $$\iota\bigl(\eta_0(x)\bigr) = \theta_0\bigl(\iota(x)\bigr)$$ for all $x\in\St(\Phi, h^{\eta^*(0)}B)$.
+Let $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $\frac c {h^s} \in A_h$. Choose a strict representative $\eta$ of the automorphism $\Xi(u)^{-1}$ of the pro-group $\St^\infty(\Phi, h^\bullet B)$ and a strict representative $\theta$ of the automorphism $\Xi\bigl(\iota(u)\bigr)^{-1}$ of the pro-group $\St^\infty(\Phi, h^\bullet A)$ using Corollart~\ref{vorcor} in such a way that $\eta^*(0) = \theta^*(0)$ and $$\iota\bigl(\eta_0(x)\bigr) = \theta_0\bigl(\iota(x)\bigr)$$ for all $x\in\St(\Phi, h^{\eta^*(0)}B)$.
 
 Choose $n \geq \theta^*(0) + s$ and a decomposition $c = ah^n + b$ for $a \in A$, $b \in B$. Define
 $$\textstyle

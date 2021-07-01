@@ -6,7 +6,7 @@
 \usepackage[capitalise]{cleveref}
 \usepackage{tikz,tikz-cd}
 \usepackage{scalerel}
-%\usepackage[notref, notcite]{showkeys}
+\usepackage[notref, notcite]{showkeys}
 \usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
 \usepackage{enumitem}
 
@@ -290,7 +290,7 @@ By definition, the objects of $\catname{Pro}(\mathcal{C})$ are functors $X^{(\in
 \catname{Pro}(\mathcal{C})$ and $i \in \mathcal{I}$ we denote by $X^{(i)}$ the value of $X^{(\infty)}$ on $i$. 
 
 Let $X^{(\infty)}\colon\mathcal{I}\to\mathcal{C}$ and $Y^{(\infty)}\colon\mathcal{J}\to\mathcal{C}$ be a pair of pro-objects.
-By definition, a {\it pre-morphism} $\eta\colon X^{(\infty)} \to Y^{(\infty)}$ is a pair $(\eta^*, \{\eta_j\}_{j\in\mathrm{Ob}(\mathcal{J})})$ consisting of a map $\eta^*\colon \mathrm{Ob}(\mathcal{J})\to\mathrm{Ob}(\mathcal{I})$ and a collection of $\mathcal{C}$-morphisms $\eta_j\colon X^{(\eta^*(j))}\to Y^{(j)}$ such that for every arrow $j' \to j$ there exists $i$ such that the composite morphisms $X^{(i)} \to X^{(\eta^*(j'))} \xrightarrow{\eta_{j'}} Y^{(j')}$ and $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)} \to Y^{(j')}$ are equal. 
+By definition, a {\it pre-morphism} $\eta\colon X^{(\infty)} \to Y^{(\infty)}$ is a pair $(\eta^*, \{\eta_j\}_{j\in\mathrm{Ob}(\mathcal{J})})$ consisting of a map $\eta^*\colon \mathrm{Ob}(\mathcal{J})\to\mathrm{Ob}(\mathcal{I})$ and a collection of $\mathcal{C}$-morphisms $\eta_j\colon X^{(\eta^*(j))}\to Y^{(j)}$ such that for every arrow $j' \to j$ there exists $i$ such that the composite morphisms $X^{(i)} \to X^{(\eta^*(j'))} \xrightarrow{\eta_{j'}} Y^{(j')}$ and $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)} \to Y^{(j')}$ are equal. We call the individual $\mathcal{C}$-morphism $\eta_j$ {\it the degree $j$ component} of $\eta$.
 Pre-morphisms $\eta, \epsilon \colon X^{(\infty)} \to Y^{(\infty)}$ are declared equivalent if for every $j \in \mathrm{Ob}(\mathcal{J})$ there exists $i \in \mathrm{Ob}(\mathcal{I})$ such that the composite homomorphisms $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)}$ and $X^{(i)} \to X^{(\epsilon^*(j))} \xrightarrow{\epsilon_j} Y^{(j)}$ are equal. By definition, the set of morphisms $\catname{Pro}(\mathcal{C})(X^{(\infty)}, Y^{(\infty)})$ consists of equivalence classes $[\eta]$ of pre-morphisms $\eta \colon X^{(\infty)} \to Y^{(\infty)}$ with respect to the equivalence relation defined above. The composition of a pair of morphisms \([f] \colon X^{(\infty)} \to Y^{(\infty)}\) and \([g] \colon Y^{(\infty)} \to Z^{(\infty)}\) is defined as the class $[g \circ f]$, where the pre-morphism \(g \circ f\) is given by \((g \circ f)^*(i) = f^*(g^*(i))\) and \((g \circ f)_{i} = g_{i} \circ f_{g^*(i)}\). There is a fully faithful embedding $\mathcal{C}\to\catname{Pro}(\mathcal{C})$ sending $X \in \mathrm{Ob}(\mathcal{C})$ to the obvious functor $X\colon \{ * \} \to \mathcal{C}$. 
 
 Let $S$ be a multiplicative subset of $R$ containing $1$. 
@@ -316,7 +316,7 @@ Since $conj$ is a homomorphism, it is enough to consider the case $g = x_\alpha(
 In view of~\cite[Lemma~3.2]{LSV20}, to verify the commutativity of~\eqref{eq:conj-pis} it is enough to verify the equalities $\pi_S \circ conj(g) \circ x_\beta= (-)^g \circ \pi_S \circ x_\beta$ for $\beta\neq \pm\alpha$, where $x_\beta\colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ are ``root subgroup morphisms'' defined in~\cite[\S~2.4]{LSV20}.
 It remains to see that the fulfillment of these equalities is a direct consequence of the definition of $conj$ (cf. the equalities before~\cite[Proposition~4.2]{LSV20}). \end{proof}
 \begin{rem} \label{rem:conj-action}
-Unwinding the definitions, we see that the commutativity of~\eqref{eq:conj-pis} is equivalent to the fact that for every $g\in \St(\Phi, R_S)$ there exists $s_g \in S$ (notice that $s_g = conj(g)^*(1)$) and a homomorphism $c_g := conj(g)_1\colon \St(\Phi, s_g R) \to \St(\Phi, R)$ such that $\lambda_S(c_g(x)) = g\lambda_S(i(x))g^{-1}$ for all $x\in \St(\Phi, s_g R)$, where $i$ denotes the homomorphism $\St(\Phi, s_g R) \to \St(\Phi, R)$ induced by the obvious embedding $s_gR \hookrightarrow R$.
+Unwinding the definitions, we see that the commutativity of~\eqref{eq:conj-pis} is equivalent to the following condition: for every $g\in \St(\Phi, R_S)$ there exists $s_g \in S$ and a homomorphism $c_g \colon \St(\Phi, s_g R) \to \St(\Phi, R)$ such that $\lambda_S(c_g(x)) = g\lambda_S(i(x))g^{-1}$ for all $x\in \St(\Phi, s_g R)$. Here $i$ denotes the homomorphism $\St(\Phi, s_g R) \to \St(\Phi, R)$ induced by the obvious embedding $s_gR \hookrightarrow R$, whereas $s_g$ and $c_g$ can be determined via the following procedure: choose a representative $r$ for the morphism $conj(g)$ and define $s_g = r^*(1)$ and $c_g = r_1$ (the degree $1$ component of $r$).
 \end{rem}
 
 We also need to study basic functoriality properties of the above construction.
@@ -389,29 +389,27 @@ Our ultimate goal is to show that there is a bijection between $V$ and $\St(\Phi
 Applying \cref{vorcor} to the element $u^{-1}$ we obtain a natural number $n=n(u)$ and homomorphisms \[c_{u^{-1}}\colon \St(\Phi, h^nB) \to \St(\Phi, B),\ c_{\overline{\iota}(u^{-1})}\colon \St(\Phi, h^nA) \to \St(\Phi, A)\]
 satisfying the identities listed in~\cref{vorcor}.
 
-Observe that Theorem's condition $A/hA = B/hB$ is equivalent to the fact that for every $k \geq 0$ one has $A = Ah^k + B$ and $Ah^k \cap B = Bh^k$. Choose any $k \geq n + s$ and decompose $c$ as $c = ah^k + b$ for some $a \in A$, $b \in B$. 
+Observe that Theorem's condition $A/hA = B/hB$ is equivalent to the condition that for every $k \geq 0$ one has $A = Ah^k + B$ and $Ah^k \cap B = Bh^k$. Choose any $k \geq n + s$ and decompose $c$ as $c = ah^k + b$ for some $a \in A$, $b \in B$. 
 We let the generator $x_\alpha(c/h^s)$ of $\St(\Phi, A_h)$ act on $V$ via the formula:
 \begin{equation}\label{eq:generator-action}
 \textstyle
 x_\alpha(c/{h^s}) \cdot [u, v] = \bigl[x_\alpha(b/{h^s})\cdot u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s})) \cdot v\bigr].
 \end{equation}
 \begin{lemma}\label{well-def}
-The right hand side of~\eqref{eq:generator-action} is independent of either the choice of a decomposition $c = ah^k + b$, the choice of a representative $c_{\overline{\iota}(u^{-1})}$ for the morphism $conj(u^{-1})$ or the choice of a representative \((u, v)\) for $[u, v]$.
+The right hand side of~\eqref{eq:generator-action} is independent of either the choice of a decomposition $c = ah^k + b$, the choice of representatives for the morphisms $conj(u^{-1})$, $conj(\overline{\iota}(u^{-1}))$ or the choice of a representative for the orbit $[u, v]$.
 \end{lemma}
 \begin{proof}
-First, let us demonstrate the independence of~\eqref{eq:generator-action} of the choice of a decomposition for $c$. 
+First, let us show the independence of~\eqref{eq:generator-action} of the choice of a decomposition for $c$. 
 Choose some $l \geq n + s$ and $c = a' h^{l} + b'$. Without loss of generality, we may assume $l \leq k$ so that $a' h^{l} - a h^k = b - b' \in Ah^{l} \cap B = Bh^{l}$ and there exists $d \in B$ such that $b = b' + dh^{l}$. Thus, from~\eqref{eq:strictB} we obtain that
-$$\textstyle x_\alpha(b/{h^s})\, u = x_\alpha({b'}/{h^s})\, u \cdot u^{-1}\, x_\alpha(dh^{n})\, u =  x_\alpha({b'}/{h^s})\, u \cdot \lambda_h \bigl(c_{u^{-1}}(x_\alpha(dh^{l-s}))\bigr)\text{ hence} $$
+\begin{equation} \label{eq:wd1} \textstyle x_\alpha(b/{h^s})\, u = x_\alpha({b'}/{h^s})\, u \cdot u^{-1}\, x_\alpha(dh^{n})\, u =  x_\alpha({b'}/{h^s})\, u \cdot \lambda_h \bigl(c_{u^{-1}}(x_\alpha(dh^{l-s}))\bigr). \end{equation}
+Since $a'h^l = ah^k + dh^l$ and $A$ is a domain we obtain that $a'h^{l-s} = ah^{k-s} + dh^{l-s}$ therefore
 \begin{align*}
-\bigl[x_\alpha(b/{h^s})\, u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s}))\, v\bigr] = \bigl[x_\alpha(b'/{h^s})\, u,\ \iota\bigl(c_{u^{-1}}(x_\alpha(dh^{l-s}))\bigr)\, c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s}))\, v\bigr] & \\
-= [x_\alpha(b'/{h^s})\, u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s} + dh^{l-s}))\, v\bigr]& \text{by~\eqref{eq:coherence}.}
+[x_\alpha(b'/{h^s})\, u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(a'h^{l - s}))\, v\bigr] = \bigl[x_\alpha(b'/{h^s})\, u,\ \iota\bigl(c_{u^{-1}}(x_\alpha(dh^{l-s}))\bigr)\, c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s}))\, v\bigr] & \text{ by~\eqref{eq:coherence}} \\ = \bigl[x_\alpha(b/{h^s})\, u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s}))\, v\bigr] &\text{ by~\eqref{eq:wd1},}
 \end{align*}
-Since $ah^k + dh^l = a'h^l$ and $A$ is a domain we obtain that $ah^{k-s} + dh^{l-s} = a'h^{l-s}$, so the above expression coincides with the right-hand side of~\eqref{eq:generator-action} (corresponding to the decomposition $c = a'h^l + b'$).
+ which coincides with the right-hand side of~\eqref{eq:generator-action}.
 
-Next, let us verify the independence of~\eqref{eq:generator-action} of the choice of representatives $c_{u^{-1}}$, $c_{\overline{\iota}(u^{-1})}$. 
-Suppose that $c_{u^{-1}}'$ and $c_{\overline{\iota}(u^{-1})}'$ are homomorphisms of index $1$ different representatives for the same pro-group morphisms
- $ $
-Let the strict representatives $\eta'$ and $\theta'$ be equivalent to $\eta$ and $\theta$ respectively. By definition of the equivalence, there is $n \geq \max(\theta^*(0) + s, {\theta'}^*(0) + s)$ such that 
+Next, let us verify the independence of~\eqref{eq:generator-action} of the choice of representatives for the morphisms $conj(u^{-1})$ and $conj(\overline{\iota}(u^{-1}))$. 
+Suppose that \[c_{u^{-1}}' \colon \St(\Phi, s'_{u^{-1}}B) \to \St(\Phi, B)\text{ and }c_{\overline{\iota}(u^{-1})}'\colon \St(\Phi, s'_{\overline{\iota}(u^{-1})}A) \to \St(\Phi, A)\] are degree $1$ components for different representatives for these morphisms. By the definition of the equivalence of pre-morphisms there exists $n \geq \max(s_g, s'_g) + s$ such that 
 $$
 \theta_0(x_\alpha(ah^{n - s})) = \theta_0'(x_\alpha(ah^{n - s}))
 $$

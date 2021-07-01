@@ -351,11 +351,11 @@ It is clear that $h^\mathbb{N} \subseteq B$ and $f(h)^\mathbb{N} \subseteq A$ an
 For $f \colon B \to A$ and $h \in B$ as above and every $g \in \St(\Phi, B_h)$ there exists $n = n(g) \in \mathbb{N}$ 
 and group homomorphisms $c_g \colon \St(\Phi, h^nB) \to \St(\Phi, B)$, $c_{\overline{f}(g)} \colon \St(\Phi, f(h)^nA) \to \St(\Phi, A)$
 such that the following equalities are fulfilled:
-\begin{enumerate}
- \item $f \circ c_g = c_{\overline{f}(g)} \circ f$,
- \item $\lambda_h^0 (c_g (x)) = g \cdot \lambda_h^n(x) \cdot g^{-1}$ for every $x \in \St(\Phi, h^nB)$.
- \item $\lambda_h^0 (c_{\overline{f}(g)}(y)) = g \cdot \lambda_h^n(y) \cdot \overline{f}(g)^{-1}$ for every $y \in \St(\Phi, f(h)^nA)$.
-\end{enumerate}
+\begin{align}
+ \label{eq:coherence} f \circ c_g = c_{\overline{f}(g)} \circ f, & \\
+ \label{eq:strictB} \lambda_h^0 (c_g (x)) = g \cdot \lambda_h^n(x) \cdot g^{-1} &\text{ for every }x \in \St(\Phi, h^nB), \\
+ \label{eq:strictA} \lambda_h^0 (c_{\overline{f}(g)}(y)) = \overline{f}(g) \cdot \lambda_h^n(y) \cdot \overline{f}(g)^{-1} &\text{ for every }y \in \St(\Phi, f(h)^nA).
+\end{align}
 Here $\lambda_h^k$ (resp. $\lambda^k_{f(h)}$) denotes the homomorphism of Steinberg grops induced by the obvious rng homomorphism $h^kB \to B_h$ (resp. $f(h)^kA \to A_{f(h)}$), where $k \in \mathbb{N}$.
 \end{corollary}
 \begin{proof}
@@ -363,111 +363,82 @@ Here $\lambda_h^k$ (resp. $\lambda^k_{f(h)}$) denotes the homomorphism of Steinb
  The second and the third equalities are special cases of the equality mentioned in Remark~\ref{rem:conj-action}.
 \end{proof}
 
-
-\begin{comment}
-Consider a diagram of Steinberg groups $\St(\Phi, s^n R)$ for $n \in \mathbb N$, i.e. the groups with the generators $x_{\alpha}(a)$ for $\alpha \in \Phi$, $a \in s^n R$ and the ordinary Steinbrg relations. The homomorphisms in the chain
-$$ \ldots \to \St(\Phi, s^3 R) \to \St(\Phi, s^2 R) \to \St(\Phi, s R) \to \St(\Phi, R) $$
-are defined in the natural way. Such a tower is called a {\it Steinberg pro-group}, it is denoted by $\St^\infty(\Phi, s^\bullet R)$. We usually do not write explicitly the structure homomorphisms of $\St^\infty(\Phi, s^\bullet R)$ in diagrams and formulas. In particular, we denote the elements of $\St(\Phi, s^n R)$ and their images in $\St(\Phi, s^{n - 1} R)$ by the same letters.
-
-We cannot conjugate elements of $\mathrm{St}(\Phi, s^nR)$ by elements of $\mathrm{St}(\Phi, R_s)$. Fortunately, there is such a conjugation action on the whole Steinberg pro-group.
-
-\begin{df}
-An {\it endomorphism representative} $\eta$ of the Steinberg pro-group $\St^\infty(\Phi,\,s^\bullet R)$ is the following data: 
-\begin{itemize}
-\item
-a map $\eta^* \colon \mathbb N \to \mathbb N$,
-\item
-for each $i \in \mathbb N$ a group homomorphism $\eta_i \colon \St(\Phi, s^{\eta^*(i)} R) \to \St(\Phi, s^i R)$,
-\end{itemize}
-such that for every $i \leq j$ there is $k \geq \eta^*(i), \eta^*(j)$ making the diagram
-$$\begin{tikzcd}[row sep=tiny]
-& \St(\Phi, s^{\eta^*(j)} R)\ar{r}{\eta_j} & \St(\Phi, s^j R) \ar{dd}\\
-\St(\Phi, s^k R) \ar{ur} \ar{dr} & &\\
-&\St(\Phi, s^{\eta^*(i)} R) \ar{r}{\eta_i} & \St(\Phi, s^i R)
-\end{tikzcd}$$
-commutative.
-
-Endomorphism representatives $\eta$ and $\theta$ are called {\it equivalent} if for every $i \in \mathbb N$ there is $k \geq \eta^*(i), \theta^*(i)$ making the diagram
-$$\begin{tikzcd}
-\St(\Phi, s^k R) \ar{r} \ar{d} & \St(\Phi, s^{\eta^*(i)} R) \ar{d}{\eta_i}\\
-\St(\Phi, s^{\theta^*(i)} R) \ar{r}{\theta_i} & \St(\Phi, s^i R)
-\end{tikzcd}$$
-commutatuve.
-
-For example, if we consider any map $\theta^*$ such that $\theta^*(i) \geq \eta^*(i)$ for all $i$ and define $\theta_i$ as the composition of $\eta_i$ and the structure homomorphism of $\St^\infty(\Phi, s^\bullet R)$, then such a representative $\theta$ is equivalent to $\eta$.
-
-An {\it endomorphism} $g$ of the pro-group $\St^\infty(\Phi,\,s^\bullet R)$ is the equivalence class of endomorphism representatives. Clearly, endomorphisms of $\St^\infty(\Phi,\,s^\bullet R)$ form a monoid $\mathrm{End}\bigl(\St^\infty(\Phi,\,s^\bullet R)\bigr)$ under composition. We are interested in its invertible elements, i.e. the automorphisms of the pro-group \(\St^\infty(\Phi, s^\bullet R)\).
-
-Suppose that there is a fixed group homomorphism $$\Xi \colon \St(\Phi, R_s) \to \mathrm{Aut}\bigl(\St^\infty(\Phi, s^\bullet R)\bigr).$$ For any $g \in \St(\Phi, R_s)$ we say that a representative $\eta$ of the automorphism $\Xi(g)$ is {\it strict} if for every $i$ and for every $x \in \St(\Phi, s^{\eta^*(i)} R)$ the identity
-$$
-\lambda_s\bigl(\eta_i(x)\bigr) = g \lambda_s(x) g^{-1} \in \St(\Phi, R_s)
-$$
-holds, where $\lambda_s$ is the principal localization at $s$. Clearly, a composition of strict representatives is strict.
-\end{df}
-
-
-\begin{theorem}[Voronetsky]
-\label{vor}
-There is a group homomorphism 
-$$
-\Xi \colon \St(\Phi, R_s) \to \mathrm{Aut}\bigl(\St^\infty(\Phi, s^\bullet R)\bigr)
-$$
-such that every automorphism $\Xi(g)$ for $g \in \St(\Phi, R_s)$ has a strict representative.
-\end{theorem}
-
-Recall a possible construction of such strict representatives. Clearly, it suffices to construct a strict representative for \(\Xi(g)\), where $g = x_\alpha(\frac a {s^k})$ is a generator of $\St(\Phi, R_s)$. Take $\eta^*(i) = 2p(i + k)$ for sufficiently large constant \(p\) and define
-$$
-\eta_i \colon \St(\Phi, s^{2p(i + k)} R) \to \St(\Phi, s^i R)
-$$
-by the following rule. For $\beta \in \Phi$ such that \(\alpha + \beta \notin \Phi \cup \{0\}\) let 
-$$\eta_i \bigl(x_\beta(s^{2p(i + k)} b)\bigr) = x_\beta(s^{2p(i + k)}b).$$
-If $\alpha + \beta$ is a root, let
-$$
-\eta_i\bigl(x_\beta(s^{2p(i + k)} b)\bigr) = x_{\alpha + \beta}(N_{\alpha \beta} s^{2p(i + k) - k} ab)\, x_\beta(s^{2p(i + k)} b).
-$$
-Finally, if $-\alpha = \beta + \gamma$ is any decomposition into a sum of roots, then let
-$$
-\eta_i\bigl(x_{-\alpha}(s^{2p(i + k)} b)\bigr) = \bigl[x_{-\gamma}(N_{\alpha\beta} s^{p(i + k) - k} ab)\,
-x_\beta(s^{p(i + k)} b),
-x_{-\beta}(N_{\alpha\gamma} N_{\beta\gamma} s^{p(i + k) - k} a)\,
-x_\gamma(N_{\beta \gamma} s^{p(i + k)})\bigr].
-$$
-
-It is proved in [LSV] that the homomorphisms $\eta_i$ are well-deined and they give an action of $\St(\Phi, R_s)$ on $\St^\infty(\Phi, s^\bullet R)$.
-
-Such consruction shows that the choice of strict representatives is functorial is some natural sense. 
-\end{comment}
-
 \section{A patching theorem for \texorpdfstring{$\K_2(\Phi, R)$}{K2(Ф,R)}} \label{sec:patching}
 The aim of this section is to prove Theorem~\ref{glueing} about patching for $\St(\Phi,-)$. 
 Similar result for projective modules has been originally proved by Lindel-Lutkebohrnert and independently by Mohan Kumar as an ingredient in the proof of Bass--Quillen conjecture for the power series ring over a field. 
 Consequently, Lindel has used similar technique in his proof of Bass--Quillen problem for essentially smooth domains over a perfect field.
-As in the previous section $\Phi$ is a simply-laced root system of rank at least $3$.
 
 \begin{theorem}\label{glueing}
-Let $B$ be a subring of an integral domain $A$, $h\in B \setminus \{0\}$ be such that $A / hA = B / hB$. Then the following square is pullback:
+Let $B$ be a subring of an integral domain $A$, $h\in B \setminus \{0\}$ be such that $A / hA = B / hB$. 
+Let $\Phi$ be a simply-laced root system of rank at least $3$.
+Then the following square is pullback:
 $$\begin{tikzcd}
 \St(\Phi, B) \ar{r}{\iota} \ar{d}{\lambda_h^B} & \St(\Phi, A) \ar{d}{\lambda_h^A}\\
 \St(\Phi, B_h) \ar{r}{\overline{\iota}} & \St(\Phi, A_h).
 \end{tikzcd}$$
 \end{theorem}
-\begin{proof}
-%It is well known that subgroup factorizations of $\mathrm G(\Phi,\,R)$ are an important ingredient in the study of the $\K_1$-functor. It turns out that in the study of $\K_2$-functors the $\St(\Phi,\,R)$-torsors play similar role, see~\cite{LS20}. TODO:
 
-First of all, recall that the condition $A/hA = B/hB$ is equivalent to the fact that for every $n \geq 0$ one has $A = Ah^n + B$ and $Ah^n \cap B = Bh^n$.
+%It is well known that subgroup factorizations of $\mathrm G(\Phi,\,R)$ are an important ingredient in the study of the $\K_1$-functor. It turns out that in the study of $\K_2$-functors the $\St(\Phi,\,R)$-torsors play similar role, see~\cite{LS20}. TODO:
+The proof of~\cref{glueing} occupies the rest of this section.
 
 We let $\St(\Phi, B)$ act on $\St(\Phi, B_h) \times \St(\Phi, A)$ on the left via the formula 
 \[w \star (u, v) = (u \lambda_h^B(w)^{-1}, \iota(w) v),\text{ where }w \in \St(\Phi, B),\ u \in \St(\Phi, B_h),\ v \in \St(\Phi, A).\]
-Denote by $V$ the orbit set for this action. Our goal is to show that there is a bijection between $V$ and $\St(\Phi, A_h)$ defined by the formula $(u, v) \mapsto \overline{\iota}(u) \cdot \lambda_h^A(v)$.
+Denote by $V$ the orbit set for this action. We use the notation $[u, v]$ for the orbit corresponding to a pair $(u, v) \in \St(\Phi, B_h) \times \St(\Phi, A)$.
 
-We start by constructing an action of $\St(\Phi, A_h)$ on $V$.
-Let $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $\frac c {h^s} \in A_h$. Choose a strict representative $\eta$ of the automorphism $\Xi(u)^{-1}$ of the pro-group $\St^\infty(\Phi, h^\bullet B)$ and a strict representative $\theta$ of the automorphism $\Xi\bigl(\iota(u)\bigr)^{-1}$ of the pro-group $\St^\infty(\Phi, h^\bullet A)$ using Corollart~\ref{vorcor} in such a way that $\eta^*(0) = \theta^*(0)$ and $$\iota\bigl(\eta_0(x)\bigr) = \theta_0\bigl(\iota(x)\bigr)$$ for all $x\in\St(\Phi, h^{\eta^*(0)}B)$.
+Our ultimate goal is to show that there is a bijection between $V$ and $\St(\Phi, A_h)$ given by the formula $[u, v] \mapsto \overline{\iota}(u) \cdot \lambda_h^A(v)$. The first step in this direction is to construct an action of $\St(\Phi, A_h)$ on $V$. Indeed, let $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $c/{h^s} \in A_h$.
+Applying \cref{vorcor} to the element $u^{-1}$ we obtain a natural number $n=n(u)$ and homomorphisms \[c_{u^{-1}}\colon \St(\Phi, h^nB) \to \St(\Phi, B),\ c_{\overline{\iota}(u^{-1})}\colon \St(\Phi, h^nA) \to \St(\Phi, A)\]
+satisfying the identities listed in~\cref{vorcor}.
 
-Choose $n \geq \theta^*(0) + s$ and a decomposition $c = ah^n + b$ for $a \in A$, $b \in B$. Define
-$$\textstyle
-x_\alpha(\frac c {h^s}) (u, v) = \bigl(x_\alpha(\frac b {h^s})\, u, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr).
+Observe that Theorem's condition $A/hA = B/hB$ is equivalent to the fact that for every $k \geq 0$ one has $A = Ah^k + B$ and $Ah^k \cap B = Bh^k$. Choose any $k \geq n + s$ and decompose $c$ as $c = ah^k + b$ for some $a \in A$, $b \in B$. 
+We define an action of the generator $x_\alpha(c/h^s)$ of $\St(\Phi, A_h)$ on $V$ via the formula:
+\begin{equation}\label{eq:generator-action}
+\textstyle
+x_\alpha(c/{h^s}) \cdot [u, v] = \bigl[x_\alpha(b/{h^s})\cdot u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s})) \cdot v\bigr].
+\end{equation}
+\begin{lemma}\label{well-def}
+The right hand side of~\eqref{eq:generator-action} is independent of either the choice of a decomposition $c = ah^k + b$, the choice of a representative $c_{\overline{\iota}(u^{-1})}$ for the morphism $conj(u^{-1})$ or the choice of a representative \((u, v)\) for $[u, v]$.
+\end{lemma}
+\begin{proof}
+First, let us demonstrate the independence of the choice of a decomposition for $c$. 
+Indeed, set $l := n + s$ and $c = a' h^{l} + b'$. Since $l \leq k$ and $a' h^{l} - a h^k = b - b' \in Ah^{l} \cap B = Bh^{l}$ there exists $d \in B$ such that $b = b' + dh^{l}$, consequently from~\eqref{eq:strictB} we obtain that
+$$\textstyle x_\alpha(b/{h^s})\, u = \bigl(x_\alpha({b'}/{h^s})\, u\bigr) \cdot \bigl(u^{-1}\, x_\alpha(dh^{n})\, u\bigr) =  \bigl(x_\alpha({b'}/{h^s})\, u\bigr) \cdot \lambda_h \bigl(\eta_0(x_\alpha(dh^{k - s}))\bigr).
 $$
-In lemma \ref{well-def} below we show that this construction is independent on all choices. Then the actions of all Steinberg generators $x_\alpha(\frac c {h^s})$ on $V$ are well-defined and it remains to check that they give an action of the Steinberg group $\St(\Phi, A_h)$.
+Since $\eta$ is a strict representative of $\Xi(u)^{-1}$, it follows that $$u^{-1}\, x_\alpha(dh^{k-s})\, u = \lambda_h \bigl(\eta_0(x_\alpha(dh^{k - s}))\bigr)$$
+and
+$$\textstyle
+\bigl(x_\alpha(\frac b {h^s})\, u, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr) \sim \bigl(x_\alpha(\frac{b'}{h^s})\, u, \iota\bigl(\eta_0(x_\alpha(dh^{k-s}))\bigr)\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr).
+$$
+
+A coherent choice of $\eta$ and $\theta$ guarantees that
+$$
+\iota\bigl(\eta_0(x_\alpha(dh^{k-s}))\bigr) = \theta_0(x_\alpha(dh^{k - s})),
+$$
+and, since $\theta_0$ is a homomorphism,
+$$
+\theta_0(x_\alpha(dh^{k - s}))\, \theta_0(x_\alpha(ah^{n - s})) = \theta_0(x_\alpha(dh^{k-s} + ah^{n - s})) = \theta_0(x_\alpha(a'h^{k - s})).
+$$
+
+Now we check that the action is independent on the choice of strict representatives. Let the strict representatives $\eta'$ and $\theta'$ be equivalent to $\eta$ and $\theta$ respectively. By definition of the equivalence, there is $n \geq \max(\theta^*(0) + s, {\theta'}^*(0) + s)$ such that 
+$$
+\theta_0(x_\alpha(ah^{n - s})) = \theta_0'(x_\alpha(ah^{n - s}))
+$$
+for all $a \in A$. Since the action is independent on the choice of a decomposition of $c$, it follows that it is also independent on the choices of $\eta$ and $\theta$.
+
+Finally, we prove that the action is independent on the choice of $(u, v)$ in its equivalence class. Let $u = u' \lambda_h(w)$ for some $w \in \St(\Phi,\,B)$. Choose coherent strict representatives $\eta$, $\theta$, $\eta'$, $\theta'$ of $\Xi(u)^{-1}$, $\Xi(\iota(u))^{-1}$, $\Xi(u')^{-1}$, $\Xi(\iota(u'))^{-1}$, by Corollary~\ref{vorcor}. Clearly, for some strict representative $\zeta$ of $\Xi(\iota(w))^{-1}$ we have $\zeta_0(x) = \iota(w)^{-1}\, x\, \iota(w)$ for all $x \in \St(\Phi, h^{\zeta^*(0)} A)$.
+Then
+$$\textstyle
+\bigl(x_\alpha(\frac b {h^s})\, u'\, \lambda_h(w), \theta_0(x_\alpha(ah^{n - s}))\, v\bigr) \sim \bigl(x_\alpha(\frac b {h^s})\, u', \iota(w)\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr),
+$$
+so
+$$
+\iota(w)\, \theta_0\bigl(x_\alpha(ah^{n-s})\bigr) = \theta'_0\bigl(x_\alpha(ah^{n-s})\bigr)\, \iota(w)
+$$
+for all \(a\) if \(n\) is large enough.
+\end{proof}
+
+
+
+Then the actions of all Steinberg generators $x_\alpha(\frac c {h^s})$ on $V$ are well-defined and it remains to check that they give an action of the Steinberg group $\St(\Phi, A_h)$.
 
 At first we show that 
 $$\textstyle
@@ -522,48 +493,7 @@ This is exactly a Steinberg relation.
 It follows that the action of $\St(\Phi, A_h)$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_h)\) preserves the action, where \(\St(\Phi, A_h)\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_h)\), it remains to check transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Hence \(V \to \St(\Phi, A_h)\) is a bijection.
 
 Now let \(u \in \St(\Phi, B_h)\) and \(v \in \St(\Phi, A)\) be such that \(\iota(u) = \lambda_h(v)\). The class of \((u, v^{-1})\) in \(V\) maps to \(1 \in \St(\Phi, A_h)\). Hence \((u, v^{-1}) \sim (1, 1)\).
-\end{proof}
 
-\begin{lemma}\label{well-def}
-The action of \(x_\alpha(\frac c{h^s})\) on the element \((u, v) \in V\) is independent on the choices of a decomposition of \(c\), coherent strict representatives of \(\Sigma(u^{-1})\) and \(\Sigma(\iota(u^{-1}))\), and a representative \((u, v)\) of its equivalence class in \(V\).
-\end{lemma}
-\begin{proof}
-Let us show that the action is independent on the choice of a decomposition of $c$. Indeed, let $k = \theta^*(0) + s$ and $c = a' h^k + b'$. Since $a' h^k - a h^n = b - b' \in Ah^k \cap B = Bh^k$, there is $d \in B$ such that $b = b' + dh^k$. Then
-$$\textstyle
-x_\alpha(\frac b {h^s})\, u = \bigl(x_\alpha(\frac{b'}{h^s})\, u\bigr) \bigl(u^{-1}\, x_\alpha(dh^{k - s})\, u\bigr).
-$$
-Since $\eta$ is a strict representative of $\Xi(u)^{-1}$, it follows that $$u^{-1}\, x_\alpha(dh^{k-s})\, u = \lambda_h \bigl(\eta_0(x_\alpha(dh^{k - s}))\bigr)$$
-and
-$$\textstyle
-\bigl(x_\alpha(\frac b {h^s})\, u, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr) \sim \bigl(x_\alpha(\frac{b'}{h^s})\, u, \iota\bigl(\eta_0(x_\alpha(dh^{k-s}))\bigr)\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr).
-$$
-
-A coherent choice of $\eta$ and $\theta$ guarantees that
-$$
-\iota\bigl(\eta_0(x_\alpha(dh^{k-s}))\bigr) = \theta_0(x_\alpha(dh^{k - s})),
-$$
-and, since $\theta_0$ is a homomorphism,
-$$
-\theta_0(x_\alpha(dh^{k - s}))\, \theta_0(x_\alpha(ah^{n - s})) = \theta_0(x_\alpha(dh^{k-s} + ah^{n - s})) = \theta_0(x_\alpha(a'h^{k - s})).
-$$
-
-Now we check that the action is independent on the choice of strict representatives. Let the strict representatives $\eta'$ and $\theta'$ be equivalent to $\eta$ and $\theta$ respectively. By definition of the equivalence, there is $n \geq \max(\theta^*(0) + s, {\theta'}^*(0) + s)$ such that 
-$$
-\theta_0(x_\alpha(ah^{n - s})) = \theta_0'(x_\alpha(ah^{n - s}))
-$$
-for all $a \in A$. Since the action is independent on the choice of a decomposition of $c$, it follows that it is also independent on the choices of $\eta$ and $\theta$.
-
-Finally, we prove that the action is independent on the choice of $(u, v)$ in its equivalence class. Let $u = u' \lambda_h(w)$ for some $w \in \St(\Phi,\,B)$. Choose coherent strict representatives $\eta$, $\theta$, $\eta'$, $\theta'$ of $\Xi(u)^{-1}$, $\Xi(\iota(u))^{-1}$, $\Xi(u')^{-1}$, $\Xi(\iota(u'))^{-1}$, by Corollary~\ref{vorcor}. Clearly, for some strict representative $\zeta$ of $\Xi(\iota(w))^{-1}$ we have $\zeta_0(x) = \iota(w)^{-1}\, x\, \iota(w)$ for all $x \in \St(\Phi, h^{\zeta^*(0)} A)$.
-Then
-$$\textstyle
-\bigl(x_\alpha(\frac b {h^s})\, u'\, \lambda_h(w), \theta_0(x_\alpha(ah^{n - s}))\, v\bigr) \sim \bigl(x_\alpha(\frac b {h^s})\, u', \iota(w)\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr),
-$$
-so
-$$
-\iota(w)\, \theta_0\bigl(x_\alpha(ah^{n-s})\bigr) = \theta'_0\bigl(x_\alpha(ah^{n-s})\bigr)\, \iota(w)
-$$
-for all \(a\) if \(n\) is large enough.
-\end{proof}
 
 \section{Main results}\label{sec:main}
 \subsection{Analogue of Serre's problem for \texorpdfstring{$\K_2$}{K2}}

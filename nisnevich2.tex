@@ -382,7 +382,7 @@ $$\begin{tikzcd}
 The proof of~\cref{glueing} occupies the rest of this section.
 
 We let $\St(\Phi, B)$ act on $\St(\Phi, B_h) \times \St(\Phi, A)$ on the left via the formula 
-\[w \star (u, v) = (u \lambda_h^B(w)^{-1}, \iota(w) v),\text{ where }w \in \St(\Phi, B),\ u \in \St(\Phi, B_h),\ v \in \St(\Phi, A).\]
+\[w \cdot (u, v) = (u \lambda_h(w)^{-1}, \iota(w) v),\text{ where }w \in \St(\Phi, B),\ u \in \St(\Phi, B_h),\ v \in \St(\Phi, A).\]
 Denote by $V$ the orbit set for this action. We use the notation $[u, v]$ for the orbit corresponding to a pair $(u, v) \in \St(\Phi, B_h) \times \St(\Phi, A)$.
 
 Our ultimate goal is to show that there is a bijection between $V$ and $\St(\Phi, A_h)$ given by the formula $[u, v] \mapsto \overline{\iota}(u) \cdot \lambda_h^A(v)$. The first step in this direction is to construct an action of $\St(\Phi, A_h)$ on $V$. Indeed, let $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $c/{h^s} \in A_h$.
@@ -390,7 +390,7 @@ Applying \cref{vorcor} to the element $u^{-1}$ we obtain a natural number $n=n(u
 satisfying the identities listed in~\cref{vorcor}.
 
 Observe that Theorem's condition $A/hA = B/hB$ is equivalent to the fact that for every $k \geq 0$ one has $A = Ah^k + B$ and $Ah^k \cap B = Bh^k$. Choose any $k \geq n + s$ and decompose $c$ as $c = ah^k + b$ for some $a \in A$, $b \in B$. 
-We define an action of the generator $x_\alpha(c/h^s)$ of $\St(\Phi, A_h)$ on $V$ via the formula:
+We let the generator $x_\alpha(c/h^s)$ of $\St(\Phi, A_h)$ act on $V$ via the formula:
 \begin{equation}\label{eq:generator-action}
 \textstyle
 x_\alpha(c/{h^s}) \cdot [u, v] = \bigl[x_\alpha(b/{h^s})\cdot u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s})) \cdot v\bigr].
@@ -399,26 +399,19 @@ x_\alpha(c/{h^s}) \cdot [u, v] = \bigl[x_\alpha(b/{h^s})\cdot u,\ c_{\overline{\
 The right hand side of~\eqref{eq:generator-action} is independent of either the choice of a decomposition $c = ah^k + b$, the choice of a representative $c_{\overline{\iota}(u^{-1})}$ for the morphism $conj(u^{-1})$ or the choice of a representative \((u, v)\) for $[u, v]$.
 \end{lemma}
 \begin{proof}
-First, let us demonstrate the independence of the choice of a decomposition for $c$. 
-Indeed, set $l := n + s$ and $c = a' h^{l} + b'$. Since $l \leq k$ and $a' h^{l} - a h^k = b - b' \in Ah^{l} \cap B = Bh^{l}$ there exists $d \in B$ such that $b = b' + dh^{l}$, consequently from~\eqref{eq:strictB} we obtain that
-$$\textstyle x_\alpha(b/{h^s})\, u = \bigl(x_\alpha({b'}/{h^s})\, u\bigr) \cdot \bigl(u^{-1}\, x_\alpha(dh^{n})\, u\bigr) =  \bigl(x_\alpha({b'}/{h^s})\, u\bigr) \cdot \lambda_h \bigl(\eta_0(x_\alpha(dh^{k - s}))\bigr).
-$$
-Since $\eta$ is a strict representative of $\Xi(u)^{-1}$, it follows that $$u^{-1}\, x_\alpha(dh^{k-s})\, u = \lambda_h \bigl(\eta_0(x_\alpha(dh^{k - s}))\bigr)$$
-and
-$$\textstyle
-\bigl(x_\alpha(\frac b {h^s})\, u, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr) \sim \bigl(x_\alpha(\frac{b'}{h^s})\, u, \iota\bigl(\eta_0(x_\alpha(dh^{k-s}))\bigr)\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr).
-$$
+First, let us demonstrate the independence of~\eqref{eq:generator-action} of the choice of a decomposition for $c$. 
+Choose some $l \geq n + s$ and $c = a' h^{l} + b'$. Without loss of generality, we may assume $l \leq k$ so that $a' h^{l} - a h^k = b - b' \in Ah^{l} \cap B = Bh^{l}$ and there exists $d \in B$ such that $b = b' + dh^{l}$. Thus, from~\eqref{eq:strictB} we obtain that
+$$\textstyle x_\alpha(b/{h^s})\, u = x_\alpha({b'}/{h^s})\, u \cdot u^{-1}\, x_\alpha(dh^{n})\, u =  x_\alpha({b'}/{h^s})\, u \cdot \lambda_h \bigl(c_{u^{-1}}(x_\alpha(dh^{l-s}))\bigr)\text{ hence} $$
+\begin{align*}
+\bigl[x_\alpha(b/{h^s})\, u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s}))\, v\bigr] = \bigl[x_\alpha(b'/{h^s})\, u,\ \iota\bigl(c_{u^{-1}}(x_\alpha(dh^{l-s}))\bigr)\, c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s}))\, v\bigr] & \\
+= [x_\alpha(b'/{h^s})\, u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s} + dh^{l-s}))\, v\bigr]& \text{by~\eqref{eq:coherence}.}
+\end{align*}
+Since $ah^k + dh^l = a'h^l$ and $A$ is a domain we obtain that $ah^{k-s} + dh^{l-s} = a'h^{l-s}$, so the above expression coincides with the right-hand side of~\eqref{eq:generator-action} (corresponding to the decomposition $c = a'h^l + b'$).
 
-A coherent choice of $\eta$ and $\theta$ guarantees that
-$$
-\iota\bigl(\eta_0(x_\alpha(dh^{k-s}))\bigr) = \theta_0(x_\alpha(dh^{k - s})),
-$$
-and, since $\theta_0$ is a homomorphism,
-$$
-\theta_0(x_\alpha(dh^{k - s}))\, \theta_0(x_\alpha(ah^{n - s})) = \theta_0(x_\alpha(dh^{k-s} + ah^{n - s})) = \theta_0(x_\alpha(a'h^{k - s})).
-$$
-
-Now we check that the action is independent on the choice of strict representatives. Let the strict representatives $\eta'$ and $\theta'$ be equivalent to $\eta$ and $\theta$ respectively. By definition of the equivalence, there is $n \geq \max(\theta^*(0) + s, {\theta'}^*(0) + s)$ such that 
+Next, let us verify the independence of~\eqref{eq:generator-action} of the choice of representatives $c_{u^{-1}}$, $c_{\overline{\iota}(u^{-1})}$. 
+Suppose that $c_{u^{-1}}'$ and $c_{\overline{\iota}(u^{-1})}'$ are homomorphisms of index $1$ different representatives for the same pro-group morphisms
+ $ $
+Let the strict representatives $\eta'$ and $\theta'$ be equivalent to $\eta$ and $\theta$ respectively. By definition of the equivalence, there is $n \geq \max(\theta^*(0) + s, {\theta'}^*(0) + s)$ such that 
 $$
 \theta_0(x_\alpha(ah^{n - s})) = \theta_0'(x_\alpha(ah^{n - s}))
 $$

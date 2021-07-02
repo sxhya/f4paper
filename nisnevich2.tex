@@ -71,7 +71,7 @@ Let us briefly recall the historical context, which might help to explain our ch
 \end{comment}
 For a commutative ring $k$ we denote by $\catname{Alg}_k$ the category of commutative unital $k$-algebras (not neccessarily of finite type). In the statement of~\cref{lpb}, which is the main result of this section, $k$ will be assumed to be a field. However, some of the intermediate steps in the proof of~\cref{lpb} can be obtained for $k=\ZZ$, so for the sake of greater generality we make no blanket assumption that $k$ is a field.  
 
-For a commutative ring $R$ and an element $a\in R$ we denote by $\lambda_a$ the homomorphism of principal localization $R \to R_a$. Similarly, we denote by $\lambda_P$ the homomorphism $R \to R_P = (R\setminus P)^{-1}R$ of localization in a prime ideal $P \trianglelefteq R$. 
+For a commutative ring $R$ and an element $a\in R$ we denote by $\lambda_a$ the homomorphism of principal localization $R \to R_a$. Similarly, we denote by $\lambda_P$ the homomorphism $R \to R_P = (R\setminus P)^{-1}R$ of localization in a prime ideal $P \trianglelefteq R$. Notice that if $a$ is nilpotent then $R_a$ is the zero ring (which we also consider as an object of $\catname{Alg}_k$). 
 
 Let $A$ be an $R$-algebra, $f\in R[t]$ and $a \in A$. We denote by $ev_t(a)$ (or just $ev(a)$ when $t$ is clear from the context) the unique $R$-algebra homomorphism $R[t] \to A$ mapping $t$ to $a$. For an element $g \in K(R[t])$ we often shorten the notation for the element $K(ev(a))(g)$ to just $g(a)$.
 
@@ -79,8 +79,6 @@ Let $A$ be an $R$-algebra, $f\in R[t]$ and $a \in A$. We denote by $ev_t(a)$ (or
 Let $K$ be a functor $\catname{Alg}_k \to \catname{Grp}$.
 Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by the homomorphism of evaluation at $t=0$. It is clear that $K(R[t]) \cong NK(R) \rtimes K(R)$ and $NK$ is also a functor $\catname{Alg}_k \to \catname{Grp}$. If $K(R[t])$ is abelian then $K(R[t]) \cong NK(R) \oplus K(R)$ and our definition agrees with~\cite[Def.~III.3.3]{Kbook}.
 \end{df}
-
-Notice that $R_a$ is the zero ring if $a$ is nilpotent. It will be convenient for us to extend the domain of the definition for $K$ and $NK$ so that it includes the zero ring. We do this by setting $K(0) = NK(0) = 1$.
 
 For a commutative ring $R$ and $a \in R$ consider the following commutative square:
   \begin{equation} \label{M-sq} \begin{tikzcd} R \ltimes t R_a[t] \ar{r}{l} \ar{d}[swap]{e} & R_a[t] \ar{d}{ev(0)} \\ R \ar{r}{\lambda_a} & R_a. \end{tikzcd}\end{equation}
@@ -316,7 +314,7 @@ Since $conj$ is a homomorphism, it is enough to consider the case $g = x_\alpha(
 In view of~\cite[Lemma~3.2]{LSV20}, to verify the commutativity of~\eqref{eq:conj-pis} it is enough to verify the equalities $\pi_S \circ conj(g) \circ x_\beta= (-)^g \circ \pi_S \circ x_\beta$ for $\beta\neq \pm\alpha$, where $x_\beta\colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ are ``root subgroup morphisms'' defined in~\cite[\S~2.4]{LSV20}.
 It remains to see that the fulfillment of these equalities is a direct consequence of the definition of $conj$ (cf. the equalities before~\cite[Proposition~4.2]{LSV20}). \end{proof}
 \begin{rem} \label{rem:conj-action}
-Unwinding the definitions, we see that the commutativity of~\eqref{eq:conj-pis} is equivalent to the following condition: for every $g\in \St(\Phi, R_S)$ there exists $s_g \in S$ and a homomorphism $c_g \colon \St(\Phi, s_g R) \to \St(\Phi, R)$ such that $\lambda_S(c_g(x)) = g\lambda_S(i(x))g^{-1}$ for all $x\in \St(\Phi, s_g R)$. Here $i$ denotes the homomorphism $\St(\Phi, s_g R) \to \St(\Phi, R)$ induced by the obvious embedding $s_gR \hookrightarrow R$, whereas $s_g$ and $c_g$ can be determined via the following procedure: choose a representative $r$ for the morphism $conj(g)$ and define $s_g = r^*(1)$ and $c_g = r_1$ (the degree $1$ component of $r$).
+Unwinding the definitions, we see that the commutativity of~\eqref{eq:conj-pis} is equivalent to the following condition: for every $g\in \St(\Phi, R_S)$ there exists $s_g \in S$ and a homomorphism $c_g \colon \St(\Phi, s_g R) \to \St(\Phi, R)$ such that $\lambda_S(c_g(x)) = g\lambda_S(i(x))g^{-1}$ for all $x\in \St(\Phi, s_g R)$. Here $i$ denotes the homomorphism $\St(\Phi, s_g R) \to \St(\Phi, R)$ induced by the obvious embedding $s_gR \hookrightarrow R$, whereas $s_g$ and $c_g$ can be determined via the following procedure: choose a representative $r$ for the morphism $conj(g)$ (remember that $conj(g)$ is an equivalence class of pre-morphisms) and set $s_g := r^*(1)$ and $c_g := r_1$ (the degree $1$ component of $r$).
 \end{rem}
 
 We also need to study basic functoriality properties of the above construction.
@@ -341,22 +339,22 @@ Now suppose that there is a map $f^* \colon S' \to S$ such that $t$ divides $f(f
 \end{rem}
 
 Now let us specialize the above results to a particular situation that we will encounter in~\cref{sec:patching}.
-Let $f \colon B \to A$ be a homomorphism of integral domains and let $h$ be an element of $B$ such that $f(h)\neq 0$.
+Let $\iota \colon B \to A$ be an inclusion of integral domains and let $h \neq 0$ be an element of $B$.
 We denote by \(\mathbb N\) the set of nonnegative integers.
-Consider the multiplicative subsets $h^{\mathbb{N}} = \{ h^n \mid n \in \mathbb{N} \} \subset B$ and $f(h)^\mathbb{N} \subseteq A$ and the corresponding homorphism of localizations $\overline{f} \colon B_h \to A_{f(h)}$.
-It is clear that $h^\mathbb{N} \subseteq B$ and $f(h)^\mathbb{N} \subseteq A$ and $f$ satisfy the requirements mentioned before Proposition~\ref{prop:functoriality} (e.\,g. $f^*(f(h)^n) = h^n$), so there exists a morphism $f^{(\infty)}$ of pro-rngs $B^{(\infty)} \to A^{(\infty)}$ and the corresponding morphism of Steinberg pro-groups $f^{(\infty)}\colon\St^{(\infty)}(\Phi, B) \to \St^{(\infty)}(\Phi, A)$ satisfying the conclusion of Proposition~\ref{prop:functoriality}.
+Consider the multiplicative subset $h^{\mathbb{N}} = \{ h^n \mid n \in \mathbb{N} \} \subset B \subseteq A$ and denote by $\overline{\iota}$ the canonical homomorphism $B_h \to A_h$.
+It is clear that $h^\mathbb{N} \subseteq B$ and $h^\mathbb{N} \subseteq A$ and $f$ satisfy the requirements mentioned before Proposition~\ref{prop:functoriality} (e.\,g. $\iota^*(h^n) = h^n$), so there exists a morphism $\iota^{(\infty)}$ of pro-rngs $B^{(\infty)} \to A^{(\infty)}$ and the corresponding morphism of Steinberg pro-groups $\iota^{(\infty)}\colon\St^{(\infty)}(\Phi, B) \to \St^{(\infty)}(\Phi, A)$ satisfying the conclusion of Proposition~\ref{prop:functoriality}.
 
 \begin{corollary}
 \label{vorcor}
-For $f \colon B \to A$ and $h \in B$ as above and every $g \in \St(\Phi, B_h)$ there exists $n = n(g) \in \mathbb{N}$ 
-and group homomorphisms $c_g \colon \St(\Phi, h^nB) \to \St(\Phi, B)$, $c_{\overline{f}(g)} \colon \St(\Phi, f(h)^nA) \to \St(\Phi, A)$
+For $\iota \colon B \hookrightarrow A$ and $h \in B$ as above and every $g \in \St(\Phi, B_h)$ there exists $n = n(g) \in \mathbb{N}$ 
+and group homomorphisms $c_g \colon \St(\Phi, h^nB) \to \St(\Phi, B)$, $c_{\overline{\iota}(g)} \colon \St(\Phi, h^nA) \to \St(\Phi, A)$
 such that the following equalities are fulfilled:
 \begin{align}
- \label{eq:coherence} f \circ c_g = c_{\overline{f}(g)} \circ f, & \\
- \label{eq:strictB} \lambda_h^0 (c_g (x)) = g \cdot \lambda_h^n(x) \cdot g^{-1} &\text{ for every }x \in \St(\Phi, h^nB), \\
- \label{eq:strictA} \lambda_h^0 (c_{\overline{f}(g)}(y)) = \overline{f}(g) \cdot \lambda_h^n(y) \cdot \overline{f}(g)^{-1} &\text{ for every }y \in \St(\Phi, f(h)^nA).
+ \label{eq:coherence} \iota \circ c_g = c_{\overline{\iota}(g)} \circ \iota, & \\
+ \label{eq:strictB} \lambda_{h, B}^0 (c_g (x)) = g \cdot \lambda_{h, B}^n(x) \cdot g^{-1} &\text{ for every }x \in \St(\Phi, h^nB), \\
+ \label{eq:strictA} \lambda_{h, A}^0 (c_{\overline{\iota}(g)}(y)) = \overline{\iota}(g) \cdot \lambda_{h, A}^n(y) \cdot \overline{\iota}(g)^{-1} &\text{ for every }y \in \St(\Phi, h^nA).
 \end{align}
-Here $\lambda_h^k$ (resp. $\lambda^k_{f(h)}$) denotes the homomorphism of Steinberg grops induced by the obvious rng homomorphism $h^kB \to B_h$ (resp. $f(h)^kA \to A_{f(h)}$), where $k \in \mathbb{N}$.
+Here for $k \in \mathbb{N}$ we denote by $\lambda_{h, B}^k$ (resp. $\lambda^k_{h, A}$) the homomorphism of Steinberg grops induced by the obvious rng homomorphism $h^kB \to B_h$ (resp. $h^kA \to A_{h}$).
 \end{corollary}
 \begin{proof}
  The first equality is a special case of the commutativity of the diagram from Remark~\ref{rem:functoriality}.
@@ -402,7 +400,7 @@ The right hand side of~\eqref{eq:generator-action} is independent of either the 
 First, let us show the independence of~\eqref{eq:generator-action} of the choice of a decomposition for $c$. 
 Choose some $l \geq n + s$ and $c = a' h^{l} + b'$. Without loss of generality, we may assume $l \leq k$ so that $a' h^{l} - a h^k = b - b' \in Ah^{l} \cap B = Bh^{l}$ and there exists $d \in B$ such that $b = b' + dh^{l}$. Thus, from~\eqref{eq:strictB} we obtain that
 \begin{equation} \label{eq:wd1} \textstyle x_\alpha(b/{h^s})\, u = x_\alpha({b'}/{h^s})\, u \cdot u^{-1}\, x_\alpha(dh^{n})\, u =  x_\alpha({b'}/{h^s})\, u \cdot \lambda_h \bigl(c_{u^{-1}}(x_\alpha(dh^{l-s}))\bigr). \end{equation}
-Since $a'h^l = ah^k + dh^l$ and $A$ is a domain we obtain that $a'h^{l-s} = ah^{k-s} + dh^{l-s}$ therefore
+Since $a'h^l = ah^k + dh^l$ and $A$ is a domain we obtain that $a'h^{l-s} = dh^{l-s} + ah^{k-s}$ therefore
 \begin{align*}
 [x_\alpha(b'/{h^s})\, u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(a'h^{l - s}))\, v\bigr] = \bigl[x_\alpha(b'/{h^s})\, u,\ \iota\bigl(c_{u^{-1}}(x_\alpha(dh^{l-s}))\bigr)\, c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s}))\, v\bigr] & \text{ by~\eqref{eq:coherence}} \\ = \bigl[x_\alpha(b/{h^s})\, u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s}))\, v\bigr] &\text{ by~\eqref{eq:wd1},}
 \end{align*}

@@ -281,7 +281,7 @@ It follows directly from Chevalley commutator formula that the commutators $[x_{
 Indeed, setting $c = c^2 = (1, 0)$ we obtain that $y_\alpha(a, b) = y_\alpha(ac, b) = y_\alpha(a, bc) = y_\alpha(a, 0) = 1$. \end{proof}
 
 \subsection{Overview of Steinberg pro-groups}
-The aim of this section is to recall the formalism of pro-objects, which has been used in~\cite{LSV20} to prove the centrality of $\K_2$. We briefly present key definitions and obtain some new results which will be used later in the article. We refer the reader to \cite[Section~6.1]{SK06} and~\cite[\S~2]{LSV20} for a more thorough introduction to the formalism of pro-objects. Throughout this section $R$ is an integral domain and $\Phi$ is a reduced irreducible root system of rank at least $3$.
+The aim of this section is to recall the formalism of pro-objects, which has been used in~\cite{LSV20} and \cite{V20} to prove the centrality of $\K_2$. We briefly present key definitions and obtain some new results which will be used later in the article. We refer the reader to \cite[Section~6.1]{SK06} and~\cite[\S~2]{LSV20} for a more thorough introduction to the formalism of pro-objects. Throughout this section $R$ is an integral domain and $\Phi$ is a reduced irreducible root system of rank at least $3$.
 
 We start by recalling the definition of the {\it pro-completion} $\catname{Pro}(\mathcal{C})$ of a category $\mathcal{C}$ (cf.~\cite[\S~2.1]{LSV20}).
 By definition, the objects of $\catname{Pro}(\mathcal{C})$ are functors $X^{(\infty)}\colon\mathcal{I}^{\mathrm{op}} \to \mathcal{C}$, where $\mathcal{I}$ is a small nonempty filtered category. For $X^{(\infty)} \in 
@@ -305,14 +305,14 @@ We denote by $\pi_S$ the pro-group morphism $\St^{(\infty)}(\Phi, R) \to \St(\Ph
 
 %The importance of the Steinberg pro-group is illustrated by the following result, see~\cite[Proposition~4.2]{LSV20}.
 \begin{prop}\label{prop:conj-action}
- For a simply laced $\Phi$ and a multiplicative system $S\subseteq R$ there exists a well-defined group homomorphism $conj\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^{(\infty)}(\Phi, R))$ compatible with the obvious conjugation action of $\St(\Phi, R_S)$ on itself, i.\,e. such that for every $g \in \St(\Phi, R_S)$ the following diagram of pro-groups commutes:
+ For a root system $\Phi$ and a multiplicative system $S\subseteq R$ there exists a well-defined group homomorphism $conj\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^{(\infty)}(\Phi, R))$ compatible with the obvious conjugation action of $\St(\Phi, R_S)$ on itself, i.\,e. such that for every $g \in \St(\Phi, R_S)$ the following diagram of pro-groups commutes:
  \begin{equation} \label{eq:conj-pis} \begin{tikzcd} \St^{(\infty)}(\Phi, R) \ar{r}{conj(g)} \ar{d}{\pi_S} & \St^{(\infty)}(\Phi, R) \ar{d}{\pi_S} \\ \St(\Phi, R_S) \ar{r}{(-)^g} & \St(\Phi, R_S). \end{tikzcd} \end{equation}
 \end{prop}
 \begin{proof}
-The existence of the homomorphism $conj$ has been shown in~\cite[Proposition~4.2]{LSV20}, so we only need to verify the commutativity of the diagram~\eqref{eq:conj-pis}. 
+The existence of the homomorphism $conj$ has been shown in~\cite[Proposition~4.2]{LSV20} and \cite[beginning of \S 10]{V20}, so we only need to verify the commutativity of the diagram~\eqref{eq:conj-pis}. 
 Since $conj$ is a homomorphism, it is enough to consider the case $g = x_\alpha(u)$, $\alpha \in \Phi$, $u \in R_S$.
-In view of~\cite[Lemma~3.2]{LSV20}, to verify the commutativity of~\eqref{eq:conj-pis} it is enough to verify the equalities $\pi_S \circ conj(g) \circ x_\beta= (-)^g \circ \pi_S \circ x_\beta$ for $\beta\neq \pm\alpha$, where $x_\beta\colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ are ``root subgroup morphisms'' defined in~\cite[\S~2.4]{LSV20}.
-It remains to see that the fulfillment of these equalities is a direct consequence of the definition of $conj$ (cf. the equalities before~\cite[Proposition~4.2]{LSV20}). \end{proof}
+In view of~\cite[Lemma~3.2]{LSV20} and \cite[Lemma~11]{V20}, to verify the commutativity of~\eqref{eq:conj-pis} it is enough to verify the equalities $\pi_S \circ conj(g) \circ x_\beta= (-)^g \circ \pi_S \circ x_\beta$ for $\beta\neq \pm\alpha$, where $x_\beta\colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ are ``root subgroup morphisms'' defined in~\cite[\S~2.4]{LSV20} and \cite[\S 5]{V20}.
+It remains to see that the fulfillment of these equalities is a direct consequence of the definition of $conj$ (cf. the equalities before~\cite[Proposition~4.2]{LSV20} and \cite{\S 10}{V20}). \end{proof}
 \begin{rem} \label{rem:conj-action}
 Unwinding the definitions, we see that the commutativity of~\eqref{eq:conj-pis} is equivalent to the following condition: for every $g\in \St(\Phi, R_S)$ there exists an element $s_g\in S$ and a homomorphism $c_g \colon \St(\Phi, s R) \to \St(\Phi, R)$ such that $\lambda_S(c_g(x)) = g \cdot \lambda_S(i(x))\cdot g^{-1}$ for all $x\in \St(\Phi, s_g R)$. Here $i$ denotes the homomorphism $\St(\Phi, s_g R) \to \St(\Phi, R)$ induced by the obvious embedding $sR \hookrightarrow R$. The element $s_g$ and the homomorphism $c_g$ can be determined via the following procedure: choose a representative $\eta$ for the morphism $conj(g)$ and set $s_g := \eta^*(1)$ and $c := \eta_1$ (the degree $1$ component of $\eta$).
 \end{rem}
@@ -327,7 +327,7 @@ Now suppose that there is a map $f^* \colon S' \to S$ such that $t$ divides $f(f
  \begin{equation} \label{eq:conj-finfty} \begin{tikzcd} \St^{(\infty)}(\Phi, R) \ar{r}{conj(g)} \ar{d}{f^{(\infty)}} & \St^{(\infty)}(\Phi, R) \ar{d}{f^{(\infty)}} \\ \St^{(\infty)}(\Phi, R') \ar{r}{conj(\overline{f}(g))} & \St^{(\infty)}(\Phi, R'). \end{tikzcd} \end{equation}
 \end{prop}
 \begin{proof}
-Let \(g = x_\alpha(\frac a s)\) for some \(\alpha \in \Phi\), \(a \in R\), \(s \in S\). By \cite[Lemma~3.2]{LSV20}, it suffices to check that the long paths in the diagram coincide after precomposition with \(x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)\) for all \(\beta \neq \pm \alpha\). This follows from the definition before~\cite[Proposition~4.2]{LSV20} and the commutativity of
+Let \(g = x_\alpha(\frac a s)\) for some \(\alpha \in \Phi\), \(a \in R\), \(s \in S\). By \cite[Lemma~3.2]{LSV20} and \cite[Lemma~11]{V20}, it suffices to check that the long paths in the diagram coincide after precomposition with \(x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)\) for all \(\beta \neq \pm \alpha\). This follows from the definition before~\cite[Proposition~4.2]{LSV20} and in \cite[\S 10]{V20}, and the commutativity of
 \[\begin{tikzcd}
 R^{(\infty)} \ar{r}{x_\beta} \ar{d}{f^{(\infty)}} &
 \St^{(\infty)}(\Phi, R) \ar{d}{f^{(\infty)}} \\
@@ -450,13 +450,13 @@ x_\alpha(\frac c {h^s})\, \bigl(x_\alpha(\frac{b'}{h^s})\, u, \theta_0(x_\alpha(
 $$
 this proves the identity. The proof that $x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})$ and $x_\beta(\frac{c'}{h^s})\, x_\alpha(\frac c {h^s})$ identically act for $\alpha + \beta \notin \Phi \cup \{0\}$ is the same.
 
-In the case $\alpha + \beta \in \Phi$ we have to show that
+In the case $\alpha + \beta \in \Phi$ and $2\alpha + \beta, \alpha + 2\beta \notin \Phi$ we have to show that
 $$\textstyle
 f = x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})
 \text{ and }
 g = x_{\alpha + \beta}(N_{\alpha \beta} \frac{cc'}{h^{2s}})\, x_\beta(\frac{c'}{h^s})\, x_\alpha(\frac c {h^s})
-$$ 
-act identically on $V$. Choose decompositions $c = ah^n + b$, $c' = a'h^n + b'$ and $cc' = (aa' h^n + ab' + a'b) h^n + bb'$ for sufficiently large \(n\).
+$$  % here N_{\alpha \beta} may be non-invertible
+act identically on $V$. Choose decompositions $c = ah^n + b$, $c' = a'h^n + b'$ and $cc' = (aa' h^n + ab' + a'b) h^n + bb'$ for sufficiently large $n$.
 Then
 $$\textstyle
 f\,(u, v) = \bigl(x_\alpha(\frac b {h^s})\, x_\beta(\frac{b'}{h^s})\, u,
@@ -485,6 +485,55 @@ x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha \beta} ab' h^{n - 2s})\, x_\
 = x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa' h^n + ab' + a'b) h^{n - 2s}\bigr)\, x_{\alpha + \beta}(-N_{\alpha\beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\, x_\alpha(ah^{n - s}).
 \end{multline*}
 This is exactly a Steinberg relation.
+
+
+
+% relation in the non-simply-laced case
+
+The lase case is $\alpha + \beta, \alpha + 2\beta \in \Phi$ and $2\alpha + \beta \notin \Phi$. We show that
+$$\textstyle
+f = x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})
+\text{ and }
+g = x_{\alpha + 2\beta}(N_{\alpha \beta 1 2} \frac{c {c'}^2}{h^{3s}})\, x_{\alpha + \beta}(N_{\alpha \beta} \frac{cc'}{h^{2s}})\, x_\beta(\frac{c'}{h^s})\, x_\alpha(\frac c {h^s})
+$$ 
+act identically on $V$. Choose decompositions $c = ah^n + b$, $c' = a'h^n + b'$, $cc' = (aa' h^n + ab' + a'b) h^n + bb'$, and $c{c'}^2 = (a{a'}^2 h^{2n} + 2aa'b' h^n + {a'}^2 b h^n + 2a'bb' + a{b'}^2) h^n + b{b'}^2$ for sufficiently large $n$.
+Then
+$$\textstyle
+f\,(u, v) = \bigl(x_\alpha(\frac b {h^s})\, x_\beta(\frac{b'}{h^s})\, u,
+\theta'_0(x_\alpha(ah^{n - s}))\, \theta_0(x_\beta(a'h^{n - s}))\, v\bigr),
+$$
+where $\theta$ is a strict representative of $\Xi(\iota(u))^{-1}$ and $\theta'$ is a strict representative of $\Xi(x_\beta(\frac{b'}{h^s})\, \iota(u))^{-1}$. It is possible to choose $\theta'$ in such a way that
+$$
+\theta'_0(x_\alpha(ah^{n - s})) = \theta_0\bigl(x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha\beta} ab'h^{n - 2s})\, x_{\alpha + 2\beta}(-N_{\alpha\beta 12} a{b'}^2 h^{n - 3s})\bigr).
+$$
+Next, 
+\begin{multline*}\textstyle
+g\, (u, v) = \bigl(x_{\alpha + 2\beta}(N_{\alpha \beta 12} \frac{b{b'}^2}{h^{3s}})\, x_{\alpha+\beta}(N_{\alpha \beta} \frac{bb'}{h^{2s}})\, x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b {h^s})\, u,\\
+\theta^{\mathrm{IV}}_0\bigl(x_{\alpha + 2\beta}(N_{\alpha \beta 12} (a{a'}^2 h^{2n} + 2aa'b' h^n + {a'}^2 b h^n + 2a'bb' + a{b'}^2) h^{n - 3s})\bigr)\\
+\theta'''_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa' h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr)\, \theta''_0(x_\beta(a'h^{n-s}))\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr),
+\end{multline*}
+where $\theta''$ is a strict representative of $\Xi\bigl(x_\alpha(\frac b {h^s})\, \iota(u)\bigr)^{-1}$, $\theta'''$ is a strict representative of $\Xi\bigl(x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b{h^s})\, \iota(u)\bigr)^{-1}$, and $\theta^{\mathrm{IV}}$ is a strict representative of $\Xi\bigl(x_{\alpha + \beta}(N_{\alpha \beta}\frac{bb'}{h^{2s}})\, x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b{h^s})\, \iota(u)\bigr)^{-1}$. We may choose $\theta''$, $\theta'''$, $\theta^{\mathrm{IV}}$ in such a way that
+$$
+\theta''_0(x_\beta(a' h^{n - s})) = \theta_0\bigl(x_{\alpha + 2\beta}(-N_{\alpha \beta 1 2} {a'}^2 bh^{2n - 3s})\, x_{\alpha + \beta}(-N_{\alpha \beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\bigr),
+$$
+\begin{multline*}
+\theta'''_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr)\\
+= \theta_0\bigl(x_{\alpha + 2\beta}(-N_{\beta, \alpha + \beta} N_{\alpha \beta} (aa'h^n + ab' + a'b) b' h^{n - 3s})\, x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr),
+\end{multline*}
+and
+\begin{multline*}
+\theta^{\mathrm{IV}}_0\bigl(x_{\alpha + 2\beta}(N_{\alpha \beta 12} (a{a'}^2 h^{2n} + 2aa'b' h^n + {a'}^2 bh^n + 2a'bb' + a{b'}^2) h^{n - 3s})\bigr)\\
+= \theta_0\bigl(x_{\alpha + 2\beta}(N_{\alpha \beta 12} (a{a'}^2 h^{2n} + 2aa'b' + {a'}^2 bh^n + 2a'bb' + a{b'}^2) h^{n - 3s})\bigr).
+\end{multline*}
+It remains to check that
+\begin{multline*}
+x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha\beta} ab'h^{n - 2s})\, x_{\alpha + 2\beta}(-N_{\alpha\beta 12} a{b'}^2 h^{n - 3s})\, x_\beta(a' h^{n - s})\\
+= x_{\alpha + 2\beta}(N_{\alpha \beta 12} (a{a'}^2 h^{2n} + 2aa'b' h^n + 2a'bb' + a{b'}^2) h^{n - 3s} - N_{\beta, \alpha + \beta} N_{\alpha \beta} (aa'h^n + ab' + a'b) b' h^{n - 3s})\\
+x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\, x_{\alpha + \beta}(-N_{\alpha \beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\, x_\alpha(ah^{n - s}).
+\end{multline*}
+This follows from the Steinberg relations and the identity \(N_{\beta, \alpha + \beta} N_{\alpha \beta} = 2 N_{\alpha \beta 1 2}\).
+
+
 
 It follows that the action of $\St(\Phi, A_h)$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_h)\) preserves the action, where \(\St(\Phi, A_h)\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_h)\), it remains to check transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Hence \(V \to \St(\Phi, A_h)\) is a bijection.
 

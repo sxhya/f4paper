@@ -258,9 +258,10 @@ But $R\rightarrow A$ factors through the latter semi-localization, so we conclud
 
 \subsection{Steinberg groups and pro-groups}
 \begin{align}
-x_{\alpha}(a)\cdot x_{\alpha}(b)&=x_{\alpha}(a+b), \tag{R1} \label{Steinberg-additivity}\\
-[x_{\alpha}(a),\,x_{\beta}(b)]  &=x_{\alpha+\beta}(N_{\alpha\beta} \cdot ab),\text{ for }\alpha+\beta\in\Phi, \tag{R2} \label{Chevalley-CCF1} \\
-[x_{\alpha}(a),\,x_{\beta}(b)]  &=1,\text{ for }\alpha+\beta\not\in\Phi\cup0. \tag{R3} \label{Chevalley-CCF2}
+x_{\alpha}(a)\cdot x_{\alpha}(b)&=x_{\alpha}(a+b),\text{ for } \alpha\in \Phi;\tag{R1} \label{R1}\\
+[x_{\alpha}(a),\,x_{\beta}(b)]  &=1,\text{ for }\alpha+\beta\not\in\Phi\cup; \tag{R2} \label{R2} \\
+[x_{\alpha}(a),\,x_{\beta}(b)]  &=x_{\alpha+\beta}(N_{\alpha\beta} \cdot ab)\text{ in the case }\alpha+\beta\in\Phi,\text{ but } \alpha+2\beta,\ 2\alpha+\beta\not\in\Phi; \tag{R3} \label{R3} \\
+[x_\alpha(a),\ x_\beta(b)] &= x_{\alpha + \beta}(N_{\alpha,\beta} \cdot ab) \cdot x_{2\alpha+\beta}(N_{\alpha,\beta}^{2,1} \cdot a^2b)\text{ in the case }\alpha+\beta,2\alpha+\beta\in\Phi. \tag{R4} \label{R4}
 \end{align}
 
 Now for $a, b \in R$ set $y_\alpha(a, b) = [x_\alpha(a), x_{-\alpha}(b)]$.
@@ -407,8 +408,8 @@ The proof of~\cref{glueing} occupies the rest of this section.
 We let $\St(\Phi, B)$ act on $\St(\Phi, B_h) \times \St(\Phi, A)$ on the left via the formula 
 \[w \star (u, v) = (u \lambda_h(w)^{-1}, \iota(w) v),\text{ where }w \in \St(\Phi, B),\ u \in \St(\Phi, B_h),\ v \in \St(\Phi, A).\]
 Denote by $V$ the orbit set for this action. We use the notation $[u, v]$ for the orbit corresponding to a pair $(u, v) \in \St(\Phi, B_h) \times \St(\Phi, A)$.
-
-Our ultimate goal is to show that the formula $[u, v] \mapsto \overline{\iota}(u) \cdot \lambda_h^A(v)$ defines a bijection between $V$ and $\St(\Phi, A_h)$. The first step in this direction is to construct an action of $\St(\Phi, A_h)$ on $V$. Indeed, let $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $c/{h^s} \in A_h$.
+%Our ultimate goal is to show that the formula $[u, v] \mapsto \overline{\iota}(u) \cdot \lambda_h^A(v)$ defines a bijection between $V$ and $\St(\Phi, A_h)$. The first step in this direction is to construct an action of $\St(\Phi, A_h)$ on $V$. 
+Fix some $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $c/{h^s} \in A_h$.
 Applying \cref{vorcor} to the element $u$ we obtain a natural number $n=n(u)$ and homomorphisms \begin{equation} \label{eq:c-homs} c_{u}\colon \St(\Phi, h^nB) \to \St(\Phi, B),\ c_{\overline{\iota}(u)}\colon \St(\Phi, \iota(h)^nA) \to \St(\Phi, A)\end{equation}
 satisfying the identities listed in~\cref{vorcor}.
 
@@ -417,10 +418,10 @@ Observe that the assumption $A/hA = B/hB$ is equivalent to the condition that fo
 We define the operator $T_\alpha(c/h^s) \colon V \to V$ via the formula:
 \begin{equation}\label{eq:generator-action}
 \textstyle
-T_\alpha(c/{h^s}) \cdot [u, v] = \bigl[x_\alpha(b/{h^s})\cdot u,\ c_{\overline{\iota}(u)}(x_\alpha(ah^{k - s})) \cdot v\bigr].
+T_\alpha(c/{h^s}) [u, v] = \bigl[x_\alpha(b/{h^s})\cdot u,\ c_{\overline{\iota}(u)}(x_\alpha(ah^{k - s})) \cdot v\bigr].
 \end{equation}
 \begin{lemma}\label{well-def}
-The right hand side of~\eqref{eq:generator-action} is independent of either the choice of a decomposition $c = ah^k + b$, the choice of representatives for the morphisms $conj(u)$, $conj(\overline{\iota}(u))$ or the choice of a representative for the orbit $[u, v]$.
+The right hand side of~\eqref{eq:generator-action} is independent of either the choice of the decomposition~\eqref{eq:decomp}, the choice of representatives for the morphisms $conj(u)$, $conj(\overline{\iota}(u))$ or the choice of a representative for the orbit $[u, v]$.
 \end{lemma}
 \begin{proof}
 First, let us show the independence of the choice of a decomposition for $c$. 
@@ -443,30 +444,26 @@ Now suppose that $(u', v')$ is another representative for the orbit $[u, v]$, i.
 \end{proof}
 
 The next step of the proof is to verify that the above action specifies an action of $\St(\Phi, A_h)$ on $V$.
+This is accomplished in the series of lemmas below:
 
-\begin{lemma} The operators $T_\alpha$ satisfy relations~\eqref{Steinberg-additivity}. \end{lemma}
+\begin{lemma}\label{lem:R1} The operators $T_\alpha$ satisfy relations~\eqref{R1}. \end{lemma}
 \begin{proof}
 We need to show that for $c, c' \in A$ one has $\textstyle
-x_\alpha(c/{h^s})\, \bigl(x_\alpha(c'/h^s)\, [u, v]\bigr) = x_\alpha((c+c')/h^s)\, [u, v].$
-Choose a decomposition $c' = a'h^n + b'$ as in~\eqref{eq:decomp} for some sufficiently large $n \geq s$.
-We claim that there exists a sufficiently large number $n_1 \geq n$ such that $c_{x_\alpha(b'/h^s) \cdot \overline{\iota}(u)}(x_\alpha(ah^{n_1-s})) = c_{\overline{\iota}(u)}(x_\alpha(ah^{n_1-s}))$. Indeed, this follows from the definition of the composition of pre-morphism and Remark~\ref{rem:conj-root-action}. 
-Now choose a decomposition $c = a h^{n_1} + b$.
-The required assertion now follows from the following calculation:
+T_\alpha(c'/{h^s})\, \bigl(T_\alpha(c/h^s)\, [u, v]\bigr) = T_\alpha\bigl((c+c')/h^s\bigr)\, [u, v].$
+Choose a decomposition $c = ah^k + b$ as in~\eqref{eq:decomp} for some sufficiently large $k \geq s$.
+We claim that there exists a sufficiently large number $n \geq k$ such that $c_{x_\alpha(b/h^s) \cdot \overline{\iota}(u)}(x_\alpha(a'h^{n-s})) = c_{\overline{\iota}(u)}(x_\alpha(a'h^{n-s}))$ for all $a'\in A$. Indeed, this follows from the definition of the composition of pre-morphism and Remark~\ref{rem:conj-root-action}. 
+Now choose a decomposition $c' = a' h^n + b'$.
+The assertion now follows from the following calculation:
 \begin{multline*}
- x_\alpha(c/{h^s})\, \bigl(x_\alpha(c'/h^s)\, [u, v] = x_\alpha(c/h^s)[x_\alpha(b'/h^s)\cdot u, c_{\overline{\iota}(u)}(x_\alpha(a'h^{n-s})) \cdot v] = \\
- = [x_\alpha((b + b')/h^s)\cdot u, c_{x_\alpha(b'/h^s)\overline{\iota}(u)}(x_\alpha(ah^{n_1-s})) c_{\overline{\iota}(u)}(x_\alpha(a'h^{n-s})) \cdot v] = \\ = [x_\alpha((b + b')/h^s)\cdot u,\  c_{\overline{\iota}(u)}(x_\alpha(ah^{n_1-s} + a'h^{n-s})) \cdot v] = x_\alpha((c+c')/h^s)[u, v]. \qedhere
+ T_\alpha(c'/{h^s}) \bigl(T_\alpha(c/h^s) [u, v]\bigr) = T_\alpha(c'/h^s)[x_\alpha(b/h^s)\cdot u, c_{\overline{\iota}(u)}(x_\alpha(ah^{k-s})) \cdot v] = \\
+ = [x_\alpha((b + b')/h^s)\cdot u, c_{x_\alpha(b/h^s)\overline{\iota}(u)}(x_\alpha(a'h^{n-s})) c_{\overline{\iota}(u)}(x_\alpha(ah^{k-s})) \cdot v] = \\ = [x_\alpha((b + b')/h^s)\cdot u,\  c_{\overline{\iota}(u)}(x_\alpha(a'h^{n-s} + ah^{k-s})) \cdot v] = T_\alpha\bigl((c+c')/h^s\bigr)[u, v]. \qedhere
 \end{multline*}
 \end{proof}
 
-The proof of the fact $T_\alpha$ satisfy relations~\eqref{Chevalley-CCF2} is almost identical to the above proof, so we leave it as an exercise to the reader. %$x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})$ and $x_\beta(\frac{c'}{h^s})\, x_\alpha(\frac c {h^s})$ identically act for $\alpha + \beta \notin \Phi \cup \{0\}$ is the same.
-
-In the case $\alpha + \beta \in \Phi$ and $2\alpha + \beta, \alpha + 2\beta \notin \Phi$ we have to show that
-$$\textstyle
-f = x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})
-\text{ and }
-g = x_{\alpha + \beta}(N_{\alpha \beta} \frac{cc'}{h^{2s}})\, x_\beta(\frac{c'}{h^s})\, x_\alpha(\frac c {h^s})
-$$  % here N_{\alpha \beta} may be non-invertible
-act identically on $V$. Choose decompositions $c = ah^n + b$, $c' = a'h^n + b'$ and $cc' = (aa' h^n + ab' + a'b) h^n + bb'$ for sufficiently large $n$.
+\begin{lemma} The operators $T_\alpha$ satisfy relations~\eqref{R3}. \end{lemma}
+\begin{proof}
+Fix $\alpha, \beta \in \Phi$ such that $\alpha + \beta \in \Phi$ and $2\alpha + \beta, \alpha + 2\beta \notin \Phi$. Set $$\textstyle f = x_\alpha(c/h^s)\, x_\beta(c'/h^s)\text{ and }g = x_{\alpha + \beta}(N_{\alpha \beta}\cdot cc'/h^{2s})\, x_\beta(c'/h^s)\, x_\alpha(c/{h^s}).$$
+Our goal is to show that $f[u, v] = g[u, v]$. Choose decompositions $c = ah^n + b$, $c' = a'h^n + b'$ and $cc' = (aa' h^n + ab' + a'b) h^n + bb'$ for sufficiently large $n$.
 Then
 $$\textstyle
 f\,(u, v) = \bigl(x_\alpha(\frac b {h^s})\, x_\beta(\frac{b'}{h^s})\, u,
@@ -495,11 +492,10 @@ x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha \beta} ab' h^{n - 2s})\, x_\
 = x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa' h^n + ab' + a'b) h^{n - 2s}\bigr)\, x_{\alpha + \beta}(-N_{\alpha\beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\, x_\alpha(ah^{n - s}).
 \end{multline*}
 This is exactly a Steinberg relation.
+\end{proof}
 
-
-
-% relation in the non-simply-laced case
-
+\begin{lemma} The operators $T_\alpha$ satisfy relations~\eqref{R4}. \end{lemma}
+\begin{proof}
 The lase case is $\alpha + \beta, \alpha + 2\beta \in \Phi$ and $2\alpha + \beta \notin \Phi$. We show that
 $$\textstyle
 f = x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})
@@ -542,7 +538,9 @@ x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha\beta} ab'h^{n - 2s})\, x_{\a
 x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\, x_{\alpha + \beta}(-N_{\alpha \beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\, x_\alpha(ah^{n - s}).
 \end{multline*}
 This follows from the Steinberg relations and the identity \(N_{\beta, \alpha + \beta} N_{\alpha \beta} = 2 N_{\alpha \beta 1 2}\).
+\end{proof}
 
+The proof of the fact that $T_\alpha$ satisfy relations~\eqref{R2} is similar to the proof of the above lemmas but is easier, so we leave it as an exercise to the reader.
 
 
 It follows that the action of $\St(\Phi, A_h)$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_h)\) preserves the action, where \(\St(\Phi, A_h)\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_h)\), it remains to check transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Hence \(V \to \St(\Phi, A_h)\) is a bijection.

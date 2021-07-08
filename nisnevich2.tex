@@ -426,7 +426,7 @@ The right hand side of~\eqref{eq:generator-action} is independent of either the 
 \begin{proof}
 First, let us show the independence of the choice of a decomposition for $c$. 
 Choose some $l \geq n + s$ and $c = a' h^{l} + b'$. Without loss of generality, we may assume $l \leq k$ so that $a' h^{l} - a h^k = b - b' \in Ah^{l} \cap B = Bh^{l}$ and there exists $d \in B$ such that $b = b' + dh^{l}$. Thus, from~\eqref{eq:strictB} we obtain that
-\begin{equation} \label{eq:wd1} \textstyle x_\alpha(b/{h^s})\, u = x_\alpha({b'}/{h^s})\, u \cdot u^{-1}\, x_\alpha(dh^{n})\, u =  x_\alpha({b'}/{h^s})\, u \cdot \lambda_h \bigl(c_u(x_\alpha(dh^{l-s}))\bigr). \end{equation}
+\begin{equation} \label{eq:wd1} \textstyle x_\alpha(b/{h^s})\, u = x_\alpha({b'}/{h^s})\, u \cdot u^{-1}\, x_\alpha(dh^{l-s})\, u =  x_\alpha({b'}/{h^s})\, u \cdot \lambda_h \bigl(c_u(x_\alpha(dh^{l-s}))\bigr). \end{equation}
 Since $a'h^l = ah^k + dh^l$ and $A$ is a domain we obtain that $a'h^{l-s} = dh^{l-s} + ah^{k-s}$ therefore
 \begin{align*}
 [x_\alpha(b'/{h^s})\, u,\ c_{\overline{\iota}(u)}(x_\alpha(a'h^{l - s}))\, v\bigr] = \bigl[x_\alpha(b'/{h^s})\, u,\ \iota\bigl(c_{u}(x_\alpha(dh^{l-s}))\bigr)\, c_{\overline{\iota}(u)}(x_\alpha(ah^{k - s}))\, v\bigr] & \text{ by~\eqref{eq:coherence}} \\ = \bigl[x_\alpha(b/{h^s})\, u,\ c_{\overline{\iota}(u)}(x_\alpha(ah^{k - s}))\, v\bigr] &\text{ by~\eqref{eq:wd1},}
@@ -450,8 +450,8 @@ This is accomplished in the series of lemmas below:
 \begin{proof}
 We need to show that for $c, c' \in A$ one has $\textstyle
 T_\alpha(c'/{h^s})\, \bigl(T_\alpha(c/h^s)\, [u, v]\bigr) = T_\alpha\bigl((c+c')/h^s\bigr)\, [u, v].$
-Choose a decomposition $c = ah^k + b$ as in~\eqref{eq:decomp} for some sufficiently large $k \geq s$.
-We claim that there exists a sufficiently large number $n \geq k$ such that $c_{x_\alpha(b/h^s) \cdot \overline{\iota}(u)}(x_\alpha(a'h^{n-s})) = c_{\overline{\iota}(u)}(x_\alpha(a'h^{n-s}))$ for all $a'\in A$. Indeed, this follows from the definition of the composition of pre-morphism and Remark~\ref{rem:conj-root-action}. 
+Choose a decomposition $c = ah^k + b$ as in~\eqref{eq:decomp} for some $k \geq n(u) + s$.
+We claim that there exists a sufficiently large number $m \geq k$ such that $c_{x_\alpha(b/h^s) \cdot \overline{\iota}(u)}(x_\alpha(a'h^{m-s})) = c_{\overline{\iota}(u)}(x_\alpha(a'h^{m-s}))$ for all $a'\in A$. Indeed, this follows from the definition of the composition of pre-morphisms and Remark~\ref{rem:conj-root-action}. 
 Now choose a decomposition $c' = a' h^n + b'$.
 The assertion now follows from the following calculation:
 \begin{multline*}

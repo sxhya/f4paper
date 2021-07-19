@@ -286,9 +286,18 @@ Set $A = R_1\times 0$, $B = 0 \times R_2$. It is clear that $A, B \trianglelefte
 It follows directly from Chevalley commutator formula that the commutators $[x_{\alpha}(a),\ x_\beta(b)]$ are trivial for all $\beta \neq -\alpha$. On the other hand, in order to verify the triviality of $y_\alpha(a, b) = [x_{\alpha}(a),\ x_{-\alpha}(b)]$ for $a\in A$, $b\in B$ we can apply the congruences of~\cref{lem:c-identities} (since $AB=0$ these congruences turn into equalities).
 Indeed, setting $c = c^2 = (1, 0)$ we obtain that $y_\alpha(a, b) = y_\alpha(ac, b) = y_\alpha(a, bc) = y_\alpha(a, 0) = 1$. \end{proof}
 
+\section{A patching theorem for \texorpdfstring{$\K_2(\Phi, R)$}{K2(Ф,R)}} \label{sec:patching}
+The main result of this section is the following patching theorem for Steinberg groups.
+\begin{theorem}\label{glueing}
+Let $B$ be a subring of an integral domain $A$, $h\in B \setminus \{0\}$ such that $A / hA = B / hB$. Let $\Phi$ be an arbitrary simply-laced root system of rank at least $3$.
+Then the group $\St(\Phi, B)$ surjects onto the pullback of the homomorphisms 
+$\lambda_h\colon \St(\Phi, A) \to \St(\Phi, A_h)$, $\overline{\iota}\colon\St(\Phi, B_h) \to \St(\Phi, A_h)$. In particular the functors $\St(\Phi, -)$ and $\K_2(\Phi, -)$  satisfy weak affine Nisnevich excision for domains. \end{theorem}
+Similar result for projective modules has been originally proved by Lindel-Lutkebohrnert and independently by Mohan Kumar as an ingredient in the proof of Bass--Quillen conjecture for the power series ring over a field. 
+Consequently, Lindel has used similar technique in his proof of Bass--Quillen problem for essentially smooth domains over a perfect field.
+
 \subsection{Overview of Steinberg pro-groups}
-The aim of this section is to recall the formalism of Steinberg pro-groups, which has been used in~\cite{LSV20} and \cite{V20} to establish the centrality of $\K_2$ in a large number of cases. We will use this formalism in~\cref{sec:patching} as an ingredient in the proof of our patching theorem for Steinberg groups. 
-We refer the reader to \cite[Section~6.1]{SK06} for a more thorough introduction to the formalism of ind-objects and pro-objects. We also refer to~\cite[\S~2]{LSV20} which contains a more detailed exposition of the material presented in this section.
+%The main ingredient in the proof of~\cref{glueing} is the formalism of Steinberg pro-groups, which has been orinally invented by the third-named author in~\cite{V20}.
+We refer the reader to \cite[Section~6.1]{SK06} for a introduction to the formalism of ind-objects and pro-objects. We also refer to~\cite[\S~2]{LSV20} which contains a more detailed exposition of the material presented in this subsection.
 
 We start by recalling the definition of the {\it pro-completion} $\catname{Pro}(\mathcal{C})$ of a category $\mathcal{C}$ (cf.~\cite[\S~2.1]{LSV20}).
 By definition, the objects of $\catname{Pro}(\mathcal{C})$ are functors $X^{(\infty)}\colon\mathcal{I}^{\mathrm{op}} \to \mathcal{C}$, where $\mathcal{I}$ is a small nonempty filtered category. For $X^{(\infty)} \in 
@@ -387,23 +396,8 @@ Here $\lambda_h^k$ (resp. $\lambda^k_{\iota(h)}$) denotes the homomorphism of St
  Notice that a priori the homomorphism $c_g$ depends on the choice of a representative for $conj(g)$. On the other hand, from the definition of equivalence of pre-morphisms it follows that if $c'_g$ is the degree $1$ component for a different representative of $conj(g)$ then for sufficiently large $m$ one has $c'_{\overline{\iota}(g)}(x_{\alpha}(ah^m)) = c_{\overline{\iota}(g)}(x_{\alpha}(ah^m))$.
 \end{rem}
 
-\section{A patching theorem for \texorpdfstring{$\K_2(\Phi, R)$}{K2(Ф,R)}} \label{sec:patching}
-The aim of this section is to prove Theorem~\ref{glueing} about patching for $\St(\Phi,-)$. 
-Similar result for projective modules has been originally proved by Lindel-Lutkebohrnert and independently by Mohan Kumar as an ingredient in the proof of Bass--Quillen conjecture for the power series ring over a field. 
-Consequently, Lindel has used similar technique in his proof of Bass--Quillen problem for essentially smooth domains over a perfect field.
-
-\begin{theorem}\label{glueing}
-Let $B$ be a subring of an integral domain $A$, $h\in B \setminus \{0\}$ be such that $A / hA = B / hB$. 
-Let $\Phi$ be an arbitrary root system of rank at least $3$.
-Then the following square is pullback:
-$$\begin{tikzcd}
-\St(\Phi, B) \ar{r}{\iota} \ar{d}{\lambda_h^B} & \St(\Phi, A) \ar{d}{\lambda_h^A}\\
-\St(\Phi, B_h) \ar{r}{\overline{\iota}} & \St(\Phi, A_h).
-\end{tikzcd}$$
-\end{theorem}
-
+\subsection{Proof of~\cref{glueing}}
 %It is well known that subgroup factorizations of $\mathrm G(\Phi,\,R)$ are an important ingredient in the study of the $\K_1$-functor. It turns out that in the study of $\K_2$-functors the $\St(\Phi,\,R)$-torsors play similar role, see~\cite{LS20}. TODO:
-The proof of~\cref{glueing} occupies the rest of this section.
 
 We let $\St(\Phi, B)$ act on $\St(\Phi, B_h) \times \St(\Phi, A)$ on the left via the formula 
 \[w \star (u, v) = (u \lambda_h(w)^{-1}, \iota(w) v),\text{ where }w \in \St(\Phi, B),\ u \in \St(\Phi, B_h),\ v \in \St(\Phi, A).\]
@@ -418,7 +412,7 @@ Observe that the assumption $A/hA = B/hB$ is equivalent to the condition that fo
 We define the operator $T_\alpha(c/h^s) \colon V \to V$ via the formula:
 \begin{equation}\label{eq:generator-action}
 \textstyle
-T_\alpha(c/{h^s}) [u, v] = \bigl[x_\alpha(b/{h^s})\cdot u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s})) \cdot v\bigr].
+T_\alpha(c/{h^s}) \cdot [u, v] = \bigl[x_\alpha(b/{h^s})\cdot u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k - s})) \cdot v\bigr].
 \end{equation}
 \begin{lemma}\label{well-def}
 The right hand side of~\eqref{eq:generator-action} is independent of either the choice of the decomposition~\eqref{eq:decomp}, the choice of representatives for the morphisms $conj(u)$, $conj(\overline{\iota}(u))$ or the choice of a representative for the orbit $[u, v]$.
@@ -449,60 +443,38 @@ This is accomplished in the series of lemmas below:
 \begin{lemma}\label{lem:R1} The operators $T_\alpha$ satisfy relations~\eqref{R1}. \end{lemma}
 \begin{proof}
 We need to show that for $c, c' \in A$ one has $\textstyle
-T_\alpha(c'/{h^s})\, \bigl(T_\alpha(c/h^s)\, [u, v]\bigr) = T_\alpha\bigl((c+c')/h^s\bigr)\, [u, v].$
+T_\alpha(c'/{h^s}) \cdot T_\alpha(c/h^s) \cdot [u, v] = T_\alpha\bigl((c+c')/h^s\bigr) \cdot [u, v].$
 Choose a decomposition $c = ah^k + b$ as in~\eqref{eq:decomp} for some $k \geq n(u) + s$.
 We claim that there exists a sufficiently large number $m$ such that $c_{\overline{\iota}(u^{-1}) \cdot x_\alpha(-b/h^s)}(x_\alpha(a'h^{m-s})) = c_{\overline{\iota}(u^{-1})}(x_\alpha(a'h^{m-s}))$ for all $a'\in A$. Indeed, this follows from the definition of the composition of pre-morphisms and Remark~\ref{rem:conj-root-action}. 
 Now choose a decomposition $c' = a' h^m + b'$.
 The assertion now follows from the following calculation:
 \begin{multline*}
- T_\alpha(c'/{h^s}) \bigl(T_\alpha(c/h^s) [u,\ v]\bigr) = T_\alpha(c'/h^s)[x_\alpha(b/h^s)\cdot u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k-s})) \cdot v] = \\
+ T_\alpha(c'/{h^s}) \cdot T_\alpha(c/h^s) \cdot [u,\ v] = T_\alpha(c'/h^s) \cdot [x_\alpha(b/h^s)\cdot u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k-s})) \cdot v] = \\
  = [x_\alpha((b + b')/h^s)\cdot u,\ c_{\overline{\iota}(u^{-1}) \cdot x_\alpha(-b/h^s)}(x_\alpha(a'h^{m-s})) \cdot c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k-s})) \cdot v] = \\ = [x_\alpha((b + b')/h^s)\cdot u,\  c_{\overline{\iota}(u^{-1})}(x_\alpha(a'h^{m-s} + ah^{k-s})) \cdot v] = T_\alpha\bigl((c+c')/h^s\bigr)[u, v]. \qedhere
 \end{multline*}
 \end{proof}
 
-\begin{lemma} The operators $T_\alpha$ satisfy relations~\eqref{R3}. \end{lemma}
+\begin{lemma} \label{lem:R3-check} The operators $T_\alpha$ satisfy relations~\eqref{R3}. \end{lemma}
 \begin{proof}
- Fix roots $\alpha, \beta \in \Phi$ such that $\alpha + \beta \in \Phi$ but $2\alpha + \beta, \alpha + 2\beta \notin \Phi$. Choose a decomposition $c = ah^k + b$ as in~\eqref{eq:decomp} and pick $n \geq k$ such that \[c_{ \overline{\iota}(u^{-1}) \cdot x_\beta(-b/h^s)}(x_\alpha(ah^{n-s})) = c_{\overline{\iota}(u^{-1})}\left(x_\alpha(ah^{n-s}) \cdot x_{\alpha+\beta}(N_{\alpha, \beta}\cdot ab \cdot h^{n-2s})\right).\]
-\begin{multline}
- T_\alpha(c'/h^s) T_\beta(c/h^s) [u, v] = T_\alpha(c'/h^s) [x_\beta(b/h^s) \cdot u,\ c_{\overline{\iota}(u)}(x_\beta(ah^{k-s})) \cdot v] \\ LOL \end{multline}
-
-
-
-
-Set $$\textstyle f = x_\alpha(c/h^s)\, x_\beta(c'/h^s)\text{ and }g = x_{\alpha + \beta}(N_{\alpha \beta}\cdot cc'/h^{2s})\, x_\beta(c'/h^s)\, x_\alpha(c/{h^s}).$$
-Our goal is to show that $f[u, v] = g[u, v]$. Choose decompositions $c = ah^n + b$, $c' = a'h^n + b'$ and $cc' = (aa' h^n + ab' + a'b) h^n + bb'$ for sufficiently large $n$.
-Then
-$$\textstyle
-f\,(u, v) = \bigl(x_\alpha(\frac b {h^s})\, x_\beta(\frac{b'}{h^s})\, u,
-\theta'_0(x_\alpha(ah^{n - s}))\, \theta_0(x_\beta(a'h^{n - s}))\, v\bigr),
-$$
-where $\theta$ is a strict representative of $\Xi(\iota(u))^{-1}$ and $\theta'$ is a strict representative of $\Xi(x_\beta(\frac{b'}{h^s})\, \iota(u))^{-1}$. It is possible to choose $\theta'$ in such a way that
-$$
-\theta'_0(x_\alpha(ah^{n - s})) = \theta_0\bigl(x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha\beta} ab'h^{n - 2s})\bigr).
-$$
-Next, 
-\begin{multline*}\textstyle
-g\, (u, v) = \bigl(x_{\alpha+\beta}(N_{\alpha \beta} \frac{bb'}{h^{2s}})\, x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b {h^s})\, u,\\
-\theta'''_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa' h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr)\, \theta''_0(x_\beta(a'h^{n-s}))\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr),
-\end{multline*}
-where $\theta''$ is a strict representative of $\Xi\bigl(x_\alpha(\frac b {h^s})\, \iota(u)\bigr)^{-1}$ and $\theta'''$ is a strict representative of $\Xi\bigl(x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b{h^s})\, \iota(u)\bigr)^{-1}$. We may choose $\theta''$ and $\theta'''$ in such a way that 
-$$
-\theta''_0(x_\beta(a' h^{n - s})) = \theta_0\bigl(x_{\alpha + \beta}(-N_{\alpha \beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\bigr),
-$$
-and
-$$
-\theta'''_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr) = \theta_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr).
-$$
-It remains to check that
+ Fix a natural number $s$ and a pair of roots $\alpha, \beta \in \Phi$ such that $\alpha+\beta\in\Phi$. Set $\epsilon = N_{\alpha, \beta}$. From the definition of composition of pro-group morphisms and the definition of $conj$ it follows that for any $u \in \St(\Phi, B_h)$ there exists sufficiently large natural number $n$ such that for all $a \in A$, $b, b'\in B$ the following equalities are simultaneously fulfilled:
+ \begin{align}
+ c_{ \overline{\iota}((x_\beta(b/h^s) \cdot u)^{-1})}(x_\alpha(ah^{n-s})) &= c_{\overline{\iota}(u^{-1})}\left(x_\alpha(ah^{n-s}) \cdot x_{\alpha+\beta}(\epsilon ab h^{n-2s})\right), \label{eq:R3-check-1}\\
+ c_{ \overline{\iota}((x_\alpha(b/h^s) \cdot u)^{-1})}(x_\beta(ah^{n - s})) &= c_{\overline{\iota}(u^{-1})}\bigl(x_{\alpha + \beta}(-\epsilon abh^{n - 2s})\cdot x_\beta(ah^{n - s})\bigr), \label{eq:R3-check-2} \\
+ c_{ \overline{\iota}((x_\beta(b'/h^s) \cdot x_\alpha(b/h^s) \cdot u)^{-1})}\bigl(x_{\alpha + \beta}\bigl(a h^{n - 2s}\bigr)\bigr) &= c_{\overline{\iota}(u^{-1})}\bigl(x_{\alpha + \beta}\bigl(a h^{n - 2s}\bigr)\bigr). \label{eq:R3-check-3}
+ \end{align} 
+Now fix $c, c\in A$. Our goal is to verify the equality 
+\begin{equation} \label{eq:R3-to-check} T_\alpha(c/h^s) \cdot T_\beta(c'/h^s) \cdot [u, v] = T_{\alpha+\beta}(\epsilon cc' / h^{2s}) \cdot T_\beta(c'/h^s) \cdot T_\alpha(c/h^s) \cdot [u, v].\end{equation}
+As in~\eqref{eq:decomp} we can choose decompositions $c = b + ah^n,\ c' = b' + a'h^n$ for some $a, a' \in A$ and $b, b' \in B$. It is also clear that $cc' = bb' + h^{n}a''$, where $a'' = aa'h^n + ab' + a'b$. Now we can compute the left-hand side of~\eqref{eq:R3-to-check} using~\eqref{eq:generator-action} and~\eqref{eq:R3-check-1} as follows:
 \begin{multline*}
-x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha \beta} ab' h^{n - 2s})\, x_\beta(a' h^{n - s}) =\\
-= x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa' h^n + ab' + a'b) h^{n - 2s}\bigr)\, x_{\alpha + \beta}(-N_{\alpha\beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\, x_\alpha(ah^{n - s}).
-\end{multline*}
-This is exactly a Steinberg relation.
+ T_\alpha(c/h^s) \cdot T_\beta(c'/h^s) \cdot [u, v] = T_\alpha(c/h^s) \cdot [x_\beta(b'/h^s) \cdot u,\ c_{\overline{\iota}(u^{-1})}(x_\beta(a'h^{n-s})) \cdot v] = \\ = [x_\alpha(b/h^s) \cdot x_\beta(b'/h^s) \cdot u, c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{n-s}) \cdot x_{\alpha+\beta}(\epsilon ab'h^{n-2s}) \cdot x_\beta(a'h^{n-s}))]. \end{multline*}
+Similarly, we can compute the right-hand side of~\eqref{eq:R3-to-check} using~\eqref{eq:generator-action} and~\eqref{eq:R3-check-2}--\eqref{eq:R3-check-3}:
+\begin{multline*}
+ T_{\alpha+\beta}(\epsilon cc'/h^{2s}) \cdot T_\beta(c'/h^s) \cdot T_\alpha(c/h^s) \cdot [u, v] = \\ = [x_{\alpha+\beta}(\epsilon bb'/h^{2s}) \cdot x_\beta(b'/h^s) \cdot x_\alpha(b/h^s) \cdot u, c_{\overline{\iota}(u^{-1})}(x_{\alpha+\beta}(\epsilon h^{n-2s}(a''- a'b)) \cdot x_\beta(a'h^{n-s}) \cdot x_\alpha(ah^{n-s}))]. \end{multline*}
+Finally, it follows from~\eqref{R3} that the right-hand sides of the last two formulae coincide.
 \end{proof}
 
+\begin{comment}
 \begin{lemma} The operators $T_\alpha$ satisfy relations~\eqref{R4}. \end{lemma}
-\begin{proof}
 The lase case is $\alpha + \beta, \alpha + 2\beta \in \Phi$ and $2\alpha + \beta \notin \Phi$. We show that
 $$\textstyle
 f = x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})
@@ -545,8 +517,7 @@ x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha\beta} ab'h^{n - 2s})\, x_{\a
 x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\, x_{\alpha + \beta}(-N_{\alpha \beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\, x_\alpha(ah^{n - s}).
 \end{multline*}
 This follows from the Steinberg relations and the identity \(N_{\beta, \alpha + \beta} N_{\alpha \beta} = 2 N_{\alpha \beta 1 2}\).
-\end{proof}
-
+\end{comment} 
 The proof of the fact that $T_\alpha$ satisfy relations~\eqref{R2} is similar to the proof of the above lemmas but is easier, so we leave it as an exercise to the reader.
 
 

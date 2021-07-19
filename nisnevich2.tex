@@ -19,8 +19,8 @@
 \DeclareFieldFormat[article, inproceedings, inbook, book, online]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
 \renewcommand*{\bibfont}{\footnotesize}
 
-\title{On the $\mathbb{A}^1$-invariance of $K_2$ modeled on Chevalley groups.}
-\keywords {Steinberg group, pro-group, Suslin normality theorem. {\em Mathematical Subject Classification (2010):} 19C09, 20G35, 20H05}
+\title{On the $\mathbb{A}^1$-invariance of $K_2$ modeled on Chevalley groups, I.}
+\keywords {Steinberg group, Chevalley group, unstable $\K_2$-functor, $\mathbb{A}^1$-fundamental group. {\em Mathematical Subject Classification (2010):} 19C09, 20G35, 20H05}
 
 \author[1] {Andrei Lavrenov} \email{avlavrenov at gmail.com} 
 \address{Euler Mathematical Institute, 14th Line V.O., 29B, Saint-Petersburg 199178 Russia}
@@ -73,12 +73,12 @@
 \maketitle
 \section{Introduction}
 
-\begin{theorem}[The $\K_2$-analogue of Lindel--Popescu theorem]
- Lol
+\begin{theorem}[The $\K_2$-analogue of Lindel--Popescu theorem] \label{theorem:LP-for-K2}
+Let $R$ be a ring geometrically regular over an arbitrary field $k$ and let $\Phi$ be either the root system $\rA_\ell$ for $\ell\geq4$, or $\rD_\ell$ for $\ell\geq 7$. In the latter case assume additionally that the characteristic of $k$ is not $2$. Then $\K_2(\Phi,\,R[t])\cong\K_2(\Phi,\,R).$
 \end{theorem}
 
 
-\begin{theorem}[The $\K_2$-analogue of Gerstein conjecture]
+\begin{theorem}[The $\K_2$-analogue of Gersten conjecture]
 
 \end{theorem}
 
@@ -120,14 +120,14 @@ The following result gives a sufficient condition for a functor $K$ to be $\math
   \item \label{DP} %{\it $K$ maps each square of the form~\eqref{M-sq} to a pullback square.}
   %Since $e$ is split by the obvious embedding, this requirement is equivalent to the following one: 
   For a $k$-algebra $R$ and $a \in R$ consider the diagram obtained from~\eqref{M-sq} by applying $K$. Then the homomorphism $\Ker(K(e)) \to NK(R_a)$ between the kernels of vertical arrows is injective.
-  \item \label{LPP} {\it $K$ satisfies weak affine Nisnevich excision for domains.} By this we mean the following. Let $\iota \colon B \hookrightarrow A$ be an {\'e}tale inclusion of domains contained in $\catname{Alg}_k$. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / hA$. Consider the following commutative square (sometimes called an elementary Nisnevich square): 
+  \item \label{LPP} {\it $K$ satisfies weak affine Nisnevich excision for domains.} By this we mean the following. Let $\iota \colon B \hookrightarrow A$ be an inclusion of domains (contained in $\catname{Alg}_k$) making $A$ an {\'e}tale $B$-algebra. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / hA$. Consider the following commutative square (sometimes called an elementary Nisnevich square): 
   \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
   Then the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
   \item \label{PGP} {\it $K$ satisfies $\mathbb{P}^1$-glueing property for local domains.}  By definition, this means that for every local domain $R \in \catname{Alg}_k$ the following diagram whose arrows are induced by natural embeddings is a pullback square: \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}  
   It is easy to see that if~\eqref{eq:P1-square} is pullback, then all its arrows are injective.
   \item \label{HIF} {\it $K$ is homotopy invariant for fields}, i.\,e. for every field $F \in \catname{Alg}_k$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
  \end{enumerate}
- Then for every geometrically regular $R\in \catname{Alg}_k$ the natural embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R)\cong K(R[t]).$
+ Then $NK$ vanishes on every geometrically regular $R\in \catname{Alg}_k$. In other words, for every such $R$ the natural embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R)\cong K(R[t]).$
 \end{theorem}
 \begin{rem}
  In the literature a functor satisfying the axiom~\ref{PGP} is sometimes called {\it acyclic} (cf.~\cite[Def.~III.4.1.1]{Kbook}).
@@ -279,14 +279,17 @@ But $R\rightarrow A$ factors through the latter semi-localization, so we conclud
 \end{proof}
 
 \section{Proof of the main results}
-\subsection{Preliminaries on Steinberg groups}
+We start by recalling the definition of the Steinberg group.
+Recall that for a simply-laced root system $\Phi$ and a commutative ring $R$ the Steinberg group $\St(\Phi, R)$ is defined by the generators $x_\alpha(\xi)$, $\xi \in R$ and the following system of relations:
 \begin{align}
 x_{\alpha}(a)\cdot x_{\alpha}(b)&=x_{\alpha}(a+b),\text{ for } \alpha\in \Phi;\tag{R1} \label{R1}\\
 [x_{\alpha}(a),\,x_{\beta}(b)]  &=1,\text{ for }\alpha+\beta\not\in\Phi\cup; \tag{R2} \label{R2} \\
 [x_{\alpha}(a),\,x_{\beta}(b)]  &=x_{\alpha+\beta}(N_{\alpha\beta} \cdot ab)\text{ in the case }\alpha+\beta\in\Phi. \tag{R3} \label{R3} \end{align}
 
+{\bf TODO: } Refer to some sources of info.
+
 Now for $a, b \in R$ set $y_\alpha(a, b) = [x_\alpha(a), x_{-\alpha}(b)]$.
-For an ideal $I \trianglelefteq R$ we denote by $\overline{\St}(\Phi, R, I)$ the normal closure in $\St(\Phi, R)$ of the subgroup generated by $x_\alpha(a)$, $a\in I$.
+For an ideal $I \trianglelefteq R$ we denote by $\overline{\St}(\Phi, R, I)$ the normal closure in $\St(\Phi, R)$ of the subgroup generated by $x_\alpha(a)$, $a\in I$. Recall from~\cite[Lemma~5]{S15} that it coincides with the kernel of the natural morphism of Steinberg groups $\St(\Phi, R) \to \St(\Phi, R/I)$.
 
 \begin{lemma} \label{lem:c-identities} For an arbitrary irreducible root system $\Phi$ of rank $\geq 2$, arbitrary ideals $A, B \trianglelefteq R$ and all $a \in A$, $b \in B$, $c \in R$ the following congruences hold:
 \begin{itemize}
@@ -301,39 +304,23 @@ Notice that the Steinberg group functor {\it does not} commute with general fini
 \begin{lemma} \label{lem:fprod} For an arbitrary irreducible root system $\Phi$ of rank $\geq 2$ the Steinberg group functor $\St(\Phi, -)$ commutes with finite direct products. \end{lemma}
 \begin{proof} 
 It suffices to verify the assertion for binary direct products.
-Observe that canonical projections $R_1 \times R_2 \to R_i$, $i=1,2$ split in the category~\catname{Rngs}, therefore the groups $G_i = \St(\Phi, R_i)$ embed as subgroups into $G = \St(\Phi, R_1 \times R_2)$. It is also clear that $G_i$ together generate $G$. Thus, to verify the isomorphism $G \cong G_1 \times G_2$ it suffices to show the triviality of the commutator subgroup $[G_1, G_2] \leq G$.
+Observe that canonical projections $R_1 \times R_2 \to R_i$, $i=1,2$ split in the category of rings without unit, therefore the groups $G_i = \St(\Phi, R_i)$ embed as subgroups into $G = \St(\Phi, R_1 \times R_2)$. It is also clear that $G_i$ together generate $G$. Thus, to verify the isomorphism $G \cong G_1 \times G_2$ it suffices to show the triviality of the commutator subgroup $[G_1, G_2] \leq G$.
 
 Set $A = R_1\times 0$, $B = 0 \times R_2$. It is clear that $A, B \trianglelefteq R_1 \times R_2$. 
-It follows directly from Chevalley commutator formula that the commutators $[x_{\alpha}(a),\ x_\beta(b)]$ are trivial for all $\beta \neq -\alpha$. On the other hand, in order to verify the triviality of $y_\alpha(a, b) = [x_{\alpha}(a),\ x_{-\alpha}(b)]$ for $a\in A$, $b\in B$ we can apply the congruences of~\cref{lem:c-identities} (since $AB=0$ these congruences turn into equalities).
+It follows directly from~\eqref{R2}--\eqref{R3} that the commutators $[x_{\alpha}(a),\ x_\beta(b)]$ are trivial for all $\beta \neq -\alpha$. On the other hand, in order to verify the triviality of $y_\alpha(a, b) = [x_{\alpha}(a),\ x_{-\alpha}(b)]$ for $a\in A$, $b\in B$ we can apply the congruences of~\cref{lem:c-identities} (since $AB=0$ these congruences turn into equalities).
 Indeed, setting $c = c^2 = (1, 0)$ we obtain that $y_\alpha(a, b) = y_\alpha(ac, b) = y_\alpha(a, bc) = y_\alpha(a, 0) = 1$. \end{proof}
 
-\subsection{Analogue of Serre's problem for \texorpdfstring{$\K_2$}{K2}}
-
-In this section $\Phi$ denotes an arbitrary irreducible root system.
-
-\begin{lemma}
-\label{k2cdc} 
-The functors $\Gsc(\Phi,\,-)$, $\St(\Phi,\,-)$ and $\K_2(\Phi,\,-)$ commute with filtered colimits.
+\begin{lemma} \label{k2cdc} 
+For an arbitrary root system $\Phi$ the functors $\Gsc(\Phi,\,-)$, $\St(\Phi,\,-)$ and $\K_2(\Phi,\,-)$ commute with filtered colimits.
 \end{lemma}
 \begin{proof}
-The assertion for $\mathrm G_{\mathrm{sc}}(\Phi,\,-)$ follows from the fact that it is represented in the category $\catname{Ring}$ by a finitely presented Hopf $\ZZ$-algebra (see e.\,g. \cite[Lemma~10.127.3]{stacks-project}). The assertion for $\St(\Phi, -)$ is obvious from its definition. 
-
-The assertion for the functor $\K_2(\Phi, -)$ now follows from the assertions for $\St(\Phi, -)$ and $\Gsc(\Phi, R)$ using the fact that filtered colimits commute with finite limits in $\catname{Grp}$ (in particular, they commute with kernels).
+The assertion for $\mathrm G_{\mathrm{sc}}(\Phi,\,-)$ follows from the fact that it is represented in the category $\catname{Ring}$ by a finitely presented Hopf $\ZZ$-algebra (see e.\,g. \cite[Lemma~10.127.3]{stacks-project}). The assertion for $\St(\Phi, -)$ is obvious from its definition. The assertion for the functor $\K_2(\Phi, -)$ now follows from the assertions for $\St(\Phi, -)$ and $\Gsc(\Phi, R)$ using the fact that filtered colimits commute with finite limits in $\catname{Grp}$ (in particular, they commute with kernels).
 \end{proof}
 
-The following theorem has been proved by U.~Rehmann in \cite{Re75}, see Korollar of Satz 1.
-
-\begin{theorem}
-For an arbitrary field $F$ one has $\K_2(\Phi,\,F[t])\cong\K_2(\Phi,\,F)$.
-\end{theorem}
-
-\begin{theorem} \label{theorem:LP-for-K2}
-Let $R$ be a regular ring containing a field $F$ and let $\Phi$ be either the root system $\rA_l$  for $l\geq4$, or $\rD_l$ for $l\geq7$. In the latter case assume additionally that the characteristic of $F$ is not $2$. Then one has
-\[\K_2(\Phi,\,R[t])\cong\K_2(\Phi,\,R).\]
-\end{theorem}
-\begin{proof}
-This is a direct consequence of~\ref{lpb}. One should only use that for $k=\mathbb Z$ or $k=\mathbb Z[\frac12]$ and a $k$-algebra $F$ which is a field, the prime subfield of $F$ is also a $k$-algebra and perfect, therefore $R$ is geometrically regular over it.
-\end{proof}
+\begin{proof}[Proof of~\cref{theorem:LP-for-K2}]
+We need to check that the axioms of~\cref{lpb} are satisfied. Axiom~\ref{CFC} is satisfied by~\cref{k2cdc}. Axiom~\ref{DP} follows from the fact that for a simply-laced $\Phi$ of rank $\geq 3$ Steinberg groups $\St(\Phi, -)$ satisfy Tulenbaev lifting property in the sense of~\cite[Definition~2.1]{LS17} (more precisely, \ref{DP} follows from the injectivity of the left arrow in the diagram~(2.2) ibid.).
+The axiom~\ref{LPP} is checked in~\cref{sec:patching} below.
+In the case $\Phi = \rA_\ell$ the axiom~\ref{PGP} is satisfied by~\cite[Theorem~5.1]{Tu83}. In the orthogonal case it is satisfied by~\cite[Theorem~1]{LS20}. Finally, axiom~\ref{HIF} is satisfied by the Korollar of \cite[Satz~1]{Re75}. \end{proof}
 
 \begin{corollary}
 Let $F$ be a field $\mathrm{char}\,F\neq2$, $l\geq7$, then
@@ -343,9 +330,13 @@ $$
 \end{corollary}
 
 \subsection{\texorpdfstring{$\K_2(\Phi, R)$}{K2(R)} as $\mathbb{A}^1$-fundamental group}
-For a ring $R$ we denote by $R[\Delta^\bullet]$ the standard simplicial ring, see e.\,g.~\cite{Jar83}. The application of a functor $G\colon\catname{Ring}\rightarrow\catname{Grp}$ to $R[\Delta^\bullet]$ yields a simplicial group $G(R[\Delta^\bullet])$, which in the context of $\mathbb{A}^1$-homotopy theory is usually called the {\it simplicial resolution} of $G$ and is denoted by $\mathrm{Sing}^{\mathbb{A}^1}_\bullet(G)(R)$.
+Recall from~\cite{Jar83} that for an arbitrary commutative (unital) ring $R$ one can define the standard simplicial ring $R[\Delta^\bullet]$ as follows:
+\begin{equation} \footnotesize
+ R[\Delta^n] = R[t_0,\ldots t_n]/\langle \sum_{i=0}^n t_i -1 \rangle,\ d_i(t_j) = \left\{ \begin{array}{ll}t_j & j < i, \\0 & j = i, \\ t_{j-1} & j > i; \end{array}\right. s_i(t_j) = \left\{ \begin{array}{ll} t_j & j < i, \\ t_j + t_{j+1} & j = i, \\ t_{j+1} & j > i. \end{array} \right.
+\end{equation}
+The application of a functor $G\colon\catname{Ring}\rightarrow\catname{Grp}$ to $R[\Delta^\bullet]$ yields a simplicial group $G(R[\Delta^\bullet])$, which in the context of $\mathbb{A}^1$-homotopy theory is usually called the {\it simplicial resolution} of $G$ and is denoted by $\mathrm{Sing}^{\mathbb{A}^1}_\bullet(G)(R)$. Recall also, that the {\it unstable Karoubi--Villamayor K-functor} $\mathrm{KV}_{n+1}(\Phi, R)$ attached to the Chevalley--Demazure group scheme $\mathrm{G}_\mathrm{sc}(\Phi, -)$ is, by definition, the $n$-th simplicial homotopy group of $G(R[\Delta^\bullet])$ (cf.~\cite[\S~4.3]{AHW18}).
 
-The aim of this section is to show that Stein's group $\K_2(\Phi, R)$ can be interpreted as the fundamental group of the simplicial group $\Gsc(\Phi, R[\Delta^\bullet])$ under the assumption that $\Phi$ and $R$ satisfy the requirements of~\cref{theorem:LP-for-K2}. This is achieved in~\cref{theorem:pi1-GRDelta} below. This result parallels the computation of the fundamental group of the simplicial group $G(k[\Delta^\bullet])$ modeled on an arbitrary isotropic reductive group $G$, see~\cite[Proposition~3.2]{VW16}. As a corollary of~\cref{theorem:pi1-GRDelta} and a general representability result of A.~Asok, M.~Hoyois and M.~Wendt we obtain an interpretation of $\K_2(\Phi, R)$ in terms of $\mathbb{A}^1$-homotopy theory, see~\cref{cor:motivic-pi1}.
+The aim of this subsection is to show that Stein's group $\K_2(\Phi, R)$ can be interpreted as the fundamental group of the simplicial group $\Gsc(\Phi, R[\Delta^\bullet])$ under the assumption that $\Phi$ and $R$ satisfy the requirements of~\cref{theorem:LP-for-K2}. This is achieved in~\cref{theorem:pi1-GRDelta} below. This result parallels the computation of the fundamental group of the simplicial group $G(k[\Delta^\bullet])$ modeled on an arbitrary isotropic reductive group $G$, see~\cite[Proposition~3.2]{VW16}. As a corollary of~\cref{theorem:pi1-GRDelta} and a general representability result of A.~Asok, M.~Hoyois and M.~Wendt we obtain an interpretation of $\K_2(\Phi, R)$ in terms of $\mathbb{A}^1$-homotopy theory, see~\cref{cor:motivic-pi1}.
 
 Recall from~\cite[\S~17]{May67} that the homotopy group $\pi_n(G)$ of a simplicial group $(G_\bullet, d_i, s_i)$ can be computed as $n$-th homology group of the normalized Moore complex
 \[
@@ -354,9 +345,9 @@ Recall from~\cite[\S~17]{May67} that the homotopy group $\pi_n(G)$ of a simplici
 \iffalse\[\begin{tikzcd} 1 & N_0(G) \ar[l] & N_1(G) \ar{l}[swap]{\partial_1} & N_2(G) \ar{l}[swap]{\partial_2} & \ar{l}[swap]{\partial_3} \ldots, \end{tikzcd} \] \fi
 in which $N_n(G) = \cap_{i=1}^n\Ker(d_i) \trianglelefteq G_n$ and the differential $\partial_k$ is obtained from $d_0\colon G_k \to G_{k-1}$ by restriction. In other words, $\pi_n(G) \cong \mathrm{H}_n(N_\bullet G) = \Ker(\partial_n) / \Im(\partial_{n+1})$.
 
-\begin{prop}\label{prop:pi1-StDelta} Let $\Phi$ be an arbitrary irreducible root system. Then for any ring $R$ the simplicial groups $\E(\Phi,\,R[\Delta^\bullet])$ and $\St(\Phi,\,R[\Delta^\bullet])$ are connected. If, moreover, $\Phi$ has rank at least $2$ then the simplicial group $\St(\Phi, R[\Delta^\bullet])$ is simply-connected. \end{prop}
+\begin{prop}\label{prop:pi1-StDelta} Let $\Phi$ be an arbitrary irreducible root system. Then for any commutative ring $R$ the simplicial groups $\E(\Phi,\,R[\Delta^\bullet])$ and $\St(\Phi,\,R[\Delta^\bullet])$ are connected. If, moreover, $\Phi$ has rank at least $2$ then the simplicial group $\St(\Phi, R[\Delta^\bullet])$ is simply-connected. \end{prop}
 \begin{proof}
-In our computations we identify the ring $R[\Delta^n] = R[t_0,\ldots t_n]/\langle \sum_{i=0}^n t_i -1 \rangle$ with $R[t_1, \ldots, t_n]$ via $t_0 = 1 - \sum_{i=1}^n t_i$. We also use concrete formulas from~\cite{Jar83} for the face maps of $R[\Delta^\bullet]$.
+In our computations we identify the ring $R[\Delta^n]$ with $R[t_1, \ldots, t_n]$ via $t_0 = 1 - \sum_{i=1}^n t_i$. We also use concrete formulas from~\cite{Jar83} for the face maps of $R[\Delta^\bullet]$.
 
 The map $d_1\colon\St(\Phi,\,R[\Delta^1])\rightarrow\St(\Phi,\,R[\Delta^0])$ is given by $t_1\mapsto0$, therefore \[N_1\St(\Phi,\,R[\Delta^\bullet])=\Ker(d_1)=\St(\Phi,\,R[t_1],\,\langle t_1\rangle),\]
 and $\partial_1\colon N_1\St(\Phi,\,R[\Delta^\bullet])\rightarrow N_0\St(\Phi,\,R[\Delta^\bullet])=\St(\Phi,\,R)$ is induced by $d_0$, which sends $t_1$ to $t_0=1$. 
@@ -562,7 +553,7 @@ Now choose a decomposition $c' = a' h^m + b'$.
 The assertion now follows from the following calculation:
 \begin{multline*}
  T_\alpha(c'/{h^s}) \cdot T_\alpha(c/h^s) \cdot [u,\ v] = T_\alpha(c'/h^s) \cdot [x_\alpha(b/h^s)\cdot u,\ c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k-s})) \cdot v] = \\
- = [x_\alpha((b + b')/h^s)\cdot u,\ c_{\overline{\iota}(u^{-1}) \cdot x_\alpha(-b/h^s)}(x_\alpha(a'h^{m-s})) \cdot c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k-s})) \cdot v] = \\ = [x_\alpha((b + b')/h^s)\cdot u,\  c_{\overline{\iota}(u^{-1})}(x_\alpha(a'h^{m-s} + ah^{k-s})) \cdot v] = T_\alpha\bigl((c+c')/h^s\bigr)[u, v]. \qedhere
+ = [x_\alpha((b + b')/h^s)\cdot u,\ c_{\overline{\iota}(u^{-1}) \cdot x_\alpha(-b/h^s)}(x_\alpha(a'h^{m-s})) \cdot c_{\overline{\iota}(u^{-1})}(x_\alpha(ah^{k-s})) \cdot v] = \\ = [x_\alpha((b + b')/h^s)\cdot u,\  c_{\overline{\iota}(u^{-1})}(x_\alpha(a'h^{m-s} + ah^{k-s})) \cdot v] = T_\alpha\bigl((c+c')/h^s\bigr) \cdot [u, v]. \qedhere
 \end{multline*}
 \end{proof}
 
@@ -631,7 +622,6 @@ x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\,
 This follows from the Steinberg relations and the identity \(N_{\beta, \alpha + \beta} N_{\alpha \beta} = 2 N_{\alpha \beta 1 2}\).
 \end{comment} 
 The proof of the fact that $T_\alpha$ satisfy relations~\eqref{R2} is similar to the proof of the above lemmas but is easier, so we leave it as an exercise to the reader.
-
 
 It follows that the action of $\St(\Phi, A_h)$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_h)\) preserves the action, where \(\St(\Phi, A_h)\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_h)\), it remains to check transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Hence \(V \to \St(\Phi, A_h)\) is a bijection.
 

@@ -120,17 +120,16 @@ The following result gives a sufficient condition for a functor $K$ to be $\math
   \item \label{DP} %{\it $K$ maps each square of the form~\eqref{M-sq} to a pullback square.}
   %Since $e$ is split by the obvious embedding, this requirement is equivalent to the following one: 
   For a $k$-algebra $R$ and $a \in R$ consider the diagram obtained from~\eqref{M-sq} by applying $K$. Then the homomorphism $\Ker(K(e)) \to NK(R_a)$ between the kernels of vertical arrows is injective.
-  \item \label{LPP} {\it $K$ satisfies weak affine Nisnevich excision for domains.} By this we mean the following. Let $\iota \colon B \hookrightarrow A$ be an inclusion of domains (contained in $\catname{Alg}_k$) making $A$ an {\'e}tale $B$-algebra. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / hA$. Consider the following commutative square (sometimes called an elementary Nisnevich square): 
-  \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h. \end{tikzcd}\]
-  Then the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
+  \item \label{LPP} {\it $K$ satisfies weak affine Nisnevich excision for domains.} By this we mean the following. Let $\iota \colon B \hookrightarrow A$ be a standard {\'e}tale inclusion of domains contained in $\catname{Alg}_k$. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / \iota(h)A$. Consider the following commutative square: \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h \end{tikzcd}\] Then the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
   \item \label{PGP} {\it $K$ satisfies $\mathbb{P}^1$-glueing property for local domains.}  By definition, this means that for every local domain $R \in \catname{Alg}_k$ the following diagram whose arrows are induced by natural embeddings is a pullback square: \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}  
   It is easy to see that if~\eqref{eq:P1-square} is pullback, then all its arrows are injective.
-  \item \label{HIF} {\it $K$ is homotopy invariant for fields}, i.\,e. for every field $F \in \catname{Alg}_k$ the canonical embedding induces an isomorphism $K(F) \cong K(F[t])$.
+  \item \label{HIF} {\it $K$ is homotopy invariant for fields}, i.\,e. $NK$ vanishes on every field $F \in \catname{Alg}_k$.
  \end{enumerate}
  Then $NK$ vanishes on every geometrically regular $R\in \catname{Alg}_k$. In other words, for every such $R$ the natural embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R)\cong K(R[t]).$
 \end{theorem}
 \begin{rem}
  In the literature a functor satisfying the axiom~\ref{PGP} is sometimes called {\it acyclic} (cf.~\cite[Def.~III.4.1.1]{Kbook}).
+ Recall that the application of $\mathrm{Spec}$ to the commutative square from~\ref{LPP} yields a distinguished Nisnevich square in the sense of Morel--Voevodsky).
  The choice of the name for~\eqref{LPP} is inspired by axiom (P3) from~\cite[Proposition~3.3.4]{AHW18}.
  Notice also that our axioms can be slightly relaxed, so that the assertion of the Theorem becomes slightly stronger, see Remark~\ref{rem:relax} below.
 \end{rem}
@@ -195,7 +194,7 @@ If, moreover, $R$ is of finite type over $k$, it is called {\it smooth over $k$}
 
 \begin{theorem}[Panin]
 \label{paninthm}
-Let $k$ be a field, $R$ be a domain smooth over $k$. Let $M_1,\ldots, M_n$ be a finite set of maximal ideals of $R$. Denote by $A=R_{M_1,\ldots,M_n}$ the correponding semi-localization of $R$. Let $f$ be an element of the intersection  $\cap_{i=1}^nM_i \subseteq R$. Then there exists a monic polynomial $h(t)\in A[t]$, a domain $S$ essentially smooth over $k$ and homomorphisms $\tau$, $p$, $p'$ and $\delta$ such that $A[t]/hA[t]\cong S/\tau(h)S$ and the following diagram commutes:
+	Let $k$ be a field, $R$ be a domain smooth over $k$. Let $M_1,\ldots, M_n$ be a finite set of maximal ideals of $R$. Denote by $A=R_{M_1,\ldots,M_n}$ the corresponding semi-localization of $R$. Let $f$ be an element of the intersection  $\cap_{i=1}^nM_i \subseteq R$. Then there exist a monic polynomial $h(t)\in A[t]$, a domain $S$ essentially smooth over $k$, a standard {\'e}tale homomorphism $\tau$ and homomorphisms $p$, $p'$ and $\delta$ such that $A[t]/hA[t]\cong S/\tau(h)S$ and the following diagram commutes:
 \begin{equation}\label{eq:panin-diag}
  \begin{tikzcd}[column sep=4em]
    & A & \\ A[t] \ar{d}{\lambda_h} \ar{ru}{ev(0)} \ar{r}{\tau} & S \ar{u}{\delta} \ar{d}{\lambda_{\tau(h)}}  & R \ar{ul}[swap]{\lambda_{M_1,\ldots,M_n}} \ar{d}{\lambda_f} \ar{l}[swap]{p} \\
@@ -283,10 +282,10 @@ We start by recalling the definition of the Steinberg group.
 Recall that for a simply-laced root system $\Phi$ and a commutative ring $R$ the Steinberg group $\St(\Phi, R)$ is defined by the generators $x_\alpha(\xi)$, $\xi \in R$ and the following system of relations:
 \begin{align}
 x_{\alpha}(a)\cdot x_{\alpha}(b)&=x_{\alpha}(a+b),\text{ for } \alpha\in \Phi;\tag{R1} \label{R1}\\
-[x_{\alpha}(a),\,x_{\beta}(b)]  &=1,\text{ for }\alpha+\beta\not\in\Phi\cup; \tag{R2} \label{R2} \\
+[x_{\alpha}(a),\,x_{\beta}(b)]  &=1,\text{ for }\alpha+\beta\not\in\Phi\cup 0; \tag{R2} \label{R2} \\
 [x_{\alpha}(a),\,x_{\beta}(b)]  &=x_{\alpha+\beta}(N_{\alpha\beta} \cdot ab)\text{ in the case }\alpha+\beta\in\Phi. \tag{R3} \label{R3} \end{align}
-
-{\bf TODO: } Refer to some sources of info.
+The integers $N_{\alpha,\beta} = \pm 1$ appearing in the last identity are called the {\it structure constants} of the Chevalley group $\mathrm{G}_\mathrm{sc}(\Phi, R)$.
+More information about them can be found in~???.
 
 Now for $a, b \in R$ set $y_\alpha(a, b) = [x_\alpha(a), x_{-\alpha}(b)]$.
 For an ideal $I \trianglelefteq R$ we denote by $\overline{\St}(\Phi, R, I)$ the normal closure in $\St(\Phi, R)$ of the subgroup generated by $x_\alpha(a)$, $a\in I$. Recall from~\cite[Lemma~5]{S15} that it coincides with the kernel of the natural morphism of Steinberg groups $\St(\Phi, R) \to \St(\Phi, R/I)$.
@@ -297,7 +296,7 @@ For an ideal $I \trianglelefteq R$ we denote by $\overline{\St}(\Phi, R, I)$ the
  \item $y_\alpha(a, c^2b) \equiv y_\alpha(ac^2, b)\ (\mathrm{mod}\ \overline{\St}(\Phi, R, AB))$, $y_\alpha(a, cb)^2 \equiv y_\alpha(ac, b)^2\ (\mathrm{mod}\ \overline{\St}(\Phi, R, AB))$ in the case $\Phi = \rC_{\ell}$ and $\alpha$ is long.
 \end{itemize} \end{lemma}
 \begin{proof}
- Observe that the proof of~\cite[Theorem~5]{VZ20} is based solely on computations with Chevalley commutator formula, which all can be reproduced verbatim in the context of Steinberg groups.
+ Observe that the proof of~\cite[Theorem~5]{VZ20} is based solely on computations with Chevalley commutator formula, which all can be reproduced verbatim for Steinberg groups.
 \end{proof}
 
 Notice that the Steinberg group functor {\it does not} commute with general finite limits. However, it satisfies the following weaker property, which we are going to use in the sequel.
@@ -307,7 +306,7 @@ It suffices to verify the assertion for binary direct products.
 Observe that canonical projections $R_1 \times R_2 \to R_i$, $i=1,2$ split in the category of rings without unit, therefore the groups $G_i = \St(\Phi, R_i)$ embed as subgroups into $G = \St(\Phi, R_1 \times R_2)$. It is also clear that $G_i$ together generate $G$. Thus, to verify the isomorphism $G \cong G_1 \times G_2$ it suffices to show the triviality of the commutator subgroup $[G_1, G_2] \leq G$.
 
 Set $A = R_1\times 0$, $B = 0 \times R_2$. It is clear that $A, B \trianglelefteq R_1 \times R_2$. 
-It follows directly from~\eqref{R2}--\eqref{R3} that the commutators $[x_{\alpha}(a),\ x_\beta(b)]$ are trivial for all $\beta \neq -\alpha$. On the other hand, in order to verify the triviality of $y_\alpha(a, b) = [x_{\alpha}(a),\ x_{-\alpha}(b)]$ for $a\in A$, $b\in B$ we can apply the congruences of~\cref{lem:c-identities} (since $AB=0$ these congruences turn into equalities).
+It follows directly from~\eqref{R2}--\eqref{R3} that the commutators $y_\alpha(a, b) = [x_{\alpha}(a),\ x_\beta(b)]$ are trivial for all $\beta \neq -\alpha$, $a \in A$, $b\in B$. On the other hand, to verify the triviality of $y_\alpha(a, b)$ we can apply the congruences of~\cref{lem:c-identities} (since $AB=0$ these congruences turn into equalities).
 Indeed, setting $c = c^2 = (1, 0)$ we obtain that $y_\alpha(a, b) = y_\alpha(ac, b) = y_\alpha(a, bc) = y_\alpha(a, 0) = 1$. \end{proof}
 
 \begin{lemma} \label{k2cdc} 
@@ -331,10 +330,10 @@ $$
 
 \subsection{\texorpdfstring{$\K_2(\Phi, R)$}{K2(R)} as $\mathbb{A}^1$-fundamental group}
 Recall from~\cite{Jar83} that for an arbitrary commutative (unital) ring $R$ one can define the standard simplicial ring $R[\Delta^\bullet]$ as follows:
-\begin{equation} \footnotesize
+\begin{equation}
  R[\Delta^n] = R[t_0,\ldots t_n]/\langle \sum_{i=0}^n t_i -1 \rangle,\ d_i(t_j) = \left\{ \begin{array}{ll}t_j & j < i, \\0 & j = i, \\ t_{j-1} & j > i; \end{array}\right. s_i(t_j) = \left\{ \begin{array}{ll} t_j & j < i, \\ t_j + t_{j+1} & j = i, \\ t_{j+1} & j > i. \end{array} \right.
 \end{equation}
-The application of a functor $G\colon\catname{Ring}\rightarrow\catname{Grp}$ to $R[\Delta^\bullet]$ yields a simplicial group $G(R[\Delta^\bullet])$, which in the context of $\mathbb{A}^1$-homotopy theory is usually called the {\it simplicial resolution} of $G$ and is denoted by $\mathrm{Sing}^{\mathbb{A}^1}_\bullet(G)(R)$. Recall also, that the {\it unstable Karoubi--Villamayor K-functor} $\mathrm{KV}_{n+1}(\Phi, R)$ attached to the Chevalley--Demazure group scheme $\mathrm{G}_\mathrm{sc}(\Phi, -)$ is, by definition, the $n$-th simplicial homotopy group of $G(R[\Delta^\bullet])$ (cf.~\cite[\S~4.3]{AHW18}).
+	The application of a functor $G\colon\catname{Ring}\rightarrow\catname{Grp}$ to $R[\Delta^\bullet]$ yields a simplicial group $G(R[\Delta^\bullet])$, which in the context of $\mathbb{A}^1$-homotopy theory is usually called the {\it simplicial resolution} of $G$ and is denoted by $\mathrm{Sing}^{\mathbb{A}^1}_\bullet(G)(R)$. Recall also, that the $n$-th {\it unstable Karoubi--Villamayor K-functor attached to $G$} (denoted $\mathrm{KV}^G_n(R)$) is, by definition, the $n-1$-th simplicial homotopy group of $G_\mathrm{sc}(\Phi, R[\Delta^\bullet])$ (cf.~\cite[\S~4.3]{AHW18}).
 
 The aim of this subsection is to show that Stein's group $\K_2(\Phi, R)$ can be interpreted as the fundamental group of the simplicial group $\Gsc(\Phi, R[\Delta^\bullet])$ under the assumption that $\Phi$ and $R$ satisfy the requirements of~\cref{theorem:LP-for-K2}. This is achieved in~\cref{theorem:pi1-GRDelta} below. This result parallels the computation of the fundamental group of the simplicial group $G(k[\Delta^\bullet])$ modeled on an arbitrary isotropic reductive group $G$, see~\cite[Proposition~3.2]{VW16}. As a corollary of~\cref{theorem:pi1-GRDelta} and a general representability result of A.~Asok, M.~Hoyois and M.~Wendt we obtain an interpretation of $\K_2(\Phi, R)$ in terms of $\mathbb{A}^1$-homotopy theory, see~\cref{cor:motivic-pi1}.
 

@@ -120,8 +120,8 @@ The following result gives a sufficient condition for a functor $K$ to be $\math
   \item \label{DP} %{\it $K$ maps each square of the form~\eqref{M-sq} to a pullback square.}
   %Since $e$ is split by the obvious embedding, this requirement is equivalent to the following one: 
   For a $k$-algebra $R$ and $a \in R$ consider the diagram obtained from~\eqref{M-sq} by applying $K$. Then the homomorphism $\Ker(K(e)) \to NK(R_a)$ between the kernels of vertical arrows is injective.
-  \item \label{LPP} {\it $K$ satisfies weak affine Nisnevich excision for domains.} By this we mean the following. Let $\iota \colon B \hookrightarrow A$ be a standard {\'e}tale inclusion of domains contained in $\catname{Alg}_k$. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / \iota(h)A$. Consider the following commutative square: \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h \end{tikzcd}\] Then the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
-  \item \label{PGP} {\it $K$ satisfies $\mathbb{P}^1$-glueing property for local domains.}  By definition, this means that for every local domain $R \in \catname{Alg}_k$ the following diagram whose arrows are induced by natural embeddings is a pullback square: \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}  
+  \item \label{LPP} {\it $K$ satisfies weak affine Nisnevich excision for domains.} By this we mean the following. Let $\iota \colon B \hookrightarrow A$ be an injective homomorphism of domains contained in $\catname{Alg}_k$ such that $\mathrm{Spec}(A)\to\mathrm{Spec}(B)$ is an {\'e}tale morphism of affine schemes. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / \iota(h)A$. Consider the following commutative square: \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h \end{tikzcd}\] Then the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
+  \item \label{PGP} {\it $K$ satisfies $\mathbb{P}^1$-glueing property for local domains.} By definition, this means that for every local domain $R \in \catname{Alg}_k$ the following diagram whose arrows are induced by natural embeddings is a pullback square: \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}  
   It is easy to see that if~\eqref{eq:P1-square} is pullback, then all its arrows are injective.
   \item \label{HIF} {\it $K$ is homotopy invariant for fields}, i.\,e. $NK$ vanishes on every field $F \in \catname{Alg}_k$.
  \end{enumerate}
@@ -129,9 +129,7 @@ The following result gives a sufficient condition for a functor $K$ to be $\math
 \end{theorem}
 \begin{rem}
  In the literature a functor satisfying the axiom~\ref{PGP} is sometimes called {\it acyclic} (cf.~\cite[Def.~III.4.1.1]{Kbook}).
- Recall that the application of $\mathrm{Spec}$ to the commutative square from~\ref{LPP} yields a distinguished Nisnevich square in the sense of Morel--Voevodsky).
- The choice of the name for~\eqref{LPP} is inspired by axiom (P3) from~\cite[Proposition~3.3.4]{AHW18}.
- Notice also that our axioms can be slightly relaxed, so that the assertion of the Theorem becomes slightly stronger, see Remark~\ref{rem:relax} below.
+The choice of the name for~\eqref{LPP} is inspired by axiom (P3) from~\cite[Proposition~3.3.4]{AHW18}. Notice that the application of $\mathrm{Spec}$ to the commutative square from~\ref{LPP} yields a distinguished Nisnevich square in the sense of Morel--Voevodsky. Notice also that our axioms can be slightly relaxed, so that the assertion of the Theorem becomes slightly stronger, see Remark~\ref{rem:relax} below.
 \end{rem}
 
 The proof is based on a series of lemmas and is deferred until the end of this section. We start by deducing the following useful corollary of the axiom~\ref{DP}. 
@@ -194,15 +192,18 @@ If, moreover, $R$ is of finite type over $k$, it is called {\it smooth over $k$}
 
 \begin{theorem}[Panin]
 \label{paninthm}
-	Let $k$ be a field, $R$ be a domain smooth over $k$. Let $M_1,\ldots, M_n$ be a finite set of maximal ideals of $R$. Denote by $A=R_{M_1,\ldots,M_n}$ the corresponding semi-localization of $R$. Let $f$ be an element of the intersection  $\cap_{i=1}^nM_i \subseteq R$. Then there exist a monic polynomial $h(t)\in A[t]$, a domain $S$ essentially smooth over $k$, a standard {\'e}tale homomorphism $\tau$ and homomorphisms $p$, $p'$ and $\delta$ such that $A[t]/hA[t]\cong S/\tau(h)S$ and the following diagram commutes:
+	Let $k$ be a field, $R$ be a domain smooth over $k$. Let $M_1,\ldots, M_n$ be a finite set of maximal ideals of $R$. Denote by $A=R_{M_1,\ldots,M_n}$ the corresponding semi-localization of $R$. Let $f$ be an element of the intersection  $\cap_{i=1}^nM_i \subseteq R$. Then there exist a monic polynomial $h(t)\in A[t]$, a domain $S$ essentially smooth over $k$ and homomorphisms $\tau$, $p$, $p'$ and $\delta$ such that $\tau^*\colon\mathrm{Spec}(S)\to\mathrm{Spec}(A[t])$ is an {\'e}tale morphism and the following diagram commutes:
 \begin{equation}\label{eq:panin-diag}
  \begin{tikzcd}[column sep=4em]
    & A & \\ A[t] \ar{d}{\lambda_h} \ar{ru}{ev(0)} \ar{r}{\tau} & S \ar{u}{\delta} \ar{d}{\lambda_{\tau(h)}}  & R \ar{ul}[swap]{\lambda_{M_1,\ldots,M_n}} \ar{d}{\lambda_f} \ar{l}[swap]{p} \\
    A[t]_h \ar{r}[swap]{\tau\otimes_{A[t]}A[t]_h}              & S_{\tau(h)}      & R_f. \ar{l}{p'}\end{tikzcd}
 \end{equation}
+Additionally, the homomorphism $\tau$ is an injection and one has $A[t]/hA[t]\cong S/\tau(h)S.$ 
 \end{theorem}
 \begin{proof}
- This is a ring-theoretic restatement of the assertions (i)--(iii) of~\cite[Theorem~2.5]{Pa19}.
+ All of the assertions except the last two are a direct ring-theoretic restatement of (i)--(iii) of~\cite[Theorem~2.5]{Pa19}.
+	Since $\tau^*$ is open and $S\neq 0$, $\tau(S)$ is dominant. Denote by $I$ the kernel of $\tau$. The closed subscheme defined by $I$ must contain the image of $\tau^*$ therefore $I$ is radical. Since $A[t]$ is a domain we conclude that $I=0$.
+	From the fact that the left square is an elementary distinguished Nisnevich square we obtain an isomorphism $A[t]/\sqrt{hA[t]}\cong S/\sqrt{\tau(h)S}$. This together with the topological invariance of {\'e}tale morphisms (cf.~\cite[Theorem~41.15.2]{stacks-project}) implies the required isomorphism $A[t]/hA[t]\cong S/\tau(h)S$.
 \end{proof}
 
 \begin{corollary}

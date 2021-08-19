@@ -202,8 +202,10 @@ Additionally, the homomorphism $\tau$ is an injection and one has $A[t]/hA[t]\co
 \end{theorem}
 \begin{proof}
  All of the assertions except the last two are a direct ring-theoretic restatement of (i)--(iii) of~\cite[Theorem~2.5]{Pa19}.
-	Since $\tau^*$ is open and $S\neq 0$, $\tau(S)$ is dominant. Denote by $I$ the kernel of $\tau$. The closed subscheme defined by $I$ must contain the image of $\tau^*$ therefore $I$ is radical. Since $A[t]$ is a domain we conclude that $I=0$.
-	From the fact that the left square is an elementary distinguished Nisnevich square we obtain an isomorphism $A[t]/\sqrt{hA[t]}\cong S/\sqrt{\tau(h)S}$. This together with the topological invariance of {\'e}tale morphisms (cf.~\cite[Theorem~41.15.2]{stacks-project}) implies the required isomorphism $A[t]/hA[t]\cong S/\tau(h)S$.
+	Since $\tau^*$ is open and $S\neq 0$, $\tau(S)$ is dominant. Denote by $I$ the kernel of $\tau$. The closed subscheme defined by $I$ must contain the image of $\tau^*$ therefore $I$ is radical. Since $A[t]$ is a domain we conclude that $I=0$.		
+		
+	From the fact that the left square is an elementary distinguished Nisnevich square we obtain an isomorphism $A[t]/\sqrt{hA[t]}\cong S/\sqrt{\tau(h)S}$. This together with the topological invariance of {\'e}tale morphisms (\cite[Theorem~41.15.2]{stacks-project}) implies the required isomorphism $A[t]/hA[t]\cong S/\tau(h)S$.
+	%More details: Set $X = \mathrm{Spec}(A[t]/h)$, $Y = \mathrm{Spec}(S/h)$. We need to show that the morphism $\tau' \colon Y \to X$ obtained from $\tau^*$ by restriction is an isomorphism. Set $Y_0 := Y \times_{X} X_\mathrm{red}$. From the fact that the left square is an elementary distinguished Nisnevich square we obtain that the composite morphism $Y_\mathrm{red} \not\hookrightarrow Y_0 \xrightarrow{\tau''} X_\mathrm{red}$ is an isomorphism, consequently since $\tau''$ is {\'e}tale, the closed embedding $(Y_0)_\mathrm{red} = Y_\mathrm{red} \not\hookrightarrow Y_0$ is also {\'e}tale, hence an open embedding, hence an isomorphism (see Milne Corollary~3.6, Proposition~3.10). Thus, we conclude that $\tau''$ is an isomorphism and hence by the topological invariance of {\'e}tale morphisms (Milne Theorem~3.23), so is $\tau'$. \end{comment}
 \end{proof}
 
 \begin{corollary}

@@ -7,7 +7,7 @@
 \usepackage[capitalise]{cleveref}
 \usepackage[matrix,arrow,curve,tips]{xy}
 \usepackage{scalerel}
-%\usepackage[notref, notcite]{showkeys}
+\usepackage[notref, notcite]{showkeys}
 
 \SelectTips{cm}{12}
 
@@ -109,7 +109,7 @@ While the centrality of $\mathrm K_2(\Phi, R)$ has been long known for rings of 
 On the other hand, the analogue of Suslin's normality theorem for Chevalley groups of rank $\geq 2$, i.\,e. the normality of the subgroup $\E_{\mathrm{sc}}(\Phi, R):= \mathrm{Im}(\mathrm{st})$ for an arbitrary commutative ring $R$, was soon obtained by G.~Taddei, see~\cite{Ta86}. Since then the normality theorem was generalized to even larger classes of groups e.\,g. isotropic reductive groups and odd unitary groups; see~\cite{Pe05,PS09,Ste16}.
 
 The first advancement in the solution of the centrality problem for arbitrary commutative rings since~\cite{vdK} was the counterexample of M.~Wendt~\cite{Wendt} which showed that the centrality of $\mathrm K_2$ may fail for root systems of rank $2$ (similarly, there is a counterexample to Suslin's normality theorem for the rank $1$ group $\mathrm{SL}_2(R)$). Soon the papers~\cite{Lav,Sin,LavSin} of the first- and second-named authors appeared, in which it was shown that the centrality of $\mathrm K_2$ does, indeed, hold for all the Chevalley groups of type $\rC_\ell$, $\rD_\ell$, $\rE_\ell$ provided $\ell\geq 3$. In~\cite{Lav} a symplectic analogue of the technique of~\cite{vdK} was developed, while in~\cite{Sin, LavSin} the proof was based on the amalgamation theorem for relative Steinberg groups which reduced the problem of centrality to the already-known linear case. Nevertheless, neither of these two approaches seemed to work for the root systems $\rB_\ell$ and $\rF_4$. Finally, in~\cite{Vor1} the third-named author has developed a novel pro-group approach, which allowed him not only to generalize~\cite{vdK,Tul} to even larger class of noncommutative rings, but also to prove the centrality of $\mathrm K_2$ for odd unitary groups and, thus, cover all classical groups, including the case $\rB_\ell$, see~\cite{Vor2}. In the present paper these methods are employed to verify the centrality of $\mathrm K_2$ in the case $\Phi = \rF_4$, the only case which has remained open until now.
-This is accomplished in~\cref{SteinbergCrossedModule} below. Our method of proof also applies to root systems of type $\rA_{\geq 3}$, $\rD_{\geq 4}$, $\rE_{6,7,8}$, and thus gives a proof of the centrality of $\mathrm{K}_2$ independent of the earlier papers~\cite{vdK,Sin,LavSin}. In course of the proof we also reprove Taddei's normality theorem~\cite{Ta86} in the aforementioned cases; see~\cref{Normality}. Thus, the main consequence of \cite{Vor2} and our~\cref{SteinbergCrossedModule} can be formulated as follows.
+This is accomplished in~\cref{SteinbergCrossedModule} below. Our method of proof also applies to root systems of type $\rA_{\geq 3}$, $\rD_{\geq 4}$, $\rE_{6,7,8}$, and thus gives a proof of the centrality of $\mathrm{K}_2$ independent of the earlier papers~\cite{vdK,Sin,LavSin}. In the course of the proof we also reprove Taddei's normality theorem~\cite{Ta86} in the aforementioned cases; see~\cref{Normality}. Thus, the main consequence of \cite{Vor2} and our~\cref{SteinbergCrossedModule} can be formulated as follows.
 \begin{theorem*}
 Let $R$ be a commutative ring, $\Phi$ be an irreducible root system of rank $\geq 3$. 
 Then the map $\mathrm{st}\colon\mathrm{St}(\Phi,\,R) \to \mathrm{E}_{\mathrm{sc}}(\Phi,\,R)$ is a central extension.
@@ -117,7 +117,9 @@ Then the map $\mathrm{st}\colon\mathrm{St}(\Phi,\,R) \to \mathrm{E}_{\mathrm{sc}
 
 In fact, in~\cref{SteinbergCrossedModule} we prove a stronger result. More precisely, we endow the canonical homomorphism~\eqref{eq:st} with the structure of a crossed module; see~\cref{df:crossed-module}. This is yet another new result of the paper. Notice that no construction of a crossed module on~\eqref{eq:st} was presented in~\cite{Lav, Sin, LavSin}. Some of the material of the present paper (e.\,g.~\cref{sec:local-Chevalley}) is required only for this construction and is not needed for the proof of the centrality of $\mathrm K_2$.
 
-As a corollary of the above Theorem we obtain that Stein's $\mathrm K_2$-group $\mathrm{K}_2(\Phi, R)$ defined as the the kernel of the homomorphism~\eqref{eq:st} coincides with the unstable $\mathrm{K}_2$-group defined via Quillen's $+$-construction applied to the perfect subgroup $\mathrm{E}_{\mathrm{sc}}(\Phi, R)$: \[ \mathrm{K}_2^Q(\Phi, R) := \pi_2\mathrm{BG}_{\mathrm{sc}}(\Phi,\,R)^+_{\mathrm{E}_{\mathrm{sc}}(\Phi, R)}.\] The latter group also coincides with the homology group $\mathrm H_2(\mathrm E_{\mathrm{sc}}(\Phi,\,R),\,\mathbb Z)$; see e.\,g.~\cite[\S~IV.1]{Weibel}.
+Using the above theorem we obtain a result comparing Stein's $\mathrm{K}_2$-groups modeled on Chevalley groups with {\it Quillen's} unstable $\mathrm{K}_2$-groups.
+Recall that the latter are defined by means of Quillen's $+$-construction: for a root system $\Phi$ of
+rank $\geq3$ take the perfect normal subgroup $\mathrm{E}_{\mathrm{sc}}(\Phi, R) \trianglelefteq \mathrm{G}_{\mathrm{sc}}(\Phi, R)$ and set \[ \mathrm{K}_2^Q(\Phi, R) := \pi_2\mathrm{BG}_{\mathrm{sc}}(\Phi,\,R)^+_{\mathrm{E}_{\mathrm{sc}}(\Phi, R)}.\] The above group also coincides with the homology group $\mathrm H_2(\mathrm E_{\mathrm{sc}}(\Phi,\,R),\,\mathbb Z)$; see e.\,g.~\cite[\S~IV.1]{Weibel}.
 Thus, combining the above theorem with~\cite{St71,vdKStein} we obtain the following result.
 \begin{corollary*}
 For an arbitrary commutative ring $R$ and a root system $\Phi$ of rank $\geq 3$ there is an exact sequence \[ \xymatrix{ 1\ar@{->}[r]&{\mathrm H_2(\St(\Phi,\,R),\ZZ)}\ar@{->}[r]&\mathrm K_2^Q(\Phi,\,R)\ar@{->}[r]&\mathrm K_2(\Phi,\,R)\ar@{->}[r]&1,}\] in which the group $\mathrm H_2(\mathrm{St}(\Phi, R), \ZZ)$ is trivial in the cases 
@@ -135,15 +137,15 @@ In particular, for $\Phi=\rA_3,\rC_3,\rD_4,\rF_4$ the equality $\mathrm K_2(\Phi
 Since the proof of the main theorem is rather long and technical and the setting of the papers~\cite{Vor1,Vor2} is already rather general, let us briefly sketch the key ideas of our proof assuming, for simplicity, that the root system $\Phi$ is simply-laced and the ring $R$ is an integral domain.
 
 The proof is based on a variant of Quillen--Suslin's local-global principle.
-Consider an arbitrary element $g$ from $\mathrm K_{2}(\Phi, R)$. We want to show that $g$ commutes with $x_{\alpha}(r)$ for every $r\in R$.
-Consider the set \[I=\{a\in R\mid [g,\,x_{\alpha}(aR)]=1\},\] which is easily seen to be, in fact, an ideal. 
+Consider an arbitrary element $g$ from $\mathrm K_{2}(\Phi, R)$. We want to show that $g$ commutes with $x_{\alpha}(r)$ for every $r\in R$ and $\alpha\in\Phi$.
+Consider the set \[I=\{a\in R\mid [g,\,x_{\alpha}(aR)]=1,\text{ for all }\alpha\in\Phi\},\] which is easily seen to be, in fact, an ideal.
 To prove the centrality of $\mathrm{K}_{2}(\Phi, R)$ it suffices to show that $I=R$.
 Assume the contrary and consider an arbitrary maximal ideal $M \trianglelefteq R$ containing $I$. 
 By the centrality of $\mathrm K_{2}(\Phi, R_M)$ one has the identity $[\lambda_{M}(g),\,x_{\alpha}(r)]=1$ for all $r\in R_{M}$ (we denote by $\lambda_M$ the localization homomorphism $R \to R_M$). 
 If we were able to show for some $s_0\in R\setminus M$ that the identity \begin{equation} \label{intro} [g,\,x_{\alpha}(s_0R)]=1, \end{equation} holds in $\St(\Phi, R)$ or, in other words, that $s_0\in I\cap R\setminus M$, this would lead to a contradiction and hence would complete the proof of the centrality of $\mathrm K_{2}(\Phi, R)$. Unfortunately, formally proving this is not easy. 
 
 In the earlier papers the proof went as follows; cf.~\cite{Tul,Sin,LavSin,Lavlgp}.
-First, a formal variable was thrown in and the original question was reduced to the question of the triviality of $[g, x_{\alpha}(t)]$ in $\St(\Phi, R[t])$, which, in turn, was further reduced to proving the {\it Dilation principle}, an assertion about principal localizations similar to~\eqref{intro} (see e.\,g.~\cite[Lemma~15]{Sin}). The proof of the Dilation principle was based on the isomorphism of {\it relative Steinberg groups} $\St(\Phi, R_a[t], tR_a[t]) \cong \St(\Phi, R \ltimes tR_a[t], tR_a[t])$; cf.~\cite[Remark~3.12]{Sin}. Essentially this isomorphism means that it possible to define a conjugation action of $\St(\Phi, R_a)$ on the group $\St(\Phi, R\ltimes tR_a[t], tR_a[t])$.
+First, a formal variable was thrown in and the original question was reduced to the question of the triviality of $[g, x_{\alpha}(t)]$ in $\St(\Phi, R[t])$, which, in turn, was further reduced to proving the {\it Dilation principle}, an assertion about principal localizations similar to~\eqref{intro} (see e.\,g.~\cite[Lemma~15]{Sin}). The proof of the Dilation principle was based on the isomorphism of {\it relative Steinberg groups} $\St(\Phi, R_a[t], tR_a[t]) \cong \St(\Phi, R \ltimes tR_a[t], tR_a[t])$; cf.~\cite[Remark~3.12]{Sin}. Essentially this isomorphism means that it is possible to define a conjugation action of $\St(\Phi, R_a)$ on the group $\St(\Phi, R\ltimes tR_a[t], tR_a[t])$.
 This last step, however, required finding nontrivial ad hoc presentations of relative Steinberg groups.
 For example~\cite{Lavlgp} relied on a variant of van der Kallen's ``another presentation''~\cite{vdK} for symplectic groups, while~\cite{Sin, LavSin} were based on the amalgamation theorem for relative Steinberg groups; see~\cite[Theorem~9]{Sin}. However, it was not easy to transfer to all Chevalley groups either of these two approaches.
 
@@ -160,49 +162,56 @@ The key claim is that it is possible to define an action of $\St(\Phi, S^{-1}R)$
 
 For each $x_{\alpha}(a/s)$, $a\in R$, $s\in S = R\setminus M$ the automorphism of conjugation by $x_\alpha(a/s)$ corresponds to a collection of group homomorphisms \begin{equation} \label{eq:collection} \{\mathrm{conj}_{x_\alpha(a/s)}(t) \colon  \St(\Phi, c^*(t)R) \to \St(\Phi, tR)\}_{t \in S},\end{equation} where $c^*\colon S \to S$ is the function $t \mapsto ts$, called the {\it index function}. The construction of the homomorphisms $\mathrm{conj}_{x_\alpha(a/s)}(t)$ will be outlined below.
 
-In fact, a morphism between pro-groups should be defined not just as a collection of group homomorphisms, but as an {\it equivalence class} of such collections. By definition, two pro-group morphisms $m_1$ and $m_2$ with index functions $m_1^*$,$m_2^* \colon S \to S$ are equivalent if for every $t$ one can choose $s$ divisible both by $m_1^*(t)$ and $m_2^*(t)$ so that the homomorphisms \[m_i(t) \colon \St(\Phi, m_i^*(t)R) \to \St(\Phi, tR),\ i=1,2\] coincide after precomposition with the structure morphisms \[\St(\Phi, sR) \to \St(\Phi, m^*_i(t)R),\ i=1,2.\]
+In fact, a morphism between pro-groups should be defined not just as a collection of group homomorphisms, but as an {\it equivalence class} of such collections. By definition, two pro-group morphisms $m_1$ and $m_2$ with index functions $m_1^*$,$m_2^* \colon S \to S$ are equivalent if for every $t$ one can choose $s$ divisible by both $m_1^*(t)$ and $m_2^*(t)$ so that the homomorphisms \[m_i(t) \colon \St(\Phi, m_i^*(t)R) \to \St(\Phi, tR),\ i=1,2\] coincide after precomposition with the structure morphisms \[\St(\Phi, sR) \to \St(\Phi, m^*_i(t)R),\ i=1,2.\]
 We refer the reader to~\cref{sec:pro-obj} for a more thorough treatment of the formalism of pro-groups.
 
 After the automorphisms of conjugation by $x_\alpha(a/s)$ are defined, we verify that they satisfy the Steinberg relations defining $\St(\Phi, S^{-1}R)$ and, moreover, that the Steinberg symbols $\{b_1, b_2\}$, $b_1, b_2 \in {S^{-1}R}^\times$ act trivially on the pro-group. Technically, this is an easier step since it is enough to verify the corresponding equalities on suitable group generators.
 Now, for $g = \prod x_{\alpha_i}(a_i)$ the pro-group automorphism $\mathrm{conj}_{\lambda_M(g)}$ can be defined as the composition of $\mathrm{conj}_{x_{\alpha_i}(a_i/1)}$.
-A key point here is that the resulting pro-group automorphism is compatible with the usual conjugation action of $g \in \St(\Phi, R)$, i.\,e. for some $s_0 \in S$ the group homomorphism \[\mathrm{conj}_{\lambda_M(g)}(1) \colon \St(\Phi, s_0R) \to \St(\Phi, R)\] coincides with the obvious homomorphism $h \mapsto ghg^{-1}$. Since our conjugation action factorizes through $\St(\Phi, S^{-1}R)$ we obtain that the conjugation by $g \in \mathrm K_2(\Phi, R)$ acts trivially on $x_\alpha(s_0R)$, which finishes the proof of~\eqref{intro}. This part of the proof is formalized in~\cref{sec:local-action,sec:proof-main}.
+A key point here is that the resulting pro-group automorphism is compatible with the usual conjugation action of $g \in \St(\Phi, R)$, i.\,e. for some $s_0 \in S$ the group homomorphism \[\mathrm{conj}_{\lambda_M(g)}(1) \colon \St(\Phi, s_0R) \to \St(\Phi, R)\] coincides with the obvious homomorphism $h \mapsto ghg^{-1}$. Since our conjugation action factorizes through $\St(\Phi, S^{-1}R)$ we obtain the fact that the conjugation by $g \in \mathrm K_2(\Phi, R)$ acts trivially on $x_\alpha(s_0R)$, which finishes the proof of~\eqref{intro}. This part of the proof is formalized in~\cref{sec:local-action,sec:proof-main}.
 
-Now let us focus on the construction of the action of $\St(\Phi, S^{-1}R)$ on the Steinberg pro-group. In order to construct the automorphism of conjugation by $x_{\alpha}(a/s)$ we need to define the groups 
-$\St(\mathrm \Phi\setminus\{\pm\alpha\}, tR)$ whose presentation is obtained from the standard presentation of the Steinberg group $\St(\Phi, tR)$ by omitting all the generators $x_\alpha(tr)$, $x_{-\alpha}(tr)$, $r \in R$ and all the relations involving such generators. Now the analogues of the homomorphisms~\eqref{eq:collection} between such groups can be constructed fairly easily based on the remaining part of the Steinberg presentation:
-\begin{equation} \label{eq:conj-def} x_\beta(sb) \mapsto \left\{\begin{array}{ll} x_{\alpha+\beta}(\pm rb) x_\beta(sb) & \text{if $\alpha+\beta\in\Phi$,}\\ x_\beta(sb) & \text{otherwise.}\end{array}\right. \end{equation}
-It is easy to check this definition gives a collection of well-defined homomorphisms
-\[\mathrm{conj}'_{x_\alpha(r/s)}(t)\colon \St(\Phi\setminus\{\pm\alpha\}, stR) \to \St(\Phi\setminus\{\pm\alpha\}, tR).\]
+Now let us focus on the construction of the action of $\St(\Phi, S^{-1}R)$ on the Steinberg pro-group. In order to construct the automorphism of conjugation by $x_{\alpha}(a/s)$ we need to introduce the group $\St(\mathrm \Phi\setminus\{-\alpha\}, tR)$ whose presentation is obtained from the standard presentation of the Steinberg group $\St(\Phi, tR)$ by omitting all the generators $x_{-\alpha}(tr)$, $r \in R$ and all the relations involving such generators. Now the analogues of the homomorphisms~\eqref{eq:collection} between such groups can be constructed fairly easily based on the remaining part of the Steinberg presentation:
+\begin{equation} \label{eq:conj-def} x_\beta(s^2 b) \mapsto \prod_{\substack{i \alpha + j \beta \in \Phi\\ i \geq 0; j > 0}} x_{i\alpha + j\beta}(N_{\alpha, \beta}^{i, j} s^{2j - i} a^i b^j), \end{equation}
+where \(N_{\alpha, \beta}^{i, j} \in \mathbb Z\) are the structure constants.
+Notice that there is no simple expression similar to the right-hand side of~\eqref{eq:conj-def} in the case $\beta=-\alpha$, which explains our need to use groups $\St(\Phi\setminus\{-\alpha\}, tR)$ as domains for the homomorphisms~\eqref{eq:collection}.
+It is easy to check that~\eqref{eq:conj-def} defines a collection of well-defined homomorphisms
+\[\mathrm{conj}'_{x_\alpha(r/s)}(t)\colon \St(\Phi\setminus\{-\alpha\}, s^2 tR) \to \St(\Phi\setminus\{-\alpha\}, tR).\]
 
 The obvious defect of the formula~\eqref{eq:conj-def} is that its correctness depends on the integrality of $R$.
 However, it is easy to fix this using the notion of a {\it homotope of a ring} introduced in~\cite{Vor1,Vor2}. By definition, for $t \in R$ the {\it $t$-homotope} $R^{(t)}$ of $R$ is the ring without unit, multiplication in which is given by the formula $x*y=txy$. The homotope $R^{(t)}$ is isomorphic to $tR$ as a ring without unit if $R$ happens to be a domain. 
 Now, replacing everywhere above the group $\St(\Phi, tR)$ with $\St(\Phi, R^{(t)})$, one can formulate the analogue of~\eqref{eq:conj-def} for not necessarily integral rings.
 We believe that the proof which works for arbitrary commutative rings has extra elegance as compared to the proof which first reduces to the case of domains. However, the reader not comfortable with the notion of a ring homotope may follow the latter path and think of $R^{(t)}$ as just a synonym for $tR$; see~\cref{no-homotopes} for an outline of such a proof.
 
-Although, the groups $\St(\Phi, tR)$ and $\St(\Phi\setminus\{\pm \alpha\}, tR)$ need not be isomorphic in general, the pro-groups composed of them turn out to be isomorphic in the category of pro-groups, see~\cref{SingleRootElimination}. Notice also that the corresponding assertion for unital rings, i.\,e. the isomorphism $\St(\Phi, R) \cong \St(\Phi\setminus\{\pm\alpha\}, R)$ is an easy corollary of a much stronger result called {\it Curtis--Tits} presentation, which allows one to omit most of the Steinberg generators from the presentation of $\St(\Phi, R)$; see e.\,g.~\cite[Corollary~1.3]{A13}. In fact, the main difference of the present paper from~\cite{Vor1, Vor2} is that our proof is based on Steinberg presentations omitting roots, while~\cite{Vor1, Vor2} rely on computations with relative root systems. 
+Although, the groups $\St(\Phi, tR)$ and $\St(\Phi\setminus\{-\alpha\}, tR)$ need not be isomorphic in general, the pro-groups composed of them turn out to be isomorphic in the category of pro-groups, see~\cref{SingleRootElimination}. Notice also that the corresponding assertion for unital rings, i.\,e. the isomorphism $\St(\Phi, R) \cong \St(\Phi\setminus\{-\alpha\}, R)$ is an easy corollary of a much stronger result called {\it Curtis--Tits} presentation, which allows one to omit most of the Steinberg generators from the presentation of $\St(\Phi, R)$; see e.\,g.~\cite[Corollary~1.3]{A13}. In fact, the main difference of the present paper from~\cite{Vor1, Vor2} is that our proof is based on Steinberg presentations omitting roots, while~\cite{Vor1, Vor2} rely on computations with relative root systems. 
 
 If written in down-to-earth terms, the aforementioned isomorphism of pro-groups amounts to the following collection of group homomorphisms in the ``non-obvious'' direction:
-\[\{F_\alpha(t)\colon \St(\Phi, t^3R)\rightarrow \St(\Phi\setminus\{\pm \alpha\}, tR) \}_{t\in S}.\]
-Of course, the natural choice for the image of $x_\alpha(t^3r)$ would be the commutator  $[x_{\alpha-\beta}(t^2b),\,x_{\beta}(\pm t)]$ for some $\beta \in \Phi$ such that $\alpha-\beta\in \Phi$.
+\[\{F_\alpha(t)\colon \St(\Phi, t^3R)\rightarrow \St(\Phi\setminus\{-\alpha\}, tR) \}_{t\in S}.\]
+Of course, the natural choice for the image of $x_\alpha(t^3r)$ would be the commutator $[x_{\alpha-\beta}(t^2b),\,x_{\beta}(\pm t)]$ for some $\beta \in \Phi$ such that $\alpha-\beta\in \Phi$.
 The fact that this definition does not depend on the choice of $\beta$ can be checked using the Hall--Witt identity~\eqref{eq:HW} (notice that we can further decompose $x_{\alpha-\beta}(t^2b)$ into a commutator in $\St(\Phi, tR)$).
-Similarly, we can verify that these commutators satisfy the relations missing from the presentation of $\St(\Phi\setminus\{\pm\alpha\}, t^3R)$. Keeping track of index functions and individual homomorphisms $F_\alpha(t)$ in such computations, however, is not very convenient, so, to simplify the proof of~\cref{SingleRootElimination}, we prefer to write down all commutator formula calculations inside the category of pro-groups. In addition, to reduce the number of cases that need to be considered, we also assume throughout the paper that $\Phi$ is not of type $\rB_\ell$ or $\rC_\ell$. The latter assumption makes it possible to decompose any root of $\Phi$ into a sum of roots having the same length. Now, composing $F_\alpha(t)$ and $\mathrm{conj}'_{x_\alpha(r/s)}(t)$ in a suitable way we obtain the sought pro-group morphism $\mathrm{conj}_{x_\alpha(r/s)}$.
+Similarly, we can verify that these commutators satisfy the relations missing from the presentation of $\St(\Phi\setminus\{-\alpha\}, t^3R)$. Keeping track of index functions and individual homomorphisms $F_\alpha(t)$ in such computations, however, is not very convenient, so, to simplify the proof of~\cref{SingleRootElimination}, we prefer to write down all commutator formula calculations inside the category of pro-groups. In addition, to reduce the number of cases that need to be considered, we also assume throughout the paper that $\Phi$ is not of type $\rB_\ell$ or $\rC_\ell$. The latter assumption makes it possible to decompose any root of $\Phi$ into a sum of roots having the same length. Now, composing $F_\alpha(t)$ and $\mathrm{conj}'_{x_\alpha(r/s)}(t)$ in a suitable way we obtain the sought pro-group morphism $\mathrm{conj}_{x_\alpha(r/s)}$.
 
 \subsection{Acknowledgements}
-The authors of the paper were supported by ``Native towns'', a social investment program of PJSC ``Gazprom Neft''.
+The authors of the paper would like to express their sincere gratitude to the anonymous referee for a careful reading of the first version of this paper and numerous helpful suggestions.
+
+The authors were supported by ``Native towns'', a social investment program of PJSC ``Gazprom Neft''.
 The second-named author was supported by RFBR grant No. 18-31-20044. 
 The first-named author was also supported by Young Russian Mathematics award, and by Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619.
 The second- and third-named authors were also supported by the Foundation for the Advancement of Theoretical Physics and Mathematics ``BASIS``.
 
 \section{Preliminaries}
 Throughout this paper all commutators are left normed, i.\,e. $[x, y] = xyx^{-1}y^{-1}$. We denote by $x^y$ and $\up{y}x$ the elements $xyx^{-1}$ and $yxy^{-1}$.
-In this paper we also make use the following commutator identities:
+In this paper we also make use of the following commutator identities:
 \begin{align}
 \label{eq:comm-mult-rhs}[x,\ yz]& =   [x,\ y] \cdot \up{y}[x,\ z],
 \\ \label{eq:comm-mult-lhs}[xy,\ z]& = \up{x}[y,\ z] \cdot [x,\ z],
 \end{align}
 Recall that the Hall--Witt identity asserts that
 \begin{equation} \label{eq:HW} [[x,\,y],\,\up{y} z] \cdot [[y,\,z],\,\up{z} x] \cdot [[z,\,x],\,\up{x} y] = 1. \end{equation}
-As a corollary we obtain that
+As a corollary we obtain
 \begin{equation} \label{eq:HW-corr} [x,z] = 1 \text{ implies } [x, [y,z]] = [[x,y],\up{y}z].
+\end{equation}
+Finally, we need that
+\begin{equation} \label{eq:comm-new}
+[x, y] = 1 \text{ implies } [x, [y, z]] = [y, \up xz]\, [z, y].
 \end{equation}
 
 \subsection{Generalities on pro-objects} \label{sec:pro-obj}
@@ -244,7 +253,7 @@ Moreover, it is also clear from~\eqref{eq:pro-c-hom} and~\eqref{eq:pro-c-hom-2} 
 
 The category of pro-sets \(\Pro(\Set)\) has all finite limits by \cite[Prop.~6.1.18]{SK06} and therefore is a cartesian monoidal category.
 
-Let us describe an explicit construction of limits in one important special case. Let $X^{(\infty)}, Y^{(\infty)} \colon \mathcal{I}^\op \to \Set\)$ be a pair of pro-sets with the same index category. Recall that the pointwise product of functors $X^{(\infty)} \times Y^{(\infty)} \colon \mathcal{I}^\op \to \Set$ is given by $(X^{(\infty)} \times Y^{(\infty)})^{(i)} = X^{(i)} \times Y^{(i)}$. Clearly, $X^{(\infty)} \times Y^{(\infty)}$ is a product of $X^{(\infty)}$ and $Y^{(\infty)}$ in the category $\Fun(\mathcal{I}^\op, \Set)$. 
+Let us describe an explicit construction of limits in one important special case. Let $X^{(\infty)}$, $Y^{(\infty)}\colon\mathcal{I}^{\op}\to\Set$ be a pair of pro-sets with the same index category. Recall that the pointwise product of functors $X^{(\infty)}\times Y^{(\infty)}\colon\mathcal{I}^{\op}\to\Set$ is given by $(X^{(\infty)} \times Y^{(\infty)})^{(i)} = X^{(i)} \times Y^{(i)}$. Clearly, $X^{(\infty)} \times Y^{(\infty)}$ is a product of $X^{(\infty)}$ and $Y^{(\infty)}$ in the category $\Fun(\mathcal{I}^{\op}, {\Set})$. 
 
 There is an obvious identity-on-objects functor $\Fun(\mathcal{I}^\op, \Set) \to \Pro(\Set)$ sending a natural transformation $\varphi \colon X^{(\infty)} \to Y^{(\infty)}$ to the morphism of pro-sets given by the pre-morphism $\varphi^* = \mathrm{id}_{Ob(\mathcal{I})}$, $\varphi^{(i)} = \varphi_i$. The diagonal morphism $\Delta \colon X^{(\infty)} \to X^{(\infty)} \times X^{(\infty)}$ and the canonical projection morphisms \(\pi_X\colon X^{(\infty)} \times Y^{(\infty)} \to X^{(\infty)}, \pi_Y\colon X^{(\infty)} \times Y^{(\infty)} \to Y^{(\infty)}\) can be defined in the category $\Pro(\Set)$ as the images of the corresponding natural transformations in $\Fun(\mathcal{I}^\op, \Set)$ under this functor.
 
@@ -255,12 +264,12 @@ In this paper we consider only commutative rings.
 To distinguish between unital and non-unital rings we reserve the word ``ring'' only for unital rings and refer to non-unital rings as {\it rngs}.
 We denote the category of rings (resp. rngs) as $\textbf{Ring}$ (resp. $\textbf{Rng}$).
 
-Let $T$ be an algebraic theory. Throughout this paper we will be mostly interested in the case when $T$ is the theory of groups or the theory of rngs.
+Let $T$ be an algebraic theory. Throughout this paper we will be mostly interested in the case where $T$ is the theory of groups or the theory of rngs.
 
 Since the category $\Pro(\Set)$ is cartesian monoidal, we may speak of the category $\Mod(T, \Pro(\Set))$ of models of $T$ in \(\Pro(\Set)\).
-In the special case when $T$ is the theory of groups (resp. rngs) this category is precisely the category of group (resp. rng) objects in $\Pro(\Set)$.
+In the special case where $T$ is the theory of groups (resp. rngs) this category is precisely the category of group (resp. rng) objects in $\Pro(\Set)$.
 
-The category of pro-groups \(\Pro(\Group)\) embeds into \(\Pro(\Set)\). Every pro-group is a group object in \(\Pro(\Set)\). It is easy to see that a morphism \(f \in \Pro(\Set)(G^{(\infty)}, H^{(\infty)})\) between pro-groups comes from \(\Pro(\Group)\) if and only if it is a morphism of group objects. Thus, $\Pro(\Group)$ is a full subcategory of the category of group objects in $\Pro(\Set)$.
+The forgetful functor $F$ from the category of pro-groups \(\Pro(\Group)\) to the category of pro-sets \(\Pro(\Set)\) is faithful. Every pro-group $G^{(\infty)}$ defines the structure of a group object in \(\Pro(\Set)\) on $F\left(G^{(\infty)}\right)$. It is easy to see that a morphism \(f \in \Pro(\Set)\left(F\left(G^{(\infty)}\right), F\left(H^{(\infty)}\right)\right)\) comes from \(\Pro(\Group)\) if and only if it is a morphism of group objects. Thus, $\Pro(\Group)$ is equivalent to a full subcategory of the category of group objects in $\Pro(\Set)$.
 
 \begin{df} \label{df-pro-set-morphisms} 
  Let $n$ be a natural number and $F_{n, T}$ be the free algebra on $n$ generators in the theory $T$.
@@ -277,7 +286,7 @@ The category of pro-groups \(\Pro(\Group)\) embeds into \(\Pro(\Set)\). Every pr
 \end{df}
 
 \begin{example}\label{example-commutator}
-Consider the case when $T$ is the theory of groups.
+Consider the case where $T$ is the theory of groups.
 Let $G^{(\infty)}$ be a group object in $\Pro(\Set)$ and $w = [t_1, t_2] = t_1 t_2 t_1^{-1} t_2^{-1} \in F(t_1, t_2)$ be the word representing the generic commutator.
 In this case the interpretation morphism $w^{(\infty)}$ (also denoted $[t_1^{(\infty)}, t_2^{(\infty)}]$) can be defined as the composition
  \[ \xymatrix{G^{(\infty)} \times G^{(\infty)} \ar[r]^(.35){\Delta \times \Delta} & G^{(\infty)} \times G^{(\infty)} \times G^{(\infty)} \times G^{(\infty)} \ar[d]_{\langle \pi_1, \pi_3, i\pi_2, i\pi_4 \rangle} & \\
@@ -286,7 +295,7 @@ where the structure of a group object on $G^{(\infty)}$ is given by the triple $
 \end{example}
 
 \subsection{Homotopes of rings and pro-rings} \label{sec:rng-homotopes}
-Let $R$ be an arbitrary ring and let \(S\) be some fixed multiplicative subset of $R$ containing a unit. Denote by $\mathcal{S}$ the category, whose objects are the elements of \(S\) and whose morphisms \(\mathcal{S}(s, s')\) are all \(s'' \in S\) such that \(ss'' = s'\). The composition and the identity morphisms are induced by the ring structure on $R$. It is clear that $\mathcal{S}$ is a filtered category. Unless stated otherwise, all the pro-sets that we encounter in the sequel have \(\mathcal S\) as their category of indices.
+For the rest of the paper $R$ denotes an arbitrary ring and \(S\) denotes a fixed multiplicative subset of $R$ containing a unit. Denote by $\mathcal{S}$ the category, whose objects are the elements of \(S\) and whose morphisms \(\mathcal{S}(s, s')\) are all \(s'' \in S\) such that \(ss'' = s'\). The composition and the identity morphisms are induced by the ring structure on $R$. It is clear that $\mathcal{S}$ is a filtered category. Unless stated otherwise, all the pro-sets that we encounter in the sequel have \(\mathcal S\) as their category of indices.
 
 We introduce the notion of a {\it homotope} of a ring inspired by a similar notion from nonassociative algebra.
 \begin{df} \label{ring-homotope}
@@ -304,7 +313,7 @@ Notice that every pro-rng $R^{(\infty)}$ can be considered as a pro-group by for
 \begin{rem}\label{rem:prorings-comment}
  Denote by $sR$ the principal ideal of $R$ generated by $s$. 
  There is an rng homomorphism $R^{(s)} \to sR$ given by $r^{(s)}\mapsto sr$.
- In the case when $R$ is an integral domain this homomorphism is easily seen to be an rng isomorphism. 
+ In the case where $R$ is an integral domain this homomorphism is easily seen to be an rng isomorphism. 
  
  The reason why we use homotopes rather than principal ideals in the definition of $R^{(\infty)}$ is that
  there is always a ``division by $s$'' homomorphism of $R$-modules $R^{(ss')} \to R^{(s')}$ given by $r^{(ss')} \mapsto r^{(s')},$
@@ -352,7 +361,7 @@ First of all, notice that the present conventions apply only to algebraic expres
 \end{conv} 
 Now we are ready to formulate our next result.
 \begin{lemma}\label{RingPresentation}
-Let \(G^{(\infty)}\) be a pro-group, $R^{(\infty)}$ be a pro-rng and \(g \colon R^{(\infty)} \times R^{(\infty)} \to G^{(\infty)}\) be a morphism of pro-sets. There is a morphism \(f \colon R^{(\infty)} \to G^{(\infty)}\) of pro-groups such that
+Let \(G^{(\infty)}\) be a pro-group, $R^{(\infty)}$ be the pro-rng defined above and \(g \colon R^{(\infty)} \times R^{(\infty)} \to G^{(\infty)}\) be a morphism of pro-sets. There is a morphism \(f \colon R^{(\infty)} \to G^{(\infty)}\) of pro-groups such that
 \[g\bigl(a^{(\infty)} , b^{(\infty)}\bigr) = f\bigl(a^{(\infty)} b^{(\infty)}\bigr)\]
 if and only if \(g\) satisfies the following identities in $\Pro(\Set)$:
 \begin{itemize}
@@ -365,7 +374,7 @@ if and only if \(g\) satisfies the following identities in $\Pro(\Set)$:
 \begin{proof}
 The necessity of the identities is clear.
 By~\cref{RingGeneration} the morphism \(f\) is unique, so it suffices to show that it exists.
-By~\cref{lem:proobj-is-a-limit} it suffices to consider the case when \(G\) is a group. 
+By~\cref{lem:proobj-is-a-limit} it suffices to consider the case where \(G\) is a group. 
 Let \(g\) be a morphism satisfying the above identities.
 By definition, there exists $s\in S$ such that $g$ is given by a homomorphism \(g' \colon R^{(s)} \times R^{(s)} \to G\) satisfying the first three identities and the identity 
 \[g'\bigl((asb)^{(s)}, c^{(s)}\bigr) = g'\bigl(a^{(s)}, (bsc)^{(s)}\bigr).\]
@@ -384,7 +393,7 @@ It is clear that \(f'\) defines the required morphism \(f\) of pro-groups.
 
 \subsection{Steinberg groups and Steinberg pro-groups}
 Let $\Phi$ be an irreducible root system of rank $\geq 3$.
-We assume that the root system is $\Phi$ contained in a Euclidean space $V = \mathbb{R}^\ell$ whose scalar product we denote by $(-, -)$.
+We assume that the root system $\Phi$ is contained in a Euclidean space $V = \mathbb{R}^\ell$ whose inner product we denote by $(-, -)$.
 For a pair of roots $\alpha, \beta \in \Phi$ we denote by $\langle \alpha, \beta \rangle$ the integer $\tfrac{2(\alpha, \beta)}{|\beta|^2}$.
 
 Recall that a root subset $\Sigma \subseteq \Phi$ is called {\it closed} if $\alpha, \beta \in \Sigma$, $\alpha+\beta\in\Phi$ imply $\alpha+\beta\in \Sigma$. A closed root subset $\Sigma$ is called {\it symmetric} (resp. {\it special}) if $\Psi = -\Psi$ (resp. $\Psi \cap -\Psi = \emptyset$). By definition, a {\it root subsystem} $\Psi \subseteq \Phi$ is a symmetric and closed root subset.
@@ -405,16 +414,20 @@ The constants $N_{\alpha,\beta}$ and $N_{\alpha,\beta}^{2,1}$ appearing in the a
 First of all, notice that we excluded the case $\Phi=\mathsf{G}_2$ so the only possibilities for $N_{\alpha, \beta}$ appearing in the above relations are $\pm 1$ or $\pm 2$.
 Notice that $|N_{\alpha,\beta}| = 2$ only when $\alpha$ and $\beta$ are short but $\alpha+\beta$ is long, in which case we set $\widehat{N}_{\alpha, \beta} = \frac{1}{2} N_{\alpha, \beta}$.
 In the other cases $|N_{\alpha, \beta}| = 1$.
-Now, by definition, $N_{\alpha,\beta}^{2,1} = N_{\alpha,\beta} \cdot \widehat{N}_{\alpha, \alpha+\beta}$.
+Now, by definition, 
+\begin{align}
+\label{eq:N21def}
+N_{\alpha,\beta}^{2,1} = N_{\alpha,\beta} \cdot \widehat{N}_{\alpha, \alpha+\beta}.
+\end{align}
 It is clear that $|N_{\alpha,\beta}^{2,1}|=1$.
 
 Many different methods of the choice of signs of the structure constants have been proposed in the literature, see e.\,g.~\cite{VP}. 
-Regardless of their concrete choice, however, the structure constants always must satisfy certain relations. First of all, recall from~\cite[\S~14]{VP}) that
+Regardless of their concrete choice, however, the structure constants always must satisfy certain relations. First of all, recall from~\cite[\S~14]{VP} that
 \begin{equation} \label{eq:sc-ids-sl} N_{\alpha, \beta} = -N_{\beta,\alpha} = - N_{-\alpha, -\beta} = \tfrac{|\alpha+\beta|^2}{|\alpha|^2} N_{\beta, -\alpha-\beta} = \tfrac{|\alpha+\beta|^2}{|\beta|^2} N_{-\alpha-\beta, \alpha}. \end{equation}
 These identities will be used in the sequel without explicit reference. 
 
 We also will need another identity for structure constants.
-To formulate it succintly, we extend the domain of the structure constant function $N_{-,-}$ by setting $N_{\alpha, \beta} = 0$ whenever $\alpha+\beta\not\in\Phi\setminus\{0\}$.
+To formulate it succinctly, we extend the domain of the structure constant function $N_{-,-}$ by setting $N_{\alpha, \beta} = 0$ whenever $\alpha+\beta\not\in\Phi\setminus\{0\}$.
 Now if $\alpha, \beta, \gamma$ is a triple of pairwise linearly independent roots such that $\alpha+\beta+\gamma\neq 0$, then one has 
 \begin{equation}\label{eq:cocycle2} N_{\alpha,\beta+\gamma} N_{\beta,\gamma} + N_{\beta,\gamma+\alpha} N_{\gamma,\alpha} + N_{\gamma,\alpha+\beta}N_{\alpha,\beta} = 0. \end{equation}
 This identity is an equivalent form of (N9) in~\cite[\S~14]{VP} (cf. also (H4) in~\cite{Re75}).
@@ -422,24 +435,28 @@ This identity is an equivalent form of (N9) in~\cite[\S~14]{VP} (cf. also (H4) i
 Notice that the multiplicative identity of $R$ is actually never used in the definition of the Steinberg group, 
  which allows one to use it in the situation when $R$ is an rng.
 \begin{df}\label{def:Steinberg-homotope}
- Let $R$ be a ring and $S$ be a multiplicative subset of $R$. Also let $\Phi$ be a root system of rank $\geq 3$. Applying the Steinberg group functor $\St(\Phi, -)$ to the projective system of rngs $R^{(s)}$ (see~\cref{ring-homotope}) we obtain a projective system of groups, whose formal projective limit will be denoted by $\St^{(\infty)}(\Phi, R)$ and will be called the {\it Steinberg pro-group}. 
+ Let %$R$ be a ring and $S$ be a multiplicative subset of $R$. Also let 
+ $\Phi$ be a root system of rank $\geq 3$. Applying the Steinberg group functor $\St(\Phi, -)$ to the projective system of rngs $R^{(s)}$ (see~\cref{ring-homotope}) we obtain a projective system of groups, whose formal projective limit will be denoted by $\St^{(\infty)}(\Phi, R)$ and will be called the {\it Steinberg pro-group}. 
 \end{df}
 
 \begin{rem} \label{rem:pro-Steinberg-comment}
-There is a group homomorphism $\St(\Phi, R^{(s)}) \to \St(\Phi, sR)$ given by $x_\alpha^{(s)}(a)\mapsto x_\alpha(sa)$. By~\cref{rem:prorings-comment} this homomorphism is an isomorphism in the case when $R$ is an integral domain. Thus, similarly to pro-rngs, Steinberg pro-groups often do not have global elements.
+There is a group homomorphism $\St(\Phi, R^{(s)}) \to \St(\Phi, sR)$ given by $x_\alpha^{(s)}(a)\mapsto x_\alpha(sa)$. By~\cref{rem:prorings-comment} this homomorphism is an isomorphism in the case where $R$ is an integral domain. Thus, similarly to pro-rngs, Steinberg pro-groups often do not have global elements.
 \end{rem}
  
 For every root $\alpha \in \Phi$ there is a ``root subgroup'' morphism in $\Pro(\Group)$
 \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R).\] 
 defined by the pre-morphism $x_\alpha^* = \mathrm{id}_S$, $x_\alpha^{(s)}(a^{(s)}) = x_\alpha(a^{(s)})$.
 
+We denote by $\GG_\mathrm{sc}(\Phi,-)$ the simply-connected Chevalley--Demazure group scheme corresponding to a root system $\Phi$.
+We also fix a pinning for $\GG_\mathrm{sc}(\Phi,-)$. By this we mean that a split maximal torus $T$ of $\GG_\mathrm{sc}(\Phi,-)$ and a Borel subgroup $B$ containing $T$ are chosen, and for every $\alpha\in\Phi$ there is an embedding $t_\alpha\colon \mathbb{G}_a\to\GG_\mathrm{sc}(\Phi, -)$.
+For $a \in R$ we call the element $t_\alpha(a)$ of $\GG_\mathrm{sc}(\Phi, R)$ an {\it elementary root unipotent}, cf.~\cite{VP}. Notice that sometimes different notation is used for these elements (e.\,g. $x_\alpha(a)$ or $e_\alpha(a)$, cf.~\cite{Ma69,St71,VP}).
+
 Recall that for an ideal $I \trianglelefteq R$ the {\it congruence subgroup} $\GG_\mathrm{sc}(\Phi, R, I)$ is defined as 
  the kernel of the homomorphism $\GG_\mathrm{sc}(\Phi, R) \to \GG_\mathrm{sc}(\Phi, R/I)$.
 
 Recall also that one can define the unitalization of an rng $R$ as the semidirect product $R \rtimes \ZZ$ (cf. e.\,g.~\cite[Definition~3.2]{Sin}).
  \begin{df}
- Let $R$ be a ring with a multiplicative system $S$.
- Consider the projective system of congruence subgroups 
+Consider the projective system of congruence subgroups
  \[\GG(\Phi, R^{(s)}) := \GG_{\mathrm{sc}}(\Phi, R^{(s)} \rtimes \ZZ, R^{(s)}) = \Ker\left(\GG_{\mathrm{sc}}(\Phi, R^{(s)} \rtimes \ZZ) \to \GG_{\mathrm{sc}}(\Phi, \ZZ)\right)\] with the structure morphisms induced by the structure morphisms of \(R^{(\infty)}\). Define the {\it simply-connected Chevalley pro-group} $\GG^{(\infty)}(\Phi, R)$ as the formal projective limit of this system.
 \end{df}
 
@@ -449,12 +466,18 @@ Recall that there is well-defined homomorphism $\mathrm{st}\colon \St(\Phi, R) \
 Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the restriction of the canonical map $\St(\Phi, R)\to\GG_{\mathrm{st}}(\Phi, R)$ to the subgroup \[\mathrm{U}(\Sigma, R) = \langle x_{\alpha}(a) \mid a\in R,\ \alpha\in \Sigma \rangle \leq \St(\Phi, R)\] is injective. Morever, for any chosen linear order on \(\Sigma\) the map $R^{\Sigma} \to \mathrm{U}(\Sigma, R)$ given by $(r_\alpha)_\alpha \mapsto \prod_\alpha x_\alpha(r_\alpha)$ is a bijection. \end{rem}
 
 \begin{rem}
- The definition of the group $\GG(\Phi, R^{(s)})$ can be reformulated in terms of Hopf algebras. Denote by \(H_\Phi\) be the Hopf \(\ZZ\)-algebra corresponding to the group scheme \(\GG_{\mathrm{sc}}(\Phi, -)\). Thus, $\GG_\mathrm{sc}(\Phi, R) = \mathbf{Ring}(H_\Phi, R)$.
+ The definition of the group $\GG(\Phi, R^{(s)})$ can be reformulated in terms of Hopf algebras. Denote by \(H_\Phi\) the Hopf \(\ZZ\)-algebra corresponding to the group scheme \(\GG_{\mathrm{sc}}(\Phi, -)\). Thus, $\GG_\mathrm{sc}(\Phi, R) = \mathbf{Ring}(H_\Phi, R)$.
  
- Recall that the coproduct in the category $\Rng$ is given by \[R_1 \otimeshat R_2 = (R_1 \otimes_{\ZZ} R_2) \oplus R_1 \oplus R_2.\]
+ Recall that the coproduct in the category $\Rng$ is given by \[R_1 \otimeshat R_2 = (R_1 \otimes_{\ZZ} R_2) \oplus R_1 \oplus R_2\]
+ with the product structure induced from that of $(R_1\rtimes\mathbb Z)\otimes_{\mathbb Z}(R_2\rtimes\mathbb Z)$. The canonical morphisms $R_i \to R_1 \otimeshat R_2$, $i=1,2$ are the obvious inclusions $r_1 \mapsto (0, r_1, 0)$, $r_2 \mapsto (0, 0, r_2)$.
+ %given by
+ %\begin{multline*}
+%(x\otimes y, a, b)\cdot(z\otimes w,c,d)=\\=(xz\otimes yw+xc\otimes y+x\otimes yd+az\otimes w+z\otimes bw+a\otimes d+c\otimes b, ac, bd).
+ %\end{multline*}
  Thus, $\Rng$ has the structure of a symmetric monoidal category with zero rng as the unit object and $\otimeshat$ as the tensor product.
- 
- We claim that the augmentation ideal \(\Ker(\varepsilon)\) of $H_\Phi$ has the structure of a Hopf algebra object (also called Hopf monoid) in \(\Rng\). The coproduct $\Delta$ and the antipode $S$ are induced from the corresponding morphisms defining the structure of a Hopf algebra on $H_\Phi$. The counit $\varepsilon$ is the unique homomorphism $\Ker(\varepsilon) \to 0$.
+
+ Recall that a {\it Hopf monoid} $H$ in a symmetric monoidal category, by definition, is a bimonoid $(H, m, u, \Delta, \varepsilon)$ such that there is a morphism $\varsigma\colon H\to H$, called the {\it antipode}, satisfying $u \circ \varepsilon = m \circ (1 \otimes \varsigma) \circ \Delta$.
+ We claim that the augmentation ideal \(\Ker(\varepsilon)\) of $H_\Phi$ has the structure of a Hopf monoid in \(\Rng\). The coproduct $\Delta$ and the antipode $\varsigma$ are induced from the corresponding morphisms defining the structure of a Hopf algebra on $H_\Phi$. The counit $\varepsilon$ is the unique homomorphism $\Ker(\varepsilon) \to 0$.
  
  Now if $R$ is an arbitary ring and $s \in R$ then there is a canonical isomorphism \(\Rng(\Ker(\varepsilon), R^{(s)}) \cong \GG(\Phi, R^{(s)})\) induced by the mapping 
  \[(h \colon \Ker(\varepsilon) \to R^{(s)}) \mapsto (\widetilde{h} \colon H_\Phi \to R^{(s)}\rtimes\ZZ), \]
@@ -465,7 +488,7 @@ Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the 
 \end{rem}
 
 \begin{rem}
- To formulate the next lemma, we need to introduce a way of reinterpreting the usual Steinberg relations~\eqref{R2}--\eqref{R4} as relations between the morphisms $x_\alpha$ in the category $\Pro(\Group)$. We call these relations the {\it pro-analogues} of~\eqref{R2}--\eqref{R4}. To obtain these relations one has to add the upper index $(\infty)$ to the free variables $a$, $b$ occuring in~\eqref{R2}--\eqref{R4} and then read the resulting expressions according to~\cref{conv:notation}. 
+ To formulate the next lemma, we need to introduce a way of reinterpreting the usual Steinberg relations~\eqref{R2}--\eqref{R4} as relations between the morphisms $x_\alpha$ in the category $\Pro(\Group)$. We call these relations the {\it pro-analogues} of~\eqref{R2}--\eqref{R4}. To obtain these relations one has to add the upper index $(\infty)$ to the free variables $a$, $b$ occuring in~\eqref{R2}--\eqref{R4} and then read the resulting expressions according to~\cref{conv:notation}. The fact that these relations hold is an easy consequence of our definitions.
  
  Notice that the pro-analogue of~\eqref{R1} is the identity $x_\alpha(a^{(\infty)}) x_\alpha(b^{(\infty)}) = x_\alpha(a^{(\infty)} + b^{(\infty)})$, or in the usual notation $m \circ (x_\alpha \times x_\alpha) = x_\alpha \circ +_{R^{(\infty)}}$. It is clear that this relation simply means that $x_\alpha$ is a morphism of group objects in $\Pro(\Set)$, which is a consequence of the condition that $x_\alpha$ is a pro-group morphism.
 \end{rem}
@@ -473,13 +496,13 @@ Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the 
 \begin{lemma}\label{SteinbergPresentation}
 Let \(G^{(\infty)}\) be a pro-group. The morphisms \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R), \ \alpha\in \Phi\] ``generate'' $\St^{(\infty)}(\Phi, R)$ in the categorical sense. In other words, to ensure that a pair of morphisms $f_1,f_2\colon\St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to verify the equalities $f_1 x_{\alpha} = f_2 x_\alpha$ for all $\alpha\in\Phi$.
 
-To obtain a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ it suffices to construct a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\) satisfying the pro-analogues of~\eqref{R2}--\eqref{R4}, in which $x_\alpha$'s are replaced with $f_{\alpha}$'s.
+To obtain a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ it suffices to construct a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\), $\alpha\in\Phi$, satisfying the pro-analogues of~\eqref{R2}--\eqref{R4}, in which $x_\alpha$'s are replaced with $f_{\alpha}$'s.
 \end{lemma}
 \begin{proof}
-Notice that by~\cref{lem:proobj-is-a-limit} both of the assertions can be verified in the special case when $G^{(\infty)} = G$ is a group.
+Notice that by~\cref{lem:proobj-is-a-limit} both of the assertions can be verified in the special case where $G^{(\infty)} = G$ is a group.
 
 Let us verify the first assertion. Since there is only a finite number of roots in $\Phi$ one can find a sufficiently large index $s \in S$ such that the homomorphisms $f_1^{(s)}, f_2^{(s)}\colon \St(\Phi, R^{(s)}) \to G$ become equal after precomposition with $x_\alpha$ for all $\alpha \in \Phi$.
-Since the root elements $x_\alpha^{(s)}(a)$ generate $\St(\Phi, R^{(s)})$ we obtain that the morphisms $f_1$ and $f_2$ are equal.
+Since the root elements $x_\alpha^{(s)}(a)$ generate $\St(\Phi, R^{(s)})$ we obtain the fact that the morphisms $f_1$ and $f_2$ are equal.
 
 Let us verify the second assertion. By definition, a morphism $f_\alpha \colon R^{(\infty)} \to G$ corresponds to a single group homomorphism 
  $f'_\alpha \colon R^{(s_\alpha)} \to G$ for some $s_\alpha \in S$. Precomposing each $f'_\alpha$ with the structure morhism $R^{(s)} \to R^{(s_\alpha)}$ for sufficiently large $s \in S$, we obtain a collection of homomorphisms $\widetilde{f}_\alpha \colon R^{(s)} \to G$.
@@ -491,7 +514,7 @@ Thus, we obtain a group homomorphism $\St(\Phi, R^{(s)}) \to G$, which, in turn,
 Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a group object in $\Pro(\Set)$ is essential in the proof of the above lemma.
 
 \section{Elimination of roots}
-Throughtout this section we always assume that \(R\) is an arbitrary commutative ring, 
+Throughout this section we always assume that \(R\) is an arbitrary commutative ring,
  \(S \subseteq R\) is a multiplicative subset of $R$ and \(\Phi\) is a root system of rank \(\geq 3\) different from \(\rB_\ell\) and \(\rC_\ell\). 
 
 \begin{lemma}\label{ThreeRoots}
@@ -499,18 +522,24 @@ Let \(\alpha, \beta, \gamma \in \Phi\) be a triple of roots having the same leng
 Then there exist roots \(\beta_1, \gamma_1 \in \Phi \setminus (\ZZ\beta + \ZZ\gamma)\) having the same length as $\beta$ and, moreover, such that \(\beta_1 + \gamma_1 = \beta\). The roots $\beta, \gamma, \beta_1, \gamma_1$ are contained in a root subsystem $\Phi_0 \subseteq \Phi$, whose type is either \(\rA_3\) or \(\rC_3\). \end{lemma}
 \begin{proof}
 Denote by $\Phi'$ the subset of $\Phi$ consisting of roots having the same length as $\beta$.
-It follows from our assumptions that either $\Phi$ is simply-laced and $\Phi' = \Phi$ or $\Phi = \rF_4$, in which case $\Phi'$ is a root subset isomorphic to $\rD_4$ (notice that $\Phi'$ is closed only if $\beta$ is long). In either case the Dynkin diagram of $\Phi'$ is simply laced and has at least $3$ vertices, which implies the first assertion.
+It follows from our assumptions that either $\Phi$ is simply-laced and $\Phi' = \Phi$ or $\Phi = \rF_4$, in which case $\Phi'$ is a root subset isomorphic to $\rD_4$ (notice that $\Phi'$ is closed only if $\beta$ is long). In either case the Dynkin diagram of $\Phi'$ is simply laced, connected and has at least $3$ vertices. Since all root subsystems of $\Phi'$ of type $\rA_2$ lie in the same orbit under the action of the Weyl group of $\Phi'$, we may assume $\beta$ and $\gamma$ to be basic roots corresponding to adjacent nodes on the Dynkin diagram of $\Phi'$, in which case the first assertion is clear.
 
-Notice that the smallest root subsystem $\Phi_0$ containing $\alpha, \gamma, \beta_1, \gamma_1$ is irreducible and has rank $3$, which implies that it is either of type  $\rC_3$ (if $\Phi = \rF_4$ and $\beta$ is short) or $\rA_3$ (otherwise). \end{proof}
+For any choice of $\beta_1$ and $\gamma_1$ notice that the smallest root subsystem $\Phi_0$ containing $\beta, \gamma, \beta_1, \gamma_1$ is irreducible and has rank $3$, which implies that it is either of type $\rC_3$ (if $\Phi = \rF_4$ and $\beta$ is short) or $\rA_3$ (otherwise). \end{proof}
 
 As an immediate application of the above lemma we prove the following generation result, which is a stronger version of the first claim of~\cref{SteinbergPresentation}.
- \begin{lemma}\label{DoubleRootElimination}  
-  Let $\alpha, \beta \in \Phi$ be a pair of nonparallel roots. Denote by \(\Phi_0 \subseteq \Phi\) the rank \(2\) subsystem spanned by $\alpha, \beta \in \Phi$, i.e. \(\Phi_0 = \Phi \cap (\ZZ\alpha + \ZZ\beta)\). The collection of root subgroup morphisms $x_\gamma \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ for $\gamma \in \Phi\setminus \Phi_0$ generates $\St^{(\infty)}(\Phi, R)$ in the categorical sense. In other words, for any pro-group $G^{(\infty)}$ to show that morphisms $f_1, f_2 \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to show that $f_1x_\gamma = f_2x_\gamma$ for all $\gamma \in \Phi\setminus\Phi_0$.
+ \begin{lemma}\label{DoubleRootElimination}
+  Let \(\Phi_0 \subseteq \Phi\) be a rank \(2\) subsystem.
+  The collection of root subgroup morphisms $x_\gamma \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ for $\gamma \in \Phi\setminus \Phi_0$ generates $\St^{(\infty)}(\Phi, R)$ in the categorical sense. In other words, for any pro-group $G^{(\infty)}$ to show that morphisms $f_1, f_2 \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to show that $f_1x_\gamma = f_2x_\gamma$ for all $\gamma \in \Phi\setminus\Phi_0$.
  \end{lemma}
  \begin{proof}
   Thanks to~\cref{SteinbergPresentation} it suffices to show that $f_1 x_\delta = f_2 x_\delta$ for all $\delta \in \Phi_0$.
-  
-  Let $\delta$ be a root lying in $\Phi_0$. We claim that $\delta$ can be decomposed as a sum $\gamma_1 + \gamma_2$ for some $\gamma_1,\gamma_2 \in \Phi\setminus\Phi_0$ having the same length as $\delta$. Indeed, in the case when \(\Phi_0\) is of type \(\rA_2\) the assertion follows from~\cref{ThreeRoots}, otherwise it is obvious.  
+  Let $\delta$ be a root lying in $\Phi_0$. We claim that $\delta$ can be decomposed as a sum $\gamma_1 + \gamma_2$ for some $\gamma_1,\gamma_2 \in \Phi\setminus\Phi_0$ having the same length as $\delta$.
+  We need to consider several cases.
+\begin{itemize}
+  \item Case \(\Phi_0 \cong \rA_2\). The claim follows from~\cref{ThreeRoots}.
+  \item Case $\Phi_0 \cong \rB_2$ (only possible for $\Phi=\rF_4$). Since all root subsystems of type $\rB_2$ lie in the same orbit under the action of $W(\rF_4)$ (cf. e.\,g.~\cite[Table~8]{Ca72}), we may assume that $\Phi_0$ corresponds to the central edge of the Dynkin diagram of $\rF_4$ and $\delta$ is one of the nodes incident to it, in which case the claim is obvious.
+  \item Case $\Phi_0 \cong \rA_1+\rA_1$. If $\Phi$ is simply-laced or $\Phi_0$ has roots of different length, acting by a suitable element of $W(\Phi)$ we may achieve that the basis vectors of $\Phi_0$ correspond to a pair of unjoined nodes of the Dynkin diagram of $\Phi$, in which case the claim is also obvious. Finally, if $\Phi=\rF_4$ and the roots of $\Phi_0$ have the same length, our claim follows from the fact that it holds already for the root subsystem $\Phi'\cong \rD_4$ consisting of roots of $\Phi$ having the same length as the roots of $\Phi_0$.
+\end{itemize}
   It is clear that
   \begin{multline*} f_1(x_\delta(a^{(\infty)}b^{(\infty)})) = [f_1(x_{\gamma_1}(N_{\gamma_1, \gamma_2}a^{(\infty)})),\ f_1(x_{\gamma_2}(b^{(\infty)}))] \\
   = [f_2(x_{\gamma_1}(N_{\gamma_1, \gamma_2}a^{(\infty)})),\ f_2(x_{\gamma_2}(b^{(\infty)}))] = f_2(x_\delta(a^{(\infty)}b^{(\infty)})), \end{multline*}
@@ -518,30 +547,30 @@ As an immediate application of the above lemma we prove the following generation
  \end{proof}
 
 \begin{df}
-We denote by $\St(\Phi\setminus\{\pm \alpha\}, R)$ the group given by generators $x_\beta(a)$, $\beta \neq \pm \alpha$, $a\in R$ and the subset of the set of relations \eqref{R1}--\eqref{R4} consisting of those relations, expressions for which do not contain $x_{\pm\alpha}(a)$.
+We denote by $\St(\Phi\setminus\{\alpha\}, R)$ the group given by generators $x_\beta(a)$, $\beta \neq \alpha$, $a\in R$ and the subset of the set of relations \eqref{R1}--\eqref{R4} consisting of those relations, expressions for which do not contain $x_{\alpha}(a)$. %If $\alpha$ happens to be short we also omit the relations \([x_\beta(b), x_\gamma(c)] = 1\) for all long roots \(\beta, \gamma\) such that \(\beta + \gamma = 2\alpha\).
 
-Similarly to~\cref{def:Steinberg-homotope} one can define the pro-group $\St^{(\infty)}(\Phi \setminus\{\pm \alpha\}, R)$ as
-the formal projective limit of the projective system of groups $\St(\Phi\setminus\{\pm \alpha\}, R^{(s)})$ where $s\in S$.
+Similarly to~\cref{def:Steinberg-homotope} one can define the pro-group $\St^{(\infty)}(\Phi \setminus\{ \alpha\}, R)$ as
+the formal projective limit of the projective system of groups $\St(\Phi\setminus\{ \alpha\}, R^{(s)})$ where $s\in S$.
 \end{df}
 
-For $\beta \neq \pm\alpha$ we use the same notation $x_\beta$ for the ``root subgroup'' morphisms $R^{(\infty)}\to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R)$.
+For $\beta \neq \alpha$ we use the same notation $x_\beta$ for the ``root subgroup'' morphisms $R^{(\infty)}\to \St^{(\infty)}(\Phi \setminus\{\alpha\}, R)$.
 \begin{rem} \label{rem:xpma-presentation}
- One can obtain the analogue of~\cref{SteinbergPresentation} for the pro-group $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ by repeating the same proof verbatim. In particular, $x_\beta$ for $\beta\neq \pm\alpha$ generate $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ in the categorical sense.
+ One can obtain the analogue of~\cref{SteinbergPresentation} for the pro-group $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$ by repeating the same proof verbatim. In particular, $x_\beta$ for $\beta\neq \alpha$ generate $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$ in the categorical sense.
 \end{rem}
 There is a morphism of pro-groups
-$F_\alpha \colon \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R) \to \St^{(\infty)}(\Phi, R).$
-given by the pre-morphism $F_\alpha^{*} = \mathrm{id}_S$ and the homomorphisms \[F_\alpha^{(s)} \colon \St(\Phi \setminus\{\pm\alpha\}, R^{(s)}) \to \St(\Phi, R^{(s)})\] induced by the obvious embedding of generators.
+$F_\alpha \colon \St^{(\infty)}(\Phi \setminus\{\alpha\}, R) \to \St^{(\infty)}(\Phi, R).$
+given by the pre-morphism $F_\alpha^{*} = \mathrm{id}_S$ and the homomorphisms \[F_\alpha^{(s)} \colon \St(\Phi \setminus\{\alpha\}, R^{(s)}) \to \St(\Phi, R^{(s)})\] induced by the obvious embedding of generators.
 
-Notice that, in general, the individual homomorphisms $F_\alpha^{(s)}$ need {\it not} be isomorphisms (at least if $s \neq 1$). On the other hand, as the following result shows, the morphism of pro-groups $F_\alpha$ is often an isomorphism. 
+Notice that, in general, the individual homomorphisms $F_\alpha^{(s)}$ need {\it not} be isomorphisms (at least if $s \neq 1$). On the other hand, as the following result shows, the morphism of pro-groups $F_\alpha$ is an isomorphism. 
 \begin{theorem}\label{SingleRootElimination} For every root \(\alpha \in \Phi\) the morphism $F_\alpha$ is an isomorphism of pro-groups. \end{theorem}
 The proof of~\cref{SingleRootElimination} occupies the rest of this subsection.
-Our immediate goal is to construct the root subgroup morphisms
-\[\widetilde x_{\pm \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R) \] ``missing'' from the presentation of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$. The construction of $\widetilde{x}_{-\alpha}$ is analogous to $\widetilde{x}_\alpha$, so it suffices to construct only the latter.
+Our immediate goal is to construct the root subgroup morphism
+\[\widetilde x_{ \alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{ \alpha\}, R) \] ``missing'' from the presentation of $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$. %The construction of $\widetilde{x}_{-\alpha}$ is analogous to $\widetilde{x}_\alpha$, so it suffices to construct only the latter.
 
 \begin{df} \label{def:xbg}
-Let $\beta, \gamma \in \Phi$ be an arbitrary fixed pair of roots such that $\alpha = \beta+\gamma$ and the length of $\beta$, $\gamma$ is the same as $\alpha$'s. 
+Let $\beta, \gamma \in \Phi$ be an arbitrary fixed pair of roots such that $\alpha = \beta+\gamma$ and $\alpha$, $\beta$, and $\gamma$ have the same length. 
 Denote by $x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)})$ the morphism
- $[x_\beta(N_{\beta,\gamma}b^{(\infty)}),\ x_\gamma(c^{(\infty)})]\colon R^{(\infty)} \times R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\pm\alpha\}, R).$
+ $[x_\beta(N_{\beta,\gamma}b^{(\infty)}),\ x_\gamma(c^{(\infty)})]\colon R^{(\infty)} \times R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus\{\alpha\}, R).$
 \end{df}
 Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism $x_{\beta,\gamma}$, see~\cref{lem:new-root}. However, in order to be able to do this we first need to prove the following assertion.
 
@@ -567,7 +596,7 @@ Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism
  First of all, observe that the above relations are obtained from \eqref{R2}--\eqref{R4} by replacing $x_\alpha(a^{(\infty)})$ with $x_{\beta, \gamma}(b^{\infty}, c^{\infty})$.
  
  Let us first consider the case \(\delta \in \Phi \setminus (\ZZ \beta + \ZZ \gamma)\).
- Notice that the root subset $\Sigma = \Phi \cap (\ZZ_{\geq 0}\beta + \ZZ_{\geq 0}\gamma + \ZZ_{>0}\delta)$ is special and does not contain $\pm\alpha$, $-\beta$ or $-\gamma$. Thus, the relations between the remaining root subgroup morphisms of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ suffice to rewrite the left-hand side of~\eqref{R2-bg}--\eqref{R4-bg2} as follows:
+ Notice that the root subset $\Sigma = \Phi \cap (\ZZ_{\geq 0}\beta + \ZZ_{\geq 0}\gamma + \ZZ_{>0}\delta)$ is special and does not contain $\alpha$, $-\beta$ and $-\gamma$. Thus, the relations between the remaining root subgroup morphisms of $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$ suffice to rewrite the left-hand side of~\eqref{R2-bg}--\eqref{R4-bg2} as follows:
  \begin{align}
   &\bigl[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\delta(d^{(\infty)})\bigr] \label{eq:elim-lhs_1} \\
   %
@@ -588,7 +617,7 @@ Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism
  \end{equation}
   By~\cref{rem:uni-rad} the integers $A_{i,j,k}$ are uniquely determined by~\eqref{eq:elim-lhs_2}.
   It is easy to see that, depending on the relative position of $\alpha$ and $\delta$, the integers $A_{i,j,k}$ coincide with the structure constants in the right-hand sides of~\eqref{R2},~\eqref{R3} or~\eqref{R4}, in particular, $A_{i,j,k}=0$ for $i\neq j$.
-  Thus, we obtain that \eqref{R2-bg}--\eqref{R4-bg2} follow from~\eqref{eq:elim-lhs_1}.
+  Thus, \eqref{R2-bg}--\eqref{R4-bg2} follow from~\eqref{eq:elim-lhs_1}.
  
  It remains to verify Steinberg relations in the case \(\delta \in \Phi \cap (\ZZ \beta + \ZZ \gamma)\).
  By~\cref{ThreeRoots} there exist roots \(\beta_1, \beta_2 \in \Phi \setminus (\ZZ \beta + \ZZ \gamma)\) such that \(|\beta_1| = |\beta_2| = |\beta|\) and \(\beta = \beta_1 + \beta_2\). 
@@ -602,17 +631,17 @@ Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism
    = [x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ [x_{\beta_1}(b_1^{(\infty)}),\ x_{\beta_2}(b_2^{(\infty)})]]  & \text{ by~\eqref{R3}} \label{eq:elim-lhs3} \\ 
    = [[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_{\beta_1}(b_1)],\ \up{x_{\beta_1}(b_1^{(\infty)})} x_{\beta_2}(b_2^{(\infty)})]  & \text{ by~\eqref{eq:HW-corr},\eqref{R2-bg}.} \nonumber \end{align}
 In the case $\Phi_0\cong \rA_3$ the inner commutator in the last expression is trivial by~\eqref{R2-bg},
- therefore so is the outer commutator.
+ therefore so is the outer commutator (notice that $\alpha$ and $\beta_1$ form a sharp angle).
 In the case $\Phi_0\cong \rC_3$ the last expression can be further simplified using~\eqref{R3} and the already proved relation~\eqref{R3-bg} as follows:
 \[ \ldots = [x_{\alpha+\beta_1}(N_{\alpha, \beta_1} b^{(\infty)}c^{(\infty)}b_1^{(\infty)}),\ x_{\beta}(N_{\beta_1, \beta_2} b_1^{(\infty)} b_2^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})]. \]
-It is clear that the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} and~\eqref{R2-bg}.  
-  In both cases the right-hand side of~\eqref{eq:elim-lhs3} is trivial. Consequently, from~\cref{RingGeneration} we obtain that
+Since $\alpha+\beta_1$ and $\beta$ form a sharp angle, the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} and~\eqref{R2-bg}.  
+  In both cases the right-hand side of~\eqref{eq:elim-lhs3} is trivial. Consequently, from~\cref{RingGeneration} we obtain the fact that
  $[x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\beta(d^{(\infty)})] = 1,$
  which completes the proof of~\eqref{R2-bg}. 
  
  Finally, it remains to verify~\eqref{R3-bg} in the case $\delta \in \{-\beta, -\gamma\}$.
  By symmetry it suffices to consider the case $\delta = -\beta$.
- From the already proved relations~\eqref{R2-bg}--\eqref{R3-bg} and the other Steinberg relations one obtains that
+ From the already proved relations~\eqref{R2-bg}--\eqref{R3-bg} and the other Steinberg relations one obtains
  \begin{align*}
   &[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),
   x_{-\beta}(N_{-\beta_1, -\beta_2} b_1^{(\infty)} b_2^{(\infty)})] \\
@@ -627,13 +656,13 @@ It is clear that the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} an
   x_{i\alpha - j\beta_1 - k\beta_2}\bigl(B_{i, j, k} {b^{(\infty)}}^i {c^{(\infty)}}^i {b_1^{(\infty)}}^j {b_2^{(\infty)}}^k\bigr),  
  \end{align*}
 for some integers $B_{i,j,k}$.
-Direct computation (or an argument similar to the one used in the first part of the proof) shows that the constants \(B_{i, j, k}\) are all zero with the sole exception of \(B_{1, 1, 1}$, which is equal to $N_{\alpha, -\beta}\). Consequently, from~\cref{RingGeneration} we obtain that
+Direct computation (or an argument similar to the one used in the first part of the proof) shows that the constants \(B_{i, j, k}\) are all zero with the sole exception of \(B_{1, 1, 1}$, which is equal to $N_{\alpha, -\beta}\). Consequently, from~\cref{RingGeneration} we obtain
  \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_{-\beta}(d^{(\infty)})] = x_\gamma(N_{\alpha, -\beta} b^{(\infty)} c^{(\infty)} d^{(\infty)}),\]
 which finishes the proof of~\eqref{R3-bg}.
 \end{proof}
 
 \begin{lemma}\label{lem:new-root}
- The morphism $x_{\beta, \gamma}$ satisfies the identities listed in~\cref{RingPresentation} and therefore gives rise to a pro-group morphism $R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R),$ which we denote by $\widetilde{x}_\alpha$. The resulting morphism $\widetilde{x}_\alpha$ does not depend on the choice of $\beta$ and $\gamma$.
+ The morphism $x_{\beta, \gamma}$ satisfies the identities listed in~\cref{RingPresentation} and therefore gives rise to a pro-group morphism $R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{\alpha\}, R),$ which we denote by $\widetilde{x}_\alpha$. The resulting morphism $\widetilde{x}_\alpha$ does not depend on the choice of $\beta$ and $\gamma$.
 \end{lemma}
 \begin{proof}
  First of all, observe that~\eqref{R2-bg} implies the identity \[[x_{\beta, \gamma}(b_1^{(\infty)}, c_1^{(\infty)}),
@@ -658,38 +687,39 @@ which finishes the proof of~\eqref{R3-bg}.
 In order to simplify keeping track of the relative angles and the length of the roots, the reader may assume that  $\beta_i$, $\gamma_i$ are concretely realized in the space $\mathbb{R}^3$ as follows:
 \(\beta_1 = \mathrm e_1 - \mathrm e_2,\) \(\gamma_1 = \mathrm e_2 - \mathrm e_3\) and
  \begin{itemize}
- \item $\beta_2 = \mathrm e_1 - \mathrm e_4$, $\gamma_2 = \mathrm e_4 - \mathrm e_3$ in the case \(\Phi_0\cong\rA_3\), \item $\beta_2 = \mathrm e_1 + \mathrm e_2$, $\gamma_2 = -\mathrm e_2 - \mathrm e_3$ in the case \(\Phi_0\cong\rC_3\).
+ \item $\beta_2 = \mathrm e_1 - \mathrm e_4$, $\gamma_2 = \mathrm e_4 - \mathrm e_3$, $\delta = \mathrm e_2 - \mathrm e_4$ in the case \(\Phi_0\cong\rA_3\), \item $\beta_2 = \mathrm e_1 + \mathrm e_2$, $\gamma_2 = -\mathrm e_2 - \mathrm e_3$, $\delta = 2 \mathrm e_2$ in the case \(\Phi_0\cong\rC_3\).
 \end{itemize}
 Here $\mathrm e_i$ denote the standard basis vectors of $\mathbb{R}^3$ and we assume that the root systems $\rA_3$ and $\rC_3$ are realized in $\mathbb{R}^3$ as in~\cite[Ch.~VI,~\S\S~4.6--4.7]{Bou81}. 
 
  Substituting the triple $(\beta_1, \gamma_1, -\beta_2)$ into~\eqref{eq:cocycle2}, it is not hard to conclude that in both cases one has $\varepsilon_1 \varepsilon_2 \varepsilon_3 \varepsilon_4 = 1$. Now direct calculation shows that
  \begin{align*}
 x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\varepsilon_1b^{(\infty)}), x_{\gamma_1}(c^{(\infty)} d^{(\infty)})] & \nonumber \\
-= [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_{\delta}(\varepsilon_3c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]] &\text{  by~\eqref{R3} or~\eqref{R2},\eqref{R4},\eqref{eq:comm-mult-rhs}.} \nonumber \\ 
+= [x_{\beta_1}(\varepsilon_1b^{(\infty)}), [x_{\delta}(\varepsilon_3c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})]]&\\
+\text{  by~\eqref{R3} if } \Phi_0 \cong \rA_3 \text{ and by ~\eqref{R2},\eqref{R4},\eqref{eq:comm-mult-rhs} if } \Phi_0 &\cong \rC_3 \nonumber \\ 
 = [[x_{\beta_1}(\varepsilon_1b^{(\infty)}),\ x_\delta(\varepsilon_3c^{(\infty)})],\ {}^{x_\delta(\varepsilon_3c^{(\infty)})}x_{\gamma_2}(d^{(\infty)})] & \text{ by~\eqref{R2},\eqref{eq:HW-corr}}\\
 = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)}) x_{\gamma_1}(c^{(\infty)}d^{(\infty)}) ] & \text{ by~\eqref{R3}}\\
 = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \\
 = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}). & \end{align*}
 
- Thus, in both cases we obtain that
+ Thus, in both cases we obtain the fact that
  \begin{equation}\label{eq:balance}
  x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
  \end{equation}
- It follows from~\eqref{eq:balance} that $x_{\beta_1,\gamma_1}(b^{(\infty)}, u_1^{(\infty)}u_2^{(\infty)}d^{(\infty)}) = x_{\beta_1,\gamma_1}(b^{(\infty)}u_1^{(\infty)}u_2^{(\infty)},d^{(\infty)})$ therefore from~\cref{RingGeneration} we obtain that
+ It follows from~\eqref{eq:balance} that $x_{\beta_1,\gamma_1}(b^{(\infty)}, u_1^{(\infty)}u_2^{(\infty)}d^{(\infty)}) = x_{\beta_1,\gamma_1}(b^{(\infty)}u_1^{(\infty)}u_2^{(\infty)},d^{(\infty)})$ therefore from~\cref{RingGeneration} we obtain the fact that
  \[x_{\beta_1, \gamma_1}(b^{(\infty)}, u^{(\infty)} c^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)} u^{(\infty)}, c^{(\infty)}).\]
- Thus, the last requirement of~\cref{RingPresentation} is satisfied. Consequently, there exists a unique morphism of pro-groups \(\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\) satisfying
+ Thus, the last requirement of~\cref{RingPresentation} is satisfied. Consequently, there exists a unique morphism of pro-groups \(\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\alpha\}, R)\) satisfying
  \[x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)}). \qedhere\]
 \end{proof}
 
 The next step in the proof of~\cref{SingleRootElimination} is to verify that $\widetilde{x}_\alpha$ satisfies the relations~\eqref{R2}--\eqref{R4}.
-Notice that none of these relations simultaneously involves both \(\alpha\) and \(-\alpha\).
-Thus, by symmetry it suffices to verify only Steinberg relations involving \(\alpha\).
+%Notice that none of these relations simultaneously involves both \(\alpha\) and \(-\alpha\).
+%Thus, by symmetry it suffices to verify only Steinberg relations involving \(\alpha\).
 Combining \cref{lem:elim-lhs,lem:new-root} we immediately obtain the following.
 \begin{corollary} \label{cor:elim-lhs}
  The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations of type~\eqref{R2}--\eqref{R4}, in which it occurs on the left-hand side.
 \end{corollary}
 
-Thus, to finish the proof of~\cref{SingleRootElimination} it suffices to consider the case when $\widetilde{x}_\alpha$ occurs in the right-hand side of the commutator formula.
+Thus, to finish the proof of~\cref{SingleRootElimination} it suffices to consider the case where $\widetilde{x}_\alpha$ occurs in the right-hand side of the commutator formula.
 \begin{lemma} \label{lem:elim-rhs-r4}
  The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations of type~\eqref{R4} in which it occurs on the right-hand side.
 \end{lemma}
@@ -697,16 +727,25 @@ Thus, to finish the proof of~\cref{SingleRootElimination} it suffices to conside
 We only need to consider the case $\Phi = \rF_4$.
 We need to verify the relation obtained from \begin{equation}\label{eq:elim-rhs-r4-1} [x_{\beta}(b^{(\infty)}),\ x_{\gamma}(c^{(\infty)})] = x_{\beta+\gamma}(N_{\beta,\gamma}b^{(\infty)} c^{(\infty)}) x_{2\beta+\gamma}(N_{\beta,\gamma}^{2,1}{b^{(\infty)}}^2c^{(\infty)})\end{equation} by replacing either $x_{\beta+\gamma}$ or $x_{2\beta+\gamma}$ with $\widetilde{x}_{\alpha}$.
 
-First, let us consider the case \(\alpha = \beta + \gamma\), in which \(\alpha\), \(\beta\) are short and \(\gamma\) is long. Consider a decomposition \(\beta = \beta_1 + \beta_2\) for some short roots \(\beta_i\). The smallest root subsystem containing \(\beta_i\) and \(\gamma\) is of type \(\rC_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_1 - \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\beta_2 = \mathrm e_2 - \mathrm e_3\), \(\gamma = 2\mathrm e_3\). Set $\varepsilon_1 = N_{\beta_1, \beta_2},$ $\varepsilon_2 = N_{\beta_2,\gamma}^{2,1},$ $\varepsilon_3 = N_{\beta_2, \gamma},$ $\varepsilon_4 = N_{\beta_1, 2\beta_2+\gamma}^{2,1},$ $\varepsilon_5 = N_{\beta_1, 2\beta_2+\gamma},$ $\varepsilon_6 = N_{\beta_1,\beta_2+\gamma},$ $\varepsilon_7 = N_{\beta_2+\gamma, \beta}.$ From~\eqref{R4} we immediately obtain that
+First, let us consider the case \(\alpha = \beta + \gamma\), in which \(\alpha\), \(\beta\) are short and \(\gamma\) is long. Consider a decomposition \(\beta = \beta_1 + \beta_2\) for some short roots \(\beta_i\). The smallest root subsystem containing \(\beta_i\) and \(\gamma\) is of type \(\rC_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_1 - \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\beta_2 = \mathrm e_2 - \mathrm e_3\), \(\gamma = 2\mathrm e_3\). Set $\varepsilon_1 = N_{\beta_1, \beta_2},$ $\varepsilon_2 = N_{\beta_2,\gamma}^{2,1},$ $\varepsilon_3 = N_{\beta_2, \gamma},$ $\varepsilon_4 = N_{\beta_1, 2\beta_2+\gamma}^{2,1},$ $\varepsilon_5 = N_{\beta_1, 2\beta_2+\gamma},$ $\varepsilon_6 = N_{\beta_1,\beta_2+\gamma},$ $\varepsilon_7 = N_{\beta_2+\gamma, \beta}.$ From~\eqref{eq:comm-new} and \eqref{R4} we immediately obtain
  \begin{multline*}
   \bigl[x_\gamma(c^{(\infty)}), x_\beta(\varepsilon_1 b_1^{(\infty)} b_2^{(\infty)})\bigr]
   = \bigl[x_{\beta_1}(b_1^{(\infty)}), \up{x_\gamma(c^{(\infty)})} {x_{\beta_2}(b_2^{(\infty)})}\bigr]\,
   x_\beta(-\varepsilon_1 b_1^{(\infty)} b_2^{(\infty)}) \\
-  =[x_{\beta_1}(b_1^{(\infty)}),\ x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_2+\gamma}(-\varepsilon_3b_2^{(\infty)}c^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})] x_{\beta}(-\varepsilon_1b_1b_2) \end{multline*}
- Direct computation involving~\eqref{eq:comm-mult-rhs}, \cref{cor:elim-lhs} and relations~\eqref{R2}--\eqref{R4} shows that the latter expression further simplifies to
- \begin{multline*}  x_{2\beta + \gamma}( - \varepsilon_2 \varepsilon_4 {b_1^{(\infty)}}^2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_1 + 2\beta_2 + \gamma}(-(\varepsilon_2\varepsilon_5 +\varepsilon_1\varepsilon_3\varepsilon_7) b_1^{(\infty)}{b_2^{(\infty)}}^2c^{(\infty)}) \cdot \\ \cdot \widetilde{x}_{\alpha}(-\varepsilon_3 \varepsilon_6 b_1^{(\infty)}b_2^{(\infty)}c^{(\infty)}).\end{multline*}
-Substituting the triples $(\beta_1, \beta_2+\gamma, \beta_2)$, $(\beta_1, \beta_2, \gamma)$, $(\beta_1, \beta_1+\beta_2, \beta_2+\gamma)$ into~\eqref{eq:cocycle2} we obtain the equalities \[\varepsilon_2 \varepsilon_3 \varepsilon_5 = - \varepsilon_1 \varepsilon_7,\ \varepsilon_3 \varepsilon_6  = N_{\beta, \gamma}\varepsilon_1,\ 2 \varepsilon_4 \varepsilon_5 \varepsilon_7 = - \varepsilon_6 N_{\beta,\alpha}.\] Together with~\cref{RingGeneration} they imply the identity \[[x_\gamma(c^{(\infty)}), x_\beta(b^{(\infty)})] = 
- \widetilde{x}_\alpha(-N_{\beta, \gamma} b^{(\infty)} c^{(\infty)}) x_{2\beta+\gamma}(-N_{\beta,\gamma}^{2,1} {b^{(\infty)}}^2 {c^{(\infty)}}^2),\] which is equivalent to~\eqref{eq:elim-rhs-r4-1}. 
+  =[x_{\beta_1}(b_1^{(\infty)}),\ x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_2+\gamma}(-\varepsilon_3b_2^{(\infty)}c^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})] x_{\beta}(-\varepsilon_1b_1^{(\infty)}b_2^{(\infty)}). \end{multline*}
+ Using~\eqref{eq:comm-mult-rhs}, \cref{cor:elim-lhs} and relations~\eqref{R2}--\eqref{R4}, we can rewrite the latter expression as follows:
+ \begin{multline*}
+ \bigl[x_{\beta_1}(b_1^{(\infty)}), x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)})\bigr] \cdot \up{x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)})}{\bigl[x_{\beta_1}(b_1^{(\infty)}), x_{\beta_2+\gamma}(-\varepsilon_3b_2^{(\infty)}c^{(\infty)})\bigr]} \cdot\\
+ \cdot \bigl[x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_2+\gamma}(-\varepsilon_3b_2^{(\infty)}c^{(\infty)}), x_{\beta}(\varepsilon_1b_1^{(\infty)}b_2^{(\infty)})\bigr]\\
+ = x_{\beta_1 + 2\beta_2 + \gamma}(-\varepsilon_2 \varepsilon_5 b_1^{(\infty)} {b_2^{(\infty)}}^2 c^{(\infty)})\, x_{2\beta + \gamma}(-\varepsilon_2 \varepsilon_4 {b_1^{(\infty)}}^2 {b_2^{(\infty)}}^2 c^{(\infty)})\\
+ \cdot \widetilde x_\alpha(-\varepsilon_3 \varepsilon_6 b_1^{(\infty)} b_2^{(\infty)}c^{(\infty)})\,
+ x_{\beta_1 + 2\beta_2 + \gamma}(-\varepsilon_1 \varepsilon_3 \varepsilon_7 b_1^{(\infty)} {b_2^{(\infty)}}^2 c^{(\infty)})\\
+ = x_{2\beta + \gamma}( - \varepsilon_2 \varepsilon_4 {b_1^{(\infty)}}^2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_1 + 2\beta_2 + \gamma}(-(\varepsilon_2\varepsilon_5 +\varepsilon_1\varepsilon_3\varepsilon_7) b_1^{(\infty)}{b_2^{(\infty)}}^2c^{(\infty)}) \\
+ \cdot \widetilde{x}_{\alpha}(-\varepsilon_3 \varepsilon_6 b_1^{(\infty)}b_2^{(\infty)}c^{(\infty)}).
+\end{multline*}
+Substituting the triples $(\beta_1, \beta_2+\gamma, \beta_2)$, $(\beta_1, \beta_2, \gamma)$, $(\beta_1, \beta_1+\beta_2, \beta_2+\gamma)$ into~\eqref{eq:cocycle2} we obtain the equalities \[\varepsilon_2 \varepsilon_3 \varepsilon_5 = - \varepsilon_1 \varepsilon_7,\ \varepsilon_3 \varepsilon_6  = N_{\beta, \gamma}\varepsilon_1,\ 2 \varepsilon_4 \varepsilon_5 \varepsilon_7 = - \varepsilon_6 N_{\beta,\alpha},\]
+which together with~\eqref{eq:N21def} imply \[\varepsilon_2 \varepsilon_4 = \tfrac{1}{2} \varepsilon_1 \varepsilon_3 \varepsilon_5 \varepsilon_7 \cdot \varepsilon_5 \varepsilon_6 \varepsilon_7 N_{\beta,\alpha}= \tfrac{1}{2} \varepsilon_1 \varepsilon_3 \varepsilon_6 N_{\beta, \alpha} = \tfrac{1}{2} N_{\beta,\gamma} N_{\beta,\alpha}= N_{\beta, \gamma}^{2, 1}.\] Thus, using~\cref{RingGeneration} we conclude that \[[x_\gamma(c^{(\infty)}), x_\beta(b^{(\infty)})] =
+ \widetilde{x}_\alpha(-N_{\beta, \gamma} b^{(\infty)} c^{(\infty)}) x_{2\beta+\gamma}(-N_{\beta,\gamma}^{2,1} {b^{(\infty)}}^2 {c^{(\infty)}}),\] which is equivalent to~\eqref{eq:elim-rhs-r4-1}.
  
  Now consider the case \(\alpha = 2\beta + \gamma\), in which \(\beta\) is short and \(\alpha\), \(\gamma\) are long. We can choose a decomposition \(\gamma = \gamma_1 + \gamma_2\) for some long roots \(\gamma_i\). The smallest root subsystem containing \(\beta\) and \(\gamma_i\) is of type \(\rB_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_3\), \(\gamma = \mathrm e_1 - \mathrm e_3\), \(\gamma_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_2 = \mathrm e_2 - \mathrm e_3\). Set $\varepsilon_1 = N_{\gamma_1, \gamma_2}$, $\varepsilon_2 = N_{\beta,\gamma_2}^{2,1}$, $\varepsilon_3 = N_{\beta,\gamma_2}$, $\varepsilon_4 = N_{\gamma_1, 2\beta+\gamma_2}$, $\varepsilon_5 = N_{\gamma_1, \beta+\gamma_2}$.
  Again, direct computating involving~\eqref{eq:comm-mult-rhs}, \cref{cor:elim-lhs} and relations~\eqref{R2}--\eqref{R4} shows that
@@ -716,16 +755,16 @@ Substituting the triples $(\beta_1, \beta_2+\gamma, \beta_2)$, $(\beta_1, \beta_
   x_\gamma(-\varepsilon_1 c_1^{(\infty)} c_2^{(\infty)}) \\  
   = \bigl[x_{\gamma_1}(c_1^{(\infty)}), x_{2\beta+\gamma_2}(\varepsilon_2 {b^{(\infty)}}^2 c_2^{(\infty)}) x_{\beta+\gamma_2}(\varepsilon_3 b^{(\infty)} c_2^{(\infty)}) x_{\gamma_2}(c_2^{(\infty)})\bigr] x_\gamma(-\varepsilon_1 c_1^{(\infty)} c_2^{(\infty)}) \\
   = \widetilde{x}_\alpha( \varepsilon_2 \varepsilon_4 {b^{(\infty)}}^2 c_1^{(\infty)}c_2^{(\infty)}) \cdot x_{\beta+\gamma}(\varepsilon_3 \varepsilon_5 b^{(\infty)} c_1^{(\infty)}c_2^{(\infty)}). \end{multline*}
- Substituting the triples $(\beta, \gamma_2, \gamma_1)$, $(\beta, \beta+\gamma_2, \gamma_1)$ into~\eqref{eq:cocycle2} we obtain the identities $\varepsilon_3 \varepsilon_5 = \varepsilon_1 N_{\beta,\gamma}$ and
- $2\varepsilon_2\varepsilon_3 \varepsilon_4 = \varepsilon_5N_{\beta,\beta+\gamma},$ which together with~\cref{RingGeneration} imply~\eqref{eq:elim-rhs-r4-1}. \end{proof}
+ Substituting the triples $(\beta, \gamma_2, \gamma_1)$, $(\beta, \beta+\gamma_2, \gamma_1)$ into~\eqref{eq:cocycle2} we obtain the identities $\varepsilon_3 \varepsilon_5 = \varepsilon_1 N_{\beta,\gamma}$,
+$2\varepsilon_2\varepsilon_3 \varepsilon_4 = \varepsilon_5N_{\beta,\beta+\gamma}$ (together with~\eqref{eq:N21def} they also imply that $\varepsilon_2\varepsilon_4 = \tfrac{1}{2} \varepsilon_3 \varepsilon_5 N_{\beta,\beta+\gamma} = \varepsilon_1 N_{\beta,\gamma}^{2,1}$). Thus, the above equality together with~\cref{RingGeneration} imply~\eqref{eq:elim-rhs-r4-1}. \end{proof}
 
 \begin{lemma} \label{lem:elim-rhs-r3}
- The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations~of type \eqref{R3} in which it occurs on the right-hand side.
+ The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations~of type \eqref{R3} in which it occurs on the right-hand side. %Also, if \(\alpha\) is short and \(2\alpha = \beta + \gamma\) is a decomposition into a sum of long roots, then \([x_\beta(b^{(\infty)}, x_\gamma(c^{(\infty)})] = 1\) holds in \(\St^{(\infty)}(\Phi \setminus \{\alpha\}, R)\).
 \end{lemma}
 \begin{proof}
 We need to verify the relation 
 \begin{equation}\label{eq:elim-rhs-r3-1} [x_{\beta}(b^{(\infty)}),\ x_{\gamma}(c^{(\infty)})] = \widetilde{x}_{\alpha}(N_{\beta,\gamma} b^{(\infty)}c^{(\infty)}).\end{equation}
-In the case when $\alpha$, $\beta$ and $\gamma$ have the same length the assertion follows from \cref{lem:new-root}. Thus, we only need to consider the case when \(\alpha = \beta + \gamma\) and \(\alpha\) is long while \(\beta\) and \(\gamma\) are short. The smallest root subsystem containing \(\alpha\), \(\beta\), \(\gamma\) is of type \(\rB_2\). Without loss of generality we may assume \(\alpha = \mathrm e_1 + \mathrm e_2\), \(\beta = \mathrm e_1\), and \(\gamma = \mathrm e_2\).
+In the case where $\alpha$, $\beta$ and $\gamma$ have the same length the assertion follows from \cref{lem:new-root}. Thus, we only need to consider the case where \(\alpha = \beta + \gamma\) and \(\alpha\) is long while \(\beta\) and \(\gamma\) are short. The smallest root subsystem containing \(\alpha\), \(\beta\), \(\gamma\) is of type \(\rB_2\). Without loss of generality we may assume \(\alpha = \mathrm e_1 + \mathrm e_2\), \(\beta = \mathrm e_1\), and \(\gamma = \mathrm e_2\).
 Set $\varepsilon_1 = N_{\beta,\gamma-\beta}^{2,1}$, $\varepsilon_2 = N_{\beta,\gamma-\beta}$. Direct computation shows that \begin{align*}
   \up{x_\beta(d^\infty)} x_\gamma(\varepsilon_2b^{(\infty)}c^{(\infty)}) \cdot \widetilde{x}_\alpha(\varepsilon_1 {b^{(\infty)}}^2{c^{(\infty)}}) \\
   = \up{x_\beta(d^{(\infty)})}
@@ -736,27 +775,32 @@ Set $\varepsilon_1 = N_{\beta,\gamma-\beta}^{2,1}$, $\varepsilon_2 = N_{\beta,\g
   \up{x_\beta(d^{(\infty)})}
    {x_{\gamma - \beta}(c^{(\infty)})}\bigr] & \text{ by~\eqref{R2}, \cref{lem:elim-rhs-r4}}\\
   = \up{x_\beta(b^{(\infty)} + d^{(\infty)})}
-   {x_{\gamma - \beta}(c^{(\infty)})}\,
+   {x_{\gamma - \beta}(c^{(\infty)})}\cdot
   \up{x_\beta(d^{(\infty)})}
    {x_{\gamma - \beta}(-c^{(\infty)})} & \text{ by~\eqref{R1}} \\  
-  = x_{\gamma}(\varepsilon_2 b^{(\infty)}c^{(\infty)}) \widetilde{x}_{\alpha}(2\varepsilon_1{b^{(\infty)}}{d^{(\infty)}}) \widetilde{x}_\alpha(\varepsilon_1 {b^{(\infty)}}^2{c^{(\infty)}}) & \text{ by~\cref{lem:elim-rhs-r4}}
+  = \widetilde x_\alpha(\varepsilon_1 (b^{(\infty)} + d^{(\infty)})^2 c^{(\infty)})\, x_\gamma(\varepsilon_2 (b^{(\infty)} + d^{(\infty)}) c^{(\infty)})\, x_{\gamma - \beta}(c^{(\infty)})\\
+  \cdot \widetilde x_\alpha(-\varepsilon_1 c^{(\infty)} {d^{(\infty)}}^2)\, x_\gamma(-\varepsilon_2 c^{(\infty)} d^{(\infty)})\, x_{\gamma - \beta}(-c^{(\infty)})& \text{ by~\eqref{R4}}\\
+  = x_{\gamma}(\varepsilon_2 b^{(\infty)}c^{(\infty)}) \widetilde{x}_{\alpha}(2\varepsilon_1{b^{(\infty)}} c^{(\infty)} {d^{(\infty)}} + \varepsilon_1 {b^{(\infty)}}^2{c^{(\infty)}})& \text{ by~\cref{lem:elim-rhs-r4}}
  \end{align*}
-The relation~\eqref{eq:elim-rhs-r3-1} now follows from \cref{RingGeneration} and the identity $2\varepsilon_1 = \varepsilon_2 N_{\beta, \gamma}$. \end{proof} 
+The relation~\eqref{eq:elim-rhs-r3-1} now follows from \cref{RingGeneration} and \eqref{eq:N21def}.
+\end{proof}
 
 \begin{proof}[Proof of~\cref{SingleRootElimination}]
-To help distinguish between the root subgroup morphisms of $\St^{(\infty)}(\Phi, R)$ and $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ we rename the root subgroup morphisms $x_\beta$, $\beta\neq\pm\alpha$ of $\St(\Phi\setminus\{\pm\alpha\}, R^{(\infty)})$ to $\widetilde{x}_{\beta}$. For the morphisms $x_\beta$ of $\St^{(\infty)}(\Phi, R)$ we continue to use the usual notation. 
+To distinguish between the root subgroup morphisms of $\St^{(\infty)}(\Phi, R)$ and $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$ we rename the root subgroup morphisms $x_\beta$, $\beta\neq \alpha$ of $\St(\Phi\setminus\{\alpha\}, R^{(\infty)})$ to $\widetilde{x}_{\beta}$. For the morphisms $x_\beta$ of $\St^{(\infty)}(\Phi, R)$ we continue to use the usual notation. 
 
-By~\cref{SteinbergPresentation} the morphisms $\widetilde{x}_{\beta}$ give rise to a morphism $G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$. By definition, $G_\alpha x_\beta = \widetilde{x}_\beta$ for all $\beta$. On the other hand, it is clear that $F_\alpha \widetilde{x}_\beta = x_\beta$ for $\beta\neq \pm\alpha$. To see that $G_\alpha$ is inverse to $F_\alpha$ it remains to invoke the first part of~\cref{SteinbergPresentation} and~\cref{rem:xpma-presentation}.
+By~\cref{SteinbergPresentation} the morphisms $\widetilde{x}_{\beta}$ give rise to a morphism $G_\alpha \colon \St^{(\infty)}(\Phi, R) \to \St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$. By definition, $G_\alpha x_\beta = \widetilde{x}_\beta$ for all $\beta$. On the other hand, it is clear that $F_\alpha \widetilde{x}_\beta = x_\beta$ for $\beta\neq \alpha$. To see that $G_\alpha$ is inverse to $F_\alpha$ it remains to invoke the first part of~\cref{SteinbergPresentation} and~\cref{rem:xpma-presentation}.
 \end{proof}
 
 In the special case $S = \{1\}$ we obtain the following result.
-\begin{corollary}  For every root \(\alpha \in \Phi\) there is a group isomorphism \[\St(\Phi\setminus\{\pm \alpha\}, R) \cong \St(\Phi, R).\] \end{corollary}
+\begin{corollary}  For every root \(\alpha \in \Phi\) there is a group isomorphism \[\St(\Phi\setminus\{ \alpha\}, R) \cong \St(\Phi, R).\] \end{corollary}
 
 \section{The action of \texorpdfstring{$\GG_{\mathrm{sc}}(\Phi, S^{-1}R)$}{G(Ф, R)} on pro-groups} \label{sec:local-action}
 Throughout this section \(R\) is a ring and \(S \subseteq R\) is a multiplicative subset.
 \subsection{The case of Chevalley groups} \label{sec:local-Chevalley}
-Our first goal is to show that the group \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) can be made to act on the Chevalley pro-group \(\GG^{(\infty)}(\Phi, R)\) by conjugation. Denote by \(H_\Phi\) the Hopf \(\ZZ\)-algebra of \(\GG_{\mathrm{sc}}(\Phi, -)\) with the structure of a Hopf algebra given by the triple $(\Delta, S, \varepsilon)$. Recall that \(H_\Phi\) is a finitely presented commutative \(\ZZ\)-algebra, so $\Ker(\varepsilon)$ is a finitely generated rng. Consider the ``coconjugation'' homomorphism (written down in Sweedler notation)
-\[\mathrm{Coconj} \colon \Ker(\varepsilon) \to H_\Phi \otimes \Ker(\varepsilon),\ h \mapsto \sum h_{(1)} S(h_{(3)}) \otimes h_{(2)}.\]
+Our first goal is to show that the group \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) can be made to act on the Chevalley pro-group \(\GG^{(\infty)}(\Phi, R)\) by conjugation. Denote by \(H_\Phi\) the Hopf \(\ZZ\)-algebra of \(\GG_{\mathrm{sc}}(\Phi, -)\) with the structure of a Hopf algebra given by the triple $(\Delta, \varsigma, \varepsilon)$. Recall that \(H_\Phi=\ZZ\oplus\Ker(\varepsilon)\) is a finitely presented commutative \(\ZZ\)-algebra, therefore $\Ker(\varepsilon)$ is a finitely generated rng. Indeed, if $x_i$ generate $H_\Phi$, then $x_i - \varepsilon(x_i)$ generate $\Ker(\varepsilon)$ by the identity
+\[xy - \varepsilon(xy) = (x - \varepsilon(x)) (y - \varepsilon(y)) + (x - \varepsilon(x)) \varepsilon(y) + \varepsilon(x) (y - \varepsilon(y)).\]
+Consider the ``coconjugation'' homomorphism (written down in Sweedler notation)
+\[\mathrm{Coconj} \colon \Ker(\varepsilon) \to H_\Phi \otimes \Ker(\varepsilon),\ h \mapsto \sum h_{(1)} \varsigma(h_{(3)}) \otimes h_{(2)}.\]
 Now let $g$ be an element of $\mathbf{Ring}(H_\Phi, S^{-1}R) \cong \GG_{\mathrm{sc}}(\Phi, S^{-1} R)$.
 Consider the homomorphism $\mathrm{Coconj}_g$ of ``coconjugation by $g$'', which is defined as the composite of the following two rng homomorphisms:
 \[\xymatrix{\Ker(\varepsilon) \ar[r]^(.4){\mathrm{Coconj}} & H_\Phi \otimes \Ker(\varepsilon) \ar[r]^(0.45){g\otimes\mathrm{id}} & S^{-1}R \otimes \Ker(\varepsilon).}\]
@@ -778,9 +822,13 @@ where \(m \colon S^{-1} R \otimes S^{-1} R \to S^{-1} R\) is the multiplication 
 %It can be checked directly that the described construction produces the sought group action.
 
 \subsection{The case of Steinberg groups}
-Clearly, the set $\Pro(\Group)(R^{(\infty)})$ of endomorphisms of the additive pro-group of the pro-rng $R^{(\infty)}$ can be endowed with the structure of an associative ring. The addition is given by  $(f, g) \mapsto (+_{R^{(\infty)}}) \circ (f\times g) \circ \Delta$, while the multiplication is the usual composition of endomorphisms.
+Clearly, the set $\Pro(\Group)(R^{(\infty)})$ of endomorphisms of the additive pro-group of the pro-rng $R^{(\infty)}$ can be endowed with the structure of an associative ring: the addition is 
+pointwise, 
+%given by  $(f, g) \mapsto (+_{R^{(\infty)}}) \circ (f\times g) \circ \Delta$, 
+while the multiplication is the usual composition of endomorphisms.
 
-The pro-ring $R^{(\infty)}$ can be turned into an \(S^{-1} R\)-algebra in the following manner. For every class of fractions \([\frac rs] \in S^{-1} R\) there is a well-defined pro-group endomorphism \(m_{[\frac rs]} \colon R^{(\infty)} \to R^{(\infty)}\) given by \(m_{[\frac rs]}^*(s') = ss'\) and \(m_{[\frac rs]}^{(s')}(a^{(ss')}) = (ra)^{(s')}\). It is easy to see that $m_{[\frac{r}{s}]}$ does not depend on the choice of the representative \(\tfrac r s\). Moreover, it is easy to see that \(m\) is actually a homomorphism of rings \(S^{-1} R \to \Pro(\Group)(R^{(\infty)})\) and that 
+%The pro-ring $R^{(\infty)}$ can be turned into an \(S^{-1} R\)-algebra in the following manner. 
+For every class of fractions \([\frac rs] \in S^{-1} R\) there is a well-defined pro-group endomorphism \(m_{[\frac rs]} \colon R^{(\infty)} \to R^{(\infty)}\) given by \(m_{[\frac rs]}^*(s') = ss'\) and \(m_{[\frac rs]}^{(s')}(a^{(ss')}) = (ra)^{(s')}\). It is easy to see that $m_{[\frac{r}{s}]}$ does not depend on the choice of the representative \(\tfrac r s\). Moreover, it is easy to see that \(m\) is actually a homomorphism of rings \(S^{-1} R \to \Pro(\Group)(R^{(\infty)})\) and that 
 \begin{equation} \label{eq:m-mult} m_{[\frac rs]}(a^{(\infty)} b^{(\infty)}) = m_{[\frac rs]}(a^{(\infty)}) b^{(\infty)} = a^{(\infty)} m_{[\frac rs]}(b^{(\infty)}).\end{equation}
 For shortness we write \(\frac rs a^{(\infty)}\) instead of \(m_{[\frac rs]}(a^{(\infty)})\). 
 
@@ -788,8 +836,8 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
 \begin{df}\label{root-action}
  Let \(R\) be a ring, \(S \subseteq R\) be a multiplicative subset, and \(\Phi\) be a root system of rank \(\geq 3\) different from \(\rB_\ell\) and \(\rC_\ell\).
  
- For $u \in S^{-1}R$ and a root subgroup morphism $x_\beta$ of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ we define the morphism 
- $\up{x_\alpha(u)}x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$
+ For $u \in S^{-1}R$ and a root subgroup morphism $x_\beta$ of $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$ we define the morphism 
+ $\up{x_\alpha(u)}x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$
  via one of the following identities:
  \begin{align*}
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
@@ -810,35 +858,58 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
  &:= x_\beta(b^{(\infty)})\,
   x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)\,
-  x_{\alpha + 2\beta}\bigl(-N^{2,1}_{\beta, \alpha} u {b^{(\infty)}}^2\bigr), \\
+  x_{\alpha + 2\beta}\bigl(N^{2,1}_{\beta, \alpha} u {b^{(\infty)}}^2\bigr), \\
  \multispan2{\hfill if $\alpha + \beta, \alpha + 2\beta \in \Phi$.}
  \end{align*} 
 \end{df}
 
-\begin{prop}\label{SteinbergLocalAction} 
+\begin{lemma}\label{omitted-relation}
+In the definition of $\St(\Phi \setminus \{\alpha\}, R^{(s)})$ we may omit all relations of type
+\[[x_\beta(b), x_\gamma(c)] = 1\]
+for long roots \(\beta, \gamma\) such that \(\beta + \gamma = 2\alpha\), so the resulting pro-group is isomorphic to \(\St^{(\infty)}(\Phi \setminus \{\alpha\}, R)\).
+\end{lemma}
+\begin{proof}
+Note that \(\Phi\) is of type \(\mathsf F_4\), otherwise there are no such relations. Without loss of generality, \(\alpha = \frac{\mathrm e_1 + \mathrm e_2 + \mathrm e_3 + \mathrm e_4}2\), \(\beta = \mathrm e_1 + \mathrm e_2\), and \(\gamma = \mathrm e_3 + \mathrm e_4\). Let \(\gamma_1 = \mathrm e_4\) and \(\gamma_2 = \mathrm e_3 - \mathrm e_4\), then
+\begin{align*}
+\bigl[x_\beta(b^{(\infty)}), x_\gamma(N_{\gamma_1, \gamma_2}^{2, 1} {c^{(\infty)}}^2 d^{(\infty)})\bigr] &= \bigl[x_\beta(b^{(\infty)}), x_{\gamma_1 + \gamma_2}(N_{\gamma_1, \gamma_2} c^{(\infty)} d^{(\infty)})\, x_\gamma(N_{\gamma_1, \gamma_2}^{2, 1} {c^{(\infty)}}^2 d^{(\infty)})\bigr]\\
+&= \bigl[x_\beta(b^{(\infty)}), \bigl[x_{\gamma_1}(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})\bigr]\bigr] = 1,
+\end{align*}
+since \(\beta + \gamma_1, \beta + \gamma_2 \notin \Phi \cup \{0, 2\alpha\}\). By the same argument as in the proof of \cref{RingGeneration}, \({c^{(\infty)}}^2 d^{(\infty)} \colon R^{(\infty)} \times R^{(\infty)} \to R^{(\infty)}\) is a split epimorphism of pro-sets. Hence \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})] = 1\).
+\end{proof}
+
+\begin{prop}\label{SteinbergLocalAction}
  Let $R$ and $\Phi$ be as in the above definition.
- The above identities specify a well-defined conjugation action of the group \(\St(\Phi, S^{-1} R)\) on the pro-group \(\St^{(\infty)}(\Phi, R)\).
+ The above identities specify a unique well-defined conjugation action of the group \(\St(\Phi, S^{-1} R)\) on the pro-group \(\St^{(\infty)}(\Phi, R)\).
  The morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is equivariant with respect to this action.
- This action also satisfies the equality \[\up{x_\alpha(u)}{x_\alpha(a^{(\infty)})} = x_\alpha(a^{(\infty)}).\]
 \end{prop}
 \begin{proof} 
- Let us check that the morphisms \[\{\up{x_\alpha(u)} x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R) \mid \beta \neq \pm \alpha \}\] defined above satisfy the defining relations of $\St^{(\infty)}(\Phi\setminus\{\pm \alpha\}, R)$. 
- First of all, observe that these morphisms are, in fact, morphisms of pro-groups.
- Now let \(\beta, \gamma \in \Phi \setminus \{\pm \alpha\}\) be a pair of nonparallel roots. %there is Steinberg relation for \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})]\) in \(\St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\). 
- Consider the ``universal'' identity in \(\St(\Phi \setminus \{\pm \alpha\}, \mathbb Z[b, c, t])\) obtained from the identity
- \[[\up{x_\alpha(t)}{x_\beta(b)}, \up{x_\alpha(t)}{x_\gamma(c)}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(t)}{x_{i\beta + j\gamma}(N_{\beta, \gamma}^{i, j} b^i c^j)},\]
- where \(N_{\beta, \gamma}^{1, 1} = N_{\beta, \gamma}\) and \(N_{\beta, \gamma}^{1, 2} = -N_{\gamma, \beta}^{2, 1}\),
- by expanding the conjugates in both sides of the equality.
- Since \(\St(\Phi \setminus \{\pm \alpha\}, \ZZ[b, c, t]) \cong \St(\Phi, \ZZ[b, c, t])\) this identity is a consequence of the defining relations of $\St(\Phi \setminus \{\pm \alpha\}, \ZZ[b,c,t])$.  
- Consequently, from the pro-analogues of these relations, we obtain the required identity
- \[[\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(u)}{x_{i\beta + j\gamma}\bigl(N_{\beta, \gamma}^{i, j} {b^{(\infty)}}^i {c^{(\infty)}}^j \bigr)}.\]
+ Let us check that the morphisms \[\{\up{x_\alpha(u)} x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{-\alpha\}, R) \mid \beta \neq - \alpha \}\] defined above satisfy the defining relations of $\St^{(\infty)}(\Phi\setminus\{- \alpha\}, R)$. 
+ First of all, observe that these morphisms are, in fact, morphisms of pro-groups. In the last case this may be proved via
+ \begin{align*}
+ \up{x_\alpha(u)}{x_\beta(b^{(\infty)} + c^{(\infty)})} &= x_\beta(b^{(\infty)} + c^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u (b^{(\infty)} + c^{(\infty)}))\, x_{\alpha + 2\beta}(N_{\beta, \alpha}^{2, 1} u (b^{(\infty)} + c^{(\infty)})^2)\\
+ &= x_\beta(b^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u b^{(\infty)})\, x_{\alpha + 2\beta}(N_{\beta, \alpha}^{2, 1} u {b^{(\infty)}}^2)\\
+ &\cdot x_\beta(c^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u c^{(\infty)})\, x_{\alpha + 2\beta}(N_{\beta, \alpha}^{2, 1} u {c^{(\infty)}}^2)\\
+ &= \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}\, \up{x_\alpha(u)}{x_\beta(c^{(\infty)})}.
+ \end{align*}
 
- By~\cref{rem:xpma-presentation} we have an endomorphism of $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$, which we denote by $\up{x_\alpha(u)}(-)$.
- Since $\St^{(\infty)}(\Phi\setminus\{\pm\alpha\}, R)$ is isomorphic to $\St^{(\infty)}(\Phi, R)$ by~\cref{SingleRootElimination}, we obtain an endomorphism of $\St^{(\infty)}(\Phi, R)$, which we also denote by $\up{x_\alpha(u)}(-)$. It is easy to see that the mapping $u \mapsto \up{x_\alpha(u)}(-)$, in fact, specifies a group homomorphism $S^{-1}R \to \Aut(\St^{(\infty)}(\Phi, R))$. 
+ Now let \(\beta, \gamma \in \Phi \setminus \{- \alpha\}\) be a pair of nonparallel roots such that \(i\alpha + j\beta + k\gamma \neq 0\) for all \(i, j, k > 0\), i.e. there is a Steinberg relation for \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})]\) not involving \(-\alpha\) and \(\beta + \gamma \neq -2\alpha\). %there is Steinberg relation for \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})]\) in \(\St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\).
+ We have to check that
+ \[[\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(u)}{x_{i\beta + j\gamma}\bigl(N_{\beta, \gamma}^{i, j} {b^{(\infty)}}^i {c^{(\infty)}}^j \bigr)}\]
+ in $\St^{(\infty)}(\Phi \setminus \{-\alpha\}, R)$, where \(N_{\beta, \gamma}^{1, 1} = N_{\beta, \gamma}\) and \(N_{\beta, \gamma}^{1, 2} = -N_{\gamma, \beta}^{2, 1}\). Using \cref{root-action} and the defining relations, both sides may be simplifed to
+ \[\prod_{\substack{i\alpha + j \beta + k\gamma \in \Phi\\ i \geq 0; j, k > 0}} x_{i\alpha + j\beta + k\gamma}\bigl(A_{i, j, k} u^i {b^{(\infty)}}^j {c^{(\infty)}}^k\bigr),\]
+ where the structure constants \(A_{i, j, k} \in \mathbb Z\) arise in the expansion of any side of the identity
+ \[[\up{x_\alpha(t)}{x_\beta(b)}, \up{x_\alpha(t)}{x_\gamma(c)}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(t)}{x_{i\beta + j\gamma}(N_{\beta, \gamma}^{i, j} b^i c^j)}\]
+ in \(\St(\Phi, \mathbb Z[b, c, t])\).
+
+ By~\cref{rem:xpma-presentation} and \cref{omitted-relation} we have an endomorphism of $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$, which we denote by $\up{x_\alpha(u)}(-)$.
+ Since $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$ is isomorphic to $\St^{(\infty)}(\Phi, R)$ by~\cref{SingleRootElimination}, we obtain an endomorphism of $\St^{(\infty)}(\Phi, R)$, which we also denote by $\up{x_\alpha(u)}(-)$. It is easy to see that the mapping $u \mapsto \up{x_\alpha(u)}(-)$, in fact, specifies a group homomorphism $S^{-1}R \to \Aut(\St^{(\infty)}(\Phi, R))$. 
  
  The next step of the proof is to verify that the constructed action satisfies the Steinberg relations~\eqref{R2}--\eqref{R4} defining the group $\St(\Phi, S^{-1}R)$.
- Let $R_{\alpha, \beta}$ be one of these relations involving the roots $\alpha$ and $\beta$ in the left-hand side. Denote by $\Phi_0$ the rank $2$ root subsystem spanned by $\alpha$ and $\beta$. Let $\gamma \in \Phi\setminus \Phi_0$ be a root. We claim that a direct computation involving \cref{root-action}, the pro-analogues of~\eqref{R2}--\eqref{R4} and~\eqref{eq:m-mult} shows that the conjugation by the left and right side of $R_{\alpha, \beta}$ transform $x_\gamma$ to the same morphism $R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$.
- Indeed, during each consecutive application of the conjugation action from~\cref{root-action} no root subgroup morphism $x_\delta$, $\delta \in \Phi_0$ may appear, which guarantees that the computation does not ``stuck''. Thus, by~\cref{DoubleRootElimination} we obtain that the automorphisms of conjugation by the left and right side of $R_{\alpha,\beta}$ are, in fact, the same automorphism of $\St^{(\infty)}(\Phi, R)$.
+ Let $R_{\alpha, \beta}$ be one of these relations involving the roots $\alpha$ and $\beta$ in the left-hand side and $\Sigma \subseteq \Phi$ be the special subset consisting of all roots in the cone spanned by $\alpha$ and $\beta$, i.e. $\Sigma = \Phi \cap (\mathbb R_{\geq 0} \alpha + \mathbb R_{\geq 0} \beta)$. Let $\gamma \in \Phi \setminus \Sigma$ be a root. We claim that a direct computation involving \cref{root-action}, the pro-analogues of~\eqref{R2}--\eqref{R4} and~\eqref{eq:m-mult} shows that the conjugation by the left and right side of $R_{\alpha, \beta}$ transform $x_\gamma$ to the same morphism $R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$.
+ Indeed, during each consecutive application of the conjugation action from~\cref{root-action} no root subgroup morphism $x_\delta$, $\delta \in \Sigma$ may appear, which guarantees that the computation does not ``stuck''. Thus, by~\cref{DoubleRootElimination} we obtain the fact that the automorphisms of conjugation by the left and right side of $R_{\alpha,\beta}$ are, in fact, the same automorphism of $\St^{(\infty)}(\Phi, R)$.
+
+%Denote by $\Phi_0$ the rank $2$ root subsystem spanned by $\alpha$ and $\beta$. Let $\gamma \in \Phi\setminus \Phi_0$ be a root. We claim that a direct computation involving \cref{root-action}, the pro-analogues of~\eqref{R2}--\eqref{R4} and~\eqref{eq:m-mult} shows that the conjugation by the left and right side of $R_{\alpha, \beta}$ transform $x_\gamma$ to the same morphism $R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$.
+ %Indeed, during each consecutive application of the conjugation action from~\cref{root-action} no root subgroup morphism $x_\delta$, $\delta \in \Phi_0$ may appear, which guarantees that the computation does not ``stuck''. Thus, by~\cref{DoubleRootElimination} we obtain the fact that the automorphisms of conjugation by the left and right side of $R_{\alpha,\beta}$ are, in fact, the same automorphism of $\St^{(\infty)}(\Phi, R)$.
  
  Now let us verify the equivariance. 
  Consider the elementary root unipotent \(t_\alpha \colon \mathbb{G}_a \to \GG_{\mathrm{sc}}(\Phi, -)\) as a morphism of algebraic groups.
@@ -852,13 +923,13 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  \Ker(\varepsilon) \otimeshat \Ker(\varepsilon) \ar[rr]^{\mathrm{Cot}_\beta \otimeshat \mathrm{Cot}_{\alpha + \beta}} &&
  Y \mathbb Z[Y] \otimes Z \mathbb Z[Z]. \ar[u]_{\begin{psmallmatrix*}[l] Y & \mapsto & 1 \otimes Y\\ Z & \mapsto & N_{\alpha,\beta} X \otimes Y \end{psmallmatrix*}} &
  }\]
- Postcompose this diagram with \(Y \mathbb Z[X, Y] \to S^{-1} R \otimes R^{(s)}, X \mapsto u, Y \mapsto b^{(s)}\) for various \(s \in S\), \(b^{(s)} \in R^{(s)}\), and \(u \in S^{-1} R\). Unwinding the definitions, we obtain that \(\mathrm{st}(\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}) = \up{t_\alpha(u)}{\mathrm{st}(x_\beta(b^{(\infty)}))}\). The top row of the diagram gives the right-hand side while the other path gives the left-hand side. The same argument works for the other three identities from \cref{root-action}. Thus, by \cref{SteinbergPresentation} the morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, S^{-1} R) \to \GG^{(\infty)}(\Phi, R)\) is \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\)-equivariant.
+ Postcompose this diagram with \(Y \mathbb Z[X, Y] \to S^{-1} R \otimes R^{(s)}, X \mapsto u, Y \mapsto b^{(s)}\) for various \(s \in S\), \(b^{(s)} \in R^{(s)}\), and \(u \in S^{-1} R\). Unwinding the definitions, we obtain  \(\mathrm{st}(\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}) = \up{t_\alpha(u)}{\mathrm{st}(x_\beta(b^{(\infty)}))}\). The top row of the diagram gives the right-hand side while the other path gives the left-hand side. The same argument works for the other three identities from \cref{root-action}. Thus, by \cref{SteinbergPresentation} the morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, S^{-1} R) \to \GG^{(\infty)}(\Phi, R)\) is \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\)-equivariant.
 
- Finally, if $\alpha$ decomposes as $\beta + \gamma$ for some roots \(\beta, \gamma \in \Phi\) having the same length as $\alpha$ then \begin{align*}
-  \up{x_\alpha(u)}{x_\alpha(N_{\beta, \gamma} b^{(\infty)} c^{(\infty)})} &= [\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}]\\
-  &= [x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})] = x_\alpha(N_{\beta, \gamma} b^{(\infty)} c^{(\infty)}),
- \end{align*}
- which implies the last claim.
+ %Finally, if $\alpha$ decomposes as $\beta + \gamma$ for some roots \(\beta, \gamma \in \Phi\) having the same length as $\alpha$ then \begin{align*}
+ % \up{x_\alpha(u)}{x_\alpha(N_{\beta, \gamma} b^{(\infty)} c^{(\infty)})} &= [\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}]\\
+ % &= [x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})] = x_\alpha(N_{\beta, \gamma} b^{(\infty)} c^{(\infty)}),
+ %\end{align*}
+ %which implies the last claim.
 \end{proof}
 
 \begin{theorem}\label{ChevalleyLocalAction}
@@ -873,7 +944,7 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  Consquently, by~\cite[Proposition~1.6]{Abe69} and \cite[Theorem~2.13]{Ste73} the group \(\GG_{\mathrm{sc}}(\Phi, R_M)\) is the quotient of \(\St(\Phi, R_M)\) by the relations $\{a,\-b\}_\alpha = 1$ for \(a, b \in R_M^\times\) and some fixed long root $\alpha\in\Phi$. Thus, it remains to check that the Steinberg symbols $\{a,\-b\}_\alpha$ act trivially on \(\St^{(\infty)}(\Phi, R)\), which, in turn, follows from the relations
  \begin{equation}\label{eq:h-conj} \up{h_\alpha(a)}x_\beta(b^{(\infty)}) = x_\beta(a^{\langle \beta, \alpha \rangle}b^{(\infty)}),\ \beta\neq\pm\alpha. \end{equation}
  
- Now let \(\beta \in \Phi\) be a root linearly independent with \(\alpha\).
+To prove~\eqref{eq:h-conj} take a root \(\beta \in \Phi\) linearly independent with \(\alpha\).
  Direct computation using~\cref{root-action} shows that
  \[\up{h_\alpha(a)}{x_\beta(b^{(\infty)})} = \prod_{\substack{i\alpha + j\beta \in \Phi\\ j > 0}} x_{i\alpha + j\beta}(P_{i, j}(a) \cdot {b^{(\infty)}}^j)\]
  for some Laurent polynomials \(P_{i, j}(t) \in \mathbb Z[t, t^{-1}]\) depending only on \(\alpha\) and \(\beta\) and the chosen order of factors. Since in the Steinberg group \(\St(\Phi, \mathbb Z[t, t^{-1}])\) we have a similar identity
@@ -895,7 +966,7 @@ For the rest of this section $R$ is an arbitrary commutative ring and $M$ is a m
 As before, \(\Phi\) is a root system of rank \(\geq 3\) different from \(\rB_\ell\) and \(\rC_\ell\).
 
 Let $S = R\setminus M$ be the multiplicative system associated to a maximal ideal $M \trianglelefteq R$.
-Notice that by~\cref{ChevalleyLocalAction} the group $\GG_{\mathrm{sc}}(\Phi, R)$ acts on both $\St^{(\infty)}(\Phi, R)$ and $\GG^{(\infty)}(\Phi, R)$ by conjugation and this action is preserved by the morphism $\mathrm{st}$.
+Recall that by~\cref{ChevalleyLocalAction} the group $\GG_{\mathrm{sc}}(\Phi, R_M)$ acts on both $\St^{(\infty)}(\Phi, R)$ and $\GG^{(\infty)}(\Phi, R)$ by conjugation and this action is preserved by the morphism $\mathrm{st}$. Hence the same holds for the group $\GG_{\mathrm{sc}}(\Phi, R)$.
 We denote by \[\pi_R \colon R^{(\infty)} \to R,\ \pi_{\St} \colon \St^{(\infty)}(\Phi, R) \to \St(\Phi, R)\text{ and } \pi_{\GG} \colon \GG^{(\infty)}(\Phi, R) \to \GG_{\mathrm{sc}}(\Phi, R).\] the canonical pro-group morphisms. Notice that the action of $h\in \GG_{\mathrm{sc}}(\Phi, R)$ on the pro-group $\GG^{(\infty)}(\Phi, R)$ is compatible with the conjugation action of $\GG_{\mathrm{sc}}(\Phi, R)$ on itself, i.\,e. $\up{h}\pi_{\GG}(g^{(\infty)}) = \pi_{\GG}(\up{h} {g^{(\infty)}})$.
 Similarly, the conjugation action of $h\in \St(\Phi, R)$ on $\St^{(\infty)}(\Phi, R)$ is compatible with the conjugation action of $\St(\Phi, R)$ on itself, i.\,e. $\up{h}\pi_{\St}(g^{(\infty)}) = \pi_{\St}(\up{h}{g^{(\infty)}})$.
 Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{st} = \mathrm{st}\, \pi_{\St}$.
@@ -907,7 +978,7 @@ Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{
  Let $g$ be an element of $\mathrm K_2(\Phi, R)$ and $\alpha \in \Phi$ be a root. Consider the ideal
  \[I = \{a \in R \mid \up g {x_\alpha(ra)} = x_\alpha(ra) \text{ for all } r \in R\}.\]
  We need to show that \(I = R\). Let $M \trianglelefteq R$ be a maximal ideal.
- Since the element \(g\) acts trivially on the pro-group \(\St^{(\infty)}(\Phi, R)\) associated with $S = R \setminus M$,
+ By Theorem~2, the element \(g\) acts trivially on the pro-group \(\St^{(\infty)}(\Phi, R)\) associated with $S = R \setminus M$,
  we obtain the following equality of morphisms $R^{(\infty)} \to \St(\Phi, R)$:
  \begin{multline*}
   \up g {x_\alpha(\pi_R(a^{(\infty)}))}
@@ -943,13 +1014,13 @@ Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{
  The homomorphism \(\mathrm{st} \colon \St(\Phi, R) \to \GG_{\mathrm{sc}}(\Phi, R)\) can be turned into a crossed module in a unique way.
 \end{theorem}
 \begin{proof}  
- Notice that under our assumptions the group $\St(\Phi, R)$ is perfect, therefore by~\cite[Lemma~1.1]{St71} for every $g\in \GG_{\mathrm{sc}}(\Phi, R)$ there may exist at most one endomorphism $\up g (-)$ of $\St(\Phi, R)$ satisfying 
- \begin{equation} \label{eq:scm-2}\up{g}{\mathrm{st}(h)} = \mathrm{st} (g h g^{-1})\text{ for all }h \in \St(\Phi, R).  \end{equation}
+ Notice that by~\cref{CentralityK2} we already know that $\mathrm K_2(\Phi, R)$ is a central subgroup of $\St(\Phi, R)$. Under our assumptions the group $\St(\Phi, R)$ is a perfect central extension of $\E_{\mathrm{sc}}(\Phi, R)$, therefore by~\cite[Lemma~1.1]{St71} for every $g\in \GG_{\mathrm{sc}}(\Phi, R)$ there may exist at most one endomorphism $\up g (-)$ of $\St(\Phi, R)$ satisfying 
+ \begin{equation} \label{eq:scm-2} g\, \mathrm{st}(h) g^{-1} = \mathrm{st} (\up g h)\text{ for all }h \in \St(\Phi, R).  \end{equation}
  Thus, to construct an action of $\GG_{\mathrm{sc}}(\Phi, R)$ on $\St(\Phi, R)$ it suffices to construct an endomorphism 
   \(\up g{(-)} \colon \St(\Phi, R) \to \St(\Phi, R)\) satisfying~\eqref{eq:scm-2}.
  Also, this action would automatically satisfy Peiffer identity.
  
- Notice that by~\cref{CentralityK2} we already know that $\mathrm K_2(\Phi, R)$ is a central subgroup of $\St(\Phi, R)$.
+
  Let $\alpha$ be a root of $\Phi$. Since \(\mathrm E(\Phi, R) \trianglelefteq \GG_{\mathrm{sc}}(\Phi, R)\) by~\cref{Normality}, the set
  $Y_\alpha(a) = \mathrm{st}^{-1}\bigl(g{t_\alpha(a)} g^{-1}\bigr)$ is nonempty for all \(a \in R\). 
  Moreover, $Y_\alpha(a)$ is a coset of the subgroup \(\mathrm K_2(\Phi, R)\) and \(Y_\alpha(a + a') = Y_\alpha(a) Y_\alpha(a')\).
@@ -958,16 +1029,19 @@ Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{
  Let \(\alpha, \beta\) be roots as above, $a$ be an element of $R$ and $h$ be an element of $Y_\alpha(a)\).
  Set $I = \{b \in R \mid [h, Y_\beta(bR)] = 1\}$ and let \(M \trianglelefteq R\) be a maximal ideal. Since
  \[[h, \pi_{\St}(\up g {x_\beta(b^{(\infty)})})] = \pi_{\St}(\up{g t_\alpha(a)} {x_\beta(b^{(\infty)})}) \pi_{\St}(\up g {x_\beta(-b^{(\infty)})}) = 1,\]
- we obtain that \(I \not \subseteq M\) and, consequently, that \(I = R\), which proves the assertion.
+ we obtain  \(I \not \subseteq M\) and, consequently, \(I = R\), which proves the assertion.
 
  Now let $\alpha$ be a root of $\Phi$. By our assumptions on $\Phi$ there exist roots \(\beta, \gamma \in \Phi\) of the same length such that \(\alpha = \beta + \gamma\). Denote by \(y_\alpha(a)\) the only element of the set \([Y_\beta(N_{\beta, \gamma}), Y_\gamma(a)]\). 
- We define the endomorphism $\up g (-)$ on the generators of $\St(\Phi, R)$ by $\up g {x_\alpha(a)} = y_\alpha(a)$. 
- Clearly, \(y_\alpha(a)\) satisfy~\eqref{R1}. Since $y_\alpha(a) \in Y_\alpha(a)$ we also obtain that $y_\alpha(a)$ satisfy relations~\eqref{R2}.
+ We define the map $\up g (-)$ on the set of generators of $\St(\Phi, R)$ by $\up g {x_\alpha(a)} = y_\alpha(a)$, and we claim that such a definition induces an endomorphism, i.e., that $y_{\alpha}(a)$ satisfy the Steiberg relations. 
+ Clearly, \(y_\alpha(a)\) satisfy~\eqref{R1}. Since $y_\alpha(a) \in Y_\alpha(a)$ we also obtain the fact that $y_\alpha(a)$ satisfy relations~\eqref{R2}.
  
  It remains to check that \(y_\alpha(a)\) satisfy the Steinberg relations \eqref{R3} and \eqref{R4}.
- Let \(M \trianglelefteq R\) be a maximal ideal. First of all, notice that
+ Let \(M \trianglelefteq R\) be a maximal ideal. Recall that \(\pi_{\St}(\up g{x_\gamma(a^{(\infty)})})\) denotes a certain pro-group morphism \(R^{(\infty)} \to \St(\Phi, R)\), so \([h, \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})]\) is a pro-set morphism \(R^{(\infty)} \to \St(\Phi, R)\) for a fixed \(h \in Y_\beta(N_{\beta, \gamma})\). Since
+ \[\mathrm{st}(\pi_{\St}(\up g{x_\gamma(a^{(\infty)})})) = g t_\gamma(\pi_R(a^{(\infty)})) g^{-1},\]
+ we have
  \begin{multline} \label{eq:scm1}
-  y_\alpha(\pi_R(a^{(\infty)})) = [Y_\beta(N_{\beta, \gamma}), \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})]\\
+  y_\alpha(\pi_R(a^{(\infty)})) = [h, \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})]\\
+  = \pi_{\St}(\up{\mathrm{st}(h)\, g}{x_\gamma(a^{(\infty)})})\, \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})^{-1}\\
   = \pi_{\St}\bigl(\up{g t_\beta(N_{\beta, \gamma})}{x_\gamma(a^{(\infty)})}\, \up g{x_\gamma(-a^{(\infty)})}\bigr) = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})}).
  \end{multline}
  
@@ -978,7 +1052,7 @@ Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{
  &= y_{\alpha + \beta}(N_{\alpha, \beta} abr)
  y_{2\alpha + \beta}(N_{\alpha, \beta}^{2,1} a^2 br) \text{ for all } r \in R\}.
  \end{align*}
- From~\eqref{eq:scm1} we obtain that
+ From~\eqref{eq:scm1} we obtain 
  \begin{align*}
  [y_\alpha(a), y_\beta(\pi_R(b^{(\infty)}))] &= [y_\alpha(a), \pi_{\St}(\up g{x_\beta(b^{(\infty)})})]\\ 
  &= \pi_{\St}\bigl(\up{g t_\alpha(a)}{x_\beta(b^{(\infty)})}\, \up g{x_\beta(-b^{(\infty)})}\bigr)\\
@@ -999,9 +1073,9 @@ Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{
  We denote by $\St(\Phi, R, I)$ the normal closure in $\St(\Phi, R)$ of the subgroup generated by elements $x_\alpha(s)$, where $s\in I$, $\alpha\in\Phi$. We also denote by $\E_{\mathrm{sc}}(\Phi, R, I)$ the image of this subgroup under $\mathrm{st}$.
  It is clear that $\E_\mathrm{sc}(\Phi, R, I)$ lies in the kernel of $\rho_\mathrm{E}$.
  
- Denote by $H$ the preimage of $\mathrm{K}_2(\Phi, R/I)$ under $\rho_\mathrm{St}$. Also set \[H'=[H, \St(\Phi, R)].\] The identity~\eqref{eq:comm-mult-rhs} shows that $H'$ is a normal subgroup of $\St(\Phi, R)$. Under our assumptions the group $\St(\Phi, R)$ is perfect, therefore using Hall--Witt identity~\eqref{eq:HW} we obtain that
+ Denote by $H$ the preimage of $\mathrm{K}_2(\Phi, R/I)$ under $\rho_\mathrm{St}$. Also set \[H'=[H, \St(\Phi, R)].\] The identity~\eqref{eq:comm-mult-rhs} shows that $H'$ is a normal subgroup of $\St(\Phi, R)$. Under our assumptions the group $\St(\Phi, R)$ is perfect, therefore using Hall--Witt identity~\eqref{eq:HW} we obtain 
  \begin{multline}\nonumber H' = [H,\, \St(\Phi, R)] = \left[H,\, [\St(\Phi, R), \St(\Phi, R)]\right] \subseteq \\ \subseteq \left[[H,\, \St(\Phi, R)],\, \St(\Phi, R)\right] = [H', \St(\Phi, R)]. \end{multline} 
- Since $\mathrm{st}(H)$ is contained in the congruence subgroup $\GG_\mathrm{sc}(\Phi, R, I)$ we obtain from the standard commutator formula~\cite[Theorem~1]{Va86} that $\mathrm{st}(H')\subseteq\E_\mathrm{sc}(\Phi, R, I)$. Thus, $H'\subseteq \St(\Phi, R, I) \cdot \mathrm{K}_2(\Phi, R)$. Finally, from our assumptions we obtain that
+ Since $\mathrm{st}(H)$ is contained in the congruence subgroup $\GG_\mathrm{sc}(\Phi, R, I)$ we obtain from the standard commutator formula~\cite[Theorem~1]{Va86} the fact that $\mathrm{st}(H')\subseteq\E_\mathrm{sc}(\Phi, R, I)$. Thus, $H'\subseteq \St(\Phi, R, I) \cdot \mathrm{K}_2(\Phi, R)$. Finally, from our assumptions we obtain 
  \[H' \subseteq [H', \St(\Phi, R)] \subseteq [\St(\Phi, R, I)\cdot \mathrm{K}_2(\Phi, R),\, \St(\Phi, R)] \subseteq \St(\Phi,R,I),\] from which the assertion of the lemma follows.
  \end{proof}
  Since every commutative ring $R$ can be presented as a quotient of the polynomial ring over $\ZZ$ with possibly infinite number of variables,

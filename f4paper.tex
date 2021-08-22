@@ -209,7 +209,7 @@ Recall that the Hall--Witt identity asserts that
 As a corollary we obtain
 \begin{equation} \label{eq:HW-corr} [x,z] = 1 \text{ implies } [x, [y,z]] = [[x,y],\up{y}z].
 \end{equation}
-Finally, we need that
+Finally, it is not hard to check that
 \begin{equation} \label{eq:comm-new}
 [x, y] = 1 \text{ implies } [x, [y, z]] = [y, \up xz]\, [z, y].
 \end{equation}
@@ -634,7 +634,7 @@ In the case $\Phi_0\cong \rA_3$ the inner commutator in the last expression is t
  therefore so is the outer commutator (notice that $\alpha$ and $\beta_1$ form a sharp angle).
 In the case $\Phi_0\cong \rC_3$ the last expression can be further simplified using~\eqref{R3} and the already proved relation~\eqref{R3-bg} as follows:
 \[ \ldots = [x_{\alpha+\beta_1}(N_{\alpha, \beta_1} b^{(\infty)}c^{(\infty)}b_1^{(\infty)}),\ x_{\beta}(N_{\beta_1, \beta_2} b_1^{(\infty)} b_2^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})]. \]
-Since $\alpha+\beta_1$ and $\beta$ form a sharp angle, the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} and~\eqref{R2-bg}.  
+Since $\alpha+\beta_1$ forms a sharp angle with both $\beta$ and $\beta_2$, the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} and~\eqref{R2-bg}.  
   In both cases the right-hand side of~\eqref{eq:elim-lhs3} is trivial. Consequently, from~\cref{RingGeneration} we obtain the fact that
  $[x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\beta(d^{(\infty)})] = 1,$
  which completes the proof of~\eqref{R2-bg}. 
@@ -701,14 +701,14 @@ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\v
 = [x_{\beta_2}(\varepsilon_2b^{(\infty)}c^{(\infty)}),\ x_{\gamma_2}(d^{(\infty)})] &\text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}} \\
 = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}). & \end{align*}
 
- Thus, in both cases we obtain the fact that
+ Thus, in both cases we obtain the equality
  \begin{equation}\label{eq:balance}
  x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
  \end{equation}
- It follows from~\eqref{eq:balance} that $x_{\beta_1,\gamma_1}(b^{(\infty)}, u_1^{(\infty)}u_2^{(\infty)}d^{(\infty)}) = x_{\beta_1,\gamma_1}(b^{(\infty)}u_1^{(\infty)}u_2^{(\infty)},d^{(\infty)})$ therefore from~\cref{RingGeneration} we obtain the fact that
+ It follows from~\eqref{eq:balance} that $x_{\beta_1,\gamma_1}(b^{(\infty)}, u_1^{(\infty)}u_2^{(\infty)}d^{(\infty)}) = x_{\beta_1,\gamma_1}(b^{(\infty)}u_1^{(\infty)}u_2^{(\infty)},d^{(\infty)})$ therefore by~\cref{RingGeneration}
  \[x_{\beta_1, \gamma_1}(b^{(\infty)}, u^{(\infty)} c^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)} u^{(\infty)}, c^{(\infty)}).\]
  Thus, the last requirement of~\cref{RingPresentation} is satisfied. Consequently, there exists a unique morphism of pro-groups \(\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\alpha\}, R)\) satisfying
- \[x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)}). \qedhere\]
+ \begin{equation} \label{eq:new-root} x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)}). \qedhere\end{equation}
 \end{proof}
 
 The next step in the proof of~\cref{SingleRootElimination} is to verify that $\widetilde{x}_\alpha$ satisfies the relations~\eqref{R2}--\eqref{R4}.
@@ -727,36 +727,39 @@ Thus, to finish the proof of~\cref{SingleRootElimination} it suffices to conside
 We only need to consider the case $\Phi = \rF_4$.
 We need to verify the relation obtained from \begin{equation}\label{eq:elim-rhs-r4-1} [x_{\beta}(b^{(\infty)}),\ x_{\gamma}(c^{(\infty)})] = x_{\beta+\gamma}(N_{\beta,\gamma}b^{(\infty)} c^{(\infty)}) x_{2\beta+\gamma}(N_{\beta,\gamma}^{2,1}{b^{(\infty)}}^2c^{(\infty)})\end{equation} by replacing either $x_{\beta+\gamma}$ or $x_{2\beta+\gamma}$ with $\widetilde{x}_{\alpha}$.
 
-First, let us consider the case \(\alpha = \beta + \gamma\), in which \(\alpha\), \(\beta\) are short and \(\gamma\) is long. Consider a decomposition \(\beta = \beta_1 + \beta_2\) for some short roots \(\beta_i\). The smallest root subsystem containing \(\beta_i\) and \(\gamma\) is of type \(\rC_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_1 - \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\beta_2 = \mathrm e_2 - \mathrm e_3\), \(\gamma = 2\mathrm e_3\). Set $\varepsilon_1 = N_{\beta_1, \beta_2},$ $\varepsilon_2 = N_{\beta_2,\gamma}^{2,1},$ $\varepsilon_3 = N_{\beta_2, \gamma},$ $\varepsilon_4 = N_{\beta_1, 2\beta_2+\gamma}^{2,1},$ $\varepsilon_5 = N_{\beta_1, 2\beta_2+\gamma},$ $\varepsilon_6 = N_{\beta_1,\beta_2+\gamma},$ $\varepsilon_7 = N_{\beta_2+\gamma, \beta}.$ From~\eqref{eq:comm-new} and \eqref{R4} we immediately obtain
- \begin{multline*}
-  \bigl[x_\gamma(c^{(\infty)}), x_\beta(\varepsilon_1 b_1^{(\infty)} b_2^{(\infty)})\bigr]
-  = \bigl[x_{\beta_1}(b_1^{(\infty)}), \up{x_\gamma(c^{(\infty)})} {x_{\beta_2}(b_2^{(\infty)})}\bigr]\,
-  x_\beta(-\varepsilon_1 b_1^{(\infty)} b_2^{(\infty)}) \\
-  =[x_{\beta_1}(b_1^{(\infty)}),\ x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_2+\gamma}(-\varepsilon_3b_2^{(\infty)}c^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})] x_{\beta}(-\varepsilon_1b_1^{(\infty)}b_2^{(\infty)}). \end{multline*}
- Using~\eqref{eq:comm-mult-rhs}, \cref{cor:elim-lhs} and relations~\eqref{R2}--\eqref{R4}, we can rewrite the latter expression as follows:
- \begin{multline*}
- \bigl[x_{\beta_1}(b_1^{(\infty)}), x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)})\bigr] \cdot \up{x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)})}{\bigl[x_{\beta_1}(b_1^{(\infty)}), x_{\beta_2+\gamma}(-\varepsilon_3b_2^{(\infty)}c^{(\infty)})\bigr]} \cdot\\
- \cdot \bigl[x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_2+\gamma}(-\varepsilon_3b_2^{(\infty)}c^{(\infty)}), x_{\beta}(\varepsilon_1b_1^{(\infty)}b_2^{(\infty)})\bigr]\\
- = x_{\beta_1 + 2\beta_2 + \gamma}(-\varepsilon_2 \varepsilon_5 b_1^{(\infty)} {b_2^{(\infty)}}^2 c^{(\infty)})\, x_{2\beta + \gamma}(-\varepsilon_2 \varepsilon_4 {b_1^{(\infty)}}^2 {b_2^{(\infty)}}^2 c^{(\infty)})\\
- \cdot \widetilde x_\alpha(-\varepsilon_3 \varepsilon_6 b_1^{(\infty)} b_2^{(\infty)}c^{(\infty)})\,
- x_{\beta_1 + 2\beta_2 + \gamma}(-\varepsilon_1 \varepsilon_3 \varepsilon_7 b_1^{(\infty)} {b_2^{(\infty)}}^2 c^{(\infty)})\\
- = x_{2\beta + \gamma}( - \varepsilon_2 \varepsilon_4 {b_1^{(\infty)}}^2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_1 + 2\beta_2 + \gamma}(-(\varepsilon_2\varepsilon_5 +\varepsilon_1\varepsilon_3\varepsilon_7) b_1^{(\infty)}{b_2^{(\infty)}}^2c^{(\infty)}) \\
- \cdot \widetilde{x}_{\alpha}(-\varepsilon_3 \varepsilon_6 b_1^{(\infty)}b_2^{(\infty)}c^{(\infty)}).
-\end{multline*}
-Substituting the triples $(\beta_1, \beta_2+\gamma, \beta_2)$, $(\beta_1, \beta_2, \gamma)$, $(\beta_1, \beta_1+\beta_2, \beta_2+\gamma)$ into~\eqref{eq:cocycle2} we obtain the equalities \[\varepsilon_2 \varepsilon_3 \varepsilon_5 = - \varepsilon_1 \varepsilon_7,\ \varepsilon_3 \varepsilon_6  = N_{\beta, \gamma}\varepsilon_1,\ 2 \varepsilon_4 \varepsilon_5 \varepsilon_7 = - \varepsilon_6 N_{\beta,\alpha},\]
-which together with~\eqref{eq:N21def} imply \[\varepsilon_2 \varepsilon_4 = \tfrac{1}{2} \varepsilon_1 \varepsilon_3 \varepsilon_5 \varepsilon_7 \cdot \varepsilon_5 \varepsilon_6 \varepsilon_7 N_{\beta,\alpha}= \tfrac{1}{2} \varepsilon_1 \varepsilon_3 \varepsilon_6 N_{\beta, \alpha} = \tfrac{1}{2} N_{\beta,\gamma} N_{\beta,\alpha}= N_{\beta, \gamma}^{2, 1}.\] Thus, using~\cref{RingGeneration} we conclude that \[[x_\gamma(c^{(\infty)}), x_\beta(b^{(\infty)})] =
- \widetilde{x}_\alpha(-N_{\beta, \gamma} b^{(\infty)} c^{(\infty)}) x_{2\beta+\gamma}(-N_{\beta,\gamma}^{2,1} {b^{(\infty)}}^2 {c^{(\infty)}}),\] which is equivalent to~\eqref{eq:elim-rhs-r4-1}.
+First, let us consider the case \(\alpha = \beta + \gamma\), in which \(\alpha\), \(\beta\) are short and \(\gamma\) is long. Consider a decomposition \(\beta = \beta_1 + \beta_2\) for some short roots \(\beta_i\). The smallest root subsystem containing \(\beta_i\) and \(\gamma\) is of type \(\rC_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_1 - \mathrm e_3\), \(\beta_1 = \mathrm e_1 - \mathrm e_2\), \(\beta_2 = \mathrm e_2 - \mathrm e_3\), \(\gamma = 2\mathrm e_3\). Set $\varepsilon_1 = N_{\beta_1, \beta_2},$ $\varepsilon_2 = N_{\beta_2,\gamma}^{2,1},$ $\varepsilon_3 = N_{\beta_2, \gamma},$ $\varepsilon_4 = N_{\beta_1, 2\beta_2+\gamma}^{2,1},$ $\varepsilon_5 = N_{\beta_1, 2\beta_2+\gamma},$ $\varepsilon_6 = N_{\beta_1,\beta_2+\gamma},$ $\varepsilon_7 = N_{\beta_2+\gamma, \beta}.$
+Substituting triples $(\beta_1, \beta_2+\gamma, \beta_2)$, $(\beta_1, \beta_2, \gamma)$, $(\beta_1, \beta_1+\beta_2, \beta_2+\gamma)$ into~\eqref{eq:cocycle2} we obtain the equalities 
+\begin{equation*} \varepsilon_2 \varepsilon_3 \varepsilon_5 = - \varepsilon_1 \varepsilon_7,\ \varepsilon_3 \varepsilon_6  = N_{\beta, \gamma}\varepsilon_1,\ 2 \varepsilon_4 \varepsilon_5 \varepsilon_7 = - \varepsilon_6 N_{\beta,\alpha},\end{equation*}
+which together with~\eqref{eq:N21def} imply the equality 
+\begin{equation*}  \varepsilon_2 \varepsilon_4 = \tfrac{1}{2} \varepsilon_1 \varepsilon_3 \varepsilon_5 \varepsilon_7 \cdot \varepsilon_5 \varepsilon_6 \varepsilon_7 N_{\beta,\alpha}= \tfrac{1}{2} \varepsilon_1 \varepsilon_3 \varepsilon_6 N_{\beta, \alpha} = \tfrac{1}{2} N_{\beta,\gamma} N_{\beta,\alpha}= N_{\beta, \gamma}^{2, 1}.\end{equation*}
+Now a direct computation using~\eqref{R2}--\eqref{R4} and \cref{cor:elim-lhs} shows that
+\begin{align*}
+  \bigl[x_\gamma(c^{(\infty)}), x_\beta(\varepsilon_1 b_1^{(\infty)} b_2^{(\infty)})\bigr] \\ = \bigl[x_{\beta_1}(b_1^{(\infty)}), \up{x_\gamma(c^{(\infty)})} {x_{\beta_2}(b_2^{(\infty)})}\bigr]\cdot x_\beta(-\varepsilon_1 b_1^{(\infty)} b_2^{(\infty)}) & \text{ by~\eqref{eq:comm-new}} \\
+  = \bigl[x_{\beta_1}(b_1^{(\infty)}),\ x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_2+\gamma}(-\varepsilon_3b_2^{(\infty)}c^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})\bigr] \cdot \\ \cdot x_{\beta}(-\varepsilon_1b_1^{(\infty)}b_2^{(\infty)})
+  = \bigl[x_{\beta_1}(b_1^{(\infty)}), x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)})\bigr] \cdot \qquad\qquad \\ \cdot \up{x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)})}{\bigl[x_{\beta_1}(b_1^{(\infty)}), x_{\beta_2+\gamma}(-\varepsilon_3b_2^{(\infty)}c^{(\infty)})\bigr]} \cdot\qquad\\
+ \cdot \bigl[x_{2\beta_2+\gamma}(-\varepsilon_2{b_2^{(\infty)}}^2c^{(\infty)}) x_{\beta_2+\gamma}(-\varepsilon_3b_2^{(\infty)}c^{(\infty)}), x_{\beta}(\varepsilon_1b_1^{(\infty)}b_2^{(\infty)})\bigr] & \text{ by~\eqref{eq:comm-mult-rhs}} \\
+ = x_{\beta_1 + 2\beta_2 + \gamma}(-\varepsilon_2 \varepsilon_5 b_1^{(\infty)} {b_2^{(\infty)}}^2 c^{(\infty)})\cdot x_{2\beta + \gamma}(-\varepsilon_2 \varepsilon_4 {b_1^{(\infty)}}^2 {b_2^{(\infty)}}^2 c^{(\infty)}) \cdot \qquad \\
+ \cdot \widetilde x_\alpha(-\varepsilon_3 \varepsilon_6 b_1^{(\infty)} b_2^{(\infty)}c^{(\infty)}) \cdot
+ x_{\beta_1 + 2\beta_2 + \gamma}(-\varepsilon_1 \varepsilon_3 \varepsilon_7 b_1^{(\infty)} {b_2^{(\infty)}}^2 c^{(\infty)}) &\text{ by~\eqref{eq:comm-mult-lhs},~\eqref{eq:new-root}} \\
+ = x_{2\beta + \gamma}( - N_{\beta,\gamma}^{2,1} {b_1^{(\infty)}}^2{b_2^{(\infty)}}^2c^{(\infty)}) \cdot \widetilde{x}_{\alpha}(-N_{\beta,\gamma}\varepsilon_1 b_1^{(\infty)}b_2^{(\infty)}c^{(\infty)}).
+\end{align*}
+ Thus, by~\cref{RingGeneration} \[[x_\gamma(c^{(\infty)}), x_\beta(b^{(\infty)})] =
+ x_{2\beta+\gamma}(-N_{\beta,\gamma}^{2,1} {b^{(\infty)}}^2 {c^{(\infty)}}) \cdot \widetilde{x}_\alpha(-N_{\beta, \gamma} b^{(\infty)} c^{(\infty)}),\] which is an equivalent form of~\eqref{eq:elim-rhs-r4-1}.
  
  Now consider the case \(\alpha = 2\beta + \gamma\), in which \(\beta\) is short and \(\alpha\), \(\gamma\) are long. We can choose a decomposition \(\gamma = \gamma_1 + \gamma_2\) for some long roots \(\gamma_i\). The smallest root subsystem containing \(\beta\) and \(\gamma_i\) is of type \(\rB_3\), so we may assume that \(\alpha = \mathrm e_1 + \mathrm e_3\), \(\beta = \mathrm e_3\), \(\gamma = \mathrm e_1 - \mathrm e_3\), \(\gamma_1 = \mathrm e_1 - \mathrm e_2\), \(\gamma_2 = \mathrm e_2 - \mathrm e_3\). Set $\varepsilon_1 = N_{\gamma_1, \gamma_2}$, $\varepsilon_2 = N_{\beta,\gamma_2}^{2,1}$, $\varepsilon_3 = N_{\beta,\gamma_2}$, $\varepsilon_4 = N_{\gamma_1, 2\beta+\gamma_2}$, $\varepsilon_5 = N_{\gamma_1, \beta+\gamma_2}$.
- Again, direct computating involving~\eqref{eq:comm-mult-rhs}, \cref{cor:elim-lhs} and relations~\eqref{R2}--\eqref{R4} shows that
- \begin{multline*}
+ Substituting the triples $(\beta, \gamma_2, \gamma_1)$, $(\beta, \beta+\gamma_2, \gamma_1)$ into~\eqref{eq:cocycle2} we obtain the identities 
+ \begin{equation*}
+  \varepsilon_3 \varepsilon_5 = \varepsilon_1 N_{\beta,\gamma},\ 2\varepsilon_2\varepsilon_3 \varepsilon_4 = \varepsilon_5N_{\beta,\beta+\gamma}.
+ \end{equation*}
+ Notice that these equalities imply that $\varepsilon_2\varepsilon_4 = \tfrac{1}{2} \varepsilon_3 \varepsilon_5 N_{\beta,\beta+\gamma} = \varepsilon_1 N_{\beta,\gamma}^{2,1}$.
+ A direct computation using \eqref{R2}--\eqref{R4}, \eqref{eq:comm-mult-rhs},\eqref{eq:new-root} and \cref{cor:elim-lhs} shows that
+ \begin{align*}
   \bigl[x_\beta(b^{(\infty)}), x_\gamma(\varepsilon_1 c_1^{(\infty)} c_2^{(\infty)})\bigr]
    =  \bigl[x_{\gamma_1}(c_1^{(\infty)}), \up{x_\beta(b^{(\infty)})} {x_{\gamma_2}(c_2^{(\infty)})}\bigr]\,
-  x_\gamma(-\varepsilon_1 c_1^{(\infty)} c_2^{(\infty)}) \\  
+  x_\gamma(-\varepsilon_1 c_1^{(\infty)} c_2^{(\infty)})  \\  
   = \bigl[x_{\gamma_1}(c_1^{(\infty)}), x_{2\beta+\gamma_2}(\varepsilon_2 {b^{(\infty)}}^2 c_2^{(\infty)}) x_{\beta+\gamma_2}(\varepsilon_3 b^{(\infty)} c_2^{(\infty)}) x_{\gamma_2}(c_2^{(\infty)})\bigr] x_\gamma(-\varepsilon_1 c_1^{(\infty)} c_2^{(\infty)}) \\
-  = \widetilde{x}_\alpha( \varepsilon_2 \varepsilon_4 {b^{(\infty)}}^2 c_1^{(\infty)}c_2^{(\infty)}) \cdot x_{\beta+\gamma}(\varepsilon_3 \varepsilon_5 b^{(\infty)} c_1^{(\infty)}c_2^{(\infty)}). \end{multline*}
- Substituting the triples $(\beta, \gamma_2, \gamma_1)$, $(\beta, \beta+\gamma_2, \gamma_1)$ into~\eqref{eq:cocycle2} we obtain the identities $\varepsilon_3 \varepsilon_5 = \varepsilon_1 N_{\beta,\gamma}$,
-$2\varepsilon_2\varepsilon_3 \varepsilon_4 = \varepsilon_5N_{\beta,\beta+\gamma}$ (together with~\eqref{eq:N21def} they also imply that $\varepsilon_2\varepsilon_4 = \tfrac{1}{2} \varepsilon_3 \varepsilon_5 N_{\beta,\beta+\gamma} = \varepsilon_1 N_{\beta,\gamma}^{2,1}$). Thus, the above equality together with~\cref{RingGeneration} imply~\eqref{eq:elim-rhs-r4-1}. \end{proof}
+  = \widetilde{x}_\alpha( \varepsilon_2 \varepsilon_4 {b^{(\infty)}}^2 c_1^{(\infty)}c_2^{(\infty)}) \cdot x_{\beta+\gamma}(\varepsilon_3 \varepsilon_5 b^{(\infty)} c_1^{(\infty)}c_2^{(\infty)}). \end{align*}
+The above identity together with~\cref{RingGeneration} imply~\eqref{eq:elim-rhs-r4-1}. \end{proof}
 
 \begin{lemma} \label{lem:elim-rhs-r3}
  The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations~of type \eqref{R3} in which it occurs on the right-hand side. %Also, if \(\alpha\) is short and \(2\alpha = \beta + \gamma\) is a decomposition into a sum of long roots, then \([x_\beta(b^{(\infty)}, x_\gamma(c^{(\infty)})] = 1\) holds in \(\St^{(\infty)}(\Phi \setminus \{\alpha\}, R)\).
@@ -797,7 +800,7 @@ In the special case $S = \{1\}$ we obtain the following result.
 \section{The action of \texorpdfstring{$\GG_{\mathrm{sc}}(\Phi, S^{-1}R)$}{G(Ф, R)} on pro-groups} \label{sec:local-action}
 Throughout this section \(R\) is a ring and \(S \subseteq R\) is a multiplicative subset.
 \subsection{The case of Chevalley groups} \label{sec:local-Chevalley}
-Our first goal is to show that the group \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) can be made to act on the Chevalley pro-group \(\GG^{(\infty)}(\Phi, R)\) by conjugation. Denote by \(H_\Phi\) the Hopf \(\ZZ\)-algebra of \(\GG_{\mathrm{sc}}(\Phi, -)\) with the structure of a Hopf algebra given by the triple $(\Delta, \varsigma, \varepsilon)$. Recall that \(H_\Phi=\ZZ\oplus\Ker(\varepsilon)\) is a finitely presented commutative \(\ZZ\)-algebra, therefore $\Ker(\varepsilon)$ is a finitely generated rng. Indeed, if $x_i$ generate $H_\Phi$, then $x_i - \varepsilon(x_i)$ generate $\Ker(\varepsilon)$ by the identity
+Our first goal is to show that the group \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) can be made to act on the Chevalley pro-group \(\GG^{(\infty)}(\Phi, R)\) by conjugation. Denote by \(H_\Phi\) the Hopf \(\ZZ\)-algebra of \(\GG_{\mathrm{sc}}(\Phi, -)\) with the structure of a Hopf algebra given by the triple $(\Delta, \varsigma, \varepsilon)$. Recall that \(H_\Phi=\ZZ\oplus\Ker(\varepsilon)\) is a finitely presented commutative \(\ZZ\)-algebra, therefore the augmentation ideal $\Ker(\varepsilon)$ is a finitely generated rng. Indeed, if $x_i$ generate $H_\Phi$, then $x_i - \varepsilon(x_i)$ generate $\Ker(\varepsilon)$ as seen e.\,g. from the identity
 \[xy - \varepsilon(xy) = (x - \varepsilon(x)) (y - \varepsilon(y)) + (x - \varepsilon(x)) \varepsilon(y) + \varepsilon(x) (y - \varepsilon(y)).\]
 Consider the ``coconjugation'' homomorphism (written down in Sweedler notation)
 \[\mathrm{Coconj} \colon \Ker(\varepsilon) \to H_\Phi \otimes \Ker(\varepsilon),\ h \mapsto \sum h_{(1)} \varsigma(h_{(3)}) \otimes h_{(2)}.\]

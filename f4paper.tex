@@ -493,10 +493,10 @@ Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the 
  Notice that the pro-analogue of~\eqref{R1} is the identity $x_\alpha(a^{(\infty)}) x_\alpha(b^{(\infty)}) = x_\alpha(a^{(\infty)} + b^{(\infty)})$, or in the usual notation $m \circ (x_\alpha \times x_\alpha) = x_\alpha \circ +_{R^{(\infty)}}$. It is clear that this relation simply means that $x_\alpha$ is a morphism of group objects in $\Pro(\Set)$, which is a consequence of the condition that $x_\alpha$ is a pro-group morphism.
 \end{rem}
 
-\begin{lemma}\label{SteinbergPresentation}
-Let \(G^{(\infty)}\) be a pro-group. The morphisms \[x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R), \ \alpha\in \Phi\] ``generate'' $\St^{(\infty)}(\Phi, R)$ in the categorical sense. In other words, to ensure that a pair of morphisms $f_1,f_2\colon\St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to verify the equalities $f_1 x_{\alpha} = f_2 x_\alpha$ for all $\alpha\in\Phi$.
+Let $\mathcal{X} = \{ x_i \}_{i \in I}$ be a collection of morphisms in $\Pro(\Group)$ with a common codomain, which we denote by $S^{(\infty)}$. We say that $\mathcal{X}$ {\it generates} $S^{(\infty)}$ if for every pair of pro-group morphisms $f_1, f_2 \colon S^{(\infty)} \to G^{(\infty)}$ in order to verify the equality $f_1 = f_2$ it is enough to check that $f_1 x_i = f_2 x_i$ for $x_i \in \mathcal{X}$. 
 
-To obtain a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ it suffices to construct a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G^{(\infty)}\), $\alpha\in\Phi$, satisfying the pro-analogues of~\eqref{R2}--\eqref{R4}, in which $x_\alpha$'s are replaced with $f_{\alpha}$'s.
+\begin{lemma}\label{SteinbergPresentation}
+The morphisms $x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R), \ \alpha\in \Phi$ generate $\St^{(\infty)}(\Phi, R)$. Moreover, for every pro-group $G^{(\infty)}$ to obtain a morphism $f \colon \St^{(\infty)}(\Phi, R) \to G$ it suffices to construct a collection of pro-group morphisms \(f_{\alpha} \colon R^{(\infty)} \to G\), $\alpha\in\Phi$, satisfying the pro-analogues of~\eqref{R2}--\eqref{R4}, in which $x_\alpha$'s are replaced with $f_{\alpha}$'s.
 \end{lemma}
 \begin{proof}
 Notice that by~\cref{lem:proobj-is-a-limit} both of the assertions can be verified in the special case where $G^{(\infty)} = G$ is a group.
@@ -529,18 +529,19 @@ For any choice of $\beta_1$ and $\gamma_1$ notice that the smallest root subsyst
 As an immediate application of the above lemma we prove the following generation result, which is a stronger version of the first claim of~\cref{SteinbergPresentation}.
  \begin{lemma}\label{DoubleRootElimination}
   Let \(\Phi_0 \subseteq \Phi\) be a rank \(2\) subsystem.
-  The collection of root subgroup morphisms $x_\gamma \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ for $\gamma \in \Phi\setminus \Phi_0$ generates $\St^{(\infty)}(\Phi, R)$ in the categorical sense. In other words, for any pro-group $G^{(\infty)}$ to show that morphisms $f_1, f_2 \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ are equal it suffices to show that $f_1x_\gamma = f_2x_\gamma$ for all $\gamma \in \Phi\setminus\Phi_0$.
+  The collection of root subgroup morphisms $x_\gamma \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ for $\gamma \in \Phi\setminus \Phi_0$ generates $\St^{(\infty)}(\Phi, R)$.
  \end{lemma}
  \begin{proof}
   Thanks to~\cref{SteinbergPresentation} it suffices to show that $f_1 x_\delta = f_2 x_\delta$ for all $\delta \in \Phi_0$.
   Let $\delta$ be a root lying in $\Phi_0$. We claim that $\delta$ can be decomposed as a sum $\gamma_1 + \gamma_2$ for some $\gamma_1,\gamma_2 \in \Phi\setminus\Phi_0$ having the same length as $\delta$.
-  We need to consider several cases.
-\begin{itemize}
-  \item Case \(\Phi_0 \cong \rA_2\). The claim follows from~\cref{ThreeRoots}.
-  \item Case $\Phi_0 \cong \rB_2$ (only possible for $\Phi=\rF_4$). Since all root subsystems of type $\rB_2$ lie in the same orbit under the action of $W(\rF_4)$ (cf. e.\,g.~\cite[Table~8]{Ca72}), we may assume that $\Phi_0$ corresponds to the central edge of the Dynkin diagram of $\rF_4$ and $\delta$ is one of the nodes incident to it, in which case the claim is obvious.
-  \item Case $\Phi_0 \cong \rA_1+\rA_1$. If $\Phi$ is simply-laced or $\Phi_0$ has roots of different length, acting by a suitable element of $W(\Phi)$ we may achieve that the basis vectors of $\Phi_0$ correspond to a pair of unjoined nodes of the Dynkin diagram of $\Phi$, in which case the claim is also obvious. Finally, if $\Phi=\rF_4$ and the roots of $\Phi_0$ have the same length, our claim follows from the fact that it holds already for the root subsystem $\Phi'\cong \rD_4$ consisting of roots of $\Phi$ having the same length as the roots of $\Phi_0$.
-\end{itemize}
-  It is clear that
+  We need to consider several cases. 
+  
+  In the case \(\Phi_0 \cong \rA_2\) the claim follows from~\cref{ThreeRoots}.
+  Consider the case $\Phi_0 \cong \rB_2$, which is only possible for $\Phi=\rF_4$.
+  Since all root subsystems of type $\rB_2$ lie in the same orbit under the action of $W(\rF_4)$ (cf. e.\,g.~\cite[Table~8]{Ca72}), we may assume that $\Phi_0$ corresponds to the central edge of the Dynkin diagram of $\rF_4$ and $\delta$ is one of the nodes incident to it, in which case the claim is obvious.
+  Finally, consider the case $\Phi_0 \cong \rA_1+\rA_1$. If $\Phi$ is simply-laced or $\Phi_0$ has roots of different length, acting by a suitable element of $W(\Phi)$ we may achieve that the basis vectors of $\Phi_0$ correspond to a pair of unjoined nodes of the Dynkin diagram of $\Phi$, in which case the claim is also obvious. Finally, if $\Phi=\rF_4$ and the roots of $\Phi_0$ have the same length, our claim follows from the fact that we already know its validity for the root subsystem $\Phi'\cong \rD_4$ consisting of roots of $\Phi$ having the same length as the roots of $\Phi_0$.
+  
+  As an immediate consequence of the claim we conclude that
   \begin{multline*} f_1(x_\delta(a^{(\infty)}b^{(\infty)})) = [f_1(x_{\gamma_1}(N_{\gamma_1, \gamma_2}a^{(\infty)})),\ f_1(x_{\gamma_2}(b^{(\infty)}))] \\
   = [f_2(x_{\gamma_1}(N_{\gamma_1, \gamma_2}a^{(\infty)})),\ f_2(x_{\gamma_2}(b^{(\infty)}))] = f_2(x_\delta(a^{(\infty)}b^{(\infty)})), \end{multline*}
   which together with~\cref{RingGeneration} implies the required equality $f_1 x_\delta = f_2 x_\delta$.
@@ -554,9 +555,19 @@ the formal projective limit of the projective system of groups $\St(\Phi\setminu
 \end{df}
 
 For $\beta \neq \alpha$ we use the same notation $x_\beta$ for the ``root subgroup'' morphisms $R^{(\infty)}\to \St^{(\infty)}(\Phi \setminus\{\alpha\}, R)$.
-\begin{rem} \label{rem:xpma-presentation}
- One can obtain the analogue of~\cref{SteinbergPresentation} for the pro-group $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$ by repeating the same proof verbatim. In particular, $x_\beta$ for $\beta\neq \alpha$ generate $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$ in the categorical sense.
-\end{rem}
+Now we can formulate the analogue of~\cref{SteinbergPresentation} for $\St^{(\infty)}(\Phi \setminus \{ \alpha \}, R)$.
+\begin{lemma}\label{rem:xpma-presentation}
+The morphisms $x_\beta$ for $\beta\neq \alpha$ generate $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$. To construct a morphism $f \colon \St^{(\infty)}(\Phi\setminus\{\alpha\}, R) \to G^{(\infty)}$ it suffices to construct a collection of pro-group morphisms $f_\beta \colon R^{(\infty)} \to G^{(\infty)}$ satisfying the pro-analogues of those relations \eqref{R2}--\eqref{R4} in which $x_\alpha$ does not appear (with $x_\beta$'s replaced with $f_\beta$'s). Moreover, among these pro-analogues we can omit all the type~\eqref{R2} relations of the form $[x_\beta(b^{(\infty)}),\ x_\gamma(c^{(\infty)})] = 1$ for all pairs of long roots \(\beta, \gamma\) such that \(\beta + \gamma = 2\alpha\).
+\end{lemma}
+\begin{proof}
+The proof of the first two assertions is analogous to~\cref{SteinbergPresentation}, so it is enough to verify the last one. Notice that \(\Phi\) must be of type $\rF_4$, otherwise there are no such relations. Without loss of generality, we may assume that \(\alpha = \frac{1}{2}(\mathrm e_1 + \mathrm e_2 + \mathrm e_3 + \mathrm e_4)\), \(\beta = \mathrm e_1 + \mathrm e_2\), \(\gamma = \mathrm e_3 + \mathrm e_4\). Set \(\gamma_1 = \mathrm e_4\) and \(\gamma_2 = \mathrm e_3 - \mathrm e_4\). Since \(\beta + \gamma_1, \beta + \gamma_2, \beta + \gamma_1 + \gamma_2 \notin \Phi \cup \{0, 2\alpha\}\) we have that
+\begin{align*}
+\bigl[x_\beta(b^{(\infty)}),\ x_\gamma(N_{\gamma_1, \gamma_2}^{2, 1} {c^{(\infty)}}^2 d^{(\infty)})\bigr] \\ = \bigl[x_\beta(b^{(\infty)}),\ x_{\gamma_1 + \gamma_2}(N_{\gamma_1, \gamma_2} c^{(\infty)} d^{(\infty)})\, x_\gamma(N_{\gamma_1, \gamma_2}^{2, 1} {c^{(\infty)}}^2 d^{(\infty)})\bigr] & \text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}}\\
+= \bigl[x_\beta(b^{(\infty)}), \bigl[x_{\gamma_1}(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})\bigr]\bigr] = 1 &\text{ by~\eqref{R2},\eqref{R3},\eqref{eq:HW-corr}}.
+\end{align*}
+The morphism ${c^{(\infty)}}^2 d^{(\infty)} \colon R^{(\infty)} \times R^{(\infty)} \to R^{(\infty)}$ is a split epimorphism of pro-sets by an argument similar to the proof of~\cref{RingGeneration}. Thus, the identity \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})] = 1\) is a consequence of other defining relations for $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$.
+\end{proof}
+
 There is a morphism of pro-groups
 $F_\alpha \colon \St^{(\infty)}(\Phi \setminus\{\alpha\}, R) \to \St^{(\infty)}(\Phi, R).$
 given by the pre-morphism $F_\alpha^{*} = \mathrm{id}_S$ and the homomorphisms \[F_\alpha^{(s)} \colon \St(\Phi \setminus\{\alpha\}, R^{(s)}) \to \St(\Phi, R^{(s)})\] induced by the obvious embedding of generators.
@@ -865,20 +876,6 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  \multispan2{\hfill if $\alpha + \beta, \alpha + 2\beta \in \Phi$.}
  \end{align*} 
 \end{df}
-
-\begin{lemma}\label{omitted-relation}
-In the definition of $\St(\Phi \setminus \{\alpha\}, R^{(s)})$ we may omit all relations of type
-\[[x_\beta(b), x_\gamma(c)] = 1\]
-for long roots \(\beta, \gamma\) such that \(\beta + \gamma = 2\alpha\), so the resulting pro-group is isomorphic to \(\St^{(\infty)}(\Phi \setminus \{\alpha\}, R)\).
-\end{lemma}
-\begin{proof}
-Note that \(\Phi\) is of type \(\mathsf F_4\), otherwise there are no such relations. Without loss of generality, \(\alpha = \frac{\mathrm e_1 + \mathrm e_2 + \mathrm e_3 + \mathrm e_4}2\), \(\beta = \mathrm e_1 + \mathrm e_2\), and \(\gamma = \mathrm e_3 + \mathrm e_4\). Let \(\gamma_1 = \mathrm e_4\) and \(\gamma_2 = \mathrm e_3 - \mathrm e_4\), then
-\begin{align*}
-\bigl[x_\beta(b^{(\infty)}), x_\gamma(N_{\gamma_1, \gamma_2}^{2, 1} {c^{(\infty)}}^2 d^{(\infty)})\bigr] &= \bigl[x_\beta(b^{(\infty)}), x_{\gamma_1 + \gamma_2}(N_{\gamma_1, \gamma_2} c^{(\infty)} d^{(\infty)})\, x_\gamma(N_{\gamma_1, \gamma_2}^{2, 1} {c^{(\infty)}}^2 d^{(\infty)})\bigr]\\
-&= \bigl[x_\beta(b^{(\infty)}), \bigl[x_{\gamma_1}(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})\bigr]\bigr] = 1,
-\end{align*}
-since \(\beta + \gamma_1, \beta + \gamma_2 \notin \Phi \cup \{0, 2\alpha\}\). By the same argument as in the proof of \cref{RingGeneration}, \({c^{(\infty)}}^2 d^{(\infty)} \colon R^{(\infty)} \times R^{(\infty)} \to R^{(\infty)}\) is a split epimorphism of pro-sets. Hence \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})] = 1\).
-\end{proof}
 
 \begin{prop}\label{SteinbergLocalAction}
  Let $R$ and $\Phi$ be as in the above definition.

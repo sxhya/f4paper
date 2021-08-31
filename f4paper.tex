@@ -542,7 +542,7 @@ As an immediate application of the above lemma we prove the following generation
   Finally, consider the case $\Phi_0 \cong \rA_1+\rA_1$. If $\Phi$ is simply-laced or $\Phi_0$ has roots of different length, acting by a suitable element of $W(\Phi)$ we may achieve that the basis vectors of $\Phi_0$ correspond to a pair of unjoined nodes of the Dynkin diagram of $\Phi$, in which case the claim is also obvious. Finally, if $\Phi=\rF_4$ and the roots of $\Phi_0$ have the same length, our claim follows from the fact that we already know its validity for the root subsystem $\Phi'\cong \rD_4$ consisting of roots of $\Phi$ having the same length as the roots of $\Phi_0$.
   
   As an immediate consequence of the claim we conclude that
-  \begin{multline*} f_1(x_\delta(a^{(\infty)}b^{(\infty)})) = [f_1(x_{\gamma_1}(N_{\gamma_1, \gamma_2}a^{(\infty)})),\ f_1(x_{\gamma_2}(b^{(\infty)}))] \\
+  \begin{multline*} f_1(x_\delta(a^{(\infty)}b^{(\infty)})) = [f_1(x_{\gamma_1}(N_{\gamma_1, \gamma_2}a^{(\infty)})),\ f_1(x_{\gamma_2}(b^{(\infty)}))] = \\
   = [f_2(x_{\gamma_1}(N_{\gamma_1, \gamma_2}a^{(\infty)})),\ f_2(x_{\gamma_2}(b^{(\infty)}))] = f_2(x_\delta(a^{(\infty)}b^{(\infty)})), \end{multline*}
   which together with~\cref{RingGeneration} implies the required equality $f_1 x_\delta = f_2 x_\delta$.
  \end{proof}
@@ -557,15 +557,15 @@ the formal projective limit of the projective system of groups $\St(\Phi\setminu
 For $\beta \neq \alpha$ we use the same notation $x_\beta$ for the ``root subgroup'' morphisms $R^{(\infty)}\to \St^{(\infty)}(\Phi \setminus\{\alpha\}, R)$.
 Now we can formulate the analogue of~\cref{SteinbergPresentation} for $\St^{(\infty)}(\Phi \setminus \{ \alpha \}, R)$.
 \begin{lemma}\label{rem:xpma-presentation}
-The morphisms $x_\beta$ for $\beta\neq \alpha$ generate $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$. To construct a morphism $f \colon \St^{(\infty)}(\Phi\setminus\{\alpha\}, R) \to G^{(\infty)}$ it suffices to construct a collection of pro-group morphisms $f_\beta \colon R^{(\infty)} \to G^{(\infty)}$ satisfying the pro-analogues of those relations \eqref{R2}--\eqref{R4} in which $x_\alpha$ does not appear (with $x_\beta$'s replaced with $f_\beta$'s). Moreover, among these pro-analogues we can omit all the type~\eqref{R2} relations of the form $[x_\beta(b^{(\infty)}),\ x_\gamma(c^{(\infty)})] = 1$ for all pairs of long roots \(\beta, \gamma\) such that \(\beta + \gamma = 2\alpha\).
+The morphisms $x_\beta$ for $\beta\neq \alpha$ generate $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$. To construct a morphism $f \colon \St^{(\infty)}(\Phi\setminus\{\alpha\}, R) \to G^{(\infty)}$ it suffices to construct a collection of pro-group morphisms $f_\beta \colon R^{(\infty)} \to G^{(\infty)}$ satisfying the pro-analogues of those relations \eqref{R2}--\eqref{R4} in which $x_\alpha$ does not appear (with $x_\beta$'s replaced with $f_\beta$'s). Moreover, among these pro-analogues we can omit all relations of the form $[x_\beta(b^{(\infty)}),\ x_\gamma(c^{(\infty)})] = 1$ for all pairs of long roots \(\beta, \gamma\) such that \(\beta + \gamma = 2\alpha\).
 \end{lemma}
 \begin{proof}
-The proof of the first two assertions is analogous to~\cref{SteinbergPresentation}, so it is enough to verify the last one. Notice that \(\Phi\) must be of type $\rF_4$, otherwise there are no such relations. Without loss of generality, we may assume that \(\alpha = \frac{1}{2}(\mathrm e_1 + \mathrm e_2 + \mathrm e_3 + \mathrm e_4)\), \(\beta = \mathrm e_1 + \mathrm e_2\), \(\gamma = \mathrm e_3 + \mathrm e_4\). Set \(\gamma_1 = \mathrm e_4\) and \(\gamma_2 = \mathrm e_3 - \mathrm e_4\). Since \(\beta + \gamma_1, \beta + \gamma_2, \beta + \gamma_1 + \gamma_2 \notin \Phi \cup \{0, 2\alpha\}\) we have that
+The proof of the first two assertions is analogous to~\cref{SteinbergPresentation}. Let us verify the last assertion. Notice that \(\Phi\) must be of type $\rF_4$, otherwise there are no such relations. We may assume that $\Phi$ is realized in $\mathbb{R}^4$ as in~\cite[Ch.~VI,\S~4.9]{Bou81} and \(\alpha = \frac{1}{2}(\mathrm e_1 + \mathrm e_2 + \mathrm e_3 + \mathrm e_4)\), \(\beta = \mathrm e_1 + \mathrm e_2\), \(\gamma = \mathrm e_3 + \mathrm e_4\). Set \(\gamma_1 = \mathrm e_4\) and \(\gamma_2 = \mathrm e_3 - \mathrm e_4\). Since \(\beta + \gamma_1, \beta + \gamma_2, \beta + \gamma_1 + \gamma_2 \notin \Phi \cup \{0, 2\alpha\}\) we have that
 \begin{align*}
 \bigl[x_\beta(b^{(\infty)}),\ x_\gamma(N_{\gamma_1, \gamma_2}^{2, 1} {c^{(\infty)}}^2 d^{(\infty)})\bigr] \\ = \bigl[x_\beta(b^{(\infty)}),\ x_{\gamma_1 + \gamma_2}(N_{\gamma_1, \gamma_2} c^{(\infty)} d^{(\infty)})\, x_\gamma(N_{\gamma_1, \gamma_2}^{2, 1} {c^{(\infty)}}^2 d^{(\infty)})\bigr] & \text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}}\\
 = \bigl[x_\beta(b^{(\infty)}), \bigl[x_{\gamma_1}(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})\bigr]\bigr] = 1 &\text{ by~\eqref{R2},\eqref{R3},\eqref{eq:HW-corr}}.
 \end{align*}
-The morphism ${c^{(\infty)}}^2 d^{(\infty)} \colon R^{(\infty)} \times R^{(\infty)} \to R^{(\infty)}$ is a split epimorphism of pro-sets by an argument similar to the proof of~\cref{RingGeneration}. Thus, the identity \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})] = 1\) is a consequence of other defining relations for $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$.
+The morphism ${c^{(\infty)}}^2 d^{(\infty)} \colon R^{(\infty)} \times R^{(\infty)} \to R^{(\infty)}$ is a split epimorphism of pro-sets by an argument similar to the proof of~\cref{RingGeneration}. Thus, the identity \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})] = 1\) is a consequence of the other defining relations for $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$.
 \end{proof}
 
 There is a morphism of pro-groups
@@ -762,7 +762,7 @@ Now a direct computation using~\eqref{R2}--\eqref{R4} and \cref{cor:elim-lhs} sh
  \begin{equation*}
   \varepsilon_3 \varepsilon_5 = \varepsilon_1 N_{\beta,\gamma},\ 2\varepsilon_2\varepsilon_3 \varepsilon_4 = \varepsilon_5N_{\beta,\beta+\gamma}.
  \end{equation*}
- Notice that these equalities imply that $\varepsilon_2\varepsilon_4 = \tfrac{1}{2} \varepsilon_3 \varepsilon_5 N_{\beta,\beta+\gamma} = \varepsilon_1 N_{\beta,\gamma}^{2,1}$.
+ Notice that these identities imply that $\varepsilon_2\varepsilon_4 = \tfrac{1}{2} \varepsilon_3 \varepsilon_5 N_{\beta,\beta+\gamma} = \varepsilon_1 N_{\beta,\gamma}^{2,1}$.
  A direct computation using \eqref{R2}--\eqref{R4}, \eqref{eq:comm-mult-rhs},\eqref{eq:new-root} and \cref{cor:elim-lhs} shows that
  \begin{align*}
   \bigl[x_\beta(b^{(\infty)}), x_\gamma(\varepsilon_1 c_1^{(\infty)} c_2^{(\infty)})\bigr]
@@ -770,7 +770,7 @@ Now a direct computation using~\eqref{R2}--\eqref{R4} and \cref{cor:elim-lhs} sh
   x_\gamma(-\varepsilon_1 c_1^{(\infty)} c_2^{(\infty)})  \\  
   = \bigl[x_{\gamma_1}(c_1^{(\infty)}), x_{2\beta+\gamma_2}(\varepsilon_2 {b^{(\infty)}}^2 c_2^{(\infty)}) x_{\beta+\gamma_2}(\varepsilon_3 b^{(\infty)} c_2^{(\infty)}) x_{\gamma_2}(c_2^{(\infty)})\bigr] x_\gamma(-\varepsilon_1 c_1^{(\infty)} c_2^{(\infty)}) \\
   = \widetilde{x}_\alpha( \varepsilon_2 \varepsilon_4 {b^{(\infty)}}^2 c_1^{(\infty)}c_2^{(\infty)}) \cdot x_{\beta+\gamma}(\varepsilon_3 \varepsilon_5 b^{(\infty)} c_1^{(\infty)}c_2^{(\infty)}). \end{align*}
-The above identity together with~\cref{RingGeneration} imply~\eqref{eq:elim-rhs-r4-1}. \end{proof}
+Now \cref{RingGeneration} and the above identity imply~\eqref{eq:elim-rhs-r4-1}. \end{proof}
 
 \begin{lemma} \label{lem:elim-rhs-r3}
  The root subgroup morphism $\widetilde{x}_\alpha$ satisfies the pro-analogues of Steinberg relations~of type \eqref{R3} in which it occurs on the right-hand side. %Also, if \(\alpha\) is short and \(2\alpha = \beta + \gamma\) is a decomposition into a sum of long roots, then \([x_\beta(b^{(\infty)}, x_\gamma(c^{(\infty)})] = 1\) holds in \(\St^{(\infty)}(\Phi \setminus \{\alpha\}, R)\).
@@ -853,28 +853,26 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  For $u \in S^{-1}R$ and a root subgroup morphism $x_\beta$ of $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$ we define the morphism 
  $\up{x_\alpha(u)}x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$
  via one of the following identities:
- \begin{align*}
- \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
- &:= x_\beta(b^{(\infty)}), \\
- \multispan2{\hfil if $\alpha + \beta \notin \Phi \cup \{0\}$;} \\
+ \begin{align} 
+ \multispan2{$\up{x_\alpha(u)}{x_\beta(b^{(\infty)})} := x_\beta(b^{(\infty)}),$ \hfill if $\alpha + \beta \notin \Phi \cup \{0\}$;} \label{eq:action-R2} \\
  %
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
  &:= x_\beta(b^{(\infty)})\,
- x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr), \\
- \multispan2{\hfill if $\alpha + \beta \in \Phi$ but $\alpha + 2\beta, 2\alpha + \beta \notin \Phi$;} \\
- %
- \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
- &:= x_\beta(b^{(\infty)})\,
-  x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)\,
-  x_{2\alpha + \beta}\bigl(N^{2,1}_{\alpha, \beta} u^2 b^{(\infty)}\bigr), \\
- \multispan2{\hfill if $\alpha + \beta, 2\alpha + \beta \in \Phi$;} \\
+ x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr), \label{eq:action-R3} \\
+ \multispan2{\hfill if $\alpha + \beta \in \Phi$ but $\alpha + 2\beta, 2\alpha + \beta \notin \Phi$;} \nonumber \\
  %
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
  &:= x_\beta(b^{(\infty)})\,
   x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)\,
-  x_{\alpha + 2\beta}\bigl(N^{2,1}_{\beta, \alpha} u {b^{(\infty)}}^2\bigr), \\
- \multispan2{\hfill if $\alpha + \beta, \alpha + 2\beta \in \Phi$.}
- \end{align*} 
+  x_{2\alpha + \beta}\bigl(N^{2,1}_{\alpha, \beta} u^2 b^{(\infty)}\bigr), \label{eq:action-R4a} \\
+ \multispan2{\hfill if $\alpha + \beta, 2\alpha + \beta \in \Phi$;} \nonumber \\
+ %
+ \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
+ &:= x_\beta(b^{(\infty)})\,
+  x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)\,
+  x_{\alpha + 2\beta}\bigl(N^{2,1}_{\beta, \alpha} u {b^{(\infty)}}^2\bigr), \label{eq:action-R4b} \\
+ \multispan2{\hfill if $\alpha + \beta, \alpha + 2\beta \in \Phi$.} \nonumber
+ \end{align} 
 \end{df}
 
 \begin{prop}\label{SteinbergLocalAction}
@@ -884,15 +882,16 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
 \end{prop}
 \begin{proof} 
  Let us check that the morphisms \[\{\up{x_\alpha(u)} x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{-\alpha\}, R) \mid \beta \neq - \alpha \}\] defined above satisfy the defining relations of $\St^{(\infty)}(\Phi\setminus\{- \alpha\}, R)$. 
- First of all, observe that these morphisms are, in fact, morphisms of pro-groups. In the last case this may be proved via
- \begin{align*}
- \up{x_\alpha(u)}{x_\beta(b^{(\infty)} + c^{(\infty)})} &= x_\beta(b^{(\infty)} + c^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u (b^{(\infty)} + c^{(\infty)}))\, x_{\alpha + 2\beta}(N_{\beta, \alpha}^{2, 1} u (b^{(\infty)} + c^{(\infty)})^2)\\
- &= x_\beta(b^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u b^{(\infty)})\, x_{\alpha + 2\beta}(N_{\beta, \alpha}^{2, 1} u {b^{(\infty)}}^2)\\
- &\cdot x_\beta(c^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u c^{(\infty)})\, x_{\alpha + 2\beta}(N_{\beta, \alpha}^{2, 1} u {c^{(\infty)}}^2)\\
- &= \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}\, \up{x_\alpha(u)}{x_\beta(c^{(\infty)})}.
- \end{align*}
+ First of all, observe that these morphisms are, in fact, morphisms of pro-groups. 
+ Indeed, the assertion is not obvious only for the morphism defined by~\eqref{eq:action-R4b}, in which case it can be verified directly using \eqref{R2},\eqref{R3} and \eqref{eq:N21def}:
+ \begin{multline*}
+ \up{x_\alpha(u)}{x_\beta(b^{(\infty)} + c^{(\infty)})} = \\
+ x_\beta(b^{(\infty)} + c^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u (b^{(\infty)} + c^{(\infty)}))\, x_{\alpha + 2\beta}(N_{\beta, \alpha}^{2, 1} u (b^{(\infty)} + c^{(\infty)})^2)\\
+ = x_\beta(b^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u b^{(\infty)}) x_\beta(c^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u c^{(\infty)}) \cdot \\
+ \cdot x_{\alpha + 2\beta}(N_{\beta, \alpha}^{2, 1} u ({b^{(\infty)}}^2 + {c^{(\infty)}}^2)) = \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}\, \up{x_\alpha(u)}{x_\beta(c^{(\infty)})}.
+ \end{multline*}
 
- Now let \(\beta, \gamma \in \Phi \setminus \{- \alpha\}\) be a pair of nonparallel roots such that \(i\alpha + j\beta + k\gamma \neq 0\) for all \(i, j, k > 0\), i.e. there is a Steinberg relation for \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})]\) not involving \(-\alpha\) and \(\beta + \gamma \neq -2\alpha\). %there is Steinberg relation for \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})]\) in \(\St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\).
+ Now let \(\beta, \gamma \in \Phi \setminus \{- \alpha\}\) be a pair of nonparallel roots such that \(i\alpha + j\beta + k\gamma \neq 0\) for all \(i, j, k > 0\), i.e. there is a Steinberg relation for \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})]\) not involving \(-\alpha\) such that \(\beta + \gamma \neq -2\alpha\). %there is Steinberg relation for \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})]\) in \(\St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\).
  We have to check that
  \[[\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(u)}{x_{i\beta + j\gamma}\bigl(N_{\beta, \gamma}^{i, j} {b^{(\infty)}}^i {c^{(\infty)}}^j \bigr)}\]
  in $\St^{(\infty)}(\Phi \setminus \{-\alpha\}, R)$, where \(N_{\beta, \gamma}^{1, 1} = N_{\beta, \gamma}\) and \(N_{\beta, \gamma}^{1, 2} = -N_{\gamma, \beta}^{2, 1}\). Using \cref{root-action} and the defining relations, both sides may be simplifed to
@@ -901,7 +900,7 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  \[[\up{x_\alpha(t)}{x_\beta(b)}, \up{x_\alpha(t)}{x_\gamma(c)}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(t)}{x_{i\beta + j\gamma}(N_{\beta, \gamma}^{i, j} b^i c^j)}\]
  in \(\St(\Phi, \mathbb Z[b, c, t])\).
 
- By~\cref{rem:xpma-presentation} and \cref{omitted-relation} we have an endomorphism of $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$, which we denote by $\up{x_\alpha(u)}(-)$.
+ By~\cref{rem:xpma-presentation} we have an endomorphism of $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$, which we denote by $\up{x_\alpha(u)}(-)$.
  Since $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$ is isomorphic to $\St^{(\infty)}(\Phi, R)$ by~\cref{SingleRootElimination}, we obtain an endomorphism of $\St^{(\infty)}(\Phi, R)$, which we also denote by $\up{x_\alpha(u)}(-)$. It is easy to see that the mapping $u \mapsto \up{x_\alpha(u)}(-)$, in fact, specifies a group homomorphism $S^{-1}R \to \Aut(\St^{(\infty)}(\Phi, R))$. 
  
  The next step of the proof is to verify that the constructed action satisfies the Steinberg relations~\eqref{R2}--\eqref{R4} defining the group $\St(\Phi, S^{-1}R)$.

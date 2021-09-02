@@ -138,11 +138,11 @@ Since the proof of the main theorem is rather long and technical and the setting
 
 The proof is based on a variant of Quillen--Suslin's local-global principle.
 Consider an arbitrary element $g$ from $\mathrm K_{2}(\Phi, R)$. We want to show that $g$ commutes with $x_{\alpha}(r)$ for every $r\in R$ and $\alpha\in\Phi$.
-Consider the set \[I=\{a\in R\mid [g,\,x_{\alpha}(aR)]=1,\text{ for all }\alpha\in\Phi\},\] which is easily seen to be, in fact, an ideal.
-To prove the centrality of $\mathrm{K}_{2}(\Phi, R)$ it suffices to show that $I=R$.
-Assume the contrary and consider an arbitrary maximal ideal $M \trianglelefteq R$ containing $I$. 
+For $\alpha \in \Phi$ consider the set \[I_\alpha=\{a\in R\mid [g,\,x_{\alpha}(aR)]=1\},\] which is easily seen to be, in fact, an ideal.
+To prove the centrality of $\mathrm{K}_{2}(\Phi, R)$ it suffices to show that $I_\alpha=R$ for all $\alpha\in \Phi$.
+Assume the contrary and consider an arbitrary maximal ideal $M \trianglelefteq R$ containing $I_\alpha$ for some $\alpha$. 
 By the centrality of $\mathrm K_{2}(\Phi, R_M)$ one has the identity $[\lambda_{M}(g),\,x_{\alpha}(r)]=1$ for all $r\in R_{M}$ (we denote by $\lambda_M$ the localization homomorphism $R \to R_M$). 
-If we were able to show for some $s_0\in R\setminus M$ that the identity \begin{equation} \label{intro} [g,\,x_{\alpha}(s_0R)]=1, \end{equation} holds in $\St(\Phi, R)$ or, in other words, that $s_0\in I\cap R\setminus M$, this would lead to a contradiction and hence would complete the proof of the centrality of $\mathrm K_{2}(\Phi, R)$. Unfortunately, formally proving this is not easy. 
+If we were able to show for some $s_0\in R\setminus M$ that the identity \begin{equation} \label{intro} [g,\,x_{\alpha}(s_0R)]=1, \end{equation} holds in $\St(\Phi, R)$ or, in other words, that $s_0\in I_\alpha\cap R\setminus M$, this would lead to a contradiction and hence would complete the proof of the centrality of $\mathrm K_{2}(\Phi, R)$. Unfortunately, formally proving this is not easy. 
 
 In the earlier papers the proof went as follows; cf.~\cite{Tul,Sin,LavSin,Lavlgp}.
 First, a formal variable was thrown in and the original question was reduced to the question of the triviality of $[g, x_{\alpha}(t)]$ in $\St(\Phi, R[t])$, which, in turn, was further reduced to proving the {\it Dilation principle}, an assertion about principal localizations similar to~\eqref{intro} (see e.\,g.~\cite[Lemma~15]{Sin}). The proof of the Dilation principle was based on the isomorphism of {\it relative Steinberg groups} $\St(\Phi, R_a[t], tR_a[t]) \cong \St(\Phi, R \ltimes tR_a[t], tR_a[t])$; cf.~\cite[Remark~3.12]{Sin}. Essentially this isomorphism means that it is possible to define a conjugation action of $\St(\Phi, R_a)$ on the group $\St(\Phi, R\ltimes tR_a[t], tR_a[t])$.
@@ -167,11 +167,11 @@ We refer the reader to~\cref{sec:pro-obj} for a more thorough treatment of the f
 
 After the automorphisms of conjugation by $x_\alpha(a/s)$ are defined, we verify that they satisfy the Steinberg relations defining $\St(\Phi, S^{-1}R)$ and, moreover, that the Steinberg symbols $\{b_1, b_2\}$, $b_1, b_2 \in {S^{-1}R}^\times$ act trivially on the pro-group. Technically, this is an easier step since it is enough to verify the corresponding equalities on suitable group generators.
 Now, for $g = \prod x_{\alpha_i}(a_i)$ the pro-group automorphism $\mathrm{conj}_{\lambda_M(g)}$ can be defined as the composition of $\mathrm{conj}_{x_{\alpha_i}(a_i/1)}$.
-A key point here is that the resulting pro-group automorphism is compatible with the usual conjugation action of $g \in \St(\Phi, R)$, i.\,e. for some $s_0 \in S$ the group homomorphism \[\mathrm{conj}_{\lambda_M(g)}(1) \colon \St(\Phi, s_0R) \to \St(\Phi, R)\] coincides with the obvious homomorphism $h \mapsto ghg^{-1}$. Since our conjugation action factorizes through $\St(\Phi, S^{-1}R)$ we obtain the fact that the conjugation by $g \in \mathrm K_2(\Phi, R)$ acts trivially on $x_\alpha(s_0R)$, which finishes the proof of~\eqref{intro}. This part of the proof is formalized in~\cref{sec:local-action,sec:proof-main}.
+A key point here is that the resulting pro-group automorphism is compatible with the usual conjugation action of $g \in \St(\Phi, R)$, i.\,e. for some $s_0 \in S$ the group homomorphism \[\mathrm{conj}_{\lambda_M(g)}(1) \colon \St(\Phi, s_0R) \to \St(\Phi, R)\] coincides with the obvious homomorphism $h \mapsto ghg^{-1}$. Since our conjugation action factorizes through $\St(\Phi, S^{-1}R)$ we conclude that the conjugation by $g \in \mathrm K_2(\Phi, R)$ acts trivially on $x_\alpha(s_0R)$, which finishes the proof of~\eqref{intro}. This part of the proof is formalized in~\cref{sec:local-action,sec:proof-main}.
 
 Now let us focus on the construction of the action of $\St(\Phi, S^{-1}R)$ on the Steinberg pro-group. In order to construct the automorphism of conjugation by $x_{\alpha}(a/s)$ we need to introduce the group $\St(\mathrm \Phi\setminus\{-\alpha\}, tR)$ whose presentation is obtained from the standard presentation of the Steinberg group $\St(\Phi, tR)$ by omitting all the generators $x_{-\alpha}(tr)$, $r \in R$ and all the relations involving such generators. Now the analogues of the homomorphisms~\eqref{eq:collection} between such groups can be constructed fairly easily based on the remaining part of the Steinberg presentation:
 \begin{equation} \label{eq:conj-def} x_\beta(s^2 b) \mapsto \prod_{\substack{i \alpha + j \beta \in \Phi\\ i \geq 0; j > 0}} x_{i\alpha + j\beta}(N_{\alpha, \beta}^{i, j} s^{2j - i} a^i b^j), \end{equation}
-where \(N_{\alpha, \beta}^{i, j} \in \mathbb Z\) are the structure constants.
+where \(N_{\alpha, \beta}^{i, j} \in \mathbb Z\) are the structure constants (cf.~\eqref{eq:R234}).
 Notice that there is no simple expression similar to the right-hand side of~\eqref{eq:conj-def} in the case $\beta=-\alpha$, which explains our need to use groups $\St(\Phi\setminus\{-\alpha\}, tR)$ as domains for the homomorphisms~\eqref{eq:collection}.
 It is easy to check that~\eqref{eq:conj-def} defines a collection of well-defined homomorphisms
 \[\mathrm{conj}'_{x_\alpha(r/s)}(t)\colon \St(\Phi\setminus\{-\alpha\}, s^2 tR) \to \St(\Phi\setminus\{-\alpha\}, tR).\]
@@ -433,8 +433,8 @@ Now if $\alpha, \beta, \gamma$ is a triple of pairwise linearly independent root
 This identity is an equivalent form of (N9) in~\cite[\S~14]{VP} (cf. also (H4) in~\cite{Re75}).
 
 Sometimes it is convenient to write down the relations~\eqref{R2}--\eqref{R4} as a single relation
-\[ [x_\alpha(a),\ x_\beta(b)] = \prod\limits_{\substack{i\alpha + j\beta\in\Phi \\ i,j >0}} x_{i\alpha + j\beta}(N_{\alpha \beta}^{i j} \cdot a^i b^j), \]
-where $N^{1,2}_{\alpha,\beta} := -N^{2,1}_{\beta, \alpha}$ and $N^{1,1}_{\alpha,\beta}:=N_{\alpha,\beta}$.
+\begin{equation}\label{eq:R234} [x_\alpha(a),\ x_\beta(b)] = \prod\limits_{\substack{i\alpha + j\beta\in\Phi \\ i,j >0}} x_{i\alpha + j\beta}(N_{\alpha,\beta}^{i,j} \cdot a^i b^j), \end{equation}
+in which $N^{1,2}_{\alpha,\beta} := -N^{2,1}_{\beta, \alpha}$ and $N^{1,1}_{\alpha,\beta}:=N_{\alpha,\beta}$.
 
 Notice that the multiplicative identity of $R$ is actually never used in the definition of the Steinberg group, 
  which allows one to use it in the situation when $R$ is an rng.
@@ -507,7 +507,7 @@ The morphisms $x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R), \ \al
 Notice that by~\cref{lem:proobj-is-a-limit} both of the assertions can be verified in the special case where $G^{(\infty)} = G$ is a group.
 
 Let us verify the first assertion. Since there is only a finite number of roots in $\Phi$ one can find a sufficiently large index $s \in S$ such that the homomorphisms $f_1^{(s)}, f_2^{(s)}\colon \St(\Phi, R^{(s)}) \to G$ become equal after precomposition with $x_\alpha$ for all $\alpha \in \Phi$.
-Since the root elements $x_\alpha^{(s)}(a)$ generate $\St(\Phi, R^{(s)})$ we obtain the fact that the morphisms $f_1$ and $f_2$ are equal.
+Since the root elements $x_\alpha^{(s)}(a)$ generate $\St(\Phi, R^{(s)})$ we conclude that the morphisms $f_1$ and $f_2$ are equal.
 
 Let us verify the second assertion. By definition, a morphism $f_\alpha \colon R^{(\infty)} \to G$ corresponds to a single group homomorphism 
  $f'_\alpha \colon R^{(s_\alpha)} \to G$ for some $s_\alpha \in S$. Precomposing each $f'_\alpha$ with the structure morhism $R^{(s)} \to R^{(s_\alpha)}$ for sufficiently large $s \in S$, we obtain a collection of homomorphisms $\widetilde{f}_\alpha \colon R^{(s)} \to G$.
@@ -654,9 +654,9 @@ In the case $\Phi_0\cong \rA_3$ the inner commutator in the last expression is t
 In the case $\Phi_0\cong \rC_3$ the last expression can be further simplified using~\eqref{R3} and the already proved relation~\eqref{R3-bg} as follows:
 \[ \ldots = [x_{\alpha+\beta_1}(N_{\alpha, \beta_1} b^{(\infty)}c^{(\infty)}b_1^{(\infty)}),\ x_{\beta}(N_{\beta_1, \beta_2} b_1^{(\infty)} b_2^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})]. \]
 Since $\alpha+\beta_1$ forms a sharp angle with both $\beta$ and $\beta_2$, the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} and~\eqref{R2-bg}.  
-  In both cases the right-hand side of~\eqref{eq:elim-lhs3} is trivial. Consequently, from~\cref{RingGeneration} we obtain the fact that
- $[x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\beta(d^{(\infty)})] = 1,$
- which completes the proof of~\eqref{R2-bg}. 
+  In both cases the right-hand side of~\eqref{eq:elim-lhs3} is trivial. Consequently, from~\cref{RingGeneration} we obtain the equality
+ $[x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\beta(d^{(\infty)})] = 1.$
+ Thus, we have verified~\eqref{R2-bg} in all cases. 
  
  Finally, it remains to verify~\eqref{R3-bg} in the case $\delta \in \{-\beta, -\gamma\}$.
  By symmetry it suffices to consider the case $\delta = -\beta$.
@@ -975,18 +975,18 @@ Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{
 \end{lemma}
 \begin{proof}
  Let $g$ be an element of $\mathrm K_2(\Phi, R)$ and $\alpha \in \Phi$ be a root. Consider the ideal
- \[I = \{a \in R \mid \up g {x_\alpha(ra)} = x_\alpha(ra) \text{ for all } r \in R\}.\]
- We need to show that \(I = R\). Let $M \trianglelefteq R$ be a maximal ideal.
+ \[I_\alpha = \{a \in R \mid \up g {x_\alpha(ra)} = x_\alpha(ra) \text{ for all } r \in R\}.\]
+ We need to show that \(I_\alpha = R\). Let $M \trianglelefteq R$ be a maximal ideal.
  By Theorem~2, the element \(g\) acts trivially on the pro-group \(\St^{(\infty)}(\Phi, R)\) associated with $S = R \setminus M$,
  we obtain the following equality of morphisms $R^{(\infty)} \to \St(\Phi, R)$:
  \begin{multline*}
   \up g {x_\alpha(\pi_R(a^{(\infty)}))}
   = \up g{\pi_{\St}(x_\alpha(a^{(\infty)}))}
-  = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})}) \\
+  = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})}) = \\
   = \pi_{\St}(x_\alpha(a^{(\infty)}))
   = x_\alpha(\pi_R(a^{(\infty)})),
  \end{multline*}
- which implies that \(I \not \subseteq M\).
+ which implies that \(I_\alpha \not \subseteq M\).
 \end{proof}
 
 %The next result is actually well-known. % !!!!!!!!! Add references !!!!!!!!!!!
@@ -996,8 +996,8 @@ Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{
 \end{lemma}
 \begin{proof}
  Let $g$ be an element of $\GG_{\mathrm{sc}}(\Phi, R)\) and \(\alpha \in \Phi\) be a root. Consider the ideal
- \[I = \{a \in R \mid \up g{t_\alpha(ra)} \in \mathrm E(\Phi, R)\text{ for all }r\in R\}.\]
- Again, we need to show that \(I = R\). Let \(M \trianglelefteq R\) be a maximal ideal. 
+ \[I_\alpha = \{a \in R \mid \up g{t_\alpha(ra)} \in \mathrm E(\Phi, R)\text{ for all }r\in R\}.\]
+ Again, we need to show that \(I_\alpha = R\). Let \(M \trianglelefteq R\) be a maximal ideal.
  Since \(g\) acts on the pro-groups \(\St^{(\infty)}(\Phi, R)\) and $\GG^{(\infty)}(\Phi, R)$ associated with the subset $S = R \setminus M$ and 
  this action is preserved by $\mathrm{st}$, we obtain the following equalities of morphisms $R^{(\infty)} \to \GG_{\mathrm{sc}}(\Phi, R)$:
  \[
@@ -1006,7 +1006,7 @@ Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{
   = \pi_{\GG}(\mathrm{st}(\up g{x_\alpha(a^{(\infty)})}))
   = \mathrm{st}(\pi_{\St}(\up g{x_\alpha(a^{(\infty)})})),
  \]
- which implies that \(I \not \subseteq M\).
+ which implies that \(I_\alpha \not \subseteq M\).
 \end{proof}
 
 \begin{theorem}\label{SteinbergCrossedModule}
@@ -1038,17 +1038,16 @@ Notice also that $x_\alpha \pi_R = \pi_{\St} x_\alpha$ and $\pi_{\GG}\, \mathrm{
  Let \(M \trianglelefteq R\) be a maximal ideal. Recall that \(\pi_{\St}(\up g{x_\gamma(a^{(\infty)})})\) denotes a certain pro-group morphism \(R^{(\infty)} \to \St(\Phi, R)\), so \([h, \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})]\) is a pro-set morphism \(R^{(\infty)} \to \St(\Phi, R)\) for a fixed \(h \in Y_\beta(N_{\beta, \gamma})\). Since
  \[\mathrm{st}(\pi_{\St}(\up g{x_\gamma(a^{(\infty)})})) = g t_\gamma(\pi_R(a^{(\infty)})) g^{-1},\]
  we have
- \begin{multline} \label{eq:scm1}
-  y_\alpha(\pi_R(a^{(\infty)})) = [h, \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})]\\
-  = \pi_{\St}(\up{\mathrm{st}(h)\, g}{x_\gamma(a^{(\infty)})})\, \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})^{-1}\\
-  = \pi_{\St}\bigl(\up{g t_\beta(N_{\beta, \gamma})}{x_\gamma(a^{(\infty)})}\, \up g{x_\gamma(-a^{(\infty)})}\bigr) = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})}).
- \end{multline}
+ \begin{align} 
+  y_\alpha(\pi_R(a^{(\infty)})) &= [h, \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})] \nonumber \\
+  &= \pi_{\St}(\up{\mathrm{st}(h)\, g}{x_\gamma(a^{(\infty)})})\, \pi_{\St}(\up g{x_\gamma(a^{(\infty)})})^{-1} \label{eq:scm1} \\
+  &= \pi_{\St}\bigl(\up{g t_\beta(N_{\beta, \gamma})}{x_\gamma(a^{(\infty)})}\, \up g{x_\gamma(-a^{(\infty)})}\bigr) = \pi_{\St}(\up g{x_\alpha(a^{(\infty)})}).\nonumber
+ \end{align}
  
  Now let $a$ be an element of $R$ and \(\alpha, \beta\) be roots of $\Phi$ such that \(\alpha + \beta, 2\alpha + \beta \in \Phi\). 
  Consider the ideal
  \begin{align*}
- J = \{b \in R &\mid [y_\alpha(a), y_\beta(br)] \\
- &= y_{\alpha + \beta}(N_{\alpha, \beta} abr)
+ J = \{b \in R &\mid [y_\alpha(a), y_\beta(br)] = y_{\alpha + \beta}(N_{\alpha, \beta} abr)
  y_{2\alpha + \beta}(N_{\alpha, \beta}^{2,1} a^2 br) \text{ for all } r \in R\}.
  \end{align*}
  From~\eqref{eq:scm1} we obtain 

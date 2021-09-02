@@ -432,6 +432,10 @@ Now if $\alpha, \beta, \gamma$ is a triple of pairwise linearly independent root
 \begin{equation}\label{eq:cocycle2} N_{\alpha,\beta+\gamma} N_{\beta,\gamma} + N_{\beta,\gamma+\alpha} N_{\gamma,\alpha} + N_{\gamma,\alpha+\beta}N_{\alpha,\beta} = 0. \end{equation}
 This identity is an equivalent form of (N9) in~\cite[\S~14]{VP} (cf. also (H4) in~\cite{Re75}).
 
+Sometimes it is convenient to write down the relations~\eqref{R2}--\eqref{R4} as a single relation
+\[ [x_\alpha(a),\ x_\beta(b)] = \prod\limits_{\substack{i\alpha + j\beta\in\Phi \\ i,j >0}} x_{i\alpha + j\beta}(N_{\alpha \beta}^{i j} \cdot a^i b^j), \]
+where $N^{1,2}_{\alpha,\beta} := -N^{2,1}_{\beta, \alpha}$ and $N^{1,1}_{\alpha,\beta}:=N_{\alpha,\beta}$.
+
 Notice that the multiplicative identity of $R$ is actually never used in the definition of the Steinberg group, 
  which allows one to use it in the situation when $R$ is an rng.
 \begin{df}\label{def:Steinberg-homotope}
@@ -463,7 +467,8 @@ Consider the projective system of congruence subgroups
 Recall that there is well-defined homomorphism $\mathrm{st}\colon \St(\Phi, R) \to \GG_{\mathrm{sc}}(\Phi, R)$ sending each generator $x_\alpha(a)$ to the root unipotent $t_\alpha(a)$. The pro-group analogue \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) of this homomorphism is given by the pre-morphism \(\mathrm{st}^* = \mathrm{id}_S\), \(\mathrm{st}^{(s)}\bigl(x_{\alpha}(a^{(s)})\bigr) = t_\alpha(a^{(s)})\). 
 
 \begin{rem}\label{rem:uni-rad}
-Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the restriction of the canonical map $\St(\Phi, R)\to\GG_{\mathrm{st}}(\Phi, R)$ to the subgroup \[\mathrm{U}(\Sigma, R) = \langle x_{\alpha}(a) \mid a\in R,\ \alpha\in \Sigma \rangle \leq \St(\Phi, R)\] is injective. Morever, for any chosen linear order on \(\Sigma\) the map $R^{\Sigma} \to \mathrm{U}(\Sigma, R)$ given by $(r_\alpha)_\alpha \mapsto \prod_\alpha x_\alpha(r_\alpha)$ is a bijection. \end{rem}
+Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the restriction of the canonical map $\St(\Phi, R)\to\GG_{\mathrm{st}}(\Phi, R)$ to the subgroup \[\mathrm{U}(\Sigma, R) = \langle x_{\alpha}(a) \mid a\in R,\ \alpha\in \Sigma \rangle \leq \St(\Phi, R)\] is injective. Morever, for any chosen linear order on \(\Sigma\) the map $R^{\Sigma} \to \mathrm{U}(\Sigma, R)$ given by $(r_\alpha)_\alpha \mapsto \prod_\alpha x_\alpha(r_\alpha)$ is a bijection. As a consequence, the subgroup $\mathrm{U}(\Sigma, R)$ admits presentation by means of generators $x_\alpha(a)$ for $\alpha \in \Sigma$ and the relations~\eqref{R1}--\eqref{R4} in which $\alpha, \beta \in \Sigma$.
+\end{rem}
 
 \begin{rem}
  The definition of the group $\GG(\Phi, R^{(s)})$ can be reformulated in terms of Hopf algebras. Denote by \(H_\Phi\) the Hopf \(\ZZ\)-algebra corresponding to the group scheme \(\GG_{\mathrm{sc}}(\Phi, -)\). Thus, $\GG_\mathrm{sc}(\Phi, R) = \mathbf{Ring}(H_\Phi, R)$.
@@ -554,13 +559,16 @@ Similarly to~\cref{def:Steinberg-homotope} one can define the pro-group $\St^{(\
 the formal projective limit of the projective system of groups $\St(\Phi\setminus\{ \alpha\}, R^{(s)})$ where $s\in S$.
 \end{df}
 
-For $\beta \neq \alpha$ we use the same notation $x_\beta$ for the ``root subgroup'' morphisms $R^{(\infty)}\to \St^{(\infty)}(\Phi \setminus\{\alpha\}, R)$.
-Now we can formulate the analogue of~\cref{SteinbergPresentation} for $\St^{(\infty)}(\Phi \setminus \{ \alpha \}, R)$.
+For $\beta \neq \alpha$ we use the same notation $x_\beta$ for the ``root subgroup'' morphisms 
+$R^{(\infty)}\to \St^{(\infty)}(\Phi \setminus\{\alpha\}, R).$
+Obviously, these morphisms satisfy the pro-analogues of~\eqref{R2}--\eqref{R4} not containing $\alpha$ in their notations.
+
+We can formulate the analogue of~\cref{SteinbergPresentation} for $\St^{(\infty)}(\Phi \setminus \{ \alpha \}, R)$.
 \begin{lemma}\label{rem:xpma-presentation}
 The morphisms $x_\beta$ for $\beta\neq \alpha$ generate $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$. To construct a morphism $f \colon \St^{(\infty)}(\Phi\setminus\{\alpha\}, R) \to G^{(\infty)}$ it suffices to construct a collection of pro-group morphisms $f_\beta \colon R^{(\infty)} \to G^{(\infty)}$ satisfying the pro-analogues of those relations \eqref{R2}--\eqref{R4} in which $x_\alpha$ does not appear (with $x_\beta$'s replaced with $f_\beta$'s). Moreover, among these pro-analogues we can omit all relations of the form $[x_\beta(b^{(\infty)}),\ x_\gamma(c^{(\infty)})] = 1$ for all pairs of long roots \(\beta, \gamma\) such that \(\beta + \gamma = 2\alpha\).
 \end{lemma}
 \begin{proof}
-The proof of the first two assertions is analogous to~\cref{SteinbergPresentation}. Let us verify the last assertion. Notice that \(\Phi\) must be of type $\rF_4$, otherwise there are no such relations. We may assume that $\Phi$ is realized in $\mathbb{R}^4$ as in~\cite[Ch.~VI,\S~4.9]{Bou81} and \(\alpha = \frac{1}{2}(\mathrm e_1 + \mathrm e_2 + \mathrm e_3 + \mathrm e_4)\), \(\beta = \mathrm e_1 + \mathrm e_2\), \(\gamma = \mathrm e_3 + \mathrm e_4\). Set \(\gamma_1 = \mathrm e_4\) and \(\gamma_2 = \mathrm e_3 - \mathrm e_4\). Since \(\beta + \gamma_1, \beta + \gamma_2, \beta + \gamma_1 + \gamma_2 \notin \Phi \cup \{0, 2\alpha\}\) we have that
+The proof of the first two assertions is analogous to~\cref{SteinbergPresentation}. Let us verify the last assertion. Notice that \(\Phi\) must be of type $\rF_4$, otherwise there are no such relations. We may assume that $\Phi$ is realized in $\mathbb{R}^4$ as in~\cite[Ch.~VI,\S~4.9]{Bou81} and \(\alpha = \frac{1}{2}(\mathrm e_1 + \mathrm e_2 + \mathrm e_3 + \mathrm e_4)\), \(\beta = \mathrm e_1 + \mathrm e_2\), \(\gamma = \mathrm e_3 + \mathrm e_4\). Set \(\gamma_1 = \mathrm e_4\) and \(\gamma_2 = \mathrm e_3 - \mathrm e_4\). Since \(\beta + \gamma_1, \beta + \gamma_2, \beta + \gamma_1 + \gamma_2 \notin \Phi \cup \{0, 2\alpha\}\)
 \begin{align*}
 \bigl[x_\beta(b^{(\infty)}),\ x_\gamma(N_{\gamma_1, \gamma_2}^{2, 1} {c^{(\infty)}}^2 d^{(\infty)})\bigr] \\ = \bigl[x_\beta(b^{(\infty)}),\ x_{\gamma_1 + \gamma_2}(N_{\gamma_1, \gamma_2} c^{(\infty)} d^{(\infty)})\, x_\gamma(N_{\gamma_1, \gamma_2}^{2, 1} {c^{(\infty)}}^2 d^{(\infty)})\bigr] & \text{ by~\eqref{R2},\eqref{eq:comm-mult-rhs}}\\
 = \bigl[x_\beta(b^{(\infty)}), \bigl[x_{\gamma_1}(c^{(\infty)}), x_{\gamma_2}(d^{(\infty)})\bigr]\bigr] = 1 &\text{ by~\eqref{R2},\eqref{R3},\eqref{eq:HW-corr}}.
@@ -607,7 +615,7 @@ Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism
  First of all, observe that the above relations are obtained from \eqref{R2}--\eqref{R4} by replacing $x_\alpha(a^{(\infty)})$ with $x_{\beta, \gamma}(b^{\infty}, c^{\infty})$.
  
  Let us first consider the case \(\delta \in \Phi \setminus (\ZZ \beta + \ZZ \gamma)\).
- Notice that the root subset $\Sigma = \Phi \cap (\ZZ_{\geq 0}\beta + \ZZ_{\geq 0}\gamma + \ZZ_{>0}\delta)$ is special and does not contain $\alpha$, $-\beta$ and $-\gamma$. Thus, the relations between the remaining root subgroup morphisms of $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$ suffice to rewrite the left-hand side of~\eqref{R2-bg}--\eqref{R4-bg2} as follows:
+ Notice that the root subset $\Sigma = \Phi \cap (\ZZ_{\geq 0}\beta + \ZZ_{\geq 0}\gamma + \ZZ_{> 0}\delta)$ is special and does not contain $\alpha$. Thus, the relations between the remaining root subgroup morphisms of $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$ suffice to rewrite the left-hand side of~\eqref{R2-bg}--\eqref{R4-bg2} as follows:
  \begin{align}
   &\bigl[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\delta(d^{(\infty)})\bigr] \label{eq:elim-lhs_1} \\
   %
@@ -880,32 +888,24 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  The above identities specify a unique well-defined conjugation action of the group \(\St(\Phi, S^{-1} R)\) on the pro-group \(\St^{(\infty)}(\Phi, R)\).
  The morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\) is equivariant with respect to this action.
 \end{prop}
-\begin{proof} 
- Let us check that the morphisms \[\{\up{x_\alpha(u)} x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{-\alpha\}, R) \mid \beta \neq - \alpha \}\] defined above satisfy the defining relations of $\St^{(\infty)}(\Phi\setminus\{- \alpha\}, R)$. 
- First of all, observe that these morphisms are, in fact, morphisms of pro-groups. 
- Indeed, the assertion is not obvious only for the morphism defined by~\eqref{eq:action-R4b}, in which case it can be verified directly using \eqref{R2},\eqref{R3} and \eqref{eq:N21def}:
+\begin{proof}
+ Consider the collection of morphisms \begin{equation} \label{eq:collection-morphisms} \{\up{x_\alpha(u)} x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi\setminus\{-\alpha\}, R) \mid \beta \neq - \alpha \}\end{equation} defined by~\eqref{eq:action-R2}--\eqref{eq:action-R4b}. We claim that these morphisms are, in fact, morphisms of pro-groups. Indeed, the assertion is not obvious only for the morphism defined by~\eqref{eq:action-R4b}, in which case it can be verified directly using \eqref{R2},\eqref{R3} and \eqref{eq:N21def}:
  \begin{multline*}
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)} + c^{(\infty)})} = \\
- x_\beta(b^{(\infty)} + c^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u (b^{(\infty)} + c^{(\infty)}))\, x_{\alpha + 2\beta}(N_{\beta, \alpha}^{2, 1} u (b^{(\infty)} + c^{(\infty)})^2)\\
+ = x_\beta(b^{(\infty)} + c^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u (b^{(\infty)} + c^{(\infty)}))\, x_{\alpha + 2\beta}(N_{\beta, \alpha}^{2, 1} u (b^{(\infty)} + c^{(\infty)})^2) = \\
  = x_\beta(b^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u b^{(\infty)}) x_\beta(c^{(\infty)})\, x_{\alpha + \beta}(N_{\alpha, \beta} u c^{(\infty)}) \cdot \\
  \cdot x_{\alpha + 2\beta}(N_{\beta, \alpha}^{2, 1} u ({b^{(\infty)}}^2 + {c^{(\infty)}}^2)) = \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}\, \up{x_\alpha(u)}{x_\beta(c^{(\infty)})}.
  \end{multline*}
-
- Now let \(\beta, \gamma \in \Phi \setminus \{- \alpha\}\) be a pair of nonparallel roots such that \(i\alpha + j\beta + k\gamma \neq 0\) for all \(i, j, k > 0\), i.e. there is a Steinberg relation for \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})]\) not involving \(-\alpha\) such that \(\beta + \gamma \neq -2\alpha\). %there is Steinberg relation for \([x_\beta(b^{(\infty)}), x_\gamma(c^{(\infty)})]\) in \(\St^{(\infty)}(\Phi \setminus \{\pm \alpha\}, R)\).
- We have to check that
- \[[\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(u)}{x_{i\beta + j\gamma}\bigl(N_{\beta, \gamma}^{i, j} {b^{(\infty)}}^i {c^{(\infty)}}^j \bigr)}\]
- in $\St^{(\infty)}(\Phi \setminus \{-\alpha\}, R)$, where \(N_{\beta, \gamma}^{1, 1} = N_{\beta, \gamma}\) and \(N_{\beta, \gamma}^{1, 2} = -N_{\gamma, \beta}^{2, 1}\). Using \cref{root-action} and the defining relations, both sides may be simplifed to
- \[\prod_{\substack{i\alpha + j \beta + k\gamma \in \Phi\\ i \geq 0; j, k > 0}} x_{i\alpha + j\beta + k\gamma}\bigl(A_{i, j, k} u^i {b^{(\infty)}}^j {c^{(\infty)}}^k\bigr),\]
- where the structure constants \(A_{i, j, k} \in \mathbb Z\) arise in the expansion of any side of the identity
- \[[\up{x_\alpha(t)}{x_\beta(b)}, \up{x_\alpha(t)}{x_\gamma(c)}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(t)}{x_{i\beta + j\gamma}(N_{\beta, \gamma}^{i, j} b^i c^j)}\]
- in \(\St(\Phi, \mathbb Z[b, c, t])\).
-
- By~\cref{rem:xpma-presentation} we have an endomorphism of $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$, which we denote by $\up{x_\alpha(u)}(-)$.
- Since $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$ is isomorphic to $\St^{(\infty)}(\Phi, R)$ by~\cref{SingleRootElimination}, we obtain an endomorphism of $\St^{(\infty)}(\Phi, R)$, which we also denote by $\up{x_\alpha(u)}(-)$. It is easy to see that the mapping $u \mapsto \up{x_\alpha(u)}(-)$, in fact, specifies a group homomorphism $S^{-1}R \to \Aut(\St^{(\infty)}(\Phi, R))$. 
+ Next, we claim that the morphisms~\eqref{eq:collection-morphisms} specify an endomorphism of the pro-group $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$. By~\cref{rem:xpma-presentation} this amounts to showing that \begin{equation}\label{eq:main-equation}[\up{x_\alpha(u)}{x_\beta(b^{(\infty)})}, \up{x_\alpha(u)}{x_\gamma(c^{(\infty)})}] = \prod_{\substack{i\beta + j\gamma \in \Phi\\ i, j > 0}} \up{x_\alpha(u)}{x_{i\beta + j\gamma}\bigl(N_{\beta, \gamma}^{i, j} {b^{(\infty)}}^i {c^{(\infty)}}^j \bigr)},\end{equation}
+ where \(\beta, \gamma \in \Phi \setminus \{- \alpha\}\), $\beta \neq -\gamma$ and \(i\alpha + j\beta + k\gamma \neq 0\) for all \(i, j, k > 0\). The latter conditions precisely mean that the root subset $\Sigma = \Phi\cap (\ZZ_{\geq 0}\beta + \ZZ_{\geq 0}\gamma + \ZZ_{\geq 0}\alpha)$ is special and does not contain $-\alpha$. 
+ Notice that after expanding definitions the identity \eqref{eq:main-equation} turns into a pro-group analogue of some valid relation in $\mathrm{U}(\Sigma, R)$, which by~\cref{rem:uni-rad} must be a consequence of Steinberg relations not involving generators $x_{-\alpha}(a)$. Thus, \eqref{eq:main-equation} is consequence of the relations between the root subgroup morphisms of $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$.
+ 
+ So far we have constructed an endomorphism of $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$, which we denote by $\up{x_\alpha(u)}(-)$.
+ Since $\St^{(\infty)}(\Phi\setminus\{-\alpha\}, R)$ is isomorphic to $\St^{(\infty)}(\Phi, R)$ by~\cref{SingleRootElimination}, we obtain an endomorphism of $\St^{(\infty)}(\Phi, R)$, which we denote by the same notation $\up{x_\alpha(u)}(-)$. It is easy to see that the mapping $u \mapsto \up{x_\alpha(u)}(-)$, in fact, specifies a group homomorphism $S^{-1}R \to \Aut(\St^{(\infty)}(\Phi, R))$. 
  
  The next step of the proof is to verify that the constructed action satisfies the Steinberg relations~\eqref{R2}--\eqref{R4} defining the group $\St(\Phi, S^{-1}R)$.
- Let $R_{\alpha, \beta}$ be one of these relations involving the roots $\alpha$ and $\beta$ in the left-hand side and $\Sigma \subseteq \Phi$ be the special subset consisting of all roots in the cone spanned by $\alpha$ and $\beta$, i.e. $\Sigma = \Phi \cap (\mathbb R_{\geq 0} \alpha + \mathbb R_{\geq 0} \beta)$. Let $\gamma \in \Phi \setminus \Sigma$ be a root. We claim that a direct computation involving \cref{root-action}, the pro-analogues of~\eqref{R2}--\eqref{R4} and~\eqref{eq:m-mult} shows that the conjugation by the left and right side of $R_{\alpha, \beta}$ transform $x_\gamma$ to the same morphism $R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$.
- Indeed, during each consecutive application of the conjugation action from~\cref{root-action} no root subgroup morphism $x_\delta$, $\delta \in \Sigma$ may appear, which guarantees that the computation does not ``stuck''. Thus, by~\cref{DoubleRootElimination} we obtain the fact that the automorphisms of conjugation by the left and right side of $R_{\alpha,\beta}$ are, in fact, the same automorphism of $\St^{(\infty)}(\Phi, R)$.
+ Let $R_{\alpha, \beta}$ be one of these relations involving the roots $\alpha$ and $\beta$ in the left-hand side and $\Sigma \subseteq \Phi$ be the special subset consisting of all roots in the cone spanned by $\alpha$ and $\beta$, i.e. $\Sigma = \Phi \cap (\ZZ_{\geq 0} \alpha + \ZZ_{\geq 0} \beta)$. Let $\gamma \in \Phi \setminus \Sigma$ be a root. We claim that a direct computation involving \cref{root-action}, the pro-analogues of~\eqref{R2}--\eqref{R4} and~\eqref{eq:m-mult} shows that the conjugation by the left and right side of $R_{\alpha, \beta}$ transform $x_\gamma$ to the same morphism $R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$.
+ Indeed, during each consecutive application of the conjugation action from~\cref{root-action} no root subgroup morphism $x_\delta$, $\delta \in \Sigma$ may appear, which guarantees that the computation does not ``stuck''. Thus, by~\cref{DoubleRootElimination} the automorphisms of conjugation by the left and the right side of $R_{\alpha,\beta}$ are, in fact, the same automorphism of $\St^{(\infty)}(\Phi, R)$.
 
 %Denote by $\Phi_0$ the rank $2$ root subsystem spanned by $\alpha$ and $\beta$. Let $\gamma \in \Phi\setminus \Phi_0$ be a root. We claim that a direct computation involving \cref{root-action}, the pro-analogues of~\eqref{R2}--\eqref{R4} and~\eqref{eq:m-mult} shows that the conjugation by the left and right side of $R_{\alpha, \beta}$ transform $x_\gamma$ to the same morphism $R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$.
  %Indeed, during each consecutive application of the conjugation action from~\cref{root-action} no root subgroup morphism $x_\delta$, $\delta \in \Phi_0$ may appear, which guarantees that the computation does not ``stuck''. Thus, by~\cref{DoubleRootElimination} we obtain the fact that the automorphisms of conjugation by the left and right side of $R_{\alpha,\beta}$ are, in fact, the same automorphism of $\St^{(\infty)}(\Phi, R)$.

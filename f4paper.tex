@@ -507,7 +507,7 @@ The morphisms $x_{\alpha} \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R), \ \al
 Notice that by~\cref{lem:proobj-is-a-limit} both of the assertions can be verified in the special case where $G^{(\infty)} = G$ is a group.
 
 Let us verify the first assertion. Since there is only a finite number of roots in $\Phi$ one can find a sufficiently large index $s \in S$ such that the homomorphisms $f_1^{(s)}, f_2^{(s)}\colon \St(\Phi, R^{(s)}) \to G$ become equal after precomposition with $x_\alpha$ for all $\alpha \in \Phi$.
-Since the root elements $x_\alpha^{(s)}(a)$ generate $\St(\Phi, R^{(s)})$ we conclude that the morphisms $f_1$ and $f_2$ are equal.
+Since the root elements $x_\alpha(a^{(s)})$ generate $\St(\Phi, R^{(s)})$ we conclude that the morphisms $f_1$ and $f_2$ are equal.
 
 Let us verify the second assertion. By definition, a morphism $f_\alpha \colon R^{(\infty)} \to G$ corresponds to a single group homomorphism 
  $f'_\alpha \colon R^{(s_\alpha)} \to G$ for some $s_\alpha \in S$. Precomposing each $f'_\alpha$ with the structure morhism $R^{(s)} \to R^{(s_\alpha)}$ for sufficiently large $s \in S$, we obtain a collection of homomorphisms $\widetilde{f}_\alpha \colon R^{(s)} \to G$.
@@ -516,7 +516,7 @@ Notice that~\eqref{R2}--\eqref{R4} specify only a {\it finite} collection of ide
 Unwinding the definitions, we find a sufficiently large index $s \in S$ such that $\widetilde{f}_\alpha$ satisfy the same identities (with $f_\alpha$'s replaced by $\widetilde{f}_\alpha$'s).
 Thus, we obtain a group homomorphism $\St(\Phi, R^{(s)}) \to G$, which, in turn, determines a morphism $\St^{(\infty)}(\Phi, R) \to G$.
 \end{proof}
-Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a group object in $\Pro(\Set)$ is essential in the proof of the above lemma.
+%Notice that the assumption that $G^{(\infty)}$ is a pro-group and not merely a group object in $\Pro(\Set)$ is essential in the proof of the above lemma.
 
 \section{Elimination of roots}
 Throughout this section we always assume that \(R\) is an arbitrary commutative ring,
@@ -543,8 +543,7 @@ As an immediate application of the above lemma we prove the following generation
   
   In the case \(\Phi_0 \cong \rA_2\) the claim follows from~\cref{ThreeRoots}.
   Consider the case $\Phi_0 \cong \rB_2$, which is only possible for $\Phi=\rF_4$.
-  Since all root subsystems of type $\rB_2$ lie in the same orbit under the action of $W(\rF_4)$ (cf. e.\,g.~\cite[Table~8]{Ca72}), we may assume that $\Phi_0$ corresponds to the central edge of the Dynkin diagram of $\rF_4$ and $\delta$ is one of the nodes incident to it, in which case the claim is obvious.
-  Finally, consider the case $\Phi_0 \cong \rA_1+\rA_1$. If $\Phi$ is simply-laced or $\Phi_0$ has roots of different length, acting by a suitable element of $W(\Phi)$ we may achieve that the basis vectors of $\Phi_0$ correspond to a pair of unjoined nodes of the Dynkin diagram of $\Phi$, in which case the claim is also obvious. Finally, if $\Phi=\rF_4$ and the roots of $\Phi_0$ have the same length, our claim follows from the fact that we already know its validity for the root subsystem $\Phi'\cong \rD_4$ consisting of roots of $\Phi$ having the same length as the roots of $\Phi_0$.
+  Since all root subsystems of type $\rB_2$ lie in the same orbit under the action of $W(\rF_4)$ (cf. e.\,g.~\cite[Table~8]{Ca72}), we may assume that $\Phi_0$ corresponds to the central edge of the Dynkin diagram of $\rF_4$ and $\delta$ is one of the nodes incident to it, in which case the claim is obvious. Finally, consider the case $\Phi_0 \cong \rA_1+\rA_1$. If either $\Phi$ is simply-laced or $\Phi_0$ has roots of different length, acting by a suitable element of $W(\Phi)$ we may achieve that the basis vectors of $\Phi_0$ correspond to a pair of unjoined nodes of the Dynkin diagram of $\Phi$, in which case the claim is also obvious. On the other hand, if $\Phi=\rF_4$ and the roots of $\Phi_0$ have the same length, the claim can be proved by passing to the root subsystem $\Phi'\cong \rD_4$ consisting of roots of $\Phi$ having the same length as the roots of $\Phi_0$.    
   
   As an immediate consequence of the claim we conclude that
   \begin{multline*} f_1(x_\delta(a^{(\infty)}b^{(\infty)})) = [f_1(x_{\gamma_1}(N_{\gamma_1, \gamma_2}a^{(\infty)})),\ f_1(x_{\gamma_2}(b^{(\infty)}))] = \\
@@ -823,12 +822,17 @@ Our first goal is to show that the group \(\GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) c
 \[xy - \varepsilon(xy) = (x - \varepsilon(x)) (y - \varepsilon(y)) + (x - \varepsilon(x)) \varepsilon(y) + \varepsilon(x) (y - \varepsilon(y)).\]
 Consider the ``coconjugation'' homomorphism (written down in Sweedler notation)
 \[\mathrm{Coconj} \colon \Ker(\varepsilon) \to H_\Phi \otimes \Ker(\varepsilon),\ h \mapsto \sum h_{(1)} \varsigma(h_{(3)}) \otimes h_{(2)}.\]
+Denote by $T$ the image of the above homomorphism $\mathrm{Coconj}$.
+Since $T$ is the image of a finitely generated rng \(\Ker(\varepsilon)\), it is also finitely generated.
+Denote by \(a_1, \ldots, a_n\) the collection of generators for $T$. The homomorphism \(\ZZ[X_1, \ldots, X_n] \to T \rtimes \ZZ\) sending $X_i$ to $a_i$ is surjective. Its kernel, which we denote by \(I\), is generated by a finite collection of polynomials \(f_1, \ldots, f_m\) by Hilbert's basis theorem. Clearly, \(f_j\)'s have zero constant terms and form a system of defining relations for $T$. Denote by \(N\) be the maximum of the degrees of \(f_j\)'s.
 
-We claim that the rng \(T = \mathrm{Coconj}(\Ker(\varepsilon))\) is finitely presented. Indeed, it is finitely generated as the image of a finitely generated rng \(\Ker(\varepsilon)\). Let \(a_1, \ldots, a_n\) be the generators of \(T\), so the ring homomorphism \(\ZZ[X_1, \ldots, X_n] \to T \rtimes \ZZ, X_i \mapsto a_i\) is surjective. Its kernel \(I\) is generated by a finitely many polynomials \(f_1, \ldots, f_m\) by Hilbert's basis theorem. Clearly, \(f_j\) have zero constant terms and \(f_j(a_1, \ldots, a_m) = 0\) are all the relations between \(a_i\). Let \(N\) be the maximal degree of \(f_j\).
+Recall that \(S^{-1} R\) is isomorphic as an $R$-module to the filtered colimit of \(R\)-modules \(\frac Rs\) over the category $\mathcal{S}$ (cf.~\cref{sec:rng-homotopes}), each of these modules being isomorphic to $R$. For $s, t \in S$ the homomorphism \(\frac R{s} \to \frac R{st}\) is given by $\tfrac{r}{s} \mapsto \tfrac{rt}{st}$. The elements of modules $\frac Rs$ can be ``multiplied'' with each other via the natural $R$-module homomorphisms $\frac R s \otimes_R \frac R t \to \frac R {st}$ compatible with the canonical homomorphisms $\frac R s \to S^{-1}R$.
 
-Recall that \(S^{-1} R\) is the direct limit of \(R\)-modules \(\frac Rs\) for \(s \in S\), each of these modules is isomorphic to \(R\). We omit the notation for the canonical homomorphisms \(\frac R{s} \to \frac R{ss'}\) and \(\frac Rs \to S^{-1} R\). There is also a canonical isomorphism \(\frac Rs \otimes_R R^{(ss')} \cong R^{(s')}, \frac rs \otimes {r'}^{(ss')} \mapsto (rr')^{(s')}\) for every \(s, s' \in S\), so the \(R\)-module \(\frac Rs \otimes_R R^{(ss')}\) has a natural multiplication.
+Let $g$ be an element of $\GG_{\mathrm{sc}}(\Phi, S^{-1} R) \cong \mathbf{Ring}(H_\Phi, S^{-1}R)$. Consider the rng homomorphism \(g \otimes \mathrm{id} \colon T \to S^{-1} R \otimes \Ker(\varepsilon)\).
+Since tensor products commute with colimits, there exists \(s_0 \in S\) such that\((g \otimes \mathrm{id})(a_i)\) are the images of certain elements $\up g {a_i}$ of \(\frac R{s_0} \otimes \Ker(\varepsilon)$ under the canonical homomorphism \[ \tfrac R{s_0} \otimes \Ker(\varepsilon) \to S^{-1}R \otimes \Ker(\varepsilon).\] It is easy to see that there exists \(s_1 \in S s_0^N\) such that in $\frac R{s_1} \otimes \Ker(\varepsilon)$ we have the identities \(f_j(\up g{a_1}, \ldots, \up g{a_n}) = 0\) for all \(j\)'s.
 
-Let $g$ be an element of $\mathbf{Ring}(H_\Phi, S^{-1}R) \cong \GG_{\mathrm{sc}}(\Phi, S^{-1} R)$ and consider the rng homomorphism \(g \otimes \mathrm{id} \colon T \to S^{-1} R \otimes \Ker(\varepsilon)\). It is easy to see that there is \(s_0 \in S\) such that all \((g \otimes \mathrm{id})(a_i)\) may be lifted to \(\frac R{s_0} \otimes \Ker(\varepsilon)\). Let us choose such elements \(\up g{a_i} \in \frac R{s_0} \otimes \Ker(\varepsilon)\). There also is \(s_1 \in S s_0^N\) such that \(f_j(\up g{a_1}, \ldots, \up g{a_n}) = 0 \in \frac R{s_1} \otimes \Ker(\varepsilon)\) for all \(j\).
+ There is also a canonical isomorphism \(\frac Rs \otimes_R R^{(ss')} \cong R^{(s')}, \frac rs \otimes {r'}^{(ss')} \mapsto (rr')^{(s')}\) for every \(s, s' \in S\), so the \(R\)-module \(\frac Rs \otimes_R R^{(ss')}\) has a natural multiplication.
+
 
 We are ready to construct the automorphism
 \[\up g{(-)} \colon \GG^{(\infty)}(\Phi, R) \to \GG^{(\infty)}(\Phi, R)\]

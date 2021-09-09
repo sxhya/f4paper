@@ -614,28 +614,28 @@ Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism
  First of all, observe that the above relations are obtained from \eqref{R2}--\eqref{R4} by replacing $x_\alpha(a^{(\infty)})$ with $x_{\beta, \gamma}(b^{\infty}, c^{\infty})$.
  
  Let us first consider the case \(\delta \in \Phi \setminus (\ZZ \beta + \ZZ \gamma)\).
- Notice that the root subset $\Sigma = \Phi \cap (\ZZ_{\geq 0}\beta + \ZZ_{\geq 0}\gamma + \ZZ_{> 0}\delta)$ is special and does not contain $\alpha$. Thus, the relations between the remaining root subgroup morphisms of $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$ suffice to rewrite the left-hand side of~\eqref{R2-bg}--\eqref{R4-bg2} as follows:
+ We claim that the relations between the remaining root subgroup morphisms of $\St^{(\infty)}(\Phi\setminus\{\alpha\}, R)$ suffice to rewrite the left-hand side of any of the relations~\eqref{R2-bg}--\eqref{R4-bg2} as follows:
  \begin{align}
-  &\bigl[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\delta(d^{(\infty)})\bigr] \label{eq:elim-lhs_1} \\
+  &\bigl[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_\delta(d^{(\infty)})\bigr] \nonumber \\
   %
   &= \up{x_\beta(N_{\beta, \gamma} b^{(\infty)})
    x_\gamma(c^{(\infty)})
    x_\beta(-N_{\beta, \gamma} b^{(\infty)})
    x_\gamma(-c^{(\infty)})}
   {x_\delta(d^{(\infty)})}\,
-  x_\delta(-d^{(\infty)}) \nonumber \\
-  %
+  x_\delta(-d^{(\infty)}) \label{eq:elim-lhs_1} \\
   &= \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ i, j \geq 0; k > 0}}
   x_{i\beta + j\gamma + k\delta} \bigl(A_{i, j, k} {b^{(\infty)}}^i {c^{(\infty)}}^j {d^{(\infty)}}^k\bigr). \nonumber
  \end{align}
- The integers \(A_{i, j, k}\) in the above formula depend only on the roots \(\beta\), \(\gamma\), \(\delta\) (a priori they also depend on the chosen order of factors). To determine the constants $A_{i,j,k}$, one can compute the commutator $[x_\alpha(1),\ x_\delta(1)]$ in $\St(\Phi, \ZZ)$ via the same procedure as in~\eqref{eq:elim-lhs_1}:
+ Indeed, observe that the root subset $\Sigma = \Phi \cap (\ZZ_{\geq 0}\beta + \ZZ_{\geq 0}\gamma + \ZZ_{> 0}\delta)$ is special and does not contain $-\beta$, $-\gamma$ or $\alpha$. Thus, we can iteratively simplify the expression for the conjugate of $x_\delta$ in the above formula obtaining a product of root subgroup morphisms corresponding to a subset of roots of $\Sigma$ at each step.
+ The integers \(A_{i, j, k}\) in~\eqref{eq:elim-lhs_1} depend only on the roots \(\beta\), \(\gamma\), \(\delta\) (a priori they also depend on the chosen order of factors). To determine them one can compute the commutator $[x_\alpha(1),\ x_\delta(1)]$ in $\St(\Phi, \ZZ)$ via the same procedure as in~\eqref{eq:elim-lhs_1}:
  \begin{equation} \label{eq:elim-lhs_2}
   [x_\alpha(1), x_\delta(1)] = \prod_{\substack{i\beta + j\gamma + k\delta \in \Phi\\ i, j \geq 0; k > 0}}
   x_{i\beta + j\gamma + k\delta}(A_{i, j, k}).
  \end{equation}
   By~\cref{rem:uni-rad} the integers $A_{i,j,k}$ are uniquely determined by~\eqref{eq:elim-lhs_2}.
   It is easy to see that, depending on the relative position of $\alpha$ and $\delta$, the integers $A_{i,j,k}$ coincide with the structure constants in the right-hand sides of~\eqref{R2},~\eqref{R3} or~\eqref{R4}, in particular, $A_{i,j,k}=0$ for $i\neq j$.
-  Thus, \eqref{R2-bg}--\eqref{R4-bg2} follow from~\eqref{eq:elim-lhs_1}.
+  Thus, \eqref{R2-bg}--\eqref{R4-bg2} follow from~\eqref{eq:elim-lhs_1} in the specified case.
  
  It remains to verify Steinberg relations in the case \(\delta \in \Phi \cap (\ZZ \beta + \ZZ \gamma)\).
  By~\cref{ThreeRoots} there exist roots \(\beta_1, \beta_2 \in \Phi \setminus (\ZZ \beta + \ZZ \gamma)\) such that \(|\beta_1| = |\beta_2| = |\beta|\) and \(\beta = \beta_1 + \beta_2\). 
@@ -649,17 +649,17 @@ Below we will construct the morphism $\widetilde x_\alpha$ based on the morphism
    = [x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ [x_{\beta_1}(b_1^{(\infty)}),\ x_{\beta_2}(b_2^{(\infty)})]]  & \text{ by~\eqref{R3}} \label{eq:elim-lhs3} \\ 
    = [[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),\ x_{\beta_1}(b_1)],\ \up{x_{\beta_1}(b_1^{(\infty)})} x_{\beta_2}(b_2^{(\infty)})]  & \text{ by~\eqref{eq:HW-corr},\eqref{R2-bg}.} \nonumber \end{align}
 In the case $\Phi_0\cong \rA_3$ the inner commutator in the last expression is trivial by~\eqref{R2-bg},
- therefore so is the outer commutator (notice that $\alpha$ and $\beta_1$ form a sharp angle).
+ therefore so is the outer commutator (notice that $\alpha$ and $\beta_1$ form an acute angle).
 In the case $\Phi_0\cong \rC_3$ the last expression can be further simplified using~\eqref{R3} and the already proved relation~\eqref{R3-bg} as follows:
 \[ \ldots = [x_{\alpha+\beta_1}(N_{\alpha, \beta_1} b^{(\infty)}c^{(\infty)}b_1^{(\infty)}),\ x_{\beta}(N_{\beta_1, \beta_2} b_1^{(\infty)} b_2^{(\infty)}) x_{\beta_2}(b_2^{(\infty)})]. \]
-Since $\alpha+\beta_1$ forms a sharp angle with both $\beta$ and $\beta_2$, the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} and~\eqref{R2-bg}.  
+Since $\alpha+\beta_1$ forms an acute angle with both $\beta$ and $\beta_2$, the latter commutator is trivial by~\eqref{eq:comm-mult-rhs} and~\eqref{R2-bg}.  
   In both cases the right-hand side of~\eqref{eq:elim-lhs3} is trivial. Consequently, from~\cref{RingGeneration} we obtain the equality
  $[x_{\beta,\gamma}(b^{(\infty)}, c^{(\infty)}),\ x_\beta(d^{(\infty)})] = 1.$
  Thus, we have verified~\eqref{R2-bg} in all cases. 
  
  Finally, it remains to verify~\eqref{R3-bg} in the case $\delta \in \{-\beta, -\gamma\}$.
  By symmetry it suffices to consider the case $\delta = -\beta$.
- From the already proved relations~\eqref{R2-bg}--\eqref{R3-bg} and the other Steinberg relations one obtains
+ From the already proved relations~\eqref{R2-bg}--\eqref{R3-bg} and the other Steinberg relations we obtain
  \begin{align*}
   &[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}),
   x_{-\beta}(N_{-\beta_1, -\beta_2} b_1^{(\infty)} b_2^{(\infty)})] \\
@@ -673,7 +673,7 @@ Since $\alpha+\beta_1$ forms a sharp angle with both $\beta$ and $\beta_2$, the 
   &= \prod_{\substack{i\alpha - j\beta_1 - k\beta_2 \in \Phi\\ i, j, k \geq 0}}
   x_{i\alpha - j\beta_1 - k\beta_2}\bigl(B_{i, j, k} {b^{(\infty)}}^i {c^{(\infty)}}^i {b_1^{(\infty)}}^j {b_2^{(\infty)}}^k\bigr),  
  \end{align*}
-for some integers $B_{i,j,k}$.
+where $B_{i,j,k}$ are certain integers.
 Direct computation (or an argument similar to the one used in the first part of the proof) shows that the constants \(B_{i, j, k}\) are all zero with the sole exception of \(B_{1, 1, 1}$, which is equal to $N_{\alpha, -\beta}\). Consequently, from~\cref{RingGeneration} we obtain
  \[[x_{\beta, \gamma}(b^{(\infty)}, c^{(\infty)}), x_{-\beta}(d^{(\infty)})] = x_\gamma(N_{\alpha, -\beta} b^{(\infty)} c^{(\infty)} d^{(\infty)}),\]
 which finishes the proof of~\eqref{R3-bg}.
@@ -723,8 +723,9 @@ x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = [x_{\beta_1}(\v
  \begin{equation}\label{eq:balance}
  x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)} d^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)} c^{(\infty)}, d^{(\infty)}).
  \end{equation}
- It follows from~\eqref{eq:balance} that $x_{\beta_1,\gamma_1}(b^{(\infty)}, u_1^{(\infty)}u_2^{(\infty)}d^{(\infty)}) = x_{\beta_1,\gamma_1}(b^{(\infty)}u_1^{(\infty)}u_2^{(\infty)},d^{(\infty)})$ therefore by~\cref{RingGeneration}
- \[x_{\beta_1, \gamma_1}(b^{(\infty)}, u^{(\infty)} c^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)} u^{(\infty)}, c^{(\infty)}).\]
+ It follows from~\eqref{eq:balance} that 
+ \[x_{\beta_1,\gamma_1}(b^{(\infty)}, u_1^{(\infty)}u_2^{(\infty)}d^{(\infty)}) = x_{\beta_1,\gamma_1}(b^{(\infty)}u_1^{(\infty)}u_2^{(\infty)},d^{(\infty)})\] therefore by~\cref{RingGeneration}
+ $x_{\beta_1, \gamma_1}(b^{(\infty)}, u^{(\infty)} c^{(\infty)}) = x_{\beta_1, \gamma_1}(b^{(\infty)} u^{(\infty)}, c^{(\infty)}).$
  Thus, the last requirement of~\cref{RingPresentation} is satisfied. Consequently, there exists a unique morphism of pro-groups \(\widetilde x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi \setminus \{\alpha\}, R)\) satisfying
  \begin{equation} \label{eq:new-root} x_{\beta_1, \gamma_1}(b^{(\infty)}, c^{(\infty)}) = \widetilde x_\alpha(b^{(\infty)} c^{(\infty)}) = x_{\beta_2, \gamma_2}(b^{(\infty)}, c^{(\infty)}). \qedhere\end{equation}
 \end{proof}

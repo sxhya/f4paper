@@ -479,10 +479,8 @@ Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the 
  %\begin{multline*}
 %(x\otimes y, a, b)\cdot(z\otimes w,c,d)=\\=(xz\otimes yw+xc\otimes y+x\otimes yd+az\otimes w+z\otimes bw+a\otimes d+c\otimes b, ac, bd).
  %\end{multline*}
- Thus, $\Rng$ has the structure of a symmetric monoidal category with zero rng as the unit object and $\otimeshat$ as the tensor product.
- 
- Notice that if $R_1$ and $R_2$ are rngs then their $\ZZ$-module tensor product \(R_1 \otimes_{\mathbb Z} R_2\) has the natural structure of an rng. Obviously, $R_1 \otimes R_2 \subseteq R_1 \otimeshat R_2$. A priori there are no homomorphisms $R_i \to R_1 \otimes R_2$. However, if $R_1$ happens to be a ring then there is a canonical homomorphism $R_2 \to R_1 \otimes R_2$.
- 
+ Thus, $\Rng$ has the structure of a symmetric monoidal category with zero rng as the unit object and $\otimeshat$ as the tensor product. We still sometimes need the ordinary tensor product of rngs \(R_1 \otimes_{\mathbb Z} R_2\), where each factor \(R_i\) maps to the tensor product if the other factor \(R_{3 - i}\) has the unit.
+
  Recall that a {\it Hopf monoid} $H$ in a symmetric monoidal category, by definition, is a bimonoid $(H, m, u, \Delta, \varepsilon)$ such that there is a morphism $\varsigma\colon H\to H$, called the {\it antipode}, satisfying $u \circ \varepsilon = m \circ (1 \otimes \varsigma) \circ \Delta$.
  We claim that the augmentation ideal \(\Ker(\varepsilon)\) of $H_\Phi$ has the structure of a Hopf monoid in \(\Rng\). The coproduct $\Delta$ and the antipode $\varsigma$ are induced from the corresponding morphisms defining the structure of a Hopf algebra on $H_\Phi$. The counit $\varepsilon$ is the unique homomorphism $\Ker(\varepsilon) \to 0$.
  
@@ -845,7 +843,7 @@ Observe that for every \(s, s' \in S\) the mapping $ \frac rs \otimes {r'}^{(ss'
 It is easy to check that the homomorphism $ T \to \frac R{s_1} \otimes_R R^{(s s_1)} \cong R^{(s)}$ given by $a_i \mapsto (\mathrm{id} \otimes h)(\up g{a_i})$
 is well-defined. Precomposing this homomorphism with \(\mathrm{Coconj}\colon \Ker(\varepsilon) \to T\) we obtain the element \(\up gh\), that we wanted to construct.
 
-Clearly, the resulting morphism of pro-groups is independent of the choices of \(s_0\), \(s_1\), and \(a_i\). It is not hard to check that $\up 1{(-)}$ is the identity automorphism of $\mathrm{id}_{\GG^{(\infty)}(\Phi, R)}$ and that for all \(g, g' \in \GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) one has $\up{gg'}{(-)} = \up{g}{(\up{g'}{(-)})}$.
+Clearly, the resulting morphism of pro-groups is independent of the choice of \(s_1\). Hence it is also independent of the choice of \(s_0\), \(a_i\), and \(\up g{a_i}\). For example, if \(\up g{a_i} + \delta_i\) are another choices of \(\up g{a_i}\) and the other parameters are fixed, then \((s_2 \otimes 1) \delta_i = 0\) for some \(s_2 \in S\) and \((\mathrm{id} \otimes h)(\delta_i) = 0 \in \frac R{s_1 s_2} \otimes_R R^{(s s_1 s_2)}\). It is not hard to check that $\up 1{(-)}$ is the identity automorphism of $\mathrm{id}_{\GG^{(\infty)}(\Phi, R)}$ and that for all \(g, g' \in \GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) one has $\up{gg'}{(-)} = \up{g}{(\up{g'}{(-)})}$.
 
 \subsection{The case of Steinberg groups}
 Clearly, the set $\Pro(\Group)(R^{(\infty)})$ of endomorphisms of the additive pro-group of the pro-rng $R^{(\infty)}$ can be endowed with the structure of an associative ring: the addition is 

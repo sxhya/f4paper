@@ -851,6 +851,21 @@ is well-defined. Precomposing this homomorphism with \(\mathrm{Coconj}\colon \Ke
 
 Clearly, the resulting morphism of pro-sets is independent of the choice of \(s_1\). Hence it is also independent of the choice of \(s_0\), \(a_i\), and \(b_i\). For example, if \(b_i + \delta_i\) are another choices of \(b_i\) and the other parameters are fixed, then \((s_2 \otimes 1) \delta_i = 0\) for some \(s_2 \in S\) and \((\mathrm{id} \otimes h)(\delta_i) = 0 \in \frac R{s_1 s_2} \otimes_R R^{(s s_1 s_2)}\). 
 
+We have to check that \(\up g{(-)}\) is a morphism of group objects in \(\Pro(\Set)\). This easily follows from the commutative diagram
+\[\xymatrix@R=48pt@C=72pt@!0{
+&
+\mkern-36mu S^{-1} R \otimes \Ker(\varepsilon) \otimeshat \Ker(\varepsilon) &&
+S^{-1} R \otimes \Ker(\varepsilon) \otimeshat S^{-1} R \otimes \Ker(\varepsilon) \ar[ll] \mkern-18mu & \\
+T \ar[dr]_(0.4){\substack{a_i \mapsto\\ (\mathrm{id} \otimes h_1 h_2)(b_i)} \mkern-18mu} \ar[ur]^(0.4){g \otimes \Delta} &
+\Ker(\varepsilon) \ar[r]^(0.33){\Delta} \ar[l]_{\mathrm{Coconj}} &
+\Ker(\varepsilon) \otimeshat \Ker(\varepsilon) \ar[rr]^(0.55){\mathrm{Coconj} \otimeshat \mathrm{Coconj}} &&
+T \otimeshat T \ar[dl]^(0.3){\mkern-18mu \substack{a_i \otimes a_j \mapsto\\ (\mathrm{id} \otimes h_1 \otimeshat \mathrm{id} \otimes h_2)(b_i \otimes b_j)}} \ar[ul]_(0.4){\quad g \otimes \mathrm{id} \otimeshat g \otimes \mathrm{id}} \\
+&
+\frac R{s_1^2} \otimes_R R^{(ss_1^2)} &&
+\frac R{s_1} \otimes_R R^{(ss_1)} \otimeshat \frac R{s_1} \otimes_R R^{(ss_1)} \ar[ll] &
+}\]
+for sufficiently large \(s_1\).
+
 It is not hard to check that $\up 1{(-)}$ is the identity automorphism of $\mathrm{id}_{\GG^{(\infty)}(\Phi, R)}$ and that for all \(g, g' \in \GG_{\mathrm{sc}}(\Phi, S^{-1} R)\) one has $\up{gg'}{(-)} = \up{g}{(\up{g'}{(-)})}$.
 
 \subsection{The case of Steinberg groups}

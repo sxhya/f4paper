@@ -473,15 +473,17 @@ Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the 
 \begin{rem}
  The definition of the group $\GG(\Phi, R^{(s)})$ can be reformulated in terms of Hopf algebras. Denote by \(H_\Phi\) the Hopf \(\ZZ\)-algebra corresponding to the group scheme \(\GG_{\mathrm{sc}}(\Phi, -)\). Thus, $\GG_\mathrm{sc}(\Phi, R) = \mathbf{Ring}(H_\Phi, R)$.
  
- Recall that the coproduct in the category $\Rng$ is given by \[R_1 \otimeshat R_2 = (R_1 \otimes_{\ZZ} R_2) \oplus R_1 \oplus R_2\]
- with the product structure induced from that of $(R_1\rtimes\mathbb Z)\otimes_{\mathbb Z}(R_2\rtimes\mathbb Z)$. The canonical morphisms $R_i \to R_1 \otimeshat R_2$, $i=1,2$ are the obvious inclusions $r_1 \mapsto (0, r_1, 0)$, $r_2 \mapsto (0, 0, r_2)$.
+ For a pair $A, B$ of abelian groups we define the product $A \otimeshat B$ as follows: \[A \otimeshat B := (A \otimes_{\ZZ} B) \oplus A \oplus B.\]  
+ Recall that if $R_1$ and $R_2$ are rngs then $R_1 \otimeshat R_2$ realizes their coproduct in the category $\Rng$.
+ The product structure is induced from that of $(R_1\rtimes\mathbb Z)\otimes_{\mathbb Z}(R_2\rtimes\mathbb Z)$. The canonical morphisms $R_i \to R_1 \otimeshat R_2$, $i=1,2$ are the obvious inclusions $r_1 \mapsto (0, r_1, 0)$, $r_2 \mapsto (0, 0, r_2)$.
  %given by
  %\begin{multline*}
 %(x\otimes y, a, b)\cdot(z\otimes w,c,d)=\\=(xz\otimes yw+xc\otimes y+x\otimes yd+az\otimes w+z\otimes bw+a\otimes d+c\otimes b, ac, bd).
  %\end{multline*}
- Thus, $\Rng$ has the structure of a symmetric monoidal category with zero rng as the unit object and $\otimeshat$ as the tensor product.
+ $\Rng$ has the structure of a symmetric monoidal category with zero rng as the unit object and $\otimeshat$ as the tensor product. For an rng $R$ we denote by $can$ the natural homomorphism $R^{\otimeshat 2} \to R$ given by $(s \otimes t, u, v) \mapsto st + u + v$.
  
- Notice that if $R_1$ and $R_2$ are rngs then their $\ZZ$-module tensor product \(R_1 \otimes_{\mathbb Z} R_2\) has the natural structure of an rng. Obviously, $R_1 \otimes R_2 \subseteq R_1 \otimeshat R_2$. A priori there are no homomorphisms $R_i \to R_1 \otimes R_2$. However, if $R_1$ happens to be a ring then there is a canonical homomorphism $R_2 \to R_1 \otimes R_2$.
+ Notice also that that the usual $\ZZ$-module tensor product \(R_1 \otimes_{\mathbb Z} R_2\) has the natural structure of an rng and that $R_1 \otimes R_2 \subseteq R_1 \otimeshat R_2$. A priori there are no homomorphisms $R_i \to R_1 \otimes R_2$. However, if $R_1$ happens to be a ring, there is a canonical homomorphism $R_2 \to R_1 \otimes R_2$.
+
  
  Recall that a {\it Hopf monoid} $H$ in a symmetric monoidal category, by definition, is a bimonoid $(H, m, u, \Delta, \varepsilon)$ such that there is a morphism $\varsigma\colon H\to H$, called the {\it antipode}, satisfying $u \circ \varepsilon = m \circ (1 \otimes \varsigma) \circ \Delta$.
  We claim that the augmentation ideal \(\Ker(\varepsilon)\) of $H_\Phi$ has the structure of a Hopf monoid in \(\Rng\). The coproduct $\Delta$ and the antipode $\varsigma$ are induced from the corresponding morphisms defining the structure of a Hopf algebra on $H_\Phi$. The counit $\varepsilon$ is the unique homomorphism $\Ker(\varepsilon) \to 0$.
@@ -491,7 +493,7 @@ Let $\Sigma \subseteq \Phi$ be a special root subset. It is well-known that the 
  where $\widetilde{h}(a) = \left(h(a - \varepsilon(a)),\, \varepsilon(a)\right)$.
  The structure of a group on $\GG(\Phi, R^{(s)})$ is then induced from the Hopf monoid structure on $\Ker(\varepsilon)$ by duality.
  For instance, the neutral element in this group is the zero map \(0 \colon \Ker(\varepsilon) \to R^{(s)}\). The product of \(g, h \in \Rng(\Ker(\varepsilon), R^{(s)})\) is the composite map
- \[\Ker(\varepsilon) \xrightarrow{\Delta} \Ker(\varepsilon) \otimeshat \Ker(\varepsilon) \xrightarrow{g \otimeshat h} R^{(s)} \otimeshat R^{(s)} \to R^{(s)}.\]
+ \[ \xymatrix{ \Ker(\varepsilon) \ar[r]^(0.45){\Delta} & \Ker(\varepsilon) ^{\otimeshat 2} \ar[r]^(0.47){g \otimeshat h} & R^{(s)} \otimeshat R^{(s)} \ar[r]^(0.6){can} & R^{(s).}} \]
 \end{rem}
 
 \begin{rem}
@@ -859,15 +861,19 @@ Now the element $\theta_s(h)$ now can be constructed as the composite of $\mathr
 
 It is clear that the morphism~\eqref{eq:conj-g} defined by $\theta$ is independent of the choices of $s_0$ and $s_1$. The diagram~\eqref{eq:bis} also shows that it is also independent of the choice of $b_i$'s.
 
-We need to check that \(\up g{(-)}\) is a morphism of pro-groups.
-Recall from~\cref{sec:group-objects} that it is enough to check that it is morphism of group objects in \(\Pro(\Set)\). By a standard result on Hopf algebras and using that $K$ is flat, we may choose the generators of \(K\) in such a way that $Y = \bigoplus_i \mathbb Z y_i \leq K$ is a finite free submodule and $\Delta(Y) \leq Y \otimeshat Y$. Hence there is a well-defined group homomorphism $Y \to \frac R{s_1} \otimes K, y_i \mapsto b_i$. Take sufficiently large $s_2 \in S$, then the diagram
+Now let us check that \(\up g{(-)}\) is a morphism of pro-groups.
+%Recall from~\cref{sec:group-objects} that it is enough to check that it is morphism of group objects in \(\Pro(\Set)\).
+By a standard result on Hopf algebras and using the fact that $K$ is flat, we may choose the generators $y_i$ of \(K\) in such a way that $Y = \bigoplus_i \mathbb Z y_i \leq K$ is a finite free submodule and $\Delta(Y) \leq Y \otimeshat Y$. Consequently, there is a well-defined group homomorphism $Y \to \frac R{s_1} \otimes K$ given by $y_i \mapsto b_i$. From the identity $\up g{(xy)} = \up gx\, \up gy$ reformulated in the language of Hopf algebras we conclude that for sufficiently large $s_2 \in S$ the top pentagon in the following diagram commutes:
 \[\xymatrix@R=48pt@C=72pt@!0{
-Y \otimeshat Y \ar[d] & Y \ar[r] \ar[l]_{\Delta} & \frac R{s_1} \otimes K \ar[d]^{\mathrm{can} \otimes \Delta} \\
-(\frac R{s_1} \otimes K)^{\otimeshat 2} \ar[rr] \ar[d]^{(\mathrm{id} \otimes h_1) \otimeshat (\mathrm{id} \otimes h_2)} && \frac R{s_1 s_2} \otimes K^{\otimeshat 2} \ar[d]^{\mathrm{id} \otimes (h_1 \otimeshat h_2)} \\
-(R^{(ss_2)})^{\otimeshat 2} \ar[d] && \frac R{s_1 s_2} \otimes (R^{(ss_1 s_2)})^{\otimeshat 2} \ar[d] \\
-R^{(ss_2)} \ar[r] & R^{(s)} & \frac R{s_1 s_2} \otimes R^{(ss_1 s_2)} \ar[l]
+ & Y \ar[dr] \ar[dl]_(0.4){\Delta} & \\
+Y \otimeshat Y \ar[d] &  & \frac R{s_1} \otimes K \ar[d]^{s_1s_2 \otimes \Delta} \\
+(\frac R{s_1} \otimes K)^{\otimeshat 2} \ar[rr]^{u} \ar[d]^{(\mathrm{id} \otimes h_1) \otimeshat (\mathrm{id} \otimes h_2)} && \frac R{s_1^2 s_2} \otimes K^{\otimeshat 2} \ar[d]^{\mathrm{id} \otimes (h_1 \otimeshat h_2)} \\
+(R^{(ss_1s_2)})^{\otimeshat 2} \ar[d]^{can} && \frac R{s_1^2 s_2} \otimes (R^{(ss_1^2 s_2)})^{\otimeshat 2} \ar[d]^{\mathrm{id}\otimes can} \\
+R^{(ss_1s_2)} \ar[r] & R^{(s)} & \frac R{s_1^2 s_2} \otimes R^{(ss_1^2 s_2).} \ar[l]
 }\]
-is commutative for all rng homomorphisms $h_1, h_2 \colon K \to R^{(ss_1 s_2)}$. Here the unlabelled arrows are the obvious maps constructed by various multiplication homomorphisms and the structure maps. The top face expresses the identity $\up g{(xy)} = \up gx\, \up gy$ in the language of Hopf algebras and the outer face gives the required identity.
+The homomorphism $u$ in the above diagram is induced by canonical homomorphisms $\tfrac R {s_1} \to \tfrac R {s_1^2s_2}\text{ and }\tfrac{R} {s_1} \otimes \tfrac R{s_1} \to \tfrac R{s_1^2s_2}.$
+It is clear that for any $h_1, h_2 \colon K \to R^{(ss_1^2 s_2)}$ the bottom square of the above diagram also commutes.
+The commutativity of the whole diagram now gives the identity $\up g (h_1h_2) = \up g h_1 \cdot \up g h_2$.
 
 \iffalse
 which easily follows from the following commutative diagram (in which \(s_2\) is sufficiently large):

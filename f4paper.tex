@@ -862,7 +862,6 @@ Now the element $\theta_s(h)$ now can be constructed as the composite of $\mathr
 It is clear that the morphism~\eqref{eq:conj-g} defined by $\theta$ is independent of the choices of $s_0$ and $s_1$. The diagram~\eqref{eq:bis} also shows that it is also independent of the choice of $b_i$'s.
 
 Now let us check that \(\up g{(-)}\) is a morphism of pro-groups.
-%Recall from~\cref{sec:group-objects} that it is enough to check that it is morphism of group objects in \(\Pro(\Set)\).
 By a standard result on Hopf algebras and using the fact that $K$ is flat, we may choose the generators $y_i$ of \(K\) in such a way that $Y = \bigoplus_i \mathbb Z y_i \leq K$ is a finite free submodule and $\Delta(Y) \leq Y \otimeshat Y$. Consequently, there is a well-defined group homomorphism $Y \to \frac R{s_1} \otimes K$ given by $y_i \mapsto b_i$. From the identity $\up g{(xy)} = \up gx\, \up gy$ reformulated in the language of Hopf algebras we conclude that for sufficiently large $s_2 \in S$ the top pentagon in the following diagram commutes:
 \[\xymatrix@R=48pt@C=72pt@!0{
  & Y \ar[dr] \ar[dl]_(0.4){\Delta} & \\
@@ -873,7 +872,7 @@ R^{(ss_1s_2)} \ar[r] & R^{(s)} & \frac R{s_1^2 s_2} \otimes R^{(ss_1^2 s_2).} \a
 }\]
 The homomorphism $u$ in the above diagram is induced by canonical homomorphisms $\tfrac R {s_1} \to \tfrac R {s_1^2s_2}\text{ and }\tfrac{R} {s_1} \otimes \tfrac R{s_1} \to \tfrac R{s_1^2s_2}.$
 It is clear that for any $h_1, h_2 \colon K \to R^{(ss_1^2 s_2)}$ the bottom square of the above diagram also commutes.
-The commutativity of the whole diagram now gives the identity $\up g (h_1h_2) = \up g h_1 \cdot \up g h_2$.
+The commutativity of the whole diagram implies that the images of $\theta_{ss_1s_2}(h_1h_2)$ $\theta_{ss_1s_2}(h_1) \theta_{ss_1s_2}(h_2)$ in $\GG_\mathrm{sc}(\Phi, R^{(s)})$ coincide. Consequently, the morphism~\eqref{eq:conj-g} is a morphism of group of objects in $\Pro(\Set)$ and hence a morphism of pro-groups (cf.~\cref{sec:group-objects}).
 
 \iffalse
 which easily follows from the following commutative diagram (in which \(s_2\) is sufficiently large):
@@ -926,7 +925,7 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  %
  \up{x_\alpha(u)}{x_\beta(b^{(\infty)})}
  &:= x_{\alpha + \beta}\bigl(N_{\alpha, \beta} u b^{(\infty)}\bigr)\,
-  x_{\alpha + 2\beta}\bigl(N^{2,1}_{\beta, \alpha} u {b^{(\infty)}}^2\bigr)\,
+  x_{\alpha + 2\beta}\bigl(N^{1,2}_{\alpha, \beta} u {b^{(\infty)}}^2\bigr)\,
   x_\beta(b^{(\infty)}) \label{eq:action-R4b} \\
  \multispan2{\hfill if $\alpha + \beta, \alpha + 2\beta \in \Phi$.} \nonumber
  \end{align} 

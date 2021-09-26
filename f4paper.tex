@@ -864,14 +864,14 @@ Now let us check that \(\up g{(-)}\) is a morphism of pro-groups.
 By a standard result on Hopf algebras and using the fact that $K$ is flat, we may choose the generators $y_i$ of \(K\) in such a way that $Y = \bigoplus_i \mathbb Z y_i \leq K$ is a finite free submodule and $\Delta(Y) \leq Y \otimeshat Y$. Consequently, there is a well-defined group homomorphism $Y \to \frac R{s_1} \otimes K$ given by $y_i \mapsto b_i$. From the identity $\up g{(xy)} = \up gx\, \up gy$ reformulated in the language of Hopf algebras we conclude that for sufficiently large $s_2 \in S$ the top pentagon in the following diagram commutes:
 \begin{equation}\label{eq:house} \xymatrix@R=48pt@C=72pt@!0{
  & Y \ar[dr] \ar[dl]_(0.4){\Delta} & \\
-Y \otimeshat Y \ar[d] &  & \frac R{s_1} \otimes K \ar[d]^{s_1s_2 \otimes \Delta} \\
+Y \otimeshat Y \ar[d] &  & \frac R{s_1} \otimes K \ar[d]^{\mathrm{can} \otimes \Delta} \\
 (\frac R{s_1} \otimes K)^{\otimeshat 2} \ar[rr]^{u} \ar[d]^{(\mathrm{id} \otimes h_1) \otimeshat (\mathrm{id} \otimes h_2)} && \frac R{s_1^2 s_2} \otimes K^{\otimeshat 2} \ar[d]^{\mathrm{id} \otimes (h_1 \otimeshat h_2)} \\
-(R^{(ss_1s_2)})^{\otimeshat 2} \ar[d]^{can} && \frac R{s_1^2 s_2} \otimes (R^{(ss_1^2 s_2)})^{\otimeshat 2} \ar[d]^{\mathrm{id}\otimes can} \\
+(R^{(ss_1s_2)})^{\otimeshat 2} \ar[d]^{\mathrm{can}} && \frac R{s_1^2 s_2} \otimes (R^{(ss_1^2 s_2)})^{\otimeshat 2} \ar[d]^{\mathrm{id}\otimes \mathrm{can}} \\
 R^{(ss_1s_2)} \ar[r] & R^{(s)} & \frac R{s_1^2 s_2} \otimes R^{(ss_1^2 s_2).} \ar[l]
 }\end{equation}
 The homomorphism $u$ in the above diagram is induced by canonical homomorphisms $\tfrac R {s_1} \to \tfrac R {s_1^2s_2}\text{ and }\tfrac{R} {s_1} \otimes \tfrac R{s_1} \to \tfrac R{s_1^2s_2}.$
 It is clear that for any $h_1, h_2 \colon K \to R^{(ss_1^2 s_2)}$ the bottom square of the above diagram also commutes.
-The commutativity of the whole diagram implies that the images of $\theta_{ss_1s_2}(h_1h_2)$ and $\theta_{ss_1s_2}(h_1) \theta_{ss_1s_2}(h_2)$ in $\GG_\mathrm{sc}(\Phi, R^{(s)})$ coincide. Consequently, the morphism~\eqref{eq:conj-g} is a morphism of group of objects in $\Pro(\Set)$ and hence a morphism of pro-groups (cf. the beginning of~\cref{sec:group-objects}).
+The commutativity of the whole diagram implies that the images of $\theta_{ss_1s_2}(h_1h_2)$ and $\theta_{ss_1s_2}(h_1)\, \theta_{ss_1s_2}(h_2)$ in $\GG_\mathrm{sc}(\Phi, R^{(s)})$ coincide. Consequently, the morphism~\eqref{eq:conj-g} is a morphism of group of objects in $\Pro(\Set)$ and hence a morphism of pro-groups (cf. the beginning of~\cref{sec:group-objects}).
 
 \iffalse
 which easily follows from the following commutative diagram (in which \(s_2\) is sufficiently large):
@@ -962,16 +962,16 @@ Our next step is to construct the action of the Steinberg group $\St(\Phi, S^{-1
  %It is clear that the homomorphism \(\mathrm{st} \circ x_\alpha \colon R^{(s)} \to \GG(\Phi, R^{(s)})\) is given by $u \mapsto (ev_{X=u}) \circ t_\alpha$, where $ev_{X=u}$ is the only rng homomorphism $X\ZZ[X]$ sending $X$ to $u$.
  Fix \(u \in S^{-1} R\). Since root unipotents $t_\alpha$ satisfy~\eqref{R3} the outer square of the following diagram commutes:
  \[\scalebox{0.9}{\begin{minipage}{1.1\textwidth}\[\xymatrix@R=2pc {
- K \ar[rr]^(.42){(t_\alpha(u)\otimes\mathrm{id})\mathrm{Coconj}} \ar[ddd]^{\Delta}  & & 
+ K \ar[rr]^(.42){(t_\alpha(u)\otimes\mathrm{id})\,\mathrm{Coconj}} \ar[ddd]^{\Delta}  & & 
  S^{-1}R \otimes K \ar[rr]^(0.48){\mathrm{id}\otimes \mathrm{Cot}_\beta} & &
  S^{-1}R \otimes X \mathbb Z[X]\\
- & Y \ar[d] \ar@{^{(}->}[ul] \ar[r]^(0.4){\{b_i\}} & \tfrac R {s_1} \otimes K \ar[u] \ar[r]^(0.42){s_1s_2\otimes\mathrm{Cot}_\beta} & \tfrac R {s_1^2s_2} \otimes X\ZZ[X] \ar[ru]\\ 
- & Y \otimeshat Y  \ar@{^{(}->}[dl] \ar@{-->}[rr] & & (\tfrac R {s_1} \otimes X\ZZ[X])^{\otimeshat 2} \ar[r] \ar[u]^{u} & (S^{-1}R \otimes X\ZZ[X])^{\otimeshat 2} \ar[uu]^{can} \\
+ & Y \ar[d] \ar@{^{(}->}[ul] \ar[r]^(0.4){\{b_i\}} & \tfrac R {s_1} \otimes K \ar[u] \ar[r]^(0.42){\mathrm{can}\otimes\mathrm{Cot}_\beta} & \tfrac R {s_1^2s_2} \otimes X\ZZ[X] \ar[ru]\\ 
+ & Y \otimeshat Y  \ar@{^{(}->}[dl] \ar@{-->}[rr] & & (\tfrac R {s_1} \otimes X\ZZ[X])^{\otimeshat 2} \ar[r] \ar[u]^{v} & (S^{-1}R \otimes X\ZZ[X])^{\otimeshat 2} \ar[uu]^{\mathrm{can}} \\
  K \otimeshat K \ar[rrrr]^{\mathrm{Cot}_\beta \otimeshat \mathrm{Cot}_{\alpha + \beta}} & & & &
  X_1 \mathbb Z[X_1] \otimeshat X_2 \mathbb Z[X_2]. \ar[u]^{\begin{psmallmatrix*}[l] X_1 & \mapsto & 1 \otimes X\\ X_2 & \mapsto & N_{\alpha,\beta} u \otimes X \end{psmallmatrix*}}  &
  }\]\end{minipage}}\]
  Similarly, to the construction of~\eqref{eq:house} one can choose a free abelian subgroup $Y\leq K$ of finite rank generating $K$ multiplicatively such that $\Delta(Y)\leq Y\otimeshat Y$. 
- Following the procedure described in~\eqref{eq:bis} we can choose $s_1$ and $\{b_i\}$ in such a manner that the top left square of the above diagram commutes. Also, there is a dashed arrow making the bottom pentagon commute. Finally, there exists sufficiently large $s_2$ such that the central square of the diagram commutes. This commutativity implies~\eqref{eq:equivariance-statement} (the top path gives the right-hand side while the bottom one gives the left-hand side; the homomorphism $u$ is constructed similarly to~\eqref{eq:house}). Thus, by \cref{SteinbergPresentation} the morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, S^{-1} R) \to \GG^{(\infty)}(\Phi, R)\) is \(\St(\Phi, S^{-1} R)\)-equivariant.
+ Following the procedure described in~\eqref{eq:bis} we can choose $s_1$ and $\{b_i\}$ in such a manner that the top left square of the above diagram commutes. Also, there is a dashed arrow making the bottom pentagon commute. Finally, there exists sufficiently large $s_2$ such that the central square of the diagram commutes. This commutativity implies~\eqref{eq:equivariance-statement} (the top path gives the right-hand side while the bottom one gives the left-hand side; the homomorphism $v$ is constructed similarly to~\eqref{eq:house}). Thus, by \cref{SteinbergPresentation} the morphism \(\mathrm{st} \colon \St^{(\infty)}(\Phi, S^{-1} R) \to \GG^{(\infty)}(\Phi, R)\) is \(\St(\Phi, S^{-1} R)\)-equivariant.
 \end{proof}
 
 \begin{theorem}\label{ChevalleyLocalAction}

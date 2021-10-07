@@ -70,11 +70,11 @@
 
 \newcommand{\catname}[1]{{\normalfont\textbf{#1}}} %Category name
 \begin{document}
-\maketitle
 \begin{abstract}
  Let $R$ be a regular commutative ring containing a field and $\Phi$ be a simply-laced irreducible root system. In the paper we show that in many cases the unstable functor $\mathrm{K}_2(\Phi, R)$ possesses the $\mathbb{A}^1$-invariance property and therefore can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ as the fundamental group of the simply-connected Chevalley--Demazure group scheme $\mathrm{G}_\mathrm{sc}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(R))$.
 \end{abstract}
 
+\maketitle
 
 \section{Introduction}
 Let $k$ be an arbitrary field.
@@ -90,7 +90,7 @@ Let $R$ be a regular ring containing $k$  and let $\Phi$ be either the root syst
 Combining the above result with the classical Matsumoto theorem~\cite[Theorem~5.10]{Ma69} one can obtain that $\K_2(\Phi, A)$ embeds into the Milnor functor $\K_2^\mathrm{M}(\mathrm{Frac}(A))$.
 
 \begin{corollary}
-For $k$ with $\mathrm{char}(k)\neq 2$ one has $\mathrm H_2(\mathrm{Spin}_{2l}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k)$.
+For $k$ with $\mathrm{char}(k)\neq 2$ and $\ell \geq 7$ one has $\mathrm H_2(\mathrm{Spin}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k)$.
 \end{corollary}
 
 
@@ -182,7 +182,7 @@ $$\begin{tikzcd}
 	Then the natural map $\Ker(K(\lambda_b)) \to \Ker(K(\overline{\lambda_b}))$ induced by $\lambda_a$ is surjective.
 \end{lemma}
 \begin{proof}
-	Set $B=R$, $A=R_a$ и $h=b$. It is clear that $B \to A$ is an {\'e}tale homomorphism. To see that the present situation is a special case of~\ref{LPP} it is enough to  check that the map $j\colon B/hB \to A/hA$ is an isomorphism. Let us first verify the surjectivity of $j$, or what is the same, the inclusion $A \subseteq Ah+B$. Fix an element $r/a^s\in A=R_a$, we need to show that it lies in $Ah+B$. We may assume that $s\geq 1$, so that $a^s$ and $b^s$ are still coprime. Choose $x, y \in R$ such that $xa^s+yb^s=1$. Thus, $r/a^s$ can be decomposed into the sum of $rx\in B$ and $ry(b/a)^s\in bR_a=hA$.
+	Set $B=R$, $A=R_a$ and $h=b$. It is clear that $B \to A$ is an {\'e}tale homomorphism. To see that the present situation is a special case of~\ref{LPP} it is enough to  check that the map $j\colon B/hB \to A/hA$ is an isomorphism. Let us first verify the surjectivity of $j$, or what is the same, the inclusion $A \subseteq Ah+B$. Fix an element $r/a^s\in A=R_a$, we need to show that it lies in $Ah+B$. We may assume that $s\geq 1$, so that $a^s$ and $b^s$ are still coprime. Choose $x, y \in R$ such that $xa^s+yb^s=1$. Thus, $r/a^s$ can be decomposed into the sum of $rx\in B$ and $ry(b/a)^s\in bR_a=hA$.
 
 	Now let us verify the injectivity of $j$, i.\,e. the inclusion $Ah\cap B \subseteq Bh$. Suppose that $rb/a^s=c\in B=R$. We may assume $s\geq 1$ otherwise there is nothing to prove. From $rb=a^sc$ and $xa^s+yb^s=1$ we obtain the required inclusion $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b \in Rb = Bh$. 
 \end{proof}
@@ -333,7 +333,7 @@ We need to check that the axioms \ref{CFC}--\ref{HIF} are satisfied. Axiom~\ref{
 The axiom~\ref{LPP} is checked in~\cref{sec:patching} below.
 In the case $\Phi = \rA_\ell$ the axiom~\ref{PGP} is satisfied by~\cite[Theorem~5.1]{Tu83}. In the orthogonal case it is satisfied by~\cite[Theorem~1]{LS20}. Finally, axiom~\ref{HIF} is satisfied by the Korollar of \cite[Satz~1]{Re75}.
 
-Now the assertion of~\cref{theorem:LP-for-K2} follows from~\cref{lpb}, while the assertion of~\cref{theorem:Gersten} follows from~\cref{thm:gb}.
+Notice that every regular ring containing a field $k$ is geometrically regular over a perfect subfield of $k$. Now the assertion of~\cref{theorem:LP-for-K2} follows from~\cref{lpb}, while the assertion of~\cref{theorem:Gersten} follows from~\cref{thm:gb}.
 \end{proof}
 
 \subsection{\texorpdfstring{$\K_2(\Phi, R)$}{K2(R)} as $\mathbb{A}^1$-fundamental group}
@@ -497,7 +497,7 @@ Here $\lambda_h^k$ (resp. $\lambda^k_{\iota(h)}$) denotes the homomorphism of St
  Notice that a priori the homomorphism $c_g$ depends on the choice of a representative for $conj(g)$. On the other hand, from the definition of equivalence of pre-morphisms it follows that if $c'_g$ is the degree $1$ component for a different representative of $conj(g)$ then for sufficiently large $m$ one has $c'_{\overline{\iota}(g)}(x_{\alpha}(ah^m)) = c_{\overline{\iota}(g)}(x_{\alpha}(ah^m))$.
 \end{rem}
 
-\subsection{Proof of~\cref{glueing}}
+\subsection{Proof of Theorem~\ref{glueing}}
 %It is well known that subgroup factorizations of $\mathrm G(\Phi,\,R)$ are an important ingredient in the study of the $\K_1$-functor. It turns out that in the study of $\K_2$-functors the $\St(\Phi,\,R)$-torsors play similar role, see~\cite{LS20}. TODO:
 
 We let $\St(\Phi, B)$ act on $\St(\Phi, B_h) \times \St(\Phi, A)$ on the left via the formula 

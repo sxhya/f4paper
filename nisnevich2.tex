@@ -6,27 +6,27 @@
 \usepackage[capitalise]{cleveref}
 \usepackage{tikz,tikz-cd}
 \usepackage{scalerel}
-\usepackage[notref, notcite]{showkeys}
 \usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
 \usepackage{enumitem}
-
 \usepackage[backend=bibtex, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
-\addbibresource{nisnevich2.bib}
 
+%\usepackage[notref, notcite]{showkeys}
+
+\addbibresource{nisnevich2.bib}
 \renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
 \newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{https://dx.doi.org/\thefield{doi}}{#1}}}
 \DeclareFieldFormat[article, inproceedings, inbook, book, online]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
 \renewcommand*{\bibfont}{\footnotesize}
 
-\title{On the $\mathbb{A}^1$-invariance of $K_2$ modeled on Chevalley groups, I.}
+\title{On the $\mathbb{A}^1$-invariance of $\K_2$ modeled on Chevalley groups, I.}
 \keywords {Steinberg group, Chevalley group, unstable $\K_2$-functor, $\mathbb{A}^1$-fundamental group. {\em Mathematical Subject Classification (2010):} 19C09, 20G35, 20H05}
 
 \author[1] {Andrei Lavrenov} \email{avlavrenov at gmail.com} 
-\address{Euler Mathematical Institute, 14th Line V.O., 29B, Saint-Petersburg 199178 Russia}
+\address{Euler Mathematical Institute, Pesochnaya Embankment, 10, Saint-Petersburg, 197376 Russia}
 \author[2] {Sergey Sinchuk} \email{sinchukss at gmail.com}
 \author[3] {Egor Voronetsky} \email{voronetckiiegor at yandex.ru}
-\address{St. Petersburg State University, 14th Line V.O., 29B, Saint-Petersburg 199178 Russia}
+\address{St. Petersburg State University, 14th Line V.O., 29B, Saint-Petersburg, 199178 Russia}
 
 \date {\today}
 
@@ -71,19 +71,32 @@
 \newcommand{\catname}[1]{{\normalfont\textbf{#1}}} %Category name
 \begin{document}
 \maketitle
+\begin{abstract}
+ Let $R$ be a regular commutative ring containing a field and $\Phi$ be a simply-laced irreducible root system. In the paper we show that in many cases the unstable functor $\mathrm{K}_2(\Phi, R)$ possesses the $\mathbb{A}^1$-invariance property and therefore can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ as the fundamental group of the simply-connected Chevalley--Demazure group scheme $\mathrm{G}_\mathrm{sc}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(R))$.
+\end{abstract}
+
+
 \section{Introduction}
-
+Let $k$ be an arbitrary field.
 \begin{theorem}[The $\K_2$-analogue of Lindel--Popescu theorem] \label{theorem:LP-for-K2}
-Let $R$ be a ring geometrically regular over an arbitrary field $k$ and let $\Phi$ be either the root system $\rA_\ell$ for $\ell\geq4$, or $\rD_\ell$ for $\ell\geq 7$. In the latter case assume additionally that the characteristic of $k$ is not $2$. Then $\K_2(\Phi,\,R[t])\cong\K_2(\Phi,\,R).$
+Let $R$ be a regular ring containing $k$  and let $\Phi$ be either the root system $\rA_\ell$ for $\ell\geq4$, or $\rD_\ell$ for $\ell\geq 7$. In the latter case assume additionally that the characteristic of $k$ is not $2$. Then $\K_2(\Phi,\,R[t])\cong\K_2(\Phi,\,R).$
 \end{theorem}
 
+\begin{corollary} \label{cor:motivic-pi1} Under the assumptions of~\cref{theorem:LP-for-K2} one has \[\pi_1^{\mathbb{A}^1}(\Gsc(\Phi, -))(R) \equiv \mathrm{Hom}_{\mathcal{H}^{\mathbb{A}^1}_{k,*}}(S^1 \wedge (\mathrm{Spec}(R))_+, \Gsc(\Phi, -)) = \K_2(\Phi, R).\]
+\end{corollary}
 
-\begin{theorem}[The $\K_2$-analogue of Gersten conjecture]
+\begin{theorem}[The $\K_2$-analogue of Gersten conjecture] \label{theorem:Gersten} Let $\Phi$ be as in~\cref{theorem:LP-for-K2} and let $A$ be an arbitrary semi-local regular domain containing $k$. Then the canonical map $\K_2(\Phi, A) \to \K_2(\Phi, \mathrm{Frac}(A))$ is injective. \end{theorem}
 
-\end{theorem}
+Combining the above result with the classical Matsumoto theorem~\cite[Theorem~5.10]{Ma69} one can obtain that $\K_2(\Phi, A)$ embeds into the Milnor functor $\K_2^\mathrm{M}(\mathrm{Frac}(A))$.
 
-\subsection{Acknowledgements} The authors would like to thank A. Stavrova for pointing out a way to get rid of the assumption of infiniteness of the base field in the statements of our main results. We would also like to thank V. Sosnilo and N.~A.~Vavilov for their useful comments and interest in this work.
+\begin{corollary}
+For $k$ with $\mathrm{char}(k)\neq 2$ one has $\mathrm H_2(\mathrm{Spin}_{2l}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k)$.
+\end{corollary}
 
+
+\subsection{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several key ideas used in this paper. We would also like to thank V.~Sosnilo and N.~A.~Vavilov for their useful comments and interest in this work.
+
+The second and the third-named authors were supported by the Russian Science Foundation grant No. 19-71-30002 and also by the Foundation for the Advancement of Theoretical Physics and Mathematics ``BASIS``.
 
 \section{General formalism}
 \begin{comment}
@@ -129,14 +142,14 @@ The following result gives a sufficient condition for a functor $K$ to be $\math
 \end{theorem}
 \begin{rem}
  In the literature a functor satisfying the axiom~\ref{PGP} is sometimes called {\it acyclic} (cf.~\cite[Def.~III.4.1.1]{Kbook}).
-The choice of the name for~\eqref{LPP} is inspired by axiom (P3) from~\cite[Proposition~3.3.4]{AHW18}. Notice that the application of $\mathrm{Spec}$ to the commutative square from~\ref{LPP} yields a distinguished Nisnevich square in the sense of Morel--Voevodsky. Notice also that our axioms can be slightly relaxed, so that the assertion of the Theorem becomes slightly stronger, see Remark~\ref{rem:relax} below.
+The choice of the name for~\eqref{LPP} is inspired by axiom (P3) from~\cite[Proposition~3.3.4]{AHW18}. It is easy to see that the application of $\mathrm{Spec}$ to the commutative square from~\ref{LPP} yields a distinguished Nisnevich square in the sense of~\cite[Definition~3.1.3]{MV99}. Notice also that our axioms can be slightly relaxed, so that the assertion of the Theorem becomes slightly stronger, see Remark~\ref{rem:relax} below.
 \end{rem}
 
 The proof is based on a series of lemmas and is deferred until the end of this section. We start by deducing the following useful corollary of the axiom~\ref{DP}. 
 
 Let $k$ be an arbitrary commutative ring and $K\colon \catname{Alg}_k \to \catname{Grp}$ be a functor.
-We say that $K$ satisfies the {\it Quillen--Suslin local-global principle} if for every $R\in \catname{Alg}_k$ the map 
-\begin{equation} \label{QS-def} \begin{tikzcd} NK(R) \ar{r}{\prod \lambda_M} & \prod\limits_{M \in \Max(R)} NK(R_M) \end{tikzcd} \end{equation} is injective.
+We say that $K$ satisfies the {\it Quillen--Suslin local-global principle} if for every $R\in \catname{Alg}_k$ the following map is injective:
+\begin{equation} \label{QS-def} \begin{tikzcd} NK(R) \ar{r}{\prod \lambda_M} & \prod\limits_{M \in \Max(R)} NK(R_M). \end{tikzcd} \end{equation}
 \begin{lemma}\label{LGP}
 Suppose that $K$ is a finitary functor satisfying~\ref{DP}. Then $K$ satisfies the Quillen--Suslin local-global principle. In particular, $NK$ is a separated presheaf in the Zariski topology.
 \end{lemma}
@@ -191,7 +204,7 @@ Recall that a $k$-algebra $R$ is called {\it essentially smooth} if it is geomet
 Equivalently, $R$ is essentially smooth over $k$ if it is essentially of finite type over $k$ and $R\otimes_k\overline k$ is regular (see e.\,g.~\cite[p.~137]{Sw98}). 
 If, moreover, $R$ is of finite type over $k$, it is called {\it smooth over $k$}.
 
-\begin{theorem}[Panin]
+\begin{theorem}[Panin]\label{thm:Panin}
 \label{paninthm}
 	Let $k$ be a field, $R$ be a domain smooth over $k$. Let $M_1,\ldots, M_n$ be a finite set of maximal ideals of $R$. Denote by $A=R_{M_1,\ldots,M_n}$ the corresponding semi-localization of $R$. Let $f$ be an element of the intersection  $\cap_{i=1}^nM_i \subseteq R$. Then there exist a monic polynomial $h(t)\in A[t]$, a domain $S$ essentially smooth over $k$ and homomorphisms $\tau$, $p$, $p'$ and $\delta$ such that $\tau^*\colon\mathrm{Spec}(S)\to\mathrm{Spec}(A[t])$ is an {\'e}tale morphism and the following diagram commutes:
 \begin{equation}\label{eq:panin-diag}
@@ -204,8 +217,7 @@ Additionally, the homomorphism $\tau$ is an injection and one has $A[t]/hA[t]\co
 \begin{proof}
  All of the assertions except the last two are a direct ring-theoretic restatement of (i)--(iii) of~\cite[Theorem~2.5]{Pa19}.
 	Since $\tau^*$ is open and $S\neq 0$, $\tau(S)$ is dominant. Denote by $I$ the kernel of $\tau$. The closed subscheme defined by $I$ must contain the image of $\tau^*$ therefore $I$ is radical. Since $A[t]$ is a domain we conclude that $I=0$.		
-		
-	%From the fact that the left square is an elementary distinguished Nisnevich square we obtain an isomorphism $A[t]/\sqrt{hA[t]}\cong S/\sqrt{\tau(h)S}$. This together with the topological invariance of {\'e}tale morphisms (\cite[Theorem~41.15.2]{stacks-project}) implies the required isomorphism $A[t]/hA[t]\cong S/\tau(h)S$.
+
 	Set $X = \mathrm{Spec}(A[t]/h)$, $Y = \mathrm{Spec}(S/h)$. We need to show that the morphism $\tau' \colon Y \to X$ obtained from $\tau^*$ by restriction is an isomorphism. Set $Y_0 := Y \times_{X} X_\mathrm{red}$. From the fact that the left square is an elementary distinguished Nisnevich square we obtain that the composite morphism $Y_\mathrm{red} \not\hookrightarrow Y_0 \xrightarrow{\tau''} X_\mathrm{red}$ is an isomorphism, consequently since $\tau''$ is {\'e}tale, the closed embedding $(Y_0)_\mathrm{red} = Y_\mathrm{red} \not\hookrightarrow Y_0$ is also {\'e}tale, hence an open embedding, hence an isomorphism (see e.\,g. Corollary~3.6, Proposition~3.10 of~\cite{Mi80}). Thus, we conclude that $\tau''$ is an isomorphism and hence by the topological invariance of {\'e}tale morphisms~\cite[Theorem~3.23]{Mi80}, so is $\tau'$.
 \end{proof}
 
@@ -256,7 +268,6 @@ K\bigl(R_M\bigr) \ar[hookrightarrow]{r} & K(E),
 \end{tikzcd}\]
 in which the right vertical arrow is an isomorphism by~\ref{HIF} and the horizontal arrows are injective by Corollary~\ref{esssmooth}.
 
-
 Thus, the left vertical arrow is also injective and $NK(R_M) = 1$, as required.
 \end{proof}
 \begin{rem}\label{rem:relax}
@@ -264,7 +275,7 @@ It is clear from the above proof that it possible to weaken the requirements on 
 \end{rem}
 
 We can also prove the following result analogous to~\cite[Theorem~1.2]{Sta20}
-\begin{theorem}
+\begin{theorem}\label{thm:gb}
 Let $k$ be a field.
 Suppose that $K\colon\catname{Alg}_k\rightarrow\catname{Grp}$
 is a finitary functor satisfying weak affine Nisnevich excision and $\mathbb{P}^1$-glueing properties for domains. 
@@ -277,21 +288,18 @@ By Theorem~\ref{popescu} $A$ is a filtered colimit of smooth $k$-algebras. Since
 
 Since $K$ is finitary, we may assume that $g \in \Ker(K(A) \to K(E))$ comes from some element $g_1\in\mathrm K(R)$, where $R$ is a smooth $k$-domain. We may assume, additionally, that $g_1$ lies in the kernel of the natural homomorphism $K(R) \to K(\mathrm{Frac}(R))$.
 
-Denote by $P_i$ the preimages of the maximal ideals of $A$ and choose some maximal ideals $M_i$ of $R$ such that $M_i$ contains $P_i$. Then by \cref{esssmooth}, $g_1$ vanishes in the semi-localization of $R$ in the set of maximal ideals $M_i$, therefore it vanishes in the semi-localization of $R$ in the set of prime ideals $P_i$.
-But $R\rightarrow A$ factors through the latter semi-localization, so we conclude that $g=1$. 
+Denote by $P_i$ the preimages of the maximal ideals of $A$ and choose some maximal ideals $M_i$ of $R$ such that $M_i$ contains $P_i$. Then by \cref{esssmooth}, $g_1$ vanishes in the semi-localization of $R$ in the set of maximal ideals $M_i$, therefore it vanishes in the semi-localization of $R$ in the set of prime ideals $P_i$. Since $R\rightarrow A$ factors through the latter semi-localization, we conclude that $g=1$. 
 \end{proof}
 
 \section{Proof of the main results}
-We start by recalling the definition of the Steinberg group.
-Recall that for a simply-laced root system $\Phi$ and a commutative ring $R$ the Steinberg group $\St(\Phi, R)$ is defined by the generators $x_\alpha(\xi)$, $\xi \in R$ and the following system of relations:
+Recall that for a simply-laced root system $\Phi$ of rank $\geq 2$ and a commutative ring $R$ the Steinberg group $\St(\Phi, R)$ is defined by means of the generators $x_\alpha(\xi)$, $\xi \in R$ and the following set of defining relations:
 \begin{align}
 x_{\alpha}(a)\cdot x_{\alpha}(b)&=x_{\alpha}(a+b),\text{ for } \alpha\in \Phi;\tag{R1} \label{R1}\\
 [x_{\alpha}(a),\,x_{\beta}(b)]  &=1,\text{ for }\alpha+\beta\not\in\Phi\cup 0; \tag{R2} \label{R2} \\
 [x_{\alpha}(a),\,x_{\beta}(b)]  &=x_{\alpha+\beta}(N_{\alpha\beta} \cdot ab)\text{ in the case }\alpha+\beta\in\Phi. \tag{R3} \label{R3} \end{align}
-The integers $N_{\alpha,\beta} = \pm 1$ appearing in the last identity are called the {\it structure constants} of the Chevalley group $\mathrm{G}_\mathrm{sc}(\Phi, R)$.
-More information about them can be found in~???.
+The integers $N_{\alpha,\beta} = \pm 1$ appearing in the last identity are called the {\it structure constants} of the Chevalley group $\mathrm{G}_\mathrm{sc}(\Phi, R)$. They coincide with the structure constants of the corresponding simple Lie algebra. More information about them and further references can be found e.\,g. in~\cite[\S~2.4]{LSV20}).
 
-Now for $a, b \in R$ set $y_\alpha(a, b) = [x_\alpha(a), x_{-\alpha}(b)]$.
+For $a, b \in R$ set $y_\alpha(a, b) = [x_\alpha(a), x_{-\alpha}(b)]$.
 For an ideal $I \trianglelefteq R$ we denote by $\overline{\St}(\Phi, R, I)$ the normal closure in $\St(\Phi, R)$ of the subgroup generated by $x_\alpha(a)$, $a\in I$. Recall from~\cite[Lemma~5]{S15} that it coincides with the kernel of the natural morphism of Steinberg groups $\St(\Phi, R) \to \St(\Phi, R/I)$.
 
 \begin{lemma} \label{lem:c-identities} For an arbitrary irreducible root system $\Phi$ of rank $\geq 2$, arbitrary ideals $A, B \trianglelefteq R$ and all $a \in A$, $b \in B$, $c \in R$ the following congruences hold:
@@ -320,37 +328,30 @@ For an arbitrary root system $\Phi$ the functors $\Gsc(\Phi,\,-)$, $\St(\Phi,\,-
 The assertion for $\mathrm G_{\mathrm{sc}}(\Phi,\,-)$ follows from the fact that it is represented in the category $\catname{Ring}$ by a finitely presented Hopf $\ZZ$-algebra (see e.\,g. \cite[Lemma~10.127.3]{stacks-project}). The assertion for $\St(\Phi, -)$ is obvious from its definition. The assertion for the functor $\K_2(\Phi, -)$ now follows from the assertions for $\St(\Phi, -)$ and $\Gsc(\Phi, R)$ using the fact that filtered colimits commute with finite limits in $\catname{Grp}$ (in particular, they commute with kernels).
 \end{proof}
 
-\begin{proof}[Proof of~\cref{theorem:LP-for-K2}]
-We need to check that the axioms of~\cref{lpb} are satisfied. Axiom~\ref{CFC} is satisfied by~\cref{k2cdc}. Axiom~\ref{DP} follows from the fact that for a simply-laced $\Phi$ of rank $\geq 3$ Steinberg groups $\St(\Phi, -)$ satisfy Tulenbaev lifting property in the sense of~\cite[Definition~2.1]{LS17} (more precisely, \ref{DP} follows from the injectivity of the left arrow in the diagram~(2.2) ibid.).
+\begin{proof}[Proof of Theorems~\ref{theorem:LP-for-K2} and~\ref{theorem:Gersten}]
+We need to check that the axioms \ref{CFC}--\ref{HIF} are satisfied. Axiom~\ref{CFC} is satisfied by~\cref{k2cdc}. Axiom~\ref{DP} follows from the fact that for a simply-laced $\Phi$ of rank $\geq 3$ Steinberg groups $\St(\Phi, -)$ satisfy Tulenbaev lifting property in the sense of~\cite[Definition~2.1]{LS17} (more precisely, \ref{DP} follows from the injectivity of the left arrow in the diagram~(2.2) ibid.).
 The axiom~\ref{LPP} is checked in~\cref{sec:patching} below.
-In the case $\Phi = \rA_\ell$ the axiom~\ref{PGP} is satisfied by~\cite[Theorem~5.1]{Tu83}. In the orthogonal case it is satisfied by~\cite[Theorem~1]{LS20}. Finally, axiom~\ref{HIF} is satisfied by the Korollar of \cite[Satz~1]{Re75}. \end{proof}
+In the case $\Phi = \rA_\ell$ the axiom~\ref{PGP} is satisfied by~\cite[Theorem~5.1]{Tu83}. In the orthogonal case it is satisfied by~\cite[Theorem~1]{LS20}. Finally, axiom~\ref{HIF} is satisfied by the Korollar of \cite[Satz~1]{Re75}.
 
-\begin{corollary}
-Let $F$ be a field $\mathrm{char}\,F\neq2$, $l\geq7$, then
-$$
-\mathrm H_2\big(\mathrm{Spin}_{2l}(F[t_1,\ldots,t_n]),\,\mathbb Z\big)=\cfrac{F^\times\otimes F^\times}{a\otimes(1-a)}.
-$$
-\end{corollary}
+Now the assertion of~\cref{theorem:LP-for-K2} follows from~\cref{lpb}, while the assertion of~\cref{theorem:Gersten} follows from~\cref{thm:gb}.
+\end{proof}
 
 \subsection{\texorpdfstring{$\K_2(\Phi, R)$}{K2(R)} as $\mathbb{A}^1$-fundamental group}
 Recall from~\cite{Jar83} that for an arbitrary commutative (unital) ring $R$ one can define the standard simplicial ring $R[\Delta^\bullet]$ as follows:
 \begin{equation}
  R[\Delta^n] = R[t_0,\ldots t_n]/\langle \sum_{i=0}^n t_i -1 \rangle,\ d_i(t_j) = \left\{ \begin{array}{ll}t_j & j < i, \\0 & j = i, \\ t_{j-1} & j > i; \end{array}\right. s_i(t_j) = \left\{ \begin{array}{ll} t_j & j < i, \\ t_j + t_{j+1} & j = i, \\ t_{j+1} & j > i. \end{array} \right.
 \end{equation}
-	The application of a functor $G\colon\catname{Ring}\rightarrow\catname{Grp}$ to $R[\Delta^\bullet]$ yields a simplicial group $G(R[\Delta^\bullet])$, which in the context of $\mathbb{A}^1$-homotopy theory is usually called the {\it simplicial resolution} of $G$ and is denoted by $\mathrm{Sing}^{\mathbb{A}^1}_\bullet(G)(R)$. Recall also, that the $n$-th {\it unstable Karoubi--Villamayor K-functor attached to $G$} (denoted $\mathrm{KV}^G_n(R)$) is, by definition, the $n-1$-th simplicial homotopy group of $G_\mathrm{sc}(\Phi, R[\Delta^\bullet])$ (cf.~\cite[\S~4.3]{AHW18}).
+	The application of a functor $G\colon\catname{Ring}\rightarrow\catname{Grp}$ to $R[\Delta^\bullet]$ yields a simplicial group $G(R[\Delta^\bullet])$, which in the context of $\mathbb{A}^1$-homotopy theory is usually called the {\it simplicial resolution} of $G$ and is denoted by $\mathrm{Sing}^{\mathbb{A}^1}_\bullet(G)(R)$. Recall also, that the $n$-th {\it unstable Karoubi--Villamayor K-functor attached to $G$} (denoted $\mathrm{KV}^G_n(R)$) is, by definition, the $n-1$-th simplicial homotopy group of $G_\mathrm{sc}(\Phi, R[\Delta^\bullet])$ (cf.~\cite[\S~4.3]{AHW18}, \cite[\S~3]{Jar83}).
 
 The aim of this subsection is to show that Stein's group $\K_2(\Phi, R)$ can be interpreted as the fundamental group of the simplicial group $\Gsc(\Phi, R[\Delta^\bullet])$ under the assumption that $\Phi$ and $R$ satisfy the requirements of~\cref{theorem:LP-for-K2}. This is achieved in~\cref{theorem:pi1-GRDelta} below. This result parallels the computation of the fundamental group of the simplicial group $G(k[\Delta^\bullet])$ modeled on an arbitrary isotropic reductive group $G$, see~\cite[Proposition~3.2]{VW16}. As a corollary of~\cref{theorem:pi1-GRDelta} and a general representability result of A.~Asok, M.~Hoyois and M.~Wendt we obtain an interpretation of $\K_2(\Phi, R)$ in terms of $\mathbb{A}^1$-homotopy theory, see~\cref{cor:motivic-pi1}.
 
 Recall from~\cite[\S~17]{May67} that the homotopy group $\pi_n(G)$ of a simplicial group $(G_\bullet, d_i, s_i)$ can be computed as $n$-th homology group of the normalized Moore complex
-\[
-1 \leftarrow N_0(G) \xleftarrow{\partial_1} N_1(G) \xleftarrow{\partial_2} N_2(G) \xleftarrow{\partial_3} \ldots\,,
-\]
-\iffalse\[\begin{tikzcd} 1 & N_0(G) \ar[l] & N_1(G) \ar{l}[swap]{\partial_1} & N_2(G) \ar{l}[swap]{\partial_2} & \ar{l}[swap]{\partial_3} \ldots, \end{tikzcd} \] \fi
+\[ 1 \leftarrow N_0(G) \xleftarrow{\partial_1} N_1(G) \xleftarrow{\partial_2} N_2(G) \xleftarrow{\partial_3} \ldots\,, \]
 in which $N_n(G) = \cap_{i=1}^n\Ker(d_i) \trianglelefteq G_n$ and the differential $\partial_k$ is obtained from $d_0\colon G_k \to G_{k-1}$ by restriction. In other words, $\pi_n(G) \cong \mathrm{H}_n(N_\bullet G) = \Ker(\partial_n) / \Im(\partial_{n+1})$.
 
 \begin{prop}\label{prop:pi1-StDelta} Let $\Phi$ be an arbitrary irreducible root system. Then for any commutative ring $R$ the simplicial groups $\E(\Phi,\,R[\Delta^\bullet])$ and $\St(\Phi,\,R[\Delta^\bullet])$ are connected. If, moreover, $\Phi$ has rank at least $2$ then the simplicial group $\St(\Phi, R[\Delta^\bullet])$ is simply-connected. \end{prop}
 \begin{proof}
-In our computations we identify the ring $R[\Delta^n]$ with $R[t_1, \ldots, t_n]$ via $t_0 = 1 - \sum_{i=1}^n t_i$. We also use concrete formulas from~\cite{Jar83} for the face maps of $R[\Delta^\bullet]$.
+In our computations we identify the ring $R[\Delta^n]$ with $R[t_1, \ldots, t_n]$ via $t_0 = 1 - \sum_{i=1}^n t_i$. 
 
 The map $d_1\colon\St(\Phi,\,R[\Delta^1])\rightarrow\St(\Phi,\,R[\Delta^0])$ is given by $t_1\mapsto0$, therefore \[N_1\St(\Phi,\,R[\Delta^\bullet])=\Ker(d_1)=\St(\Phi,\,R[t_1],\,\langle t_1\rangle),\]
 and $\partial_1\colon N_1\St(\Phi,\,R[\Delta^\bullet])\rightarrow N_0\St(\Phi,\,R[\Delta^\bullet])=\St(\Phi,\,R)$ is induced by $d_0$, which sends $t_1$ to $t_0=1$. 
@@ -381,16 +382,13 @@ Now consider the simplicial map $\mathrm{st}_\bullet \colon \St(\Phi, R[\Delta^\
 \[
 \pi_1\bigl(\St(\Phi, R[\Delta^\bullet])\bigr) \to \pi_1\bigl(\E(\Phi, R[\Delta^\bullet])\bigr) \to \pi_0\bigl(\K_2(\Phi, R[\Delta^\bullet])\bigr) \to \pi_0\bigl(\St(\Phi, R[\Delta^\bullet])\bigr).
 \]
-\iffalse \[
-\begin{tikzcd} \pi_1(\St(\Phi, R[\Delta^\bullet])) \ar[r] & \pi_1(\E(\Phi, R[\Delta^\bullet])) \ar[r] & \pi_0(\K_2(\Phi, R[\Delta^\bullet])) \ar[r] & \pi_0(\St(\Phi, R[\Delta^\bullet])). \end{tikzcd}
-\] \fi
  Proposition~\ref{prop:pi1-StDelta} implies that the first and the last groups in this exact sequence are trivial, so the two central groups are isomorphic. On the other hand, \cref{theorem:LP-for-K2} implies that $\K_2(\Phi, R[\Delta^\bullet])$ is discrete, so $\pi_0(\K_2(\Phi, R[\Delta^\bullet])) = \K_2(\Phi, R)$, as required.
 \end{proof}
 
-Now combining the above theorem with~\cite[Theorem~4.3.1]{AHW18} we obtain the following.
-\begin{corollary} \label{cor:motivic-pi1} Let $k$ be an infinite field, $A$ be an arbitrary essentially smooth $k$-algebra. Then for $\Phi$ as above one has $\pi_1^{\mathbb{A}^1}(\Gsc(\Phi, -))(A) = [S^1 \wedge (\mathrm{Spec}(A))_+, \Gsc(\Phi, -)]_{ \mathbb{A}^1,*} = \K_2(\Phi, A).$
-\end{corollary}
-
+\begin{proof}[Proof of~\cref{cor:motivic-pi1}] 
+ By~\cite[Corollary~5.3]{Sta20} for every regular $k$-algebra $R$ one has \[\mathrm H^1_\mathrm{Nis}(R, \Gsc(\Phi, -)) = \mathrm H^1_\mathrm{Nis}(R[t], \Gsc(\Phi, -)),\] consequently by~\cite[Theorem~2.4.2]{AHW18} the $k$-scheme $\Gsc(\Phi, -)$ defines an $\mathbb{A}^1$-naive presheaf on $\mathrm{Sm}_k^{aff}$ in the sense of~\cite[Definition~2.1.1]{AHW18}.
+ In particular, one has $\pi_1^{\mathbb{A}^1}(\Gsc(\Phi, -))(R) = \pi_1(\Gsc(\Phi, R[\Delta^\bullet]))$, the latter group being isomorphic to $\K_2(\Phi, R)$ by the above theorem.
+\end{proof}
 
 \section{A patching theorem for \texorpdfstring{$\K_2(\Phi, R)$}{K2(Ф,R)}} \label{sec:patching}
 The main result of this section is the following patching theorem for Steinberg groups.
@@ -402,8 +400,7 @@ Similar result for projective modules has been originally proved by Lindel-Lutke
 Consequently, Lindel has used similar technique in his proof of Bass--Quillen problem for essentially smooth domains over a perfect field.
 
 \subsection{Overview of Steinberg pro-groups}
-%The main ingredient in the proof of~\cref{glueing} is the formalism of Steinberg pro-groups, which has been orinally invented by the third-named author in~\cite{V20}.
-We refer the reader to \cite[Section~6.1]{SK06} for a introduction to the formalism of ind-objects and pro-objects. We also refer to~\cite[\S~2]{LSV20} which contains a more detailed exposition of the material presented in this subsection.
+We refer the reader to \cite[Section~6.1]{SK06} for a introduction to the formalism of ind-objects and pro-objects. We also refer to~\cite[\S~2]{LSV20} for a more detailed exposition of the material presented in this subsection.
 
 We start by recalling the definition of the {\it pro-completion} $\catname{Pro}(\mathcal{C})$ of a category $\mathcal{C}$ (cf.~\cite[\S~2.1]{LSV20}).
 By definition, the objects of $\catname{Pro}(\mathcal{C})$ are functors $X^{(\infty)}\colon\mathcal{I}^{\mathrm{op}} \to \mathcal{C}$, where $\mathcal{I}$ is a small nonempty filtered category. For $X^{(\infty)} \in 
@@ -458,8 +455,6 @@ As before, we may suppose that \(g = x_\alpha(a/s)\) for some \(\alpha \in \Phi\
 R^{(\infty)} \ar{r}{x_\beta} \ar{d}{f^{(\infty)}} &
 \St^{(\infty)}(\Phi, R) \ar{d}{f^{(\infty)}} \\
 {R'}^{(\infty)} \ar{r}{x_\beta} & \St^{(\infty)}(\Phi, R'). \end{tikzcd}\]
-
-% Since $conj$ is a homomorphism, it suffices to consider the case $g = x_\alpha(u)$, $u \in R_S$.
 \end{proof}
 
 \begin{rem} \label{rem:functoriality}
@@ -629,9 +624,6 @@ The proof of the fact that $T_\alpha$ satisfy relations~\eqref{R2} is similar to
 It follows that the action of $\St(\Phi, A_h)$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_h)\) preserves the action, where \(\St(\Phi, A_h)\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_h)\), it remains to check transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Hence \(V \to \St(\Phi, A_h)\) is a bijection.
 
 Now let \(u \in \St(\Phi, B_h)\) and \(v \in \St(\Phi, A)\) be such that \(\iota(u) = \lambda_h(v)\). The class of \((u, v^{-1})\) in \(V\) maps to \(1 \in \St(\Phi, A_h)\). Hence \((u, v^{-1}) \sim (1, 1)\).
-
-
-\section{Main results}\label{sec:main}
 
 \printbibliography
 \end{document}

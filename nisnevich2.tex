@@ -168,11 +168,11 @@ $$\begin{tikzcd}
 \end{tikzcd}$$
 	Then the natural map $\Ker(K(\lambda_b)) \to \Ker(K(\overline{\lambda_b}))$ induced by $\lambda_a$ is surjective.
 \end{lemma}
-%\begin{proof}
-%	Set $B=R$, $A=R_a$ и $h=b$. It is clear that $B \to A$ is an {\'e}tale homomorphism. To see that the present situation is a special case of~\ref{LPP} it is enough to  check that the map $j\colon B/hB \to A/hA$ is an isomorphism. Let us first verify the surjectivity of $j$, or what is the same, the inclusion $A \subseteq Ah+B$. Fix an element $r/a^s\in A=R_a$, we need to show that it lies in $Ah+B$. We may assume that $s\geq 1$, so that $a^s$ and $b^s$ are still coprime. Choose $x, y \in R$ such that $xa^s+yb^s=1$. Thus, $r/a^s$ can be decomposed into the sum of $rx\in B$ and $ry(b/a)^s\in bR_a=hA$.
-%
-%	Now let us verify the injectivity of $j$, i.\,e. the inclusion $Ah\cap B \subseteq Bh$. Suppose that $rb/a^s=c\in B=R$. We may assume $s\geq 1$ otherwise there is nothing to prove. From $rb=a^sc$ and $xa^s+yb^s=1$ we obtain the required inclusion $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b \in Rb = Bh$. 
-%\end{proof}
+\begin{proof}
+	Set $B=R$, $A=R_a$ и $h=b$. It is clear that $B \to A$ is an {\'e}tale homomorphism. To see that the present situation is a special case of~\ref{LPP} it is enough to  check that the map $j\colon B/hB \to A/hA$ is an isomorphism. Let us first verify the surjectivity of $j$, or what is the same, the inclusion $A \subseteq Ah+B$. Fix an element $r/a^s\in A=R_a$, we need to show that it lies in $Ah+B$. We may assume that $s\geq 1$, so that $a^s$ and $b^s$ are still coprime. Choose $x, y \in R$ such that $xa^s+yb^s=1$. Thus, $r/a^s$ can be decomposed into the sum of $rx\in B$ and $ry(b/a)^s\in bR_a=hA$.
+
+	Now let us verify the injectivity of $j$, i.\,e. the inclusion $Ah\cap B \subseteq Bh$. Suppose that $rb/a^s=c\in B=R$. We may assume $s\geq 1$ otherwise there is nothing to prove. From $rb=a^sc$ and $xa^s+yb^s=1$ we obtain the required inclusion $c=cxa^s+cyb^s=xrb+cyb^s=(xr+cyb^{s-1})b \in Rb = Bh$. 
+\end{proof}
 
 The following injectivity result is inspired by~\cite[Corollary~5.2]{Tu83}.
 \begin{lemma} \label{lmp}
@@ -183,7 +183,8 @@ $$\begin{tikzcd}
 	R[t] \ar{r}{\lambda_t} \ar{d}{\lambda_f} & R[t, t^{-1}] \ar{d}{\overline{\lambda}} & R[t^{-1}] \ar{l}[']{\lambda_{t^{-1}}} \ar{d}{\lambda_g}\\
 	R[t]_f \ar{r} & R[t, t^{-1}]_f & R[t^{-1}]_g. \ar{l}
 \end{tikzcd}$$
-Let $x$ be an element of $\Ker(K(\lambda_f))$. Then $K(\lambda_t)(x)$ lies in $\Ker(K(\overline{\lambda}))$ so by~\cref{zgl} applied to the right square we find $y \in \Ker(K(\lambda_{g}))$ such that $K(\lambda_t)(x) = K(\lambda_{t^{-1}})(y)$. Now by~\cref{ght} $x$ and $y$ are images of some $z \in K(R)$. Since $K(R) \to K(R[t, t^{-1}])$ is injective, we conclude that $x=1$, which completes the proof. \end{proof}
+Let $x$ be an element of $\Ker(K(\lambda_f))$. Then $K(\lambda_t)(x)$ lies in $\Ker(K(\overline{\lambda}))$ so by~\cref{zgl} applied to the right square we find $y \in \Ker(K(\lambda_{g}))$ such that $K(\lambda_t)(x) = K(\lambda_{t^{-1}})(y)$. Now by~\cref{ght} $x$ and $y$ are images of some $z \in K(R)$. 
+Since the composite homomorphism $K(R) \to K(R[t^{-1}]_g) \xrightarrow{K(ev_{t^{-1}}(0))} K(R)$ coincides with the identity map, we conclude that $z=1$, consequently $x = y = 1$ and the proof is complete. \end{proof}
 
 For the rest of this section we assume that $k$ is a field.
 Recall that a $k$-algebra $R$ is called {\it essentially smooth} if it is geometrically regular and essentially of finite type over $k$. 
@@ -205,7 +206,7 @@ Additionally, the homomorphism $\tau$ is an injection and one has $A[t]/hA[t]\co
 	Since $\tau^*$ is open and $S\neq 0$, $\tau(S)$ is dominant. Denote by $I$ the kernel of $\tau$. The closed subscheme defined by $I$ must contain the image of $\tau^*$ therefore $I$ is radical. Since $A[t]$ is a domain we conclude that $I=0$.		
 		
 	%From the fact that the left square is an elementary distinguished Nisnevich square we obtain an isomorphism $A[t]/\sqrt{hA[t]}\cong S/\sqrt{\tau(h)S}$. This together with the topological invariance of {\'e}tale morphisms (\cite[Theorem~41.15.2]{stacks-project}) implies the required isomorphism $A[t]/hA[t]\cong S/\tau(h)S$.
-	More details: Set $X = \mathrm{Spec}(A[t]/h)$, $Y = \mathrm{Spec}(S/h)$. We need to show that the morphism $\tau' \colon Y \to X$ obtained from $\tau^*$ by restriction is an isomorphism. Set $Y_0 := Y \times_{X} X_\mathrm{red}$. From the fact that the left square is an elementary distinguished Nisnevich square we obtain that the composite morphism $Y_\mathrm{red} \not\hookrightarrow Y_0 \xrightarrow{\tau''} X_\mathrm{red}$ is an isomorphism, consequently since $\tau''$ is {\'e}tale, the closed embedding $(Y_0)_\mathrm{red} = Y_\mathrm{red} \not\hookrightarrow Y_0$ is also {\'e}tale, hence an open embedding, hence an isomorphism (see Milne Corollary~3.6, Proposition~3.10). Thus, we conclude that $\tau''$ is an isomorphism and hence by the topological invariance of {\'e}tale morphisms (Milne Theorem~3.23), so is $\tau'$. \end{comment}
+	Set $X = \mathrm{Spec}(A[t]/h)$, $Y = \mathrm{Spec}(S/h)$. We need to show that the morphism $\tau' \colon Y \to X$ obtained from $\tau^*$ by restriction is an isomorphism. Set $Y_0 := Y \times_{X} X_\mathrm{red}$. From the fact that the left square is an elementary distinguished Nisnevich square we obtain that the composite morphism $Y_\mathrm{red} \not\hookrightarrow Y_0 \xrightarrow{\tau''} X_\mathrm{red}$ is an isomorphism, consequently since $\tau''$ is {\'e}tale, the closed embedding $(Y_0)_\mathrm{red} = Y_\mathrm{red} \not\hookrightarrow Y_0$ is also {\'e}tale, hence an open embedding, hence an isomorphism (see e.\,g. Corollary~3.6, Proposition~3.10 of~\cite{Mi80}). Thus, we conclude that $\tau''$ is an isomorphism and hence by the topological invariance of {\'e}tale morphisms~\cite[Theorem~3.23]{Mi80}, so is $\tau'$.
 \end{proof}
 
 \begin{corollary}

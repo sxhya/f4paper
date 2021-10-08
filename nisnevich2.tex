@@ -77,6 +77,14 @@
 Let $R$ be a ring geometrically regular over an arbitrary field $k$ and let $\Phi$ be either the root system $\rA_\ell$ for $\ell\geq4$, or $\rD_\ell$ for $\ell\geq 7$. In the latter case assume additionally that the characteristic of $k$ is not $2$. Then $\K_2(\Phi,\,R[t])\cong\K_2(\Phi,\,R).$
 \end{theorem}
 
+As a corollary, we show that Stein's group $\K_2(\Phi, R)$ can be interpreted as the fundamental group of the simplicial group $\Gsc(\Phi, R[\Delta^\bullet])$ under the assumption that $\Phi$ and $R$ satisfy the requirements of~\cref{theorem:LP-for-K2}. This is achieved in~\cref{theorem:pi1-GRDelta} below. This result parallels the computation of the fundamental group of the simplicial group $G(k[\Delta^\bullet])$ modeled on an arbitrary isotropic reductive group $G$, see~\cite[Proposition~3.2]{VW16}. As a corollary of~\cref{theorem:pi1-GRDelta} and a general representability result of A.~Asok, M.~Hoyois and M.~Wendt we obtain an interpretation of $\K_2(\Phi, R)$ in terms of $\mathbb{A}^1$-homotopy theory, see~\cref{cor:motivic-pi1}.
+
+\begin{corollary} \label{cor:motivic-pi1} Under the assumptions of~\cref{theorem:LP-for-K2} one has \[\pi_1^{\mathbb{A}^1}(\Gsc(\Phi, -))(R) \equiv \mathrm{Hom}_{\mathcal{H}^{\mathbb{A}^1}_{k,*}}(S^1 \wedge (\mathrm{Spec}(R))_+, \Gsc(\Phi, -)) = \K_2(\Phi, R).\]
+\end{corollary}
+
+\begin{theorem}[The $\K_2$-analogue of Gersten conjecture] \label{theorem:Gersten} Let $\Phi$ be as in~\cref{theorem:LP-for-K2} and let $A$ be an arbitrary semi-local regular domain containing $k$. Then the canonical map $\K_2(\Phi, A) \to \K_2(\Phi, \mathrm{Frac}(A))$ is injective. \end{theorem}
+
+Combining the above result with the classical Matsumoto theorem~\cite[Theorem~5.10]{Ma69} one can obtain that $\K_2(\Phi, A)$ embeds into the Milnor functor $\K_2^\mathrm{M}(\mathrm{Frac}(A))$.
 
 \begin{theorem}[The $\K_2$-analogue of Gersten conjecture]
 
@@ -338,8 +346,6 @@ Recall from~\cite{Jar83} that for an arbitrary commutative (unital) ring $R$ one
 \end{equation}
 	The application of a functor $G\colon\catname{Ring}\rightarrow\catname{Grp}$ to $R[\Delta^\bullet]$ yields a simplicial group $G(R[\Delta^\bullet])$, which in the context of $\mathbb{A}^1$-homotopy theory is usually called the {\it simplicial resolution} of $G$ and is denoted by $\mathrm{Sing}^{\mathbb{A}^1}_\bullet(G)(R)$. Recall also, that the $n$-th {\it unstable Karoubi--Villamayor K-functor attached to $G$} (denoted $\mathrm{KV}^G_n(R)$) is, by definition, the $n-1$-th simplicial homotopy group of $G_\mathrm{sc}(\Phi, R[\Delta^\bullet])$ (cf.~\cite[\S~4.3]{AHW18}).
 
-The aim of this subsection is to show that Stein's group $\K_2(\Phi, R)$ can be interpreted as the fundamental group of the simplicial group $\Gsc(\Phi, R[\Delta^\bullet])$ under the assumption that $\Phi$ and $R$ satisfy the requirements of~\cref{theorem:LP-for-K2}. This is achieved in~\cref{theorem:pi1-GRDelta} below. This result parallels the computation of the fundamental group of the simplicial group $G(k[\Delta^\bullet])$ modeled on an arbitrary isotropic reductive group $G$, see~\cite[Proposition~3.2]{VW16}. As a corollary of~\cref{theorem:pi1-GRDelta} and a general representability result of A.~Asok, M.~Hoyois and M.~Wendt we obtain an interpretation of $\K_2(\Phi, R)$ in terms of $\mathbb{A}^1$-homotopy theory, see~\cref{cor:motivic-pi1}.
-
 Recall from~\cite[\S~17]{May67} that the homotopy group $\pi_n(G)$ of a simplicial group $(G_\bullet, d_i, s_i)$ can be computed as $n$-th homology group of the normalized Moore complex
 \[
 1 \leftarrow N_0(G) \xleftarrow{\partial_1} N_1(G) \xleftarrow{\partial_2} N_2(G) \xleftarrow{\partial_3} \ldots\,,
@@ -391,18 +397,18 @@ Now combining the above theorem with~\cite[Theorem~4.3.1]{AHW18} we obtain the f
 \end{corollary}
 
 
-\section{A patching theorem for \texorpdfstring{$\K_2(\Phi, R)$}{K2(Ф,R)}} \label{sec:patching}
-The main result of this section is the following patching theorem for Steinberg groups.
+\section{Nisnevich glueing for \texorpdfstring{$\K_2(\Phi, R)$}{K2(Ф,R)}} \label{sec:patching}
+The main result of this section is the following glueing theorem for Steinberg groups.
 \begin{theorem}\label{glueing}
 Let $B$ be a subring of an integral domain $A$, $h\in B \setminus \{0\}$ such that $A / hA = B / hB$. Let $\Phi$ be an arbitrary simply-laced root system of rank at least $3$.
 Then the group $\St(\Phi, B)$ surjects onto the pullback of the homomorphisms 
 $\lambda_h\colon \St(\Phi, A) \to \St(\Phi, A_h)$, $\overline{\iota}\colon\St(\Phi, B_h) \to \St(\Phi, A_h)$. In particular the functors $\St(\Phi, -)$ and $\K_2(\Phi, -)$  satisfy weak affine Nisnevich excision for domains. \end{theorem}
-Similar result for projective modules has been originally proved by Lindel-Lutkebohrnert and independently by Mohan Kumar as an ingredient in the proof of Bass--Quillen conjecture for the power series ring over a field. 
-Consequently, Lindel has used similar technique in his proof of Bass--Quillen problem for essentially smooth domains over a perfect field.
+The above result generalizes~\cite[Proposition~1.4]{Tu83}, which is formulated for the Zariski topology and the special case $\Phi=\rA_{\geq 4}$.
+The analogues of the above theorem for the functor $\K_1$ have also been obtained by E.~Abe and A.~Stavrova, cf.~\cite[Lemma~3.7]{Abe83}, \cite[Lemma~3.4]{Sta14}.
+The analogous result for projective modules is the ``descent lemma'' \cite[Lemma~4.7]{Bh99} due to W.~Lutkebohmert, H.~Lindel and M.~Kumar. 
 
 \subsection{Overview of Steinberg pro-groups}
-%The main ingredient in the proof of~\cref{glueing} is the formalism of Steinberg pro-groups, which has been orinally invented by the third-named author in~\cite{V20}.
-We refer the reader to \cite[Section~6.1]{SK06} for a introduction to the formalism of ind-objects and pro-objects. We also refer to~\cite[\S~2]{LSV20} which contains a more detailed exposition of the material presented in this subsection.
+We refer the reader to \cite[Section~6.1]{SK06} for an introduction to the formalism of ind-objects and pro-objects. We also refer to~\cite[\S~2]{LSV20} for a more detailed exposition of the material presented in this subsection.
 
 We start by recalling the definition of the {\it pro-completion} $\catname{Pro}(\mathcal{C})$ of a category $\mathcal{C}$ (cf.~\cite[\S~2.1]{LSV20}).
 By definition, the objects of $\catname{Pro}(\mathcal{C})$ are functors $X^{(\infty)}\colon\mathcal{I}^{\mathrm{op}} \to \mathcal{C}$, where $\mathcal{I}$ is a small nonempty filtered category. For $X^{(\infty)} \in 
@@ -625,9 +631,9 @@ This follows from the Steinberg relations and the identity \(N_{\beta, \alpha + 
 \end{comment} 
 The proof of the fact that $T_\alpha$ satisfy relations~\eqref{R2} is similar to the proof of the above lemmas but is easier, so we leave it as an exercise to the reader.
 
-It follows that the action of $\St(\Phi, A_h)$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_h)\) preserves the action, where \(\St(\Phi, A_h)\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_h)\), it remains to check transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Hence \(V \to \St(\Phi, A_h)\) is a bijection.
+It follows that the action of $\St(\Phi, A_h)$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_h)\) preserves the action, where \(\St(\Phi, A_h)\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_h)\), it remains to check the transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Hence \(V \to \St(\Phi, A_h)\) is a bijection.
 
-Now let \(u \in \St(\Phi, B_h)\) and \(v \in \St(\Phi, A)\) be such that \(\iota(u) = \lambda_h(v)\). The class of \((u, v^{-1})\) in \(V\) maps to \(1 \in \St(\Phi, A_h)\). Hence \((u, v^{-1}) \sim (1, 1)\).
+Now let \(u \in \St(\Phi, B_h)\) and \(v \in \St(\Phi, A)\) be such that \(\iota(u) = \lambda_h(v)\). The class of \((u, v^{-1})\) in \(V\) maps to \(1 \in \St(\Phi, A_h)\). thus, \((u, v^{-1}) \sim (1, 1)\) and the proof of the theorem is complete.
 
 
 \section{Main results}\label{sec:main}

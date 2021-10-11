@@ -10,7 +10,7 @@
 \usepackage{enumitem}
 \usepackage[backend=bibtex, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
 
-\usepackage[notref, notcite]{showkeys}
+%\usepackage[notref, notcite]{showkeys}
 
 \addbibresource{nisnevich2.bib}
 \renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
@@ -112,7 +112,7 @@ Using the fact that $\K_1(\rD_\ell, k[t_1,\ldots, t_n]) = 1$ and the second homo
 For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ one has $\mathrm H_2(\mathrm{Spin}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k)$.
 \end{corollary}
 
-\subsection{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several key ideas used in this paper. We would also like to thank V.~Sosnilo and N.~A.~Vavilov for their useful comments and interest in this work.
+\subsection{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank V.~Sosnilo and N.~A.~Vavilov for their useful comments and interest in this work.
 
 The work of the first-named author (\S~2) was supported by Young Russian Mathematics award, and by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619.
 The work of the second and the third-named authors (\S~3 and \S~4) was supported by the Russian Science Foundation grant No. 19-71-30002 and also by the Foundation for the Advancement of Theoretical Physics and Mathematics ``BASIS``.
@@ -419,8 +419,7 @@ Let $X^{(\infty)}\colon\mathcal{I}\to\mathcal{C}$ and $Y^{(\infty)}\colon\mathca
 By definition, a {\it pre-morphism} $\eta\colon X^{(\infty)} \to Y^{(\infty)}$ is a pair $(\eta^*, \{\eta_j\}_{j\in\mathrm{Ob}(\mathcal{J})})$ consisting of a map $\eta^*\colon \mathrm{Ob}(\mathcal{J})\to\mathrm{Ob}(\mathcal{I})$ and a collection of $\mathcal{C}$-morphisms $\eta_j\colon X^{(\eta^*(j))}\to Y^{(j)}$ such that for every arrow $j' \to j$ there exists $i$ such that the composite morphisms $X^{(i)} \to X^{(\eta^*(j'))} \xrightarrow{\eta_{j'}} Y^{(j')}$ and $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)} \to Y^{(j')}$ are equal. We call the individual $\mathcal{C}$-morphism $\eta_j$ {\it the degree $j$ component} of $\eta$.
 Pre-morphisms $\eta, \epsilon \colon X^{(\infty)} \to Y^{(\infty)}$ are declared equivalent if for every $j \in \mathrm{Ob}(\mathcal{J})$ there exists $i \in \mathrm{Ob}(\mathcal{I})$ such that the composite homomorphisms $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)}$ and $X^{(i)} \to X^{(\epsilon^*(j))} \xrightarrow{\epsilon_j} Y^{(j)}$ are equal. By definition, the set of morphisms $\catname{Pro}(\mathcal{C})(X^{(\infty)}, Y^{(\infty)})$ consists of equivalence classes $[\eta]$ of pre-morphisms $\eta \colon X^{(\infty)} \to Y^{(\infty)}$ with respect to the equivalence relation defined above. The composition of a pair of morphisms \([\eta] \colon X^{(\infty)} \to Y^{(\infty)}\) and \([\zeta] \colon Y^{(\infty)} \to Z^{(\infty)}\) is defined as the class $[\zeta \circ \eta]$, where the pre-morphism \(\zeta \circ \eta\) is given by \((\zeta \circ \eta)^*(i) = \eta^*(\zeta^*(i))\) and \((\zeta\circ \eta)_{i} = \zeta_{i} \circ \eta_{\zeta^*(i)}\). There is a fully faithful embedding $\mathcal{C}\to\catname{Pro}(\mathcal{C})$ sending $X \in \mathrm{Ob}(\mathcal{C})$ to the obvious functor $X\colon \{ * \} \to \mathcal{C}$. 
 
-Let $R$ be an integral domain and $\Phi$ is a reduced irreducible root system of rank at least $3$.
-Let $S$ be a multiplicative subset of $R$ containing $1$. 
+Let $R$ be an integral domain and $S$ a multiplicative subset of $R$ containing $1$. 
 We denote by $\lambda_S$ the canonical localization homomorphism $R \to R_S$.
 We also reuse the same notation for the induced homomorphism $\St(\Phi, R) \to \St(\Phi, R_S)$ of Steinberg groups.
 
@@ -431,16 +430,18 @@ For $s\in S$ the principal ideal $sR$ can be considered as an rng. We define the
 Recall that the {\it Steinberg pro-group} $\St^{(\infty)}(\Phi, R)$ is defined as the functor $S^\mathrm{op} \to \catname{Grp}$ obtained from the pro-rng $R^{(\infty)}$ by postcomposition with $\St(\Phi, -)$ (cf.~\cite[\S~2.4]{LSV20}). We denote by $\pi_S$ the pro-group morphism $\St^{(\infty)}(\Phi, R) \to \St(\Phi, R_S)$ defined by the pre-morphism $\pi^* \colon \{* \} \to S$, $\pi^*(*) = 1$, $\pi_{*} = \lambda_S \colon \St(\Phi, R) \to \St(\Phi, R_S)$. 
 
 For $\alpha \in \Phi$ we define the pro-group morphism $x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ by means of the following data: $(x_\alpha)^* = \mathrm{id}_S$, $(x_\alpha)_s \colon sR \to \St(\Phi, sR)$, $sr \mapsto x_\alpha(sr)$. These morphisms, which we call {\it root subgroup morphisms}, allow one to characterize the Steinberg pro-group $\St^{(\infty)}(\Phi, R)$ by means of a universal property (cf.~\cite[Lemma~2.16]{LSV20}). For instance, $\St^{(\infty)}(\Phi, R)$ is ``generated'' by $x_\alpha$ in the sense that a pair of pro-group morphisms $f^{(\infty)}, g^{(\infty)} \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ coincide if and only if $f \circ x_\beta = g \circ x_\beta$ for all $\beta \in \Phi$.
-It is enough to verify the latter equalities for $\beta \in \Phi\setminus\{\pm \alpha\}$ where $\alpha \in \Phi$ is any fixed root (in fact, an even stronger result holds, see~\cite[Lemma~3.2]{LSV20}, \cite[Lemma~11]{V20}).
-Moreover, given a collection of pro-group morphisms $f_\alpha^{(\infty)} \colon R^{(\infty)} \to G^{(\infty)}$ satisfying the ``pro-analogues'' of Chevalley commutator identities, there exists a unique morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ such that $f_\alpha = f \circ x_\alpha$ for all $\alpha\in\Phi$. 
+It is enough to verify the latter equalities for $\beta \in \Phi\setminus\{\pm \alpha\}$ where $\alpha \in \Phi$ is any fixed root (in fact, an even stronger result holds, see~\cite[Lemma~3.2]{LSV20}). % TODO: \cite[Lemma~11]{V20}?
+Moreover, given a collection of pro-group morphisms $f_\alpha^{(\infty)} \colon R^{(\infty)} \to G^{(\infty)}$ satisfying the ``pro-analogues'' of Chevalley commutator identities (see~\cite[Remark~2.15]{LSV20}), there exists a unique morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ such that $f_\alpha = f \circ x_\alpha$ for all $\alpha\in\Phi$. 
 \begin{prop}\label{prop:conj-action}
- For a root system $\Phi$ and a multiplicative system $S\subseteq R$ there exists a group homomorphism $conj\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^{(\infty)}(\Phi, R))$ compatible with the obvious conjugation action of $\St(\Phi, R_S)$ on itself, i.\,e. such that for every $g \in \St(\Phi, R_S)$ the following diagram of pro-groups commutes:
+ For an irreducible root system $\Phi$ of rank $\geq 3$ and a multiplicative system $S\subseteq R$ there exists a group homomorphism $conj\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^{(\infty)}(\Phi, R))$ compatible with the obvious conjugation action of $\St(\Phi, R_S)$ on itself, i.\,e. such that for every $g \in \St(\Phi, R_S)$ the following diagram of pro-groups commutes:
  \begin{equation} \label{eq:conj-pis} \begin{tikzcd} \St^{(\infty)}(\Phi, R) \ar{r}{conj(g)} \ar{d}{\pi_S} & \St^{(\infty)}(\Phi, R) \ar{d}{\pi_S} \\ \St(\Phi, R_S) \ar{r}{{}^g\!(-)} & \St(\Phi, R_S). \end{tikzcd} \end{equation}
 \end{prop}
 \begin{proof}
-The existence of the homomorphism $conj$ has been demonstrated in~\cite[Proposition~4.2]{LSV20} (for $\Phi\neq\rB_\ell, \rC_\ell$) and the beginning of Section~10 of~\cite{V20} (for $\Phi=\rB_\ell, \rC_\ell$). Thus, we only need to verify the commutativity of the diagram~\eqref{eq:conj-pis}. 
-Since $conj$ is a homomorphism, it is enough to consider the case $g = x_\alpha(u)$, $\alpha \in \Phi$, $u \in R_S$. In view of the above discussion, to verify the commutativity of~\eqref{eq:conj-pis} it is enough to verify the equalities $\pi_S \circ conj(g) \circ x_\beta= {}^g\!(-) \circ \pi_S \circ x_\beta$ for $\beta\neq \pm\alpha$.
- It remains to see that the fulfillment of these equalities is a direct consequence of the definition of $conj(g) \circ x_\beta$ (the formulas for these morphisms are written down explicitly before~\cite[Proposition~4.2]{LSV20}, cf. also~\cite[\S~10]{V20}). \end{proof}
+The existence of the homomorphism $conj$ has been demonstrated in~\cite[Proposition~4.2]{LSV20}.
+ %TODO: (for $\Phi\neq\rB_\ell, \rC_\ell$) and the beginning of Section~10 of~\cite{V20} (for $\Phi=\rB_\ell, \rC_\ell$). 
+Thus, we only need to verify the commutativity of the diagram~\eqref{eq:conj-pis}. 
+Since $conj$ is a homomorphism, it is enough to consider the case $g = x_\alpha(u)$, $\alpha \in \Phi$, $u \in R_S$. In view of the above discussion, to verify the commutativity of~\eqref{eq:conj-pis} it is enough to verify the equalities $\pi_S \circ conj(g) \circ x_\beta= {}^g\!(-) \circ \pi_S \circ x_\beta$ for $\beta\neq -\alpha$.
+ It remains to see that the fulfillment of these equalities is a direct consequence of the definition of $conj(g) \circ x_\beta$ (the formulas for these morphisms are given by formulas (4.5)--(4.6) of~\cite{LSV20}). \end{proof} %TODO: cf. also~\cite[\S~10]{V20}
 \begin{rem} \label{rem:conj-action}
 Unwinding the definitions, we see that the commutativity of~\eqref{eq:conj-pis} is equivalent to the following condition: for every $g\in \St(\Phi, R_S)$ there exists an element $s_g\in S$ and a homomorphism $c_g \colon \St(\Phi, s_g R) \to \St(\Phi, R)$ such that $\lambda_S(c_g(x)) = g \cdot \lambda_S(i(x))\cdot g^{-1}$ for all $x\in \St(\Phi, s_g R)$. Here $i$ denotes the homomorphism $\St(\Phi, s_g R) \to \St(\Phi, R)$ induced by the obvious embedding $s_gR \hookrightarrow R$. The element $s_g$ and the homomorphism $c_g$ can be determined via the following procedure: choose a representative $\eta$ for the morphism $conj(g)$ and set $s_g := \eta^*(1)$ and $c_g := \eta_1$ (the degree $1$ component of $\eta$).
 \end{rem}
@@ -459,7 +460,9 @@ Now suppose that there is a map $f^* \colon S' \to S$ such that $t$ divides $f(f
  \begin{equation} \label{eq:conj-finfty} \begin{tikzcd} \St^{(\infty)}(\Phi, R) \ar{r}{conj(g)} \ar{d}{f^{(\infty)}} & \St^{(\infty)}(\Phi, R) \ar{d}{f^{(\infty)}} \\ \St^{(\infty)}(\Phi, R') \ar{r}{conj(\overline{f}(g))} & \St^{(\infty)}(\Phi, R'). \end{tikzcd} \end{equation}
 \end{prop}
 \begin{proof}
-As before, we may suppose that \(g = x_\alpha(a/s)\) for some \(\alpha \in \Phi\), \(a \in R\), \(s \in S\). By \cite[Lemma~3.2]{LSV20} and \cite[Lemma~11]{V20}, it suffices to check that the long paths in the diagram coincide after precomposition with \(x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)\) for all \(\beta \neq \pm \alpha\). This follows from the definition before~\cite[Proposition~4.2]{LSV20} and in \cite[\S 10]{V20}, and the commutativity of
+As before, we may suppose that \(g = x_\alpha(a/s)\) for some \(\alpha \in \Phi\), \(a \in R\), \(s \in S\). By \cite[Lemma~3.2]{LSV20} %TODO: and \cite[Lemma~11]{V20}
+it suffices to check that the long paths in the diagram coincide after precomposition with \(x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)\) for all \(\beta \neq -\alpha\). This follows from the definition before~\cite[Proposition~4.2]{LSV20} %TODO: \cite[\S 10]{V20}
+and the commutativity of
 \[\begin{tikzcd}
 R^{(\infty)} \ar{r}{x_\beta} \ar{d}{f^{(\infty)}} &
 \St^{(\infty)}(\Phi, R) \ar{d}{f^{(\infty)}} \\
@@ -467,19 +470,18 @@ R^{(\infty)} \ar{r}{x_\beta} \ar{d}{f^{(\infty)}} &
 \end{proof}
 
 \begin{rem} \label{rem:functoriality}
- Unwinding the definitions, we obtain as a consequence of the commutativity of~\eqref{eq:conj-finfty} that for every $g \in \St(\Phi, R_S)$ there exists $s_0 \in S$ such that the following diagram commutes:
+ Unwinding the definitions, we obtain from the commutativity of~\eqref{eq:conj-finfty} that for every $g \in \St(\Phi, R_S)$ there exists $s_0 \in S$ such that the following diagram commutes:
  \[ \begin{tikzcd} \St(\Phi, s_0R) \ar{r} \ar{d} & \St(\Phi, s_g R) \ar{r}{c_{g}} & \St(\Phi, R) \ar{dd}{f} \\
                    \St(\Phi, f^*(s_{\overline{f}(g)})R) \ar{d}{f}   & & \\
                    \St(\Phi, s_{\overline{f}(g)} R')   \ar{rr}{c_{\overline{f}(g)}} & & \St(\Phi, R'). \end{tikzcd} \]
  In the above diagram $s_g$, $s_{\overline{f}(g)}$, $c_g$, $c_{\overline{f}(g)}$ have the same meaning as in Remark~\ref{rem:conj-action}.
 \end{rem}
 
-Now let us specialize the above results to a particular situation that we will encounter in~\cref{sec:patching}.
-
+Now let us specialize the above results to a particular situation that we will encounter in~\cref{sec:proof-glueing}.
 Let $\iota \colon B \to A$ be an injective homomorphism of integral domains and $h \neq 0$ be an element of $B$.
 We denote by $\mathbb N$ the set of nonnegative integers.
 Consider the multiplicative subsets $h^{\mathbb{N}} = \{ h^n \mid n \in \mathbb{N} \} \subseteq B$ and $\iota(h)^\mathbb{N} \subseteq A$ and the corresponding homomorphism of localizations $\overline{\iota} \colon B_h \to A_{\iota(h)}$.
-It is clear that $h^\mathbb{N} \subseteq B$, $\iota(h)^\mathbb{N} \subseteq A$, and $\iota$ satisfy the requirements mentioned before Proposition~\ref{prop:functoriality} (i.\,e. $\iota^*(\iota(h)^n) = h^n$), so there exists a morphism $\iota^{(\infty)}$ of pro-rngs $B^{(\infty)} \to A^{(\infty)}$ and the corresponding morphism of Steinberg pro-groups $\iota^{(\infty)}\colon\St^{(\infty)}(\Phi, B) \to \St^{(\infty)}(\Phi, A)$ satisfying the conclusion of Proposition~\ref{prop:functoriality}.
+It is clear that if we put $\iota^*(\iota(h)^n) = h^n$, the subsets $h^\mathbb{N} \subseteq B$, $\iota(h)^\mathbb{N} \subseteq A$, and the homomorphism $\iota$ satisfy the requirements mentioned before Proposition~\ref{prop:functoriality}. Thus, there exists a morphism $\iota^{(\infty)}$ of pro-rngs $B^{(\infty)} \to A^{(\infty)}$ and the corresponding morphism of Steinberg pro-groups $\iota^{(\infty)}\colon\St^{(\infty)}(\Phi, B) \to \St^{(\infty)}(\Phi, A)$ satisfying the conclusion of Proposition~\ref{prop:functoriality}.
 
 %Let $f \colon B \to A$ be a homomorphism of integral domains and let $h$ be an element of $B$ such that $f(h)\neq 0$.
 %We denote by \(\mathbb N\) the set of nonnegative integers.
@@ -496,17 +498,17 @@ such that the following equalities are fulfilled:
  \label{eq:strictB} \lambda_h^0 (c_g (x)) &= g \cdot \lambda_h^n(x) \cdot g^{-1}&\text{ for }x \in \St(\Phi, h^nB),\\
  \label{eq:strictA} \lambda_h^0 (c_{\overline{\iota}(g)}(y)) &= g \cdot \lambda_h^n(y) \cdot \overline{\iota}(g)^{-1}&\text{ for }y \in \St(\Phi, \iota(h)^nA).
 \end{align}
-Here $\lambda_h^k$ (resp. $\lambda^k_{\iota(h)}$) denotes the homomorphism of Steinberg grops induced by the obvious rng homomorphism $h^kB \to B_h$ (resp. $\iota(h)^kA \to A_{\iota(h)}$), where $k \in \mathbb{N}$.
+Here $\lambda_h^k$ (resp. $\lambda^k_{\iota(h)}$) denotes the homomorphism of Steinberg grops induced by the following composite rng homomorphism $h^kB \hookrightarrow B \to B_h$ (resp. $\iota(h)^kA \hookrightarrow A \to A_{\iota(h)}$), where $k \in \mathbb{N}$.
 \end{corollary}
 \begin{proof}
  The first equality is a special case of the commutativity of the diagram from Remark~\ref{rem:functoriality}.
- The second and the third equalities are special cases of the equality discussed in Remark~\ref{rem:conj-action}.
+ The second and the third equalities follow from the equality discussed in Remark~\ref{rem:conj-action}.
 \end{proof}
 \begin{rem}\label{rem:indendepence}
  Notice that a priori the homomorphism $c_g$ depends on the choice of a representative for $conj(g)$. On the other hand, from the definition of equivalence of pre-morphisms it follows that if $c'_g$ is the degree $1$ component for a different representative of $conj(g)$ then for sufficiently large $m$ one has $c'_{\overline{\iota}(g)}(x_{\alpha}(ah^m)) = c_{\overline{\iota}(g)}(x_{\alpha}(ah^m))$.
 \end{rem}
 
-\subsection{Proof of Theorem~\ref{glueing}}
+\subsection{Proof of Theorem~\ref{glueing}} \label{sec:proof-glueing}
 %It is well known that subgroup factorizations of $\mathrm G(\Phi,\,R)$ are an important ingredient in the study of the $\K_1$-functor. It turns out that in the study of $\K_2$-functors the $\St(\Phi,\,R)$-torsors play similar role, see~\cite{LS20}. TODO:
 
 We let $\St(\Phi, B)$ act on $\St(\Phi, B_h) \times \St(\Phi, A)$ on the left via the formula 
@@ -630,9 +632,8 @@ This follows from the Steinberg relations and the identity \(N_{\beta, \alpha + 
 \end{comment} 
 The proof of the fact that $T_\alpha$ satisfy relations~\eqref{R2} is similar to the proof of the above lemmas but is easier, so we leave it as an exercise to the reader.
 
-It follows that the action of $\St(\Phi, A_h)$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_h)\) preserves the action, where \(\St(\Phi, A_h)\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_h)\), it remains to check the transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Hence \(V \to \St(\Phi, A_h)\) is a bijection.
-
-Now let \(u \in \St(\Phi, B_h)\) and \(v \in \St(\Phi, A)\) be such that \(\iota(u) = \lambda_h(v)\). The class of \((u, v^{-1})\) in \(V\) maps to \(1 \in \St(\Phi, A_h)\). thus, \((u, v^{-1}) \sim (1, 1)\) and the proof of the theorem is complete.
+It follows that the action of $\St(\Phi, A_h)$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_h)\) preserves the action, where \(\St(\Phi, A_h)\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_h)\), it remains to check the transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Thus, \(V \to \St(\Phi, A_h)\) is a bijection.
+Now if \(u \in \St(\Phi, B_h)\) and \(v \in \St(\Phi, A)\) are such that \(\iota(u) = \lambda_h(v)\), the class of \((u, v^{-1})\) in \(V\) maps to \(1 \in \St(\Phi, A_h)\). Thus, \([u, v^{-1}] = [1, 1]\) and the proof of the theorem is complete.
 
 \printbibliography
 \end{document}

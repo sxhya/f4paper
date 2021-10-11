@@ -79,49 +79,45 @@
 \section{Introduction}
 Let $R$ be a commutative ring with a unit and $\Phi$ be an irreducible root system of rank $\geq 2$.
 Recall from~\cite{St71,St78} that to this data one can associate two objects: the simply-connected Chevalley--Demazure group scheme $\mathrm{G}_\mathrm{sc}(\Phi, R)$ and the Steinberg group $\St(\Phi, R)$, which is a certain group defined by means of generators and relations, see~\cref{sec:main-results}. These group fit into the exact sequence
-\[ \begin{tikzcd} \K_2(\Phi, R) \ar[r] & \St(\Phi, R) \ar[r] & \mathrm{G}_\mathrm{sc}(\Phi, R) \ar[r] & \K_1(\Phi, R), \end{tikzcd} \]
-the rightmost and the leftmost terms of which are called in~\cite{St78} the {\it unstable $\K$-functors modeled on Chevalley groups}. The aim of the present paper is to show the following theorem, which can be considered as the solution to the $\K_2$-analogue of the geometric case of the Bass--Quillen conjecture.
+\[ \begin{tikzcd} \K_2(\Phi, R) \ar[hookrightarrow]{r} & \St(\Phi, R) \ar{r}{\pi} & \mathrm{G}_\mathrm{sc}(\Phi, R) \ar[twoheadrightarrow]{r} & \K_1(\Phi, R), \end{tikzcd} \]
+the rightmost and the leftmost terms of which are called by M.~Stein the {\it unstable $\K$-functors modeled on Chevalley groups}, see~\cite{St78}. The aim of the present paper is to show the following 
 
 \begin{theorem}[The $\K_2$-analogue of Lindel--Popescu theorem] \label{theorem:LP-for-K2}
 Let $k$ be an arbitrary field and $R$ be a regular ring containing $k$. Let $\Phi$ be either $\rA_\ell$ for $\ell\geq4$, or $\rD_\ell$ for $\ell\geq 7$. In the latter case assume additionally that the characteristic of $k$ is not $2$. Then $\K_2(\Phi,\,R[t])\cong\K_2(\Phi,\,R).$
-\end{theorem} The $\mathbb{A}^1$-invariance for the unstable $\K_1$-functor modeled on $\Phi$ of rank $\geq 2$ has been established in~\cite{Abe83} and has been subsequently generalized to isotropic reductive groups, cf.~\cite[Theorem~1.1]{Sta20}. An exposition of the classical Lindel--Popescu theorem for projective modules can be found in~\cite{Sw98}. 
+\end{theorem} 
+Recall that the classical Lindel--Popescu theorem for projective modules settles the the geometric case of the Bass--Quillen conjecture, see~\cite{Li81},~\cite{Po85}.
+An exposition of D.~Popescu's result can also be found in~\cite{Sw98}. Our result, thus, can be considered as the solution to the $\K_2$-analogue of the geometric case of the Bass--Quillen conjecture.
+Recall also that the $\mathbb{A}^1$-invariance for the unstable $\K_1$-functor modeled on $\Phi$ of rank $\geq 2$ has been established in~\cite{Abe83} and has been subsequently generalized to isotropic reductive groups, cf.~\cite[Theorem~1.3]{Sta14}, \cite[Theorem~1.1]{Sta20}.
 
 When $R=k$ is a field the assertion of~\cref{theorem:LP-for-K2} is known from~\cite{Re75} for all $\Phi$ (see Korollar of~Satz~1). Also if $\Phi = \rA_\ell$ and $\ell \geq \mathrm{max}(4, \mathrm{dim}(R) + 2)$ the assertion of~\cref{theorem:LP-for-K2} follows from the main result of~\cite{Tu83}.
 
-The claim of~\cref{theorem:LP-for-K2} is likely to remain valid for all $\Phi$ of rank $\geq 3$ without any assumptions on the characteristic of $k$. It has no chance of being true for $\Phi$ of rank $2$, see~\cite{We12}. The bottleneck in our proof which leads to the (too restrictive) assumption $\ell\geq 7$ in the orthogonal case is the orthogonal Horrocks theorem for $\K_2$, see~\cite{LS20}. In the future installments of the series of papers we plan to address this issue and obtain a stronger Horrocks theorem for all simply-laced $\Phi$ containing $\rA_4$.
+The assertion of~\cref{theorem:LP-for-K2} is likely to remain true for all $\Phi$ of rank $\geq 3$ without any assumptions on the characteristic of $k$. It is false for $\Phi$ of rank $2$, however, see~\cite{We12}. The bottleneck in our proof which leads to the restrictive assumptions $\ell\geq 7$ and $\mathrm{char}(k)\neq 2$ in the case $\Phi=\rD_\ell$ is the orthogonal Horrocks theorem \cite[Theorem~1]{LS20}. In the future papers we plan to address this issue and obtain an improved Horrocks theorem for all simply-laced $\Phi$ containing $\rA_4$ without the invertibility of $2$ assumption.
 
-The main ingredient in the proof of~\cref{theorem:LP-for-K2} is~\cref{lpb}, which reduces the proof of $\mathbb{A}^1$-invariance to checking a short list of axioms. A key ingredient in the proof of~\cref{lpb}, in turn, is a recent result of I.~Panin, see~\cite[Theorem~2.5]{Pa19}. On the other hand, one of the axioms to-be-checked is the so-called {\it weak affine Nisnevich excision property} for Steinberg groups. The verification of this property for simply-laced Steinberg groups is another new result of the paper, see~\cref{sec:patching}. Unlike M.~Tulenbaev, who used the technique of van der Kallen's ``another presentation'' in the proof of the weaker Zariski excision property, in our proof we use the new technique of pro-groups introduced by the third-named author in~\cite{Vor1} (see also~\cite{LSV20, V20}).
+The principal tool used in the proof of~\cref{theorem:LP-for-K2} is~\cref{lpb}, which gives a sufficient condition for a general group-valued functor to be $\mathbb{A}^1$-invariant. A key ingredient in the  proof of~\cref{lpb}, in turn, is a recent result of I.~Panin, see~\cite[Theorem~2.5]{Pa19}. One of the axioms appearing in the statement of~\cref{lpb} is the so-called {\it weak affine Nisnevich excision property} for Steinberg groups. The verification of this property for simply-laced Steinberg groups is another new result of the paper, see~\cref{glueing}. Unlike M.~Tulenbaev, who used the technique of van der Kallen's ``another presentation'' in the proof of the weaker Zariski excision property~\cite[Proposition~1.4]{Tu83}, in our proof we use the new technique of pro-groups introduced by the third-named author in~\cite{Vor1} (see also~\cite{LSV20}). %V20?
 
-As a corollary of~\cref{theorem:LP-for-K2}, we show that the group $\K_2(\Phi, R)$ can be interpreted as the fundamental group of the Chevalley--Demazure group scheme in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ of Morel and Voevodsky~\cite{MV99}.
+As a corollary of~\cref{theorem:LP-for-K2}, we show that the M.~Stein's group $\K_2(\Phi, R)$ can be interpreted as the fundamental group of the Chevalley--Demazure group scheme in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ of Morel and Voevodsky~\cite{MV99}.
 \begin{corollary} \label{cor:motivic-pi1} Let $R$ and $\Phi$ be as in~\cref{theorem:LP-for-K2} and assume addtionally that $R$ is Noetherian of finite Krull dimension. Then one has \[\pi_1^{\mathbb{A}^1}(\Gsc(\Phi, -))(R) := \mathrm{Hom}_{\mathcal{H}^{\mathbb{A}^1}_{k,*}}(S^1 \wedge (\mathrm{Spec}(R))_+, \Gsc(\Phi, -)) = \K_2(\Phi, R).\]
 \end{corollary}
-The above result is analogous to the computation of $\pi_0$ of an isotropic reductive group due to A.~Stavrova, see~\cite[Theorem~5.5]{Sta20}. The analogue of~\cref{cor:motivic-pi1} in the special case $R = k$ has also been obtained in~\cite{VW16} in the context of reductive groups of isotropic rank $\geq 2$.
+The above result is analogous to the computation of $\pi_0$ of an isotropic reductive group due to A.~Stavrova, see~\cite[Theorem~5.5]{Sta20}. The analogue of~\cref{cor:motivic-pi1} in the broader context of reductive groups of isotropic rank $\geq 2$ (albeit only when $R = k$ is an infinite field) has also been obtained in~\cite{VW16}.
 
-Apart from~\cref{theorem:LP-for-K2} another key ingredient in the proof of~\cref{cor:motivic-pi1} is the computation of the fundamental group of the simplicial group $\St(\Phi, R[\Delta^\bullet])$, see \cref{prop:pi1-StDelta}. This computation can be considered as a more precise version of the calculation given in~\cite[Proposition~3.2]{VW16}.
+In addition to~\cref{theorem:LP-for-K2} the proof of~\cref{cor:motivic-pi1} relies on the computation of the fundamental group of the simplicial group $\St(\Phi, R[\Delta^\bullet])$, see \cref{prop:pi1-StDelta}. This computation can be considered as a more precise version of the calculation presented in~\cite[Proposition~3.2]{VW16} in the setting of Chevalley groups.
 
-The technique used in the proof of~\cref{lpb} allows one to obtain the following characterization of $\K_2(\Phi, R)$ as a byproduct.
-\begin{theorem}[The $\K_2$-analogue of Gersten conjecture] \label{theorem:Gersten} Let $\Phi$ be as in~\cref{theorem:LP-for-K2} and let $A$ be an arbitrary semi-local regular domain containing $k$. Then the canonical map $\K_2(\Phi, A) \to \K_2(\Phi, \mathrm{Frac}(A))$ is injective. \end{theorem}
+The method of the proof of~\cref{lpb} allows one to obtain the following assertion for the functor $\K_2(\Phi, R)$ as a byproduct, cf. e.\,g. with~\cite[Theorem~1.2]{Sta20}.
+\begin{theorem} \label{theorem:Gersten} Let $\Phi$ be as in~\cref{theorem:LP-for-K2} and let $A$ be an arbitrary semi-local regular domain containing $k$. Then the canonical map $\K_2(\Phi, A) \to \K_2(\Phi, \mathrm{Frac}(A))$ is injective. \end{theorem}
 
-Combining the above result with \cite[Theorem~5.10]{Ma69} one can obtain that under the assumptions of~\cref{theorem:LP-for-K2} $\K_2(\Phi, A)$ embeds into the Milnor $\K_2$-group $\K_2^\mathrm{M}(\mathrm{Frac}(A))$.
+Combining the above result with the classical Matsumoto theorem~\cite[Theorem~5.10]{Ma69} one can show that under the assumptions of~\cref{theorem:LP-for-K2} $\K_2(\Phi, A)$ embeds into the Milnor $\K_2$-group $\K_2^\mathrm{M}(\mathrm{Frac}(A))$.
 
-As a consequence of the triviality of $\K_1(\rD_\ell, k[t_1,\ldots, t_n])$ and the Corollary of the main result of~\cite{LSV20} one can also obtain the following
+Using the fact that $\K_1(\rD_\ell, k[t_1,\ldots, t_n]) = 1$ and the second homology of $\mathrm{Epin}_{2\ell}(R)$ coincides with $\K_2(\rD_\ell, R)$ for all commutative $R$ and $\ell\geq 4$ (see e.\,g.~\cite[Corollary~5.4]{St71}, \cite[Theorem~1]{LS17}) we can obtain yet another corollary of~\cref{theorem:LP-for-K2}.
 \begin{corollary}
-For $k$ with $\mathrm{char}(k)\neq 2$ and $\ell \geq 7$ one has $\mathrm H_2(\mathrm{Spin}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k)$.
+For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ one has $\mathrm H_2(\mathrm{Spin}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k)$.
 \end{corollary}
-
 
 \subsection{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several key ideas used in this paper. We would also like to thank V.~Sosnilo and N.~A.~Vavilov for their useful comments and interest in this work.
 
-The second and the third-named authors were supported by the Russian Science Foundation grant No. 19-71-30002 and also by the Foundation for the Advancement of Theoretical Physics and Mathematics ``BASIS``.
+The work of the first-named author (\S~2) was supported by Young Russian Mathematics award, and by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619.
+The work of the second and the third-named authors (\S~3 and \S~4) was supported by the Russian Science Foundation grant No. 19-71-30002 and also by the Foundation for the Advancement of Theoretical Physics and Mathematics ``BASIS``.
 
 \section{General formalism}
-\begin{comment}
-The aim of this section is to formulate and prove Lindel--Popescu Theorem, a certain formal statement, which gives a sufficient condition for a general group-valued functor to be homotopy invariant. Later, in~\cref{sec:main} this result is applied to the functor $K_2$. Some of the machinery developed in this section also will be useful in the study of the $K_2$-analogue of Gersten's conjecture, see~\cref{sec:K2-GC}.
-
-Let us briefly recall the historical context, which might help to explain our choice of the name for~\cref{lpb}. Recall that H.~Lindel's paper~\cite{Li81} has settled the geometric case of the Bass--Quillen conjecture for all regular $k$-algebras $R$ essentially of finite type over $k$. Later T.~Vorst has used Lindel's result in the proof of the homotopy invariance for the unstable $\K_1$-functor, see~\cite{Vo81}. Recall that Vorst's result asserts that $\K_{1,r}(R[t]) \cong \K_{1,r}(R)$ for $r\geq 3$ and a regular ring $R$ essentially finite type over a field. Next, D.~Popescu proved Bass--Quillen conjecture in equicharacteristic case~\cite{Po90}.  Finally, in her recent work~\cite{Sta14} A.~Stavrova has combined Vorst's theorem with a theorem of Popescu and obtained a more general homotopy invariance $\K_1^G(A[t]) \cong \K_1^G(A)$ for an arbitrary regular algebra $A$ over a perfect field $F$ and a sufficiently isotropic reductive group $G$ defined over $F$, see~\cite[Theorem~1.3]{Sta14}.
-
-\subsection{A general Lindel--Popescu-type theorem}
-\end{comment}
 For a commutative ring $k$ we denote by $\catname{Alg}_k$ the category of commutative unital $k$-algebras (not neccessarily of finite type). In the statement of~\cref{lpb}, which is the main result of this section, $k$ will be assumed to be a field. However, some of the intermediate steps in the proof of~\cref{lpb} can be obtained for $k=\ZZ$, so for the sake of greater generality we make no blanket assumption that $k$ is a field.  
 
 For a commutative ring $R$ and an element $a\in R$ we denote by $\lambda_a$ the homomorphism of principal localization $R \to R_a$. Similarly, we denote by $\lambda_P$ the homomorphism $R \to R_P = (R\setminus P)^{-1}R$ of localization in a prime ideal $P \trianglelefteq R$. Notice that if $a$ is nilpotent then $R_a$ is the zero ring (which we also consider as an object of $\catname{Alg}_k$). 
@@ -146,9 +142,7 @@ The following result gives a sufficient condition for a functor $K$ to be $\math
  Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the following axioms:
  \begin{enumerate}[label=\textnormal{(A\arabic*)}]
   \item \label{CFC} {\it $K$ is finitary}, i.\,e. commutes with filtered colimits.
-  \item \label{DP} %{\it $K$ maps each square of the form~\eqref{M-sq} to a pullback square.}
-  %Since $e$ is split by the obvious embedding, this requirement is equivalent to the following one: 
-  For a $k$-algebra $R$ and $a \in R$ consider the diagram obtained from~\eqref{M-sq} by applying $K$. Then the homomorphism $\Ker(K(e)) \to NK(R_a)$ between the kernels of vertical arrows is injective.
+  \item \label{DP} For a $k$-algebra $R$ and $a \in R$ consider the diagram obtained from~\eqref{M-sq} by applying $K$. Then the homomorphism $\Ker(K(e)) \to NK(R_a)$ between the kernels of vertical arrows is injective.
   \item \label{LPP} {\it $K$ satisfies weak affine Nisnevich excision for domains.} By this we mean the following. Let $\iota \colon B \hookrightarrow A$ be an injective homomorphism of domains contained in $\catname{Alg}_k$ such that $\mathrm{Spec}(A)\to\mathrm{Spec}(B)$ is an {\'e}tale morphism of affine schemes. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / \iota(h)A$. Consider the following commutative square: \[\begin{tikzcd} B \ar{r}{\iota} \ar{d} & A \ar{d}\\ B_h \ar{r} & A_h \end{tikzcd}\] Then the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
   \item \label{PGP} {\it $K$ satisfies $\mathbb{P}^1$-glueing property for local domains.} By definition, this means that for every local domain $R \in \catname{Alg}_k$ the following diagram whose arrows are induced by natural embeddings is a pullback square: \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}  
   It is easy to see that if~\eqref{eq:P1-square} is pullback, then all its arrows are injective.
@@ -290,7 +284,7 @@ Thus, the left vertical arrow is also injective and $NK(R_M) = 1$, as required.
 It is clear from the above proof that it possible to weaken the requirements on $K$ in the statement of~\cref{lpb}. For example, we could require that axioms \ref{DP}--\ref{PGP} hold true only for the algebras essentially smooth over $k$. Further, the assertion of the axiom~\ref{CFC} can be restricted to algebras geometrically regular over $k$.
 \end{rem}
 
-We can also prove the following result analogous to~\cite[Theorem~1.2]{Sta20}
+We can also prove the following result (cf.~\cite[Th{\'e}or{\`e}me~1.1]{CTO92}, cf. also with~\cite[Proposition~2.2]{AHW20}).
 \begin{theorem}\label{thm:gb}
 Let $k$ be a field.
 Suppose that $K\colon\catname{Alg}_k\rightarrow\catname{Grp}$

@@ -19,7 +19,7 @@
 \DeclareFieldFormat[article, inproceedings, inbook, book, online]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
 \renewcommand*{\bibfont}{\footnotesize}
 
-\title{On the $\mathbb{A}^1$-invariance of $\K_2$ modeled on Chevalley groups, I.}
+\title{On the $\mathbb{A}^1$-invariance of $\K_2$ modeled on linear and even orthogonal groups.}
 \keywords {Steinberg group, Chevalley group, unstable $\K_2$-functor, $\mathbb{A}^1$-fundamental group. {\em Mathematical Subject Classification (2010):} 19C09, 20G35, 20H05}
 
 \author[1] {Andrei Lavrenov} \email{avlavrenov at gmail.com} 
@@ -71,7 +71,7 @@
 \newcommand{\catname}[1]{{\normalfont\textbf{#1}}} %Category name
 \begin{document}
 \begin{abstract}
- Let $R$ be a regular commutative ring containing a field and $\Phi$ be a simply-laced irreducible root system. In this paper we show that in the linear and even orthogonal case the unstable functor $\mathrm{K}_2(\Phi, R)$ possesses the $\mathbb{A}^1$-invariance property and therefore can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ as the fundamental group of the simply-connected Chevalley--Demazure group scheme $\mathrm{G}_\mathrm{sc}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(A))$.
+ Let $k$ be an arbitrary field. In this paper we show that in the linear and even orthogonal case the unstable functor $\mathrm{K}_2(\Phi, R)$ possesses the $\mathbb{A}^1$-invariance property and therefore can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ as the fundamental group of the simply-connected Chevalley--Demazure group scheme $\mathrm{G}_\mathrm{sc}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(A))$.
 \end{abstract}
 
 \maketitle
@@ -103,11 +103,11 @@ The above result is analogous to the computation of $\pi_0$ of an isotropic redu
 In addition to~\cref{theorem:LP-for-K2} the proof of~\cref{cor:motivic-pi1} relies on the computation of the fundamental group of the simplicial group $\St(\Phi, R[\Delta^\bullet])$, see \cref{prop:pi1-StDelta}. This computation can be considered as a more precise version of the calculation presented in~\cite[Proposition~3.2]{VW16} in the setting of Chevalley groups.
 
 The method of the proof of~\cref{lpb} allows one to obtain the following assertion for the functor $\K_2(\Phi, R)$ as a byproduct, cf. e.\,g. with~\cite[Theorem~1.2]{Sta20}.
-\begin{theorem} \label{theorem:Gersten} Let $\Phi$ be as in~\cref{theorem:LP-for-K2} and let $A$ be an arbitrary semi-local regular domain containing $k$. Then the canonical map $\K_2(\Phi, A) \to \K_2(\Phi, \mathrm{Frac}(A))$ is injective. \end{theorem}
+\begin{theorem} \label{theorem:Gersten} Let $\Phi$ and $k$ be as in~\cref{theorem:LP-for-K2} and let $A$ be an arbitrary semi-local regular domain containing $k$. Then the canonical map $\K_2(\Phi, A) \to \K_2(\Phi, \mathrm{Frac}(A))$ is injective. \end{theorem}
 
 Combining the above result with the classical Matsumoto theorem~\cite[Theorem~5.10]{Ma69} one can show that under the assumptions of~\cref{theorem:LP-for-K2} $\K_2(\Phi, A)$ embeds into the Milnor $\K_2$-group $\K_2^\mathrm{M}(\mathrm{Frac}(A))$.
 
-Using the fact that $\K_1(\rD_\ell, k[t_1,\ldots, t_n]) = 1$ and the second homology of $\mathrm{Epin}_{2\ell}(R)$ coincides with $\K_2(\rD_\ell, R)$ for all commutative $R$ and $\ell\geq 4$ (see e.\,g.~\cite[Corollary~5.4]{St71}, \cite[Theorem~1]{LS17}) we can obtain yet another corollary of~\cref{theorem:LP-for-K2}.
+Using the fact that $\K_1(\rD_\ell, k[t_1,\ldots, t_n]) = 1$ and the second homology of the elementary subgroup of $\mathrm{Spin}_{2\ell}(R)$ coincides with $\K_2(\rD_\ell, R)$ for all commutative $R$ and $\ell\geq 5$ (see e.\,g.~\cite[Corollary~5.4]{St71}, \cite[Theorem~1]{LS17}) we can obtain yet another corollary of~\cref{theorem:LP-for-K2}.
 \begin{corollary}
 For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ one has $\mathrm H_2(\mathrm{Spin}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k)$.
 \end{corollary}

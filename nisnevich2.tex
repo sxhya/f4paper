@@ -404,8 +404,8 @@ The main result of this section is the following glueing theorem for Steinberg g
 \begin{theorem}\label{glueing}
 Let $\iota\colon B \hookrightarrow A$ be an embedding of integral domains, $h\in B \setminus \{0\}$ be such that $B / hB = A / \iota(h)A$. Let $\Phi$ be an arbitrary simply-laced root system of rank at least $3$.
 Then the group $\St(\Phi, B)$ surjects onto the pullback of the homomorphisms 
-$\lambda_{h}\colon \St(\Phi, A) \to \St(\Phi, A_h)$, $\overline{\iota}\colon\St(\Phi, B_h) \to \St(\Phi, A_h)$. In particular the functors $\St(\Phi, -)$, $\K_2(\Phi, -)$ satisfy weak affine Nisnevich excision for domains and the following sequence of pointed sets is exact in the central term
-\begin{equation} \begin{tikzcd} \K_2(\Phi, B) \ar{rrr}{g \mapsto (\lambda_h(g), \iota(g))} & &  & \K_2(\Phi, B_h) \times \K_2(\Phi, A) \ar{rrrr}{(g_1,g_2) \mapsto \overline{\iota}(g_1) \lambda_{\iota(h)}(g_2)^{-1}} & & & & \K_2(\Phi, A_h) \end{tikzcd} \end{equation}
+$\lambda_{\iota(h)}\colon \St(\Phi, A) \to \St(\Phi, A_{\iota(h)})$, $\overline{\iota}\colon\St(\Phi, B_h) \to \St(\Phi, A_{\iota(h)})$. In particular the functors $\St(\Phi, -)$, $\K_2(\Phi, -)$ satisfy weak affine Nisnevich excision for domains and the following sequence of pointed sets is exact in the central term
+\begin{equation} \begin{tikzcd} \K_2(\Phi, B) \ar{rrr}{g \mapsto (\lambda_h(g), \iota(g))} & &  & \K_2(\Phi, B_h) \times \K_2(\Phi, A) \ar{rrrr}{(g_1,g_2) \mapsto \overline{\iota}(g_1) \lambda_{\iota(h)}(g_2)^{-1}} & & & & \K_2(\Phi, A_{\iota(h)}) \end{tikzcd} \end{equation}
 \end{theorem}
 The above result generalizes~\cite[Proposition~1.4]{Tu83}, which is formulated for the Zariski topology and the special case $\Phi=\rA_{\geq 4}$.
 The analogues of the above theorem for the functor $\K_1$ have also been obtained by E.~Abe and A.~Stavrova, cf.~\cite[Lemma~3.7]{Abe83}, \cite[Lemma~3.4]{Sta14}.
@@ -518,9 +518,9 @@ We let $\St(\Phi, B)$ act on $\St(\Phi, B_h) \times \St(\Phi, A)$ on the left vi
 \[w \star (u, v) = (u \lambda_h(w)^{-1}, \iota(w) v),\text{ where }w \in \St(\Phi, B),\ u \in \St(\Phi, B_h),\ v \in \St(\Phi, A).\]
 Denote by $V$ the orbit set for this action. We use the notation $[u, v]$ for the orbit corresponding to a pair $(u, v) \in \St(\Phi, B_h) \times \St(\Phi, A)$.
 
-Our goal is to show that the formula $[u, v] \mapsto \overline{\iota}(u) \cdot \lambda_h^A(v)$ defines a bijection between $V$ and $\St(\Phi, A_h)$. The first step in this direction is to construct an action of $\St(\Phi, A_h)$ on $V$. 
+Our goal is to show that the formula $[u, v] \mapsto \overline{\iota}(u) \cdot \lambda_{\iota(h)}(v)$ defines a bijection between $V$ and $\St(\Phi, A_{\iota(h)})$. The first step in this direction is to construct an action of $\St(\Phi, A_{\iota(h)})$ on $V$. 
 
-Fix some $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $c/{h^s} \in A_h$.
+Fix some $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $c/{h^s} \in A_{\iota(h)}$.
 Applying \cref{vorcor} to the element $u$ we obtain a natural number $n=n(u)$ and homomorphisms \begin{equation} \label{eq:c-homs} c_{u^{-1}}\colon \St(\Phi, h^nB) \to \St(\Phi, B),\ c_{\overline{\iota}(u^{-1})}\colon \St(\Phi, \iota(h)^nA) \to \St(\Phi, A)\end{equation}
 satisfying the identities listed in~\cref{vorcor}.
 
@@ -554,7 +554,7 @@ Now suppose that $(u', v')$ is another representative for the orbit $[u, v]$, i.
 \end{multline*}
 \end{proof}
 
-The next step of the proof is to verify that the above action specifies an action of $\St(\Phi, A_h)$ on $V$.
+The next step of the proof is to verify that the above action specifies an action of $\St(\Phi, A_{\iota(h)})$ on $V$.
 This is accomplished in the series of lemmas below:
 
 \begin{lemma}\label{lem:R1} The operators $T_\alpha$ satisfy relations~\eqref{R1}. \end{lemma}
@@ -637,8 +637,8 @@ This follows from the Steinberg relations and the identity \(N_{\beta, \alpha + 
 \end{comment} 
 The proof of the fact that $T_\alpha$ satisfy relations~\eqref{R2} is similar to the proof of the above lemmas but is easier, so we leave it as an exercise to the reader.
 
-It follows that the action of $\St(\Phi, A_h)$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_h)\) preserves the action, where \(\St(\Phi, A_h)\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_h)\), it remains to check the transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Thus, \(V \to \St(\Phi, A_h)\) is a bijection.
-Now if \(u \in \St(\Phi, B_h)\) and \(v \in \St(\Phi, A)\) are such that \(\iota(u) = \lambda_h(v)\), the class of \((u, v^{-1})\) in \(V\) maps to \(1 \in \St(\Phi, A_h)\). Thus, \([u, v^{-1}] = [1, 1]\) and $u = \lambda_h(w)$, $v = \iota(w)$ for some $w \in \St(\Phi, B)$, which completes the proof of the assertion of Theorem~\ref{glueing} for Steinberg groups. Since $\Gsc(\Phi, B)\to \Gsc(\Phi, A)$ is injective, we also obtain the assertion for $\K_2(\Phi, -)$.
+It follows that the action of $\St(\Phi, A_{\iota(h)})$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_{\iota(h)})\) preserves the action, where \(\St(\Phi, A_{\iota(h)})\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_{\iota(h)})\), it remains to check the transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Thus, \(V \to \St(\Phi, A_{\iota(h)})\) is a bijection.
+Now if \(u \in \St(\Phi, B_h)\) and \(v \in \St(\Phi, A)\) are such that \(\iota(u) = \lambda_h(v)\), the class of \((u, v^{-1})\) in \(V\) maps to \(1 \in \St(\Phi, A_{\iota(h)})\). Thus, \([u, v^{-1}] = [1, 1]\) and $u = \lambda_h(w)$, $v = \iota(w)$ for some $w \in \St(\Phi, B)$, which completes the proof of the assertion of Theorem~\ref{glueing} for Steinberg groups. Since $\iota\colon \Gsc(\Phi, B)\to \Gsc(\Phi, A)$ is injective, we also obtain the assertion for $\K_2(\Phi, -)$.
 
 \printbibliography
 \end{document}

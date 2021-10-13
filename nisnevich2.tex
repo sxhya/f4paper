@@ -71,7 +71,7 @@
 \newcommand{\catname}[1]{{\normalfont\textbf{#1}}} %Category name
 \begin{document}
 \begin{abstract}
- Let $k$ be an arbitrary field. In this paper we show that in the linear and even orthogonal case the unstable functor $\mathrm{K}_2(\Phi, R)$ possesses the $\mathbb{A}^1$-invariance property and therefore can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ as the fundamental group of the simply-connected Chevalley--Demazure group scheme $\mathrm{G}_\mathrm{sc}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(A))$.
+ Let $k$ be an arbitrary field. In this paper we show that in the linear case ($\Phi=\rA_\ell$, $\ell \geq 4$) and even orthogonal case ($\Phi = \rD_\ell$, $\ell\geq 7$, $\mathrm{char}(k)\neq 2$) the unstable functor $\mathrm{K}_2(\Phi, R)$ possesses the $\mathbb{A}^1$-invariance property and therefore can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ as the fundamental group of the simply-connected Chevalley--Demazure group scheme $\mathrm{G}_\mathrm{sc}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(A))$.
 \end{abstract}
 
 \maketitle
@@ -79,7 +79,7 @@
 \section{Introduction}
 Let $R$ be a commutative ring with a unit and $\Phi$ be an irreducible root system of rank $\geq 2$.
 Recall from~\cite{St71,St78} that to this data one can associate two objects: the simply-connected Chevalley--Demazure group scheme $\mathrm{G}_\mathrm{sc}(\Phi, R)$ and the Steinberg group $\St(\Phi, R)$, which is a certain group defined by means of generators and relations, see~\cref{sec:main-results}. These group fit into the exact sequence
-\[ \begin{tikzcd} \K_2(\Phi, R) \ar[hookrightarrow]{r} & \St(\Phi, R) \ar{r}{\pi} & \mathrm{G}_\mathrm{sc}(\Phi, R) \ar[twoheadrightarrow]{r} & \K_1(\Phi, R), \end{tikzcd} \]
+\begin{equation} \label{eq:main-exactSeq} \begin{tikzcd} \K_2(\Phi, R) \ar[hookrightarrow]{r} & \St(\Phi, R) \ar{r}{\pi} & \mathrm{G}_\mathrm{sc}(\Phi, R) \ar[twoheadrightarrow]{r} & \K_1(\Phi, R), \end{tikzcd} \end{equation}
 the rightmost and the leftmost terms of which are called by M.~Stein the {\it unstable $\K$-functors modeled on Chevalley groups}, see~\cite{St78}. The aim of the present paper is to show the following 
 
 \begin{theorem}[The $\K_2$-analogue of Lindel--Popescu theorem] \label{theorem:LP-for-K2}
@@ -112,11 +112,9 @@ Using the fact that $\K_1(\rD_\ell, k[t_1,\ldots, t_n]) = 1$ and the second homo
 For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ one has $\mathrm H_2(\mathrm{Spin}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k)$.
 \end{corollary}
 
-\subsection{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank V.~Sosnilo and N.~A.~Vavilov for their useful comments and interest in this work.
+\subsection{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank P.~Gvozdevsky, V.~Sosnilo and N.~A.~Vavilov for their useful comments and interest in this work.
 
-\cref{lpb} is due to the first-named author whose work was supported by Young Russian Mathematics award, and by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619.
-\cref{theorem:LP-for-K2} is due to the second-named author, who was supported by the Russian Science Foundation grant No. 19-71-30002
-\cref{glueing} is due to the third-named author, who was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics ``BASIS``.
+The work on \S~2 was supported by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The work on \S~3 was supported by the Russian Science Foundation grant No. 19-71-30002. The work on \S~4 was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics “BASIS“. The first-named author is a Young Russian Mathematics contest winner and would like to thank its sponsors and the jury.
 
 \section{General formalism}
 For a commutative ring $k$ we denote by $\catname{Alg}_k$ the category of commutative unital $k$-algebras (not neccessarily of finite type). In the statement of~\cref{lpb}, which is the main result of this section, $k$ will be assumed to be a field. However, some of the intermediate steps in the proof of~\cref{lpb} can be obtained for $k=\ZZ$, so for the sake of greater generality we make no blanket assumption that $k$ is a field.  
@@ -303,12 +301,15 @@ Denote by $P_i$ the preimages of the maximal ideals of $A$ and choose some maxim
 \end{proof}
 
 \section{Proof of the main results} \label{sec:main-results}
+\subsection{Proof of Theorems~\ref{theorem:LP-for-K2} and~\ref{theorem:Gersten}}
 Recall that for a simply-laced root system $\Phi$ of rank $\geq 2$ and a commutative ring $R$ the Steinberg group $\St(\Phi, R)$ is defined by means of the generators $x_\alpha(\xi)$, $\xi \in R$ and the following set of defining relations:
 \begin{align}
 x_{\alpha}(a)\cdot x_{\alpha}(b)&=x_{\alpha}(a+b),\text{ for } \alpha\in \Phi;\tag{R1} \label{R1}\\
 [x_{\alpha}(a),\,x_{\beta}(b)]  &=1,\text{ for }\alpha+\beta\not\in\Phi\cup 0; \tag{R2} \label{R2} \\
 [x_{\alpha}(a),\,x_{\beta}(b)]  &=x_{\alpha+\beta}(N_{\alpha\beta} \cdot ab)\text{ in the case }\alpha+\beta\in\Phi. \tag{R3} \label{R3} \end{align}
 The integers $N_{\alpha,\beta} = \pm 1$ appearing in the last identity are called the {\it structure constants} of the Chevalley group $\mathrm{G}_\mathrm{sc}(\Phi, R)$. They coincide with the structure constants of the corresponding simple Lie algebra. More information about them and further references can be found e.\,g. in~\cite[\S~2.4]{LSV20}).
+
+We denote by $\E(\Phi, R)$ the {\it elementary subgroup} of $\Gsc(\Phi, R)$. It is defined as the abstract subgroup generated by elementary root unipotents $t_\alpha(\xi)$, $\alpha \in \Phi$, $\xi \in R$, see e.\,g.~\cite{St71, St78, VZ20, Abe83,}. It is clear that $\E(\Phi, R)$ is the image of the homomorphism $\pi$ from~\eqref{eq:main-exactSeq}.
 
 For $a, b \in R$ set $y_\alpha(a, b) = [x_\alpha(a), x_{-\alpha}(b)]$.
 For an ideal $I \trianglelefteq R$ we denote by $\overline{\St}(\Phi, R, I)$ the normal closure in $\St(\Phi, R)$ of the subgroup generated by $x_\alpha(a)$, $a\in I$. Recall from~\cite[Lemma~5]{S15} that it coincides with the kernel of the natural morphism of Steinberg groups $\St(\Phi, R) \to \St(\Phi, R/I)$.
@@ -329,7 +330,7 @@ It suffices to verify the assertion for binary direct products.
 Observe that canonical projections $R_1 \times R_2 \to R_i$, $i=1,2$ split in the category of rings without unit, therefore the groups $G_i = \St(\Phi, R_i)$ embed as subgroups into $G = \St(\Phi, R_1 \times R_2)$. It is also clear that $G_i$ together generate $G$. Thus, to verify the isomorphism $G \cong G_1 \times G_2$ it suffices to show the triviality of the commutator subgroup $[G_1, G_2] \leq G$.
 
 Set $A = R_1\times 0$, $B = 0 \times R_2$. It is clear that $A, B \trianglelefteq R_1 \times R_2$. 
-It follows directly from~\eqref{R2}--\eqref{R3} that the commutators $y_\alpha(a, b) = [x_{\alpha}(a),\ x_\beta(b)]$ are trivial for all $\beta \neq -\alpha$, $a \in A$, $b\in B$. On the other hand, to verify the triviality of $y_\alpha(a, b)$ we can apply the congruences of~\cref{lem:c-identities} (since $AB=0$ these congruences turn into equalities).
+It follows directly from~\eqref{R2}--\eqref{R3} that the commutators $[x_{\alpha}(a),\ x_\beta(b)]$ are trivial for all $\beta \neq -\alpha$, $a \in A$, $b\in B$. On the other hand, to verify the triviality of $y_\alpha(a, b)$ we can apply the congruences of~\cref{lem:c-identities} (since $AB=0$ these congruences turn into equalities).
 Indeed, setting $c = c^2 = (1, 0)$ we obtain that $y_\alpha(a, b) = y_\alpha(ac, b) = y_\alpha(a, bc) = y_\alpha(a, 0) = 1$. \end{proof}
 
 \begin{lemma} \label{k2cdc} 
@@ -352,7 +353,7 @@ Recall from~\cite{Jar83} that for an arbitrary commutative (unital) ring $R$ one
 \begin{equation}
  R[\Delta^n] = R[t_0,\ldots t_n]/\langle \sum_{i=0}^n t_i -1 \rangle,\ d_i(t_j) = \left\{ \begin{array}{ll}t_j & j < i, \\0 & j = i, \\ t_{j-1} & j > i; \end{array}\right. s_i(t_j) = \left\{ \begin{array}{ll} t_j & j < i, \\ t_j + t_{j+1} & j = i, \\ t_{j+1} & j > i. \end{array} \right.
 \end{equation}
-	The application of a functor $G\colon\catname{Ring}\rightarrow\catname{Grp}$ to $R[\Delta^\bullet]$ yields a simplicial group $G(R[\Delta^\bullet])$, which in the context of $\mathbb{A}^1$-homotopy theory is usually called the {\it simplicial resolution} of $G$ and is denoted by $\mathrm{Sing}^{\mathbb{A}^1}_\bullet(G)(R)$. Recall also, that the $n$-th {\it unstable Karoubi--Villamayor K-functor attached to $G$} (denoted $\mathrm{KV}^G_n(R)$) is, by definition, the $n-1$-th simplicial homotopy group of $G_\mathrm{sc}(\Phi, R[\Delta^\bullet])$ (cf.~\cite[\S~4.3]{AHW18}, \cite[\S~3]{Jar83}).
+	The application of a functor $G\colon\catname{Ring}\rightarrow\catname{Grp}$ to $R[\Delta^\bullet]$ yields a simplicial group $G(R[\Delta^\bullet])$, which in the context of $\mathbb{A}^1$-homotopy theory is usually called the {\it simplicial resolution} of $G$ and is denoted by $\mathrm{Sing}^{\mathbb{A}^1}_\bullet(G)(R)$. Recall also, that the $n$-th {\it unstable Karoubi--Villamayor K-functor attached to $G$} (denoted $\mathrm{KV}^G_n(R)$) is, by definition, the $n-1$-th simplicial homotopy group of $\Gsc(\Phi, R[\Delta^\bullet])$ (cf.~\cite[\S~4.3]{AHW18}, \cite[\S~3]{Jar83}).
 
 Recall from~\cite[\S~17]{May67} that the homotopy group $\pi_n(G)$ of a simplicial group $(G_\bullet, d_i, s_i)$ can be computed as $n$-th homology group of the normalized Moore complex
 \[ 1 \leftarrow N_0(G) \xleftarrow{\partial_1} N_1(G) \xleftarrow{\partial_2} N_2(G) \xleftarrow{\partial_3} \ldots\,, \]

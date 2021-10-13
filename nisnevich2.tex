@@ -418,6 +418,7 @@ We refer the reader to \cite[Section~6.1]{SK06} for an introduction to the forma
 We start by recalling the definition of the {\it pro-completion} $\catname{Pro}(\mathcal{C})$ of a category $\mathcal{C}$ (cf.~\cite[\S~2.1]{LSV20}).
 By definition, the objects of $\catname{Pro}(\mathcal{C})$ are functors $X^{(\infty)}\colon\mathcal{I}^{\mathrm{op}} \to \mathcal{C}$, where $\mathcal{I}$ is a small nonempty filtered category. For $X^{(\infty)} \in 
 \catname{Pro}(\mathcal{C})$ and $i \in \mathcal{I}$ we denote by $X^{(i)}$ the value of $X^{(\infty)}$ on $i$. 
+We call the images of $X^{(\infty)}$ on the arrows of $\mathcal{I}$ the {\it structure morphisms} of $X^{(\infty)}$.
 
 Let $X^{(\infty)}\colon\mathcal{I}\to\mathcal{C}$ and $Y^{(\infty)}\colon\mathcal{J}\to\mathcal{C}$ be a pair of pro-objects.
 By definition, a {\it pre-morphism} $\eta\colon X^{(\infty)} \to Y^{(\infty)}$ is a pair $(\eta^*, \{\eta_j\}_{j\in\mathrm{Ob}(\mathcal{J})})$ consisting of a map $\eta^*\colon \mathrm{Ob}(\mathcal{J})\to\mathrm{Ob}(\mathcal{I})$ and a collection of $\mathcal{C}$-morphisms $\eta_j\colon X^{(\eta^*(j))}\to Y^{(j)}$ such that for every arrow $j' \to j$ there exists $i$ such that the composite morphisms $X^{(i)} \to X^{(\eta^*(j'))} \xrightarrow{\eta_{j'}} Y^{(j')}$ and $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)} \to Y^{(j')}$ are equal. We call the individual $\mathcal{C}$-morphism $\eta_j$ {\it the degree $j$ component} of $\eta$.
@@ -483,9 +484,11 @@ R^{(\infty)} \ar{r}{x_\beta} \ar{d}{f^{(\infty)}} &
 
 Now let us specialize the above results to a particular situation that we will encounter in~\cref{sec:proof-glueing}.
 Let $\iota \colon B \to A$ be an injective homomorphism of integral domains and $h \neq 0$ be an element of $B$.
-We denote by $\mathbb N$ the set of nonnegative integers.
-Consider the multiplicative subsets $h^{\mathbb{N}} = \{ h^n \mid n \in \mathbb{N} \} \subseteq B$ and $\iota(h)^\mathbb{N} \subseteq A$ and the corresponding homomorphism of localizations $\overline{\iota} \colon B_h \to A_{\iota(h)}$.
-It is clear that if we put $\iota^*(\iota(h)^n) = h^n$, the subsets $h^\mathbb{N} \subseteq B$, $\iota(h)^\mathbb{N} \subseteq A$, and the homomorphism $\iota$ satisfy the requirements mentioned before Proposition~\ref{prop:functoriality}. Thus, there exists a morphism $\iota^{(\infty)}$ of pro-rngs $B^{(\infty)} \to A^{(\infty)}$ and the corresponding morphism of Steinberg pro-groups $\iota^{(\infty)}\colon\St^{(\infty)}(\Phi, B) \to \St^{(\infty)}(\Phi, A)$ satisfying the conclusion of Proposition~\ref{prop:functoriality}.
+We denote by $\mathbb N$ the set of nonnegative integers. Denote by $h^{\mathbb{N}}$ the multiplicative subset $\{ h^n \mid n \in \mathbb{N} \} \subseteq B$. The pro-rng $B^{(\infty)}$ associated to $h^\mathbb{N}$ can be depicted of as the following diagram of rngs (by definition, $B^{(k)}$ is the principal ideal $h^kB$ and all the structure morphisms of $B^{(\infty)}$ are obvious inclusions):
+\[ \ldots \hookrightarrow h^{n+1} B \hookrightarrow h^n B \hookrightarrow \ldots \hookrightarrow hB \hookrightarrow B. \]
+ 
+Cosnider the multiplicative subset $\iota(h)^\mathbb{N} \subseteq A$ and the corresponding homomorphism of localizations $\overline{\iota} \colon B_h \to A_{\iota(h)}$. It is clear that if we put $\iota^*(\iota(h)^n) = h^n$, the subsets $h^\mathbb{N} \subseteq B$, $\iota(h)^\mathbb{N} \subseteq A$, and the homomorphism $\iota$ satisfy the requirements mentioned before Proposition~\ref{prop:functoriality}. Thus, there exists a morphism $\iota^{(\infty)}$ of pro-rngs $B^{(\infty)} \to A^{(\infty)}$ and the corresponding morphism of Steinberg pro-groups $\iota^{(\infty)}\colon\St^{(\infty)}(\Phi, B) \to \St^{(\infty)}(\Phi, A)$ satisfying the conclusion of Proposition~\ref{prop:functoriality}.
+
 
 %Let $f \colon B \to A$ be a homomorphism of integral domains and let $h$ be an element of $B$ such that $f(h)\neq 0$.
 %We denote by \(\mathbb N\) the set of nonnegative integers.

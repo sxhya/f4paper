@@ -10,7 +10,7 @@
 \usepackage{enumitem}
 \usepackage[backend=bibtex, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
 
-%\usepackage[notref, notcite]{showkeys}
+\usepackage[notref, notcite]{showkeys}
 
 \addbibresource{nisnevich2.bib}
 \renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
@@ -71,34 +71,50 @@
 \newcommand{\catname}[1]{{\normalfont\textbf{#1}}} %Category name
 \begin{document}
 \begin{abstract}
- Let $k$ be an arbitrary field. In this paper we show that in the linear case ($\Phi=\rA_\ell$, $\ell \geq 4$) and even orthogonal case ($\Phi = \rD_\ell$, $\ell\geq 7$, $\mathrm{char}(k)\neq 2$) the unstable functor $\mathrm{K}_2(\Phi, -)$ possesses the $\mathbb{A}^1$-invariance property, i.\,e. $\K_2(\Phi, R[t]) = \K_2(\Phi, R)$ for regular rings $R$ containing $k$. As a consequence, it can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ as the fundamental group of the simply-connected Chevalley--Demazure group scheme $\mathrm{G}_\mathrm{sc}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(A))$.
+ Let $k$ be an arbitrary field. In this paper we show that in the linear case ($\Phi=\rA_\ell$, $\ell \geq 4$) and even orthogonal case ($\Phi = \rD_\ell$, $\ell\geq 7$, $\mathrm{char}(k)\neq 2$) the unstable functor $\mathrm{K}_2(\Phi, -)$ possesses the $\mathbb{A}^1$-invariance property in the geometric case, i.\,e. $\K_2(\Phi, R[t]) = \K_2(\Phi, R)$ for regular rings $R$ containing $k$. As a consequence, the unstable $\K_2$ groups can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ as fundamental groups of the simply-connected Chevalley--Demazure group schemes $\mathrm{G}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(A))$.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
-Let $R$ be a commutative ring with a unit and $\Phi$ be an irreducible root system of rank $\geq 2$.
-Recall from~\cite{St71,St78} that to this data one can associate two objects: the simply-connected Chevalley--Demazure group scheme $\mathrm{G}_\mathrm{sc}(\Phi, R)$ and the Steinberg group $\St(\Phi, R)$, which is a certain group defined by means of generators and relations, see~\cref{sec:main-results}. These group fit into the exact sequence
-\begin{equation} \label{eq:main-exactSeq} \begin{tikzcd} \K_2(\Phi, R) \ar[hookrightarrow]{r} & \St(\Phi, R) \ar{r}{\pi} & \mathrm{G}_\mathrm{sc}(\Phi, R) \ar[twoheadrightarrow]{r} & \K_1(\Phi, R), \end{tikzcd} \end{equation}
-the rightmost and the leftmost terms of which are called by M.~Stein the {\it unstable $\K$-functors modeled on Chevalley groups}, see~\cite{St78}. The aim of the present paper is to show the following 
+%In this paper we prove the $\mathbb{A}^1$-invariance for the unstable linear and orthogonal $\K_2$-functors.
+%As a consequence, we obtain that several variants of the definition of the $\K_2$-functor associated to linear and orthogonal Chevalley groups lead to the same answer.
 
+Historically there have been many different approaches to higher algebraic $\K$-theory and Hermitian $\K$-theory.
+Certain approaches suit better for the purposes of theory-building while others are more amenable to computation. 
+Sometimes these approaches lead to the same answer. Recall, for example, from~\cite[Theorem~IV.11.8]{Kbook} that stable Quillen's groups $\K_n(R)$ (defined e.\,g. via the $+$-construction) and stable Karoubi--Villamayor groups $\mathrm{KV}_n(R)$ coincide for $n\geq 1$ if $R$ happens to be a regular ring.
+Notice that both of these theories use infinite-dimensional algebraic groups (such as $\mathrm{GL}_\infty(R)$ or $\mathrm{O}_\infty(R)$, $\mathrm{Sp}_\infty(R)$) in their definition.
+
+One can define and study the analogues of these $\K$-groups for finite-dimensional algebraic groups, see e.\,g.~\cite{St71, Re75, St78, Tu83, Abe83, Sta14, VW16, Sta20}. The interest for the unstable $\K_2$-groups comes, in particular, from the fact that they appear in Steinberg's presentation of (the groups of points of) algebraic groups by means of generators and relations. Let us recall this presentation in greater detail. Let $R$ be a commutative ring with a unit and $\Phi$ be an irreducible root system of rank $\geq 2$. The Steinberg group $\St(\Phi, R)$ is a certain group defined by means of generators and relations, see~\cite[Ch.~6]{St67} (see also~\cref{sec:main-results}).
+If one additionally chooses a lattice $\Lambda$ located between the root lattice $Q(\Phi)$ and the weight lattice $P(\Phi)$ of $\Phi$ (i.\,e. $Q(\Phi) \leq \Lambda \leq P(\Phi)$), one can construct the Chevalley--Demazure group scheme $G = \mathrm{G}_\Lambda(\Phi, -)$, see~\cite[\S~3]{St67}. The {\it unstable functors $\K_1$ and $\K_2$ modeled on Chevalley groups} can be defined via the following exact sequence (cf.~\cite{St78}):
+\begin{equation} \label{eq:main-exactSeq} \begin{tikzcd} \K_2^G(R) \ar[hookrightarrow]{r} & \St(\Phi, R) \ar{r}{\pi} & G(R) \ar[twoheadrightarrow]{r} & \K_1^G(R). \end{tikzcd} \end{equation}
+Notice that the groups $\K_i(\Phi, R)$ from~\cite{St78} are precisely the groups $\K_i^G(R)$ in the case when $G$ is the simply-connected form of the Chevalley group, i.\,e. $\Lambda = P(\Phi)$ (for shortness we also write $\Gsc(\Phi,-)$ instead of $\mathrm{G}_{P(\Phi)}(\Phi, R)$). In many cases (e.\,g. when $R$ is a ring of stable rank $1$ or a Dedekind domain of arithmetic type) the term $\K_1(\Phi, R)$ in the right-hand side of the above sequence vanishes and $\Gsc(\Phi, R)$ becomes the quotient of $\St(\Phi, R)$ by $\K_2(\Phi, R)$. Thus, the group $\K_2^G(R)$ can interpreted as the group of ``nontrivial'' relations between $x_\alpha(\xi)$ (the ``trivial'' relations being Chevalley commutator formulas~\eqref{R1}--\eqref{R3}). Our first result is the following
 \begin{theorem}[The $\K_2$-analogue of Lindel--Popescu theorem] \label{theorem:LP-for-K2}
-Let $k$ be an arbitrary field and $R$ be a regular ring containing $k$. Let $\Phi$ be either $\rA_\ell$ for $\ell\geq4$, or $\rD_\ell$ for $\ell\geq 7$. In the latter case assume additionally that the characteristic of $k$ is not $2$. Then $\K_2(\Phi,\,R[t])\cong\K_2(\Phi,\,R).$
+Let $k$ be an arbitrary field and $R$ be a regular ring containing $k$. Let $\Phi$ be either $\rA_\ell$ for $\ell\geq4$, or $\rD_\ell$ for $\ell\geq 7$. In the latter case assume additionally that the characteristic of $k$ is not $2$. Then for any $\Lambda$ and $G = \mathrm{G}_\Lambda(\Phi, -)$ one has $\K_2^G(R[t])\cong\K_2^G(R).$
 \end{theorem} 
-Recall that the classical Lindel--Popescu theorem for projective modules settles the the geometric case of the Bass--Quillen conjecture, see~\cite{Li81},~\cite{Po85}.
-An exposition of D.~Popescu's result can also be found in~\cite{Sw98}. Our result, thus, can be considered as the solution to the $\K_2$-analogue of the geometric case of the Bass--Quillen conjecture.
-Recall also that the $\mathbb{A}^1$-invariance for the unstable $\K_1$-functor modeled on $\Phi$ of rank $\geq 2$ has been established in~\cite{Abe83} and has been subsequently generalized to isotropic reductive groups, cf.~\cite[Theorem~1.3]{Sta14}, \cite[Theorem~1.1]{Sta20}.
+Recall that the $\mathbb{A}^1$-invariance for the stable $\K$-functors $\K_i(R)$, $\mathrm{KO}_i(R)$, $i \geq 0$ is well-known, see e.\,g.~\cite[Theorem~V.6.3]{Kbook}, \cite[Corollary~1.12]{Ho05}. The classical Bass--Quillen conjecture asks if the $\mathbb{A}^1$-invariance for the functor $\K_0$ holds {\it unstably}, i.\,e. whether the set $\mathrm{VB}_n(R)$ of isomorphism classes of vector bundles of constant rank $n$ over $\mathrm{Spec}(R)$ has the property $\mathrm{VB}_n(R) = \mathrm{VB}_n(R[t])$. 
+The classical Lindel--Popescu theorem for projective modules provides an affirmative answer to this question in the geometric case, i.\,e. when $R$ contains a field $k$, see~\cite{Li81},~\cite{Po85}. An exposition of D.~Popescu's result can also be found in~\cite{Sw98}. Much stronger results have appeared since Lindel--Popescu theorem, see e.\,g.~\cite{AHW17}.
+Thus, \cref{theorem:LP-for-K2} can be considered as the solution to the $\K_2$-analogue of the Bass--Quillen conjecture in the geometric case for the split linear and orthogonal groups.
+Recall also that the $\mathbb{A}^1$-invariance for the unstable $\K_1$-functor modeled on Chevalley groups of rank $\geq 2$ has been established in~\cite{Abe83} and has been subsequently generalized to reductive groups of isotropic rank $\geq 2$ in the recent works of A.~Stavrova, see~\cite[Theorem~1.3]{Sta14}, \cite[Theorem~1.1]{Sta20}.
 
 When $R=k$ is a field the assertion of~\cref{theorem:LP-for-K2} is known from~\cite{Re75} for all $\Phi$ (see Korollar of~Satz~1). Also if $\Phi = \rA_\ell$ and $\ell \geq \mathrm{max}(4, \mathrm{dim}(R) + 2)$ the assertion of~\cref{theorem:LP-for-K2} follows from the main result of~\cite{Tu83}.
 
 The assertion of~\cref{theorem:LP-for-K2} is likely to remain true for all $\Phi$ of rank $\geq 3$ without any assumptions on the characteristic of $k$. It is false for $\Phi$ of rank $2$, however, see~\cite{We12}. The bottleneck in our proof which leads to the restrictive assumptions $\ell\geq 7$ and $\mathrm{char}(k)\neq 2$ in the case $\Phi=\rD_\ell$ is the orthogonal Horrocks theorem \cite[Theorem~1]{LS20}. In the future papers we plan to address this issue and obtain an improved Horrocks theorem for all simply-laced $\Phi$ containing $\rA_4$ without the invertibility of $2$ assumption.
 
-The principal tool used in the proof of~\cref{theorem:LP-for-K2} is~\cref{lpb}, which gives a sufficient condition for a general group-valued functor to be $\mathbb{A}^1$-invariant. A key ingredient in the  proof of~\cref{lpb}, in turn, is a recent result of I.~Panin, see~\cite[Theorem~2.5]{Pa19}. One of the axioms appearing in the statement of~\cref{lpb} is the so-called {\it weak affine Nisnevich excision property} for Steinberg groups. The verification of this property for simply-laced Steinberg groups is another new result of the paper, see~\cref{glueing}. Unlike M.~Tulenbaev, who used the technique of van der Kallen's ``another presentation'' in the proof of the weaker Zariski excision property~\cite[Proposition~1.4]{Tu83}, in our proof we use the new technique of pro-groups introduced by the third-named author in~\cite{Vor1} (see also~\cite{LSV20}). %V20?
-
-As a corollary of~\cref{theorem:LP-for-K2}, we show that the M.~Stein's group $\K_2(\Phi, R)$ can be interpreted as the fundamental group of the Chevalley--Demazure group scheme in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ of Morel and Voevodsky~\cite{MV99}.
-\begin{corollary} \label{cor:motivic-pi1} Let $R$ and $\Phi$ be as in~\cref{theorem:LP-for-K2} and assume addtionally that $R$ is Noetherian of finite Krull dimension. Then one has \[\pi_1^{\mathbb{A}^1}(\Gsc(\Phi, -))(R) := \mathrm{Hom}_{\mathcal{H}^{\mathbb{A}^1}_{k,*}}(S^1 \wedge (\mathrm{Spec}(R))_+, \Gsc(\Phi, -)) = \K_2(\Phi, R).\]
+As a corollary of~\cref{theorem:LP-for-K2}, we show that the unstable groups $\K_2^G(R)$ coincide with Karoubi--Villamayor groups $\mathrm{KV}_2^G(R)$ (see~\cref{sec:K2-as-pi-1} for the definition). It follows from~\cite{AHW18} that the latter groups can be interpreted as fundamental groups of $G$ in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ of Morel and Voevodsky~\cite{MV99}. Consequently, we obtain the following
+\begin{corollary} \label{cor:motivic-pi1} Let $R$ and $G$ be as in~\cref{theorem:LP-for-K2} and assume addtionally that $R$ is Noetherian of finite Krull dimension.
+Then one has \[\pi_1^{\mathbb{A}^1}(G)(R) := \mathrm{Hom}_{\mathcal{H}^{\mathbb{A}^1}_{k,*}}(S^1 \wedge \mathrm{Spec}(R)_+, G) = \mathrm{KV}_2^{G}(R) = \K_2^G(R).\]
 \end{corollary}
 The above result is analogous to the computation of $\pi_0$ of an isotropic reductive group due to A.~Stavrova, see~\cite[Theorem~5.5]{Sta20}. The analogue of~\cref{cor:motivic-pi1} in the broader context of reductive groups of isotropic rank $\geq 2$ (albeit only when $R = k$ is an infinite field) has also been obtained in~\cite{VW16}.
+Similar representability results for the stable $\K$-groups are well-known, see e.\,g.~\cite{MV99, Ho05}.
+
+Recall also from the~\cite[Theorem~5.3]{St71} that under the assumptions on the rank $\Phi$ stated in~\cref{theorem:LP-for-K2} the first two homology groups of $\St(\Phi, R)$ vanish. Consequently from the main result of~\cite{LSV20} and \S~IV.1 of~\cite{Kbook} it is easy to conclude that group $\K_2(\Phi, R)$ coincides with the unstable $\K_2$-group defined by means of Quillen's $+$-construction:
+\begin{equation} \label{eq:H2-K2}
+  \K_2^\mathrm{Q}(\Phi, R) := \pi_2(\Gsc(\Phi, R))^+_{\E(\Phi, R)} = \mathrm{H}_2(\mathrm{E}_\mathrm{sc}(\Phi, R), \ZZ) = \K_2(\Phi, R),
+\end{equation}
+where $\E_\mathrm{sc}(\Phi, R) = \mathrm{Im}(\pi)$ denotes the {\it elementary subgroup of $\Gsc(\Phi, R)$}, see~\cref{sec:main-results}. Thus, in particular, the definitions of the unstable $\K_2$-functors a la Quillen and a la Karoubi--Villamayor agree for a regular ring $R$ containing a field $k$ and $\Phi$ satisfying the assumptions of~\cref{theorem:LP-for-K2}.
+
+The principal tool used in the proof of~\cref{theorem:LP-for-K2} is~\cref{lpb}, which gives a sufficient condition for a general group-valued functor to be $\mathbb{A}^1$-invariant. A key ingredient in the  proof of~\cref{lpb}, in turn, is a recent result of I.~Panin, see~\cite[Theorem~2.5]{Pa19}. One of the axioms appearing in the statement of~\cref{lpb} is the so-called {\it weak affine Nisnevich excision property} for Steinberg groups. The verification of this property for simply-laced Steinberg groups is another new result of the paper, see~\cref{glueing}. Unlike M.~Tulenbaev, who used the technique of van der Kallen's ``another presentation'' in the proof of the weaker Zariski excision property~\cite[Proposition~1.4]{Tu83}, in our proof we use the new technique of pro-groups introduced by the third-named author in~\cite{Vor1} (see also~\cite{LSV20}). %V20?
 
 In addition to~\cref{theorem:LP-for-K2} the proof of~\cref{cor:motivic-pi1} relies on the computation of the fundamental group of the simplicial group $\St(\Phi, R[\Delta^\bullet])$, see \cref{prop:pi1-StDelta}. This computation can be considered as a more precise version of the calculation presented in~\cite[Proposition~3.2]{VW16} in the setting of Chevalley groups.
 
@@ -107,7 +123,7 @@ The method of the proof of~\cref{lpb} allows one to obtain the following asserti
 
 Combining the above result with the classical Matsumoto theorem~\cite[Theorem~5.10]{Ma69} one can show that under the assumptions of~\cref{theorem:LP-for-K2} $\K_2(\Phi, A)$ embeds into the Milnor $\K_2$-group $\K_2^\mathrm{M}(\mathrm{Frac}(A))$.
 
-Using the fact that $\K_1(\rD_\ell, k[t_1,\ldots, t_n]) = 1$ and the second homology of the elementary subgroup of $\mathrm{Spin}_{2\ell}(R)$ coincides with $\K_2(\rD_\ell, R)$ for all commutative $R$ and $\ell\geq 5$ (see e.\,g.~\cite[Corollary~5.4]{St71}, \cite[Theorem~1]{LS17}) we can obtain yet another corollary of~\cref{theorem:LP-for-K2}.
+Combining~\cref{theorem:LP-for-K2} with~\eqref{eq:H2-K2} we obtain yet another corollaries of~\cref{theorem:LP-for-K2}:
 \begin{corollary}
 For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ one has $\mathrm H_2(\mathrm{Spin}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k)$.
 \end{corollary}
@@ -351,7 +367,7 @@ In the case $\Phi = \rA_\ell$ the axiom~\ref{PGP} is satisfied by~\cite[Theorem~
 Notice that every regular ring containing a field $k$ is geometrically regular over a perfect subfield of $k$. Now the assertion of~\cref{theorem:LP-for-K2} follows from~\cref{lpb}, while the assertion of~\cref{theorem:Gersten} follows from~\cref{thm:gb}.
 \end{proof}
 
-\subsection{\texorpdfstring{$\K_2(\Phi, R)$}{K2(R)} as $\mathbb{A}^1$-fundamental group}
+\subsection{\texorpdfstring{$\K_2(\Phi, R)$}{K2(R)} as $\mathbb{A}^1$-fundamental group} \label{sec:K2-as-pi-1}
 Recall from~\cite{Jar83} that for an arbitrary commutative (unital) ring $R$ one can define the standard simplicial ring $R[\Delta^\bullet]$ as follows:
 \begin{equation}
  R[\Delta^n] = R[t_0,\ldots t_n]/\langle \sum_{i=0}^n t_i -1 \rangle,\ d_i(t_j) = \left\{ \begin{array}{ll}t_j & j < i, \\0 & j = i, \\ t_{j-1} & j > i; \end{array}\right. s_i(t_j) = \left\{ \begin{array}{ll} t_j & j < i, \\ t_j + t_{j+1} & j = i, \\ t_{j+1} & j > i. \end{array} \right.

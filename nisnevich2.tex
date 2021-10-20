@@ -10,7 +10,7 @@
 \usepackage{enumitem}
 \usepackage[backend=bibtex, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
 
-\usepackage[notref, notcite]{showkeys}
+%\usepackage[notref, notcite]{showkeys}
 
 \addbibresource{nisnevich2.bib}
 \renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
@@ -121,17 +121,20 @@ The method of the proof of~\cref{lpb} allows us to obtain the following assertio
 
 Combining the above result with the classical Matsumoto theorem~\cite[Theorem~5.10]{Ma69} one can show that under the assumptions of~\cref{theorem:LP-for-K2} $\K_2(\Phi, A)$ embeds into the Milnor $\K_2$-group $\K_2^\mathrm{M}(\mathrm{Frac}(A))$.
 
-As a consequence~\cref{theorem:LP-for-K2} we also obtain the following
+As a consequence~\cref{theorem:LP-for-K2} we obtain the following results.
 \begin{corollary} \label{cor:various-facts}
-For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ one has
-\begin{align*} 
-\mathrm H_2(\mathrm{Spin}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) =& \K^\mathrm{M}_2(k),\\
-\mathrm H_2(\mathrm{SO}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) =& \K^\mathrm{M}_2(k)\times \ZZ/2\ZZ. \end{align*}
-The group $\mathrm{Spin}_{2\ell}(k[t_1,\ldots, t_n])$ admits presentation as in~\cite[\S~6]{St67}, i.\,e. the presentation by means of generators $x_\alpha(\xi)$, $\xi \in k[t_1,\ldots, t_n]$ relations~\eqref{R1}--\eqref{R3} and relations $h_\alpha(u)h_\alpha(v) = h_\alpha(uv)$, where $u, v\in k^\times$, cf. also with e.\,g.~\cite[\S~5]{Ma69}.
+For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ the group $\mathrm{Spin}_{2\ell}(k[t_1,\ldots, t_n])$ admits presentation as in~\cite[\S~6]{St67} or \cite[\S~5]{Ma69}, i.\,e. the presentation by means of generators $x_\alpha(\xi)$, $\xi \in k[t_1,\ldots, t_n]$ relations~\eqref{R1}--\eqref{R3} and relations $h_\alpha(u)h_\alpha(v) = h_\alpha(uv)$, where $u, v\in k^\times$. Additionally,
+\[\mathrm H_2(\mathrm{Spin}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k).\]
+\end{corollary}
+\begin{corollary} \label{cor:H_2-O}
+ For an arbitrary field $k$ of characteristic $\neq 2$, a regular $k$-algebra $R$, $\ell \geq 7$ one has
+ \begin{align}
+  \mathrm H_2 (\mathrm{SO}_{2\ell}(R[t]), \ZZ) =&\ \mathrm H_2 (\mathrm{SO}_{2\ell}(R), \ZZ); \label{eq:H_2-SO} \\
+  \mathrm H_2 (\mathrm{O}_{2\ell}(R[t]), \ZZ) =&\ \mathrm H_2 (\mathrm{O}_{2\ell}(R), \ZZ). \label{eq:H_2-O}
+ \end{align}
 \end{corollary}
 
-
-\subsection{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank P.~Gvozdevsky, V.~Sosnilo and N.~A.~Vavilov for their useful comments and interest in this work.
+\subsection{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank P.~Gvozdevsky, S.~Ivanov, V.~Sosnilo and N.~A.~Vavilov for their useful comments and interest in this work.
 
 The work on \S~2 was supported by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The work on \S~3 was supported by the Russian Science Foundation grant No. 19-71-30002. The work on \S~4 was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics “BASIS“. The first-named author is a winner of the Young Russian Mathematics contest and would like to thank its sponsors and the jury.
 
@@ -381,7 +384,17 @@ We already know that the left arrow is an isomorphism. The homomorphism $i_M$ is
 \end{proof}
 
 \begin{proof}[Proof of~\cref{cor:various-facts}]
- Set $R = k[t_1,\ldots t_n]$. Recall from~\cite{Abe83} that $\K_1(\rD_\ell, R) = \K_1(\rD_\ell, k) = 1$, so $\mathrm{Spin}_{2\ell}(R) = \E_\mathrm{sc}(\rD_\ell, R)$. The presentation a la Steinberg for $\mathrm{Spin}_{2\ell}(R)$ now follows from~\cref{theorem:LP-for-K2} and Matsumoto's theorem~\cite[Theorem~5.10]{Ma69}. The computation of the second homology group for $\mathrm{Spin}_{2\ell}(R)$ now follows from~\eqref{eq:H2-K2}. To deduce the analogous formula for $G = \mathrm{SO}_{2\ell}(R)$ it remains to notice that the upper row of~\eqref{eq:snake-A1} splits in the category of abelian groups. It certainly splits in the category of groups, see~\cite[Theorem~7.2.12]{HOM}. The group $\K_2(\Phi, R)$ is abelian by~\cite{LS17} (or~\cite{LSV20}). Finally, the group $\K_2^G(R)$ is abelian by~\cite[\S~7(v)]{St67}. \end{proof}
+  Set $R = k[t_1,\ldots t_n]$. Recall from~\cite{Abe83} that $\K_1(\rD_\ell, R) = \K_1(\rD_\ell, k) = 1$, so $\mathrm{Spin}_{2\ell}(R) = \E_\mathrm{sc}(\rD_\ell, R)$. The presentation a la Steinberg for $\mathrm{Spin}_{2\ell}(R)$ now follows from~\cref{theorem:LP-for-K2} and Matsumoto's theorem~\cite[Theorem~5.10]{Ma69}. The formula for the second homology group follows from~\eqref{eq:H2-K2}. \end{proof}
+ 
+ \begin{proof}[Proof of~\cref{cor:H_2-O}]
+  We will give the proof for~\eqref{eq:H_2-O}, the proof for~\eqref{eq:H_2-SO} being similar.
+  Writing the inflation/restriction sequence associated with the homological Lyndon--Hochschild--Serre spectral sequence of $\mathrm{EO}_{2\ell}(R) \hookrightarrow \mathrm{O}_{2\ell}(R) \twoheadrightarrow \mathrm{KO}_{1, 2\ell}(R)$ we obtain an exact sequence
+  \[ \begin{tikzcd} \mathrm H_3(\mathrm{KO}_{1,2\ell}(R)) \ar[r] & \mathrm H_2(\mathrm{EO}_{2\ell}(R))_{\mathrm{KO}_{1,2\ell}(R)} \ar[r] & \mathrm H_2(\mathrm{O}_{2\ell}(R)) \ar[r] &  \mathrm H_2(\mathrm{KO}_{1, 2\ell}(R)) \ar[r] & 1, \end{tikzcd} \]
+  where the lower index in the second term denotes the coinvariants of the action of $\mathrm{KO}_{1,2\ell}(R)$.
+  The functor $\mathrm{KO}_{1, 2\ell}(-)$ is $\mathbb{A}^1$-invariant (e.\,g. by~\cite[Theorem~1.1]{Sta20}).
+  The functor $\mathrm H_2(\mathrm{EO}_{2\ell}(-))$ clearly coincides with $\mathrm{KO}_{2, 2\ell} := \K_2^{\mathrm O_{2\ell}}$ and is also $\mathbb{A}^1$-invariant by~\cref{theorem:LP-for-K2}. Thus, by 5-lemma we conclude that the central term is also $\mathbb{A}^1$-invariant.
+ \end{proof}
+ 
 
 \subsection{\texorpdfstring{$\K_2(\Phi, R)$}{K2(R)} as $\mathbb{A}^1$-fundamental group} \label{sec:K2-as-pi-1}
 Recall from~\cite{Jar83} that for an arbitrary commutative (unital) ring $R$ one can define the standard simplicial ring $R[\Delta^\bullet]$ as follows:

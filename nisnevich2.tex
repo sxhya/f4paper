@@ -402,7 +402,7 @@ Recall from~\cite{Jar83} that for an arbitrary commutative (unital) ring $R$ one
 \begin{equation}
  R[\Delta^n] = R[t_0,\ldots t_n]/\langle \sum_{i=0}^n t_i -1 \rangle,\ d_i(t_j) = \left\{ \begin{array}{ll}t_j & j < i, \\0 & j = i, \\ t_{j-1} & j > i; \end{array}\right. s_i(t_j) = \left\{ \begin{array}{ll} t_j & j < i, \\ t_j + t_{j+1} & j = i, \\ t_{j+1} & j > i. \end{array} \right.
 \end{equation}
-	The application of a functor $G\colon\catname{Ring}\rightarrow\catname{Grp}$ to $R[\Delta^\bullet]$ yields a simplicial group $G(R[\Delta^\bullet])$, which in the context of $\mathbb{A}^1$-homotopy theory is usually called the {\it simplicial resolution} of $G$ and is denoted by $\mathrm{Sing}^{\mathbb{A}^1}_\bullet(G)(R)$. Recall also, that the $n$-th {\it unstable Karoubi--Villamayor K-functor attached to $G$} (denoted $\mathrm{KV}^G_n(R)$) is, by definition, the $n-1$-th simplicial homotopy group of $\Gsc(\Phi, R[\Delta^\bullet])$ (cf.~\cite[\S~4.3]{AHW18}, \cite[\S~3]{Jar83}).
+	The application of a functor $G\colon\catname{Ring}\rightarrow\catname{Grp}$ to $R[\Delta^\bullet]$ yields a simplicial group $G(R[\Delta^\bullet])$, which in the context of $\mathbb{A}^1$-homotopy theory is usually called the {\it simplicial resolution} of $G$ and is denoted by $\mathrm{Sing}^{\mathbb{A}^1}_\bullet(G)(R)$. Recall also, that the $n$-th {\it unstable Karoubi--Villamayor K-functor attached to $G$} (denoted $\mathrm{KV}^G_n(R)$) is, by definition, the $n-1$-th simplicial homotopy group of $G(R[\Delta^\bullet])$ (cf.~\cite[\S~4.3]{AHW18}, \cite[\S~3]{Jar83}).
 
 Recall from~\cite[\S~17]{May67} that the homotopy group $\pi_n(G)$ of a simplicial group $(G_\bullet, d_i, s_i)$ can be computed as $n$-th homology group of the normalized Moore complex
 \[ 1 \leftarrow N_0(G) \xleftarrow{\partial_1} N_1(G) \xleftarrow{\partial_2} N_2(G) \xleftarrow{\partial_3} \ldots\,, \]
@@ -483,7 +483,7 @@ For $s\in S$ the principal ideal $sR$ can be considered as an rng. We define the
 Recall that the {\it Steinberg pro-group} $\St^{(\infty)}(\Phi, R)$ is defined as the functor $S^\mathrm{op} \to \catname{Grp}$ obtained from the pro-rng $R^{(\infty)}$ by postcomposition with $\St(\Phi, -)$ (cf.~\cite[\S~2.4]{LSV20}). We denote by $\pi_S$ the pro-group morphism $\St^{(\infty)}(\Phi, R) \to \St(\Phi, R_S)$ defined by the pre-morphism $\pi^* \colon \{* \} \to S$, $\pi^*(*) = 1$, $\pi_{*} = \lambda_S \colon \St(\Phi, R) \to \St(\Phi, R_S)$. 
 
 For $\alpha \in \Phi$ we define the pro-group morphism $x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ by means of the following data: $(x_\alpha)^* = \mathrm{id}_S$, $(x_\alpha)_s \colon sR \to \St(\Phi, sR)$, $sr \mapsto x_\alpha(sr)$. These morphisms, which we call {\it root subgroup morphisms}, allow one to characterize the Steinberg pro-group $\St^{(\infty)}(\Phi, R)$ by means of a universal property (cf.~\cite[Lemma~2.16]{LSV20}). For instance, $\St^{(\infty)}(\Phi, R)$ is ``generated'' by $x_\alpha$ in the sense that a pair of pro-group morphisms $f, g \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ coincide if and only if $f \circ x_\beta = g \circ x_\beta$ for all $\beta \in \Phi$.
-It is enough to verify the latter equalities for $\beta \in \Phi\setminus\{\alpha\}$ where $\alpha \in \Phi$ is any fixed root (in fact, an even stronger result holds, see~\cite[Lemma~3.2]{LSV20}). % TODO: \cite[Lemma~11]{V20}?
+It is enough to verify the latter equalities for $\beta \in \Phi\setminus\{\alpha\}$ where $\alpha \in \Phi$ is any fixed root (in fact, an even stronger result holds, see~\cite[Lemma~3.2]{LSV20}).
 Moreover, given a collection of pro-group morphisms $f_\alpha \colon R^{(\infty)} \to G^{(\infty)}$ satisfying the ``pro-analogues'' of Chevalley commutator identities (see~\cite[Remark~2.15]{LSV20}), there exists a unique morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ such that $f_\alpha = f \circ x_\alpha$ for all $\alpha\in\Phi$. 
 \begin{prop}\label{prop:conj-action}
  For an irreducible root system $\Phi$ of rank $\geq 3$ and a multiplicative system $S\subseteq R$ there exists a group homomorphism $conj\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^{(\infty)}(\Phi, R))$ compatible with the obvious conjugation action of $\St(\Phi, R_S)$ on itself, i.\,e. such that for every $g \in \St(\Phi, R_S)$ the following diagram of pro-groups commutes:
@@ -491,10 +491,9 @@ Moreover, given a collection of pro-group morphisms $f_\alpha \colon R^{(\infty)
 \end{prop}
 \begin{proof}
 The existence of the homomorphism $conj$ has been demonstrated in~\cite[Proposition~4.2]{LSV20}.
- %TODO: (for $\Phi\neq\rB_\ell, \rC_\ell$) and the beginning of Section~10 of~\cite{V20} (for $\Phi=\rB_\ell, \rC_\ell$). 
 Thus, we only need to verify the commutativity of the diagram~\eqref{eq:conj-pis}. 
 Since $conj$ is a homomorphism, it is enough to consider the case $g = x_\alpha(u)$, $\alpha \in \Phi$, $u \in R_S$. In view of the above discussion, to verify the commutativity of~\eqref{eq:conj-pis} it is enough to verify the equalities $\pi_S \circ conj(g) \circ x_\beta= {}^g\!(-) \circ \pi_S \circ x_\beta$ for $\beta\neq -\alpha$.
- It remains to see that the fulfillment of these equalities is a direct consequence of the definition of $conj(g) \circ x_\beta$ (the formulas for these morphisms are given by formulas (4.5)--(4.6) of~\cite{LSV20}). \end{proof} %TODO: cf. also~\cite[\S~10]{V20}
+ It remains to see that the fulfillment of these equalities is a direct consequence of the definition of $conj(g) \circ x_\beta$ (the formulas for these morphisms are given by formulas (4.5)--(4.6) of~\cite{LSV20}). \end{proof}
 \begin{rem} \label{rem:conj-action}
 Unwinding the definitions, we see that the commutativity of~\eqref{eq:conj-pis} is equivalent to the following condition: for every $g\in \St(\Phi, R_S)$ there exists an element $s_g\in S$ and a homomorphism $c_g \colon \St(\Phi, s_g R) \to \St(\Phi, R)$ such that $\lambda_S(c_g(x)) = g \cdot \lambda_S(i(x))\cdot g^{-1}$ for all $x\in \St(\Phi, s_g R)$. Here $i$ denotes the homomorphism $\St(\Phi, s_g R) \to \St(\Phi, R)$ induced by the obvious embedding $s_gR \hookrightarrow R$. The element $s_g$ and the homomorphism $c_g$ can be determined via the following procedure: choose a representative $\eta$ for the morphism $conj(g)$ and set $s_g := \eta^*(1)$ and $c_g := \eta_1$ (the degree $1$ component of $\eta$).
 \end{rem}
@@ -513,8 +512,8 @@ Now suppose that there is a map $f^* \colon S' \to S$ such that $t$ divides $f(f
  \begin{equation} \label{eq:conj-finfty} \begin{tikzcd} \St^{(\infty)}(\Phi, R) \ar{r}{conj(g)} \ar{d}{f^{(\infty)}} & \St^{(\infty)}(\Phi, R) \ar{d}{f^{(\infty)}} \\ \St^{(\infty)}(\Phi, R') \ar{r}{conj(\overline{f}(g))} & \St^{(\infty)}(\Phi, R'). \end{tikzcd} \end{equation}
 \end{prop}
 \begin{proof}
-As before, we may suppose that \(g = x_\alpha(a/s)\) for some \(\alpha \in \Phi\), \(a \in R\), \(s \in S\). By \cite[Lemma~3.2]{LSV20} %TODO: and \cite[Lemma~11]{V20}
-it suffices to check that the long paths in the diagram coincide after precomposition with \(x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)\) for all \(\beta \neq -\alpha\). This follows from the definition before~\cite[Proposition~4.2]{LSV20} %TODO: \cite[\S 10]{V20}
+As before, we may suppose that \(g = x_\alpha(a/s)\) for some \(\alpha \in \Phi\), \(a \in R\), \(s \in S\). By \cite[Lemma~3.2]{LSV20} 
+it suffices to check that the long paths in the diagram coincide after precomposition with \(x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)\) for all \(\beta \neq -\alpha\). This follows from the definition before~\cite[Proposition~4.2]{LSV20}
 and the commutativity of
 \[\begin{tikzcd}
 R^{(\infty)} \ar{r}{x_\beta} \ar{d}{f^{(\infty)}} &
@@ -537,12 +536,6 @@ We denote by $\mathbb N$ the set of nonnegative integers. Denote by $h^{\mathbb{
  
 Cosnider the multiplicative subset $\iota(h)^\mathbb{N} \subseteq A$ and the corresponding homomorphism of localizations $\overline{\iota} \colon B_h \to A_{\iota(h)}$. It is clear that if we put $\iota^*(\iota(h)^n) = h^n$, the subsets $h^\mathbb{N} \subseteq B$, $\iota(h)^\mathbb{N} \subseteq A$, and the homomorphism $\iota$ satisfy the requirements mentioned before Proposition~\ref{prop:functoriality}. Thus, there exists a morphism $\iota^{(\infty)}$ of pro-rngs $B^{(\infty)} \to A^{(\infty)}$ and the corresponding morphism of Steinberg pro-groups $\iota^{(\infty)}\colon\St^{(\infty)}(\Phi, B) \to \St^{(\infty)}(\Phi, A)$ satisfying the conclusion of Proposition~\ref{prop:functoriality}.
 
-
-%Let $f \colon B \to A$ be a homomorphism of integral domains and let $h$ be an element of $B$ such that $f(h)\neq 0$.
-%We denote by \(\mathbb N\) the set of nonnegative integers.
-%Consider the multiplicative subsets $h^{\mathbb{N}} = \{ h^n \mid n \in \mathbb{N} \} \subset B$ and $f(h)^\mathbb{N} \subseteq A$ and the corresponding homorphism of localizations $\overline{f} \colon B_h \to A_{f(h)}$.
-%It is clear that $h^\mathbb{N} \subseteq B$ and $f(h)^\mathbb{N} \subseteq A$ and $f$ satisfy the requirements mentioned before Proposition~\ref{prop:functoriality} (e.\,g. $f^*(f(h)^n) = h^n$), so there exists a morphism $f^{(\infty)}$ of pro-rngs $B^{(\infty)} \to A^{(\infty)}$ and the corresponding morphism of Steinberg pro-groups $f^{(\infty)}\colon\St^{(\infty)}(\Phi, B) \to \St^{(\infty)}(\Phi, A)$ satisfying the conclusion of Proposition~\ref{prop:functoriality}.
-
 \begin{corollary}
 \label{vorcor}
 For $\iota \colon B \to A$ and $h \in B$ as above and every $g \in \St(\Phi, B_h)$ there exists $n = n(g) \in \mathbb{N}$ 
@@ -564,8 +557,6 @@ Here $\lambda_h^k$ (resp. $\lambda^k_{\iota(h)}$) denotes the homomorphism of St
 \end{rem}
 
 \subsection{Proof of Theorem~\ref{glueing}} \label{sec:proof-glueing}
-%It is well known that subgroup factorizations of $\mathrm G(\Phi,\,R)$ are an important ingredient in the study of the $\K_1$-functor. It turns out that in the study of $\K_2$-functors the $\St(\Phi,\,R)$-torsors play similar role, see~\cite{LS20}. TODO:
-
 We let $\St(\Phi, B)$ act on $\St(\Phi, B_h) \times \St(\Phi, A)$ on the left via the formula 
 \[w \star (u, v) = (u \lambda_h(w)^{-1}, \iota(w) v),\text{ where }w \in \St(\Phi, B),\ u \in \St(\Phi, B_h),\ v \in \St(\Phi, A).\]
 Denote by $V$ the orbit set for this action. We use the notation $[u, v]$ for the orbit corresponding to a pair $(u, v) \in \St(\Phi, B_h) \times \St(\Phi, A)$.
@@ -642,51 +633,6 @@ Similarly, we can compute the right-hand side of~\eqref{eq:R3-to-check} using~\e
 Finally, it follows from~\eqref{R3} that the right-hand sides of the last two formulae coincide.
 \end{proof}
 
-\begin{comment}
-\begin{lemma} The operators $T_\alpha$ satisfy relations~\eqref{R4}. \end{lemma}
-The lase case is $\alpha + \beta, \alpha + 2\beta \in \Phi$ and $2\alpha + \beta \notin \Phi$. We show that
-$$\textstyle
-f = x_\alpha(\frac c {h^s})\, x_\beta(\frac{c'}{h^s})
-\text{ and }
-g = x_{\alpha + 2\beta}(N_{\alpha \beta 1 2} \frac{c {c'}^2}{h^{3s}})\, x_{\alpha + \beta}(N_{\alpha \beta} \frac{cc'}{h^{2s}})\, x_\beta(\frac{c'}{h^s})\, x_\alpha(\frac c {h^s})
-$$ 
-act identically on $V$. Choose decompositions $c = ah^n + b$, $c' = a'h^n + b'$, $cc' = (aa' h^n + ab' + a'b) h^n + bb'$, and $c{c'}^2 = (a{a'}^2 h^{2n} + 2aa'b' h^n + {a'}^2 b h^n + 2a'bb' + a{b'}^2) h^n + b{b'}^2$ for sufficiently large $n$.
-Then
-$$\textstyle
-f\,(u, v) = \bigl(x_\alpha(\frac b {h^s})\, x_\beta(\frac{b'}{h^s})\, u,
-\theta'_0(x_\alpha(ah^{n - s}))\, \theta_0(x_\beta(a'h^{n - s}))\, v\bigr),
-$$
-where $\theta$ is a strict representative of $\Xi(\iota(u))^{-1}$ and $\theta'$ is a strict representative of $\Xi(x_\beta(\frac{b'}{h^s})\, \iota(u))^{-1}$. It is possible to choose $\theta'$ in such a way that
-$$
-\theta'_0(x_\alpha(ah^{n - s})) = \theta_0\bigl(x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha\beta} ab'h^{n - 2s})\, x_{\alpha + 2\beta}(-N_{\alpha\beta 12} a{b'}^2 h^{n - 3s})\bigr).
-$$
-Next, 
-\begin{multline*}\textstyle
-g\, (u, v) = \bigl(x_{\alpha + 2\beta}(N_{\alpha \beta 12} \frac{b{b'}^2}{h^{3s}})\, x_{\alpha+\beta}(N_{\alpha \beta} \frac{bb'}{h^{2s}})\, x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b {h^s})\, u,\\
-\theta^{\mathrm{IV}}_0\bigl(x_{\alpha + 2\beta}(N_{\alpha \beta 12} (a{a'}^2 h^{2n} + 2aa'b' h^n + {a'}^2 b h^n + 2a'bb' + a{b'}^2) h^{n - 3s})\bigr)\\
-\theta'''_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa' h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr)\, \theta''_0(x_\beta(a'h^{n-s}))\, \theta_0(x_\alpha(ah^{n - s}))\, v\bigr),
-\end{multline*}
-where $\theta''$ is a strict representative of $\Xi\bigl(x_\alpha(\frac b {h^s})\, \iota(u)\bigr)^{-1}$, $\theta'''$ is a strict representative of $\Xi\bigl(x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b{h^s})\, \iota(u)\bigr)^{-1}$, and $\theta^{\mathrm{IV}}$ is a strict representative of $\Xi\bigl(x_{\alpha + \beta}(N_{\alpha \beta}\frac{bb'}{h^{2s}})\, x_\beta(\frac{b'}{h^s})\, x_\alpha(\frac b{h^s})\, \iota(u)\bigr)^{-1}$. We may choose $\theta''$, $\theta'''$, $\theta^{\mathrm{IV}}$ in such a way that
-$$
-\theta''_0(x_\beta(a' h^{n - s})) = \theta_0\bigl(x_{\alpha + 2\beta}(-N_{\alpha \beta 1 2} {a'}^2 bh^{2n - 3s})\, x_{\alpha + \beta}(-N_{\alpha \beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\bigr),
-$$
-\begin{multline*}
-\theta'''_0\bigl(x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr)\\
-= \theta_0\bigl(x_{\alpha + 2\beta}(-N_{\beta, \alpha + \beta} N_{\alpha \beta} (aa'h^n + ab' + a'b) b' h^{n - 3s})\, x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\bigr),
-\end{multline*}
-and
-\begin{multline*}
-\theta^{\mathrm{IV}}_0\bigl(x_{\alpha + 2\beta}(N_{\alpha \beta 12} (a{a'}^2 h^{2n} + 2aa'b' h^n + {a'}^2 bh^n + 2a'bb' + a{b'}^2) h^{n - 3s})\bigr)\\
-= \theta_0\bigl(x_{\alpha + 2\beta}(N_{\alpha \beta 12} (a{a'}^2 h^{2n} + 2aa'b' + {a'}^2 bh^n + 2a'bb' + a{b'}^2) h^{n - 3s})\bigr).
-\end{multline*}
-It remains to check that
-\begin{multline*}
-x_\alpha(ah^{n - s})\, x_{\alpha + \beta}(N_{\alpha\beta} ab'h^{n - 2s})\, x_{\alpha + 2\beta}(-N_{\alpha\beta 12} a{b'}^2 h^{n - 3s})\, x_\beta(a' h^{n - s})\\
-= x_{\alpha + 2\beta}(N_{\alpha \beta 12} (a{a'}^2 h^{2n} + 2aa'b' h^n + 2a'bb' + a{b'}^2) h^{n - 3s} - N_{\beta, \alpha + \beta} N_{\alpha \beta} (aa'h^n + ab' + a'b) b' h^{n - 3s})\\
-x_{\alpha + \beta}\bigl(N_{\alpha \beta} (aa'h^n + ab' + a'b) h^{n - 2s}\bigr)\, x_{\alpha + \beta}(-N_{\alpha \beta} a'bh^{n - 2s})\, x_\beta(a'h^{n - s})\, x_\alpha(ah^{n - s}).
-\end{multline*}
-This follows from the Steinberg relations and the identity \(N_{\beta, \alpha + \beta} N_{\alpha \beta} = 2 N_{\alpha \beta 1 2}\).
-\end{comment} 
 The proof of the fact that $T_\alpha$ satisfy relations~\eqref{R2} is similar to the proof of the above lemmas but is easier, so we leave it as an exercise to the reader.
 
 It follows that the action of $\St(\Phi, A_{\iota(h)})$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_{\iota(h)})\) preserves the action, where \(\St(\Phi, A_{\iota(h)})\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_{\iota(h)})\), it remains to check the transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Thus, \(V \to \St(\Phi, A_{\iota(h)})\) is a bijection.

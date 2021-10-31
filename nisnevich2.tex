@@ -85,7 +85,7 @@ Recall that one can define and study the analogues of Quillen's and Karoubi--Vil
 If one additionally chooses a lattice $\Lambda$ located between the root lattice $Q(\Phi)$ and the weight lattice $P(\Phi)$ of $\Phi$ (i.\,e. $Q(\Phi) \leq \Lambda \leq P(\Phi)$), one can construct the Chevalley--Demazure group scheme $G = \mathrm{G}_\Lambda(\Phi, -)$, see~\cite[\S~3]{St67}. The {\it unstable functors $\K_1$ and $\K_2$ modeled on Chevalley groups} can be defined via the following exact sequence (cf.~\cite{St78}):
 \begin{equation} \label{eq:main-exactSeq} \begin{tikzcd} \K_2^G(R) \ar[hookrightarrow]{r} & \St(\Phi, R) \ar{r}{\pi} & G(R) \ar[twoheadrightarrow]{r} & \K_1^G(R). \end{tikzcd} \end{equation}
 Notice that the groups $\K_i(\Phi, R)$ from~\cite{St78} are precisely the groups $\K_i^G(R)$ in the case when $G$ is the simply-connected form of the Chevalley group, i.\,e. $\Lambda = P(\Phi)$ (for shortness we also write $\Gsc(\Phi,-)$ instead of $\mathrm{G}_{P(\Phi)}(\Phi, R)$). 
-Thus, the group $\K_2^G(R)$ can interpreted as the group of ``nontrivial'' relations between the images of elements $x_\alpha(\xi)$ in $G(R)$, i.\,e. the relations depending on the arithmetic of $R$. Our first main result is the following
+Thus, the group $\K_2^G(R)$ can be interpreted as the group of ``nontrivial'' relations between the images of elements $x_\alpha(\xi)$ in $G(R)$, i.\,e. the relations depending on the arithmetic of $R$. Our first main result is the following
 \begin{theorem}[The $\K_2$-analogue of Lindel--Popescu theorem] \label{theorem:LP-for-K2}
 Let $k$ be an arbitrary field and $R$ be a regular ring containing $k$. Let $\Phi$ be either $\rA_\ell$ for $\ell\geq4$, or $\rD_\ell$ for $\ell\geq 7$. In the latter case assume additionally that the characteristic of $k$ is not $2$. Then for any lattice $\Lambda$ as above and $G = \mathrm{G}_\Lambda(\Phi, -)$ one has $\K_2^G(R[t])\cong\K_2^G(R).$
 \end{theorem} 
@@ -107,11 +107,11 @@ Similar representability results for the stable $\K$-groups are well-known, see 
 
 Notice also that the Nisnevich sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ associated to the presheaf of groups $R \mapsto \pi_1^{\mathbb{A}^1}(G)(R)$ has been recently computed by F.~Morel and A.~Sawant in~\cite{MS20} for all split reductive groups without any assumptions on the rank of $G$. Notice that the groups of values of the sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ and the presheaf $\pi_1^{\mathbb{A}^1}(G)$ agree on henselian local rings.
 
-Recall also from the~\cite[Theorem~5.3]{St71} that under the assumptions on the rank $\Phi$ stated in~\cref{theorem:LP-for-K2} the first two homology groups of $\St(\Phi, R)$ vanish. Consequently from the main result of~\cite{LSV20} and \S~IV.1 of~\cite{Kbook} it is easy to conclude that the group $\K_2(\Phi, R)$ coincides with the unstable $\K_2$-group defined by means of Quillen's $+$-construction:
+Recall also from the~\cite[Theorem~5.3]{St71} that under the assumptions on the rank $\Phi$ stated in~\cref{theorem:LP-for-K2} the first two homology groups of $\St(\Phi, R)$ vanish. Consequently from the main result of~\cite{LSV20} and \S~IV.1 of~\cite{Kbook} it is easy to conclude that the group $\K_2^G(R)$ coincides with the unstable $\K_2$-group defined by means of Quillen's $+$-construction:
 \begin{equation} \label{eq:H2-K2}
-  \K_2^\mathrm{Q}(\Phi, R) := \pi_2(\Gsc(\Phi, R))^+_{\E_\mathrm{sc}(\Phi, R)} = \mathrm{H}_2(\mathrm{E}_\mathrm{sc}(\Phi, R), \ZZ) = \K_2(\Phi, R),
+  \K_{2}^{G,Q}(R) := \pi_2(BG(R)^+_{\E_\Lambda(\Phi, R)}) = \mathrm{H}_2(\mathrm{E}_\Lambda(\Phi, R), \ZZ) = \K_2^G(R),
 \end{equation}
-where $\E_\mathrm{sc}(\Phi, R) = \mathrm{Im}(\pi)$ denotes the {\it elementary subgroup of $\Gsc(\Phi, R)$}, see~\cref{sec:main-results}. Thus, in particular, the definitions of the unstable $\K_2$-functors a la Quillen and a la Karoubi--Villamayor agree for a regular ring $R$ containing a field $k$ and $\Phi$ satisfying the assumptions of~\cref{theorem:LP-for-K2}.
+where $\E_\Lambda(\Phi, R) = \mathrm{Im}(\pi)$ denotes the {\it elementary subgroup of $G(R) = \mathrm{G}_\Lambda(\Phi, R)$}  (see~\cref{sec:main-results}) and $BG(R)$ is the topological classifying space of the (discrete) group $G(R)$. Thus, in particular, the definitions of the unstable $\K_2$-functors a la Quillen and a la Karoubi--Villamayor agree for a regular ring $R$ containing a field $k$ and $\Phi$ satisfying the assumptions of~\cref{theorem:LP-for-K2}.
 
 One of the ingredients in the proof of~\cref{theorem:LP-for-K2} is~\cref{lpb}, which gives a sufficient condition for a general group-valued functor to be $\mathbb{A}^1$-invariant on regular $k$-algebras. In turn, the proof of~\cref{lpb} is based on a recent result of I.~Panin, see~\cite[Theorem~2.5]{Pa19}. 
 
@@ -124,7 +124,7 @@ The method of the proof of~\cref{lpb} allows us to obtain the following assertio
 
 Combining the above result with the classical Matsumoto theorem~\cite[Theorem~5.10]{Ma69} one can show that under the assumptions of~\cref{theorem:LP-for-K2} $\K_2(\Phi, A)$ embeds into the Milnor $\K_2$-group $\K_2^\mathrm{M}(\mathrm{Frac}(A))$.
 
-As a consequence~\cref{theorem:LP-for-K2} we obtain the following results.
+As a consequence of~\cref{theorem:LP-for-K2} we obtain the following results.
 \begin{corollary} \label{cor:various-facts}
 For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ the group $\mathrm{Spin}_{2\ell}(k[t_1,\ldots, t_n])$ admits presentation as in~\cite[\S~6]{St67} or \cite[\S~5]{Ma69}, i.\,e. the presentation by means of generators $x_\alpha(\xi)$, $\xi \in k[t_1,\ldots, t_n]$ relations~\eqref{R1}--\eqref{R3} and relations $h_\alpha(u)h_\alpha(v) = h_\alpha(uv)$, where $u, v\in k^\times$. Additionally,
 \[\mathrm H_2(\mathrm{Spin}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k).\]
@@ -137,9 +137,12 @@ For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ the group $\m
  \end{align}
 \end{corollary}
 
-\subsection{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank P.~Gvozdevsky, S.~Ivanov, V.~Sosnilo and N.~Vavilov for their useful comments and interest in this work.
+\subsection{Funding}
+The work on \S~2 was supported by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The work on \S~3 was supported by the Russian Science Foundation grant No. 19-71-30002. The work on \S~4 was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics “BASIS“.
 
-The work on \S~2 was supported by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The work on \S~3 was supported by the Russian Science Foundation grant No. 19-71-30002. The work on \S~4 was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics “BASIS“. The first-named author is a winner of the Young Russian Mathematics contest and would like to thank its sponsors and the jury.
+\subsection{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank P.~Gvozdevsky, S.~Ivanov, V.~Sosnilo and N.~Vavilov for their useful comments and interest in this work.
+The first-named author is a winner of the Young Russian Mathematics contest and would like to thank its sponsors and the jury.
+
 
 \section{General formalism}
 For a commutative ring $k$ we denote by $\catname{Alg}_k$ the category of commutative unital $k$-algebras (not neccessarily of finite type). In the statement of~\cref{lpb}, which is the main result of this section, $k$ will be assumed to be a field. However, some of the intermediate steps in the proof of~\cref{lpb} can be obtained for $k=\ZZ$, so for the sake of greater generality we make no blanket assumption that $k$ is a field.  
@@ -395,7 +398,7 @@ We already know that the left arrow is an isomorphism. The homomorphism $i_M$ is
   \[ \begin{tikzcd} \mathrm H_3(\mathrm{KO}_{1,2\ell}(R)) \ar[r] & \mathrm H_2(\mathrm{EO}_{2\ell}(R))_{\mathrm{KO}_{1,2\ell}(R)} \ar[r] & \mathrm H_2(\mathrm{O}_{2\ell}(R)) \ar[r] &  \mathrm H_2(\mathrm{KO}_{1, 2\ell}(R)) \ar[r] & 1, \end{tikzcd} \]
   where the lower index in the second term denotes the coinvariants of the action of $\mathrm{KO}_{1,2\ell}(R)$.
   The functor $\mathrm{KO}_{1, 2\ell}(-)$ is $\mathbb{A}^1$-invariant (e.\,g. by~\cite[Theorem~1.1]{Sta20}).
-  The functor $\mathrm H_2(\mathrm{EO}_{2\ell}(-))$ clearly coincides with $\mathrm{KO}_{2, 2\ell} := \K_2^{\mathrm O_{2\ell}}$ and is also $\mathbb{A}^1$-invariant by~\cref{theorem:LP-for-K2}. Thus, by 5-lemma we conclude that the central term is also $\mathbb{A}^1$-invariant.
+  The functor $\mathrm H_2(\mathrm{EO}_{2\ell}(-))$ clearly coincides with $\mathrm{KSO}_{2, 2\ell} := \K_2^{\mathrm {SO}_{2\ell}}$ and is also $\mathbb{A}^1$-invariant by~\cref{theorem:LP-for-K2}. Thus, by 5-lemma we conclude that the central term is also $\mathbb{A}^1$-invariant.
  \end{proof}
  
 
@@ -446,8 +449,8 @@ Now consider the simplicial map $\mathrm{st}_\bullet \colon \St(\Phi, R[\Delta^\
 \end{proof}
 
 \begin{proof}[Proof of~\cref{cor:motivic-pi1}] 
- By~\cite[Corollary~5.4]{Sta20} for every regular $k$-algebra $R$ one has \[\mathrm H^1_\mathrm{Nis}(R, \Gsc(\Phi, -)) = \mathrm H^1_\mathrm{Nis}(R[t], \Gsc(\Phi, -)),\] consequently by~\cite[Theorem~2.4.2]{AHW18} the scheme $\Gsc(\Phi, -)$ defines an $\mathbb{A}^1$-naive presheaf on $\mathrm{Sm}_{k}^{aff}$ in the sense of~\cite[Definition~2.1.1]{AHW18}.
- In particular, one has $\pi_1^{\mathbb{A}^1}(\Gsc(\Phi, -))(R) = \pi_1(\Gsc(\Phi, R[\Delta^\bullet]))$, the latter group being isomorphic to $\K_2(\Phi, R)$ by the above theorem.
+ By~\cite[Corollary~5.4]{Sta20} for every regular $k$-algebra $R$ one has \[\mathrm H^1_\mathrm{Nis}(R, G) = \mathrm H^1_\mathrm{Nis}(R[t], G),\] consequently by~\cite[Theorem~2.4.2]{AHW18} the scheme $G$ defines an $\mathbb{A}^1$-naive presheaf on $\mathrm{Sm}_{k}^{aff}$ in the sense of~\cite[Definition~2.1.1]{AHW18}.
+ In particular, one has $\pi_1^{\mathbb{A}^1}(G)(R) = \pi_1(G(R[\Delta^\bullet]))$, the latter group being isomorphic to $\K_2^G(R)$ by the above theorem.
 \end{proof}
 
 \section{Nisnevich glueing for \texorpdfstring{$\K_2(\Phi, R)$}{K2(Ф,R)}} \label{sec:patching}

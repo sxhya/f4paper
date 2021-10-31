@@ -8,7 +8,8 @@
 \usepackage{scalerel}
 \usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
 \usepackage{enumitem}
-\usepackage[backend=bibtex, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
+\usepackage[backend=bibtex, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sorting=nyt, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
+
 
 %\usepackage[notref, notcite]{showkeys}
 
@@ -19,7 +20,7 @@
 \DeclareFieldFormat[article, inproceedings, inbook, book, online]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
 \renewcommand*{\bibfont}{\footnotesize}
 
-\title{On the $\mathbb{A}^1$-invariance of $\K_2$ modeled on linear and even orthogonal groups.}
+\title{On the $\mathbb{A}^1$-invariance of $\K_2$ modeled on linear and even orthogonal groups}
 \keywords {Steinberg group, Chevalley group, unstable $\K_2$-functor, $\mathbb{A}^1$-fundamental group. {\em Mathematical Subject Classification (2010):} 19C09, 20G35, 20H05}
 
 \author[1] {Andrei Lavrenov} \email{avlavrenov at gmail.com} 
@@ -137,13 +138,6 @@ For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ the group $\m
  \end{align}
 \end{corollary}
 
-\subsection{Funding}
-The work on \S~2 was supported by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The work on \S~3 was supported by the Russian Science Foundation grant No. 19-71-30002. The work on \S~4 was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics “BASIS“.
-
-\subsection{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank P.~Gvozdevsky, S.~Ivanov, V.~Sosnilo and N.~Vavilov for their useful comments and interest in this work.
-The first-named author is a winner of the Young Russian Mathematics contest and would like to thank its sponsors and the jury.
-
-
 \section{General formalism}
 For a commutative ring $k$ we denote by $\catname{Alg}_k$ the category of commutative unital $k$-algebras (not neccessarily of finite type). In the statement of~\cref{lpb}, which is the main result of this section, $k$ will be assumed to be a field. However, some of the intermediate steps in the proof of~\cref{lpb} can be obtained for $k=\ZZ$, so for the sake of greater generality we make no blanket assumption that $k$ is a field.  
 
@@ -178,7 +172,7 @@ The following result gives a sufficient condition for a functor $K$ to be $\math
  Then $NK$ vanishes on every geometrically regular $R\in \catname{Alg}_k$. In other words, for every such $R$ the natural embedding $R \hookrightarrow R[t]$ induces an isomorphism $K(R)\cong K(R[t]).$
 \end{theorem}
 \begin{rem}
- In the literature a functor satisfying the axiom~\ref{PGP} is sometimes called {\it acyclic} (cf.~\cite[Def.~III.4.1.1]{Kbook}).
+ In the literature a functor satisfying the axiom~\ref{PGP} is sometimes called {\it acyclic} (cf.~\cite[Definition~III.4.1.1]{Kbook}).
 The choice of the name for~\eqref{LPP} is inspired by axiom (P3) from~\cite[Proposition~3.3.4]{AHW18}. It is easy to see that the application of $\mathrm{Spec}$ to the commutative square from~\ref{LPP} yields a distinguished Nisnevich square in the sense of~\cite[Definition~3.1.3]{MV99}. Notice also that our axioms can be slightly relaxed, so that the assertion of the Theorem becomes slightly stronger, see Remark~\ref{rem:relax} below.
 \end{rem}
 
@@ -398,7 +392,7 @@ We already know that the left arrow is an isomorphism. The homomorphism $i_M$ is
   \[ \begin{tikzcd} \mathrm H_3(\mathrm{KO}_{1,2\ell}(R)) \ar[r] & \mathrm H_2(\mathrm{EO}_{2\ell}(R))_{\mathrm{KO}_{1,2\ell}(R)} \ar[r] & \mathrm H_2(\mathrm{O}_{2\ell}(R)) \ar[r] &  \mathrm H_2(\mathrm{KO}_{1, 2\ell}(R)) \ar[r] & 1, \end{tikzcd} \]
   where the lower index in the second term denotes the coinvariants of the action of $\mathrm{KO}_{1,2\ell}(R)$.
   The functor $\mathrm{KO}_{1, 2\ell}(-)$ is $\mathbb{A}^1$-invariant (e.\,g. by~\cite[Theorem~1.1]{Sta20}).
-  The functor $\mathrm H_2(\mathrm{EO}_{2\ell}(-))$ clearly coincides with $\mathrm{KSO}_{2, 2\ell} := \K_2^{\mathrm {SO}_{2\ell}}$ and is also $\mathbb{A}^1$-invariant by~\cref{theorem:LP-for-K2}. Thus, by 5-lemma we conclude that the central term is also $\mathbb{A}^1$-invariant.
+  The functor $\mathrm H_2(\mathrm{EO}_{2\ell}(-))$ clearly coincides with $\mathrm{KO}_{2, 2\ell} := \K_2^{\mathrm {SO}_{2\ell}}$ and is also $\mathbb{A}^1$-invariant by~\cref{theorem:LP-for-K2}. Thus, by 5-lemma we conclude that the central term is also $\mathbb{A}^1$-invariant.
  \end{proof}
  
 
@@ -642,6 +636,13 @@ The proof of the fact that $T_\alpha$ satisfy relations~\eqref{R2} is similar to
 
 It follows that the action of $\St(\Phi, A_{\iota(h)})$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_{\iota(h)})\) preserves the action, where \(\St(\Phi, A_{\iota(h)})\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_{\iota(h)})\), it remains to check the transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Thus, \(V \to \St(\Phi, A_{\iota(h)})\) is a bijection.
 Now if \(u \in \St(\Phi, B_h)\) and \(v \in \St(\Phi, A)\) are such that \(\iota(u) = \lambda_h(v)\), the class of \((u, v^{-1})\) in \(V\) maps to \(1 \in \St(\Phi, A_{\iota(h)})\). Thus, \([u, v^{-1}] = [1, 1]\) and $u = \lambda_h(w)$, $v = \iota(w)$ for some $w \in \St(\Phi, B)$, which completes the proof of the assertion of Theorem~\ref{glueing} for Steinberg groups. Since $\iota\colon \Gsc(\Phi, B)\to \Gsc(\Phi, A)$ is injective, we also obtain the assertion for $\K_2(\Phi, -)$.
+
+
+\section*{Funding}
+The work on \S~2 was supported by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The work on \S~3 was supported by the Russian Science Foundation grant No. 19-71-30002. The work on \S~4 was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics “BASIS“.
+
+\section*{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank P.~Gvozdevsky, S.~Ivanov, A.~Sawant, V.~Sosnilo and N.~Vavilov for their useful comments and interest in this work.
+The first-named author is a winner of the Young Russian Mathematics contest and would like to thank its sponsors and the jury.
 
 \printbibliography
 \end{document}

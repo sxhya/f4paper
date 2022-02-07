@@ -1,4 +1,5 @@
-\documentclass[oneside, 11pt]{amsart} \pdfoutput=1
+\documentclass[times]{oupau}
+
 \usepackage{amsmath, mathtools, amssymb, amsthm, amscd, alltt, graphicx, comment, bm}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -6,29 +7,10 @@
 \usepackage[capitalise]{cleveref}
 \usepackage{tikz,tikz-cd}
 \usepackage{scalerel}
-\usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
+%\usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
 \usepackage{enumitem}
-\usepackage[backend=bibtex, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sorting=nyt, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
+%\usepackage[backend=bibtex, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sorting=nyt, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
 
-
-%\usepackage[notref, notcite]{showkeys}
-
-\addbibresource{nisnevich2.bib}
-\renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
-\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
-\newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{https://dx.doi.org/\thefield{doi}}{#1}}}
-\DeclareFieldFormat[article, inproceedings, inbook, book, online]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
-\renewcommand*{\bibfont}{\footnotesize}
-
-\title{On the $\mathbb{A}^1$-invariance of $\K_2$ modeled on linear and even orthogonal groups}
-\keywords {Steinberg group, Chevalley group, unstable $\K_2$-functor, $\mathbb{A}^1$-fundamental group. {\em Mathematical Subject Classification (2010):} 19C09, 20G35, 20H05}
-
-\author[1] {Andrei Lavrenov} \email{avlavrenov at gmail.com} 
-\author[2] {Sergey Sinchuk} \email{sinchukss at gmail.com}
-\author[3] {Egor Voronetsky} \email{voronetckiiegor at yandex.ru}
-\address{St. Petersburg State University, 14th Line V.O., 29B, Saint-Petersburg, 199178 Russia}
-
-\date {\today}
 
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
@@ -39,17 +21,17 @@
 \newcommand{\eval}{\mathrm{ev}}
 \newcommand{\Max}{\mathrm{Max}}
 \numberwithin{equation}{section}
-\newtheorem{lemma}{Lemma} \numberwithin{lemma}{section}
+%\newtheorem{lemma}{Lemma} \numberwithin{lemma}{section}
 \newtheorem*{lemma*}{Lemma}
-\newtheorem{prop}[lemma]{Proposition} 
-\newtheorem{theorem}[lemma]{Theorem}
-\newtheorem{corollary}[lemma]{Corollary} 
+%\newtheorem{prop}[lemma]{Proposition} 
+%\newtheorem{theorem}[lemma]{Theorem}
+%\newtheorem{corollary}[lemma]{Corollary} 
 \newtheorem*{theorem*}{Theorem} 
 \newtheorem*{corollary*}{Corollary} 
 
 \theoremstyle{definition} 
-\newtheorem{df}[lemma]{Definition} 
-\newtheorem{rem}[lemma]{Remark}
+%\newtheorem{df}[lemma]{Definition} 
+\newtheorem{rem}[theorem]{Remark}
 
 \newcommand{\Set}{\mathbf{Set}}
 \newcommand{\Group}{\mathbf{Grp}}
@@ -69,9 +51,43 @@
 \newcommand{\rG}{\mathsf{G}}
 
 \newcommand{\catname}[1]{{\normalfont\textbf{#1}}} %Category name
+
 \begin{document}
-\begin{abstract}
- Let $k$ be an arbitrary field. In this paper we show that in the linear case ($\Phi=\rA_\ell$, $\ell \geq 4$) and even orthogonal case ($\Phi = \rD_\ell$, $\ell\geq 7$, $\mathrm{char}(k)\neq 2$) the unstable functor $\mathrm{K}_2(\Phi, -)$ possesses the $\mathbb{A}^1$-invariance property in the geometric case, i.\,e. $\K_2(\Phi, R[t]) = \K_2(\Phi, R)$ for a regular ring $R$ containing $k$. As a consequence, the unstable $\K_2$ groups can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ as fundamental groups of the simply-connected Chevalley--Demazure group schemes $\mathrm{G}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(A))$.
+
+% Enter full title and short title for running headers
+\title{On the $\mathbb{A}^1$-invariance of $\mathrm K_2$ modeled on linear and even orthogonal groups}
+\shorttitle{On the $\mathbb{A}^1$-invariance of $\mathrm K_2$}
+
+% Enter the publication year and the ID number of the paper
+\volumeyear{2022}
+\paperID{IMRN-2021-1106}
+
+% Author name(s)
+\author{Andrei Lavrenov\affil{1}, Sergey Sinchuk\affil{1} and Egor Voronetsky\affil{1}}
+% Abbreviated author name for running headers
+\abbrevauthor{A. Lavrenov {\it et al.}}
+% Abbreviated author name for first page header
+\headabbrevauthor{A. Lavrenov {\it et al.}}
+
+\address{%
+\affilnum{1}St. Petersburg State University, 14th Line V.O., 29B, St. Petersburg, 199178 Russia
+%\affilnum{2}Complete Second Author Address
+%and
+%\affilnum{3}Complete Third Author Address
+}
+
+% Address / e-mail address of corresponding author
+\correspdetails{avlavrenov@gmail.com}
+
+% Received/revised/accepted dates will be entered by the publisher during production of an accepted paper. Please do not edit these placeholders for submission.
+\received{1 Month 20XX}
+\revised{11 Month 20XX}
+\accepted{21 Month 20XX}
+
+% Enter details of editor communicating this article
+\communicated{Corrado De Concini}
+
+\begin{abstract}Let $k$ be an arbitrary field. In this paper we show that in the linear case ($\Phi=\rA_\ell$, $\ell \geq 4$) and even orthogonal case ($\Phi = \rD_\ell$, $\ell\geq 7$, $\mathrm{char}(k)\neq 2$) the unstable functor $\mathrm{K}_2(\Phi, -)$ possesses the $\mathbb{A}^1$-invariance property in the geometric case, i.\,e. $\K_2(\Phi, R[t]) = \K_2(\Phi, R)$ for a regular ring $R$ containing $k$. As a consequence, the unstable $\K_2$ groups can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}^{\mathbb{A}^1}_{k}$ as fundamental groups of the simply-connected Chevalley--Demazure group schemes $\mathrm{G}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(A))$.
 \end{abstract}
 
 \maketitle
@@ -137,11 +153,7 @@ For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ the group $\m
   \mathrm H_2 (\mathrm{O}_{2\ell}(R[t]), \ZZ) =&\ \mathrm H_2 (\mathrm{O}_{2\ell}(R), \ZZ). \label{eq:H_2-O}
  \end{align}
 \end{corollary}
-\subsection{Acknowledgements}
- The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank P.~Gvozdevsky, S.~Ivanov, A.~Sawant, V.~Sosnilo and N.~Vavilov for their useful comments and interest in this work.
 
-The work on \S~2 was supported by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The work on \S~3 was supported by the Russian Science Foundation grant No. 19-71-30002. The work on \S~4 was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics “BASIS“.
-The first-named author is a winner of the Young Russian Mathematics contest and would like to thank its sponsors and the jury.
 
 
 \section{General formalism}
@@ -151,10 +163,10 @@ For a commutative ring $R$ and an element $a\in R$ we denote by $\lambda_a$ the 
 
 Let $A$ be an $R$-algebra, $f\in R[t]$ and $a \in A$. We denote by $ev_t(a)$ (or just $ev(a)$ when $t$ is clear from the context) the unique $R$-algebra homomorphism $R[t] \to A$ mapping $t$ to $a$. For a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ and an element $g \in K(R[t])$ we often shorten the notation for the element $K(ev(a))(g)$ to just $g(a)$.
 
-\begin{df}\label{df:NK}
+\begin{definition}\label{df:NK}
 Let $K$ be a functor $\catname{Alg}_k \to \catname{Grp}$.
 Denote by $NK(R)$ the kernel of the homomorphism $K(R[t]) \to K(R)$ induced by the homomorphism of evaluation at $t=0$. It is clear that $K(R[t]) \cong NK(R) \rtimes K(R)$ and $NK$ is also a functor $\catname{Alg}_k \to \catname{Grp}$. If $K(R[t])$ is abelian then $K(R[t]) \cong NK(R) \oplus K(R)$ and our definition agrees with~\cite[Def.~III.3.3]{Kbook}.
-\end{df}
+\end{definition}
 
 For a commutative ring $R$ and $a \in R$ consider the following commutative square:
   \begin{equation} \label{M-sq} \begin{tikzcd} R \ltimes t R_a[t] \ar{r}{l} \ar{d}[swap]{e} & R_a[t] \ar{d}{ev(0)} \\ R \ar{r}{\lambda_a} & R_a. \end{tikzcd}\end{equation}
@@ -413,7 +425,7 @@ Recall from~\cite[\S~17]{May67} that the homotopy group $\pi_n(G)$ of a simplici
 \[ 1 \leftarrow N_0(G) \xleftarrow{\partial_1} N_1(G) \xleftarrow{\partial_2} N_2(G) \xleftarrow{\partial_3} \ldots\,, \]
 in which $N_n(G) = \cap_{i=1}^n\Ker(d_i) \trianglelefteq G_n$ and the differential $\partial_k$ is obtained from $d_0\colon G_k \to G_{k-1}$ by restriction. In other words, $\pi_n(G) \cong \mathrm{H}_n(N_\bullet G) = \Ker(\partial_n) / \Im(\partial_{n+1})$.
 
-\begin{prop}\label{prop:pi1-StDelta} Let $\Phi$ be an arbitrary irreducible root system. Then for any commutative ring $R$ the simplicial groups $\E_\Lambda(\Phi,\,R[\Delta^\bullet])$ and $\St(\Phi,\,R[\Delta^\bullet])$ are connected. If, moreover, $\Phi$ has rank at least $2$ then the simplicial group $\St(\Phi, R[\Delta^\bullet])$ is simply-connected. \end{prop}
+\begin{proposition}\label{prop:pi1-StDelta} Let $\Phi$ be an arbitrary irreducible root system. Then for any commutative ring $R$ the simplicial groups $\E_\Lambda(\Phi,\,R[\Delta^\bullet])$ and $\St(\Phi,\,R[\Delta^\bullet])$ are connected. If, moreover, $\Phi$ has rank at least $2$ then the simplicial group $\St(\Phi, R[\Delta^\bullet])$ is simply-connected. \end{proposition}
 \begin{proof}
 In our computations we identify the ring $R[\Delta^n]$ with $R[t_1, \ldots, t_n]$ via $t_0 = 1 - \sum_{i=1}^n t_i$ and use~\eqref{eq:relative-st-ker} repeatedly.
 The map $d_1\colon\St(\Phi,\,R[\Delta^1])\rightarrow\St(\Phi,\,R[\Delta^0])$ is given by $t_1\mapsto0$, therefore \[N_1\St(\Phi,\,R[\Delta^\bullet])=\Ker(d_1)=\overline{\St}(\Phi,\,R[t_1],\,\langle t_1\rangle),\]
@@ -490,10 +502,10 @@ Recall that the {\it Steinberg pro-group} $\St^{(\infty)}(\Phi, R)$ is defined a
 For $\alpha \in \Phi$ we define the pro-group morphism $x_\alpha \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)$ by means of the following data: $(x_\alpha)^* = \mathrm{id}_S$, $(x_\alpha)_s \colon sR \to \St(\Phi, sR)$, $sr \mapsto x_\alpha(sr)$. These morphisms, which we call {\it root subgroup morphisms}, allow one to characterize the Steinberg pro-group $\St^{(\infty)}(\Phi, R)$ by means of a universal property (cf.~\cite[Lemma~2.16]{LSV20}). For instance, $\St^{(\infty)}(\Phi, R)$ is ``generated'' by $x_\alpha$ in the sense that a pair of pro-group morphisms $f, g \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ coincide if and only if $f \circ x_\beta = g \circ x_\beta$ for all $\beta \in \Phi$.
 It is enough to verify the latter equalities for $\beta \in \Phi\setminus\{\alpha\}$ where $\alpha \in \Phi$ is any fixed root (in fact, an even stronger result holds, see~\cite[Lemma~3.2]{LSV20}).
 Moreover, given a collection of pro-group morphisms $f_\alpha \colon R^{(\infty)} \to G^{(\infty)}$ satisfying the ``pro-analogues'' of Chevalley commutator identities (see~\cite[Remark~2.15]{LSV20}), there exists a unique morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ such that $f_\alpha = f \circ x_\alpha$ for all $\alpha\in\Phi$. 
-\begin{prop}\label{prop:conj-action}
+\begin{proposition}\label{prop:conj-action}
  For an irreducible root system $\Phi$ of rank $\geq 3$ and a multiplicative system $S\subseteq R$ there exists a group homomorphism $conj\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^{(\infty)}(\Phi, R))$ compatible with the obvious conjugation action of $\St(\Phi, R_S)$ on itself, i.\,e. such that for every $g \in \St(\Phi, R_S)$ the following diagram of pro-groups commutes:
  \begin{equation} \label{eq:conj-pis} \begin{tikzcd} \St^{(\infty)}(\Phi, R) \ar{r}{conj(g)} \ar{d}{\pi_S} & \St^{(\infty)}(\Phi, R) \ar{d}{\pi_S} \\ \St(\Phi, R_S) \ar{r}{{}^g\!(-)} & \St(\Phi, R_S). \end{tikzcd} \end{equation}
-\end{prop}
+\end{proposition}
 \begin{proof}
 The existence of the homomorphism $conj$ has been demonstrated in~\cite[Proposition~4.2]{LSV20}.
 Thus, we only need to verify the commutativity of the diagram~\eqref{eq:conj-pis}. 
@@ -512,10 +524,10 @@ Let $R, R'$ be a pair of domains, $S \subseteq R$, $S' \subseteq R'$ be a pair o
 It is clear that $f$ induces a ring homomorphism $\overline{f}\colon R_S \to R'_{S'}$, we also reuse the notation $\overline{f}$ for the induced homomorphism of Steinberg groups.
 Now suppose that there is a map $f^* \colon S' \to S$ such that $t$ divides $f(f^*(t))$ for all $t \in S'$ (without loss of generality, we may assume that $f^*(1)=1$ ). The latter condition means, in particular, that $R'_{f(S)} \cong R'_{S'}$. We claim that $f^*$ and the homomorphisms $\{f^*(t)R \to tR'\}_{t\in S'}$ obtained from $f$ by restricting its domain and codomain specify a pre-morphism $R^{(\infty)} \to R'^{(\infty)}$. We denote by $f^{(\infty)}$ the corresponding morphism of pro-rngs and also use the same notation for the induced morphism of Steinberg pro-groups.
 
-\begin{prop} \label{prop:functoriality}
+\begin{proposition} \label{prop:functoriality}
  The action $conj$ constructed in Proposition~\ref{prop:conj-action} has the additional property that the following diagram commutes for every $g \in \St(\Phi, R_S)$:
  \begin{equation} \label{eq:conj-finfty} \begin{tikzcd} \St^{(\infty)}(\Phi, R) \ar{r}{conj(g)} \ar{d}{f^{(\infty)}} & \St^{(\infty)}(\Phi, R) \ar{d}{f^{(\infty)}} \\ \St^{(\infty)}(\Phi, R') \ar{r}{conj(\overline{f}(g))} & \St^{(\infty)}(\Phi, R'). \end{tikzcd} \end{equation}
-\end{prop}
+\end{proposition}
 \begin{proof}
 As before, we may suppose that \(g = x_\alpha(a/s)\) for some \(\alpha \in \Phi\), \(a \in R\), \(s \in S\). By \cite[Lemma~3.2]{LSV20} 
 it suffices to check that the long paths in the diagram coincide after precomposition with \(x_\beta \colon R^{(\infty)} \to \St^{(\infty)}(\Phi, R)\) for all \(\beta \neq -\alpha\). This follows from the definition before~\cite[Proposition~4.2]{LSV20}
@@ -643,13 +655,223 @@ The proof of the fact that $T_\alpha$ satisfy relations~\eqref{R2} is similar to
 It follows that the action of $\St(\Phi, A_{\iota(h)})$ on $V$ is well-defined. By construction, the canonical map \(V \to \St(\Phi, A_{\iota(h)})\) preserves the action, where \(\St(\Phi, A_{\iota(h)})\) acts on itself by left multiplication. Since \((1, 1) \in V\) maps to \(1 \in \St(\Phi, A_{\iota(h)})\), it remains to check the transitivity of the action on \(V\). But the construction implies that \((u, v) = \iota(u)\, \bigl(\lambda_h(v)\, (1, 1)\bigr)\). Thus, \(V \to \St(\Phi, A_{\iota(h)})\) is a bijection.
 Now if \(u \in \St(\Phi, B_h)\) and \(v \in \St(\Phi, A)\) are such that \(\iota(u) = \lambda_h(v)\), the class of \((u, v^{-1})\) in \(V\) maps to \(1 \in \St(\Phi, A_{\iota(h)})\). Thus, \([u, v^{-1}] = [1, 1]\) and $u = \lambda_h(w)$, $v = \iota(w)$ for some $w \in \St(\Phi, B)$, which completes the proof of the assertion of Theorem~\ref{glueing} for Steinberg groups. Since $\iota\colon \Gsc(\Phi, B)\to \Gsc(\Phi, A)$ is injective, we also obtain the assertion for $\K_2(\Phi, -)$.
 
-\begin{comment}
-\section*{Funding}
+\subsection*{Funding}
 The work on \S~2 was supported by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The work on \S~3 was supported by the Russian Science Foundation grant No. 19-71-30002. The work on \S~4 was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics “BASIS“.
-
-\section*{Acknowledgements} The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank P.~Gvozdevsky, S.~Ivanov, A.~Sawant, V.~Sosnilo and N.~Vavilov for their useful comments and interest in this work.
 The first-named author is a winner of the Young Russian Mathematics contest and would like to thank its sponsors and the jury.
-\end{comment}
 
-\printbibliography
+\subsection*{Acknowledgements}
+ The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank P.~Gvozdevsky, S.~Ivanov, A.~Sawant, V.~Sosnilo and N.~Vavilov for their useful comments and interest in this work.
+
+\begin{thebibliography}{0}
+
+\bibitem{Abe83}
+Abe, E.
+\href{http://dx.doi.org/10.1080/00927878308822906}{``Whitehead groups of {C}hevalley groups over polynomial rings.''}
+\textit{Comm. Alg.} 11 no. 12 (1983): {1271--1307}.
+
+\bibitem{AHW17}
+Asok, A., M. Hoyois, and M. Wendt.
+\href{http://dx.doi.org/10.1215/00127094-0000014X}{``Affine representability results in $\mathbb{A}^1$-homotopy theory, I: Vector bundles.''}
+\textit{Duke Math. J.} 166 no. 10 (2017): 1923--1953.
+
+\bibitem{AHW18}
+Asok, A., M. Hoyois, and M. Wendt.
+\href{http://dx.doi.org/10.2140/gt.2018.22.1181}{``Affine representability results in $\mathbb{A}^1$-homotopy theory, II: Principal bundles and homogeneous spaces.''}
+\textit{Geom. Top.} 22 no. 2 (2018): 1181--1225.
+  
+\bibitem{AHW20}
+Asok, A., M. Hoyois, and M. Wendt.
+\href{http://dx.doi.org/10.14231/AG-2020-023}{``Affine representability results in $\mathbb{A}^1$-homotopy theory, III: Finite fields and complements.''}
+\textit{Algebr. Geom.} 7 no. 5 (2020): 634--644.
+
+\bibitem{Bh99}
+Bhatwadekar, S.M.
+\href{http://dx.doi.org/10.1007/978-3-0348-9996-3_3}{``Projective Modules Over Polynomial Rings.''}
+\textit{Algebra: Some Recent Advances, Birkh{\"a}user Basel} (1999): 41--62.
+
+\bibitem{CTO92}
+Colliot-Th{\'e}l{\`e}ne, J.-L., and M. Ojanguren.
+\href{http://www.numdam.org/article/PMIHES_1992__75__97_0.pdf}{``Espaces principaux homog{\`e}nes localement triviaux.''}
+\textit{Publ. Math. IH{\'E}S} 75 (1992): {97--122}.
+
+\bibitem{Ho05}
+Hornbostel, J.
+\href{http://dx.doi.org/10.1016/j.top.2004.10.004}{``$\mathbb{A}^1$-representability of Hermitian K-theory and Witt groups.''}
+\textit{J. Top.} {44} no. {3} (2005): {661--687}.  
+
+\bibitem{Ina75}
+Inasaridze, H.
+\href{http://dx.doi.org/10.1070/sm1975v027n03abeh002516}{``Homotopy of pseudosimplicial groups, nonabelian derived functors and algebraic K-theory.''}
+\textit{Math. USSR Sb.} 27 no. 3 (1975): 303--324.
+
+\bibitem{Jar83}
+Jardine, J.F. 
+\href{https://core.ac.uk/download/pdf/82406606.pdf}{``On the homotopy groups of algebraic groups.''}
+\textit{J. Alg.} 81, no. 1 (1983): 180--201.
+  
+\bibitem{SK06}
+Kashiwara, H., and P. Schapira.
+``Sheaves and categories''.
+\textit{Springer Berlin} (2006).
+
+\bibitem{LS17}
+Lavrenov, A., and S. Sinchuk.
+\href{https://arxiv.org/pdf/1606.00272.pdf}{``On centrality of even orthogonal $\K_2$.''}
+\textit{J.~Pure Appl. Alg.} {221} no. {5} (2017): {1134--1145}.
+
+\bibitem{LS20}
+Lavrenov, A., and S. Sinchuk.
+\href{http://dx.doi.org/10.25537/dm.2020v25.767-809}{``A Horrocks-type theorem for even orthogonal $\K_2$.''}
+\textit{Doc. Math} {25} (2020): {767--810}.
+
+\bibitem{LSV20}
+Lavrenov, A., S. Sinchuk, and E. Voronetsky.
+\href{https://arxiv.org/abs/2009.03999}{``Centrality of $K_2$ for Chevalley groups: a pro-group approach.''}
+(2021).
+
+\bibitem{Li81}
+Lindel, H.
+\href{http://eudml.org/doc/142853}{``On the Bass-Quillen conjecture concerning projective modules over polynomial rings.''}
+\textit{Inv. Math.} 65 no. 2 (1981): 319--323.  
+
+\bibitem{Ma69}
+Matsumoto, H.
+\href{http://eudml.org/doc/81843}{``Sur les sous-groupes arithm{\'e}tiques des groupes semi-simple d{\'e}ploy{\'e}s.''}
+\textit{Ann. Sci. ENS}, 2 no. 1 (1969): {1--62}.
+
+\bibitem{May67}
+May, J.P.
+``Simplicial objects in algebraic topology.''
+\textit{Univ. Chicago Press} (1967).
+
+\bibitem{Mi80}
+Milne, J.S.
+``{\'E}tale Cohomology.''
+\textit{Princeton Univ. Press} (1980).
+
+\bibitem{MV99}
+Morel, F., and V. Voevodsky.
+\href{http://www.numdam.org/item/PMIHES_1999__90__45_0/}{``$\mathbb{A}^1$-homotopy theory of schemes.''}
+\textit{Publ. Math. IH{\'E}S} {90} (1999): {45--143}.
+
+\bibitem{MS20}
+Morel, F., and S. Anand.
+\href{https://arxiv.org/abs/2007.14770}{``Cellular $\mathbb{A}^1$-homology and the motivic version of Matsumoto's theorem.''}
+({2020}).
+
+\bibitem{Pa89}
+Panin, I.
+\href{http://www.mathnet.ru/links/a46c953dc23ca4b3c44578c283cd59c8/aa27.pdf}{``On stabilization for orthogonal and symplectic algebraic $\K$-theory'' (Russian).}
+\textit{Leningrad Math. J.} 1 no. 3 (1990): 741--754.  
+
+\bibitem{Pa19}
+Panin, I.
+\href{http://dx.doi.org/10.1215/00127094-2018-0042}{``Nice triples and the Grothendieck–Serre conjecture concerning principal $G$-bundles over reductive group schemes.''}
+\textit{Duke Math. J.} 168 no. 2 (2019): 351--375.
+
+\bibitem{Po85}
+Popescu, D.
+\href{http://dx.doi.org/10.1017/S0027763000000246}{``General N{\'e}ron desingularization.''}
+\textit{Nagoya Math. J.} {100} (1985): {97--126}.
+
+\bibitem{Re75}
+Rehmann, U.
+\href{http://www.math.uni-bielefeld.de/~rehmann/Publ/praesentation.pdf}{`` Pr{\"a}sentationen von Chevalleygruppen {\"u}ber $k[t]$.''}
+(1975).
+
+\bibitem{S15}
+Sinchuk, S.
+\href{http://dx.doi.org/10.1016/j.jpaa.2015.08.003}{``On centrality of $\K_2$ for {C}hevalley groups of type $\mathsf{E}_\ell$.''}
+\textit{J. Pure Appl. Alg.} 220 no. 2 (2016): 857--875.
+
+\bibitem{Sta14}
+Stavrova, A.
+\href{http://dx.doi.org/10.1017/is013006012jkt232}{``Homotopy invariance of non-stable $\K_1$-functors.''}
+\textit{J. K-Th.} 12 no. 2 (2014): 199--248.
+  
+\bibitem{Sta20}
+Stavrova, A.
+\href{http://dx.doi.org/10.1016/j.indag.2021.08.002}{``$\mathbb A^1$-invariance of non-stable $\K_1$-functors in the equicharacteristic case.''}
+\textit{Indag. Math.} (2021).
+
+\bibitem{St71}
+Stein, M.
+\href{http://dx.doi.org/10.2307/2373742}{``Generators, relations and coverings of Chevalley groups over commutative rings.''}
+\textit{Amer. J. Math.} 93 no. 4 (1971): {965--1004}.
+  
+\bibitem{St78}
+Stein, M.
+\href{http://dx.doi.org/10.4099/math1924.4.77}{``Stability theorems for $\K_1$, $\K_2$ and related functors modeled on Chevalley groups.''}
+\textit{Japan J. Math.} 4 no. 1 (1978): 77--108.  
+
+\bibitem{St67}
+Steinberg, R.
+\textit{Yale Univ. New Haven} (1967).
+
+\bibitem{Su82}
+Suslin, A.
+\href{http://dx.doi.org/10.1007/BFb0062181}{``Stability in algebraic $\K$-theory.''}
+\textit{Algebraic K-Theory} (1982): {304--333}.
+
+\bibitem{Sw98}
+Swan, R.
+\href{https://academic.hep.com.cn/qb/EN/chapter/9781571462428/chapter08}{``N{\'e}ron--Popescu desingularization.''}
+\textit{Algebra and geometry (Taipei, 1995) Int. Press Cambridge, MA} 2 (1998): 135--192.
+
+\bibitem{stacks-project}
+The Stacks Project Authors.
+\href{https://stacks.math.columbia.edu}{``The Stacks Project.''}
+
+\bibitem{Tu83}
+Tulenbaev, M.
+\href{http://dx.doi.org/10.1070/SM1983v045n01ABEH002591}{``The Steinberg group of a polynomial ring.''}
+\textit{Math. USSR Sb.} {45} no. {1} (1983): {139--154}.
+
+\bibitem{VZ20}
+Vavilov, N., and Z. Zhang.
+\href{https://arxiv.org/abs/2003.07230}{``Commutators of relative and unrelative elementary subgroups in Chevalley groups.''}
+(2020).
+  
+\bibitem{VW16}
+V\"olkel, K., and M. Wendt.
+\href{http://dx.doi.org/10.1016/j.crma.2016.01.026}{``On $\mathbb{A}^1$-fundamental groups of isotropic reductive groups.''}
+\textit{C. R. Math.} 354 no. 5 (2016): 453--458.
+
+\bibitem{Vor1}
+Voronetsky, E.
+\href{http://dx.doi.org/10.1016/j.jpaa.2020.106547}{``Centrality of $\K_2$-functors revisited.''}
+\textit{J.~Pure Appl. Alg.} 225 no. 5 (2020).
+
+\bibitem{Kbook}
+Weibel, C.A.
+``The $K$-book: An introduction to algebraic $\K$-theory.''
+\textit{Amer. Math. Soc., Grad. Texts Math.} 145 (2013).  
+
+\bibitem{We12}
+Wendt, M.
+\href{http://dx.doi.org/10.1016/j.jpaa.2012.03.004}{``On homotopy invariance for homology of rank two groups.''}
+\textit{J.~Pure Appl. Alg.} {216} no. {10} (2012): {2291--2301}.
+
+%\bibitem{HOM}
+%Hahn, A.J., and T. O'Meara.
+%``The classical groups and $\K$-theory.''
+%\textit{Springer} (1989).
+  
+%\bibitem{Po90}
+%Popescu, D.
+%\href{http://dx.doi.org/10.1017/S0027763000002981}{``Letter to the editor: General N{\'e}ron desingularization and approximation.''}
+%\textit{Nagoya Math. J.} 118 (1990): 45--53.
+  
+%\bibitem{V20}
+%Voronetsky, E.
+%\href{https://arxiv.org/abs/2005.02926}{``Centrality of odd unitary $\K_2$-functor.''}
+%\textit{Comm. Alg.} (to appear). 
+  
+%\bibitem{Vo81}
+%Vorst, T.
+%\href{http://dx.doi.org/10.1080/00927878108822596}{``The general linear group of polynomial rings over regular rings.''}
+%\textit{Comm. Alg.} 9 no. 5 (1981): 499--509.
+
+\end{thebibliography}
+
 \end{document}

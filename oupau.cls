@@ -507,7 +507,7 @@ Oxford University Press. All rights reserved. For permissions,}
 
 \newcommand\etal{\emph{et~al.}}
 
-\usepackage[square,comma]{natbib}
+\usepackage[square,comma,numbers]{natbib}
 
 \pagestyle{oupau}
 \normalsize

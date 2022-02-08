@@ -7,9 +7,8 @@
 \usepackage[capitalise]{cleveref}
 \usepackage{tikz,tikz-cd}
 \usepackage{scalerel}
-%\usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
 \usepackage{enumitem}
-%\usepackage[backend=bibtex, bibencoding=utf8, giveninits=true, citestyle=numeric-comp, sorting=nyt, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}
+\bibliographystyle{plain}
 
 
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
@@ -21,16 +20,11 @@
 \newcommand{\eval}{\mathrm{ev}}
 \newcommand{\Max}{\mathrm{Max}}
 \numberwithin{equation}{section}
-%\newtheorem{lemma}{Lemma} \numberwithin{lemma}{section}
 \newtheorem*{lemma*}{Lemma}
-%\newtheorem{prop}[lemma]{Proposition} 
-%\newtheorem{theorem}[lemma]{Theorem}
-%\newtheorem{corollary}[lemma]{Corollary} 
 \newtheorem*{theorem*}{Theorem} 
 \newtheorem*{corollary*}{Corollary} 
 
 \theoremstyle{definition} 
-%\newtheorem{df}[lemma]{Definition} 
 \newtheorem{rem}[theorem]{Remark}
 
 \newcommand{\Set}{\mathbf{Set}}
@@ -667,42 +661,40 @@ The first-named author is a winner of the Young Russian Mathematics contest and 
 \bibitem{Abe83}
 Abe, E.
 \href{http://dx.doi.org/10.1080/00927878308822906}{``Whitehead groups of {C}hevalley groups over polynomial rings.''}
-\textit{Comm. Alg.} 11 no. 12 (1983): {1271--1307}.
+\textit{Comm. Alg.} 11, no. 12 (1983): {1271--1307}.
 
 \bibitem{AHW17}
 Asok, A., M. Hoyois, and M. Wendt.
 \href{http://dx.doi.org/10.1215/00127094-0000014X}{``Affine representability results in $\mathbb{A}^1$-homotopy theory, I: Vector bundles.''}
-\textit{Duke Math. J.} 166 no. 10 (2017): 1923--1953.
+\textit{Duke Math. J.} 166, no. 10 (2017): 1923--1953.
 
 \bibitem{AHW18}
 Asok, A., M. Hoyois, and M. Wendt.
 \href{http://dx.doi.org/10.2140/gt.2018.22.1181}{``Affine representability results in $\mathbb{A}^1$-homotopy theory, II: Principal bundles and homogeneous spaces.''}
-\textit{Geom. Top.} 22 no. 2 (2018): 1181--1225.
+\textit{Geom. Top.} 22, no. 2 (2018): 1181--1225.
   
 \bibitem{AHW20}
 Asok, A., M. Hoyois, and M. Wendt.
 \href{http://dx.doi.org/10.14231/AG-2020-023}{``Affine representability results in $\mathbb{A}^1$-homotopy theory, III: Finite fields and complements.''}
-\textit{Algebr. Geom.} 7 no. 5 (2020): 634--644.
+\textit{Algebr. Geom.} 7, no. 5 (2020): 634--644.
 
 \bibitem{Bh99}
 Bhatwadekar, S.M.
 \href{http://dx.doi.org/10.1007/978-3-0348-9996-3_3}{``Projective Modules Over Polynomial Rings.''}
-\textit{Algebra: Some Recent Advances, Birkh{\"a}user Basel} (1999): 41--62.
+In: \textit{Algebra: Some Recent Advances,} Birkh{\"a}user Basel, (1999): 41--62.
 
 \bibitem{CTO92}
 Colliot-Th{\'e}l{\`e}ne, J.-L., and M. Ojanguren.
-\href{http://www.numdam.org/article/PMIHES_1992__75__97_0.pdf}{``Espaces principaux homog{\`e}nes localement triviaux.''}
-\textit{Publ. Math. IH{\'E}S} 75 (1992): {97--122}.
+\href{http://www.numdam.org/article/PMIHES_1992__75__97_0.pdf}{``Espaces principaux homog{\`e}nes localement triviaux.''} \textit{Publ. Math. IH{\'E}S} 75, (1992): {97--122}.
 
 \bibitem{Ho05}
 Hornbostel, J.
-\href{http://dx.doi.org/10.1016/j.top.2004.10.004}{``$\mathbb{A}^1$-representability of Hermitian K-theory and Witt groups.''}
-\textit{J. Top.} {44} no. {3} (2005): {661--687}.  
+\href{http://dx.doi.org/10.1016/j.top.2004.10.004}{``$\mathbb{A}^1$-representability of Hermitian K-theory and Witt groups.''} \textit{J. Top.} {44}, no. {3} (2005): {661--687}.  
 
 \bibitem{Ina75}
 Inasaridze, H.
 \href{http://dx.doi.org/10.1070/sm1975v027n03abeh002516}{``Homotopy of pseudosimplicial groups, nonabelian derived functors and algebraic K-theory.''}
-\textit{Math. USSR Sb.} 27 no. 3 (1975): 303--324.
+\textit{Math. USSR Sb.} 27, no. 3 (1975): 303--324.
 
 \bibitem{Jar83}
 Jardine, J.F. 
@@ -710,84 +702,75 @@ Jardine, J.F.
 \textit{J. Alg.} 81, no. 1 (1983): 180--201.
   
 \bibitem{SK06}
-Kashiwara, H., and P. Schapira.
-``Sheaves and categories''.
-\textit{Springer Berlin} (2006).
+Kashiwara, H., and P. Schapira. \textit{Sheaves and categories}, Springer Berlin, 2006.
 
 \bibitem{LS17}
 Lavrenov, A., and S. Sinchuk.
 \href{https://arxiv.org/pdf/1606.00272.pdf}{``On centrality of even orthogonal $\K_2$.''}
-\textit{J.~Pure Appl. Alg.} {221} no. {5} (2017): {1134--1145}.
+\textit{J.~Pure Appl. Alg.} 221, no. {5} (2017): {1134--1145}.
 
 \bibitem{LS20}
 Lavrenov, A., and S. Sinchuk.
 \href{http://dx.doi.org/10.25537/dm.2020v25.767-809}{``A Horrocks-type theorem for even orthogonal $\K_2$.''}
-\textit{Doc. Math} {25} (2020): {767--810}.
+\textit{Doc. Math} 25, (2020): {767--810}.
 
 \bibitem{LSV20}
 Lavrenov, A., S. Sinchuk, and E. Voronetsky.
-\href{https://arxiv.org/abs/2009.03999}{``Centrality of $K_2$ for Chevalley groups: a pro-group approach.''}
-(2021).
+\href{https://arxiv.org/abs/2009.03999}{``Centrality of $K_2$ for Chevalley groups: a pro-group approach.''} arXiv preprint, 2021.
 
 \bibitem{Li81}
 Lindel, H.
 \href{http://eudml.org/doc/142853}{``On the Bass-Quillen conjecture concerning projective modules over polynomial rings.''}
-\textit{Inv. Math.} 65 no. 2 (1981): 319--323.  
+\textit{Inv. Math.} 65, no. 2 (1981): 319--323.  
 
 \bibitem{Ma69}
 Matsumoto, H.
 \href{http://eudml.org/doc/81843}{``Sur les sous-groupes arithm{\'e}tiques des groupes semi-simple d{\'e}ploy{\'e}s.''}
-\textit{Ann. Sci. ENS}, 2 no. 1 (1969): {1--62}.
+\textit{Ann. Sci. ENS}, 2, no. 1 (1969): 1--62.
 
 \bibitem{May67}
-May, J.P.
-``Simplicial objects in algebraic topology.''
-\textit{Univ. Chicago Press} (1967).
+May, J.~P.
+\textit{Simplicial objects in algebraic topology}, Univ. Chicago Press, 1967.
 
 \bibitem{Mi80}
-Milne, J.S.
-``{\'E}tale Cohomology.''
-\textit{Princeton Univ. Press} (1980).
+Milne, J.~S. \textit{{\'E}tale Cohomology}, Princeton Univ. Press, 1980.
 
 \bibitem{MV99}
 Morel, F., and V. Voevodsky.
-\href{http://www.numdam.org/item/PMIHES_1999__90__45_0/}{``$\mathbb{A}^1$-homotopy theory of schemes.''}
-\textit{Publ. Math. IH{\'E}S} {90} (1999): {45--143}.
+\href{http://www.numdam.org/item/PMIHES_1999__90__45_0/}{``$\mathbb{A}^1$-homotopy theory of schemes.''} \textit{Publ. Math. IH{\'E}S} 90, (1999): {45--143}.
 
 \bibitem{MS20}
 Morel, F., and S. Anand.
-\href{https://arxiv.org/abs/2007.14770}{``Cellular $\mathbb{A}^1$-homology and the motivic version of Matsumoto's theorem.''}
-({2020}).
+\href{https://arxiv.org/abs/2007.14770}{``Cellular $\mathbb{A}^1$-homology and the motivic version of Matsumoto's theorem''}, arXiv preprint, 2020.
 
 \bibitem{Pa89}
 Panin, I.
 \href{http://www.mathnet.ru/links/a46c953dc23ca4b3c44578c283cd59c8/aa27.pdf}{``On stabilization for orthogonal and symplectic algebraic $\K$-theory'' (Russian).}
-\textit{Leningrad Math. J.} 1 no. 3 (1990): 741--754.  
+\textit{Leningrad Math. J.} 1, no. 3 (1990): 741--754.  
 
 \bibitem{Pa19}
 Panin, I.
 \href{http://dx.doi.org/10.1215/00127094-2018-0042}{``Nice triples and the Grothendieck–Serre conjecture concerning principal $G$-bundles over reductive group schemes.''}
-\textit{Duke Math. J.} 168 no. 2 (2019): 351--375.
+\textit{Duke Math. J.} 168, no. 2 (2019): 351--375.
 
 \bibitem{Po85}
 Popescu, D.
 \href{http://dx.doi.org/10.1017/S0027763000000246}{``General N{\'e}ron desingularization.''}
-\textit{Nagoya Math. J.} {100} (1985): {97--126}.
+\textit{Nagoya Math. J.} 100, (1985): {97--126}.
 
 \bibitem{Re75}
 Rehmann, U.
-\href{http://www.math.uni-bielefeld.de/~rehmann/Publ/praesentation.pdf}{`` Pr{\"a}sentationen von Chevalleygruppen {\"u}ber $k[t]$.''}
-(1975).
+\href{http://www.math.uni-bielefeld.de/~rehmann/Publ/praesentation.pdf}{``Pr{\"a}sentationen von Chevalleygruppen {\"u}ber $k[t]$'',} unpublished preprint, 1975.
 
 \bibitem{S15}
 Sinchuk, S.
 \href{http://dx.doi.org/10.1016/j.jpaa.2015.08.003}{``On centrality of $\K_2$ for {C}hevalley groups of type $\mathsf{E}_\ell$.''}
-\textit{J. Pure Appl. Alg.} 220 no. 2 (2016): 857--875.
+\textit{J. Pure Appl. Alg.} 220, no. 2 (2016): 857--875.
 
 \bibitem{Sta14}
 Stavrova, A.
 \href{http://dx.doi.org/10.1017/is013006012jkt232}{``Homotopy invariance of non-stable $\K_1$-functors.''}
-\textit{J. K-Th.} 12 no. 2 (2014): 199--248.
+\textit{J. K-Th.} 12, no. 2 (2014): 199--248.
   
 \bibitem{Sta20}
 Stavrova, A.
@@ -797,80 +780,66 @@ Stavrova, A.
 \bibitem{St71}
 Stein, M.
 \href{http://dx.doi.org/10.2307/2373742}{``Generators, relations and coverings of Chevalley groups over commutative rings.''}
-\textit{Amer. J. Math.} 93 no. 4 (1971): {965--1004}.
+\textit{Amer. J. Math.} 93, no. 4 (1971): {965--1004}.
   
 \bibitem{St78}
 Stein, M.
 \href{http://dx.doi.org/10.4099/math1924.4.77}{``Stability theorems for $\K_1$, $\K_2$ and related functors modeled on Chevalley groups.''}
-\textit{Japan J. Math.} 4 no. 1 (1978): 77--108.  
+\textit{Japan J. Math.} 4, no. 1 (1978): 77--108.  
 
 \bibitem{St67}
-Steinberg, R.
-\textit{Yale Univ. New Haven} (1967).
+Steinberg, R. \textit{Lectures on Chevalley groups}, Yale Univ. New Haven, 1967.
 
 \bibitem{Su82}
 Suslin, A.
 \href{http://dx.doi.org/10.1007/BFb0062181}{``Stability in algebraic $\K$-theory.''}
-\textit{Algebraic K-Theory} (1982): {304--333}.
+In: \textit{Algebraic K-Theory,} Lect. Notes Math. 966, (1982): {304--333}.
 
 \bibitem{Sw98}
 Swan, R.
-\href{https://academic.hep.com.cn/qb/EN/chapter/9781571462428/chapter08}{``N{\'e}ron--Popescu desingularization.''}
-\textit{Algebra and geometry (Taipei, 1995) Int. Press Cambridge, MA} 2 (1998): 135--192.
+\href{http://hlombardi.free.fr/Swan-NeronPopescu.pdf}{``N{\'e}ron--Popescu desingularization.''}
+In: \textit{Algebra and geometry (Taipei, 1995)} 2, Int. Press Cambridge, MA (1998): 135--192.
 
 \bibitem{stacks-project}
 The Stacks Project Authors.
-\href{https://stacks.math.columbia.edu}{``The Stacks Project.''}
+\href{https://stacks.math.columbia.edu}{\textit{The Stacks Project.}}
 
 \bibitem{Tu83}
 Tulenbaev, M.
 \href{http://dx.doi.org/10.1070/SM1983v045n01ABEH002591}{``The Steinberg group of a polynomial ring.''}
-\textit{Math. USSR Sb.} {45} no. {1} (1983): {139--154}.
+\textit{Math. USSR Sb.} {45}, no. {1} (1983): {139--154}.
 
 \bibitem{VZ20}
 Vavilov, N., and Z. Zhang.
-\href{https://arxiv.org/abs/2003.07230}{``Commutators of relative and unrelative elementary subgroups in Chevalley groups.''}
-(2020).
+\href{https://arxiv.org/abs/2003.07230}{``Commutators of relative and unrelative elementary subgroups in Chevalley groups.''} arXiv preprint, 2020.
   
 \bibitem{VW16}
 V\"olkel, K., and M. Wendt.
 \href{http://dx.doi.org/10.1016/j.crma.2016.01.026}{``On $\mathbb{A}^1$-fundamental groups of isotropic reductive groups.''}
-\textit{C. R. Math.} 354 no. 5 (2016): 453--458.
+\textit{C. R. Math.} 354, no. 5 (2016): 453--458.
 
 \bibitem{Vor1}
 Voronetsky, E.
 \href{http://dx.doi.org/10.1016/j.jpaa.2020.106547}{``Centrality of $\K_2$-functors revisited.''}
-\textit{J.~Pure Appl. Alg.} 225 no. 5 (2020).
+\textit{J.~Pure Appl. Alg.} 225, no. 5 (2020).
 
 \bibitem{Kbook}
 Weibel, C.A.
-``The $K$-book: An introduction to algebraic $\K$-theory.''
-\textit{Amer. Math. Soc., Grad. Texts Math.} 145 (2013).  
+\textit{The $K$-book: An introduction to algebraic $\K$-theory,}
+Amer. Math. Soc., Grad. Texts Math. 145, 2013.
 
 \bibitem{We12}
 Wendt, M.
 \href{http://dx.doi.org/10.1016/j.jpaa.2012.03.004}{``On homotopy invariance for homology of rank two groups.''}
-\textit{J.~Pure Appl. Alg.} {216} no. {10} (2012): {2291--2301}.
+\textit{J.~Pure Appl. Alg.} {216}, no. {10} (2012): {2291--2301}.
 
-%\bibitem{HOM}
-%Hahn, A.J., and T. O'Meara.
-%``The classical groups and $\K$-theory.''
-%\textit{Springer} (1989).
+%\bibitem{HOM} Hahn, A.J., and T. O'Meara. \textit{The classical groups and $\K$-theory,} Springer, 1989.
   
-%\bibitem{Po90}
-%Popescu, D.
-%\href{http://dx.doi.org/10.1017/S0027763000002981}{``Letter to the editor: General N{\'e}ron desingularization and approximation.''}
-%\textit{Nagoya Math. J.} 118 (1990): 45--53.
+%\bibitem{Po90} Popescu, D. \href{http://dx.doi.org/10.1017/S0027763000002981}{``Letter to the editor: General N{\'e}ron desingularization and approximation.''} \textit{Nagoya Math. J.} 118 (1990): 45--53.
   
-%\bibitem{V20}
-%Voronetsky, E.
-%\href{https://arxiv.org/abs/2005.02926}{``Centrality of odd unitary $\K_2$-functor.''}
-%\textit{Comm. Alg.} (to appear). 
+%\bibitem{V20} Voronetsky, E. \href{https://arxiv.org/abs/2005.02926}{``Centrality of odd unitary $\K_2$-functor.''} \textit{Comm. Alg.} (to appear). 
   
-%\bibitem{Vo81}
-%Vorst, T.
-%\href{http://dx.doi.org/10.1080/00927878108822596}{``The general linear group of polynomial rings over regular rings.''}
-%\textit{Comm. Alg.} 9 no. 5 (1981): 499--509.
+%\bibitem{Vo81} Vorst, T. \href{http://dx.doi.org/10.1080/00927878108822596}{``The general linear group of polynomial rings over regular rings.''} \textit{Comm. Alg.} 9 no. 5 (1981): 499--509.
 
 \end{thebibliography}
 

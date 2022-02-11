@@ -8,8 +8,6 @@
 \usepackage{tikz,tikz-cd}
 \usepackage{scalerel}
 \usepackage{enumitem}
-\bibliographystyle{plain}
-
 
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
@@ -115,15 +113,17 @@ As a corollary of~\cref{theorem:LP-for-K2}, we show that the unstable groups $\K
 where $\mathcal{H}_*(k)$ denotes the pointed unstable $\mathbb{A}^1$-homotopy category over $k$.
 \end{corollary}
 The above result is analogous to the computation of $\pi_0$ of an isotropic reductive group due to A.~Stavrova, see~\cite[Theorem~5.5]{Sta20}. The analogue of~\cref{cor:motivic-pi1} in the broader context of reductive groups of isotropic rank $\geq 2$ (albeit only when $R = k$ is an infinite field) has also been obtained in~\cite{VW16}.
-Similar representability results for the stable $\K$-groups are well-known, see e.\,g.~\cite{MV99, Ho05}.
+Representability results for the stable $\K$-functors are well-known, see e.\,g. \cite[Corollary~3.4]{Ho05}, \cite[\S~4.3]{MV99}.
 
-Notice also that the Nisnevich sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ associated to the presheaf of groups $R \mapsto \pi_1^{\mathbb{A}^1}(G)(R)$ has been recently computed by F.~Morel and A.~Sawant in~\cite{MS20} for all split reductive groups without any assumptions on the rank of $G$. Notice that the groups of values of the sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ and the presheaf $\pi_1^{\mathbb{A}^1}(G)$ agree on henselian local rings of $k$-smooth varieties.
+Notice also that the Nisnevich sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ associated to the presheaf of groups $U \mapsto \pi_1^{\mathbb{A}^1}(G)(U)$, $U\in\mathit{Sm}_k$ has been recently computed by F.~Morel and A.~Sawant for all split reductive $G$ without any assumptions on the rank of $G$. In the simply-connected case and under the assumptions on $\Phi$ from~\cref{theorem:LP-for-K2} this sheaf coincides with the unramified sheaf $\mathbf{K}_2^\mathrm{M}$ of Milnor K-groups see~\cite[Theorem~1]{MS20}. Notice that the groups of values of the sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ and the presheaf $\pi_1^{\mathbb{A}^1}(G)$ agree on spectra of Henselian local rings of $k$-smooth varieties.
+%TODO: What about K2 of local rings?
 
 Recall also from the~\cite[Theorem~5.3]{St71} that under the assumptions on the rank $\Phi$ stated in~\cref{theorem:LP-for-K2} the first two homology groups of $\St(\Phi, R)$ vanish. Consequently from the main result of~\cite{LSV20} and \S~IV.1 of~\cite{Kbook} it is easy to conclude that the group $\K_2^G(R)$ coincides with the unstable $\K_2$-group defined by means of Quillen's $+$-construction:
 \begin{equation} \label{eq:H2-K2}
   \K_{2}^{G,Q}(R) := \pi_2(BG(R)^+_{\E_\Lambda(\Phi, R)}) = \mathrm{H}_2(\mathrm{E}_\Lambda(\Phi, R), \ZZ) = \K_2^G(R),
 \end{equation}
 where $\E_\Lambda(\Phi, R) = \mathrm{Im}(\pi)$ denotes the {\it elementary subgroup of $G(R) = \mathrm{G}_\Lambda(\Phi, R)$}  (see~\cref{sec:main-results}) and $BG(R)$ is the topological classifying space of the (discrete) group $G(R)$. Thus, in particular, the definitions of the unstable $\K_2$-functors a la Quillen and a la Karoubi--Villamayor agree for a regular ring $R$ containing a field $k$ and $\Phi$ satisfying the assumptions of~\cref{theorem:LP-for-K2}.
+Thus, in particular, the definitions of the unstable $\K_2$-functors a la Quillen and a la Karoubi--Villamayor agree for a regular ring $R$ containing a field $k$ and $\Phi$ satisfying the assumptions of~\cref{theorem:LP-for-K2}.
 
 One of the ingredients in the proof of~\cref{theorem:LP-for-K2} is~\cref{lpb}, which gives a sufficient condition for a general group-valued functor to be $\mathbb{A}^1$-invariant on regular $k$-algebras. In turn, the proof of~\cref{lpb} is based on a recent result of I.~Panin, see~\cite[Theorem~2.5]{Pa19}. 
 
@@ -680,7 +680,7 @@ Asok, A., M. Hoyois, and M. Wendt.
 \textit{Algebr. Geom.} 7, no. 5 (2020): 634--644.
 
 \bibitem{Bh99}
-Bhatwadekar, S.M.
+Bhatwadekar, S.~M.
 \href{http://dx.doi.org/10.1007/978-3-0348-9996-3_3}{``Projective Modules Over Polynomial Rings.''}
 In: \textit{Algebra: Some Recent Advances,} Birkh{\"a}user Basel, (1999): 41--62.
 
@@ -698,7 +698,7 @@ Inasaridze, H.
 \textit{Math. USSR Sb.} 27, no. 3 (1975): 303--324.
 
 \bibitem{Jar83}
-Jardine, J.F. 
+Jardine, J.~F. 
 \href{https://core.ac.uk/download/pdf/82406606.pdf}{``On the homotopy groups of algebraic groups.''}
 \textit{J. Alg.} 81, no. 1 (1983): 180--201.
   
@@ -707,8 +707,6 @@ Kashiwara, H., and P. Schapira. \textit{Sheaves and categories}, Springer Berlin
 
 \bibitem{Lam10}
 Lam, T.-Y. \textit{Serre's problem on projective modules}, Springer Science \& Business Media, 2010.
-
-\bibitem{Li81} Lindel, H. \href{http://eudml.org/doc/142853}{``On the Bass--Quillen conjecture concerning projective modules over polynomial rings.''} \textit{Inv. Math.} 65, no. 2 (1981): 319--323.  
 
 \bibitem{LS17}
 Lavrenov, A., and S. Sinchuk.
@@ -724,6 +722,8 @@ Lavrenov, A., and S. Sinchuk.
 Lavrenov, A., S. Sinchuk, and E. Voronetsky.
 \href{https://arxiv.org/abs/2009.03999}{``Centrality of $K_2$ for Chevalley groups: a pro-group approach.''} arXiv preprint, 2021.
 
+\bibitem{Li81} Lindel, H. \href{http://eudml.org/doc/142853}{``On the Bass--Quillen conjecture concerning projective modules over polynomial rings.''} \textit{Inv. Math.} 65, no. 2 (1981): 319--323.  
+
 \bibitem{Ma69}
 Matsumoto, H.
 \href{http://eudml.org/doc/81843}{``Sur les sous-groupes arithm{\'e}tiques des groupes semi-simple d{\'e}ploy{\'e}s.''}
@@ -736,13 +736,13 @@ May, J.~P.
 \bibitem{Mi80}
 Milne, J.~S. \textit{{\'E}tale Cohomology}, Princeton Univ. Press, 1980.
 
-\bibitem{MV99}
-Morel, F., and V. Voevodsky.
-\href{http://www.numdam.org/item/PMIHES_1999__90__45_0/}{``$\mathbb{A}^1$-homotopy theory of schemes.''} \textit{Publ. Math. IH{\'E}S} 90, (1999): {45--143}.
-
 \bibitem{MS20}
 Morel, F., and S. Anand.
 \href{https://arxiv.org/abs/2007.14770}{``Cellular $\mathbb{A}^1$-homology and the motivic version of Matsumoto's theorem''}, arXiv preprint, 2020.
+
+\bibitem{MV99}
+Morel, F., and V. Voevodsky.
+\href{http://www.numdam.org/item/PMIHES_1999__90__45_0/}{``$\mathbb{A}^1$-homotopy theory of schemes.''} \textit{Publ. Math. IH{\'E}S} 90, (1999): {45--143}.
 
 \bibitem{Pa89}
 Panin, I.
@@ -838,7 +838,6 @@ Wendt, M.
 
 %\bibitem{HOM} Hahn, A.J., and T. O'Meara. \textit{The classical groups and $\K$-theory,} Springer, 1989.
 
-  
 %\bibitem{Po90} Popescu, D. \href{http://dx.doi.org/10.1017/S0027763000002981}{``Letter to the editor: General N{\'e}ron desingularization and approximation.''} \textit{Nagoya Math. J.} 118 (1990): 45--53.
   
 %\bibitem{V20} Voronetsky, E. \href{https://arxiv.org/abs/2005.02926}{``Centrality of odd unitary $\K_2$-functor.''} \textit{Comm. Alg.} (to appear). 

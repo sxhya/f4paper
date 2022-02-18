@@ -17,12 +17,9 @@
 \newcommand{\Gsc}{\mathrm{G}_\mathrm{sc}}
 \newcommand{\eval}{\mathrm{ev}}
 \newcommand{\Max}{\mathrm{Max}}
-\numberwithin{equation}{section}
-\newtheorem*{lemma*}{Lemma}
-\newtheorem*{theorem*}{Theorem} 
-\newtheorem*{corollary*}{Corollary} 
 
-\theoremstyle{definition} 
+\theoremstyle{definition}
+\numberwithin{equation}{section}
 \newtheorem{rem}[theorem]{Remark}
 
 \newcommand{\Set}{\mathbf{Set}}
@@ -99,7 +96,7 @@ Thus, the group $\K_2^{\mathrm{G}_\Lambda(\Phi, -)}(R)$ can be interpreted as th
 Let $k$ be an arbitrary field and $R$ be a regular ring containing $k$. Let $\Phi$ be either $\rA_\ell$ for $\ell\geq4$, or $\rD_\ell$ for $\ell\geq 7$. In the latter case assume additionally that the characteristic of $k$ is not $2$. Then for any lattice $\Lambda$ as above and $G = \mathrm{G}_\Lambda(\Phi, -)$ one has $\K_2^G(R[t])\cong\K_2^G(R).$
 \end{theorem} 
 Recall that for $i \geq 0$ the $\mathbb{A}^1$-invariance for the stable linear functors $\K_i(R)$ and stable orthogonal functors $\mathrm{KO}_i(R)$ (see~\cite{Ho05} for the definition) is well-known for regular $R$, see e.\,g.~\cite[Theorem~V.6.3]{Kbook} and \cite[Corollary~1.12]{Ho05}, respectively. The classical Bass--Quillen conjecture asks if the $\mathbb{A}^1$-invariance for the functor $\K_0$ holds {\it unstably}, i.\,e. whether the set $\mathrm{VB}_n(R)$ of isomorphism classes of vector bundles of constant rank $n$ over $\mathrm{Spec}(R)$ has the property $\mathrm{VB}_n(R) = \mathrm{VB}_n(R[t])$. 
-The classical Lindel--Popescu theorem for projective modules provides an affirmative answer to this question in the case when $R$ is regular ring containing a field $k$, see~\cite[\S~VIII.6]{Lam10},\cite{Li81, Po85}. Even more generally, the affirmative answer to the Bass--Quillen conjecture is known when $k$ is a Dedekind domain whose residue fields are perfect and $k \to R$ is a regular homomorphism in the sense of~\cite[\S~1]{Sw98}, see~\cite[Theorem~5.2.1]{AHW17}.
+The classical Lindel--Popescu theorem for projective modules provides an affirmative answer to this question in the case when $R$ is regular ring containing a field $k$, see~\cite[\S~VIII.6]{Lam10},\cite{Li81, Po85}. In fact, the affirmative answer to the Bass--Quillen conjecture is known when $k$ is a Dedekind domain whose residue fields are perfect and $k \to R$ is a regular homomorphism in the sense of~\cite[\S~1]{Sw98}, see~\cite[Theorem~5.2.1]{AHW17}.
 Thus, \cref{theorem:LP-for-K2} can be considered as the solution to the $\K_2$-analogue of the Bass--Quillen conjecture in the geometric case for the split linear and orthogonal groups.
 Recall also that the $\mathbb{A}^1$-invariance for the unstable $\K_1$-functor modeled on Chevalley groups of rank $\geq 2$ has been established in~\cite{Abe83} and has been subsequently generalized to reductive groups of isotropic rank $\geq 2$ in the recent works of A.~Stavrova, see~\cite[Theorem~1.3]{Sta14}, \cite[Theorem~1.1]{Sta20}.
 
@@ -108,15 +105,14 @@ When $R=k$ is a field the assertion of~\cref{theorem:LP-for-K2} is known from~\c
 The assertion of~\cref{theorem:LP-for-K2} is likely to remain true for all $\Phi$ of rank $\geq 3$ without any assumptions on the characteristic of $k$. It is false for $\Phi$ of rank $2$, however, see~\cite{We12}. The bottleneck in our proof which leads to the restrictive assumptions $\ell\geq 7$ and $\mathrm{char}(k)\neq 2$ in the case $\Phi=\rD_\ell$ is the orthogonal Horrocks theorem \cite[Theorem~1]{LS20}. In the future papers we plan to address this issue and obtain an improved Horrocks theorem for all simply-laced $\Phi$ containing $\rA_4$ without the invertibility of $2$ assumption.
 
 As a corollary of~\cref{theorem:LP-for-K2}, we show that the unstable groups $\K_2^G(R)$ coincide with Karoubi--Villamayor groups $\mathrm{KV}_2^G(R)$ (see~\cref{sec:K2-as-pi-1} for the definition). It follows from~\cite{AHW18} that the latter groups can be interpreted as fundamental groups of $G$ in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}(k)$ of F.~Morel and V.~Voevodsky~\cite{MV99}. Consequently, we obtain the following
-\begin{corollary} \label{cor:motivic-pi1} Let $\Phi$, $\Lambda$ and $k$ be as in~\cref{theorem:LP-for-K2}. Then for any smooth $k$-algebra $R$ and $G = \mathrm{G}_{\Lambda}(\Phi, -)$ one has
+\begin{corollary} \label{cor:motivic-pi1} (see Corollary~\ref{cor:motivic-pi1-2} ) Let $\Phi$, $\Lambda$ and $k$ be as in~\cref{theorem:LP-for-K2}. Then for any smooth $k$-algebra $R$ and $G = \mathrm{G}_{\Lambda}(\Phi, -)$ one has
 \[ \pi_1^{\mathbb{A}^1}(G)(R) := \mathrm{Hom}_{\mathcal{H}_{*}(k)}(S^1 \wedge \mathrm{Spec}(R)_+, G) = \mathrm{KV}_2^{G}(R) = \K_2^G(R),\]
 where $\mathcal{H}_*(k)$ denotes the pointed unstable $\mathbb{A}^1$-homotopy category over $k$.
 \end{corollary}
-The above result is analogous to the computation of $\pi_0$ of an isotropic reductive group due to A.~Stavrova, see~\cite[Theorem~5.5]{Sta20}. The analogue of~\cref{cor:motivic-pi1} in the broader context of reductive groups of isotropic rank $\geq 2$ (albeit only when $R = k$ is an infinite field) has also been obtained in~\cite{VW16}.
+The above result is analogous to the computation of $\pi_0$ of an isotropic reductive group due to A.~Stavrova, see~\cite[Theorem~5.5]{Sta20}. The analogue of Corollary~\ref{cor:motivic-pi1} in the broader context of reductive groups of isotropic rank $\geq 2$ (albeit only when $R = k$ is an infinite field) has also been obtained in~\cite{VW16}.
 Representability results for the stable $\K$-functors are well-known, see e.\,g. \cite[Corollary~3.4]{Ho05}, \cite[\S~4.3]{MV99}.
 
 Notice also that the Nisnevich sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ associated to the presheaf of groups $U \mapsto \pi_1^{\mathbb{A}^1}(G)(U)$, $U\in\mathit{Sm}_k$ has been recently computed by F.~Morel and A.~Sawant for all split reductive $G$ without any assumptions on the rank of $G$. In the simply-connected case and under the assumptions on $\Phi$ from~\cref{theorem:LP-for-K2} this sheaf coincides with the unramified sheaf $\mathbf{K}_2^\mathrm{M}$ of Milnor K-groups see~\cite[Theorem~1]{MS20}. Notice that the groups of values of the sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ and the presheaf $\pi_1^{\mathbb{A}^1}(G)$ agree on spectra of Henselian local rings of $k$-smooth varieties.
-%TODO: What about K2 of local rings?
 
 Recall also from the~\cite[Theorem~5.3]{St71} that under the assumptions on the rank $\Phi$ stated in~\cref{theorem:LP-for-K2} the first two homology groups of $\St(\Phi, R)$ vanish. Consequently from the main result of~\cite{LSV20} and \S~IV.1 of~\cite{Kbook} it is easy to conclude that the group $\K_2^G(R)$ coincides with the unstable $\K_2$-group defined by means of Quillen's $+$-construction:
 \begin{equation} \label{eq:H2-K2}
@@ -125,11 +121,11 @@ Recall also from the~\cite[Theorem~5.3]{St71} that under the assumptions on the 
 where $\E_\Lambda(\Phi, R) = \mathrm{Im}(\pi)$ denotes the {\it elementary subgroup of $G(R) = \mathrm{G}_\Lambda(\Phi, R)$}  (see~\cref{sec:main-results}) and $BG(R)$ is the topological classifying space of the (discrete) group $G(R)$. Thus, in particular, the definitions of the unstable $\K_2$-functors a la Quillen and a la Karoubi--Villamayor agree for a regular ring $R$ containing a field $k$ and $\Phi$ satisfying the assumptions of~\cref{theorem:LP-for-K2}.
 Thus, in particular, the definitions of the unstable $\K_2$-functors a la Quillen and a la Karoubi--Villamayor agree for a regular ring $R$ containing a field $k$ and $\Phi$ satisfying the assumptions of~\cref{theorem:LP-for-K2}.
 
-One of the ingredients in the proof of~\cref{theorem:LP-for-K2} is~\cref{lpb}, which gives a sufficient condition for a general group-valued functor to be $\mathbb{A}^1$-invariant on regular $k$-algebras. In turn, the proof of~\cref{lpb} is based on a recent result of I.~Panin, see~\cite[Theorem~2.5]{Pa19}. 
+One of the ingredients in the proof of~\cref{theorem:LP-for-K2} is~\cref{lpb}, which gives a sufficient condition for a general group-valued functor to be $\mathbb{A}^1$-invariant. In turn, the proof of~\cref{lpb} is based on a recent result of I.~Panin, see~\cite[Theorem~2.5]{Pa19}. 
 
-The sufficient condition of~\cref{lpb} is given as a short list of axioms. The hardest of these to verify is the so-called {\it $\mathbb{P}^1$-glueing property} (also called Horrocks theorem, cf.~\cite{LS20}). Yet another axiom appearing in the statement of~\cref{lpb} is the so-called {\it weak affine Nisnevich excision property} for Steinberg groups. The verification of this property for simply-laced Steinberg groups is another new result of the paper, see~\cref{glueing}. Unlike M.~Tulenbaev, who used the technique of van der Kallen's ``another presentation'' in the proof of the weaker Zariski excision property~\cite[Proposition~1.4]{Tu83}, in our proof we use the new technique of pro-groups introduced by the third-named author in~\cite{Vor1} (see also~\cite{LSV20}). %V20?
+The sufficient condition of~\cref{lpb} is given as a short list of axioms. The hardest of these to verify is the so-called {\it $\mathbb{P}^1$-glueing property} (also called Horrocks theorem, cf.~\cite{LS20}). Yet another axiom appearing in the statement of~\cref{lpb} is the so-called {\it weak affine Nisnevich excision property} for Steinberg groups. The verification of this property for simply-laced Steinberg groups is another central result of the paper, see~\cref{glueing}. Unlike M.~Tulenbaev, who used the technique of van der Kallen's ``another presentation'' in the proof of the weaker Zariski excision property~\cite[Proposition~1.4]{Tu83}, in our proof we use the new technique of pro-groups introduced by the third-named author in~\cite{Vor1} (see also~\cite{LSV20}). %V20?
 
-In addition to~\cref{theorem:LP-for-K2} the proof of~\cref{cor:motivic-pi1} relies on the computation of the fundamental group of the simplicial group $\St(\Phi, R[\Delta^\bullet])$, see \cref{prop:pi1-StDelta}. This computation can be considered as a more precise version of the calculation appearing in the proof of~\cite[Proposition~3.2]{VW16} in the setting of Chevalley groups.
+In addition to~\cref{theorem:LP-for-K2} the proof of Corollary~\ref{cor:motivic-pi1} relies on the computation of the fundamental group of the simplicial group $\St(\Phi, R[\Delta^\bullet])$, see Proposition~\ref{prop:pi1-StDelta}. This computation can be considered as a more precise version of the calculation appearing in the proof of~\cite[Proposition~3.2]{VW16} in the setting of Chevalley groups.
 
 The method of the proof of~\cref{lpb} allows us to obtain the following assertion for the functor $\K_2(\Phi, R)$ as a byproduct, cf. e.\,g. with~\cite[Theorem~1.2]{Sta20}.
 \begin{theorem} \label{theorem:Gersten} Let $\Phi$ and $k$ be as in~\cref{theorem:LP-for-K2} and let $A$ be an arbitrary semi-local regular domain containing $k$. Then the canonical map $\K_2(\Phi, A) \to \K_2(\Phi, \mathrm{Frac}(A))$ is injective. \end{theorem}
@@ -176,7 +172,7 @@ The following result gives a sufficient condition for a functor $K$ to be $\math
  Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the following axioms:
  \begin{enumerate}[label=\textnormal{(A\arabic*)}]
   \item \label{CFC} {\it $K$ is finitary}, i.\,e. commutes with filtered colimits.
-  \item \label{DP} For a $k$-algebra $R$ and $a \in R$ consider the diagram obtained from~\eqref{M-sq} by applying $K$. Then the homomorphism $\Ker(K(e)) \to NK(R_a)$ between the kernels of vertical arrows is injective.
+  \item \label{DP} For a $k$-algebra $R$ and $a \in R$ consider the diagram obtained from~\eqref{M-sq} by applying $K$. Then the homomorphism $\Ker\left(K(e)) \to NK(R_a)\right)$ between the kernels of vertical arrows is injective.
   \item \label{LPP} {\it $K$ satisfies weak affine Nisnevich excision for domains.} By this we mean the following. Let $\iota \colon B \hookrightarrow A$ be an injective homomorphism of domains contained in $\catname{Alg}_k$ such that $\mathrm{Spec}(A)\to\mathrm{Spec}(B)$ is an {\'e}tale morphism of affine schemes. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / \iota(h)A$. Consider the following commutative square: \[\begin{tikzcd} B \ar{r}{\iota} \ar{d}{\lambda_h} & A \ar{d}{\lambda_{\iota(h)}}\\ B_h \ar{r}{\overline{\iota}} & A_h \end{tikzcd}\] Then the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
   \item \label{PGP} {\it $K$ satisfies $\mathbb{P}^1$-glueing property for local domains.} By definition, this means that for every local domain $R \in \catname{Alg}_k$ the following diagram whose arrows are induced by natural embeddings is a pullback square: \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}  
   It is easy to see that if~\eqref{eq:P1-square} is pullback, then all its arrows are injective.
@@ -240,7 +236,7 @@ $$\begin{tikzcd}
 	R[t] \ar{r}{\lambda_t} \ar{d}{\lambda_f} & R[t, t^{-1}] \ar{d}{\overline{\lambda}} & R[t^{-1}] \ar{l}[']{\lambda_{t^{-1}}} \ar{d}{\lambda_g}\\
 	R[t]_f \ar{r} & R[t, t^{-1}]_f & R[t^{-1}]_g. \ar{l}
 \end{tikzcd}$$
-Let $x$ be an element of $\Ker(K(\lambda_f))$. Then $K(\lambda_t)(x)$ lies in $\Ker(K(\overline{\lambda}))$ so by~\cref{zgl} applied to the right square we find $y \in \Ker(K(\lambda_{g}))$ such that $K(\lambda_t)(x) = K(\lambda_{t^{-1}})(y)$. Now by~\cref{ght} $x$ and $y$ are images of some $z \in K(R)$. 
+Let $x$ be an element of $\Ker(K(\lambda_f))$. Then $K(\lambda_t)(x)$ lies in $\Ker(K(\overline{\lambda}))$ so by Lemma~\ref{zgl} applied to the right square we find $y \in \Ker(K(\lambda_{g}))$ such that $K(\lambda_t)(x) = K(\lambda_{t^{-1}})(y)$. Now by Lemma~\ref{ght} $x$ and $y$ are images of some $z \in K(R)$. 
 Since the composite homomorphism $K(R) \to K(R[t^{-1}]_g) \xrightarrow{K(ev_{t^{-1}}(0))} K(R)$ coincides with the identity map, we conclude that $z=1$, consequently $x = y = 1$ and the proof is complete. \end{proof}
 
 For the rest of this section we assume that $k$ is a field.
@@ -284,7 +280,7 @@ Tensoring~\eqref{eq:panin-diag} with $B$ and applying functor $K$ we obtain the 
    K(B \otimes_k A[t]) \ar{d}{K(\lambda_h)} \ar{ru}{K(ev_t(0))} \ar{r}{K(\tau)} & K(B \otimes_k S) \ar{u}{K(\delta)} \ar{d}{K(\lambda_{\tau(h)})}  & K(B \otimes_k R') \ar{ul}[swap]{K(\lambda)} \ar{d}{K(\lambda_f)} \ar{l}[swap]{K(p)} \\
    K(B \otimes_k A[t]_h) \ar{r}[swap]{}              & K(B \otimes_k S_{\tau(h)})      & K(B \otimes_k R'_f). \ar{l}{}\end{tikzcd}
 \end{equation*}
-Notice that $K(p)(g_1)$ lies in the kernel of $K(\lambda_{\tau(h)})$, therefore by~\ref{LPP} there exists $g_2\in K(B \otimes_k A[t])$ such that $K(\lambda_h)(g_2)=1$ and $K(\tau)(g_2)=K(p)(g_1)$. Since $h \in A[t]$ is monic, by~\cref{lmp} the homomorphism $K(\lambda_h)$ is injective, therefore $g_2=1$. It remains to see that
+Notice that $K(p)(g_1)$ lies in the kernel of $K(\lambda_{\tau(h)})$, therefore by~\ref{LPP} there exists $g_2\in K(B \otimes_k A[t])$ such that $K(\lambda_h)(g_2)=1$ and $K(\tau)(g_2)=K(p)(g_1)$. Since $h \in A[t]$ is monic, by Lemma~\ref{lmp} the homomorphism $K(\lambda_h)$ is injective, therefore $g_2=1$. It remains to see that
 $$g=K(\lambda)(g_1)=K(\delta)(K(p)(g_1))=K(\delta)(K(\tau)(g_2))=g_2(0)=1.\qedhere$$
 \end{proof}
 
@@ -303,7 +299,7 @@ Our goal is to prove the triviality of $NK(R)$.
 By~\cref{popescu} $R$ is a filtered colimit of smooth $k$-algebras.
 Since filtered colimits commute with finite limits and the functor $K$ is finitary, the functor $NK$ is also finitary.
 Thus, it suffices to verify the triviality of $NK(R)$ for a smooth $k$-algebra $R$.
-Further, by~\cref{LGP} we are left to prove that $NK(R_M)$ is trivial for every maximal ideal $M$ in a such an algebra.
+Further, by Lemma~\ref{LGP} we are left to prove that $NK(R_M)$ is trivial for every maximal ideal $M$ in a such an algebra.
 Since every smooth scheme over $k$ is a disjoint union of smooth irreducible $k$-schemes, we may assume, without loss of generality, that $R$ is a domain.
 Denote by $E$ the fraction field of $R_M$. Consider the diagram
 \[\begin{tikzcd}
@@ -332,7 +328,7 @@ By Theorem~\ref{popescu} $A$ is a filtered colimit of smooth $k$-algebras. Since
 
 Since $K$ is finitary, we may assume that $g \in \Ker(K(A) \to K(E))$ comes from some element $g_1\in\mathrm K(R)$, where $R$ is a smooth $k$-domain. We may assume, additionally, that $g_1$ lies in the kernel of the natural homomorphism $K(R) \to K(\mathrm{Frac}(R))$.
 
-Denote by $P_i$ the preimages of the maximal ideals of $A$ and choose some maximal ideals $M_i$ of $R$ such that $M_i$ contains $P_i$. Then by \cref{esssmooth}, $g_1$ vanishes in the semi-localization of $R$ in the set of maximal ideals $M_i$, therefore it vanishes in the semi-localization of $R$ in the set of prime ideals $P_i$. Since $R\rightarrow A$ factors through the latter semi-localization, we conclude that $g=1$. 
+Denote by $P_i$ the preimages of the maximal ideals of $A$ and choose some maximal ideals $M_i$ of $R$ such that $M_i$ contains $P_i$. Then by Corollary~\ref{esssmooth}, $g_1$ vanishes in the semi-localization of $R$ in the set of maximal ideals $M_i$, therefore it vanishes in the semi-localization of $R$ in the set of prime ideals $P_i$. Since $R\rightarrow A$ factors through the latter semi-localization, we conclude that $g=1$. 
 \end{proof}
 
 \section{Proof of the main results} \label{sec:main-results}
@@ -368,7 +364,7 @@ It suffices to verify the assertion for binary direct products.
 Observe that canonical projections $R_1 \times R_2 \to R_i$, $i=1,2$ split in the category of rings without unit, therefore the groups $G_i = \St(\Phi, R_i)$ embed as subgroups into $G = \St(\Phi, R_1 \times R_2)$. It is also clear that $G_i$ together generate $G$. Thus, to verify the isomorphism $G \cong G_1 \times G_2$ it suffices to show the triviality of the commutator subgroup $[G_1, G_2] \leq G$.
 
 Set $A = R_1\times 0$, $B = 0 \times R_2$. It is clear that $A, B \trianglelefteq R_1 \times R_2$. 
-It follows directly from~\eqref{R2}--\eqref{R3} that the commutators $[x_{\alpha}(a),\ x_\beta(b)]$ are trivial for all $\beta \neq -\alpha$, $a \in A$, $b\in B$. On the other hand, to verify the triviality of $y_\alpha(a, b)$ we can apply the congruences of~\cref{lem:c-identities} (since $AB=0$ these congruences turn into equalities).
+It follows directly from~\eqref{R2}--\eqref{R3} that the commutators $[x_{\alpha}(a),\ x_\beta(b)]$ are trivial for all $\beta \neq -\alpha$, $a \in A$, $b\in B$. On the other hand, to verify the triviality of $y_\alpha(a, b)$ we can apply the congruences of Lemma~\ref{lem:c-identities} (since $AB=0$ these congruences turn into equalities).
 Indeed, setting $c = c^2 = (1, 0)$ we obtain that $y_\alpha(a, b) = y_\alpha(ac, b) = y_\alpha(a, bc) = y_\alpha(a, 0) = 1$. \end{proof}
 
 \begin{lemma} \label{k2cdc} 
@@ -379,7 +375,7 @@ The assertion for $\mathrm G_{\mathrm{sc}}(\Phi,\,-)$ follows from the fact that
 \end{proof}
 
 \begin{proof}[Proof of Theorems~\ref{theorem:LP-for-K2} and~\ref{theorem:Gersten}]
-Let us verify that the axioms \ref{CFC}--\ref{HIF} are satisfied for the functor $\K_2(\Phi, -)$. Axiom~\ref{CFC} is satisfied by~\cref{k2cdc}. Axiom~\ref{DP} follows from the fact that for a simply-laced $\Phi$ of rank $\geq 3$ Steinberg groups $\St(\Phi, -)$ satisfy Tulenbaev lifting property in the sense of~\cite[Definition~2.1]{LS17} (more precisely, \ref{DP} follows from the injectivity of the left arrow in the diagram~(2.2) ibid.).
+Let us verify that the axioms \ref{CFC}--\ref{HIF} are satisfied for the functor $\K_2(\Phi, -)$. Axiom~\ref{CFC} is satisfied by Lemma~\ref{k2cdc}. Axiom~\ref{DP} follows from the fact that for a simply-laced $\Phi$ of rank $\geq 3$ Steinberg groups $\St(\Phi, -)$ satisfy Tulenbaev lifting property in the sense of~\cite[Definition~2.1]{LS17} (more precisely, \ref{DP} follows from the injectivity of the left arrow in the diagram~(2.2) ibid.).
 The axiom~\ref{LPP} is checked in~\cref{sec:patching} below.
 In the case $\Phi = \rA_\ell$ the axiom~\ref{PGP} is satisfied by~\cite[Theorem~5.1]{Tu83}. In the orthogonal case it is satisfied by~\cite[Theorem~1]{LS20}. Finally, axiom~\ref{HIF} is satisfied by the Korollar of \cite[Satz~1]{Re75}.
 
@@ -396,10 +392,10 @@ From the snake lemma we obtain the rows of the diagram
 We already know that the left arrow is an isomorphism. The homomorphism $i_M$ is also an isomorphism since $R$ is reduced. Thus, $i_G$ is an isomorphism by 5-lemma.
 \end{proof}
 
-\begin{proof}[Proof of~\cref{cor:various-facts}]
+\begin{proof}[Proof of Corollary~\ref{cor:various-facts}]
   Set $R = k[t_1,\ldots t_n]$. Recall from~\cite{Abe83} that $\K_1(\rD_\ell, R) = \K_1(\rD_\ell, k) = 1$, so $\mathrm{Spin}_{2\ell}(R) = \E_\mathrm{sc}(\rD_\ell, R)$. The presentation a la Steinberg for $\mathrm{Spin}_{2\ell}(R)$ now follows from~\cref{theorem:LP-for-K2} and Matsumoto's theorem~\cite[Theorem~5.10]{Ma69}. The formula for the second homology group follows from~\eqref{eq:H2-K2}. \end{proof}
  
- \begin{proof}[Proof of~\cref{cor:H_2-O}]
+ \begin{proof}[Proof of Corollary~\ref{cor:H_2-O}]
   We will give the proof for~\eqref{eq:H_2-O}, the proof for~\eqref{eq:H_2-SO} being similar.
   From the homological Lyndon--Hochschild--Serre spectral sequence associated with the short exact sequence $\mathrm{EO}_{2\ell}(R) \hookrightarrow \mathrm{O}_{2\ell}(R) \twoheadrightarrow \mathrm{KO}_{1, 2\ell}(R)$ we obtain an exact sequence
   \[ \begin{tikzcd} \mathrm H_3(\mathrm{KO}_{1,2\ell}(R)) \ar[r] & \mathrm H_2(\mathrm{EO}_{2\ell}(R))_{\mathrm{KO}_{1,2\ell}(R)} \ar[r] & \mathrm H_2(\mathrm{O}_{2\ell}(R)) \ar[r] &  \mathrm H_2(\mathrm{KO}_{1, 2\ell}(R)) \ar[r] & 1, \end{tikzcd} \]
@@ -430,7 +426,7 @@ This shows that $\St(\Phi, R[\Delta^\bullet])$ is connected. The argument for $\
 
 Now let us verify the second assertion. Notice that the kernel of $\partial_1$ coincides with the intersection $\overline{\St}(\Phi,\,R[t_1],\,\langle t_1\rangle)\cap\overline{\St}(\Phi,\,R[t_1],\,\langle t_1-1 \rangle )$, or, what is the same, with the kernel of the homomorphism
 $\St(\Phi,\,R[t_1])\rightarrow\St(\Phi,\,R)\times\St(\Phi,\,R)$
-sending $g(t_1)$ to $\big(g(0),\,g(1)\big)$. By~\cref{lem:fprod} this homomorphism can be identified with the homomorphism $\St(\Phi, R[t_1]) \to \St(\Phi, R\times R)$ induced by the ring homomorphism of evaluation of $t_1$ at $(0, 1)$.
+sending $g(t_1)$ to $\big(g(0),\,g(1)\big)$. By Lemma~\ref{lem:fprod} this homomorphism can be identified with the homomorphism $\St(\Phi, R[t_1]) \to \St(\Phi, R\times R)$ induced by the ring homomorphism of evaluation of $t_1$ at $(0, 1)$.
 
 Since the ideals $\langle t_1 \rangle$ and $\langle t_1-1 \rangle$ are coprime, we can identify $R\times R$ with $R[t_1]/t_1(t_1-1)$ by the Chinese remainder theorem. Thus, we obtain that $\Ker(\partial_1)$ coincides with $\overline{\St}(\Phi,\,R[t_1],\,\langle t_1(t_1-1) \rangle)$ and, in particular, is generated by $x_\alpha\big(t_1(t_1-1)f(t_1)\big)^{g(t_1)}$, where $\alpha \in \Phi$, $f\in R[t_1]$, $g \in \St(\Phi, R[t_1])$.
 
@@ -443,7 +439,7 @@ Let $f\colon G_\bullet\twoheadrightarrow Q_\bullet$ be a degreewise surjective m
 \begin{equation} \label{eq:simplicial-les} \begin{tikzcd} \ldots \ar{r} & \pi_{1}(G_\bullet) \ar{r} & \pi_1(Q_\bullet) \ar{r} & \pi_0(K_\bullet) \ar{r} & \pi_0(G_\bullet). \end{tikzcd} \end{equation}
 
 \begin{theorem} \label{theorem:pi1-GRDelta}
- For $G$ and $R$ as in~\cref{theorem:LP-for-K2} one has $\pi_1(G(R[\Delta^\bullet])) = \K_2^G(R)$.
+ For $\Phi$, $\Lambda$, $k$ and $R$ as in~\cref{theorem:LP-for-K2} and $G = \mathrm{G}_\Lambda(\Phi, -)$ one has $\pi_1(G(R[\Delta^\bullet])) = \K_2^G(R)$.
 \end{theorem}
 \begin{proof}
 First of all, notice that by the homotopy invariance for $\K_1$ (see e.\,g.~\cite[Theorem~1.1]{Sta20}) the simplicial group $\K_1^G(R[\Delta^\bullet])$ is discrete. Applying the exact sequence~\eqref{eq:simplicial-les} to the canonical morphism $G(R[\Delta^\bullet]) \twoheadrightarrow \K_1^G(R[\Delta^\bullet])$, we obtain that $\pi_1(G( R[\Delta^\bullet])) \cong \pi_1(\E_\Lambda(\Phi, R[\Delta^\bullet]))$.
@@ -455,7 +451,11 @@ Now consider the simplicial map $\mathrm{st}_\bullet \colon \St(\Phi, R[\Delta^\
  Proposition~\ref{prop:pi1-StDelta} implies that the first and the last groups in this exact sequence are trivial, so the two central groups are isomorphic. On the other hand, \cref{theorem:LP-for-K2} implies that $\K_2^G(R[\Delta^\bullet])$ is discrete, so $\pi_0(\K_2^G(R[\Delta^\bullet])) = \K_2^G(R)$, as claimed.
 \end{proof}
 
-\begin{proof}[Proof of~\cref{cor:motivic-pi1}] 
+\begin{corollary}[Corollary~\ref{cor:motivic-pi1}] \label{cor:motivic-pi1-2} Let $\Phi$, $\Lambda$ and $k$ be as in~\cref{theorem:LP-for-K2}. Then for any smooth $k$-algebra $R$ and $G = \mathrm{G}_{\Lambda}(\Phi, -)$ one has
+\[ \pi_1^{\mathbb{A}^1}(G)(R) := \mathrm{Hom}_{\mathcal{H}_{*}(k)}(S^1 \wedge \mathrm{Spec}(R)_+, G) = \mathrm{KV}_2^{G}(R) = \K_2^G(R),\]
+where $\mathcal{H}_*(k)$ denotes the pointed unstable $\mathbb{A}^1$-homotopy category over $k$.
+\end{corollary}
+\begin{proof}
  By~\cite[Corollary~5.4]{Sta20} for every regular $k$-algebra $R$ one has \[\mathrm H^1_\mathrm{Nis}(R, G) = \mathrm H^1_\mathrm{Nis}(R[t], G),\] consequently by~\cite[Theorem~2.4.2]{AHW18} the scheme $G$ defines an $\mathbb{A}^1$-naive presheaf on $\mathrm{Sm}_{k}^{aff}$ in the sense of~\cite[Definition~2.1.1]{AHW18}.
  In particular, one has $\pi_1^{\mathbb{A}^1}(G)(R) = \pi_1(G(R[\Delta^\bullet]))$, the latter group being isomorphic to $\K_2^G(R)$ by the above theorem.
 \end{proof}
@@ -576,8 +576,8 @@ Denote by $V$ the orbit set for this action. We use the notation $[u, v]$ for th
 Our goal is to show that the formula $[u, v] \mapsto \overline{\iota}(u) \cdot \lambda_{\iota(h)}(v)$ defines a bijection between $V$ and $\St(\Phi, A_{\iota(h)})$. The first step in this direction is to construct an action of $\St(\Phi, A_{\iota(h)})$ on $V$. 
 
 Fix some $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $c/{h^s} \in A_{\iota(h)}$.
-Applying \cref{vorcor} to the element $u$ we obtain a natural number $n=n(u)$ and homomorphisms \begin{equation} \label{eq:c-homs} c_{u^{-1}}\colon \St(\Phi, h^nB) \to \St(\Phi, B),\ c_{\overline{\iota}(u^{-1})}\colon \St(\Phi, \iota(h)^nA) \to \St(\Phi, A)\end{equation}
-satisfying the identities listed in~\cref{vorcor}.
+Applying Corollary~\ref{vorcor} to the element $u$ we obtain a natural number $n=n(u)$ and homomorphisms \begin{equation} \label{eq:c-homs} c_{u^{-1}}\colon \St(\Phi, h^nB) \to \St(\Phi, B),\ c_{\overline{\iota}(u^{-1})}\colon \St(\Phi, \iota(h)^nA) \to \St(\Phi, A)\end{equation}
+satisfying the identities listed in Corollary~\ref{vorcor}.
 
 Observe that the assumption $A/hA = B/hB$ is equivalent to the condition that for every $k \geq 0$ one has $A = Ah^k + B$ and $Ah^k \cap B = Bh^k$. Now choose any $k \geq n + s$ and decompose $c \in A$ as
  \begin{equation} \label{eq:decomp} c = ah^k + b\text{ for some }a \in A,\ b \in B. \end{equation}
@@ -701,6 +701,8 @@ Inasaridze, H.
 Jardine, J.~F. 
 \href{https://core.ac.uk/download/pdf/82406606.pdf}{``On the homotopy groups of algebraic groups.''}
 \textit{J. Alg.} 81, no. 1 (1983): 180--201.
+
+\bibitem{vdK77} van der Kallen, W. \href{http://www.numdam.org/item/?id=ASENS_1977_4_10_4_473_0}{``The $\K_2$ of rings with many units''}, \textit{Ann. Sci. {\'E}.N.S.} 10:4 (1977) 473–515.
   
 \bibitem{SK06}
 Kashiwara, H., and P. Schapira. \textit{Sheaves and categories}, Springer Berlin, 2006.
@@ -720,14 +722,14 @@ Lavrenov, A., and S. Sinchuk.
 
 \bibitem{LSV20}
 Lavrenov, A., S. Sinchuk, and E. Voronetsky.
-\href{https://arxiv.org/abs/2009.03999}{``Centrality of $K_2$ for Chevalley groups: a pro-group approach.''} arXiv preprint, 2021.
+\href{https://arxiv.org/abs/2009.03999}{``Centrality of $\K_2$ for Chevalley groups: a pro-group approach.''} arXiv preprint, 2021.
 
 \bibitem{Li81} Lindel, H. \href{http://eudml.org/doc/142853}{``On the Bass--Quillen conjecture concerning projective modules over polynomial rings.''} \textit{Inv. Math.} 65, no. 2 (1981): 319--323.  
 
 \bibitem{Ma69}
 Matsumoto, H.
 \href{http://eudml.org/doc/81843}{``Sur les sous-groupes arithm{\'e}tiques des groupes semi-simple d{\'e}ploy{\'e}s.''}
-\textit{Ann. Sci. ENS}, 2, no. 1 (1969): 1--62.
+\textit{Ann. Sci. {\'E}.N.S.}, 2, no. 1 (1969): 1--62.
 
 \bibitem{May67}
 May, J.~P.
@@ -742,7 +744,7 @@ Morel, F., and S. Anand.
 
 \bibitem{MV99}
 Morel, F., and V. Voevodsky.
-\href{http://www.numdam.org/item/PMIHES_1999__90__45_0/}{``$\mathbb{A}^1$-homotopy theory of schemes.''} \textit{Publ. Math. IH{\'E}S} 90, (1999): {45--143}.
+\href{http://www.numdam.org/item/PMIHES_1999__90__45_0/}{``$\mathbb{A}^1$-homotopy theory of schemes.''} \textit{Publ. Math. I.H.{\'E}.S.} 90, (1999): {45--143}.
 
 \bibitem{Pa89}
 Panin, I.

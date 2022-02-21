@@ -88,31 +88,49 @@ These theories use infinite-dimensional algebraic groups such as $\mathrm{GL}_\i
 The aim of this work is to obtain an {\it unstable} analogue of such result for the functor $\K_2$.
 
 Recall that one can define and study the analogues of Quillen's and Karoubi--Villamayour's $\K$-groups for finite-dimensional algebraic groups, see e.\,g.~\cite{Abe83, Jar83, Pa89, Re75, Sta14, Sta20, St71, St78, Su82, Tu83, VW16}. The interest for the unstable $\K_2$-groups, in particular, comes from the fact that they appear in Steinberg's presentation of the groups of points of algebraic groups by means of generators and relations. Let us recall this presentation in greater detail. Let $R$ be a commutative ring with a unit and $\Phi$ be an irreducible root system of rank $\geq 2$. The Steinberg group $\St(\Phi, R)$ is the group defined by means of generators $x_\alpha(\xi)$ (where $\alpha\in\Phi$, $\xi\in R$) and Chevalley commutator formulas, see~\cite[Ch.~6]{St67} (see also~\cref{sec:main-results}).
-If one additionally chooses a lattice $\Lambda$ located between the root lattice $Q(\Phi)$ and the weight lattice $P(\Phi)$ of $\Phi$ (i.\,e. $Q(\Phi) \leq \Lambda \leq P(\Phi)$), one can construct the Chevalley--Demazure group scheme $\mathrm{G}_\Lambda(\Phi, -)$, see~\cite[\S~3]{St67}. The {\it unstable functors $\K_1$ and $\K_2$ modeled on Chevalley groups} are defined via the following exact sequence (cf.~\cite{St78}):
+If one additionally chooses a lattice $\Lambda$ located between the root lattice $Q(\Phi)$ and the weight lattice $P(\Phi)$ of $\Phi$ (i.\,e. $Q(\Phi) \leq \Lambda \leq P(\Phi)$), one can construct the Chevalley--Demazure group scheme $\mathrm{G}_\Lambda(\Phi, -)$, see~\cite[\S~3]{St67}. The {\it unstable $\K_1$- and $\K_2$-functors modeled on the Chevalley group $ \mathrm{G}_\Lambda(\Phi, -)$} are defined via the following exact sequence (cf.~\cite{St78}):
 \begin{equation} \label{eq:main-exactSeq} \begin{tikzcd} \K_2^{\mathrm{G}_\Lambda(\Phi, -)}(R) \ar[hookrightarrow]{r} & \St(\Phi, R) \ar{r}{\pi} & \mathrm{G}_\Lambda(\Phi, R) \ar[twoheadrightarrow]{r} & \K_1^{\mathrm{G}_\Lambda(\Phi, -)}(R). \end{tikzcd} \end{equation}
-Thus, the group $\K_2^{\mathrm{G}_\Lambda(\Phi, -)}(R)$ can be interpreted as the group of ``nontrivial'' relations between the images of elements $x_\alpha(\xi)$ in $\mathrm{G}_\Lambda(\Phi, R)$, i.\,e. the relations depending on the arithmetic of $R$. To simplify notation in the sequel we set $G := \mathrm{G}_\Lambda(\Phi, -)$. Notice that the groups $\K_i(\Phi, R)$ from~\cite{St78} are precisely the groups $\K_i^G(R)$ in the case when $G$ is the simply-connected form of the Chevalley group, i.\,e. $\Lambda = P(\Phi)$ (for shortness we also write $\Gsc(\Phi,-)$ instead of $\mathrm{G}_{P(\Phi)}(\Phi, R)$). 
- Our first main result is the following
+Thus, the group $\K_2^{\mathrm{G}_\Lambda(\Phi, -)}(R)$ can be interpreted as the group of ``nontrivial'' relations between the images of elements $x_\alpha(\xi)$ in $\mathrm{G}_\Lambda(\Phi, R)$, i.\,e. the relations depending on the arithmetic of $R$.
+In the sequel we denote by $\Gsc(\Phi,-)$ the simply-connected form of the Chevalley--Demazure group scheme of type $\Phi$, i.\,e. $\mathrm{G}_\mathrm{sc}(\Phi, R) := \mathrm{G}_{P(\Phi)}(\Phi, R)$ and denote by $\K_i(\Phi, R)$ the corresponding $\K_1$ and $\K_2$ functors, i.\,e. $\K_i(\Phi, R) := \K_i^{\mathrm{G}_\mathrm{sc}(\Phi, R)}$, $i=1,2$. This notation agrees with~\cite{St78}.
+For shortness we also set $G := \mathrm{G}_\Lambda(\Phi, -)$.
+Our first main result is the following
 \begin{theorem}[The $\K_2$-analogue of Lindel--Popescu theorem] \label{theorem:LP-for-K2}
 Let $k$ be an arbitrary field and $R$ be a regular ring containing $k$. Let $\Phi$ be either $\rA_\ell$ for $\ell\geq4$, or $\rD_\ell$ for $\ell\geq 7$. In the latter case assume additionally that the characteristic of $k$ is not $2$. Then for any lattice $\Lambda$ as above and $G = \mathrm{G}_\Lambda(\Phi, -)$ one has $\K_2^G(R[t])\cong\K_2^G(R).$
 \end{theorem} 
+When $R=k$ is a field the assertion of~\cref{theorem:LP-for-K2} is known from~\cite{Re75} for all $\Phi$ (see Korollar of~Satz~1). Also if $\Phi = \rA_\ell$ and $\ell \geq \mathrm{max}(4, \mathrm{dim}(R) + 2)$ the assertion of~\cref{theorem:LP-for-K2} follows from the main result of~\cite{Tu83}.
+
+As a corollary of~\cref{theorem:LP-for-K2}, we show that the unstable groups $\K_2^G(R)$ coincide with Karoubi--Villamayor groups $\mathrm{KV}_2^G(R)$ (see~\cref{sec:K2-as-pi-1} for the definition). It follows from~\cite{AHW18} that the latter groups can be interpreted as fundamental groups of $G$ in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}(k)$ of F.~Morel and V.~Voevodsky~\cite{MV99}. Thus, we obtain the following
+\begin{corollary} \label{cor:motivic-pi1} (see Corollary~\ref{cor:motivic-pi1-2}) Let $\Phi$, $\Lambda$ and $k$ be as in~\cref{theorem:LP-for-K2}. Then for any smooth $k$-algebra $R$ and $G = \mathrm{G}_{\Lambda}(\Phi, -)$ one has
+\[ \pi_1^{\mathbb{A}^1}(G)(R) := \mathrm{Hom}_{\mathcal{H}_{*}(k)}(S^1 \wedge \mathrm{Spec}(R)_+, G) = \mathrm{KV}_2^{G}(R) = \K_2^G(R),\]
+where $\mathcal{H}_*(k)$ denotes the pointed unstable $\mathbb{A}^1$-homotopy category over $k$.
+\end{corollary}
+The above result is analogous to the computation of $\pi_0$ of an isotropic reductive group due to A.~Stavrova, see~\cite[Theorem~5.5]{Sta20}. The analogue of Corollary~\ref{cor:motivic-pi1} in the broader context of reductive groups of isotropic rank $\geq 2$ (albeit only when $R = k$ is an infinite field) has also been obtained in~\cite{VW16}.
+The representability of the stable $\K$-functors in $\mathcal{H}(k)$ well-known, see e.\,g. \cite[Corollary~3.4]{Ho05}, \cite[\S~4.3]{MV99}.
+
+Notice also that the Nisnevich sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ associated to the presheaf of groups $U \mapsto \pi_1^{\mathbb{A}^1}(G)(U)$, $U\in\mathit{Sm}_k$ has been recently computed by F.~Morel and A.~Sawant for all split reductive $G$ without any assumptions on the rank of $G$. In the simply-connected case and under the assumptions on $\Phi$ from~\cref{theorem:LP-for-K2} this sheaf coincides with the unramified sheaf $\mathbf{K}_2^\mathrm{M}$ of Milnor $\K_2$-groups see~\cite[Theorem~1]{MS20}. Notice that the groups of values of the sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ and the presheaf $\pi_1^{\mathbb{A}^1}(G)$ agree on spectra of Henselian local rings of $k$-smooth varieties.
+
+Our method of the proof of~\cref{theorem:LP-for-K2} also allows us to obtain the following assertion for the functor $\K_2(\Phi, R)$ as a byproduct, cf. e.\,g. with~\cite[Theorem~1.2]{Sta20}.
+\begin{theorem} \label{theorem:Gersten} Let $\Phi$ and $k$ be as in~\cref{theorem:LP-for-K2} and let $A$ be an arbitrary semi-local regular domain containing $k$. Then the canonical map $\K_2(\Phi, A) \to \K_2(\Phi, \mathrm{Frac}(A))$ is injective. Moreover, the canonical homomorphism $\St(\Phi, A) \to \St(\Phi, \mathrm{Frac}(A))$ is injective and the group $\K_2(\Phi, A)$ embeds into the Milnor $\K_2$-group $\K_2^\mathrm{M}(\mathrm{Frac}(A))$. \end{theorem}
+The assertion of~\cref{theorem:Gersten} has been known previously in the special case $\Phi=\rA_\ell$ or under the additional assumption that $A$ does not have finite residue fields, see~\cref{rem:many-units}.
+
+As yet another consequence of~\cref{theorem:LP-for-K2} we obtain the following results.
+\begin{corollary} \label{cor:various-facts}
+For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ the group $\mathrm{Spin}_{2\ell}(k[t_1,\ldots, t_n])$ admits presentation as in~\cite[\S~6]{St67} or \cite[\S~5]{Ma69}, i.\,e. the presentation by means of generators $x_\alpha(\xi)$, $\xi \in k[t_1,\ldots, t_n]$ relations~\eqref{R1}--\eqref{R3} and relations $h_\alpha(u)h_\alpha(v) = h_\alpha(uv)$, where $u, v\in k^\times$. Additionally, $\mathrm H_2(\mathrm{Spin}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k).$
+\end{corollary}
+\begin{corollary} \label{cor:H_2-O}
+ For an arbitrary field $k$ of characteristic $\neq 2$, a regular $k$-algebra $R$, $\ell \geq 7$ one has
+ \begin{align}
+  \mathrm H_2 (\mathrm{SO}_{2\ell}(R[t]), \ZZ) =&\ \mathrm H_2 (\mathrm{SO}_{2\ell}(R), \ZZ); \label{eq:H_2-SO} \\
+  \mathrm H_2 (\mathrm{O}_{2\ell}(R[t]), \ZZ) =&\ \mathrm H_2 (\mathrm{O}_{2\ell}(R), \ZZ). \label{eq:H_2-O}
+ \end{align}
+\end{corollary}
+
 Recall that for $i \geq 0$ the $\mathbb{A}^1$-invariance for the stable linear functors $\K_i(R)$ and stable orthogonal functors $\mathrm{KO}_i(R)$ (see~\cite{Ho05} for the definition) is well-known for regular $R$, see e.\,g.~\cite[Theorem~V.6.3]{Kbook} and \cite[Corollary~1.12]{Ho05}, respectively. The classical Bass--Quillen conjecture asks if the $\mathbb{A}^1$-invariance for the functor $\K_0$ holds {\it unstably}, i.\,e. whether the set $\mathrm{VB}_n(R)$ of isomorphism classes of vector bundles of constant rank $n$ over $\mathrm{Spec}(R)$ has the property $\mathrm{VB}_n(R) = \mathrm{VB}_n(R[t])$. 
 The classical Lindel--Popescu theorem for projective modules provides an affirmative answer to this question in the case when $R$ is regular ring containing a field $k$, see~\cite[\S~VIII.6]{Lam10},\cite{Li81, Po85}. In fact, the affirmative answer to the Bass--Quillen conjecture is known when $k$ is a Dedekind domain whose residue fields are perfect and $k \to R$ is a regular homomorphism in the sense of~\cite[\S~1]{Sw98}, see~\cite[Theorem~5.2.1]{AHW17}.
 Thus, \cref{theorem:LP-for-K2} can be considered as the solution to the $\K_2$-analogue of the Bass--Quillen conjecture in the geometric case for the split linear and orthogonal groups.
 Recall also that the $\mathbb{A}^1$-invariance for the unstable $\K_1$-functor modeled on Chevalley groups of rank $\geq 2$ has been established in~\cite{Abe83} and has been subsequently generalized to reductive groups of isotropic rank $\geq 2$ in the recent works of A.~Stavrova, see~\cite[Theorem~1.3]{Sta14}, \cite[Theorem~1.1]{Sta20}.
 
-When $R=k$ is a field the assertion of~\cref{theorem:LP-for-K2} is known from~\cite{Re75} for all $\Phi$ (see Korollar of~Satz~1). Also if $\Phi = \rA_\ell$ and $\ell \geq \mathrm{max}(4, \mathrm{dim}(R) + 2)$ the assertion of~\cref{theorem:LP-for-K2} follows from the main result of~\cite{Tu83}.
-
-The assertion of~\cref{theorem:LP-for-K2} is likely to remain true for all $\Phi$ of rank $\geq 3$ without any assumptions on the characteristic of $k$. It is false for $\Phi$ of rank $2$, however, see~\cite{We12}. The bottleneck in our proof which leads to the restrictive assumptions $\ell\geq 7$ and $\mathrm{char}(k)\neq 2$ in the case $\Phi=\rD_\ell$ is the orthogonal Horrocks theorem \cite[Theorem~1]{LS20}. In the future papers we plan to address this issue and obtain an improved Horrocks theorem for all simply-laced $\Phi$ containing $\rA_4$ without the invertibility of $2$ assumption.
-
-As a corollary of~\cref{theorem:LP-for-K2}, we show that the unstable groups $\K_2^G(R)$ coincide with Karoubi--Villamayor groups $\mathrm{KV}_2^G(R)$ (see~\cref{sec:K2-as-pi-1} for the definition). It follows from~\cite{AHW18} that the latter groups can be interpreted as fundamental groups of $G$ in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}(k)$ of F.~Morel and V.~Voevodsky~\cite{MV99}. Consequently, we obtain the following
-\begin{corollary} \label{cor:motivic-pi1} (see Corollary~\ref{cor:motivic-pi1-2} ) Let $\Phi$, $\Lambda$ and $k$ be as in~\cref{theorem:LP-for-K2}. Then for any smooth $k$-algebra $R$ and $G = \mathrm{G}_{\Lambda}(\Phi, -)$ one has
-\[ \pi_1^{\mathbb{A}^1}(G)(R) := \mathrm{Hom}_{\mathcal{H}_{*}(k)}(S^1 \wedge \mathrm{Spec}(R)_+, G) = \mathrm{KV}_2^{G}(R) = \K_2^G(R),\]
-where $\mathcal{H}_*(k)$ denotes the pointed unstable $\mathbb{A}^1$-homotopy category over $k$.
-\end{corollary}
-The above result is analogous to the computation of $\pi_0$ of an isotropic reductive group due to A.~Stavrova, see~\cite[Theorem~5.5]{Sta20}. The analogue of Corollary~\ref{cor:motivic-pi1} in the broader context of reductive groups of isotropic rank $\geq 2$ (albeit only when $R = k$ is an infinite field) has also been obtained in~\cite{VW16}.
-Representability results for the stable $\K$-functors are well-known, see e.\,g. \cite[Corollary~3.4]{Ho05}, \cite[\S~4.3]{MV99}.
-
-Notice also that the Nisnevich sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ associated to the presheaf of groups $U \mapsto \pi_1^{\mathbb{A}^1}(G)(U)$, $U\in\mathit{Sm}_k$ has been recently computed by F.~Morel and A.~Sawant for all split reductive $G$ without any assumptions on the rank of $G$. In the simply-connected case and under the assumptions on $\Phi$ from~\cref{theorem:LP-for-K2} this sheaf coincides with the unramified sheaf $\mathbf{K}_2^\mathrm{M}$ of Milnor K-groups see~\cite[Theorem~1]{MS20}. Notice that the groups of values of the sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ and the presheaf $\pi_1^{\mathbb{A}^1}(G)$ agree on spectra of Henselian local rings of $k$-smooth varieties.
+The assertion of~\cref{theorem:LP-for-K2} is likely to remain true for all $\Phi$ of rank $\geq 3$ without any assumptions on the characteristic of $k$. It is false for $\Phi$ of rank $2$, however, see~\cite{We12}. The bottleneck in our proof which leads to the restrictive assumptions $\ell\geq 7$ and $\mathrm{char}(k)\neq 2$ in the case $\Phi=\rD_\ell$ is the orthogonal Horrocks theorem for $\K_2$ proved in \cite{LS20}, see Theorem~1. In our future papers we plan to address this issue and obtain an improved Horrocks theorem for all simply-laced $\Phi$ containing $\rA_4$ without the invertibility of $2$ assumption.
 
 Recall also from the~\cite[Theorem~5.3]{St71} that under the assumptions on the rank $\Phi$ stated in~\cref{theorem:LP-for-K2} the first two homology groups of $\St(\Phi, R)$ vanish. Consequently from the main result of~\cite{LSV20} and \S~IV.1 of~\cite{Kbook} it is easy to conclude that the group $\K_2^G(R)$ coincides with the unstable $\K_2$-group defined by means of Quillen's $+$-construction:
 \begin{equation} \label{eq:H2-K2}
@@ -123,28 +141,9 @@ Thus, in particular, the definitions of the unstable $\K_2$-functors a la Quille
 
 One of the ingredients in the proof of~\cref{theorem:LP-for-K2} is~\cref{lpb}, which gives a sufficient condition for a general group-valued functor to be $\mathbb{A}^1$-invariant. In turn, the proof of~\cref{lpb} is based on a recent result of I.~Panin, see~\cite[Theorem~2.5]{Pa19}. 
 
-The sufficient condition of~\cref{lpb} is given as a short list of axioms. The hardest of these to verify is the so-called {\it $\mathbb{P}^1$-glueing property} (also called Horrocks theorem, cf.~\cite{LS20}). Yet another axiom appearing in the statement of~\cref{lpb} is the so-called {\it weak affine Nisnevich excision property} for Steinberg groups. The verification of this property for simply-laced Steinberg groups is another central result of the paper, see~\cref{glueing}. Unlike M.~Tulenbaev, who used the technique of van der Kallen's ``another presentation'' in the proof of the weaker Zariski excision property~\cite[Proposition~1.4]{Tu83}, in our proof we use the new technique of pro-groups introduced by the third-named author in~\cite{Vor1} (see also~\cite{LSV20}). %V20?
+The sufficient condition of~\cref{lpb} is given as a short list of axioms. The hardest of these to verify is the so-called {\it $\mathbb{P}^1$-glueing property} of the unstable functor $\K_2$ (this property is sometimes also called Horrocks theorem, see e.\,g.~\S~IV.2, \S~VI.5 of \cite{Lam10}). In the unstable linear and orthogonal case the Horrocks theorem for $\K_2$ has been obtained in \cite{Tu83} and \cite{LS20}, respectively. Yet another axiom appearing in the statement of~\cref{lpb} is the so-called {\it weak affine Nisnevich excision property} for Steinberg groups. The verification of this property for simply-laced Steinberg groups is another central result of the paper, see~\cref{glueing}. Unlike M.~Tulenbaev, who used the technique of van der Kallen's ``another presentation'' in the proof of the weaker Zariski excision property~\cite[Proposition~1.4]{Tu83}, in our proof we use the new technique of pro-groups introduced by the third-named author in~\cite{Vor1} (see also~\cite{LSV20}). %V20?
 
 In addition to~\cref{theorem:LP-for-K2} the proof of Corollary~\ref{cor:motivic-pi1} relies on the computation of the fundamental group of the simplicial group $\St(\Phi, R[\Delta^\bullet])$, see Proposition~\ref{prop:pi1-StDelta}. This computation can be considered as a more precise version of the calculation appearing in the proof of~\cite[Proposition~3.2]{VW16} in the setting of Chevalley groups.
-
-The method of the proof of~\cref{lpb} allows us to obtain the following assertion for the functor $\K_2(\Phi, R)$ as a byproduct, cf. e.\,g. with~\cite[Theorem~1.2]{Sta20}.
-\begin{theorem} \label{theorem:Gersten} Let $\Phi$ and $k$ be as in~\cref{theorem:LP-for-K2} and let $A$ be an arbitrary semi-local regular domain containing $k$. Then the canonical map $\K_2(\Phi, A) \to \K_2(\Phi, \mathrm{Frac}(A))$ is injective. \end{theorem}
-
-Combining the above result with the classical Matsumoto theorem~\cite[Theorem~5.10]{Ma69} one can show that under the assumptions of~\cref{theorem:LP-for-K2} $\K_2(\Phi, A)$ embeds into the Milnor $\K_2$-group $\K_2^\mathrm{M}(\mathrm{Frac}(A))$.
-
-As a consequence of~\cref{theorem:LP-for-K2} we obtain the following results.
-\begin{corollary} \label{cor:various-facts}
-For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ the group $\mathrm{Spin}_{2\ell}(k[t_1,\ldots, t_n])$ admits presentation as in~\cite[\S~6]{St67} or \cite[\S~5]{Ma69}, i.\,e. the presentation by means of generators $x_\alpha(\xi)$, $\xi \in k[t_1,\ldots, t_n]$ relations~\eqref{R1}--\eqref{R3} and relations $h_\alpha(u)h_\alpha(v) = h_\alpha(uv)$, where $u, v\in k^\times$. Additionally,
-\[\mathrm H_2(\mathrm{Spin}_{2\ell}(k[t_1,\ldots,t_n]),\,\mathbb Z\big) = \K^\mathrm{M}_2(k).\]
-\end{corollary}
-\begin{corollary} \label{cor:H_2-O}
- For an arbitrary field $k$ of characteristic $\neq 2$, a regular $k$-algebra $R$, $\ell \geq 7$ one has
- \begin{align}
-  \mathrm H_2 (\mathrm{SO}_{2\ell}(R[t]), \ZZ) =&\ \mathrm H_2 (\mathrm{SO}_{2\ell}(R), \ZZ); \label{eq:H_2-SO} \\
-  \mathrm H_2 (\mathrm{O}_{2\ell}(R[t]), \ZZ) =&\ \mathrm H_2 (\mathrm{O}_{2\ell}(R), \ZZ). \label{eq:H_2-O}
- \end{align}
-\end{corollary}
-
 
 
 \section{General formalism}
@@ -374,12 +373,12 @@ For an arbitrary root system $\Phi$ the functors $\Gsc(\Phi,\,-)$, $\St(\Phi,\,-
 The assertion for $\mathrm G_{\mathrm{sc}}(\Phi,\,-)$ follows from the fact that it is represented in the category $\catname{Ring}$ by a finitely presented Hopf $\ZZ$-algebra (see e.\,g. \cite[Lemma~10.127.3]{stacks-project}). The assertion for $\St(\Phi, -)$ is obvious from its definition. The assertion for the functor $\K_2(\Phi, -)$ now follows from the assertions for $\St(\Phi, -)$ and $\Gsc(\Phi, R)$ using the fact that filtered colimits commute with finite limits in $\catname{Grp}$ (in particular, they commute with kernels).
 \end{proof}
 
-\begin{proof}[Proof of Theorems~\ref{theorem:LP-for-K2} and~\ref{theorem:Gersten}]
+\begin{proof}[Proof of \cref{theorem:LP-for-K2}]
 Let us verify that the axioms \ref{CFC}--\ref{HIF} are satisfied for the functor $\K_2(\Phi, -)$. Axiom~\ref{CFC} is satisfied by Lemma~\ref{k2cdc}. Axiom~\ref{DP} follows from the fact that for a simply-laced $\Phi$ of rank $\geq 3$ Steinberg groups $\St(\Phi, -)$ satisfy Tulenbaev lifting property in the sense of~\cite[Definition~2.1]{LS17} (more precisely, \ref{DP} follows from the injectivity of the left arrow in the diagram~(2.2) ibid.).
 The axiom~\ref{LPP} is checked in~\cref{sec:patching} below.
 In the case $\Phi = \rA_\ell$ the axiom~\ref{PGP} is satisfied by~\cite[Theorem~5.1]{Tu83}. In the orthogonal case it is satisfied by~\cite[Theorem~1]{LS20}. Finally, axiom~\ref{HIF} is satisfied by the Korollar of \cite[Satz~1]{Re75}.
 
-Notice that every regular ring containing a field $k$ is geometrically regular over a perfect subfield of $k$. Now the assertion of~\cref{theorem:LP-for-K2} in the simply-laced case ($\Lambda = P(\Phi)$) follows from~\cref{lpb}, while the assertion of~\cref{theorem:Gersten} follows from~\cref{thm:gb}.
+Notice that every regular ring containing a field $k$ is geometrically regular over a perfect subfield of $k$. Now the assertion of~\cref{theorem:LP-for-K2} in the simply-laced case ($\Lambda = P(\Phi)$) follows from~\cref{lpb}.
 
 It remains to verify that the assertion of~\cref{theorem:LP-for-K2} holds for the Chevalley group $G = G_\Lambda(\Phi, -)$ of non-simply-connected type. Notice that there is an exact sequence of elementary subgroups
 \begin{equation} \label{eq:E-seq} \begin{tikzcd} 1 \ar[r] & M(R) \ar[r] & \E_\mathrm{sc}(\Phi, R) \ar[r] & \E_\Lambda(\Phi, R), \end{tikzcd} \end{equation}
@@ -391,6 +390,15 @@ From the snake lemma we obtain the rows of the diagram
     \end{tikzcd} \end{equation}
 We already know that the left arrow is an isomorphism. The homomorphism $i_M$ is also an isomorphism since $R$ is reduced. Thus, $i_G$ is an isomorphism by 5-lemma.
 \end{proof}
+
+\begin{proof}[Proof of \cref{theorem:Gersten}]
+  Set $E := \mathrm{Frac}(A)$. The injectivity of $\K_2(\Phi, A) \to \K_2(\Phi, E)$ follows from~\cref{thm:gb}. Since $\mathrm{G}_\mathrm{sc}(\Phi, A) \to \mathrm{G}_\mathrm{sc}(\Phi, E)$ is injective, this implies that $\St(\Phi, A) \to \St(\Phi, E)$ is also injective. Finally, the last assertion follows from the fact that the group $\K_2(\Phi, E)$ is isomorphic to the Milnor group $\K_2^\mathrm{M}(E)$ by Matsumoto's theorem~\cite[Theorem~5.10]{Ma69}.
+\end{proof}
+
+\begin{rem}\label{rem:many-units}
+Let $\Phi$ be an irreducible root system of nonsymplectic type.
+Notice that the injectivity of $\K_2(\Phi, A) \to \K_2(\Phi, E)$ in the linear case or under the additional assumption that $A$ does not have finite residue fields can be deduced from the previously known results. Indeed, Popescu's \cref{popescu} and Quillen's theorem~\cite[Theorem~V.9.6]{Kbook} imply the injectivity of $\K_2(A) \to \K_2(E)$ (cf.~\cite[Theorem~A]{Pa03}). By Matsumoto's theorem $\K_2(\Phi, E) \cong \K_2(E)$. We claim that under our assumptions $\K_2(\Phi, A) \cong \K_2(A)$. Indeed, in the linear case this follows from the main result of~\cite{ST81}. If $A$ does not have finite residue fields this follows from~\cite[Example~1.5d and Theorem~3.7]{vdK77}. \end{rem}
+
 
 \begin{proof}[Proof of Corollary~\ref{cor:various-facts}]
   Set $R = k[t_1,\ldots t_n]$. Recall from~\cite{Abe83} that $\K_1(\rD_\ell, R) = \K_1(\rD_\ell, k) = 1$, so $\mathrm{Spin}_{2\ell}(R) = \E_\mathrm{sc}(\rD_\ell, R)$. The presentation a la Steinberg for $\mathrm{Spin}_{2\ell}(R)$ now follows from~\cref{theorem:LP-for-K2} and Matsumoto's theorem~\cite[Theorem~5.10]{Ma69}. The formula for the second homology group follows from~\eqref{eq:H2-K2}. \end{proof}
@@ -702,7 +710,7 @@ Jardine, J.~F.
 \href{https://core.ac.uk/download/pdf/82406606.pdf}{``On the homotopy groups of algebraic groups.''}
 \textit{J. Alg.} 81, no. 1 (1983): 180--201.
 
-\bibitem{vdK77} van der Kallen, W. \href{http://www.numdam.org/item/?id=ASENS_1977_4_10_4_473_0}{``The $\K_2$ of rings with many units''}, \textit{Ann. Sci. {\'E}.N.S.} 10:4 (1977) 473–515.
+\bibitem{vdK77}van der Kallen, W. \href{http://www.numdam.org/item/?id=ASENS_1977_4_10_4_473_0}{``The $\K_2$ of rings with many units''}, \textit{Ann. Sci. {\'E}.N.S.} 10:4 (1977) 473–515.
   
 \bibitem{SK06}
 Kashiwara, H., and P. Schapira. \textit{Sheaves and categories}, Springer Berlin, 2006.
@@ -749,7 +757,10 @@ Morel, F., and V. Voevodsky.
 \bibitem{Pa89}
 Panin, I.
 \href{http://www.mathnet.ru/links/a46c953dc23ca4b3c44578c283cd59c8/aa27.pdf}{``On stabilization for orthogonal and symplectic algebraic $\K$-theory'' (Russian).}
-\textit{Leningrad Math. J.} 1, no. 3 (1990): 741--754.  
+\textit{Leningrad Math. J.} 1, no. 3 (1990): 741--754.
+
+\bibitem{Pa03} Panin, I. \href{http://mi.mathnet.ru/tm394}{``The Equicharacteristic Case of the Gersten Conjecture''},
+\textit{Proc. Steklov Inst. Math}, 241, (2003): 154--163.
 
 \bibitem{Pa19}
 Panin, I.
@@ -799,6 +810,10 @@ Steinberg, R. \textit{Lectures on Chevalley groups}, Yale Univ. New Haven, 1967.
 Suslin, A.
 \href{http://dx.doi.org/10.1007/BFb0062181}{``Stability in algebraic $\K$-theory.''}
 In: \textit{Algebraic K-Theory,} Lect. Notes Math. 966, (1982): {304--333}.
+
+\bibitem{ST81}
+Suslin, A., and M. Tulenbaev,\href{https://dx.doi.org/10.1007/BF01091768}{``Stabilization theorem for the Milnor K2-
+functor.''} \textit{J. Soviet Math.} 17 (1981), no. 2, {1804--1819}.
 
 \bibitem{Sw98}
 Swan, R.

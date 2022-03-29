@@ -8,6 +8,8 @@
 \usepackage{tikz,tikz-cd}
 \usepackage{scalerel}
 \usepackage{enumitem}
+\usepackage{mathrsfs}
+%\usepackage{showkeys}
 
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
@@ -77,7 +79,7 @@
 % Enter details of editor communicating this article
 \communicated{Corrado De Concini}
 
-\begin{abstract}Let $k$ be an arbitrary field. In this paper we show that in the linear case ($\Phi=\rA_\ell$, $\ell \geq 4$) and even orthogonal case ($\Phi = \rD_\ell$, $\ell\geq 7$, $\mathrm{char}(k)\neq 2$) the unstable functor $\mathrm{K}_2(\Phi, -)$ possesses the $\mathbb{A}^1$-invariance property in the geometric case, i.\,e. $\K_2(\Phi, R[t]) = \K_2(\Phi, R)$ for a regular ring $R$ containing $k$. As a consequence, the unstable $\K_2$ groups can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}(k)$ as fundamental groups of the simply-connected Chevalley--Demazure group schemes $\mathrm{G}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(A))$.
+\begin{abstract}Let $k$ be an arbitrary field. In this paper we show that in the linear case ($\Phi=\rA_\ell$, $\ell \geq 4$) and even orthogonal case ($\Phi = \rD_\ell$, $\ell\geq 7$, $\mathrm{char}(k)\neq 2$) the unstable functor $\mathrm{K}_2(\Phi, -)$ possesses the $\mathbb{A}^1$-invariance property in the geometric case, i.\,e. $\K_2(\Phi, R[t]) = \K_2(\Phi, R)$ for a regular ring $R$ containing $k$. As a consequence, the unstable $\K_2$ groups can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathscr{H}(k)$ as fundamental groups of the simply-connected Chevalley--Demazure group schemes $\mathrm{G}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(A))$.
 \end{abstract}
 
 \maketitle
@@ -100,15 +102,15 @@ Let $k$ be an arbitrary field and $R$ be a regular ring containing $k$. Let $\Ph
 \end{theorem} 
 When $R=k$ is a field the assertion of~\cref{theorem:LP-for-K2} is known from~\cite{Re75} for all $\Phi$ (see Korollar of~Satz~1). Also if $\Phi = \rA_\ell$ and $\ell \geq \mathrm{max}(4, \mathrm{dim}(R) + 2)$ the assertion of~\cref{theorem:LP-for-K2} follows from the main result of~\cite{Tu83}.
 
-As a corollary of~\cref{theorem:LP-for-K2}, we show that the unstable groups $\K_2^G(R)$ coincide with Karoubi--Villamayor groups $\mathrm{KV}_2^G(R)$ (see~\cref{sec:K2-as-pi-1} for the definition). It follows from~\cite{AHW18} that the latter groups can be interpreted as fundamental groups of $G$ in the unstable $\mathbb{A}^1$-homotopy category $\mathcal{H}(k)$ of F.~Morel and V.~Voevodsky~\cite{MV99}. Thus, we obtain the following
+As a corollary of~\cref{theorem:LP-for-K2}, we show that the unstable groups $\K_2^G(R)$ coincide with Karoubi--Villamayor groups $\mathrm{KV}_2^G(R)$ (see~\cref{sec:K2-as-pi-1} for the definition). It follows from~\cite{AHW18} that the latter groups can be interpreted as fundamental groups of $G$ in the unstable pointed $\mathbb{A}^1$-homotopy category $\mathscr{H}_*(k)$ of F.~Morel and V.~Voevodsky~\cite{MV99}. Thus, we obtain the following
 \begin{corollary} \label{cor:motivic-pi1} (see Corollary~\ref{cor:motivic-pi1-2}) Let $\Phi$, $\Lambda$ and $k$ be as in~\cref{theorem:LP-for-K2}. Then for any smooth $k$-algebra $R$ and $G = \mathrm{G}_{\Lambda}(\Phi, -)$ one has
-\[ \pi_1^{\mathbb{A}^1}(G)(R) := \mathrm{Hom}_{\mathcal{H}_{*}(k)}(S^1 \wedge \mathrm{Spec}(R)_+, G) = \mathrm{KV}_2^{G}(R) = \K_2^G(R),\]
-where $\mathcal{H}_*(k)$ denotes the pointed unstable $\mathbb{A}^1$-homotopy category over $k$.
+\[ \pi_1^{\mathbb{A}^1}(G)(R) := \mathrm{Hom}_{\mathscr{H}_{*}(k)}(S^1 \wedge \mathrm{Spec}(R)_+, G) = \mathrm{KV}_2^{G}(R) = \K_2^G(R).\]
 \end{corollary}
 The above result is analogous to the computation of $\pi_0$ of an isotropic reductive group due to A.~Stavrova, see~\cite[Theorem~5.5]{Sta20}. The analogue of Corollary~\ref{cor:motivic-pi1} in the broader context of reductive groups of isotropic rank $\geq 2$ (albeit only when $R = k$ is an infinite field) has also been obtained in~\cite{VW16}.
-The representability of the stable $\K$-functors in $\mathcal{H}(k)$ well-known, see e.\,g. \cite[Corollary~3.4]{Ho05}, \cite[\S~4.3]{MV99}.
+The representability of the stable $\K$-functors in $\mathscr{H}(k)$ well-known, see e.\,g. \cite[Corollary~3.4]{Ho05}, \cite[\S~4.3]{MV99}.
 
-Notice also that the Nisnevich sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ associated to the presheaf of groups $U \mapsto \pi_1^{\mathbb{A}^1}(G)(U)$, $U\in\mathit{Sm}_k$ has been recently computed by F.~Morel and A.~Sawant for all split reductive $G$ without any assumptions on the rank of $G$. In the simply-connected case and under the assumptions on $\Phi$ from~\cref{theorem:LP-for-K2} this sheaf coincides with the unramified sheaf $\mathbf{K}_2^\mathrm{M}$ of Milnor $\K_2$-groups see~\cite[Theorem~1]{MS20}. Notice that the groups of values of the sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ and the presheaf $\pi_1^{\mathbb{A}^1}(G)$ agree on spectra of Henselian local rings of $k$-smooth varieties.
+Notice also that the Nisnevich sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ associated to the presheaf of groups $U \mapsto \pi_1^{\mathbb{A}^1}(G)(U)$, $U\in\mathit{Sm}_k$ has been recently computed by F.~Morel and A.~Sawant for all split reductive $G$ without any assumptions on the rank of $G$. In the simply-connected case and under the assumptions on $\Phi$ from~\cref{theorem:LP-for-K2} this sheaf coincides with the unramified sheaf $\mathbf{K}_2^\mathrm{M}$ of Milnor $\K_2$-groups see~\cite[Theorem~1]{MS20}.
+%Notice that the groups of values of the sheaf $\bm{\pi}_1^{\mathbb{A}^1}(G)$ and the presheaf $\pi_1^{\mathbb{A}^1}(G)$ agree on spectra of Henselian local rings of $k$-smooth varieties.
 
 Our method of the proof of~\cref{theorem:LP-for-K2} also allows us to obtain the following assertion for the functor $\K_2(\Phi, R)$ as a byproduct, cf. e.\,g. with~\cite[Theorem~1.2]{Sta20}.
 \begin{theorem} \label{theorem:Gersten} Let $\Phi$ and $k$ be as in~\cref{theorem:LP-for-K2} and let $A$ be an arbitrary semi-local regular domain containing $k$. Then the canonical map $\K_2(\Phi, A) \to \K_2(\Phi, \mathrm{Frac}(A))$ is injective. Moreover, the canonical homomorphism $\St(\Phi, A) \to \St(\Phi, \mathrm{Frac}(A))$ is injective and the group $\K_2(\Phi, A)$ embeds into the Milnor $\K_2$-group $\K_2^\mathrm{M}(\mathrm{Frac}(A))$. \end{theorem}
@@ -131,7 +133,7 @@ The classical Lindel--Popescu theorem for projective modules provides an affirma
 Thus, \cref{theorem:LP-for-K2} can be considered as the solution to the $\K_2$-analogue of the Bass--Quillen conjecture in the geometric case for the split linear and orthogonal groups.
 Recall also that the $\mathbb{A}^1$-invariance for the unstable $\K_1$-functor modeled on Chevalley groups of rank $\geq 2$ has been established in~\cite{Abe83} and has been subsequently generalized to reductive groups of isotropic rank $\geq 2$ in the recent works of A.~Stavrova, see~\cite[Theorem~1.3]{Sta14}, \cite[Theorem~1.1]{Sta20}.
 
-The assertion of~\cref{theorem:LP-for-K2} is likely to remain true for all $\Phi$ of rank $\geq 3$ without any assumptions on the characteristic of $k$. It is false for $\Phi$ of rank $2$, however, see~\cite{We12}. The bottleneck in our proof which leads to the restrictive assumptions $\ell\geq 7$ and $\mathrm{char}(k)\neq 2$ in the case $\Phi=\rD_\ell$ is the orthogonal Horrocks theorem for $\K_2$ proved in \cite{LS20}, see Theorem~1. In our future papers we plan to address this issue and obtain an improved Horrocks theorem for all simply-laced $\Phi$ containing $\rA_4$ without the invertibility of $2$ assumption.
+The assertion of~\cref{theorem:LP-for-K2} is likely to remain true for all $\Phi$ of rank $\geq 3$ without any assumptions on the characteristic of $k$. It is false for $\Phi$ of rank $2$, however, see~\cite{We12}. The bottleneck in our proof which leads to the restrictive assumptions $\ell\geq 7$ and $\mathrm{char}(k)\neq 2$ in the case $\Phi=\rD_\ell$ is the orthogonal Horrocks theorem for $\K_2$ proved in \cite{LS20}, see Theorem~1. In our future papers we plan to address this issue and obtain an Horrocks theorem which applies to all simply-laced $\Phi$ containing $\rA_4$ without the invertibility of $2$ assumption.
 
 Recall from the~\cite[Theorem~5.3]{St71} that under the assumptions on the rank $\Phi$ stated in~\cref{theorem:LP-for-K2} the first two homology groups of $\St(\Phi, R)$ vanish. On the other hand, the main result of~\cite{LSV20} asserts that $\K_2^{G, Q}(R)$ is a central subgroup of $\St(\Phi, R)$ and, in particular, an abelian group.
 From this and \S~IV.1 of~\cite{Kbook} it is easy to conclude that the group $\K_2^G(R)$ coincides with the unstable $\K_2$-group defined by means of Quillen's $+$-construction:
@@ -171,7 +173,7 @@ The following result gives a sufficient condition for a functor $K$ to be $\math
  Let $k$ be a field.
  Suppose that a functor $K \colon \catname{Alg}_k \to \catname{Grp}$ satisfies the following axioms:
  \begin{enumerate}[label=\textnormal{(A\arabic*)}]
-  \item \label{CFC} {\it $K$ is finitary}, i.\,e. commutes with filtered colimits. In other words if $A_i$ are Noetherian $k$-algebras and their colimit $A$ is also a Noetherian algebra, then $K(A) = \colim_i(K(A_i))$.
+  \item \label{CFC} {\it $K$ is finitary}, i.\,e. commutes with filtered colimits. In other words if $A_i$ are Noetherian $k$-algebras and their colimit $A$ is also Noetherian, then $K(A) = \colim_i(K(A_i))$.
   \item \label{DP} For a $k$-algebra $R$ and $a \in R$ consider the diagram obtained from~\eqref{M-sq} by applying $K$. Then the homomorphism $\Ker\left(K(e)) \to NK(R_a)\right)$ between the kernels of vertical arrows is injective.
   \item \label{LPP} {\it $K$ satisfies weak affine Nisnevich excision for domains.} By this we mean the following. Let $\iota \colon B \hookrightarrow A$ be an injective homomorphism of domains contained in $\catname{Alg}_k$ such that $\mathrm{Spec}(A)\to\mathrm{Spec}(B)$ is an {\'e}tale morphism of affine schemes. Let $h$ be an element of $B$ not invertible in $A$ such that $\iota$ induces an isomorphism $B / hB \cong A / \iota(h)A$. Consider the following commutative square: \[\begin{tikzcd} B \ar{r}{\iota} \ar{d}{\lambda_h} & A \ar{d}{\lambda_{\iota(h)}}\\ B_h \ar{r}{\overline{\iota}} & A_h \end{tikzcd}\] Then the natural homomorphism \[\Ker(K(B) \to K(B_h)) \to \Ker(K(A) \to K(A_h))\] induced by $\iota$ is surjective.
   \item \label{PGP} {\it $K$ satisfies $\mathbb{P}^1$-glueing property for local domains.} By definition, this means that for every local domain $R \in \catname{Alg}_k$ the following diagram whose arrows are induced by natural embeddings is a pullback square: \begin{equation}\label{eq:P1-square} \begin{tikzcd} K(R) \ar[r] \ar[d] & K(R[t]) \arrow{d} \\ K(R[t^{-1}]) \ar{r} & K(R[t, t^{-1}]). \end{tikzcd} \end{equation}  
@@ -182,7 +184,7 @@ The following result gives a sufficient condition for a functor $K$ to be $\math
 \end{theorem}
 \begin{rem}
  In the literature a functor satisfying the axiom~\ref{PGP} is sometimes called {\it acyclic} (cf.~\cite[Definition~III.4.1.1]{Kbook}).
-The choice of the name for~\eqref{LPP} is inspired by axiom (P3) from~\cite[Proposition~3.3.4]{AHW18}. It is easy to see that the application of $\mathrm{Spec}$ to the commutative square from~\ref{LPP} produces a distinguished Nisnevich square in $\catname{Sm}_B$ in the sense of~\cite[Definition~3.1.3]{MV99}. Notice also that our axioms can be slightly relaxed, so that the assertion of the Theorem becomes slightly stronger, see Remark~\ref{rem:relax} below.
+The choice of the name for~\eqref{LPP} is inspired by axiom (P3) from~\cite[Proposition~3.3.4]{AHW18}. It is easy to see that the application of $\mathrm{Spec}$ to the commutative square from~\ref{LPP} gives a distinguished Nisnevich square in $\catname{Sm}_{\mathrm{Spec}(B)}$ in the sense of~\cite[Definition~3.1.3]{MV99}. Notice also that our axioms can be slightly relaxed, so that the assertion of the Theorem becomes slightly stronger, see Remark~\ref{rem:relax} below.
 \end{rem}
 
 The proof is based on a series of lemmas and is deferred until the end of this section. We start by deducing the following useful corollary of the axiom~\ref{DP}. 
@@ -340,7 +342,7 @@ x_{\alpha}(a)\cdot x_{\alpha}(b)&=x_{\alpha}(a+b),\text{ for } \alpha\in \Phi;\t
 [x_{\alpha}(a),\,x_{\beta}(b)]  &=x_{\alpha+\beta}(N_{\alpha\beta} \cdot ab)\text{ in the case }\alpha+\beta\in\Phi. \tag{R3} \label{R3} \end{align}
 The integers $N_{\alpha,\beta} = \pm 1$ appearing in the last identity are called the {\it structure constants} of the Chevalley group $\mathrm{G}_\mathrm{sc}(\Phi, R)$. They coincide with the structure constants of the corresponding simple Lie algebra. More information about Steinberg groups, structure constants and further references can be found e.\,g. in~\cite[\S~3]{St71}, \cite[\S~2.4]{LSV20}. Notice that the above definition of the Steinberg group makes sense even if $R$ does not have a unit, this will be important later in~\cref{sec:patching}.
 
-We denote by $\E_\Lambda(\Phi, R)$ the {\it elementary subgroup} of $G = \mathrm{G}_\Lambda(\Phi, R)$. It is defined as the abstract subgroup generated by elementary root unipotents $t_\alpha(\xi)$, $\alpha \in \Phi$, $\xi \in R$, see e.\,g.~\cite{St71, St78, VZ20, Abe83,}. It is clear that $\E_\Lambda(\Phi, R)$ is the image of the homomorphism $\pi$ from~\eqref{eq:main-exactSeq}. We write $\E_\mathrm{sc}(\Phi, R)$ instead of $\E_{P(\Phi)}(\Phi, R)$.
+We denote by $\E_\Lambda(\Phi, R)$ the {\it elementary subgroup} of $G = \mathrm{G}_\Lambda(\Phi, R)$. It is defined as the abstract subgroup generated by elementary root unipotents $t_\alpha(\xi)$, $\alpha \in \Phi$, $\xi \in R$, see e.\,g.~\cite{St71, St78, VZ20, Abe83}. It is clear that $\E_\Lambda(\Phi, R)$ is the image of the homomorphism $\pi$ from~\eqref{eq:main-exactSeq}. We write $\E_\mathrm{sc}(\Phi, R)$ instead of $\E_{P(\Phi)}(\Phi, R)$.
 
 For $a, b \in R$ set $y_\alpha(a, b) = [x_\alpha(a), x_{-\alpha}(b)]$.
 For an ideal $I \trianglelefteq R$ we denote by $\overline{\St}(\Phi, R, I)$ the normal closure in $\St(\Phi, R)$ of the subgroup generated by $x_\alpha(a)$, $a\in I$. Recall from~\cite[Lemma~5]{S15} that
@@ -460,8 +462,8 @@ Now consider the simplicial map $\mathrm{st}_\bullet \colon \St(\Phi, R[\Delta^\
 \end{proof}
 
 \begin{corollary}[Corollary~\ref{cor:motivic-pi1}] \label{cor:motivic-pi1-2} Let $\Phi$, $\Lambda$ and $k$ be as in~\cref{theorem:LP-for-K2}. Then for any smooth $k$-algebra $R$ and $G = \mathrm{G}_{\Lambda}(\Phi, -)$ one has
-\[ \pi_1^{\mathbb{A}^1}(G)(R) := \mathrm{Hom}_{\mathcal{H}_{*}(k)}(S^1 \wedge \mathrm{Spec}(R)_+, G) = \mathrm{KV}_2^{G}(R) = \K_2^G(R),\]
-where $\mathcal{H}_*(k)$ denotes the pointed unstable $\mathbb{A}^1$-homotopy category over $k$.
+\[ \pi_1^{\mathbb{A}^1}(G)(R) := \mathrm{Hom}_{ \mathscr{H}_{*}(k)}(S^1 \wedge \mathrm{Spec}(R)_+, G) = \mathrm{KV}_2^{G}(R) = \K_2^G(R),\]
+where $\mathscr{H}_*(k)$ denotes the pointed unstable $\mathbb{A}^1$-homotopy category over $k$.
 \end{corollary}
 \begin{proof}
  By~\cite[Corollary~5.4]{Sta20} for every regular $k$-algebra $R$ one has \[\mathrm H^1_\mathrm{Nis}(R, G) = \mathrm H^1_\mathrm{Nis}(R[t], G),\] consequently by~\cite[Theorem~2.4.2]{AHW18} the scheme $G$ defines an $\mathbb{A}^1$-naive presheaf on $\mathrm{Sm}_{k}^{aff}$ in the sense of~\cite[Definition~2.1.1]{AHW18}.
@@ -486,7 +488,7 @@ $\lambda_{h}\colon \St(\Phi, A) \to \St(\Phi, A_{h})$, $\overline{\iota}\colon\S
 
 The above result generalizes~\cite[Proposition~1.4]{Tu83}, which is formulated for the Zariski topology and the special case $\Phi=\rA_{\geq 4}$.
 The analogues of the above theorem for the functor $\K_1$ have also been obtained by E.~Abe and A.~Stavrova, cf.~\cite[Lemma~3.7]{Abe83}, \cite[Lemma~3.4]{Sta14}.
-The analogous result for projective modules is the ``descent lemma'' \cite[Lemma~4.7]{Bh99} due to W.~L\"utkebohmert, H.~Lindel and M.~Kumar. 
+The analogous result for projective modules is the ``descent lemma'' \cite[Lemma~4.7]{Bh99} which is attributed to W.~L\"utkebohmert, H.~Lindel and M.~Kumar. 
 
 \begin{corollary}
 In the notation of Theorem~\ref{glueing} the natural map
@@ -965,7 +967,7 @@ The work on \S~2 was supported by the Ministry of Science and Higher Education o
 The first-named author is a winner of the Young Russian Mathematics contest and would like to thank its sponsors and the jury.
 
 \subsection*{Acknowledgements}
- The authors would like to thank A. Stavrova for suggesting several ideas used in this paper. We would also like to thank P.~Gvozdevsky, S.~Ivanov, A.~Sawant, V.~Sosnilo and N.~Vavilov for their useful comments and interest in this work.
+ The authors would like to thank A. Stavrova for suggesting several ideas used in this paper and the anonymous referees for suggesting a number of comments which helped to improve this article. We would also like to thank P.~Gvozdevsky, S.~Ivanov, A.~Sawant, V.~Sosnilo and N.~Vavilov for their useful comments and interest in this work.
 
 \begin{thebibliography}{0}
 

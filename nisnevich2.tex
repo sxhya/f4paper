@@ -512,68 +512,61 @@ Consider the natural action of $\St(\Phi, B)$ on $\St(\Phi, B_h) \times \St(\Phi
 \[g \star (u, v) = (u \lambda_h(g)^{-1}, \iota(g) v),\text{ where }g \in \St(\Phi, B),\ u \in \St(\Phi, B_h),\ v \in \St(\Phi, A),\]
 and let $V$ denote the orbit set of this action. We use the notation $[u, v]\in V$ for the orbit corresponding to a pair $(u, v) \in \St(\Phi, B_h) \times \St(\Phi, A)$.
 \end{definition}
-We will prove that $V$ injects into $\St(\Phi, A_{h})$. This clearly implies the exactness of~(\ref{stavrova-sequence}).
 
-As a general rule, it is almost impossible to prove some injectivity statemnet using generators and relations directly. The usual trick here is to make $\St(\Phi, A_{h})$ act on some set in such a way that the images of different elements of $V$ act as different automorphisms. In fact, we will define the action of $\St(\Phi, A_{h})$ on $V$ itself.
+Consider the natural map $V \to \St(\Phi, A_h)$ induced by $\overline{\iota}$ and $\lambda_h$. If we show that this map is injective the exactness~\eqref{stavrova-sequence} would follow. The main ingredient in the proof is the following
 
 \begin{proposition}
 \label{action}
-There exists a well-defined action $\cdot$ of $\St(\Phi, A_{h})$ on $V$ such that the natural map from $V$ to $\St(\Phi, A_{h})$ induced by~(\ref{stavrova-sequence}) is $\St(\Phi, A_{h})$-equivariant, where $\St(\Phi, A_{h})$ acts on itself by left translations. Moreover, for any $u\in\St(\Phi, B_h)$ and $v\in\St(\Phi, A)$ one has 
+There exists a well-defined action $\cdot$ of $\St(\Phi, A_{h})$ on $V$ such that the map $V \to \St(\Phi, A_{h})$ is $\St(\Phi, A_{h})$-equivariant (here $\St(\Phi, A_{h})$ acts on itself by left translation). Moreover, for any $u\in\St(\Phi, B_h)$ and $v\in\St(\Phi, A)$ one has 
 \begin{align}
 \label{additional}
 \lambda_{h}(v)\cdot[1,\,1]=[1,\,v]\quad\text{ and }\quad\overline\iota(u)\cdot[1,\,v]=[u,\,v].
 \end{align}
 \end{proposition}
-This easily implies the following corollary and therefore Theorem~\ref{glueing}.
 \begin{corollary}
 \label{corollary-in-the-end}
-The natural map from $V$ to $\St(\Phi, A_{h})$ is bijective, i.e., $V$ is a principal homogeneous set for $\St(\Phi, A_{h})$.
+The natural map from $V\to \St(\Phi, A_{h})$ is bijective, i.e., $V$ is a principal homogeneous set for $\St(\Phi, A_{h})$. 
 \end{corollary}
 \begin{proof}
-Since $[1,\,1]\in V$ is mapped to $1\in\St(\Phi,\,A_{h})$, we conclude that for any $g\in\St(\Phi,\,A_{h})$ an element $g\cdot[1,\,1]\in V$ is mapped to $g$, i.e., the map is surjective. On the other hand, in $[u,\,v]$ and $[u',\,v']$ are mapped to the same element of $\St(\Phi,\,A_{h})$, i.e., $\overline\iota(u)\lambda_{h}(v)=\overline\iota(u')\lambda_{h}(v')$, then using~(\ref{additional}) we have
+Since $[1,\,1]\in V$ is mapped to $1\in\St(\Phi,\,A_{h})$, we conclude that for any $g\in\St(\Phi,\,A_{h})$ an element $g\cdot[1,\,1]\in V$ is mapped to $g$, i.e., the map is surjective. On the other hand, if $[u,\,v]$ and $[u',\,v']$ are mapped to the same element of $\St(\Phi,\,A_{h})$, i.e., $\overline\iota(u)\lambda_{h}(v)=\overline\iota(u')\lambda_{h}(v')$, then using~(\ref{additional}) we have
 $$
 [u,\,v]=\overline\iota(u)\cdot[1,\,v]=\overline\iota(u)\lambda_{h}(v)\cdot[1,\,1]=\overline\iota(u')\lambda_{h}(v')\cdot[1,\,1]=[u',\,v'],
 $$
 i.e., the map is injective.
 \end{proof}
 
-We will outline the construction of the action from Proposition~\ref{action} in the rest of this subsection. It consists of three steps.
+In the remainder of this subsection we outline the construction of the action from Proposition~\ref{action}. Recall from Section~3 that the definition of the Steinberg group $\St(\Phi,\,R)$ makes sense for a non-unital $R$.
 
-{\bf Step~1.} For $g\in\St(\Phi,\,A_h)$, and $k$ large enough we will define a homomorphism $c_{g}\colon\St(\Phi,\,h^kA)\rightarrow\St(\Phi,\,A)$ imitating conjugation by $g$.
+{\bf Step~1.} For $g\in\St(\Phi,\,A_h)$ and sufficiently large $k$ we define a homomorphism $c_{g}\colon\St(\Phi,\,h^kA)\rightarrow\St(\Phi,\,A)$ which models conjugation by $g$ on the level of Steinberg groups (in particular, for all $x\in \St(\Phi,\, h^kA)$ one has the identity $\pi(c_g(x)) = \pi(g) \pi(x) \pi(g^{-1})$ in $\mathrm{G}_\Lambda(\Phi, A_h)$). 
+The map $c_g$ is constructed in~\cite{LSV20} using the technique of pro-groups which is discussed in Subsections~\ref{pro-completion}-\ref{pro-groups}. 
 
-Recall that the definition of the Steinberg group $\St(\Phi,\,R)$ from Section~3 makes perfect sense for a ring $R$ without a unit, e.g., for $R=h^kA$ as above. In fact, a map $c_g$ can be defined in many different ways. Fortunately, for any two choices $c_g$ and $c_g'$ of such a map one can find $k'$ larger then $k$ such that the compositions 
- \[ \begin{tikzcd}
-\St(\Phi,\,h^{k'}A)\ar{r}&\St(\Phi,\,h^kA)\ar[shift left=0.75ex, "c_g'"]{r}\ar[shift right=0.75ex, "c_g"']{r}&\St(\Phi,\,A)
-\end{tikzcd} \]
-become equal. %At this point it is convenient to recall the language of pro-completions before giving a more precise statemnet.
-However, one cannot hope that there exists $k'$ such that {\it all} possible choices of maps $c_g$ become equal.
-
-The construction of maps $c_g\colon\St(\Phi,\,h^kA)\rightarrow\St(\Phi,\,A)$ is in fact given in~\cite{LSV20}, however, it is not stated explicitely in that paper. It will be convenient to recall the language of pro-completions to give accurate references. This will be done in Subsections~\ref{pro-completion}-\ref{pro-groups}. 
+%There is no canonical way to construct the homomorphism $c_g$, however, any $c_g$ and $c_g'$ one can find $k'$ larger then $k$ such that the composite arrows of the following diagram are equal: \[ \begin{tikzcd} \St(\Phi,\,h^{k'}A)\ar{r}&\St(\Phi,\,h^kA)\ar[shift left=0.75ex, "c_g'"]{r}\ar[shift right=0.75ex, "c_g"']{r}&\St(\Phi,\,A). \end{tikzcd} \] On the other hand, one cannot hope for a number $k'$ such that {\it all} possible choices of maps $c_g$ become equal.
 
 \begin{rem}
-The idea behind the construction of $c_g$ is quite simple. It is enough to define the maps $\St(\Phi,\,h^{k+t}A)\rightarrow\St(\Phi,\,h^tA)$ imitating the conjugation by $g=x_\beta(a/h^s)$ for $k$ sufficientlu large with respect to $s$ and any $t$, $a\in A$. To do so we put 
+The idea behind the construction of $c_g$ is quite simple. It is enough to define the maps $\St(\Phi,\,h^{k+t}A)\rightarrow\St(\Phi,\,h^tA)$ modeling the conjugation by $g=x_\beta(a/h^s)$ for sufficiently large $k$ (here $k$ depends on $s$ but not on $t$, $a\in A$). We set
 $$
 c_{x_\beta(a/h^s)}\big(x_\gamma(bh^{k+t})\big)=
 \begin{cases}
 x_{\gamma}(bh^{k+t})&\text{  for }\beta+\gamma\not\in\Phi\cup0,\\
-x_{\beta+\gamma}(N_{\beta\gamma}abh^{k+t-s})x_{\gamma}(bh^{k+t})&\text{ for }\beta+\gamma\in\Phi
+x_{\beta+\gamma}(N_{\beta\gamma}abh^{k+t-s})x_{\gamma}(bh^{k+t})&\text{ for }\beta+\gamma\in\Phi.
 \end{cases}
 $$
-according to Steinberg relations (R2) and (R3). The only issue here is to define the action of $x_\beta(a/h^s)$ on $x_{-\beta}(b/h^{k+t})$ which can also be done using the decomposition of $x_{-\beta}(b/h^{k+t})$ as a commutator with the use of relation (R3). We refer the reader to the introduction of~\cite{LSV20} for a more detailed explanation of this construction.
+This agrees with Steinberg relations \eqref{R2} and \eqref{R3}. The difficulty here is to define  $c_{x_\beta(a/h^s)}(x_{-\beta}(b/h^{k+t}))$, but this can be done by decomposing $x_{-\beta}(b/h^{k+t})$ into a commutator by means of~\eqref{R3}. We refer the reader to the introduction of~\cite{LSV20} for a more detailed explanation of this construction.
 %$``(u^{-1}\cdot x_\alpha(ah^{k-s})\cdot u)"$
 \end{rem}
 
-{\bf Step~2.} For $\alpha\in\Phi$, $c/h^s\in A_h$ we will construct a map $T_\alpha(c/h^s)\colon V\rightarrow V$ imitating the action by left translation. 
+{\bf Step~2.} For $\alpha\in\Phi$, $c/h^s\in A_h$ we construct a map $T_\alpha(c/h^s)\colon V\rightarrow V$ imitating the action by left translation. 
 
-To construct such a map we will use the condition $B/h\cong A/h$ of Theorem~\ref{glueing}, which is equivalent to the condition that for every $k\geq0$ one has $A = Ah^k + B$ and $Ah^k\cap B = Bh^k$. Therefore, we can first decompose $c\in A$ as $c=ah^k+b$ for $k$ large enough, $a\in A$, $b\in B$ and then define
-$$
+In the construction of this map we use the condition $B/h\cong A/h$ of Theorem~\ref{glueing}, which is equivalent to the condition that for every $k\geq0$ one has $A = Ah^k + B$ and $Ah^k\cap B = Bh^k$. Therefore, we can first decompose $c\in A$ as $c=ah^k+b$ for $k$ large enough, $a\in A$, $b\in B$ and then set
+\begin{equation}\label{eq:step2}
 T_\alpha(ah^{k-s}+b/h^s)\cdot[u,\,v]=[x_\alpha(b/h^s)u,\,c_{u^{-1}}\big(x_\alpha(ah^{k-s})\big)\cdot v].
-$$
-Recall that $c_{u^{-1}}\big(x_\alpha(ah^{k-s})\big)$ of Step~1 gives a formal meaning to the expression $``(u^{-1}\cdot x_\alpha(ah^{k-s})\cdot u)"$. Obviously, we have to check that the above expression does not depend on the choices we made. This will be done in Subsection~\ref{sec:proof-glueing}.
+\end{equation}
+Here we invoke the homomorphism $c_{u^{-1}}$ constructed on Step 1.
+%Recall that the expression $c_{u^{-1}}\big(x_\alpha(ah^{k-s})\big)$ is just a formal way to say $``u^{-1}\cdot x_\alpha(ah^{k-s})\cdot u"$.
+Obviously, we have to check that the the right-hand side of~\eqref{eq:step2} does not depend on the choices of $k$, $c_g$ etc. This is achieved in Lemma~\ref{well-def}.
 
-{\bf Step~3.} We will prove that the maps $T_\alpha(c/h^s)\colon V\rightarrow V$ of Step~2 satisfy the Steinberg relations (R1)--(R3).
-
-As a result we will get a well-defined action of $\St(\Phi,\,A_h)$ on $V$. We also should check that this action satisfies the additional conditions~(\ref{additional}) of Proposition~\ref{action}. This will be done in Subsection~\ref{sec:proof-glueing}.
+{\bf Step~3.} Finally, we prove that the maps $T_\alpha(c/h^s)\colon V\rightarrow V$ constructed on Step~2 satisfy Steinberg relations \eqref{R1}--\eqref{R3}.
+As a result, we get a well-defined action of $\St(\Phi,\,A_h)$ on $V$. We also should check that this action satisfies the additional conditions~(\ref{additional}) of Proposition~\ref{action}. This is achieved in Subsection~\ref{sec:proof-glueing}.
 
 
 
@@ -608,7 +601,7 @@ As a result we will get a well-defined action of $\St(\Phi,\,A_h)$ on $V$. We al
 \label{pro-completion}
 We refer the reader to \cite[Section~6.1]{SK06} for an introduction to the formalism of ind-objects and pro-objects. 
 
-We start by recalling the definition of the {\it pro-completion} $\catname{Pro}(\mathcal{C})$ of a category $\mathcal{C}$ (cf.~\cite[\S~2.1]{LSV20}). The pro-copmlition is taken with respect to a fixed small nonempty filtered category $\mathcal{I}$, and in our exaples $\mathcal I$ is always a diagram, i.e., for any two objects $i$, $j\in\mathcal I$ one has $$\mathrm{Hom}_{\mathcal I}(i,\,j)=\begin{cases}\emptyset,&\\{*}.&\end{cases}$$ In fact, we will only use $\mathcal I$ as in Example~\ref{main-example}.
+We start by recalling the definition of the {\it pro-completion} $\catname{Pro}(\mathcal{C})$ of a category $\mathcal{C}$ (cf.~\cite[\S~2.1]{LSV20}). The pro-completion is taken with respect to a fixed small nonempty filtered category $\mathcal{I}$, and in our examples $\mathcal I$ is always a diagram, i.\,e., for any two objects $i$, $j\in\mathcal I$ one has $$\mathrm{Hom}_{\mathcal I}(i,\,j)=\begin{cases}\emptyset,&\\{*}.&\end{cases}$$ In fact, in all our examples $\mathcal I$ is as in Example~\ref{main-example} below.
 
 By definition, the objects of $\catname{Pro}(\mathcal{C})$ are functors $X^{(\infty)}\colon\mathcal{I}^{\mathrm{op}} \to \mathcal{C}$. For $X^{(\infty)} \in 
 \catname{Pro}(\mathcal{C})$ and $i \in \mathcal{I}$ we denote by $X^{(i)}$ the value of $X^{(\infty)}$ on $i$. 
@@ -682,30 +675,33 @@ Moreover, if $\alpha \in \Phi$ is any fixed root and the above equalities hold f
 %
 %It is enough to verify the latter equalities for $\beta \in \Phi\setminus\{\alpha\}$ where 
 \end{proposition}
-The first assertion of the above proposition is proven in~\cite[Lemma~2.16]{LSV20}, and the second assertion follows from~\cite[Lemma~3.2]{LSV20}.
+The first assertion of the above proposition is proven in~\cite[Lemma~2.16]{LSV20} while the second assertion follows from~\cite[Lemma~3.2]{LSV20}.
 %
 %
 %by means of a universal property (cf.~\cite[Lemma~2.16]{LSV20}). For instance, $\St^{(\infty)}(\Phi, R)$ is ``generated'' by $x_\alpha$ in the sense that 
 %
 %(in fact, an even stronger result holds, see~\cite[Lemma~3.2]{LSV20}).
+
+Moreover, for $u=r/s\in R_S$ $r\in R$, $s\in S$, $\beta\in\Phi$ we define the pro-group morphism $x_\beta(u\cdot-)\colon R^{(\infty)}\rightarrow\St^{(\infty)}(\Phi, R)$ as the equivalence class of pre-morphisms $\eta$ with $\eta^*(t)=(st)$ and $\eta_t(a)=x_\alpha(ua)$ (see~\cite[Subsection~4.2]{LSV20} for more details).
 \begin{rem}
-Moreover, given a collection of pro-group morphisms $f_\alpha \colon R^{(\infty)} \to G^{(\infty)}$ satisfying the ``pro-analogues'' of Chevalley commutator identities (see~\cite[Remark~2.15]{LSV20}), there exists a unique morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ such that $f_\alpha = f \circ x_\alpha$ for all $\alpha\in\Phi$. This fact is esential for the construction of homomorphism $\mathrm{conj}\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^{(\infty)}(\Phi, R))$ from Proposition~\ref{prop:conj-action} below performed in~\cite[Lemma~4.2, Proposition~4.3]{LSV20}, however, we will not use it directly in this paper.
+Given a collection of pro-group morphisms $f_\alpha \colon R^{(\infty)} \to G^{(\infty)}$ satisfying the ``pro-analogues'' of Chevalley commutator identities (see~\cite[Remark~2.15]{LSV20}) there exists a unique morphism $f \colon \St^{(\infty)}(\Phi, R) \to G^{(\infty)}$ such that $f_\alpha = f \circ x_\alpha$ for all $\alpha\in\Phi$. This fact is essential for the construction of homomorphism $\mathrm{conj}\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^{(\infty)}(\Phi, R))$ from Proposition~\ref{prop:conj-action}, which is outlined in~\cite[Lemma~4.2, Proposition~4.3]{LSV20}.
 \end{rem}
-Moreover, for $u=r/s\in R_S$ $r\in R$, $s\in S$, $\beta\in\Phi$ one can define a pro-group morphism $x_\beta(u\cdot-)\colon R^{(\infty)}\rightarrow\St^{(\infty)}(\Phi, R)$ as an equivalense class of pre-morphism $\eta$ with $\eta^*(t)=(st)$ and $\eta_t(r)=x_\alpha(ur)$ (see~\cite[Subsection~4.2]{LSV20} for more details). The following proposition is a restatemnt of~\cite[Proposition~4.3]{LSV20}.
+
+ The following proposition is a restatement of~\cite[Proposition~4.3]{LSV20}.
 \begin{proposition}\label{prop:conj-action}
  For a reduced irreducible simply-laced root system $\Phi$ of rank $\geq 3$ and a multiplicative system $S\subseteq R$ there exists a group homomorphism $\mathrm{conj}\colon \St(\Phi, R_S) \to \mathrm{Aut}(\St^{(\infty)}(\Phi, R))$ compatible with the obvious conjugation action of $\St(\Phi, R_S)$ on itself, i.\,e. such that for every $g \in \St(\Phi, R_S)$ the following diagram of pro-groups commutes:
  \begin{equation} \label{eq:conj-pis} \begin{tikzcd} \St^{(\infty)}(\Phi, R) \ar{r}{\mathrm{conj}(g)} \ar{d}{\pi_S} & \St^{(\infty)}(\Phi, R) \ar{d}{\pi_S} \\ \St(\Phi, R_S) \ar{r}{{}^g\!(-)} & \St(\Phi, R_S). \end{tikzcd} \end{equation}
  Moreover, for $g=x_\alpha(u)$, $u\in R_S$, $\alpha\in\Phi$ and $\beta\in\Phi$ one has
  \begin{align}
  \label{conj1}
-&\mathrm{conj}(x_\alpha)(x_\beta)=x_\beta,\quad\text{ for }\alpha+\beta\not\in\Phi\cup0,\\
+&\mathrm{conj}(x_\alpha) \circ x_\beta =x_\beta,\quad\text{ for }\alpha+\beta\not\in\Phi\cup0,\\
  \label{conj2}
-&\mathrm{conj}(x_\alpha)(x_\beta)=x_{\alpha+\beta}(N_{\alpha\beta}u\cdot-)\cdot x_\beta(-),\quad\text{ for }\alpha+\beta\in\Phi.
+&\mathrm{conj}(x_\alpha) \circ x_\beta =x_{\alpha+\beta}(N_{\alpha\beta}u\cdot-)\cdot x_\beta(-),\quad\text{ for }\alpha+\beta\in\Phi.
  \end{align}
 \end{proposition}
 \begin{proof}
 The existence of the homomorphism $\mathrm{conj}$ satisfying~(\ref{conj1})--(\ref{conj2}) has been demonstrated in~\cite[Lemma~4.2, Proposition~4.3]{LSV20}.
-Thus, we only need to verify the commutativity of the diagram~\eqref{eq:conj-pis}. 
+Thus, we only need to verify the commutativity of~\eqref{eq:conj-pis}. 
 Since $\mathrm{conj}$ is a homomorphism, it is enough to consider the case $g = x_\alpha(u)$, $\alpha \in \Phi$, $u \in R_S$. In view of Proposition~\ref{generators}, to verify the commutativity of~\eqref{eq:conj-pis} it is enough to verify the equalities $\pi_S \circ \mathrm{conj}(g) \circ x_\beta= {}^g\!(-) \circ \pi_S \circ x_\beta$ for $\beta\neq -\alpha$.
  It remains to see that the fulfillment of these equalities is a direct consequence of~(\ref{conj1})--(\ref{conj2}). %the definition of $\mathrm{conj}(g) \circ x_\beta$ (the formulas for these morphisms are given by formulas (4.5)--(4.6) of~\cite{LSV20}). 
  \end{proof}
@@ -777,43 +773,17 @@ Here $\lambda_h^k$ denotes the homomorphism of Steinberg grops induced by the fo
 
 \subsection{Proof of Theorem~\ref{glueing}} \label{sec:proof-glueing}
 
-Now we will acomplish the plan outlined in Subsection~\ref{plan}. Recall that we let $\St(\Phi, B)$ act on $\St(\Phi, B_h) \times \St(\Phi, A)$ on the left via the formula 
+Let us briefly recall the definition of the set $V$. Recall that we let $\St(\Phi, B)$ act on $\St(\Phi, B_h) \times \St(\Phi, A)$ on the left via the formula 
 \[w \star (u, v) = (u \lambda_h(w)^{-1}, \iota(w) v),\text{ where }w \in \St(\Phi, B),\ u \in \St(\Phi, B_h),\ v \in \St(\Phi, A).\]
 We denote by $V$ the orbit set for this action and use the notation $[u, v]$ for the orbit corresponding to a pair $(u, v) \in \St(\Phi, B_h) \times \St(\Phi, A)$.
 
 Our goal is to show that the formula $[u, v] \mapsto \overline{\iota}(u) \cdot \lambda_{h}(v)$ defines a bijection between $V$ and $\St(\Phi, A_{h})$. This clearly implies the exactness of~(\ref{stavrova-sequence}) which is equivalent to the claim of Theorem~\ref{glueing}. 
 
-In Subsection~\ref{plan} we divided the proof of this fact in three steps, which we will acomplish below.
-
-
-
-
-
-
-
-
-
-
-{\bf Step~1.} The first step was the definition of homomorphisms $c_{g}\colon\St(\Phi,\,h^kA)\rightarrow\St(\Phi,\,A)$ imitating conjugation by $g\in\St(\Phi,\,A_h)$ for $k$ large enough. It was aready  performed in Subsections~\ref{pro-completion}--\ref{pro-groups}. 
-
-For the further construction, we  
-%
-%The first step in this direction is to construct an action of $\St(\Phi, A_{h})$ on $V$. 
-%
-fix some $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $c/{h^s} \in A_{h}$. 
+So far we have realized Step~1 of the plan from Subsection~\ref{plan}, i.\,e. we have constructed the homomorphisms $c_g$. Now fix some $u \in \St(\Phi, B_h)$, $v \in \St(\Phi, A)$, $\alpha \in \Phi$, and $c/{h^s} \in A_{h}$. 
 Applying \cref{vorcor} to the element $u$ we obtain a natural number $n=n(u)$ and homomorphisms \begin{equation} \label{eq:c-homs} c_{u^{-1}}\colon \St(\Phi, h^nB) \to \St(\Phi, B),\ c_{\overline{\iota}(u^{-1})}\colon \St(\Phi, h^nA) \to \St(\Phi, A)\end{equation}
 satisfying the identities listed in~\cref{vorcor}.
 
-
-
-
-
-
-
-
-
-
-{\bf Step~2.} The second step of the proof is the construction of operators $T_\alpha(c/h^s)\colon V\rightarrow V$. Observe that the assumption $A/hA = B/hB$ is equivalent to the condition that for every $k \geq 0$ one has $A = Ah^k + B$ and $Ah^k \cap B = Bh^k$. Now, in the notation above, choose any $k \geq n + s$ and decompose $c \in A$ as
+Now we are ready to move on to Step~2 of the plan, namely, to construct operators $T_\alpha(c/h^s)\colon V\rightarrow V$. Observe that the assumption $A/hA = B/hB$ is equivalent to the condition that for every $k \geq 0$ one has $A = Ah^k + B$ and $Ah^k \cap B = Bh^k$. Now, in the notation above, choose any $k \geq n + s$ and decompose $c \in A$ as
  \begin{equation} \label{eq:decomp} c = ah^k + b\text{ for some }a \in A,\ b \in B. \end{equation}
 We define the operator $T_\alpha(c/h^s) \colon V \to V$ via the formula:
 \begin{equation}\label{eq:generator-action}
@@ -853,7 +823,7 @@ Now suppose that $(u', v')$ is another representative for the orbit $[u, v]$, i.
 
 
 
-{\bf Step~3.} The third step of the proof is to verify that the above operators $T_\alpha(c/h^s)$ specify an action of $\St(\Phi, A_{h})$ on $V$ satisfying~(\ref{additional}).
+Finally, we move on to Step~3 of the plan, namely we verify that the above operators $T_\alpha(c/h^s)$ specify an action of $\St(\Phi, A_{h})$ on $V$ satisfying~(\ref{additional}).
 This is accomplished in the series of lemmas below:
 
 \begin{lemma}\label{lem:R1} The operators $T_\alpha$ satisfy relations~\eqref{R1}. \end{lemma}
@@ -945,7 +915,7 @@ it remains to observe that $ab'h^{n-2s}+aa'h^{2n-2s}=(a''-a'b)h^{n-2s}$ to concl
 It follows that the action of $\St(\Phi, A_{h})$ on $V$ is well-defined. It remains to prove the following result.
 
 
-\begin{lemma} The constructed action satisfies the conditions~\ref{additional}. 
+\begin{lemma} The constructed action satisfies conditions~\ref{additional}. 
 \end{lemma}
 \begin{proof}
 Indeed, using the fact that the operators $T_\alpha(a)$ are well-defined by Lemma~\ref{well-def}, for $a\in A$ we can choose a decomposition $a=ah^0+0$ and for $u=1\in\mathrm{St}(\Phi,\,B_h)$ we can choose $c_{1}$ to be the ifentity map. Then by the very definition
@@ -962,9 +932,7 @@ and by induction we conclude that $\overline\iota(u)\cdot[1,\,v]=[u,\,v]$ for an
 Therefore we conclude that the sequence~(\ref{stavrova-sequence}) is exact by Corollary~\ref{corollary-in-the-end}, and therefore Theorem~\ref{glueing} holds.
 
 
-\subsection*{Funding}
-The work on \S~2 was supported by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The work on \S~3 was supported by the Russian Science Foundation grant No. 19-71-30002. The work on \S~4 was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics “BASIS“.
-The first-named author is a winner of the Young Russian Mathematics contest and would like to thank its sponsors and the jury.
+%\subsection*{Funding} The work on \S~2 was supported by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The work on \S~3 was supported by the Russian Science Foundation grant No. 19-71-30002. The work on \S~4 was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics “BASIS“. The first-named author is a winner of the Young Russian Mathematics contest and would like to thank its sponsors and the jury.
 
 \subsection*{Acknowledgements}
  The authors would like to thank A. Stavrova for suggesting several ideas used in this paper and the anonymous referees for suggesting a number of comments which helped to improve this article. We would also like to thank P.~Gvozdevsky, S.~Ivanov, A.~Sawant, V.~Sosnilo and N.~Vavilov for their useful comments and interest in this work.

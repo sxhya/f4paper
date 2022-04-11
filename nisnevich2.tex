@@ -6,7 +6,7 @@
 \usepackage[breaklinks=true,unicode]{hyperref}
 \usepackage[capitalise]{cleveref}
 \usepackage{tikz,tikz-cd}
-\usepackage{scalerel}
+%\usepackage{scalerel}
 \usepackage{enumitem}
 \usepackage{mathrsfs}
 %\usepackage{showkeys}
@@ -52,7 +52,7 @@
 \shorttitle{On the $\mathbb{A}^1$-invariance of $\mathrm K_2$}
 
 % Enter the publication year and the ID number of the paper
-\volumeyear{2022}
+%\volumeyear{2022}
 \paperID{IMRN-2021-1106}
 
 % Author name(s)
@@ -73,14 +73,14 @@
 \correspdetails{avlavrenov@gmail.com}
 
 % Received/revised/accepted dates will be entered by the publisher during production of an accepted paper. Please do not edit these placeholders for submission.
-\received{1 Month 20XX}
-\revised{11 Month 20XX}
-\accepted{21 Month 20XX}
+%\received{1 Month 20XX}
+%\revised{11 Month 20XX}
+%\accepted{21 Month 20XX}
 
 % Enter details of editor communicating this article
-\communicated{Corrado De Concini}
+%\communicated{Corrado De Concini}
 
-\begin{abstract}Let $k$ be an arbitrary field. In this paper we show that in the linear case ($\Phi=\rA_\ell$, $\ell \geq 4$) and even orthogonal case ($\Phi = \rD_\ell$, $\ell\geq 7$, $\mathrm{char}(k)\neq 2$) the unstable functor $\mathrm{K}_2(\Phi, -)$ possesses the $\mathbb{A}^1$-invariance property in the geometric case, i.\,e. $\K_2(\Phi, R[t]) = \K_2(\Phi, R)$ for a regular ring $R$ containing $k$. As a consequence, the unstable $\K_2$ groups can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathscr{H}(k)$ as fundamental groups of the simply-connected Chevalley--Demazure group schemes $\mathrm{G}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}(A))$.
+\begin{abstract}Let $k$ be an arbitrary field. In this paper we show that in the linear case ($\Phi=\rA_\ell$, $\ell \geq 4$) and even orthogonal case ($\Phi = \rD_\ell$, $\ell\geq 7$, $\mathrm{char}(k)\neq 2$) the unstable functor $\mathrm{K}_2(\Phi, -)$ possesses the $\mathbb{A}^1$-invariance property in the geometric case, i.\,e. $\K_2(\Phi, R[t]) = \K_2(\Phi, R)$ for a regular ring $R$ containing $k$. As a consequence, the unstable $\K_2$ groups can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathscr{H}_\bullet(k)$ as fundamental groups of the simply-connected Chevalley--Demazure group schemes $\mathrm{G}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}\,A)$.
 \end{abstract}
 
 \maketitle
@@ -97,7 +97,7 @@ If one additionally chooses a lattice $\Lambda$ located between the root lattice
 \begin{equation} \label{eq:main-exactSeq} \begin{tikzcd} \K_2^{\mathrm{G}_\Lambda(\Phi, -)}(R) \ar[hookrightarrow]{r} & \St(\Phi, R) \ar{r}{\pi} & \mathrm{G}_\Lambda(\Phi, R) \ar[twoheadrightarrow]{r} & \K_1^{\mathrm{G}_\Lambda(\Phi, -)}(R). \end{tikzcd} \end{equation}
 Thus, the group $\K_2^{\mathrm{G}_\Lambda(\Phi, -)}(R)$ can be interpreted as the group of ``nontrivial'' relations between the images of elements $x_\alpha(\xi)$ in $\mathrm{G}_\Lambda(\Phi, R)$, i.\,e. the relations depending on the arithmetic of $R$.
 \begin{conv}
-In the sequel we denote by $\Gsc(\Phi,-)$ the simply-connected form of the Chevalley--Demazure group scheme of type $\Phi$, i.\,e. $\mathrm{G}_\mathrm{sc}(\Phi, R) := \mathrm{G}_{P(\Phi)}(\Phi, R)$ and denote by $\K_i(\Phi, R)$ the corresponding $\K_1$ and $\K_2$ functors, i.\,e. $\K_i(\Phi, R) := \K_i^{\mathrm{G}_\mathrm{sc}(\Phi, R)}$, $i=1,2$. This notation agrees with~\cite{St78}.
+In the sequel we denote by $\Gsc(\Phi,-)$ the simply-connected form of the Chevalley--Demazure group scheme of type $\Phi$, i.\,e. $\mathrm{G}_\mathrm{sc}(\Phi, R) := \mathrm{G}_{P(\Phi)}(\Phi, R)$ and denote by $\K_i(\Phi, R)$ the corresponding $\K_1$ and $\K_2$ functors, i.\,e. $\K_i(\Phi, R) := \K_i^{\mathrm{G}_\mathrm{sc}(\Phi, -)}(R)$, $i=1,2$. This notation agrees with~\cite{St78}.
 For shortness we also set $G := \mathrm{G}_\Lambda(\Phi, -)$.
 \end{conv}
 Our first main result is the following
@@ -108,7 +108,7 @@ Let $k$ be an arbitrary field and $R$ be a regular ring containing $k$. Let $\Ph
 
 As a corollary of~\cref{theorem:LP-for-K2}, we show that the unstable groups $\K_2^G(R)$ coincide with Karoubi--Villamayor groups $\mathrm{KV}_2^G(R)$ (see~\cref{sec:K2-as-pi-1} for the definition). It follows from~\cite{AHW18} that the latter groups can be interpreted as fundamental groups of $G$ in the unstable $\mathbb{A}^1$-homotopy category $\mathscr{H}_\bullet(k)$ of F.~Morel and V.~Voevodsky~\cite{MV99}. Thus, we obtain the following
 
-\begin{corollary} \label{cor:motivic-pi1} (see Corollary~\ref{cor:motivic-pi1-2}) Let $\Phi$, $\Lambda$ and $k$ be as in~\cref{theorem:LP-for-K2}. Then for any smooth $k$-algebra $R$ and $G = \mathrm{G}_{\Lambda}(\Phi, -)$ one has
+\begin{corollary} \label{cor:motivic-pi1} (see Corollary~\ref{cor:motivic-pi1-2}) Let $\Phi$, $\Lambda$ and $k$ be as in~\cref{theorem:LP-for-K2}. Then for any $k$-smooth algebra $R$ and $G = \mathrm{G}_{\Lambda}(\Phi, -)$ one has
 \[ \pi_1^{\mathbb{A}^1}(G)(R) := \mathrm{Hom}_{\mathscr{H}_{\bullet}(k)}(S^1 \wedge \mathrm{Spec}(R)_+, G) = \mathrm{KV}_2^{G}(R) = \K_2^G(R),\]
 where $\mathscr{H}_\bullet(k)$ denotes the pointed unstable $\mathbb{A}^1$-homotopy category over $k$.
 \end{corollary}
@@ -143,7 +143,7 @@ From this and \S~IV.1 of~\cite{Kbook} it follows that the group $\K_2^G(R)$ coin
 \begin{equation} \label{eq:H2-K2}
   \K_{2}^{G,Q}(R) := \pi_2\left(\mathrm BG(R)^+_{\E_\Lambda(\Phi, R)}\right) = \mathrm{H}_2(\mathrm{E}_\Lambda(\Phi, R), \ZZ) = \K_2^G(R),
 \end{equation}
-where $\E_\Lambda(\Phi, R) = \mathrm{Im}(\pi)$ denotes the {\it elementary subgroup of $G(R) = \mathrm{G}_\Lambda(\Phi, R)$}  (see~\cref{sec:main-results}) and $\mathrm BG(R)$ is the topological classifying space of the discrete group $G(R)$ (see more details on~(\ref{eq:H2-K2}) in the Introduction section of~\cite{LSV20}). Thus, in particular, the definitions of the unstable $\K_2$-functors a la Quillen and a la Karoubi--Villamayor agree for a regular ring $R$ containing a field $k$ and $\Phi$ satisfying the assumptions of~\cref{theorem:LP-for-K2} (see Corolary~\ref{cor:+=A1}).
+where $\E_\Lambda(\Phi, R) = \mathrm{Im}(\pi)$ denotes the {\it elementary subgroup of $G(R) = \mathrm{G}_\Lambda(\Phi, R)$}  (see~\cref{sec:main-results}) and $\mathrm BG(R)$ is the topological classifying space of the discrete group $G(R)$. Thus, in particular, the definitions of the unstable $\K_2$-functors a la Quillen and a la Karoubi--Villamayor agree for any regular ring $R$ containing a field $k$ and $\Phi$ satisfying the assumptions of~\cref{theorem:LP-for-K2} (see Corolary~\ref{cor:+=A1}). For the more detailed exposition of Quillen's $+$-construction applied to Chevalley groups we refer the reader to~\cite[Subsection~2.3]{LS20}, more details on~(\ref{eq:H2-K2}) can also be found in the Introduction section of~\cite{LSV20}).
 
 One of the ingredients in the proof of~\cref{theorem:LP-for-K2} is~\cref{lpb}, which gives a sufficient condition for a general group-valued functor to be $\mathbb{A}^1$-invariant. In turn, the proof of~\cref{lpb} is based on a recent result of I.~Panin, see~\cite[Theorem~2.5]{Pa19}. 
 
@@ -278,7 +278,7 @@ If, moreover, $R$ is of finite type over $k$, it is called {\it smooth over $k$}
 Additionally, the homomorphism $\tau$ is an injection and one has $A[t]/hA[t]\cong S/\tau(h)S.$ 
 \end{theorem}
 
-The geometric content of this theorem can be heuristically explained as follows. Let $X=\mathrm{Spec}(R)$ be $k$-smooth affine scheme and $X_f=\mathrm{Spec}(R_f)$ its principal open set, $A=\mathcal O_{X,M_1,\ldots, M_n}$. The left-hand square of the diagram~(\ref{eq:panin-diag}) defines an isomorphism of motivic spaces (i.e. Nisnevich sheaves) $\mathrm{Spes}(S)/\mathrm{Spes}(S_{\tau(h)})\cong(\mathbb A^1\times\mathrm{Spec}(A))/(\mathbb A^1\times\mathrm{Spec}(A))_h$. Then the theorem asserts that the canonical map $\mathrm{Spec}(\mathcal O_{X,M_1,\ldots, M_n})\to X/X_f$ factors through $(\mathbb A^1\times\mathrm{Spec}(\mathcal O_{X,M_1,\ldots, M_n}))/(\mathbb A^1\times\mathrm{Spec}(\mathcal O_{X,M_1,\ldots, M_n}))_h$.
+The geometric content of this theorem can be heuristically explained as follows. Let $X=\mathrm{Spec}(R)$ be $k$-smooth affine scheme and $X_f=\mathrm{Spec}(R_f)$ its principal open set, $A=\mathcal O_{X,M_1,\ldots, M_n}$. The left-hand square of the diagram~(\ref{eq:panin-diag}) defines an isomorphism of motivic spaces (i.e. Nisnevich sheaves) $\mathrm{Spes}(S)/\mathrm{Spes}(S_{\tau(h)})\cong(\mathbb A^1\times\mathrm{Spec}(A))/(\mathbb A^1\times\mathrm{Spec}(A))_h$. Then the theorem asserts that the canonical map $\mathrm{Spec}(\mathcal O_{X,M_1,\ldots, M_n})\to X/X_f$ factors through $(\mathbb A^1\times\mathrm{Spec}(\mathcal O_{X,M_1,\ldots, M_n}))/(\mathbb A^1\times\mathrm{Spec}(\mathcal O_{X,M_1,\ldots, M_n}))_h$. We refer the reader to~\cite[Section~2]{Pa19} for more details.
 
 \begin{proof}
  All of the assertions except the last two are a direct ring-theoretic restatement of (i)--(iii) of~\cite[Theorem~2.5]{Pa19}.
@@ -502,20 +502,38 @@ where $\mathscr{H}_\bullet(k)$ denotes the pointed unstable $\mathbb{A}^1$-homot
 
 \begin{corollary}
 \label{cor:+=A1}
-Let $\Phi$, $\Lambda$ and $k$ be as in~\cref{theorem:LP-for-K2}. Then for any smooth $k$-algebra $R$ and $G = \mathrm{G}_{\Lambda}(\Phi, -)$ one has
+Let $\Phi$, $\Lambda$ and $k$ be as in~\cref{theorem:LP-for-K2}. Then for any regular ring $R$ containing a field $k$ and $G = \mathrm{G}_{\Lambda}(\Phi, -)$ one has
 $$
 \K_{2}^{G,Q}(R) = \mathrm{KV}_2^G(R),
 $$
-where $\K_2^{G, Q}(R)$ denotes $\mathrm K_2$-group defined via Quillen's $+$-construction, see~(\ref{eq:H2-K2}). In other words, the definitions of the unstable $\K_2$-functors a la Quillen and a la Karoubi--Villamayor agree.
+where $\K_2^{G, Q}(R)$ denotes $\mathrm K_2$-group defined via Quillen's $+$-construction, see~(\ref{eq:H2-K2}) of~\cite[(2.21)]{LS20}. In other words, the definitions of the unstable $\K_2$-functors a la Quillen and a la Karoubi--Villamayor agree for regular rings containing a field.
 \end{corollary}
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
 \section{Nisnevich glueing for \texorpdfstring{$\K_2(\Phi, R)$}{K2(Ф,R)}} \label{sec:patching}
 The main result of this section is the following glueing theorem for Steinberg groups.
 \begin{theorem}\label{glueing}
 Let $\iota\colon B \hookrightarrow A$ be an embedding of integral domains, $h\in B \setminus \{0\}$ be such that $B / h = A / h$. Denote by $\overline\iota\colon B_h\hookrightarrow A_h$ the induced embedding of localizations. Let $\Phi$ be an arbitrary simply-laced root system of rank at least $3$.
-Then the group $\St(\Phi, B)$ surjects onto the pullback of homomorphisms
-$\lambda_{h}\colon \St(\Phi, A) \to \St(\Phi, A_{h})$, $\overline{\iota}\colon\St(\Phi, B_h) \to \St(\Phi, A_{h})$:
+Then $\St(\Phi, B)$ surjects onto the pullback of the diagram 
+$\St(\Phi, A) \xrightarrow{\lambda_h} \St(\Phi, A_{h})\xleftarrow{\overline{\iota}}\St(\Phi, B_h)$:
+
  \[ \begin{tikzcd}
  \St(\Phi, B)\ar[two heads, bend left=5]{rd}\ar[bend left=10]{rrd}{\lambda_h}\ar["\iota"', bend right=20]{rdd}&&\\
 &\St(\Phi, B_h)\times_{\St(\Phi, A_{h})}\St(\Phi, A)\ar{r}\ar{d}&\St(\Phi, B_h)\ar{d}{\overline{\iota}}\\
@@ -540,6 +558,16 @@ is surjective. In particular the functors $\St(\Phi, -)$, $\K_2(\Phi, -)$ satisf
 \begin{proof}
 Take $x\in\mathrm{Ker}\big(\St(\Phi,\,A)\rightarrow\St(\Phi,\,A_h)\big)$, then by Theorem~\ref{glueing} there exists a pre-image $y\in\St(\Phi,\,B)$ of the element $(1,\,x)\in\St(\Phi, B_h)\times_{\St(\Phi, A_{h})}\St(\Phi, A)$, i.e., $\lambda_h(y)=1$ and $\iota(y)=x$. In other words, $y$ is a pre-image of $x$ from $\mathrm{Ker}\big(\St(\Phi,\,B)\rightarrow\St(\Phi,\,B_h)\big)$. Since $\iota\colon\mathrm{G_{sc}}(\Phi,\,B)\rightarrow\mathrm{G_{sc}}(\Phi,\,A)$ is injective, we also get the assertion for $\mathrm K_2(\Phi,\,-)$.
 \end{proof}
+
+
+
+
+
+
+
+
+
+
 
 \subsection{Plan of the proof}
 \label{plan}
@@ -973,6 +1001,10 @@ Therefore we conclude that the sequence~(\ref{stavrova-sequence}) is exact by Co
 
 
 %\subsection*{Funding} The work on \S~2 was supported by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The work on \S~3 was supported by the Russian Science Foundation grant No. 19-71-30002. The work on \S~4 was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics “BASIS“. The first-named author is a winner of the Young Russian Mathematics contest and would like to thank its sponsors and the jury.
+
+\subsection*{Funding}
+The work on \S~2 was supported by the Ministry of Science and Higher Education of the Russian Federation, agreement No. 075-15-2019-1619. The work on \S~3 was supported by the Russian Science Foundation grant No. 19-71-30002. The work on \S~4 was supported by the Foundation for the Advancement of Theoretical Physics and Mathematics “BASIS“.
+The first-named author is a winner of the Young Russian Mathematics contest and would like to thank its sponsors and the jury.
 
 \subsection*{Acknowledgements}
  The authors would like to thank A. Stavrova for suggesting several ideas used in this paper and the anonymous referees for suggesting a number of comments which helped to improve this article. We would also like to thank P.~Gvozdevsky, S.~Ivanov, A.~Sawant, V.~Sosnilo and N.~Vavilov for their useful comments and interest in this work.

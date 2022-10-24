@@ -11,6 +11,8 @@
 \usepackage{mathrsfs}
 %\usepackage{showkeys}
 
+\bibliographystyle{authordate1}
+
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
 \newcommand{\K}{{\mathrm{K}}}
@@ -73,9 +75,9 @@
 \correspdetails{avlavrenov@gmail.com}
 
 % Received/revised/accepted dates will be entered by the publisher during production of an accepted paper. Please do not edit these placeholders for submission.
-%\received{1 Month 20XX}
-%\revised{11 Month 20XX}
-%\accepted{21 Month 20XX}
+\received{1 Month 202X}
+\revised{1 Month 202X}
+\accepted{1 Month 202X}
 
 % Enter details of editor communicating this article
 %\communicated{Corrado De Concini}
@@ -666,22 +668,24 @@ As a result, we get a well-defined action of $\St(\Phi,\,A_h)$ on $V$. We also c
 
 \subsection{Overview of pro-completion}
 \label{pro-completion}
-We refer the reader to \cite[Section~6.1]{SK06} for an introduction to the formalism of ind-objects and pro-objects. 
+We refer the reader to \cite[Section~6.1]{SK06} for an introduction to the formalism of ind-objects and pro-objects.
 
-We start by recalling the definition of the {\it pro-completion} $\catname{Pro}(\mathcal{C})$ of a category $\mathcal{C}$ (cf.~\cite[\S~2.1]{LSV20}). The pro-completion is taken with respect to a fixed small nonempty filtered category $\mathcal{I}$, and in our examples $\mathcal I$ is always a diagram, i.\,e., for any two objects $i$, $j\in\mathcal I$ one has $$\mathrm{Hom}_{\mathcal I}(i,\,j)=\begin{cases}\emptyset,&\\{*}.&\end{cases}$$ In fact, in all our examples $\mathcal I$ is as in Example~\ref{main-example} below.
-
-By definition, the objects of $\catname{Pro}(\mathcal{C})$ are functors $X^{(\infty)}\colon\mathcal{I}^{\mathrm{op}} \to \mathcal{C}$. For $X^{(\infty)} \in 
+We start by recalling the definition of the {\it pro-completion} $\catname{Pro}(\mathcal{C})$ of a category $\mathcal{C}$ (cf.~\cite[\S~2.1]{LSV20}). By definition, the objects of $\catname{Pro}(\mathcal{C})$ are all functors $X^{(\infty)}\colon\mathcal{I}^{\mathrm{op}} \to \mathcal{C}$, where $\mathcal{I}$ is an arbitrary small nonempty filtered category. For a fixed pro-object $X^{(\infty)}$ the category $\mathcal{I}$ is called the {\it index category of $X^{(\infty)}$}. For $X^{(\infty)} \in
 \catname{Pro}(\mathcal{C})$ and $i \in \mathcal{I}$ we denote by $X^{(i)}$ the value of $X^{(\infty)}$ on $i$. 
-We call the images of $X^{(\infty)}$ on the arrows of $\mathcal{I}$ the {\it structure morphisms} of $X^{(\infty)}$.
+We call the images of the arrows of $\mathcal{I}$ under $X^{(\infty)}$ the {\it structure morphisms} of $X^{(\infty)}$.
 
 Let $X^{(\infty)}\colon\mathcal{I}\to\mathcal{C}$ and $Y^{(\infty)}\colon\mathcal{J}\to\mathcal{C}$ be a pair of pro-objects.
 By definition, a {\it pre-morphism} $$\eta\colon X^{(\infty)} \to Y^{(\infty)}$$ is a pair $\left(\eta^*, \{\eta_j\}_{j\in\mathrm{Ob}(\mathcal{J})}\right)$ consisting of a map $\eta^*\colon \mathrm{Ob}(\mathcal{J})\to\mathrm{Ob}(\mathcal{I})$ and a collection of $\mathcal{C}$-morphisms $\eta_j\colon X^{(\eta^*(j))}\to Y^{(j)}$ such that for every arrow $\psi\colon j' \to j$ in $\mathcal J$ there exists $i$ and arrows $\phi'\colon i\rightarrow\eta^*(j')$ and $\phi\colon i\rightarrow\eta^*(j)$ in $\mathcal I$ such that the composite morphisms $$X^{(i)} \xrightarrow{X^{(\infty)}(\phi')} X^{(\eta^*(j'))} \xrightarrow{\eta_{j'}} Y^{(j')} \quad\text{ and }\quad X^{(i)} \xrightarrow{X^{(\infty)}(\phi)} X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)} \xrightarrow{Y^{(\infty)}(\psi)} Y^{(j')}$$ are equal. We call the individual $\mathcal{C}$-morphism $\eta_j$ {\it the degree $j$ component} of $\eta$.
 
 Pre-morphisms $\eta, \epsilon \colon X^{(\infty)} \to Y^{(\infty)}$ are declared equivalent if for every $j \in \mathrm{Ob}(\mathcal{J})$ there exists $i \in \mathrm{Ob}(\mathcal{I})$ and arrows $i\rightarrow\eta^*(j)$ and $i\rightarrow\epsilon^*(j)$ in $\mathcal I$ such that the composite morphisms $X^{(i)} \to X^{(\eta^*(j))} \xrightarrow{\eta_j} Y^{(j)}$ and $X^{(i)} \to X^{(\epsilon^*(j))} \xrightarrow{\epsilon_j} Y^{(j)}$ are equal. 
 
-In particular, for any pre-morphism $\eta$ and any function $\xi\colon \mathrm{Ob}(\mathcal{J})\to\mathrm{Ob}(\mathcal{I})$ such that $\mathrm{Hom}\big(\xi(j),\,\eta^*(j)\big)=*$ for all $j\in\mathrm{Ob}(\mathcal J)$, one can define a pre-morphism $\epsilon\colon X^{(\infty)} \to Y^{(\infty)}$ taking $\epsilon^*=\xi$ and $\epsilon_j$ to be the compositions $X^{(\xi(j))}\to X^{(\eta^*(j))}\xrightarrow{\eta_{j}}Y^{(j)}$. The pre-morphism $\epsilon$ is clearly equivalent to $\eta$. This construction of equivalent pre-morphism with ``enlarged'' $\eta^*(j)$ is often used in the sequel.
-
 By definition, the set of morphisms $\catname{Pro}\left(\mathcal{C})(X^{(\infty)}, Y^{(\infty)}\right)$ consists of equivalence classes $[\eta]$ of pre-morphisms $\eta \colon X^{(\infty)} \to Y^{(\infty)}$ with respect to the equivalence relation defined above. The composition of a pair of morphisms \([\eta] \colon X^{(\infty)} \to Y^{(\infty)}\) and \([\zeta] \colon Y^{(\infty)} \to Z^{(\infty)}\) is defined as the class $[\zeta \circ \eta]$, where the pre-morphism \(\zeta \circ \eta\) is given by \((\zeta \circ \eta)^*(i) = \eta^*(\zeta^*(i))\) and \((\zeta\circ \eta)_{i} = \zeta_{i} \circ \eta_{\zeta^*(i)}\). There is a fully faithful embedding $\mathcal{C}\to\catname{Pro}(\mathcal{C})$ sending $X \in \mathrm{Ob}(\mathcal{C})$ to the obvious functor $X\colon \{ * \} \to \mathcal{C}$. 
+
+\begin{rem}
+  Suppose that the category $\mathcal{I}$ is a {\it diagram}, i.\,e., for any two objects $i$, $j\in\mathcal I$ the hom-set $\mathrm{Hom}_{\mathcal I}(i,\,j)$ is either empty or one-element. The index category of every pro-object that we encounter in the sequel is a diagram (in fact, it is the same diagram as in~Example~\ref{main-example}) below.
+
+  Let $\eta \colon X^{(\infty)} \to Y^{(\infty)}$ be a pre-morpism and $\xi\colon \mathrm{Ob}(\mathcal{J})\to\mathrm{Ob}(\mathcal{I})$ an arbitrary function such that $\mathrm{Hom}\big(\xi(j),\,\eta^*(j)\big)=*$ for all $j\in\mathrm{Ob}(\mathcal J)$, one can define a ''restricted`` pre-morphism $\epsilon\colon X^{(\infty)} \to Y^{(\infty)}$ by taking $\epsilon^*=\xi$ and setting $\epsilon_j := (X^{(\xi(j))}\to X^{(\eta^*(j))}\xrightarrow{\eta_{j}}Y^{(j)})$. The pre-morphism $\epsilon$ is clearly equivalent to $\eta$. This construction of an equivalent restricted pre-morphism will often be used in the sequel.
+\end{rem}
 
 \begin{example}
 \label{main-example}
@@ -694,8 +698,9 @@ For $s\in S$ the principal ideal $sR$ can be considered as an rng. We define the
 
 b) We reuse the notation $\lambda_S$ for the homomorphism $\St(\Phi, R) \to \St(\Phi, R_S)$ of Steinberg groups induced by the canonical localization homomorphism $R \to R_S$. The {\it Steinberg pro-group} $\St^{(\infty)}(\Phi, R)$ is defined as the functor $S^\mathrm{op} \to \catname{Grp}$ obtained from the pro-rng $R^{(\infty)}$ by postcomposition with $\St(\Phi, -)$ (cf.~\cite[\S~2.4]{LSV20}). We denote by $\pi_S$ the pro-group morphism $\St^{(\infty)}(\Phi, R) \to \St(\Phi, R_S)$ defined by the pre-morphism $\pi^* \colon \{* \} \to S$, $\pi^*(*) = 1$, $\pi_{*} = \lambda_S \colon \St(\Phi, R) \to \St(\Phi, R_S)$. 
 
-c) We denote by $\mathbb N$ the set of nonnegative integers. For a non-nilpotent element $h\in R$ denote by $h^{\mathbb{N}}$ the multiplicative subset $\{ h^n \mid n \in \mathbb{N} \} \subseteq R$. The pro-rng $R^{(\infty)}$ associated to $S=h^\mathbb{N}$ can be depicted of as the following diagram of rngs (by definition, $R^{(k)}$ is the principal ideal $h^kR$ and all the structure morphisms of $R^{(\infty)}$ are obvious inclusions):
-\[ \ldots \hookrightarrow h^{n+1} R \hookrightarrow h^n R \hookrightarrow \ldots \hookrightarrow hR \hookrightarrow R. \]
+c) We denote by $\mathbb N$ the set of nonnegative integers. For a non-nilpotent element $h\in R$ denote by $h^{\mathbb{N}}$ the multiplicative subset $\{ h^n \mid n \in \mathbb{N} \} \subseteq R$. The pro-rng $R^{(\infty)}$ associated to $S=h^\mathbb{N}$ can be depicted as the following diagram of rngs:
+\[ \ldots \hookrightarrow h^{n+1} R \hookrightarrow h^n R \hookrightarrow \ldots \hookrightarrow hR \hookrightarrow R, \]
+in other words, by definition, $R^{(k)}$ is the principal ideal $h^kR$ and all the structure morphisms of $R^{(\infty)}$ are obvious inclusions.
 \end{example}
 
 

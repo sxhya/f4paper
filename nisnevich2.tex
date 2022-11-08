@@ -1,17 +1,22 @@
-\documentclass[times]{oupau}
-
+\documentclass[oneside, 11pt]{amsart}
+\pdfoutput=1
 \usepackage{amsmath, mathtools, amssymb, amsthm, amscd, alltt, graphicx, comment, bm}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[breaklinks=true,unicode]{hyperref}
 \usepackage[capitalise]{cleveref}
 \usepackage{tikz,tikz-cd}
-%\usepackage{scalerel}
+\usepackage[a4paper, left=25mm, right=15mm, top=25mm, bottom=35mm]{geometry}
 \usepackage{enumitem}
 \usepackage{mathrsfs}
 %\usepackage{showkeys}
 
 \bibliographystyle{authordate1}
+\numberwithin{equation}{section}
+\newtheorem{lemma}{Lemma} \numberwithin{lemma}{section}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{theorem}[lemma]{Theorem}
+\newtheorem{corollary}[lemma]{Corollary}
 
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
@@ -23,8 +28,12 @@
 \newcommand{\Max}{\mathrm{Max}}
 
 \theoremstyle{definition}
-\numberwithin{equation}{section}
-\newtheorem{rem}[theorem]{Remark}
+\newtheorem{definition}[lemma]{Definition} \Crefname{definition}{Definition}{Definitions}
+\newtheorem{example}[lemma]{Example}
+
+\theoremstyle{definition}
+\theoremstyle{remark}
+\newtheorem{rem}[lemma]{Remark}
 \newtheorem*{conv}{Convention}
 
 \newcommand{\Set}{\mathbf{Set}}
@@ -47,45 +56,27 @@
 
 \newcommand{\catname}[1]{{\normalfont\textbf{#1}}} %Category name
 
+\title{On the $\mathbb{A}^1$-invariance of $\mathrm K_2$ modeled on linear and even orthogonal groups}
+
+\author{Andrei Lavrenov}
+\address{St. Petersburg State University, 14th Line V.O., 29B, Saint Petersburg 199178 Russia}
+\address{Bar-Ilan University, 5290002 Ramat Gan, Israel}
+\email{avlavrenov at gmail.com}
+\author{Sergey Sinchuk}
+\address{St. Petersburg State University, 14th Line V.O., 29B, Saint Petersburg 199178 Russia}
+\email{sinchukss at gmail.com}
+\author{Egor Voronetsky}
+\address{St. Petersburg State University, 14th Line V.O., 29B, Saint Petersburg 199178 Russia}
+\email{voronetckiiegor at yandex.ru}
+
+\date {\today}
+
 \begin{document}
 
-% Enter full title and short title for running headers
-\title{On the $\mathbb{A}^1$-invariance of $\mathrm K_2$ modeled on linear and even orthogonal groups}
-\shorttitle{On the $\mathbb{A}^1$-invariance of $\mathrm K_2$}
-
-% Enter the publication year and the ID number of the paper
-\volumeyear{}
-\paperID{IMRN-2021-1106}
-
-% Author name(s)
-\author{Andrei Lavrenov\affil{1}, Sergey Sinchuk\affil{1} and Egor Voronetsky\affil{1}}
-% Abbreviated author name for running headers
-\abbrevauthor{A. Lavrenov {\it et al.}}
-% Abbreviated author name for first page header
-\headabbrevauthor{A. Lavrenov {\it et al.}}
-
-\address{%
-\affilnum{1}St. Petersburg State University, 14th Line V.O. 29B, 199178 St. Petersburg, Russia\\
-%\affilnum{2}Complete Second Author Address
-%and
-%\affilnum{3}Complete Third Author Address
-}
-
-% Address / e-mail address of corresponding author
-\correspdetails{avlavrenov@gmail.com}
-
-% Received/revised/accepted dates will be entered by the publisher during production of an accepted paper. Please do not edit these placeholders for submission.
-\received{1 Month 202X}
-\revised{1 Month 202X}
-\accepted{1 Month 202X}
-
-% Enter details of editor communicating this article
-\communicated{}
+\maketitle
 
 \begin{abstract}Let $k$ be an arbitrary field. In this paper we show that in the linear case ($\Phi=\rA_\ell$, $\ell \geq 4$) and even orthogonal case ($\Phi = \rD_\ell$, $\ell\geq 7$, $\mathrm{char}(k)\neq 2$) the unstable functor $\mathrm{K}_2(\Phi, -)$ possesses the $\mathbb{A}^1$-invariance property in the geometric case, i.\,e. $\K_2(\Phi, R[t]) = \K_2(\Phi, R)$ for a regular ring $R$ containing $k$. As a consequence, the unstable $\K_2$ groups can be represented in the unstable $\mathbb{A}^1$-homotopy category $\mathscr{H}_\bullet(k)$ as fundamental groups of the simply-connected Chevalley--Demazure group schemes $\mathrm{G}(\Phi,-)$. Our invariance result can be considered as the $\K_2$-analogue of the geometric case of Bass--Quillen conjecture. We also show for a semilocal regular $k$-algebra $A$ that $\K_2(\Phi, A)$ embeds as a subgroup into $\K^\mathrm{M}_2(\mathrm{Frac}\,A)$.
 \end{abstract}
-
-\maketitle
 
 \section{Introduction}
 
@@ -130,7 +121,6 @@ For $k$ with $\mathrm{char}(k)\neq 2$, $\ell \geq 7$ and $n\geq 0$ the group $\m
   \mathrm H_2 (\mathrm{O}_{2\ell}(R[t]), \ZZ) =&\ \mathrm H_2 (\mathrm{O}_{2\ell}(R), \ZZ). \label{eq:H_2-O}
  \end{align}
 \end{corollary}
-
 
 
 Recall that for $i \geq 0$ the $\mathbb{A}^1$-invariance for the stable linear functors $\K_i(R)$ and stable orthogonal functors $\mathrm{KO}_i(R)$ (see~\cite{Ho05} for the definition) is well-known for regular $R$, see e.\,g.~\cite[Theorem~V.6.3]{Kbook} and \cite[Corollary~1.12]{Ho05}, respectively. The classical Bass--Quillen conjecture asks if the $\mathbb{A}^1$-invariance for the functor $\K_0$ holds {\it unstably}, i.e. whether the set $\mathrm{VB}_n(R)$ of isomorphism classes of vector bundles of constant rank $n$ over $\mathrm{Spec}(R)$ has the property $\mathrm{VB}_n(R) = \mathrm{VB}_n(R[t])$. 
@@ -1185,8 +1175,6 @@ Amer. Math. Soc., Grad. Texts Math. 145, 2013.
 Wendt, M.
 \href{http://dx.doi.org/10.1016/j.jpaa.2012.03.004}{``On homotopy invariance for homology of rank two groups.''}
 \textit{J.~Pure Appl. Algebra} {216}, no. {10} (2012): {2291--2301}.
-
-
 \end{thebibliography}
 
 \end{document}
